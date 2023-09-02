@@ -1,0 +1,105 @@
+tile.bonusblocks.crate.name=Crate
+tile.bonusblocks.crate.desc=A crate made from the heads of pistons.
+tile.bonusblocks.stickycrate.name=Sticky Crate
+tile.bonusblocks.stickycrate.desc= A slime-coated crate made from the heads of sticky pistons.
+
+tile.bonusblocks.box.name=Box
+tile.bonusblocks.box.desc=A wood box made from a chest.
+tile.bonusblocks.paintedbox.name=Painted Box
+tile.bonusblocks.paintedbox.desc=A colored wood box made from a painted chest.
+tile.bonusblocks.emptybookshelf.name=Empty Bookshelf
+tile.bonusblocks.emptybookshelf.desc=A repository of... nothing.
+
+tile.bonusblocks.compressedcobble.name=Compressed Cobblestone
+tile.bonusblocks.compressedcobble.desc=Cobblestone, smashed together and reconstituted.
+tile.bonusblocks.compressedmossycobble.name=Compressed Mossy Cobblestone
+tile.bonusblocks.compressedmossycobble.desc=Cobblestone with added greenery, smashed together and reconstituted.
+tile.bonusblocks.compressedgranite.name=Compressed Cobbled Granite
+tile.bonusblocks.compressedgranite.desc=Cobbled Granite, smashed together and reconstituted.
+tile.bonusblocks.compressedlimestone.name=Compressed Cobbled Limestone
+tile.bonusblocks.compressedlimestone.desc=Cobbled Limestone, smashed together and reconstituted.
+tile.bonusblocks.compressedbasalt.name=Compressed Cobbled Basalt
+tile.bonusblocks.compressedbasalt.desc=Cobbled Basalt, smashed together and reconstituted.
+tile.bonusblocks.compressedpermafrost.name=Compressed Cobbled Permafrost
+tile.bonusblocks.compressedpermafrost.desc=Cobbled Permafrost, smashed together and reconstituted.
+
+tile.bonusblocks.polishedmarble.name=Polished Marble
+tile.bonusblocks.polishedmarble.desc=A polished block of marble.
+tile.bonusblocks.polishedpermafrost.name=Polished Permafrost
+tile.bonusblocks.polishedpermafrost.desc=A polished block of permafrost.
+tile.bonusblocks.polishedsandstone.name=Polished Sandstone
+tile.bonusblocks.polishedsandstone.desc=A polished block of sandstone.
+tile.bonusblocks.polishedredsandstone.name=Polished Scorched Sandstone
+tile.bonusblocks.polishedredsandstone.desc=A polished block of scorched sandstone.
+tile.bonusblocks.marblecarved.name=Carved Marble
+tile.bonusblocks.marblecarved.desc=Polished Marble with lines hewn through the middle.
+
+tile.bonusblocks.overgrowngrass.name=Overgrown Grass
+tile.bonusblocks.overgrowngrass.desc=Dirt completely overgrown by grass.
+tile.bonusblocks.overgrownpath.name=Overgrown Path
+tile.bonusblocks.overgrownpath.desc=Dirt path completely worn down from travelling.
+tile.bonusblocks.overgrownscorchedgrass.name=Overgrown Scorched Grass
+tile.bonusblocks.overgrownscorchedgrass.desc=Scorched Dirt completely overgrown by grass.
+tile.bonusblocks.moss.name=Moss
+tile.bonusblocks.moss.desc=Large lump of greenery.
+
+tile.bonusblocks.oakbark.name=Oak Bark
+tile.bonusblocks.oakbark.desc=The bark of an oak tree.
+tile.bonusblocks.pinebark.name=Pine Bark
+tile.bonusblocks.pinebark.desc=The bark of a pine tree.
+tile.bonusblocks.birchbark.name=Birch Bark
+tile.bonusblocks.birchbark.desc=The bark of a birch tree.
+tile.bonusblocks.cherrybark.name=Cherry Bark
+tile.bonusblocks.cherrybark.desc=The bark of a cherry tree.
+tile.bonusblocks.eucabark.name=Eucalyptus Bark
+tile.bonusblocks.eucabark.desc=The bark of a eucalyptus tree.
+tile.bonusblocks.mossyoakbark.name=Mossy Oak Bark
+tile.bonusblocks.mossyoakbark.desc=The bark of a mossy oak tree.
+
+
+tile.bonusblocks.netherbrick.name=Netherrack Brick
+tile.bonusblocks.netherbrick.desc=Stacked bricks of netherrack.
+tile.bonusblocks.redsandstone.name=Scorched Sandstone
+tile.bonusblocks.redsandstone.desc=Compacted scorched dirt.
+tile.bonusblocks.redsandstonebrick.name=Scorched Sandstone Bricks
+tile.bonusblocks.redsandstonebrick.desc=Stacked bricks of scorched sandstone.
+tile.bonusblocks.soulslate.name=Soulslate
+tile.bonusblocks.soulslate.desc=A block of solid soul sand. Probably haunted.
+
+tile.bonusblocks.slimeblock.name=Block of Slime
+tile.bonusblocks.slimeblock.desc=Sticky and slimy mass of slime.
+tile.bonusblocks.clothblock.name=Block of Cloth
+tile.bonusblocks.clothblock.desc=Soft and bouncy cloth stretched into a block.
+tile.bonusblocks.boneblock.name=Bone Block
+tile.bonusblocks.boneblock.desc=Fossilized remains of the past. Spooky...
+tile.bonusblocks.thatch.name=Thatch
+tile.bonusblocks.thatch.desc=Bundled wheat and sticks, perfect for roofing.
+tile.bonusblocks.sulphurblock.name=Block of Sulphur
+tile.bonusblocks.sulphurblock.desc=A loose collection of explosive dust.
+tile.bonusblocks.sugarcaneblock.name=Reed
+tile.bonusblocks.sugarcaneblock.desc=Bundled up collection of cane and reeds.
+tile.bonusblocks.redmushroomblock.name=Red Mushroom Block
+tile.bonusblocks.redmushroomblock.desc=Red fungi compressed into a block.
+tile.bonusblocks.brownmushroomblock.name=Brown Mushroom Block
+tile.bonusblocks.brownmushroomblock.desc=Brown fungi compressed into a block.
+tile.bonusblocks.flintblock.name=Block of Flint
+tile.bonusblocks.flintblock.desc=A solid block of flint. Sharp!
+tile.bonusblocks.leatherblock.name=Block of Leather
+tile.bonusblocks.leatherblock.desc=A box cow.
+
+tile.bonusblocks.jar.name=Empty Jar
+tile.bonusblocks.jar.desc=A glass jar containing nothing.
+
+
+
+tile.bonusblocks.clovers.name=Clovers
+tile.bonusblocks.clovers.desc=Lush, growing grass.
+tile.bonusblocks.heather.name=Heather
+tile.bonusblocks.heather.desc=A beautiful purple flower.
+tile.bonusblocks.bluebell.name=Bluebell
+tile.bonusblocks.bluebell.desc=A beautiful cyan flower.
+tile.bonusblocks.orchid.name=Orchid
+tile.bonusblocks.orchid.desc=A beautiful pink flower.
+tile.bonusblocks.whitedandelion.name=White Dandelion
+tile.bonusblocks.whitedandelion.desc=A beautiful silver flower.
+
