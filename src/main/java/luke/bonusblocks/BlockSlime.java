@@ -42,4 +42,3 @@ public class BlockSlime extends BlockTransparent {
         }
     }
 }
-

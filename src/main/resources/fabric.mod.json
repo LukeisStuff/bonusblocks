@@ -19,7 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-        "luke.bonusblocks.BonusBlocks"
+      "luke.bonusblocks.BonusBlocks"
     ]
   },
   "mixins": [

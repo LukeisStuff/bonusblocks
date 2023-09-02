@@ -56,4 +56,3 @@ public class WorldFeatureBluebell extends WorldFeature {
         return true;
     }
 }
-
