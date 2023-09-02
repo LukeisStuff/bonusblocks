@@ -1,14 +1,19 @@
 package luke.bonusblocks;
 
-import net.minecraft.core.block.BlockPlanksPainted;
+import net.minecraft.core.block.Block;
 import net.minecraft.core.block.entity.TileEntity;
+import net.minecraft.core.block.material.Material;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.world.World;
 
-public class BlockPaintedBox extends BlockPlanksPainted {
-    public BlockPaintedBox(String key, int id) {
-        super(key, id);
+public class BlockPaintedBox extends Block {
+    public BlockPaintedBox(String key, int id, Material material) {
+        super(key, id, material.wood);
+    }
+
+    public static int getMetadataForColour(int i) {
+        return ~i & 15;
     }
 
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {

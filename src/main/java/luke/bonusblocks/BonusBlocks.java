@@ -2,6 +2,7 @@ package luke.bonusblocks;
 
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.render.block.color.BlockColorGrass;
+import net.minecraft.client.render.block.color.BlockColorPlanksPainted;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.client.sound.block.BlockSound;
 import net.minecraft.client.sound.block.BlockSounds;
@@ -12,11 +13,16 @@ import net.minecraft.core.crafting.LookupFuelFurnace;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemPlaceable;
 import net.minecraft.core.item.ItemStack;
+import net.minecraft.core.item.block.ItemBlockPainted;
+import net.minecraft.core.player.inventory.CreativeInventoryCategories;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.BlockBuilder;
 import turniplabs.halplibe.helper.RecipeHelper;
 import turniplabs.halplibe.mixin.accessors.CraftingManagerAccessor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class    BonusBlocks implements ModInitializer {
@@ -56,7 +62,8 @@ public class    BonusBlocks implements ModInitializer {
             .setTextures("paintedbox.png")
             .setFlammability(2, 2)
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
-            .build(new BlockPaintedBox("paintedbox", 685));
+            .setBlockColor(new BlockColorPlanksPainted(false))
+            .build(new BlockPaintedBox("paintedbox", 685, Material.wood));
     public static final Block emptybookshelf = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 0.8f))
             .setHardness(1.5f)
@@ -410,12 +417,17 @@ public class    BonusBlocks implements ModInitializer {
     public void onInitialize() {
         LOGGER.info("BonusBlocks initialized.");
 
+        Item.itemsList[paintedbox.id] = new ItemBlockPainted(paintedbox, false);
+
         Item.jar = new ItemPlaceable("jar", 16519, BonusBlocks.jar).setIconCoord(3, 9);
 
         RecipeHelper.Crafting.createRecipe(BonusBlocks.crate,4,new Object[]{"PP","PP", 'P' , Block.pistonBase});
         RecipeHelper.Crafting.createRecipe(BonusBlocks.stickycrate,4,new Object[]{"PP","PP", 'P' , Block.pistonBaseSticky});
         RecipeHelper.Crafting.createRecipe(BonusBlocks.box,4,new Object[]{"PP","PP", 'P' , Block.chestPlanksOak});
         RecipeHelper.Crafting.createRecipe(BonusBlocks.paintedbox,4,new Object[]{"PP","PP", 'P' , Block.chestPlanksOakPainted});
+        int Color;
+        for ( Color = 1; Color <= 15; Color++)
+            ((CraftingManagerAccessor) RecipeHelper.craftingManager).callAddShapelessRecipe(new ItemStack(paintedbox, 1, Color), new Object[]{paintedbox, new ItemStack(Item.dye, 1, 15 - Color)});
         RecipeHelper.Crafting.createRecipe(BonusBlocks.emptybookshelf,1,new Object[]{"PPP","   ", "PPP", 'P' , Block.planksOak});
         RecipeHelper.Crafting.createRecipe(BonusBlocks.emptybookshelf,1,new Object[]{"PPP","   ", "PPP", 'P' , Block.planksOakPainted});
 
@@ -477,7 +489,8 @@ public class    BonusBlocks implements ModInitializer {
         RecipeHelper.Crafting.createRecipe(BonusBlocks.redsandstonebrick,4,new Object[]{"PP","PP", 'P' , BonusBlocks.redsandstone});
         RecipeHelper.Crafting.createRecipe(BonusBlocks.soulslate,4,new Object[]{"PP","PP", 'P' , Block.soulsand});
 
-        RecipeHelper.Crafting.createRecipe(BonusBlocks.marblecarved,1,new Object[]{"P","P", 'P' , Block.slabCapstoneMarble});
+        RecipeHelper.Crafting.createRecipe(Block.capstoneMarble,1,new Object[]{"P","P", 'P' , Block.slabCapstoneMarble});
+        RecipeHelper.Crafting.createRecipe(BonusBlocks.marblecarved,1,new Object[]{"P", 'P' , Block.capstoneMarble});
         RecipeHelper.Crafting.createRecipe(Block.basaltCarved,1,new Object[]{"P","P", 'P' , Block.slabBasaltPolished});
         RecipeHelper.Crafting.createRecipe(Block.stoneCarved,1,new Object[]{"P","P", 'P' , Block.slabStonePolished});
         RecipeHelper.Crafting.createRecipe(Block.limestoneCarved,1,new Object[]{"P","P", 'P' , Block.slabLimestonePolished});
