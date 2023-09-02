@@ -1,33 +1,79 @@
-# Example Mod
+# Bonus Blocks
 
-Template for making Babric mods for BTA!
+## Additions
+* Scorched Sandstone
+   + Crafted with 4 scorched dirt
+   + Brick varient crafted from 4 scorched sandstone
+* Polished Marble, Permafrost, Sandstone and Scorched Sandstone
+  + Crafted in the same way as other polished stone blocks
+* Bark Blocks
+   + Crafted with 4 logs
+   + Rotatable
+* Slime Blocks
+  + Functions like modern honey block
+* Explosive Sulphur Blocks
+  + Explosion doesnt break blocks only damages entities
+* Cloth Blocks
+  + Bouncy like a trampoline
+* Leather Blocks
+  + Crafted from 9 leather
+* Thatch
+  + Reduces fall damage
+  + Crafted with 5 sticks and 4 wheat
+* Compressed Cobbles
+  * Crafted with 9 of respective cobble type
+* Crate and Sticky Crate
+  + Crafted with 4 pistons or sticky pistons
+* Box and Painted Box
+  + Crafted with 4 chests or painted chests
+* Empty Bookshelf
+  + Crafted like a bookshelf but without the books
+* 5 New Flowers
+  + Bluebell
+  + Crafs into cyan dye
+  + Heather
+  + Crafts with purple dye
+  + Orchid
+  + Crafts into pink dye
+  + White Dandelion
+  + Crafts into light gray dye
+  + Clovers
+  + Crafts into lime dye
+  + Each flower generates in a different biome
+* Carved Stones
+  + Crafted with 2 slabs of respective stone type
+* Carved Marble
+  + Crafted from 1 Marble Capstone
+* Bone Block
+  + Crafted with 9 bones
+  + Rotatable
+* Reed
+  + Crafted with 9 sugarcane
+  + Rotatable
+* Overgrown Grasses
+  + 6 sided grass blocks
+  + Grass, Scorched Grass and Dirt Path variants
+  + Crafted with 4 of each grass type
+* Moss Block
+  + Spreads moss fast
+* Block of Flint
+  + Crafted with 9 flint
+  + Fire burns forever on it
+* Netherrack Brick
+  + Crafted from 4 netherrack
+* Soulslate
+  + Crafted from 4 soulsand
+* Mushroom Blocks
+  + Red and Brown variants
+  + Crafted with 4 of each mushroom
+* Empty Jar
+  + Place down empty jars finally
 
-## Prerequisites
-- JDK for Java 17 ([Eclipse Temurin](https://adoptium.net/temurin/releases/) recommended)
-- IntelliJ IDEA
-- Minecraft Development plugin (Optional, but highly recommended)
+## Instructions
 
-## Setup instructions
+Check the [BTA! wiki page about modding](https://bta.miraheze.org/wiki/Modding)
 
-1. Download or clone this repository and put it somewhere.
-```
-git clone https://github.com/Turnip-Labs/bta-example-mod.git
-```
-
-2. Import the project in IntelliJ IDEA, close it and open it again.
-
-
-3. Create a new run configuration by going in `Run > Edit Configurations`  
-   Then click on the plus icon and select Gradle. In the `Tasks and Arguments` field enter `build`  
-   Running it will build your finished jar files and put them in `build/libs/`
-
-
-4. Open `File > Settings` and head to `Build, Execution, Development > Build Tools > Gradle`  
-   Make sure `Build and run using` and `Run tests using` is set to `Gradle`
-
-
-5. Open `File > Project Structure`, select `Project` and set `Compiler output` to your project's path/out.
-
-6. **Make sure your Client and Server run configurations have `-Dfabric.gameVersion=1.7.7.0` in `VM options`!**
-
-7. Done! Now all that's left is to change every mention of `examplemod` to your own mod id. Happy modding!
+## Credits
+LukeisStuff - Creator
+Tocinin, AFK, Spicyfiction, Mak - Textures
+Useless, azurelmao, Grease, MartinSVK12 - Mod Help
