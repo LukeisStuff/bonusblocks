@@ -203,6 +203,23 @@ public class    BonusBlocks implements ModInitializer {
             .build(new Block("compressedpermafrost", 27, Material.stone));
 
 
+    public static final Block rawiron = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+            .setHardness(5.0f)
+            .setResistance(10.0f)
+            .setTextures("rawiron.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new Block("rawiron", 445, Material.metal));
+
+    public static final Block rawgold = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+            .setHardness(5.0f)
+            .setResistance(10.0f)
+            .setTextures("rawgold.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new Block("rawgold", 449, Material.metal));
+
+
     public static final Block polishedmarble = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
             .setHardness(1.0f)
@@ -285,7 +302,7 @@ public class    BonusBlocks implements ModInitializer {
             .setResistance(0.5f)
             .setTextures("sulphurblock.png")
             .setTags(BlockTags.MINEABLE_BY_SHOVEL)
-            .build(new BlockSulphur("sulphurblock", 445, Material.explosive));
+            .build(new BlockSulphur("sulphurblock", 252, Material.explosive));
     public static final Block sugarcaneblock = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
             .setHardness(0.6f)
@@ -345,6 +362,15 @@ public class    BonusBlocks implements ModInitializer {
             .setTextures("soulslate.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new Block("soulslate", 811, Material.stone));
+
+
+    public static final Block bakedclay = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
+            .setHardness(3.0f)
+            .setResistance(10.0f)
+            .setTextures("bakedclay.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new Block("bakedclay", 761, Material.stone));
 
 
     public static final Block overgrowngrass = new BlockBuilder(MOD_ID)
@@ -459,6 +485,12 @@ public class    BonusBlocks implements ModInitializer {
         RecipeHelper.Crafting.createRecipe(Block.cobbleLimestone,9,new Object[]{"P", 'P' , BonusBlocks.compressedlimestone});
         RecipeHelper.Crafting.createRecipe(Block.cobblePermafrost,9,new Object[]{"P", 'P' , BonusBlocks.compressedpermafrost});
 
+        RecipeHelper.Crafting.createRecipe(BonusBlocks.rawiron,1,new Object[]{"PPP","PPP","PPP", 'P' , Item.oreRawIron});
+        RecipeHelper.Crafting.createRecipe(BonusBlocks.rawgold,1,new Object[]{"PPP","PPP","PPP", 'P' , Item.oreRawGold});
+
+        RecipeHelper.Crafting.createRecipe(Item.oreRawIron,9,new Object[]{"P", 'P' , BonusBlocks.rawiron});
+        RecipeHelper.Crafting.createRecipe(Item.oreRawGold,9,new Object[]{"P", 'P' , BonusBlocks.rawgold});
+
         RecipeHelper.Crafting.createRecipe(BonusBlocks.polishedmarble,2,new Object[]{"P","P", 'P' , Block.marble});
         RecipeHelper.Crafting.createRecipe(BonusBlocks.polishedpermafrost,2,new Object[]{"P","P", 'P' , Block.permafrost});
         RecipeHelper.Crafting.createRecipe(BonusBlocks.polishedsandstone,2,new Object[]{"P","P", 'P' , Block.sandstone});
@@ -516,12 +548,18 @@ public class    BonusBlocks implements ModInitializer {
         RecipeHelper.smeltingManager.addSmelting(BonusBlocks.cherrybark.id, new ItemStack(Item.coal, 1, 1));
         RecipeHelper.smeltingManager.addSmelting(BonusBlocks.eucabark.id, new ItemStack(Item.coal, 1, 1));
 
+        RecipeHelper.smeltingManager.addSmelting(Block.blockClay.id, new ItemStack(BonusBlocks.bakedclay, 1));
+
+
         RecipeHelper.blastingManager.addSmelting(BonusBlocks.oakbark.id, new ItemStack(Item.coal, 1, 1));
         RecipeHelper.blastingManager.addSmelting(BonusBlocks.mossyoakbark.id, new ItemStack(Item.coal, 1, 1));
         RecipeHelper.blastingManager.addSmelting(BonusBlocks.pinebark.id, new ItemStack(Item.coal, 1, 1));
         RecipeHelper.blastingManager.addSmelting(BonusBlocks.birchbark.id, new ItemStack(Item.coal, 1, 1));
         RecipeHelper.blastingManager.addSmelting(BonusBlocks.cherrybark.id, new ItemStack(Item.coal, 1, 1));
         RecipeHelper.blastingManager.addSmelting(BonusBlocks.eucabark.id, new ItemStack(Item.coal, 1, 1));
+
+        RecipeHelper.blastingManager.addSmelting(Block.blockClay.id, new ItemStack(BonusBlocks.bakedclay, 1));
+
 
         LookupFuelFurnace.instance.addFuelEntry(BonusBlocks.oakbark.id, 300);
         LookupFuelFurnace.instance.addFuelEntry(BonusBlocks.mossyoakbark.id, 300);

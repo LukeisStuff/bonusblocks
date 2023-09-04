@@ -100,6 +100,14 @@ tile.bonusblocks.redsandstonebrick.desc=Stacked bricks of scorched sandstone.
 tile.bonusblocks.soulslate.name=Soulslate
 tile.bonusblocks.soulslate.desc=A block of solid soul sand. Probably haunted.
 
+tile.bonusblocks.bakedclay.name=Baked Clay
+tile.bonusblocks.bakedclay.desc=A scorched block of solid clay.
+
+tile.bonusblocks.rawiron.name=Block of Raw Iron
+tile.bonusblocks.rawiron.desc=A solid block of raw iron. Heavy!
+tile.bonusblocks.rawgold.name=Block of Raw Gold
+tile.bonusblocks.rawgold.desc=A solid block of raw gold, for flaunting your bling.
+
 tile.bonusblocks.slimeblock.name=Block of Slime
 tile.bonusblocks.slimeblock.desc=Sticky and slimy mass of slime.
 tile.bonusblocks.clothblock.name=Block of Cloth

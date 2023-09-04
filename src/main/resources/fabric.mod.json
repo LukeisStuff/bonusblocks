@@ -23,6 +23,7 @@
     ]
   },
   "mixins": [
+    "bonusblocks.mixins.json"
   ],
 
   "depends": {
