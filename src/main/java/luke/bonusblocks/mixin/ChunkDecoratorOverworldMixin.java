@@ -2,6 +2,7 @@ package luke.bonusblocks.mixin;
 
 import luke.bonusblocks.BonusBlocks;
 import luke.bonusblocks.WorldFeatureBluebell;
+import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockSand;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.biome.Biome;
@@ -101,6 +102,12 @@ public abstract class ChunkDecoratorOverworldMixin {
             blockZ = z + rand.nextInt(16) + 8;
             blockY = world.getHeightValue(blockX, blockZ);
             new WorldFeatureFlowers(BonusBlocks.clovers.id).generate(world, rand, blockX, blockY, blockZ);
+        }
+        if (rand.nextInt(24) == 0) {
+            blockX = x + rand.nextInt(16) + 8;
+            blockZ = z + rand.nextInt(16) + 8;
+            blockY = world.getHeightValue(blockX, blockZ);
+            new WorldFeatureFlowers(BonusBlocks.mushroomGray.id).generate(world, rand, blockX, blockY, blockZ);
         }
     }
 }

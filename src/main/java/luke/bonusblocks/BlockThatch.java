@@ -14,12 +14,12 @@ public class BlockThatch extends Block {
     }
 
     public AABB getCollisionBoundingBoxFromPool(World world, int x, int y, int z) {
-        return AABB.getBoundingBoxFromPool((double)x, (double)y, (double)z, (double)(x + 1), (double)((float)(y + 0.5)), (double)(z + 1));
+        return AABB.getBoundingBoxFromPool((double) x, (double) y, (double) z, (double) (x + 1), (double) ((float) (y + 0.5)), (double) (z + 1));
     }
 
     public void onEntityCollidedWithBlock(World world, int x, int y, int z, Entity entity) {
-        if (entity.yd < 0.0) {
-            entity.fallDistance = 0.0F;
+         if (entity.yd < 0.0D) {
+            entity.yd = -entity.yd;
         }
     }
 }

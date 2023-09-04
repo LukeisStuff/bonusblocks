@@ -15,6 +15,8 @@ import net.minecraft.core.item.ItemPlaceable;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.block.ItemBlockPainted;
 import net.minecraft.core.player.inventory.CreativeInventoryCategories;
+import net.minecraft.core.world.biome.Biome;
+import net.minecraft.core.world.biome.Biomes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.BlockBuilder;
@@ -158,6 +160,15 @@ public class    BonusBlocks implements ModInitializer {
     public static final Block clovers = flowerBuilder
             .setTextures("clovers.png")
             .build(new BlockFlower("clovers", 336));
+
+    public static final Block mushroomGray = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
+            .setHardness(0.0f)
+            .setResistance(0.0f)
+            .setTextures("shroom.png")
+            .setBlockModel(new BlockModelRenderBlocks(1))
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new BlockMushroom("mushroom.gray", 342));
 
     public static final Block compressedcobble = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 0.8f))
@@ -412,7 +423,7 @@ public class    BonusBlocks implements ModInitializer {
             .setTextures("redmushroom.png")
             .setFlammability(4, 4)
             .setTags(BlockTags.MINEABLE_BY_AXE)
-            .build(new Block("redmushroomblock", 342, Material.dirt));
+            .build(new Block("redmushroomblock", 343, Material.dirt));
     public static final Block brownmushroomblock = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
             .setHardness(0.6f)
@@ -421,7 +432,15 @@ public class    BonusBlocks implements ModInitializer {
             .setTextures("brownmushroom.png")
             .setFlammability(4, 4)
             .setTags(BlockTags.MINEABLE_BY_AXE)
-            .build(new Block("brownmushroomblock", 343, Material.dirt));
+            .build(new Block("brownmushroomblock", 344, Material.dirt));
+    public static final Block graymushroomblock = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
+            .setHardness(0.6f)
+            .setResistance(1.0f)
+            .setTextures("graymushroom.png")
+            .setFlammability(4, 4)
+            .setTags(BlockTags.MINEABLE_BY_AXE)
+            .build(new Block("graymushroomblock", 345, Material.dirt));
 
 
     public static final Block jar = new BlockBuilder(MOD_ID)
@@ -436,6 +455,14 @@ public class    BonusBlocks implements ModInitializer {
 
 
 
+    public static final Biome biomeOvergrown = Biomes.register("minecraft:overworld.overgrown", new BiomeOvergrown());
+    static
+    {
+        biomeOvergrown.topBlock = (short) overgrowngrass.id;
+        biomeOvergrown.fillerBlock = (short) Block.dirt.id;
+    }
+
+
     static {
     }
 
@@ -446,6 +473,7 @@ public class    BonusBlocks implements ModInitializer {
         Item.itemsList[paintedbox.id] = new ItemBlockPainted(paintedbox, false);
 
         Item.jar = new ItemPlaceable("jar", 16519, BonusBlocks.jar).setIconCoord(3, 9);
+
 
         RecipeHelper.Crafting.createRecipe(BonusBlocks.crate,4,new Object[]{"PP","PP", 'P' , Block.pistonBase});
         RecipeHelper.Crafting.createRecipe(BonusBlocks.stickycrate,4,new Object[]{"PP","PP", 'P' , Block.pistonBaseSticky});
@@ -530,6 +558,7 @@ public class    BonusBlocks implements ModInitializer {
 
         RecipeHelper.Crafting.createRecipe(BonusBlocks.redmushroomblock,2,new Object[]{"PP","PP", 'P' , Block.mushroomRed});
         RecipeHelper.Crafting.createRecipe(BonusBlocks.brownmushroomblock,2,new Object[]{"PP","PP", 'P' , Block.mushroomBrown});
+        RecipeHelper.Crafting.createRecipe(BonusBlocks.graymushroomblock,2,new Object[]{"PP","PP", 'P' , mushroomGray});
 
         RecipeHelper.Crafting.createRecipe(BonusBlocks.jar,1,new Object[]{"P", 'P' , Item.jar});
 

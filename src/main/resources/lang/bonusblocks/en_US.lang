@@ -124,6 +124,8 @@ tile.bonusblocks.redmushroomblock.name=Red Mushroom Block
 tile.bonusblocks.redmushroomblock.desc=Red fungi compressed into a block.
 tile.bonusblocks.brownmushroomblock.name=Brown Mushroom Block
 tile.bonusblocks.brownmushroomblock.desc=Brown fungi compressed into a block.
+tile.bonusblocks.graymushroomblock.name=Gray Mushroom Block
+tile.bonusblocks.graymushroomblock.desc=Gray fungi compressed into a block.
 tile.bonusblocks.flintblock.name=Block of Flint
 tile.bonusblocks.flintblock.desc=A solid block of flint. Sharp!
 tile.bonusblocks.leatherblock.name=Block of Leather
@@ -144,4 +146,7 @@ tile.bonusblocks.orchid.name=Orchid
 tile.bonusblocks.orchid.desc=A beautiful pink flower.
 tile.bonusblocks.whitedandelion.name=White Dandelion
 tile.bonusblocks.whitedandelion.desc=A beautiful silver flower.
+
+tile.bonusblocks.mushroom.gray.name=Gray Mushroom
+tile.bonusblocks.mushroom.gray.desc=A nasty gray mushroom. Good for dye.
 
