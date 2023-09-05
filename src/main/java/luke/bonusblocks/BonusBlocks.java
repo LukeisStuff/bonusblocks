@@ -40,6 +40,7 @@ public class    BonusBlocks implements ModInitializer {
             .setFlammability(2, 2)
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
             .build(new Block("crate", 524, Material.wood));
+
     public static final Block stickycrate = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.0f))
             .setHardness(1.0f)
@@ -48,6 +49,7 @@ public class    BonusBlocks implements ModInitializer {
             .setFlammability(2, 2)
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
             .build(new Block("stickycrate", 525, Material.wood));
+
     public static final Block box = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.0f))
             .setHardness(2.5f)
@@ -56,6 +58,7 @@ public class    BonusBlocks implements ModInitializer {
             .setFlammability(2, 2)
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
             .build(new Block("box", 684, Material.wood));
+
     public static final Block paintedbox = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.0f))
             .setHardness(2.5f)
@@ -66,6 +69,7 @@ public class    BonusBlocks implements ModInitializer {
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
             .setBlockColor(new BlockColorPlanksPainted(false))
             .build(new BlockPaintedBox("paintedbox", 685, Material.wood));
+
     public static final Block emptybookshelf = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 0.8f))
             .setHardness(1.5f)
@@ -75,6 +79,7 @@ public class    BonusBlocks implements ModInitializer {
             .setSideTextures("emptybookshelf.png")
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
             .build(new Block("emptybookshelf", 101, Material.wood));
+
 
 
     public static final Block oakbark = new BlockBuilder(MOD_ID)
@@ -87,6 +92,7 @@ public class    BonusBlocks implements ModInitializer {
             .setBlockModel(new BlockModelRenderBlocks(27))
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
             .build(new BlockLog("oakbark", 300));
+
     public static final Block mossyoakbark = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.0f))
             .setHardness(1.5f)
@@ -97,6 +103,7 @@ public class    BonusBlocks implements ModInitializer {
             .setBlockModel(new BlockModelRenderBlocks(27))
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
             .build(new BlockLog("mossyoakbark", 301));
+
     public static final Block pinebark = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.0f))
             .setHardness(1.5f)
@@ -107,6 +114,7 @@ public class    BonusBlocks implements ModInitializer {
             .setBlockModel(new BlockModelRenderBlocks(27))
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
             .build(new BlockLog("pinebark", 302));
+
     public static final Block birchbark = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.0f))
             .setHardness(1.5f)
@@ -117,6 +125,7 @@ public class    BonusBlocks implements ModInitializer {
             .setBlockModel(new BlockModelRenderBlocks(27))
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
             .build(new BlockLog("birchbark", 303));
+
     public static final Block cherrybark = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.0f))
             .setHardness(1.5f)
@@ -127,6 +136,7 @@ public class    BonusBlocks implements ModInitializer {
             .setBlockModel(new BlockModelRenderBlocks(27))
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
             .build(new BlockLog("cherrybark", 304));
+
     public static final Block eucabark = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.0f))
             .setHardness(1.5f)
@@ -139,27 +149,35 @@ public class    BonusBlocks implements ModInitializer {
             .build(new BlockLog("eucabark", 305));
 
 
+
     public static final BlockBuilder flowerBuilder = new BlockBuilder(MOD_ID)
             .setHardness(0.0f)
             .setResistance(0.0f)
             .setBlockSound(BlockSounds.GRASS)
             .setBlockModel(new BlockModelRenderBlocks(1))
             .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.BROKEN_BY_FLUIDS);
+
     public static final Block bluebell = flowerBuilder
             .setTextures("bluebell.png")
             .build(new BlockFlower("bluebell", 332));
+
     public static final Block heather = flowerBuilder
             .setTextures("heather.png")
             .build(new BlockFlower("heather", 333));
+
     public static final Block orchid = flowerBuilder
             .setTextures("orchid.png")
             .build(new BlockFlower("orchid", 334));
+
     public static final Block whitedandelion = flowerBuilder
             .setTextures("whitedandelion.png")
             .build(new BlockFlower("whitedandelion", 335));
+
     public static final Block clovers = flowerBuilder
             .setTextures("clovers.png")
             .build(new BlockFlower("clovers", 336));
+
+
 
     public static final Block mushroomGray = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
@@ -170,6 +188,8 @@ public class    BonusBlocks implements ModInitializer {
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockMushroom("mushroom.gray", 342));
 
+
+
     public static final Block compressedcobble = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 0.8f))
             .setHardness(2.5f)
@@ -177,6 +197,7 @@ public class    BonusBlocks implements ModInitializer {
             .setTextures(14, 3)
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new Block("compressedcobble", 22, Material.stone));
+
     public static final Block compressedmossycobble = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 0.8f))
             .setHardness(2.5f)
@@ -184,6 +205,7 @@ public class    BonusBlocks implements ModInitializer {
             .setTextures(10, 12)
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new Block("compressedmossycobble", 23, Material.stone));
+
     public static final Block compressedbasalt = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 0.8f))
             .setHardness(2.5f)
@@ -191,6 +213,7 @@ public class    BonusBlocks implements ModInitializer {
             .setTextures("compressedbasalt.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new Block("compressedbasalt", 24, Material.stone));
+
     public static final Block compressedgranite = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 0.8f))
             .setHardness(2.5f)
@@ -198,6 +221,7 @@ public class    BonusBlocks implements ModInitializer {
             .setTextures("compressedgranite.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new Block("compressedgranite", 25, Material.stone));
+
     public static final Block compressedlimestone = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 0.8f))
             .setHardness(2.5f)
@@ -205,6 +229,7 @@ public class    BonusBlocks implements ModInitializer {
             .setTextures("compressedlimestone.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new Block("compressedlimestone", 26, Material.stone));
+
     public static final Block compressedpermafrost = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 0.8f))
             .setHardness(2.5f)
@@ -213,22 +238,6 @@ public class    BonusBlocks implements ModInitializer {
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new Block("compressedpermafrost", 27, Material.stone));
 
-
-    public static final Block rawiron = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
-            .setHardness(5.0f)
-            .setResistance(10.0f)
-            .setTextures("rawiron.png")
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-            .build(new Block("rawiron", 445, Material.metal));
-
-    public static final Block rawgold = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
-            .setHardness(5.0f)
-            .setResistance(10.0f)
-            .setTextures("rawgold.png")
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-            .build(new Block("rawgold", 449, Material.metal));
 
 
     public static final Block polishedmarble = new BlockBuilder(MOD_ID)
@@ -239,6 +248,7 @@ public class    BonusBlocks implements ModInitializer {
             .setTopBottomTexture("polishedmarbletop.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new Block("polishedmarble", 865, Material.stone));
+
     public static final Block polishedsandstone = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
             .setHardness(1.0f)
@@ -247,6 +257,7 @@ public class    BonusBlocks implements ModInitializer {
             .setTopBottomTexture("polishedsandstonetop.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new Block("polishedsandstone", 866, Material.stone));
+
     public static final Block polishedpermafrost = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
             .setHardness(1.0f)
@@ -255,6 +266,7 @@ public class    BonusBlocks implements ModInitializer {
             .setTopBottomTexture("polishedpermafrostop.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new Block("polishedpermafrost", 867, Material.stone));
+
     public static final Block polishedredsandstone = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
             .setHardness(1.0f)
@@ -263,6 +275,7 @@ public class    BonusBlocks implements ModInitializer {
             .setTopBottomTexture("polishedredsandstonetop.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new Block("polishedredsandstone", 868, Material.stone));
+
     public static final Block marblecarved = new BlockBuilder(MOD_ID)
             .setBlockSound(BlockSounds.STONE)
             .setHardness(1.0f)
@@ -270,7 +283,17 @@ public class    BonusBlocks implements ModInitializer {
             .setSideTextures(10, 14)
             .setTopBottomTexture(9, 14)
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-            .build(new Block("marblecarved", 28, Material.stone));
+            .build(new Block("marblecarved", 44, Material.stone));
+
+    public static final Block slatecarved = new BlockBuilder(MOD_ID)
+            .setBlockSound(BlockSounds.STONE)
+            .setHardness(1.0f)
+            .setResistance(10.0f)
+            .setSideTextures(6, 14)
+            .setTopBottomTexture(8, 14)
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new Block("slatecarved", 45, Material.stone));
+
 
 
     public static final Block boneblock = new BlockBuilder(MOD_ID)
@@ -281,7 +304,8 @@ public class    BonusBlocks implements ModInitializer {
             .setTopBottomTexture("bonetop.png")
             .setBlockModel(new BlockModelRenderBlocks(27))
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-            .build(new BlockAxisAligned("boneblock", 441, Material.stone));
+            .build(new BlockAxisAligned("boneblock", 444, Material.stone));
+
     public static final Block thatch = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.grass", "step.grass", 0.6f, 1.2f))
             .setHardness(0.6f)
@@ -290,7 +314,8 @@ public class    BonusBlocks implements ModInitializer {
             .setTopBottomTexture("thatchtop.png")
             .setFlammability(4, 4)
             .setTags(BlockTags.MINEABLE_BY_AXE)
-            .build(new BlockThatch("thatch", 442, Material.grass));
+            .build(new BlockThatch("thatch", 445, Material.grass));
+
     public static final Block clothblock = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 0.8f))
             .setHardness(0.8f)
@@ -298,7 +323,8 @@ public class    BonusBlocks implements ModInitializer {
             .setTextures("clothblock.png")
             .setFlammability(4, 4)
             .setTags(BlockTags.MINEABLE_BY_SHEARS)
-            .build(new BlockCloth("clothblock", 443, Material.cloth));
+            .build(new BlockCloth("clothblock", 446, Material.cloth));
+
     public static final Block slimeblock = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.5f))
             .setHardness(0.2f)
@@ -306,7 +332,8 @@ public class    BonusBlocks implements ModInitializer {
             .setLightOpacity(6)
             .setTextures("slimeblock.png")
             .setTags(BlockTags.MINEABLE_BY_AXE)
-            .build(new BlockSlime("slimeblock", 444, false));
+            .build(new BlockSlime("slimeblock", 447, false));
+
     public static final Block sulphurblock = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.sand", "step.sand", 1.0f, 0.8f))
             .setHardness(0.5f)
@@ -314,6 +341,7 @@ public class    BonusBlocks implements ModInitializer {
             .setTextures("sulphurblock.png")
             .setTags(BlockTags.MINEABLE_BY_SHOVEL)
             .build(new BlockSulphur("sulphurblock", 252, Material.explosive));
+
     public static final Block sugarcaneblock = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
             .setHardness(0.6f)
@@ -323,15 +351,8 @@ public class    BonusBlocks implements ModInitializer {
             .setFlammability(3, 3)
             .setBlockModel(new BlockModelRenderBlocks(27))
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-            .build(new BlockAxisAligned("sugarcaneblock", 446, Material.grass));
-    public static final Block flintblock = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
-            .setHardness(1.0f)
-            .setResistance(5.0f)
-            .setTextures("flintblock.png")
-            .setInfiniburn()
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-            .build(new Block("flintblock", 447, Material.stone));
+            .build(new BlockAxisAligned("sugarcaneblock", 448, Material.grass));
+
     public static final Block leatherblock = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 0.6f))
             .setHardness(0.8f)
@@ -339,7 +360,33 @@ public class    BonusBlocks implements ModInitializer {
             .setTextures("leatherblock.png")
             .setFlammability(3, 3)
             .setTags(BlockTags.MINEABLE_BY_AXE)
-            .build(new Block("leatherblock", 448, Material.cloth));
+            .build(new Block("leatherblock", 449, Material.cloth));
+
+
+    public static final Block rawiron = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+            .setHardness(5.0f)
+            .setResistance(10.0f)
+            .setTextures("rawiron.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new Block("rawiron", 441, Material.metal));
+
+    public static final Block rawgold = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+            .setHardness(5.0f)
+            .setResistance(10.0f)
+            .setTextures("rawgold.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new Block("rawgold", 442, Material.metal));
+
+    public static final Block flintblock = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+            .setHardness(1.0f)
+            .setResistance(5.0f)
+            .setTextures("flintblock.png")
+            .setInfiniburn()
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new Block("flintblock", 443, Material.stone));
 
 
     public static final Block netherbrick = new BlockBuilder(MOD_ID)
@@ -350,6 +397,7 @@ public class    BonusBlocks implements ModInitializer {
             .setInfiniburn()
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new Block("netherbrick", 134, Material.stone));
+
     public static final Block redsandstone = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
             .setHardness(0.8f)
@@ -359,6 +407,7 @@ public class    BonusBlocks implements ModInitializer {
             .setTopTexture("redsandstonetop.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new Block("redsandstone", 31, Material.stone));
+
     public static final Block redsandstonebrick = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
             .setHardness(0.8f)
@@ -366,6 +415,7 @@ public class    BonusBlocks implements ModInitializer {
             .setTextures("redsandstonebrick.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new Block("redsandstonebrick", 135, Material.stone));
+
     public static final Block soulslate = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 0.6f))
             .setHardness(2.0f)
@@ -373,6 +423,7 @@ public class    BonusBlocks implements ModInitializer {
             .setTextures("soulslate.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new Block("soulslate", 811, Material.stone));
+
 
 
     public static final Block bakedclay = new BlockBuilder(MOD_ID)
@@ -384,6 +435,7 @@ public class    BonusBlocks implements ModInitializer {
             .build(new Block("bakedclay", 761, Material.stone));
 
 
+
     public static final Block overgrowngrass = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
             .setHardness(0.6f)
@@ -392,13 +444,23 @@ public class    BonusBlocks implements ModInitializer {
             .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.GROWS_FLOWERS, BlockTags.GROWS_SUGAR_CANE, BlockTags.GROWS_TREES, BlockTags.PASSIVE_MOBS_SPAWN, BlockTags.FIREFLIES_CAN_SPAWN)
             .setBlockColor(new BlockColorGrass())
             .build(new Block("overgrowngrass", 203, Material.grass));
+
+    public static final Block overgrownretrograss = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
+            .setHardness(0.6f)
+            .setResistance(1.0f)
+            .setTextures(8, 1)
+            .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.GROWS_FLOWERS, BlockTags.GROWS_SUGAR_CANE, BlockTags.GROWS_TREES, BlockTags.PASSIVE_MOBS_SPAWN, BlockTags.FIREFLIES_CAN_SPAWN)
+            .build(new Block("overgrownretrograss", 204, Material.grass));
+
     public static final Block overgrownpath = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
             .setHardness(0.6f)
             .setResistance(1.0f)
             .setTextures(4, 6)
             .setTags(BlockTags.MINEABLE_BY_SHOVEL)
-            .build(new BlockDirtPath("overgrownpath", 204));
+            .build(new BlockDirtPath("overgrownpath", 206));
+
     public static final Block overgrownscorchedgrass = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
             .setHardness(0.6f)
@@ -408,14 +470,7 @@ public class    BonusBlocks implements ModInitializer {
             .build(new Block("overgrownscorchedgrass", 205, Material.grass));
 
 
-    public static final Block moss = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
-            .setHardness(0.6f)
-            .setResistance(1.0f)
-            .setTextures("mossblock.png")
-            .setFlammability(4, 4)
-            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.GROWS_FLOWERS)
-            .build(new BlockMoss("moss", 244));
+
     public static final Block redmushroomblock = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
             .setHardness(0.6f)
@@ -424,6 +479,7 @@ public class    BonusBlocks implements ModInitializer {
             .setFlammability(4, 4)
             .setTags(BlockTags.MINEABLE_BY_AXE)
             .build(new Block("redmushroomblock", 343, Material.dirt));
+
     public static final Block brownmushroomblock = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
             .setHardness(0.6f)
@@ -433,6 +489,7 @@ public class    BonusBlocks implements ModInitializer {
             .setFlammability(4, 4)
             .setTags(BlockTags.MINEABLE_BY_AXE)
             .build(new Block("brownmushroomblock", 344, Material.dirt));
+
     public static final Block graymushroomblock = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
             .setHardness(0.6f)
@@ -441,6 +498,7 @@ public class    BonusBlocks implements ModInitializer {
             .setFlammability(4, 4)
             .setTags(BlockTags.MINEABLE_BY_AXE)
             .build(new Block("graymushroomblock", 345, Material.dirt));
+
 
 
     public static final Block jar = new BlockBuilder(MOD_ID)
@@ -541,7 +599,10 @@ public class    BonusBlocks implements ModInitializer {
         RecipeHelper.Crafting.createRecipe(Item.leather,9,new Object[]{"P", 'P' , BonusBlocks.leatherblock});
 
 
-
+        RecipeHelper.Crafting.createRecipe(BonusBlocks.overgrowngrass,2,new Object[]{"P","P", 'P' , Block.grass});
+        RecipeHelper.Crafting.createRecipe(BonusBlocks.overgrownretrograss,2,new Object[]{"P","P", 'P' , Block.grassRetro});
+        RecipeHelper.Crafting.createRecipe(BonusBlocks.overgrownscorchedgrass,2,new Object[]{"P","P", 'P' , Block.grassScorched});
+        RecipeHelper.Crafting.createRecipe(BonusBlocks.overgrownpath,2,new Object[]{"P","P", 'P' , Block.pathDirt});
 
 
         RecipeHelper.Crafting.createRecipe(BonusBlocks.netherbrick,4,new Object[]{"PP","PP", 'P' , Block.netherrack});

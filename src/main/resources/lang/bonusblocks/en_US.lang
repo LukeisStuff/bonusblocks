@@ -67,9 +67,13 @@ tile.bonusblocks.polishedredsandstone.name=Polished Scorched Sandstone
 tile.bonusblocks.polishedredsandstone.desc=A polished block of scorched sandstone.
 tile.bonusblocks.marblecarved.name=Carved Marble
 tile.bonusblocks.marblecarved.desc=Polished Marble with lines hewn through the middle.
+tile.bonusblocks.slatecarved.name=Carved Slate
+tile.bonusblocks.slatecarved.desc=Polished Slate with lines hewn through the middle.
 
 tile.bonusblocks.overgrowngrass.name=Overgrown Grass
 tile.bonusblocks.overgrowngrass.desc=Dirt completely overgrown by grass.
+tile.bonusblocks.overgrownretrograss.name=Overgrown Retro Grass
+tile.bonusblocks.overgrownretrograss.desc=Dirt completely overgrown by retro grass. Smells old.
 tile.bonusblocks.overgrownpath.name=Overgrown Path
 tile.bonusblocks.overgrownpath.desc=Dirt path completely worn down from travelling.
 tile.bonusblocks.overgrownscorchedgrass.name=Overgrown Scorched Grass

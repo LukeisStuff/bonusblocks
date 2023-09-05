@@ -17,11 +17,12 @@ public class BlockCloth extends Block {
     public void onEntityCollidedWithBlock(World world, int x, int y, int z, Entity entity) {
         if (entity.yd < 0.0D) {
             entity.yd = -entity.yd;
+            entity.fallDistance = (float) (-entity.yd - (0.0f));
         }
     }
 
         public AABB getCollisionBoundingBoxFromPool (World world,int x, int y, int z){
-            float f = 0.5f;
+            float f = 1.0f;
             return AABB.getBoundingBoxFromPool((double) x, (double) y, (double) z, (double) (x + 1), (double) ((float) (y + 1) - f), (double) (z + 1));
         }
 }
