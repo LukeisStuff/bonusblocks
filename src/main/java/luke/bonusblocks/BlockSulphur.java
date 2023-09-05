@@ -1,6 +1,7 @@
 package luke.bonusblocks;
 
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.BlockSand;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
@@ -17,9 +18,9 @@ import java.util.Random;
 
 import static net.minecraft.core.block.BlockSand.fallInstantly;
 
-public class BlockSulphur extends Block {
+public class BlockSulphur extends BlockSand {
     public BlockSulphur(String key, int id, Material material) {
-        super(key, id, material.explosive);
+        super(key, id);
     }
 
     public void onBlockAdded(World world, int i, int j, int k) {

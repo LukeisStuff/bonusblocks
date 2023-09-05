@@ -1,9 +1,11 @@
 # Bonus Blocks
 
 ## Additions
+* Baked Clay
+   + Smelt a clay block to obtain
 * Scorched Sandstone
    + Crafted with 4 scorched dirt
-   + Brick varient crafted from 4 scorched sandstone
+   + Brick variant crafted from 4 scorched sandstone
 * Polished Marble, Permafrost, Sandstone and Scorched Sandstone
   + Crafted in the same way as other polished stone blocks
 * Bark Blocks
@@ -11,8 +13,8 @@
    + Rotatable
 * Slime Blocks
   + Functions like modern honey block
-* Explosive Sulphur Blocks
-  + Explosion doesnt break blocks only damages entities
+* Sulphur Blocks
+  + Explosion doesn't break blocks only damages entities
 * Cloth Blocks
   + Bouncy like a trampoline
 * Leather Blocks
@@ -28,22 +30,27 @@
   + Crafted with 4 chests or painted chests
 * Empty Bookshelf
   + Crafted like a bookshelf but without the books
-* 5 New Flowers
+* 6 New Flowers and 1 New Mushroom
   + Bluebell
-  + Crafs into cyan dye
+  + Crafts into cyan dye
   + Heather
   + Crafts with purple dye
   + Orchid
   + Crafts into pink dye
   + White Dandelion
   + Crafts into light gray dye
+  + Gladiola
+  + Crafts into orange dye.
   + Clovers
   + Crafts into lime dye
-  + Each flower generates in a different biome
+  + Each flower generates in different biomes
+  + Gray Mushroom
+  + Crafts into gray dye
 * Carved Stones
   + Crafted with 2 slabs of respective stone type
-* Carved Marble
+* Carved Marble and Carved Slate
   + Crafted from 1 Marble Capstone
+  + Carved Slate doesn't have a recipe for now
 * Bone Block
   + Crafted with 9 bones
   + Rotatable
@@ -59,12 +66,14 @@
 * Block of Flint
   + Crafted with 9 flint
   + Fire burns forever on it
+* Block of Raw Iron and Raw Gold
+  + Crafted with 9 raw iron or raw gold
 * Netherrack Brick
   + Crafted from 4 netherrack
 * Soulslate
   + Crafted from 4 soulsand
 * Mushroom Blocks
-  + Red and Brown variants
+  + Red, Brown and Gray variants
   + Crafted with 4 of each mushroom
 * Empty Jar
   + Place down empty jars finally

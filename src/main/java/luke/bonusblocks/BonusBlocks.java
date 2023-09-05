@@ -315,7 +315,7 @@ public class    BonusBlocks implements ModInitializer {
             .setSideTextures("thatchside.png")
             .setTopBottomTexture("thatchtop.png")
             .setFlammability(4, 4)
-            .setTags(BlockTags.MINEABLE_BY_AXE)
+            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS)
             .build(new BlockThatch("thatch", 445, Material.grass));
 
     public static final Block clothblock = new BlockBuilder(MOD_ID)
@@ -352,7 +352,7 @@ public class    BonusBlocks implements ModInitializer {
             .setTopBottomTexture("sugarcanetop.png")
             .setFlammability(3, 3)
             .setBlockModel(new BlockModelRenderBlocks(27))
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .setTags(BlockTags.MINEABLE_BY_AXE)
             .build(new BlockAxisAligned("sugarcaneblock", 448, Material.grass));
 
     public static final Block leatherblock = new BlockBuilder(MOD_ID)
@@ -383,7 +383,7 @@ public class    BonusBlocks implements ModInitializer {
 
     public static final Block flintblock = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
-            .setHardness(1.0f)
+            .setHardness(5.0f)
             .setResistance(5.0f)
             .setTextures("flintblock.png")
             .setInfiniburn()
@@ -461,6 +461,7 @@ public class    BonusBlocks implements ModInitializer {
             .setResistance(1.0f)
             .setTextures(4, 6)
             .setTags(BlockTags.MINEABLE_BY_SHOVEL)
+            .setBlockDrop(BonusBlocks.overgrownpath)
             .build(new BlockDirtPath("overgrownpath", 206));
 
     public static final Block overgrownscorchedgrass = new BlockBuilder(MOD_ID)
@@ -479,7 +480,7 @@ public class    BonusBlocks implements ModInitializer {
             .setResistance(1.0f)
             .setTextures("redmushroom.png")
             .setFlammability(4, 4)
-            .setTags(BlockTags.MINEABLE_BY_AXE)
+            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SHEARS)
             .build(new Block("redmushroomblock", 343, Material.dirt));
 
     public static final Block brownmushroomblock = new BlockBuilder(MOD_ID)
@@ -489,7 +490,7 @@ public class    BonusBlocks implements ModInitializer {
             .setLuminance(2)
             .setTextures("brownmushroom.png")
             .setFlammability(4, 4)
-            .setTags(BlockTags.MINEABLE_BY_AXE)
+            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SHEARS)
             .build(new Block("brownmushroomblock", 344, Material.dirt));
 
     public static final Block graymushroomblock = new BlockBuilder(MOD_ID)
@@ -498,7 +499,7 @@ public class    BonusBlocks implements ModInitializer {
             .setResistance(1.0f)
             .setTextures("graymushroom.png")
             .setFlammability(4, 4)
-            .setTags(BlockTags.MINEABLE_BY_AXE)
+            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SHEARS)
             .build(new Block("graymushroomblock", 345, Material.dirt));
 
 
