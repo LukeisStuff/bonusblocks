@@ -138,7 +138,20 @@ tile.bonusblocks.leatherblock.desc=A box cow.
 tile.bonusblocks.jar.name=Empty Jar
 tile.bonusblocks.jar.desc=A glass jar containing nothing.
 
-
+tile.bonusblocks.coralred.name=Red Coral
+tile.bonusblocks.coralred.desc=A red bioluminescent bone like block found in oceans.
+tile.bonusblocks.coralyellow.name=Yellow Coral
+tile.bonusblocks.coralyellow.desc=
+tile.bonusblocks.coralgreen.name=Green Coral
+tile.bonusblocks.coralgreen.desc=
+tile.bonusblocks.coralcyan.name=Cyan Coral
+tile.bonusblocks.coralcyan.desc=
+tile.bonusblocks.coralblue.name=Blue Coral
+tile.bonusblocks.coralblue.desc=
+tile.bonusblocks.coralpurple.name=Purple Coral
+tile.bonusblocks.coralpurple.desc=
+tile.bonusblocks.coralpink.name=Pink Coral
+tile.bonusblocks.coralpink.desc=
 
 tile.bonusblocks.clovers.name=Clovers
 tile.bonusblocks.clovers.desc=A lucky plant found commonly.

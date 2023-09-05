@@ -187,7 +187,7 @@ public class    BonusBlocks implements ModInitializer {
             .setResistance(0.0f)
             .setTextures("shroom.png")
             .setBlockModel(new BlockModelRenderBlocks(1))
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.BROKEN_BY_FLUIDS)
             .build(new BlockMushroom("mushroom.gray", 342));
 
 
@@ -501,6 +501,79 @@ public class    BonusBlocks implements ModInitializer {
             .setFlammability(4, 4)
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SHEARS)
             .build(new Block("graymushroomblock", 345, Material.dirt));
+
+
+
+    public static final Block coralred = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.grass", "step.grass", 0.8f, 1.2f))
+            .setHardness(0.6f)
+            .setResistance(0.6f)
+            .setLuminance(11)
+            .setLightOpacity(0)
+            .setTextures("coralred.png")
+            .setFlammability(4, 4)
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new Block("coralred", 232, Material.grass));
+    public static final Block coralyellow = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.grass", "step.grass", 0.8f, 1.2f))
+            .setHardness(0.6f)
+            .setResistance(0.6f)
+            .setLuminance(11)
+            .setLightOpacity(0)
+            .setTextures("coralyellow.png")
+            .setFlammability(4, 4)
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new Block("coralyellow", 233, Material.grass));
+    public static final Block coralgreen = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.grass", "step.grass", 0.8f, 1.2f))
+            .setHardness(0.6f)
+            .setResistance(0.6f)
+            .setLuminance(11)
+            .setLightOpacity(0)
+            .setTextures("coralgreen.png")
+            .setFlammability(4, 4)
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new Block("coralgreen", 234, Material.grass));
+    public static final Block coralcyan = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.grass", "step.grass", 0.8f, 1.2f))
+            .setHardness(0.6f)
+            .setResistance(0.6f)
+            .setLuminance(11)
+            .setLightOpacity(0)
+            .setTextures("coralcyan.png")
+            .setFlammability(4, 4)
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new Block("coralcyan", 235, Material.grass));
+    public static final Block coralblue = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.grass", "step.grass", 0.8f, 1.2f))
+            .setHardness(0.6f)
+            .setResistance(0.6f)
+            .setLuminance(11)
+            .setLightOpacity(0)
+            .setTextures("coralblue.png")
+            .setFlammability(4, 4)
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new Block("coralblue", 236, Material.grass));
+    public static final Block coralpurple = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.grass", "step.grass", 0.8f, 1.2f))
+            .setHardness(0.6f)
+            .setResistance(0.6f)
+            .setLuminance(11)
+            .setLightOpacity(0)
+            .setTextures("coralpurple.png")
+            .setFlammability(4, 4)
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new Block("coralpurple", 237, Material.grass));
+    public static final Block coralpink = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.grass", "step.grass", 0.8f, 1.2f))
+            .setHardness(0.6f)
+            .setResistance(0.6f)
+            .setLuminance(11)
+            .setLightOpacity(0)
+            .setTextures("coralpink.png")
+            .setFlammability(4, 4)
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new Block("coralpink", 238, Material.grass));
 
 
 
