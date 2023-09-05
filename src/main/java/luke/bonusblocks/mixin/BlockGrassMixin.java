@@ -58,6 +58,20 @@ public class BlockGrassMixin {
                 biome == Biomes.PARADISE_PARADISE ||
                 biome == Biomes.OVERWORLD_RETRO ||
                 biome == Biomes.OVERWORLD_MEADOW) {
+            return BonusBlocks.gladiola.id;
+        }
+        if (biome == Biomes.OVERWORLD_FOREST ||
+                biome == Biomes.OVERWORLD_RAINFOREST ||
+                biome == Biomes.OVERWORLD_TUNDRA ||
+                biome == Biomes.OVERWORLD_SEASONAL_FOREST ||
+                biome == Biomes.OVERWORLD_GRASSLANDS ||
+                biome == Biomes.OVERWORLD_BIRCH_FOREST ||
+                biome == Biomes.OVERWORLD_PLAINS ||
+                biome == Biomes.OVERWORLD_SHRUBLAND ||
+                biome == Biomes.OVERWORLD_BOREAL_FOREST ||
+                biome == Biomes.PARADISE_PARADISE ||
+                biome == Biomes.OVERWORLD_RETRO ||
+                biome == Biomes.OVERWORLD_MEADOW) {
             return BonusBlocks.clovers.id;
         }
         return id;

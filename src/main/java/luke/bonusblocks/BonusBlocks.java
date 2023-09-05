@@ -172,10 +172,12 @@ public class    BonusBlocks implements ModInitializer {
     public static final Block whitedandelion = flowerBuilder
             .setTextures("whitedandelion.png")
             .build(new BlockFlower("whitedandelion", 335));
-
+    public static final Block gladiola = flowerBuilder
+            .setTextures("gladiola.png")
+            .build(new BlockFlower("gladiola", 336));
     public static final Block clovers = flowerBuilder
             .setTextures("clovers.png")
-            .build(new BlockFlower("clovers", 336));
+            .build(new BlockFlower("clovers", 337));
 
 
 
@@ -628,6 +630,7 @@ public class    BonusBlocks implements ModInitializer {
         ((CraftingManagerAccessor) RecipeHelper.craftingManager).callAddRecipe(new ItemStack(Item.dye, 2, 5),new Object[]{"P", 'P' , BonusBlocks.heather});
         ((CraftingManagerAccessor) RecipeHelper.craftingManager).callAddRecipe(new ItemStack(Item.dye, 2, 9),new Object[]{"P", 'P' , BonusBlocks.orchid});
         ((CraftingManagerAccessor) RecipeHelper.craftingManager).callAddRecipe(new ItemStack(Item.dye, 2, 7),new Object[]{"P", 'P' , BonusBlocks.whitedandelion});
+        ((CraftingManagerAccessor) RecipeHelper.craftingManager).callAddRecipe(new ItemStack(Item.dye, 2, 14),new Object[]{"P", 'P' , BonusBlocks.gladiola});
         ((CraftingManagerAccessor) RecipeHelper.craftingManager).callAddRecipe(new ItemStack(Item.dye, 2, 10),new Object[]{"P", 'P' , BonusBlocks.clovers});
 
 

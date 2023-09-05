@@ -46,7 +46,7 @@ public abstract class ChunkDecoratorOverworldMixin {
                 biome == Biomes.PARADISE_PARADISE ||
                 biome == Biomes.OVERWORLD_RETRO ||
                 biome == Biomes.OVERWORLD_MEADOW) &&
-                rand.nextInt(2) == 0) {
+                rand.nextInt(4) == 0) {
             blockX = x + rand.nextInt(16) + 8;
             blockZ = z + rand.nextInt(16) + 8;
             blockY = world.getHeightValue(blockX, blockZ);
@@ -58,7 +58,7 @@ public abstract class ChunkDecoratorOverworldMixin {
                 biome == Biomes.PARADISE_PARADISE ||
                 biome == Biomes.OVERWORLD_RETRO ||
                 biome == Biomes.OVERWORLD_MEADOW) &&
-                rand.nextInt(2) == 0) {
+                rand.nextInt(4) == 0) {
             blockX = x + rand.nextInt(16) + 8;
             blockZ = z + rand.nextInt(16) + 8;
             blockY = world.getHeightValue(blockX, blockZ);
@@ -70,7 +70,7 @@ public abstract class ChunkDecoratorOverworldMixin {
                 biome == Biomes.PARADISE_PARADISE ||
                 biome == Biomes.OVERWORLD_RETRO ||
                 biome == Biomes.OVERWORLD_MEADOW) &&
-                rand.nextInt(2) == 0) {
+                rand.nextInt(4) == 0) {
             blockX = x + rand.nextInt(16) + 8;
             blockZ = z + rand.nextInt(16) + 8;
             blockY = world.getHeightValue(blockX, blockZ);
@@ -83,7 +83,7 @@ public abstract class ChunkDecoratorOverworldMixin {
                 biome == Biomes.PARADISE_PARADISE ||
                 biome == Biomes.OVERWORLD_RETRO ||
                 biome == Biomes.OVERWORLD_MEADOW) &&
-                rand.nextInt(2) == 0) {
+                rand.nextInt(4) == 0) {
                 blockX = x + rand.nextInt(16) + 8;
                 blockZ = z + rand.nextInt(16) + 8;
                 blockY = world.getHeightValue(blockX, blockZ);
@@ -97,13 +97,31 @@ public abstract class ChunkDecoratorOverworldMixin {
                 biome == Biomes.PARADISE_PARADISE ||
                 biome == Biomes.OVERWORLD_RETRO ||
                 biome == Biomes.OVERWORLD_MEADOW) &&
-                rand.nextInt(2) == 0) {
+                rand.nextInt(4) == 0) {
+            blockX = x + rand.nextInt(16) + 8;
+            blockZ = z + rand.nextInt(16) + 8;
+            blockY = world.getHeightValue(blockX, blockZ);
+            new WorldFeatureFlowers(BonusBlocks.gladiola.id).generate(world, rand, blockX, blockY, blockZ);
+        }
+        if ((biome == Biomes.OVERWORLD_FOREST ||
+                biome == Biomes.OVERWORLD_RAINFOREST ||
+                biome == Biomes.OVERWORLD_TUNDRA ||
+                biome == Biomes.OVERWORLD_SEASONAL_FOREST ||
+                biome == Biomes.OVERWORLD_GRASSLANDS ||
+                biome == Biomes.OVERWORLD_BIRCH_FOREST ||
+                biome == Biomes.OVERWORLD_PLAINS ||
+                biome == Biomes.OVERWORLD_SHRUBLAND ||
+                biome == Biomes.OVERWORLD_BOREAL_FOREST ||
+                biome == Biomes.PARADISE_PARADISE ||
+                biome == Biomes.OVERWORLD_RETRO ||
+                biome == Biomes.OVERWORLD_MEADOW) &&
+                rand.nextInt(4) == 0) {
             blockX = x + rand.nextInt(16) + 8;
             blockZ = z + rand.nextInt(16) + 8;
             blockY = world.getHeightValue(blockX, blockZ);
             new WorldFeatureFlowers(BonusBlocks.clovers.id).generate(world, rand, blockX, blockY, blockZ);
         }
-        if (rand.nextInt(24) == 0) {
+        if (rand.nextInt(12) == 0) {
             blockX = x + rand.nextInt(16) + 8;
             blockZ = z + rand.nextInt(16) + 8;
             blockY = world.getHeightValue(blockX, blockZ);

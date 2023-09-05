@@ -141,7 +141,7 @@ tile.bonusblocks.jar.desc=A glass jar containing nothing.
 
 
 tile.bonusblocks.clovers.name=Clovers
-tile.bonusblocks.clovers.desc=Lush, growing grass.
+tile.bonusblocks.clovers.desc=A lucky plant found commonly.
 tile.bonusblocks.heather.name=Heather
 tile.bonusblocks.heather.desc=A beautiful purple flower.
 tile.bonusblocks.bluebell.name=Bluebell
@@ -150,6 +150,8 @@ tile.bonusblocks.orchid.name=Orchid
 tile.bonusblocks.orchid.desc=A beautiful pink flower.
 tile.bonusblocks.whitedandelion.name=White Dandelion
 tile.bonusblocks.whitedandelion.desc=A beautiful silver flower.
+tile.bonusblocks.gladiola.name=Gladiola
+tile.bonusblocks.gladiola.desc=A beautiful orange flower.
 
 tile.bonusblocks.mushroom.gray.name=Gray Mushroom
 tile.bonusblocks.mushroom.gray.desc=A nasty gray mushroom. Good for dye.
