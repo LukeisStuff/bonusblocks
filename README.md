@@ -75,5 +75,8 @@ Check the [BTA! wiki page about modding](https://bta.miraheze.org/wiki/Modding)
 
 ## Credits
 LukeisStuff - Creator
+
 Tocinin, AFK, Spicyfiction, Mak - Textures
+
 Useless, azurelmao, Grease, MartinSVK12 - Mod Help
+
