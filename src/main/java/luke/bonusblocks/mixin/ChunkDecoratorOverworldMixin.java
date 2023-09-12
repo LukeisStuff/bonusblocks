@@ -1,9 +1,6 @@
 package luke.bonusblocks.mixin;
 
 import luke.bonusblocks.BonusBlocks;
-import luke.bonusblocks.WorldFeatureBluebell;
-import luke.bonusblocks.WorldFeatureCoral;
-import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockSand;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.biome.Biome;
@@ -11,12 +8,12 @@ import net.minecraft.core.world.biome.Biomes;
 import net.minecraft.core.world.chunk.Chunk;
 import net.minecraft.core.world.generate.chunk.perlin.overworld.ChunkDecoratorOverworld;
 import net.minecraft.core.world.generate.feature.WorldFeatureFlowers;
-import net.minecraft.core.world.generate.feature.WorldFeatureSponge;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
 import java.util.Random;
 
 @Mixin(value= ChunkDecoratorOverworld.class, remap = false)
