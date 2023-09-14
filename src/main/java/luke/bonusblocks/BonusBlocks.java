@@ -611,14 +611,14 @@ public class    BonusBlocks implements ModInitializer {
         RecipeHelper.Crafting.createRecipe(BonusBlocks.stickycrate,4, new Object[]{"PP","PP", 'P' , Block.pistonBaseSticky});
         RecipeHelper.Crafting.createRecipe(BonusBlocks.box,4, new Object[]{"PP","PP", 'P' , Block.chestPlanksOak});
 
-            for (int Color=1;Color<15;Color++) {
-                RecipeHelper.Crafting.createShapelessRecipe(new ItemStack(paintedbox, 1, Color), new Object[]{paintedbox, new ItemStack(Item.dye, 1, 15 - Color)});
-                RecipeHelper.Crafting.createRecipe(new ItemStack(paintedbox, 4, Color), new Object[]{"PP", "PP", 'P', new ItemStack(Block.chestPlanksOakPainted, 1, 15 - Color)});
-//                craftingManager.addRecipe(
-//                        new ItemStack(paintedbox, 1, Color), "PP", "PP",
-//                        Character.valueOf('P'),
-//                        new ItemStack(Block.chestPlanksOakPainted, 1, 15 - Color));
+            for (int color=1;color<15;color++) {
+                RecipeHelper.Crafting.createShapelessRecipe(new ItemStack(paintedbox, 1, color), new Object[]{paintedbox, new ItemStack(Item.dye, 1, 15 - color)});
             }
+
+        for (int color=1;color<15;color++) {
+            RecipeHelper.Crafting.createRecipe(new ItemStack(paintedbox, 4, color), new Object[]{"PP", "PP", 'P', new ItemStack(Block.chestPlanksOakPainted, 1, color << 4)});
+        }
+
 
         RecipeHelper.craftingManager.addRecipe(new ItemStack(emptybookshelf, 1, 0), true, false, new Object[]{"PPP","   ", "PPP", 'P' , Block.planksOak});
 
@@ -750,12 +750,6 @@ public class    BonusBlocks implements ModInitializer {
         LookupFuelFurnace.instance.addFuelEntry(BonusBlocks.stickycrate.id, 300);
         LookupFuelFurnace.instance.addFuelEntry(BonusBlocks.emptybookshelf.id, 300);
         LookupFuelFurnace.instance.addFuelEntry(BonusBlocks.thatch.id, 400);
-
-
-
-
-
-
 
 
     }
