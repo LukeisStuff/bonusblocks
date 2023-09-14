@@ -14,6 +14,7 @@ import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemPlaceable;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.block.ItemBlockPainted;
+import net.minecraft.core.item.tool.ItemToolPickaxe;
 import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.Biomes;
 import org.slf4j.Logger;
@@ -601,6 +602,9 @@ public class    BonusBlocks implements ModInitializer {
     @Override
     public void onInitialize() {
         LOGGER.info("BonusBlocks initialized.");
+
+        ItemToolPickaxe.miningLevels.put(BonusBlocks.rawiron, 1);
+        ItemToolPickaxe.miningLevels.put(BonusBlocks.rawgold, 2);
 
         Item.itemsList[paintedbox.id] = new ItemBlockPainted(paintedbox, false);
 
