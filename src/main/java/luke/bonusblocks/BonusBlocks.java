@@ -23,8 +23,6 @@ import turniplabs.halplibe.helper.BlockBuilder;
 import turniplabs.halplibe.helper.RecipeHelper;
 import turniplabs.halplibe.mixin.accessors.CraftingManagerAccessor;
 
-import static turniplabs.halplibe.helper.RecipeHelper.craftingManager;
-
 
 public class    BonusBlocks implements ModInitializer {
     public static final String MOD_ID = "bonusblocks";
@@ -710,8 +708,6 @@ public class    BonusBlocks implements ModInitializer {
         RecipeHelper.Crafting.createRecipe(BonusBlocks.brownmushroomblock,2,new Object[]{"PP","PP", 'P' , Block.mushroomBrown});
         RecipeHelper.Crafting.createRecipe(BonusBlocks.graymushroomblock,2,new Object[]{"PP","PP", 'P' , mushroomGray});
 
-
-        RecipeHelper.Crafting.createRecipe(BonusBlocks.jar,1,new Object[]{"P", 'P' , Item.jar});
 
 
         ((CraftingManagerAccessor) RecipeHelper.craftingManager).callAddRecipe(new ItemStack(Item.dye, 2, 6),new Object[]{"P", 'P' , BonusBlocks.bluebell});
