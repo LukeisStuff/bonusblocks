@@ -440,7 +440,7 @@ public class    BonusBlocks implements ModInitializer {
             .setHardness(0.6f)
             .setResistance(1.0f)
             .setTextures(0, 0)
-            .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.GROWS_FLOWERS, BlockTags.GROWS_SUGAR_CANE, BlockTags.GROWS_TREES, BlockTags.PASSIVE_MOBS_SPAWN, BlockTags.FIREFLIES_CAN_SPAWN)
+            .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.GROWS_FLOWERS, BlockTags.GROWS_SUGAR_CANE, BlockTags.GROWS_TREES, BlockTags.PASSIVE_MOBS_SPAWN, BlockTags.FIREFLIES_CAN_SPAWN, BlockTags.CAVE_GEN_REPLACES_SURFACE, BlockTags.CAVES_CUT_THROUGH)
             .setBlockColor(new BlockColorGrass())
             .build(new Block("overgrowngrass", 203, Material.grass));
 
@@ -449,7 +449,7 @@ public class    BonusBlocks implements ModInitializer {
             .setHardness(0.6f)
             .setResistance(1.0f)
             .setTextures(8, 1)
-            .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.GROWS_FLOWERS, BlockTags.GROWS_SUGAR_CANE, BlockTags.GROWS_TREES, BlockTags.PASSIVE_MOBS_SPAWN, BlockTags.FIREFLIES_CAN_SPAWN)
+            .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.GROWS_FLOWERS, BlockTags.GROWS_SUGAR_CANE, BlockTags.GROWS_TREES, BlockTags.PASSIVE_MOBS_SPAWN, BlockTags.FIREFLIES_CAN_SPAWN, BlockTags.CAVE_GEN_REPLACES_SURFACE, BlockTags.CAVES_CUT_THROUGH)
             .build(new Block("overgrownretrograss", 204, Material.grass));
 
     public static final Block overgrownpath = new BlockBuilder(MOD_ID)
@@ -466,7 +466,7 @@ public class    BonusBlocks implements ModInitializer {
             .setHardness(0.6f)
             .setResistance(1.0f)
             .setTextures(16, 11)
-            .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.GROWS_FLOWERS, BlockTags.GROWS_SUGAR_CANE, BlockTags.GROWS_TREES, BlockTags.PASSIVE_MOBS_SPAWN, BlockTags.FIREFLIES_CAN_SPAWN)
+            .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.GROWS_FLOWERS, BlockTags.GROWS_SUGAR_CANE, BlockTags.GROWS_TREES, BlockTags.PASSIVE_MOBS_SPAWN, BlockTags.FIREFLIES_CAN_SPAWN, BlockTags.CAVE_GEN_REPLACES_SURFACE, BlockTags.CAVES_CUT_THROUGH)
             .build(new Block("overgrownscorchedgrass", 205, Material.grass));
 
 
@@ -583,15 +583,6 @@ public class    BonusBlocks implements ModInitializer {
             .setBlockModel(new BlockModelRenderBlocks(26))
             .setTags(BlockTags.MINEABLE_BY_SWORD, BlockTags.BROKEN_BY_FLUIDS, BlockTags.NOT_IN_CREATIVE_MENU)
             .build(new BlockLanternJar("jar", 874, Material.glass));
-
-
-
-    public static final Biome biomeOvergrown = Biomes.register("minecraft:overworld.overgrown", new BiomeOvergrown());
-    static
-    {
-        biomeOvergrown.topBlock = (short) overgrowngrass.id;
-        biomeOvergrown.fillerBlock = (short) Block.dirt.id;
-    }
 
 
     static {
@@ -716,6 +707,7 @@ public class    BonusBlocks implements ModInitializer {
         ((CraftingManagerAccessor) RecipeHelper.craftingManager).callAddRecipe(new ItemStack(Item.dye, 2, 7),new Object[]{"P", 'P' , BonusBlocks.whitedandelion});
         ((CraftingManagerAccessor) RecipeHelper.craftingManager).callAddRecipe(new ItemStack(Item.dye, 2, 14),new Object[]{"P", 'P' , BonusBlocks.gladiola});
         ((CraftingManagerAccessor) RecipeHelper.craftingManager).callAddRecipe(new ItemStack(Item.dye, 2, 10),new Object[]{"P", 'P' , BonusBlocks.clovers});
+        ((CraftingManagerAccessor) RecipeHelper.craftingManager).callAddRecipe(new ItemStack(Item.dye, 2, 8),new Object[]{"P", 'P' , BonusBlocks.mushroomGray});
 
 
         RecipeHelper.smeltingManager.addSmelting(BonusBlocks.oakbark.id, new ItemStack(Item.coal, 1, 1));
