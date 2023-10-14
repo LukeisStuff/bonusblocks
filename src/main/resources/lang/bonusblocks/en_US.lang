@@ -67,9 +67,13 @@ tile.bonusblocks.polishedredsandstone.name=Polished Scorched Sandstone
 tile.bonusblocks.polishedredsandstone.desc=A polished block of scorched sandstone.
 tile.bonusblocks.marblecarved.name=Carved Marble
 tile.bonusblocks.marblecarved.desc=Polished Marble with lines hewn through the middle.
+tile.bonusblocks.slatecarved.name=Carved Slate
+tile.bonusblocks.slatecarved.desc=Polished Slate with lines hewn through the middle.
 
 tile.bonusblocks.overgrowngrass.name=Overgrown Grass
 tile.bonusblocks.overgrowngrass.desc=Dirt completely overgrown by grass.
+tile.bonusblocks.overgrownretrograss.name=Overgrown Retro Grass
+tile.bonusblocks.overgrownretrograss.desc=Dirt completely overgrown by retro grass. Smells old.
 tile.bonusblocks.overgrownpath.name=Overgrown Path
 tile.bonusblocks.overgrownpath.desc=Dirt path completely worn down from travelling.
 tile.bonusblocks.overgrownscorchedgrass.name=Overgrown Scorched Grass
@@ -100,6 +104,14 @@ tile.bonusblocks.redsandstonebrick.desc=Stacked bricks of scorched sandstone.
 tile.bonusblocks.soulslate.name=Soulslate
 tile.bonusblocks.soulslate.desc=A block of solid soul sand. Probably haunted.
 
+tile.bonusblocks.bakedclay.name=Baked Clay
+tile.bonusblocks.bakedclay.desc=A scorched block of solid clay.
+
+tile.bonusblocks.rawiron.name=Block of Raw Iron
+tile.bonusblocks.rawiron.desc=A solid block of raw iron. Heavy!
+tile.bonusblocks.rawgold.name=Block of Raw Gold
+tile.bonusblocks.rawgold.desc=A solid block of raw gold, for flaunting your bling.
+
 tile.bonusblocks.slimeblock.name=Block of Slime
 tile.bonusblocks.slimeblock.desc=Sticky and slimy mass of slime.
 tile.bonusblocks.clothblock.name=Block of Cloth
@@ -116,6 +128,8 @@ tile.bonusblocks.redmushroomblock.name=Red Mushroom Block
 tile.bonusblocks.redmushroomblock.desc=Red fungi compressed into a block.
 tile.bonusblocks.brownmushroomblock.name=Brown Mushroom Block
 tile.bonusblocks.brownmushroomblock.desc=Brown fungi compressed into a block.
+tile.bonusblocks.graymushroomblock.name=Gray Mushroom Block
+tile.bonusblocks.graymushroomblock.desc=Gray fungi compressed into a block.
 tile.bonusblocks.flintblock.name=Block of Flint
 tile.bonusblocks.flintblock.desc=A solid block of flint. Sharp!
 tile.bonusblocks.leatherblock.name=Block of Leather
@@ -124,10 +138,23 @@ tile.bonusblocks.leatherblock.desc=A box cow.
 tile.bonusblocks.jar.name=Empty Jar
 tile.bonusblocks.jar.desc=A glass jar containing nothing.
 
-
+tile.bonusblocks.coralred.name=Corallium Coral
+tile.bonusblocks.coralred.desc=A red bioluminescent bone like block found in oceans.
+tile.bonusblocks.coralyellow.name=Brain Coral
+tile.bonusblocks.coralyellow.desc=A yellow bioluminescent bone like block found in oceans.
+tile.bonusblocks.coralgreen.name=Green Star Coral
+tile.bonusblocks.coralgreen.desc=A green bioluminescent bone like block found in oceans.
+tile.bonusblocks.coralcyan.name=Colonial Coral
+tile.bonusblocks.coralcyan.desc=A cyan bioluminescent bone like block found in oceans.
+tile.bonusblocks.coralblue.name=Goniopora Coral
+tile.bonusblocks.coralblue.desc=A blue bioluminescent bone like block found in oceans.
+tile.bonusblocks.coralpurple.name=Tube Coral
+tile.bonusblocks.coralpurple.desc=A purple bioluminescent bone like block found in oceans.
+tile.bonusblocks.coralpink.name=Carnation Coral
+tile.bonusblocks.coralpink.desc=A pink bioluminescent bone like block found in oceans.
 
 tile.bonusblocks.clovers.name=Clovers
-tile.bonusblocks.clovers.desc=Lush, growing grass.
+tile.bonusblocks.clovers.desc=A lucky plant found commonly.
 tile.bonusblocks.heather.name=Heather
 tile.bonusblocks.heather.desc=A beautiful purple flower.
 tile.bonusblocks.bluebell.name=Bluebell
@@ -136,4 +163,9 @@ tile.bonusblocks.orchid.name=Orchid
 tile.bonusblocks.orchid.desc=A beautiful pink flower.
 tile.bonusblocks.whitedandelion.name=White Dandelion
 tile.bonusblocks.whitedandelion.desc=A beautiful silver flower.
+tile.bonusblocks.gladiola.name=Gladiola
+tile.bonusblocks.gladiola.desc=A beautiful orange flower.
+
+tile.bonusblocks.mushroom.gray.name=Gray Mushroom
+tile.bonusblocks.mushroom.gray.desc=A nasty gray mushroom. Good for dye.
 

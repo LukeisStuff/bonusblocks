@@ -18,30 +18,60 @@ public class BlockGrassMixin {
     private int updateId(int id, World world, int x, int y, int z, Random rand) {
         if (!(id == Block.flowerRed.id && rand.nextInt(2) == 0)) return id;
         Biome biome = world.getBlockBiome(x,y,z);
-        if (biome == Biomes.OVERWORLD_RAINFOREST ||
+        if (biome == Biomes.OVERWORLD_SWAMPLAND ||
                 biome == Biomes.OVERWORLD_SWAMPLAND_MUDDY ||
-                biome == Biomes.OVERWORLD_SWAMPLAND) {
+                biome == Biomes.PARADISE_PARADISE ||
+                biome == Biomes.OVERWORLD_RETRO ||
+                biome == Biomes.OVERWORLD_MEADOW) {
             return BonusBlocks.bluebell.id;
         }
-        if (biome == Biomes.OVERWORLD_SEASONAL_FOREST ||
-                biome == Biomes.OVERWORLD_BIRCH_FOREST ||
-                biome == Biomes.OVERWORLD_FOREST) {
-            return BonusBlocks.heather.id;
+        if (biome == Biomes.OVERWORLD_OUTBACK ||
+                biome == Biomes.OVERWORLD_OUTBACK_GRASSY ||
+                biome == Biomes.OVERWORLD_DESERT ||
+                biome == Biomes.PARADISE_PARADISE ||
+                biome == Biomes.OVERWORLD_RETRO ||
+                biome == Biomes.OVERWORLD_MEADOW) {
+            return BonusBlocks.orchid.id;
         }
         if (biome == Biomes.OVERWORLD_GRASSLANDS ||
                 biome == Biomes.OVERWORLD_PLAINS ||
-                biome == Biomes.OVERWORLD_MEADOW ||
-                biome == Biomes.OVERWORLD_SHRUBLAND) {
-            return BonusBlocks.orchid.id;
+                biome == Biomes.OVERWORLD_SHRUBLAND ||
+                biome == Biomes.PARADISE_PARADISE ||
+                biome == Biomes.OVERWORLD_RETRO ||
+                biome == Biomes.OVERWORLD_MEADOW) {
+            return BonusBlocks.heather.id;
         }
         if (biome == Biomes.OVERWORLD_TAIGA ||
                 biome == Biomes.OVERWORLD_TUNDRA ||
-                biome == Biomes.OVERWORLD_BOREAL_FOREST) {
+                biome == Biomes.OVERWORLD_GLACIER ||
+                biome == Biomes.OVERWORLD_BOREAL_FOREST ||
+                biome == Biomes.PARADISE_PARADISE ||
+                biome == Biomes.OVERWORLD_RETRO ||
+                biome == Biomes.OVERWORLD_MEADOW) {
             return BonusBlocks.whitedandelion.id;
         }
-        if (biome == Biomes.OVERWORLD_SEASONAL_FOREST ||
-                biome == Biomes.OVERWORLD_MEADOW ||
-                biome == Biomes.OVERWORLD_FOREST) {
+        if (biome == Biomes.OVERWORLD_FOREST ||
+                biome == Biomes.OVERWORLD_RAINFOREST ||
+                biome == Biomes.OVERWORLD_SEASONAL_FOREST ||
+                biome == Biomes.OVERWORLD_BIRCH_FOREST ||
+                biome == Biomes.OVERWORLD_BOREAL_FOREST ||
+                biome == Biomes.PARADISE_PARADISE ||
+                biome == Biomes.OVERWORLD_RETRO ||
+                biome == Biomes.OVERWORLD_MEADOW) {
+            return BonusBlocks.gladiola.id;
+        }
+        if (biome == Biomes.OVERWORLD_FOREST ||
+                biome == Biomes.OVERWORLD_RAINFOREST ||
+                biome == Biomes.OVERWORLD_TUNDRA ||
+                biome == Biomes.OVERWORLD_SEASONAL_FOREST ||
+                biome == Biomes.OVERWORLD_GRASSLANDS ||
+                biome == Biomes.OVERWORLD_BIRCH_FOREST ||
+                biome == Biomes.OVERWORLD_PLAINS ||
+                biome == Biomes.OVERWORLD_SHRUBLAND ||
+                biome == Biomes.OVERWORLD_BOREAL_FOREST ||
+                biome == Biomes.PARADISE_PARADISE ||
+                biome == Biomes.OVERWORLD_RETRO ||
+                biome == Biomes.OVERWORLD_MEADOW) {
             return BonusBlocks.clovers.id;
         }
         return id;

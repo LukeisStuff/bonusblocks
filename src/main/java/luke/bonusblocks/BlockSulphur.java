@@ -1,6 +1,7 @@
 package luke.bonusblocks;
 
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.BlockSand;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
@@ -17,9 +18,9 @@ import java.util.Random;
 
 import static net.minecraft.core.block.BlockSand.fallInstantly;
 
-public class BlockSulphur extends Block {
+public class BlockSulphur extends BlockSand {
     public BlockSulphur(String key, int id, Material material) {
-        super(key, id, material.explosive);
+        super(key, id);
     }
 
     public void onBlockAdded(World world, int i, int j, int k) {
@@ -31,21 +32,13 @@ public class BlockSulphur extends Block {
 
     }
 
-    public void onNeighborBlockChange(World world, int x, int y, int z, int blockId) {
-        world.scheduleBlockUpdate(x, y, z, this.id, this.tickRate());
-        if (blockId > 0 && Block.blocksList[blockId].canProvidePower() && world.isBlockIndirectlyGettingPowered(x, y, z)) {
-            this.ignite(world, x, y, z, true);
-        }
-
-    }
-
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
         return dropCause == EnumDropCause.EXPLOSION ? null : new ItemStack[]{new ItemStack(this)};
     }
 
     public void onBlockDestroyedByExplosion(World world, int x, int y, int z) {
         EntitySulphur entity = new EntitySulphur(world, (double)((float)x + 0.5F), (double)((float)y + 0.5F), (double)((float)z + 0.5F));
-        entity.fuse = world.rand.nextInt(entity.fuse / 4) + entity.fuse / 8;
+        entity.fuse = world.rand.nextInt(entity.fuse / 2) + entity.fuse / 4;
         world.entityJoinedWorld(entity);
     }
 

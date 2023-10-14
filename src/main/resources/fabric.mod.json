@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "bonusblocks",
-  "version": "1.0.0",
+  "version": "1.1.0",
 
   "name": "Bonus Blocks",
   "description": "Adds in a plethora of new and useful blocks",
@@ -23,6 +23,7 @@
     ]
   },
   "mixins": [
+    "bonusblocks.mixins.json"
   ],
 
   "depends": {

@@ -7,10 +7,12 @@ import net.minecraft.core.world.World;
 
 public class EntitySulphur extends Entity {
     public int fuse;
+    public int blockID;
 
     public EntitySulphur(World world) {
         super(world);
         this.fuse = 0;
+        this.blockID = BonusBlocks.sulphurblock.id;
         this.blocksBuilding = true;
         this.setSize(0.98F, 0.98F);
         this.heightOffset = this.bbHeight / 2.0F;
@@ -19,6 +21,7 @@ public class EntitySulphur extends Entity {
     public EntitySulphur(World world, double d, double d1, double d2) {
         this(world);
         this.setPos(d, d1, d2);
+        this.blockID = BonusBlocks.sulphurblock.id;
         float f = (float)(Math.random() * 3.1415927410125732 * 2.0);
         this.xd = (double)(-MathHelper.sin(f * 3.141593F / 180.0F) * 0.02F);
         this.yd = 0.20000000298023224;
@@ -41,6 +44,7 @@ public class EntitySulphur extends Entity {
     }
 
     public void tick() {
+        this.blockID = BonusBlocks.sulphurblock.id;
         this.xo = this.x;
         this.yo = this.y;
         this.zo = this.z;
@@ -69,7 +73,7 @@ public class EntitySulphur extends Entity {
     }
 
     private void explode() {
-        float f = 4.0F;
+        float f = 2.0F;
         this.world.createExplosion((Entity)null, this.x, this.y, this.z, f);
     }
 
