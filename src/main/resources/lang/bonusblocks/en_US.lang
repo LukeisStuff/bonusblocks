@@ -101,6 +101,8 @@ tile.bonusblocks.redsandstone.name=Scorched Sandstone
 tile.bonusblocks.redsandstone.desc=Compacted scorched dirt.
 tile.bonusblocks.redsandstonebrick.name=Scorched Sandstone Bricks
 tile.bonusblocks.redsandstonebrick.desc=Stacked bricks of scorched sandstone.
+tile.bonusblocks.mudbrick.name=Baked Mud Bricks
+tile.bonusblocks.mudbrick.desc=Stacked bricks of baked mud.
 tile.bonusblocks.soulslate.name=Soulslate
 tile.bonusblocks.soulslate.desc=A block of solid soul sand. Probably haunted.
 

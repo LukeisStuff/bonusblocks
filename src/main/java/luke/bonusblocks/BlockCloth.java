@@ -13,7 +13,10 @@ public class BlockCloth extends Block {
 
     @Override
     public void onEntityCollidedWithBlock(World world, int x, int y, int z, Entity entity) {
-        if (entity.yd < 0.0D) {
+        if (entity.isSneaking() && entity.yd < 0.0) {
+            entity.yd = 0.0;
+        }
+        else if (entity.yd < 0.0D) {
             entity.yd = -entity.yd;
             entity.fallDistance = 0;
         }
