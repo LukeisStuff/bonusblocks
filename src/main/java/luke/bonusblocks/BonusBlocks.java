@@ -597,7 +597,7 @@ public class    BonusBlocks implements ModInitializer {
 
         Item.itemsList[paintedbox.id] = new ItemBlockPainted(paintedbox, false);
 
-        Item.jar = new ItemPlaceable("jar", 16519, BonusBlocks.jar).setIconCoord(3, 9);
+        Item.jar = new ItemJarPlacable("jar", 16519, BonusBlocks.jar).setIconCoord(3, 9);
 
 
         RecipeHelper.Crafting.createRecipe(BonusBlocks.crate,4, new Object[]{"PP","PP", 'P' , Block.pistonBase});
