@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "luke.bonusblocks.BonusBlocks"
+    ],
+    "terrain-api": [
+      "luke.bonusblocks.ModContainer.TerrainApi.TerrainApiPlugin"
     ]
   },
   "mixins": [
