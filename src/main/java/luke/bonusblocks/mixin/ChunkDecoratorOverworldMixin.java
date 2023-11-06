@@ -1,13 +1,17 @@
 package luke.bonusblocks.mixin;
 
 import luke.bonusblocks.BonusBlocks;
+import luke.bonusblocks.ModBiomes;
+import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockSand;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.Biomes;
 import net.minecraft.core.world.chunk.Chunk;
 import net.minecraft.core.world.generate.chunk.perlin.overworld.ChunkDecoratorOverworld;
+import net.minecraft.core.world.generate.feature.WorldFeatureDeadBush;
 import net.minecraft.core.world.generate.feature.WorldFeatureFlowers;
+import net.minecraft.core.world.generate.feature.WorldFeatureTallGrass;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -39,7 +43,27 @@ public abstract class ChunkDecoratorOverworldMixin {
         rand.setSeed((long)chunkX * l1 + (long)chunkZ * l2 ^ this.world.getRandomSeed());
         int blockX, blockY, blockZ;
 
-
+        if ((biome == ModBiomes.OVERWORLD_OVERGROWN) &&
+                rand.nextInt(4) == 0) {
+            blockX = x + rand.nextInt(16) + 8;
+            blockZ = z + rand.nextInt(16) + 8;
+            blockY = world.getHeightValue(blockX, blockZ);
+            new WorldFeatureTallGrass(Block.tallgrass.id).generate(this.world, rand, blockX, blockY, blockZ);
+        }
+        if ((biome == ModBiomes.OVERWORLD_OVERGROWN) &&
+                rand.nextInt(4) == 0) {
+            blockX = x + rand.nextInt(16) + 8;
+            blockZ = z + rand.nextInt(16) + 8;
+            blockY = world.getHeightValue(blockX, blockZ);
+            new WorldFeatureTallGrass(Block.tallgrassFern.id).generate(this.world, rand, blockX, blockY, blockZ);
+        }
+        if ((biome == ModBiomes.OVERWORLD_MESA) &&
+                rand.nextInt(4) == 0) {
+            blockX = x + rand.nextInt(16) + 8;
+            blockZ = z + rand.nextInt(16) + 8;
+            blockY = world.getHeightValue(blockX, blockZ);
+            new WorldFeatureDeadBush(Block.deadbush.id).generate(this.world, rand, blockX, blockY, blockZ);
+        }
         if ((biome == Biomes.OVERWORLD_SWAMPLAND ||
                 biome == Biomes.OVERWORLD_SWAMPLAND_MUDDY ||
                 biome == Biomes.PARADISE_PARADISE ||
@@ -49,10 +73,11 @@ public abstract class ChunkDecoratorOverworldMixin {
             blockX = x + rand.nextInt(16) + 8;
             blockZ = z + rand.nextInt(16) + 8;
             blockY = world.getHeightValue(blockX, blockZ);
-            new WorldFeatureFlowers(BonusBlocks.bluebell.id).generate(this.world, rand, blockX, blockY, blockZ);
+            new WorldFeatureFlowers(BonusBlocks.flowerCyan.id).generate(this.world, rand, blockX, blockY, blockZ);
         }
         if ((biome == Biomes.OVERWORLD_OUTBACK ||
                 biome == Biomes.OVERWORLD_OUTBACK_GRASSY ||
+                biome == ModBiomes.OVERWORLD_MESA ||
                 biome == Biomes.OVERWORLD_DESERT ||
                 biome == Biomes.PARADISE_PARADISE ||
                 biome == Biomes.OVERWORLD_RETRO ||
@@ -61,7 +86,7 @@ public abstract class ChunkDecoratorOverworldMixin {
             blockX = x + rand.nextInt(16) + 8;
             blockZ = z + rand.nextInt(16) + 8;
             blockY = world.getHeightValue(blockX, blockZ);
-            new WorldFeatureFlowers(BonusBlocks.orchid.id).generate(this.world, rand, blockX, blockY, blockZ);
+            new WorldFeatureFlowers(BonusBlocks.flowerPink.id).generate(this.world, rand, blockX, blockY, blockZ);
         }
         if ((biome == Biomes.OVERWORLD_GRASSLANDS ||
                 biome == Biomes.OVERWORLD_PLAINS ||
@@ -73,12 +98,13 @@ public abstract class ChunkDecoratorOverworldMixin {
             blockX = x + rand.nextInt(16) + 8;
             blockZ = z + rand.nextInt(16) + 8;
             blockY = world.getHeightValue(blockX, blockZ);
-            new WorldFeatureFlowers(BonusBlocks.heather.id).generate(world, rand, blockX, blockY, blockZ);
+            new WorldFeatureFlowers(BonusBlocks.flowerPurple.id).generate(world, rand, blockX, blockY, blockZ);
         }
         if ((biome == Biomes.OVERWORLD_TAIGA ||
                 biome == Biomes.OVERWORLD_TUNDRA ||
                 biome == Biomes.OVERWORLD_GLACIER ||
                 biome == Biomes.OVERWORLD_BOREAL_FOREST ||
+                biome == ModBiomes.OVERWORLD_OVERGROWN ||
                 biome == Biomes.PARADISE_PARADISE ||
                 biome == Biomes.OVERWORLD_RETRO ||
                 biome == Biomes.OVERWORLD_MEADOW) &&
@@ -86,7 +112,7 @@ public abstract class ChunkDecoratorOverworldMixin {
                 blockX = x + rand.nextInt(16) + 8;
                 blockZ = z + rand.nextInt(16) + 8;
                 blockY = world.getHeightValue(blockX, blockZ);
-            new WorldFeatureFlowers(BonusBlocks.whitedandelion.id).generate(world, rand, blockX, blockY, blockZ);
+            new WorldFeatureFlowers(BonusBlocks.flowerSilver.id).generate(world, rand, blockX, blockY, blockZ);
         }
         if ((biome == Biomes.OVERWORLD_FOREST ||
                 biome == Biomes.OVERWORLD_RAINFOREST ||
@@ -100,7 +126,7 @@ public abstract class ChunkDecoratorOverworldMixin {
             blockX = x + rand.nextInt(16) + 8;
             blockZ = z + rand.nextInt(16) + 8;
             blockY = world.getHeightValue(blockX, blockZ);
-            new WorldFeatureFlowers(BonusBlocks.gladiola.id).generate(world, rand, blockX, blockY, blockZ);
+            new WorldFeatureFlowers(BonusBlocks.flowerOrange.id).generate(world, rand, blockX, blockY, blockZ);
         }
         if ((biome == Biomes.OVERWORLD_FOREST ||
                 biome == Biomes.OVERWORLD_RAINFOREST ||
@@ -111,6 +137,7 @@ public abstract class ChunkDecoratorOverworldMixin {
                 biome == Biomes.OVERWORLD_PLAINS ||
                 biome == Biomes.OVERWORLD_SHRUBLAND ||
                 biome == Biomes.OVERWORLD_BOREAL_FOREST ||
+                biome == ModBiomes.OVERWORLD_OVERGROWN ||
                 biome == Biomes.PARADISE_PARADISE ||
                 biome == Biomes.OVERWORLD_RETRO ||
                 biome == Biomes.OVERWORLD_MEADOW) &&
@@ -118,7 +145,7 @@ public abstract class ChunkDecoratorOverworldMixin {
             blockX = x + rand.nextInt(16) + 8;
             blockZ = z + rand.nextInt(16) + 8;
             blockY = world.getHeightValue(blockX, blockZ);
-            new WorldFeatureFlowers(BonusBlocks.clovers.id).generate(world, rand, blockX, blockY, blockZ);
+            new WorldFeatureFlowers(BonusBlocks.flowerLime.id).generate(world, rand, blockX, blockY, blockZ);
         }
         if (rand.nextInt(12) == 0) {
             blockX = x + rand.nextInt(16) + 8;

@@ -3,6 +3,7 @@ package luke.bonusblocks;
 import net.minecraft.core.block.BlockTransparent;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.Entity;
+import net.minecraft.core.enums.EnumBlockSoundEffectType;
 import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.WorldSource;
@@ -39,6 +40,7 @@ public class BlockSlime extends BlockTransparent {
         entity.zd *= 0.4;
         if (entity.fallDistance > 1.5F) {
             entity.fallDistance = 0.0F;
+            world.playBlockSoundEffect(x, y, z, BonusBlocks.blockSlime, EnumBlockSoundEffectType.ENTITY_LAND);
         }
     }
 }

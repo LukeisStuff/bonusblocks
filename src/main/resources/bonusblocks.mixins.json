@@ -7,7 +7,9 @@
     "BiomeProviderOverworldMixin",
     "BlockGrassMixin",
     "ChunkDecoratorOverworldMixin",
-    "EntityMixin"
+    "EntityMixin",
+    "ItemToolShovelMixin",
+    "BlockDeadBushMixin"
   ],
   "client": [
   ],
