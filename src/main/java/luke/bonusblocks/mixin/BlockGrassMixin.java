@@ -23,7 +23,7 @@ public class BlockGrassMixin {
                 biome == Biomes.PARADISE_PARADISE ||
                 biome == Biomes.OVERWORLD_RETRO ||
                 biome == Biomes.OVERWORLD_MEADOW) {
-            return BonusBlocks.bluebell.id;
+            return BonusBlocks.flowerCyan.id;
         }
         if (biome == Biomes.OVERWORLD_OUTBACK ||
                 biome == Biomes.OVERWORLD_OUTBACK_GRASSY ||
@@ -31,7 +31,7 @@ public class BlockGrassMixin {
                 biome == Biomes.PARADISE_PARADISE ||
                 biome == Biomes.OVERWORLD_RETRO ||
                 biome == Biomes.OVERWORLD_MEADOW) {
-            return BonusBlocks.orchid.id;
+            return BonusBlocks.flowerPink.id;
         }
         if (biome == Biomes.OVERWORLD_GRASSLANDS ||
                 biome == Biomes.OVERWORLD_PLAINS ||
@@ -39,7 +39,7 @@ public class BlockGrassMixin {
                 biome == Biomes.PARADISE_PARADISE ||
                 biome == Biomes.OVERWORLD_RETRO ||
                 biome == Biomes.OVERWORLD_MEADOW) {
-            return BonusBlocks.heather.id;
+            return BonusBlocks.flowerPurple.id;
         }
         if (biome == Biomes.OVERWORLD_TAIGA ||
                 biome == Biomes.OVERWORLD_TUNDRA ||
@@ -48,7 +48,7 @@ public class BlockGrassMixin {
                 biome == Biomes.PARADISE_PARADISE ||
                 biome == Biomes.OVERWORLD_RETRO ||
                 biome == Biomes.OVERWORLD_MEADOW) {
-            return BonusBlocks.whitedandelion.id;
+            return BonusBlocks.flowerSilver.id;
         }
         if (biome == Biomes.OVERWORLD_FOREST ||
                 biome == Biomes.OVERWORLD_RAINFOREST ||
@@ -58,7 +58,7 @@ public class BlockGrassMixin {
                 biome == Biomes.PARADISE_PARADISE ||
                 biome == Biomes.OVERWORLD_RETRO ||
                 biome == Biomes.OVERWORLD_MEADOW) {
-            return BonusBlocks.gladiola.id;
+            return BonusBlocks.flowerOrange.id;
         }
         if (biome == Biomes.OVERWORLD_FOREST ||
                 biome == Biomes.OVERWORLD_RAINFOREST ||
@@ -72,7 +72,7 @@ public class BlockGrassMixin {
                 biome == Biomes.PARADISE_PARADISE ||
                 biome == Biomes.OVERWORLD_RETRO ||
                 biome == Biomes.OVERWORLD_MEADOW) {
-            return BonusBlocks.clovers.id;
+            return BonusBlocks.flowerLime.id;
         }
         return id;
     }

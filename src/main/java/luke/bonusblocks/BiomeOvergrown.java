@@ -10,11 +10,11 @@ import java.util.Random;
 public class BiomeOvergrown extends Biome {
     public BiomeOvergrown() {
         this.spawnableMonsterList.clear();
-        this.topBlock = (short)BonusBlocks.overgrowngrass.id;
+        this.topBlock = (short)BonusBlocks.grassOvergrown.id;
         this.fillerBlock = (short)Block.stone.id;
     }
 
     public WorldFeature getRandomWorldGenForTrees(Random random) {
-        return new WorldFeatureTreeShrub(Block.leavesShrub.id, BonusBlocks.oakbark.id);
+        return new WorldFeatureTreeShrub(Block.leavesShrub.id, BonusBlocks.barkOak.id);
     }
 }
