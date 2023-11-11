@@ -7,27 +7,27 @@ import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.Biomes;
 import net.minecraft.core.world.generate.feature.WorldFeatureFlowers;
 import useless.terrainapi.api.TerrainAPI;
-import useless.terrainapi.generation.VanillaFunctions;
-import useless.terrainapi.generation.overworld.ChunkDecoratorOverworldAPI;
-import useless.terrainapi.generation.overworld.OverworldBiomeFeatures;
+import useless.terrainapi.generation.overworld.OverworldConfig;
+import useless.terrainapi.generation.overworld.api.ChunkDecoratorOverworldAPI;
 
 public class TerrainApiPlugin implements TerrainAPI {
     @Override
     public String getModID() {
         return BonusBlocks.MOD_ID;
     }
+    public static final OverworldConfig overworldConfig = ChunkDecoratorOverworldAPI.overworldConfig;
     @Override
     public void onInitialize() {
-        OverworldBiomeFeatures.grassDensityMap.put(ModBiomes.OVERWORLD_OVERGROWN, 2);
-        OverworldBiomeFeatures.grassDensityMap.put(ModBiomes.OVERWORLD_MESA, 1);
+        overworldConfig.addGrassDensity(ModBiomes.OVERWORLD_OVERGROWN, 2);
+        overworldConfig.addGrassDensity(ModBiomes.OVERWORLD_MESA, 1);
 
-        OverworldBiomeFeatures.flowerDensityMap.put(ModBiomes.OVERWORLD_OVERGROWN, 1);
-        OverworldBiomeFeatures.flowerDensityMap.put(ModBiomes.OVERWORLD_MESA, 1);
+        overworldConfig.addFlowerDensity(ModBiomes.OVERWORLD_OVERGROWN, 1);
+        overworldConfig.addFlowerDensity(ModBiomes.OVERWORLD_MESA, 1);
 
-        OverworldBiomeFeatures.yellowFlowerDensityMap.put(ModBiomes.OVERWORLD_OVERGROWN, 1);
-        OverworldBiomeFeatures.yellowFlowerDensityMap.put(ModBiomes.OVERWORLD_MESA, 1);
+        overworldConfig.addYellowFlowerDensity(ModBiomes.OVERWORLD_OVERGROWN, 1);
+        overworldConfig.addYellowFlowerDensity(ModBiomes.OVERWORLD_MESA, 1);
 
-        VanillaFunctions.biomeRandomGrassType.put(ModBiomes.OVERWORLD_OVERGROWN, Block.tallgrassFern.id);
+        overworldConfig.addRandomGrassBlock(ModBiomes.OVERWORLD_OVERGROWN, Block.tallgrassFern);
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.flowerCyan.id), 4, -1f, 1,
                 new Biome[]{Biomes.OVERWORLD_SWAMPLAND, Biomes.OVERWORLD_SWAMPLAND_MUDDY, Biomes.PARADISE_PARADISE, Biomes.OVERWORLD_RETRO, Biomes.OVERWORLD_MEADOW});
