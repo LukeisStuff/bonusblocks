@@ -2,6 +2,7 @@ package luke.bonusblocks.ModContainer.TerrainApi;
 
 import luke.bonusblocks.BonusBlocks;
 import luke.bonusblocks.ModBiomes;
+import luke.bonusblocks.WorldFeatureCoral;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.Biomes;
@@ -43,5 +44,12 @@ public class TerrainApiPlugin implements TerrainAPI {
                 new Biome[]{Biomes.OVERWORLD_FOREST, Biomes.OVERWORLD_RAINFOREST, Biomes.OVERWORLD_TUNDRA, Biomes.OVERWORLD_SEASONAL_FOREST, Biomes.OVERWORLD_GRASSLANDS, Biomes.OVERWORLD_BIRCH_FOREST,
                         Biomes.OVERWORLD_PLAINS, Biomes.OVERWORLD_SHRUBLAND, Biomes.OVERWORLD_BOREAL_FOREST, Biomes.PARADISE_PARADISE, Biomes.OVERWORLD_RETRO, Biomes.OVERWORLD_MEADOW, ModBiomes.OVERWORLD_OVERGROWN});
         ChunkDecoratorOverworldAPI.randomFeatures.addFeatureSurface(new WorldFeatureFlowers(BonusBlocks.mushroomGray.id), 8);
+/*        ChunkDecoratorOverworldAPI.randomFeatures.addFeatureSurface(new WorldFeatureCoral(BonusBlocks.coralRed.id), 2);
+        ChunkDecoratorOverworldAPI.randomFeatures.addFeatureSurface(new WorldFeatureCoral(BonusBlocks.coralYellow.id), 2);
+        ChunkDecoratorOverworldAPI.randomFeatures.addFeatureSurface(new WorldFeatureCoral(BonusBlocks.coralGreen.id), 2);
+        ChunkDecoratorOverworldAPI.randomFeatures.addFeatureSurface(new WorldFeatureCoral(BonusBlocks.coralCyan.id), 2);
+        ChunkDecoratorOverworldAPI.randomFeatures.addFeatureSurface(new WorldFeatureCoral(BonusBlocks.coralBlue.id), 2);
+        ChunkDecoratorOverworldAPI.randomFeatures.addFeatureSurface(new WorldFeatureCoral(BonusBlocks.coralPurple.id), 2);
+        ChunkDecoratorOverworldAPI.randomFeatures.addFeatureSurface(new WorldFeatureCoral(BonusBlocks.coralPink.id), 2); */
     }
 }

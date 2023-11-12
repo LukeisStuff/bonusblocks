@@ -2,6 +2,7 @@ package luke.bonusblocks.mixin;
 
 import luke.bonusblocks.BonusBlocks;
 import luke.bonusblocks.ModBiomes;
+import luke.bonusblocks.WorldFeatureCoral;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockSand;
 import net.minecraft.core.world.World;
@@ -25,7 +26,7 @@ public abstract class ChunkDecoratorOverworldMixin {
     @Final
     private World world;
 
-    @Inject(method="decorate",at=@At("TAIL"))
+    @Inject(method = "decorate", at = @At("TAIL"))
     public void decorate(Chunk chunk, CallbackInfo info) {
         int chunkX = chunk.xPosition;
         int chunkZ = chunk.zPosition;
@@ -40,7 +41,7 @@ public abstract class ChunkDecoratorOverworldMixin {
         Random rand = new Random(this.world.getRandomSeed());
         long l1 = rand.nextLong() / 2L * 2L + 1L;
         long l2 = rand.nextLong() / 2L * 2L + 1L;
-        rand.setSeed((long)chunkX * l1 + (long)chunkZ * l2 ^ this.world.getRandomSeed());
+        rand.setSeed((long) chunkX * l1 + (long) chunkZ * l2 ^ this.world.getRandomSeed());
         int blockX, blockY, blockZ;
 
         if ((biome == ModBiomes.OVERWORLD_OVERGROWN) &&
@@ -109,9 +110,9 @@ public abstract class ChunkDecoratorOverworldMixin {
                 biome == Biomes.OVERWORLD_RETRO ||
                 biome == Biomes.OVERWORLD_MEADOW) &&
                 rand.nextInt(4) == 0) {
-                blockX = x + rand.nextInt(16) + 8;
-                blockZ = z + rand.nextInt(16) + 8;
-                blockY = world.getHeightValue(blockX, blockZ);
+            blockX = x + rand.nextInt(16) + 8;
+            blockZ = z + rand.nextInt(16) + 8;
+            blockY = world.getHeightValue(blockX, blockZ);
             new WorldFeatureFlowers(BonusBlocks.flowerSilver.id).generate(world, rand, blockX, blockY, blockZ);
         }
         if ((biome == Biomes.OVERWORLD_FOREST ||
@@ -153,47 +154,46 @@ public abstract class ChunkDecoratorOverworldMixin {
             blockY = world.getHeightValue(blockX, blockZ);
             new WorldFeatureFlowers(BonusBlocks.mushroomGray.id).generate(world, rand, blockX, blockY, blockZ);
         }
-//        if (rand.nextInt(32) == 0) {
-//            blockX = x + rand.nextInt(16) + 8;
-//            blockZ = z + rand.nextInt(16) + 8;
-//            blockY = world.getHeightValue(blockX, blockZ);
-//            new WorldFeatureCoral(BonusBlocks.coralred.id).generate(world, rand, blockX, blockY, blockZ);
-//        }
-//        if (rand.nextInt(32) == 0) {
-//            blockX = x + rand.nextInt(16) + 8;
-//            blockZ = z + rand.nextInt(16) + 8;
-//            blockY = world.getHeightValue(blockX, blockZ);
-//            new WorldFeatureCoral(BonusBlocks.coralyellow.id).generate(world, rand, blockX, blockY, blockZ);
-//        }
-//        if (rand.nextInt(32) == 0) {
-//            blockX = x + rand.nextInt(16) + 8;
-//            blockZ = z + rand.nextInt(16) + 8;
-//            blockY = world.getHeightValue(blockX, blockZ);
-//            new WorldFeatureCoral(BonusBlocks.coralgreen.id).generate(world, rand, blockX, blockY, blockZ);
-//        }
-//        if (rand.nextInt(32) == 0) {
-//            blockX = x + rand.nextInt(16) + 8;
-//            blockZ = z + rand.nextInt(16) + 8;
-//            blockY = world.getHeightValue(blockX, blockZ);
-//            new WorldFeatureCoral(BonusBlocks.coralcyan.id).generate(world, rand, blockX, blockY, blockZ);
-//        }
-//        if (rand.nextInt(32) == 0) {
-//            blockX = x + rand.nextInt(16) + 8;
-//            blockZ = z + rand.nextInt(16) + 8;
-//            blockY = world.getHeightValue(blockX, blockZ);
-//            new WorldFeatureCoral(BonusBlocks.coralblue.id).generate(world, rand, blockX, blockY, blockZ);
-//        }
-//        if (rand.nextInt(32) == 0) {
-//            blockX = x + rand.nextInt(16) + 8;
-//            blockZ = z + rand.nextInt(16) + 8;
-//            blockY = world.getHeightValue(blockX, blockZ);
-//            new WorldFeatureCoral(BonusBlocks.coralpurple.id).generate(world, rand, blockX, blockY, blockZ);
-//        }
-//        if (rand.nextInt(32) == 0) {
-//            blockX = x + rand.nextInt(16) + 8;
-//            blockZ = z + rand.nextInt(16) + 8;
-//            blockY = world.getHeightValue(blockX, blockZ);
-//            new WorldFeatureCoral(BonusBlocks.coralpink.id).generate(world, rand, blockX, blockY, blockZ);
-//        }
+/*        if (rand.nextInt(32) == 0) {
+            blockX = x + rand.nextInt(16) + 8;
+            blockZ = z + rand.nextInt(16) + 8;
+            blockY = world.getHeightValue(blockX, blockZ);
+            new WorldFeatureCoral(BonusBlocks.coralRed.id).generate(world, rand, blockX, blockY, blockZ);
+        }
+        if (rand.nextInt(32) == 0) {
+            blockX = x + rand.nextInt(16) + 8;
+            blockZ = z + rand.nextInt(16) + 8;
+            blockY = world.getHeightValue(blockX, blockZ);
+            new WorldFeatureCoral(BonusBlocks.coralYellow.id).generate(world, rand, blockX, blockY, blockZ);
+        }
+        if (rand.nextInt(32) == 0) {
+            blockX = x + rand.nextInt(16) + 8;
+            blockZ = z + rand.nextInt(16) + 8;
+            blockY = world.getHeightValue(blockX, blockZ);
+            new WorldFeatureCoral(BonusBlocks.coralGreen.id).generate(world, rand, blockX, blockY, blockZ);
+        }
+        if (rand.nextInt(32) == 0) {
+            blockX = x + rand.nextInt(16) + 8;
+            blockZ = z + rand.nextInt(16) + 8;
+            blockY = world.getHeightValue(blockX, blockZ);
+            new WorldFeatureCoral(BonusBlocks.coralCyan.id).generate(world, rand, blockX, blockY, blockZ);
+        }
+        if (rand.nextInt(32) == 0) {
+            blockX = x + rand.nextInt(16) + 8;
+            blockZ = z + rand.nextInt(16) + 8;
+            blockY = world.getHeightValue(blockX, blockZ);
+            new WorldFeatureCoral(BonusBlocks.coralBlue.id).generate(world, rand, blockX, blockY, blockZ);
+        }
+        if (rand.nextInt(32) == 0) {
+            blockX = x + rand.nextInt(16) + 8;
+            blockZ = z + rand.nextInt(16) + 8;
+            blockY = world.getHeightValue(blockX, blockZ);
+            new WorldFeatureCoral(BonusBlocks.coralPurple.id).generate(world, rand, blockX, blockY, blockZ);
+        }
+        if (rand.nextInt(32) == 0) {
+            blockX = x + rand.nextInt(16) + 8;
+            blockZ = z + rand.nextInt(16) + 8;
+            blockY = world.getHeightValue(blockX, blockZ);
+            new WorldFeatureCoral(BonusBlocks.coralPink.id).generate(world, rand, blockX, blockY, blockZ); */
     }
 }
