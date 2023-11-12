@@ -2,7 +2,6 @@ package luke.bonusblocks.ModContainer.TerrainApi;
 
 import luke.bonusblocks.BonusBlocks;
 import luke.bonusblocks.ModBiomes;
-import luke.bonusblocks.WorldFeatureCoral;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.Biomes;
