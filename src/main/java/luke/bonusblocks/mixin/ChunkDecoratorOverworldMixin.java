@@ -2,7 +2,6 @@ package luke.bonusblocks.mixin;
 
 import luke.bonusblocks.BonusBlocks;
 import luke.bonusblocks.ModBiomes;
-import luke.bonusblocks.WorldFeatureCoral;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockSand;
 import net.minecraft.core.world.World;
@@ -154,46 +153,5 @@ public abstract class ChunkDecoratorOverworldMixin {
             blockY = world.getHeightValue(blockX, blockZ);
             new WorldFeatureFlowers(BonusBlocks.mushroomGray.id).generate(world, rand, blockX, blockY, blockZ);
         }
-/*        if (rand.nextInt(32) == 0) {
-            blockX = x + rand.nextInt(16) + 8;
-            blockZ = z + rand.nextInt(16) + 8;
-            blockY = world.getHeightValue(blockX, blockZ);
-            new WorldFeatureCoral(BonusBlocks.coralRed.id).generate(world, rand, blockX, blockY, blockZ);
-        }
-        if (rand.nextInt(32) == 0) {
-            blockX = x + rand.nextInt(16) + 8;
-            blockZ = z + rand.nextInt(16) + 8;
-            blockY = world.getHeightValue(blockX, blockZ);
-            new WorldFeatureCoral(BonusBlocks.coralYellow.id).generate(world, rand, blockX, blockY, blockZ);
-        }
-        if (rand.nextInt(32) == 0) {
-            blockX = x + rand.nextInt(16) + 8;
-            blockZ = z + rand.nextInt(16) + 8;
-            blockY = world.getHeightValue(blockX, blockZ);
-            new WorldFeatureCoral(BonusBlocks.coralGreen.id).generate(world, rand, blockX, blockY, blockZ);
-        }
-        if (rand.nextInt(32) == 0) {
-            blockX = x + rand.nextInt(16) + 8;
-            blockZ = z + rand.nextInt(16) + 8;
-            blockY = world.getHeightValue(blockX, blockZ);
-            new WorldFeatureCoral(BonusBlocks.coralCyan.id).generate(world, rand, blockX, blockY, blockZ);
-        }
-        if (rand.nextInt(32) == 0) {
-            blockX = x + rand.nextInt(16) + 8;
-            blockZ = z + rand.nextInt(16) + 8;
-            blockY = world.getHeightValue(blockX, blockZ);
-            new WorldFeatureCoral(BonusBlocks.coralBlue.id).generate(world, rand, blockX, blockY, blockZ);
-        }
-        if (rand.nextInt(32) == 0) {
-            blockX = x + rand.nextInt(16) + 8;
-            blockZ = z + rand.nextInt(16) + 8;
-            blockY = world.getHeightValue(blockX, blockZ);
-            new WorldFeatureCoral(BonusBlocks.coralPurple.id).generate(world, rand, blockX, blockY, blockZ);
-        }
-        if (rand.nextInt(32) == 0) {
-            blockX = x + rand.nextInt(16) + 8;
-            blockZ = z + rand.nextInt(16) + 8;
-            blockY = world.getHeightValue(blockX, blockZ);
-            new WorldFeatureCoral(BonusBlocks.coralPink.id).generate(world, rand, blockX, blockY, blockZ); */
     }
 }
