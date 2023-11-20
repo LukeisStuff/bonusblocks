@@ -2,7 +2,6 @@ package luke.bonusblocks;
 
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.render.block.color.BlockColorGrass;
-import net.minecraft.client.render.block.color.BlockColorLeaves;
 import net.minecraft.client.render.block.color.BlockColorPlanksPainted;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.client.sound.block.BlockSound;
@@ -15,6 +14,7 @@ import net.minecraft.core.crafting.LookupFuelFurnace;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.block.ItemBlockPainted;
+import net.minecraft.core.item.block.ItemBlockSlab;
 import net.minecraft.core.item.tool.ItemToolPickaxe;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -392,14 +392,14 @@ public class    BonusBlocks implements ModInitializer {
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new Block("scorchedstone.polished", 868, Material.stone));
 
-    public static final Block marbleCarved = new BlockBuilder(MOD_ID)
+    public static final Block capstoneMarbleCarved = new BlockBuilder(MOD_ID)
             .setBlockSound(BlockSounds.STONE)
             .setHardness(1.0f)
             .setResistance(10.0f)
             .setSideTextures(10, 14)
             .setTopBottomTexture(9, 14)
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-            .build(new Block("marble.carved", 44, Material.stone));
+            .build(new Block("capstone.marble.carved", 44, Material.stone));
 
     public static final Block slateCarved = new BlockBuilder(MOD_ID)
             .setBlockSound(BlockSounds.STONE)
@@ -409,6 +409,42 @@ public class    BonusBlocks implements ModInitializer {
             .setTopBottomTexture(8, 14)
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new Block("slate.carved", 45, Material.stone));
+
+    public static final Block marbleCarved = new BlockBuilder(MOD_ID)
+            .setBlockSound(BlockSounds.STONE)
+            .setHardness(1.0f)
+            .setResistance(10.0f)
+            .setSideTextures(6, 14)
+            .setTopBottomTexture(8, 14)
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new Block("marble.carved", 46, Material.stone));
+
+    public static final Block sandstoneCarved = new BlockBuilder(MOD_ID)
+            .setBlockSound(BlockSounds.STONE)
+            .setHardness(1.0f)
+            .setResistance(10.0f)
+            .setSideTextures("carvedsandstone.png")
+            .setTopBottomTexture("polishedsandstonetop.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new Block("slate.carved", 47, Material.stone));
+
+    public static final Block permafrostCarved = new BlockBuilder(MOD_ID)
+            .setBlockSound(BlockSounds.STONE)
+            .setHardness(1.0f)
+            .setResistance(10.0f)
+            .setSideTextures("carvedpermafrost.png")
+            .setTopBottomTexture("polishedpermafrostop.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new Block("slate.carved", 48, Material.stone));
+
+    public static final Block scorchedstoneCarved = new BlockBuilder(MOD_ID)
+            .setBlockSound(BlockSounds.STONE)
+            .setHardness(1.0f)
+            .setResistance(10.0f)
+            .setSideTextures("carvedscorchedstone.png")
+            .setTopBottomTexture("polishedredsandstonetop.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new Block("slate.carved", 49, Material.stone));
 
 
 
@@ -678,12 +714,73 @@ public class    BonusBlocks implements ModInitializer {
 
 
 
+
+    public static final Block slabSlatePolished = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
+            .setHardness(1.0f)
+            .setResistance(10.0f)
+            .setUseInternalLight()
+            .setVisualUpdateOnMetadata()
+            .setSideTextures(6, 14)
+            .setTopBottomTexture(8, 14)
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new BlockSlab(BonusBlocks.slateCarved, 910));
+    public static final Block slabMarblePolished = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
+            .setHardness(1.0f)
+            .setResistance(10.0f)
+            .setUseInternalLight()
+            .setVisualUpdateOnMetadata()
+            .setSideTextures("carvedmarble.png")
+            .setTopBottomTexture("polishedmarbletop.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new BlockSlab(BonusBlocks.marbleCarved, 911));
+    public static final Block slabSandstonePolished = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
+            .setHardness(1.0f)
+            .setResistance(10.0f)
+            .setUseInternalLight()
+            .setVisualUpdateOnMetadata()
+            .setSideTextures("carvedsandstone.png")
+            .setTopBottomTexture("polishedsandstonetop.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new BlockSlab(BonusBlocks.sandstoneCarved, 912));
+    public static final Block slabPermafrostPolished = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
+            .setHardness(1.0f)
+            .setResistance(10.0f)
+            .setUseInternalLight()
+            .setVisualUpdateOnMetadata()
+            .setSideTextures("carvedpermafrost.png")
+            .setTopBottomTexture("polishedpermafrostop.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new BlockSlab(BonusBlocks.permafrostCarved, 913));
+    public static final Block slabScorchedstonePolished = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
+            .setHardness(1.0f)
+            .setResistance(10.0f)
+            .setUseInternalLight()
+            .setVisualUpdateOnMetadata()
+            .setSideTextures("carvedscorchedstone.png")
+            .setTopBottomTexture("polishedredsandstonetop.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new BlockSlab(BonusBlocks.scorchedstoneCarved, 914));
+
+
+
     static {
+        Item.itemsList[slabSlatePolished.id] = new ItemBlockSlab(slabSlatePolished);
+        Item.itemsList[slabPermafrostPolished.id] = new ItemBlockSlab(slabPermafrostPolished);
+        Item.itemsList[slabSandstonePolished.id] = new ItemBlockSlab(slabSandstonePolished);
+        Item.itemsList[slabScorchedstonePolished.id] = new ItemBlockSlab(slabScorchedstonePolished);
+        Item.itemsList[slabMarblePolished.id] = new ItemBlockSlab(slabMarblePolished);
     }
 
     @Override
     public void onInitialize() {
         LOGGER.info("BonusBlocks initialized.");
+
+
 
         ItemToolPickaxe.miningLevels.put(BonusBlocks.blockRawIron, 1);
         ItemToolPickaxe.miningLevels.put(BonusBlocks.blockRawGold, 2);
@@ -695,6 +792,7 @@ public class    BonusBlocks implements ModInitializer {
 
         RecipeHelper.removeRecipe(Block.pillarMarble, 0);
         RecipeHelper.Crafting.createRecipe(Block.pillarMarble, 3, new Object[]{"P", "P", "P", 'P', Block.marble});
+        RecipeHelper.Crafting.createRecipe(BonusBlocks.pillarSlate, 3, new Object[]{"P", "P", "P", 'P', Block.slate});
 
         RecipeHelper.Crafting.createRecipe(BonusBlocks.crate,9, new Object[]{"PPP","PPP", "PPP", 'P' , Block.planksOak});
         RecipeHelper.Crafting.createRecipe(BonusBlocks.crateSticky,4, new Object[]{"S","P", 'P' , BonusBlocks.crate, 'S', Item.slimeball});
@@ -821,12 +919,23 @@ public class    BonusBlocks implements ModInitializer {
         RecipeHelper.Crafting.createRecipe(BonusBlocks.soulslate,4,new Object[]{"PP","PP", 'P' , Block.soulsand});
 
 
-        RecipeHelper.Crafting.createRecipe(Block.capstoneMarble,1,new Object[]{"P","P", 'P' , Block.slabCapstoneMarble});
-        RecipeHelper.Crafting.createRecipe(BonusBlocks.marbleCarved,1,new Object[]{"P", 'P' , Block.capstoneMarble});
+        RecipeHelper.Crafting.createRecipe(BonusBlocks.capstoneMarbleCarved,1,new Object[]{"P","P", 'P' , Block.slabCapstoneMarble});
+        RecipeHelper.Crafting.createRecipe(Block.capstoneMarble,1,new Object[]{"P", 'P' , BonusBlocks.capstoneMarbleCarved});
         RecipeHelper.Crafting.createRecipe(Block.basaltCarved,1,new Object[]{"P","P", 'P' , Block.slabBasaltPolished});
         RecipeHelper.Crafting.createRecipe(Block.stoneCarved,1,new Object[]{"P","P", 'P' , Block.slabStonePolished});
         RecipeHelper.Crafting.createRecipe(Block.limestoneCarved,1,new Object[]{"P","P", 'P' , Block.slabLimestonePolished});
         RecipeHelper.Crafting.createRecipe(Block.graniteCarved,1,new Object[]{"P","P", 'P' , Block.slabGranitePolished});
+        RecipeHelper.Crafting.createRecipe(BonusBlocks.marbleCarved,1,new Object[]{"P","P", 'P' , BonusBlocks.slabMarblePolished});
+        RecipeHelper.Crafting.createRecipe(BonusBlocks.slateCarved,1,new Object[]{"P","P", 'P' , BonusBlocks.slabSlatePolished});
+        RecipeHelper.Crafting.createRecipe(BonusBlocks.sandstoneCarved,1,new Object[]{"P","P", 'P' , BonusBlocks.slabSandstonePolished});
+        RecipeHelper.Crafting.createRecipe(BonusBlocks.scorchedstoneCarved,1,new Object[]{"P","P", 'P' , BonusBlocks.slabScorchedstonePolished});
+        RecipeHelper.Crafting.createRecipe(BonusBlocks.permafrostCarved,1,new Object[]{"P","P", 'P' , BonusBlocks.slabPermafrostPolished});
+
+        RecipeHelper.Crafting.createRecipe(BonusBlocks.slabSlatePolished,3,new Object[]{"PPP", 'P' , Block.slatePolished});
+        RecipeHelper.Crafting.createRecipe(BonusBlocks.slabMarblePolished,3,new Object[]{"PPP", 'P' , BonusBlocks.marblePolished});
+        RecipeHelper.Crafting.createRecipe(BonusBlocks.slabPermafrostPolished,3,new Object[]{"PPP", 'P' , BonusBlocks.permafrostPolished});
+        RecipeHelper.Crafting.createRecipe(BonusBlocks.slabSandstonePolished,3,new Object[]{"PPP", 'P' , BonusBlocks.sandstonePolished});
+        RecipeHelper.Crafting.createRecipe(BonusBlocks.slabScorchedstonePolished,3,new Object[]{"PPP", 'P' , BonusBlocks.scorchedstonePolished});
 
 
         RecipeHelper.Crafting.createRecipe(BonusBlocks.blockMushroomRed,2,new Object[]{"PP","PP", 'P' , Block.mushroomRed});
