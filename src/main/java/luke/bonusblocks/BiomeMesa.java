@@ -15,16 +15,12 @@ public class BiomeMesa extends BiomeOutback {
         this.spawnableMonsterList.clear();
         this.spawnableCreatureList.clear();
         this.spawnableWaterCreatureList.clear();
-        this.setBlockedWeathers(Weather.overworldSnow);
+        this.setBlockedWeathers(Weather.overworldSnow, Weather.overworldRain, Weather.overworldStorm);
         this.topBlock = (short)BonusBlocks.scorchedstone.id;
         this.fillerBlock = (short)BonusBlocks.scorchedstone.id;
     }
 
     public WorldFeature getRandomWorldGenForTrees(Random random) {
-        return new WorldFeatureTreeEucalyptus(0, BonusBlocks.barkEucalyptus.id);
+        return new WorldFeatureTreeEucalyptus(0, BonusBlocks.logScorched.id);
     }
-
-    public void WorldFeatureDeadBush (Random random) {
-    }
-
 }

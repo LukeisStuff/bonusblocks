@@ -15,6 +15,6 @@ public class BiomeOvergrown extends Biome {
     }
 
     public WorldFeature getRandomWorldGenForTrees(Random random) {
-        return new WorldFeatureTreeShrub(Block.leavesShrub.id, BonusBlocks.barkOak.id);
+        return new WorldFeatureTreeShrub(Block.leavesShrub.id, BonusBlocks.logShrub.id);
     }
 }

@@ -44,18 +44,18 @@ tile.bonusblocks.box.painted.white.desc=A colored wood box, stained white.
 tile.bonusblocks.bookshelf.empty.planks.oak.name=Empty Bookshelf
 tile.bonusblocks.bookshelf.empty.planks.oak.desc=A repository of... nothing.
 
-tile.bonusblocks.cobble.stone.compressed.name=Compressed Cobblestone
-tile.bonusblocks.cobble.stone.compressed.desc=Cobblestone, smashed together and reconstituted.
-tile.bonusblocks.cobble.stone.mossy.compressed.name=Compressed Mossy Cobblestone
-tile.bonusblocks.cobble.stone.mossy.compressed.desc=Cobblestone with added greenery, smashed together and reconstituted.
-tile.bonusblocks.cobble.granite.compressed.name=Compressed Cobbled Granite
-tile.bonusblocks.cobble.granite.compressed.desc=Cobbled Granite, smashed together and reconstituted.
-tile.bonusblocks.cobble.limestone.compressed.name=Compressed Cobbled Limestone
-tile.bonusblocks.cobble.limestone.compressed.desc=Cobbled Limestone, smashed together and reconstituted.
-tile.bonusblocks.cobble.basalt.compressed.name=Compressed Cobbled Basalt
-tile.bonusblocks.cobble.basalt.compressed.desc=Cobbled Basalt, smashed together and reconstituted.
-tile.bonusblocks.cobble.permafrost.compressed.name=Compressed Cobbled Permafrost
-tile.bonusblocks.cobble.permafrost.compressed.desc=Cobbled Permafrost, smashed together and reconstituted.
+tile.bonusblocks.cobble.stone.reinforced.name=Reinforced Cobblestone
+tile.bonusblocks.cobble.stone.reinforced.desc=Cobblestone, smashed together and reconstituted.
+tile.bonusblocks.cobble.stone.mossy.reinforced.name=Reinforced Mossy Cobblestone
+tile.bonusblocks.cobble.stone.mossy.reinforced.desc=Cobblestone with added greenery, smashed together and reconstituted.
+tile.bonusblocks.cobble.granite.reinforced.name=Reinforced Cobbled Granite
+tile.bonusblocks.cobble.granite.reinforced.desc=Cobbled Granite, smashed together and reconstituted.
+tile.bonusblocks.cobble.limestone.reinforced.name=Reinforced Cobbled Limestone
+tile.bonusblocks.cobble.limestone.reinforced.desc=Cobbled Limestone, smashed together and reconstituted.
+tile.bonusblocks.cobble.basalt.reinforced.name=Reinforced Cobbled Basalt
+tile.bonusblocks.cobble.basalt.reinforced.desc=Cobbled Basalt, smashed together and reconstituted.
+tile.bonusblocks.cobble.permafrost.reinforced.name=Reinforced Cobbled Permafrost
+tile.bonusblocks.cobble.permafrost.reinforced.desc=Cobbled Permafrost, smashed together and reconstituted.
 
 tile.bonusblocks.marble.polished.name=Polished Marble
 tile.bonusblocks.marble.polished.desc=A polished block of marble.
@@ -84,6 +84,19 @@ tile.bonusblocks.moss.desc=Large lump of greenery.
 tile.bonusblocks.branch.name=Branches
 tile.bonusblocks.branch.desc=Woody structure connecting leaves.
 
+tile.bonusblocks.leaves.maple.name=Maple Leaves
+tile.bonusblocks.leaves.maple.desc=Leaves from a maple tree.
+
+tile.bonusblocks.sapling.maple.name=Maple Sapling
+tile.bonusblocks.sapling.maple.desc=A plant to grow a maple tree.
+
+tile.bonusblocks.log.maple.name=Maple Log
+tile.bonusblocks.log.maple.desc=A log from a maple tree.
+tile.bonusblocks.log.shrub.name=Shrub Log
+tile.bonusblocks.log.shrub.desc=The bark of a shrub tree.
+tile.bonusblocks.log.scorched.name=Scorched Log
+tile.bonusblocks.log.scorched.desc=The bark of a burnt down tree.
+
 tile.bonusblocks.bark.oak.name=Oak Bark
 tile.bonusblocks.bark.oak.desc=The bark of an oak tree.
 tile.bonusblocks.bark.pine.name=Pine Bark
@@ -96,7 +109,12 @@ tile.bonusblocks.bark.eucalyptus.name=Eucalyptus Bark
 tile.bonusblocks.bark.eucalyptus.desc=The bark of a eucalyptus tree.
 tile.bonusblocks.bark.oak.mossy.name=Mossy Oak Bark
 tile.bonusblocks.bark.oak.mossy.desc=The bark of a mossy oak tree.
-
+tile.bonusblocks.bark.maple.name=Maple Bark
+tile.bonusblocks.bark.maple.desc=The bark of a maple tree.
+tile.bonusblocks.bark.shrub.name=Shrub Bark
+tile.bonusblocks.bark.shrub.desc=The bark of a shrub tree.
+tile.bonusblocks.bark.scorched.name=Scorched Bark
+tile.bonusblocks.bark.scorched.desc=The bark of a burnt down tree.
 
 tile.bonusblocks.brick.netherrack.name=Netherrack Brick
 tile.bonusblocks.brick.netherrack.desc=Stacked bricks of netherrack.
@@ -111,6 +129,7 @@ tile.bonusblocks.soulslate.desc=A block of solid soul sand. Probably haunted.
 
 tile.bonusblocks.clay.baked.name=Baked Clay
 tile.bonusblocks.clay.baked.desc=A scorched block of solid clay.
+
 
 tile.bonusblocks.block.raw.iron.name=Block of Raw Iron
 tile.bonusblocks.block.raw.iron.desc=A solid block of raw iron. Heavy!
@@ -127,8 +146,8 @@ tile.bonusblocks.thatch.name=Thatch
 tile.bonusblocks.thatch.desc=Bundled wheat and sticks, perfect for roofing.
 tile.bonusblocks.block.sulphur.name=Block of Sulphur
 tile.bonusblocks.block.sulphur.desc=A loose collection of explosive dust.
-tile.bonusblocks.block.sugarcane.name=Reed
-tile.bonusblocks.block.sugarcane.desc=Bundled up collection of cane and reeds.
+tile.bonusblocks.block.steel.crude.name=Block of Crude Steel
+tile.bonusblocks.block.steel.crude.desc=A solid block of crude steel. Industrial.
 tile.bonusblocks.block.mushroom.red.name=Red Mushroom Block
 tile.bonusblocks.block.mushroom.red.desc=Red fungi compressed into a block.
 tile.bonusblocks.block.mushroom.brown.name=Brown Mushroom Block
@@ -139,6 +158,16 @@ tile.bonusblocks.block.flint.name=Block of Flint
 tile.bonusblocks.block.flint.desc=A solid block of flint. Sharp!
 tile.bonusblocks.block.leather.name=Block of Leather
 tile.bonusblocks.block.leather.desc=A box cow.
+
+tile.bonusblocks.block.sugarcane.name=Reeds
+tile.bonusblocks.block.sugarcane.desc=Bundled up collection of cane and reeds.
+tile.bonusblocks.block.sugarcane.baked.name=Baked Reeds
+tile.bonusblocks.block.sugarcane.baked.desc=A scorched block of reeds.
+tile.bonusblocks.block.paper.name=Paper Shoji
+tile.bonusblocks.block.paper.desc=Decorative wallpaper supported with sticks.
+
+tile.bonusblocks.block.wicker.name=Wicker
+tile.bonusblocks.block.wicker.desc=A decorative block of wicker.
 
 tile.bonusblocks.jar.name=Empty Jar
 tile.bonusblocks.jar.desc=A glass jar containing nothing.

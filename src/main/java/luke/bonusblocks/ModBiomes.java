@@ -11,4 +11,8 @@ public abstract class ModBiomes {
     public static final Biome OVERWORLD_MESA =
             Biomes.register(BonusBlocks.MOD_ID+":overworld.mesa",
                     new BiomeMesa());
+
+    public static final Biome OVERWORLD_MAPLE =
+            Biomes.register(BonusBlocks.MOD_ID+":overworld.maple",
+                    new BiomeMaple());
 }
