@@ -93,9 +93,11 @@ tile.bonusblocks.sapling.maple.desc=A plant to grow a maple tree.
 tile.bonusblocks.log.maple.name=Maple Log
 tile.bonusblocks.log.maple.desc=A log from a maple tree.
 tile.bonusblocks.log.shrub.name=Shrub Log
-tile.bonusblocks.log.shrub.desc=The bark of a shrub tree.
+tile.bonusblocks.log.shrub.desc=A log from a shrub tree.
+tile.bonusblocks.log.shrub.name=Jacaranda Log
+tile.bonusblocks.log.shrub.desc=A log from a rare jacaranda tree.
 tile.bonusblocks.log.scorched.name=Scorched Log
-tile.bonusblocks.log.scorched.desc=The bark of a burnt down tree.
+tile.bonusblocks.log.scorched.desc=A log from a burnt down tree.
 
 tile.bonusblocks.bark.oak.name=Oak Bark
 tile.bonusblocks.bark.oak.desc=The bark of an oak tree.
@@ -113,6 +115,8 @@ tile.bonusblocks.bark.maple.name=Maple Bark
 tile.bonusblocks.bark.maple.desc=The bark of a maple tree.
 tile.bonusblocks.bark.shrub.name=Shrub Bark
 tile.bonusblocks.bark.shrub.desc=The bark of a shrub tree.
+tile.bonusblocks.bark.shrub.name=Jacaranda Bark
+tile.bonusblocks.bark.shrub.desc=The bark of a jacaranda tree.
 tile.bonusblocks.bark.scorched.name=Scorched Bark
 tile.bonusblocks.bark.scorched.desc=The bark of a burnt down tree.
 
