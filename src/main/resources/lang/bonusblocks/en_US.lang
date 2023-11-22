@@ -49,13 +49,13 @@ tile.bonusblocks.cobble.stone.reinforced.desc=Cobblestone, smashed together and 
 tile.bonusblocks.cobble.stone.mossy.reinforced.name=Reinforced Mossy Cobblestone
 tile.bonusblocks.cobble.stone.mossy.reinforced.desc=Cobblestone with added greenery, smashed together and reconstituted.
 tile.bonusblocks.cobble.granite.reinforced.name=Reinforced Cobbled Granite
-tile.bonusblocks.cobble.granite.reinforced.desc=Cobbled Granite, smashed together and reconstituted.
+tile.bonusblocks.cobble.granite.reinforced.desc=Cobbled granite, smashed together and reconstituted.
 tile.bonusblocks.cobble.limestone.reinforced.name=Reinforced Cobbled Limestone
-tile.bonusblocks.cobble.limestone.reinforced.desc=Cobbled Limestone, smashed together and reconstituted.
+tile.bonusblocks.cobble.limestone.reinforced.desc=Cobbled limestone, smashed together and reconstituted.
 tile.bonusblocks.cobble.basalt.reinforced.name=Reinforced Cobbled Basalt
-tile.bonusblocks.cobble.basalt.reinforced.desc=Cobbled Basalt, smashed together and reconstituted.
+tile.bonusblocks.cobble.basalt.reinforced.desc=Cobbled basalt, smashed together and reconstituted.
 tile.bonusblocks.cobble.permafrost.reinforced.name=Reinforced Cobbled Permafrost
-tile.bonusblocks.cobble.permafrost.reinforced.desc=Cobbled Permafrost, smashed together and reconstituted.
+tile.bonusblocks.cobble.permafrost.reinforced.desc=Cobbled permafrost, smashed together and reconstituted.
 
 tile.bonusblocks.marble.polished.name=Polished Marble
 tile.bonusblocks.marble.polished.desc=A polished block of marble.
@@ -66,9 +66,15 @@ tile.bonusblocks.sandstone.polished.desc=A polished block of sandstone.
 tile.bonusblocks.scorchedstone.polished.name=Polished Scorchedstone
 tile.bonusblocks.scorchedstone.polished.desc=A polished block of scorchedstone.
 tile.bonusblocks.marble.carved.name=Carved Marble
-tile.bonusblocks.marble.carved.desc=Polished Marble with lines hewn through the middle.
+tile.bonusblocks.marble.carved.desc=Polished marble with lines hewn through the middle.
 tile.bonusblocks.slate.carved.name=Carved Slate
-tile.bonusblocks.slate.carved.desc=Polished Slate with lines hewn through the middle.
+tile.bonusblocks.slate.carved.desc=Polished slate with lines hewn through the middle.
+tile.bonusblocks.sandstone.carved.name=Carved Sandstone
+tile.bonusblocks.sandstone.carved.desc=Polished sandstone with lines hewn through the middle.
+tile.bonusblocks.permafrost.carved.name=Carved Permafrost
+tile.bonusblocks.permafrost.carved.desc=Polished permafrost with lines hewn through the middle.
+tile.bonusblocks.scorchedstone.carved.name=Carved Scorchedstone
+tile.bonusblocks.scorchedstone.carved.desc=Polished scorchedstone with lines hewn through the middle.
 
 tile.bonusblocks.grass.overgrown.name=Overgrown Grass
 tile.bonusblocks.grass.overgrown.desc=Dirt completely overgrown by grass.
@@ -77,7 +83,7 @@ tile.bonusblocks.grass.retro.overgrown.desc=Dirt completely overgrown by retro g
 tile.bonusblocks.path.overgrown.name=Overgrown Path
 tile.bonusblocks.path.overgrown.desc=Dirt path completely worn down from travelling.
 tile.bonusblocks.grass.scorched.overgrown.name=Overgrown Scorched Grass
-tile.bonusblocks.grass.scorched.overgrown.desc=Scorched Dirt completely overgrown by grass.
+tile.bonusblocks.grass.scorched.overgrown.desc=Scorched dirt completely overgrown by grass.
 tile.bonusblocks.moss.name=Moss
 tile.bonusblocks.moss.desc=Large lump of greenery.
 
@@ -192,3 +198,98 @@ tile.bonusblocks.flower.orange.desc=A beautiful orange flower.
 tile.bonusblocks.mushroom.gray.name=Gray Mushroom
 tile.bonusblocks.mushroom.gray.desc=A nasty gray mushroom. Good for dye.
 
+tile.bonusblocks.pillar.slate.name=Slate Pillar
+tile.bonusblocks.pillar.slate.desc=A block of slate engraved into a pillar.
+
+tile.bonusblocks.capstone.marble.carved.name=Carved Marble Capstone
+tile.bonusblocks.capstone.marble.carved.desc=Marble Capstone with lines hewn through the middle.
+
+tile.bonusblocks.log.jacaranda.name= Jacaranda Log
+tile.bonusblocks.log.jacaranda.desc=A log from a jacaranda tree.
+
+tile.bonusblocks.leaves.jacaranda.name=Jacaranda Leaves
+tile.bonusblocks.leaves.jacaranda.desc=Leaves from a jacaranda tree.
+
+tile.bonusblocks.bark.jacaranda.name=Jacaranda Bark
+tile.bonusblocks.bark.jacaranda.desc=The bark of a jacaranda tree.
+
+tile.bonusblocks.sapling.jacaranda.name=Jacaranda Sapling
+tile.bonusblocks.sapling.jacaranda.desc=A plant to grow a jacaranda tree.
+
+tile.bonusblocks.slab.slate.carved.name=Polished Slate Slab
+tile.bonusblocks.slab.slate.carved.desc=A slab of polished slate.
+
+tile.bonusblocks.slab.marble.carved.name=Polished Marble Slab
+tile.bonusblocks.slab.marble.carved.desc=A slab of polished marble.
+
+tile.bonusblocks.slab.sandstone.carved.name=Polished Sandstone Slab
+tile.bonusblocks.slab.sandstone.carved.desc=A slab of polished sandstone.
+
+tile.bonusblocks.slab.permafrost.carved.name=Polished Permafrost Slab
+tile.bonusblocks.slab.permafrost.carved.desc=A slab of polished permafrost.
+
+tile.bonusblocks.slab.scorchedstone.carved.name=Polished Scorchedstone Slab
+tile.bonusblocks.slab.scorchedstone.carved.desc=A slab of polished scorchedstone.
+
+tile.bonusblocks.slab.brick.stone.polished.mossy.name=Mossy Polished Stone Brick Slab
+tile.bonusblocks.slab.brick.stone.polished.mossy.desc=A slab of mossy polished stone bricks.
+
+tile.bonusblocks.slab.brick.sandstone.name=Sandstone Brick Slab
+tile.bonusblocks.slab.brick.sandstone.desc=A slab of sandstone bricks.
+
+tile.bonusblocks.slab.brick.gold.name=Gold Brick Slab
+tile.bonusblocks.slab.brick.gold.desc=A slab of gold bricks.
+
+tile.bonusblocks.slab.brick.lapis.name=Lapis Brick Slab
+tile.bonusblocks.slab.brick.lapis.desc=A slab of lapis bricks.
+
+tile.bonusblocks.slab.brick.permafrost.name=Permafrost Brick Slab
+tile.bonusblocks.slab.brick.permafrost.desc=A slab of permafrost bricks.
+
+tile.bonusblocks.slab.brick.iron.name=Iron Brick Slab
+tile.bonusblocks.slab.brick.iron.desc=A slab of iron bricks.
+
+tile.bonusblocks.slab.brick.netherrack.name=Netherrack Brick Slab
+tile.bonusblocks.slab.brick.netherrack.desc=A slab of netherrack bricks.
+
+tile.bonusblocks.slab.brick.scorchedstone.name=Scorchedstone Brick Slab
+tile.bonusblocks.slab.brick.scorchedstone.desc=A slab of scorchedstone bricks.
+
+tile.bonusblocks.slab.brick.mud.name=Mud Brick Slab
+tile.bonusblocks.slab.brick.mud.desc=A slab of mud bricks.
+
+tile.bonusblocks.slab.cobble.permafrost.name=Cobbled Permafrost Slab
+tile.bonusblocks.slab.cobble.permafrost.desc=A slab of cobbled permafrost.
+
+tile.bonusblocks.slab.scorchedstone.name=Scorchedstone Slab
+tile.bonusblocks.slab.scorchedstone.desc=A slab of scorchedstone.
+
+tile.bonusblocks.stairs.brick.stone.polished.mossy.name=Mossy Polished Stone Brick Stairs
+tile.bonusblocks.stairs.brick.stone.polished.mossy.desc=Mossy polished stone brick block used for rapid vertical movement.
+
+tile.bonusblocks.stairs.brick.sandstone.name=Sandstone Brick Stairs
+tile.bonusblocks.stairs.brick.sandstone.desc=Sandstone brick block used for rapid vertical movement.
+
+tile.bonusblocks.stairs.brick.gold.name=Gold Brick Stairs
+tile.bonusblocks.stairs.brick.gold.desc=Gold brick block used for rapid vertical movement.
+
+tile.bonusblocks.stairs.brick.lapis.name=Lapis Brick Stairs
+tile.bonusblocks.stairs.brick.lapis.desc=Lapis brick block used for rapid vertical movement.
+
+tile.bonusblocks.stairs.brick.permafrost.name=Permafrost Brick Stairs
+tile.bonusblocks.stairs.brick.permafrost.desc=Permafrost brick block used for rapid vertical movement.
+
+tile.bonusblocks.stairs.brick.iron.name=Iron Brick Stairs
+tile.bonusblocks.stairs.brick.iron.desc=Iron brick block used for rapid vertical movement.
+
+tile.bonusblocks.stairs.brick.netherrack.name=Netherrack Brick Stairs
+tile.bonusblocks.stairs.brick.netherrack.desc=Netherrack brick block used for rapid vertical movement.
+
+tile.bonusblocks.stairs.brick.scorchedstone.name=Scorchedstone Brick Stairs
+tile.bonusblocks.stairs.brick.scorchedstone.desc=Scorchedstone brick block used for rapid vertical movement.
+
+tile.bonusblocks.stairs.brick.mud.name=Mud Brick Stairs
+tile.bonusblocks.stairs.brick.mud.desc=Mud brick block used for rapid vertical movement.
+
+tile.bonusblocks.stairs.cobble.permafrost.name=Cobbled Permafrost Stairs
+tile.bonusblocks.stairs.cobble.permafrost.desc=Cobbled permafrost block used for rapid vertical movement.

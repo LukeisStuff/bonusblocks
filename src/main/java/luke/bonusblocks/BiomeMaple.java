@@ -15,13 +15,13 @@ public class BiomeMaple extends BiomeForest {
 
     public WorldFeature getRandomWorldGenForTrees(Random random) {
         if (random.nextInt(5) == 0) {
-            return new WorldFeatureTreeFancy(BonusBlocks.leavesMaple.id, BonusBlocks.logMaple.id, 5);
+            return new WorldFeatureTreeMassive(BonusBlocks.leavesMaple.id, BonusBlocks.logMaple.id);
         } else if (random.nextInt(20) == 0) {
-            return new WorldFeatureTreeFancy(BonusBlocks.leavesMaple.id, BonusBlocks.logMaple.id, 4);
+            return new WorldFeatureTreeMassive(BonusBlocks.leavesMaple.id, BonusBlocks.logMaple.id);
         } else if (random.nextInt(3) == 0) {
-            return new WorldFeatureTreeFancy(BonusBlocks.leavesMaple.id, BonusBlocks.logMaple.id);
+            return new WorldFeatureTreeMassive(BonusBlocks.leavesMaple.id, BonusBlocks.logMaple.id);
         } else {
-            return new WorldFeatureTreeFancy(BonusBlocks.leavesMaple.id, BonusBlocks.logMaple.id, 4);
+            return new WorldFeatureTreeMassive(BonusBlocks.leavesMaple.id, BonusBlocks.logMaple.id);
         }
     }
 }

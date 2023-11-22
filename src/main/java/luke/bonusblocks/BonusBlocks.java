@@ -13,6 +13,7 @@ import net.minecraft.core.crafting.CraftingManager;
 import net.minecraft.core.crafting.LookupFuelFurnace;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
+import net.minecraft.core.item.block.ItemBlock;
 import net.minecraft.core.item.block.ItemBlockPainted;
 import net.minecraft.core.item.block.ItemBlockSlab;
 import net.minecraft.core.item.tool.ItemToolPickaxe;
@@ -25,6 +26,8 @@ import turniplabs.halplibe.mixin.accessors.CraftingManagerAccessor;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import static net.minecraft.core.block.Block.brickLapis;
 
 
 public class    BonusBlocks implements ModInitializer {
@@ -467,7 +470,7 @@ public class    BonusBlocks implements ModInitializer {
             .setSideTextures("carvedsandstone.png")
             .setTopBottomTexture("polishedsandstonetop.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-            .build(new Block("slate.carved", 47, Material.stone));
+            .build(new Block("sandstone.carved", 47, Material.stone));
 
     public static final Block permafrostCarved = new BlockBuilder(MOD_ID)
             .setBlockSound(BlockSounds.STONE)
@@ -476,7 +479,7 @@ public class    BonusBlocks implements ModInitializer {
             .setSideTextures("carvedpermafrost.png")
             .setTopBottomTexture("polishedpermafrostop.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-            .build(new Block("slate.carved", 48, Material.stone));
+            .build(new Block("permafrost.carved", 48, Material.stone));
 
     public static final Block scorchedstoneCarved = new BlockBuilder(MOD_ID)
             .setBlockSound(BlockSounds.STONE)
@@ -485,7 +488,7 @@ public class    BonusBlocks implements ModInitializer {
             .setSideTextures("carvedscorchedstone.png")
             .setTopBottomTexture("polishedredsandstonetop.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-            .build(new Block("slate.carved", 49, Material.stone));
+            .build(new Block("scorchedstone.carved", 49, Material.stone));
 
 
 
@@ -841,7 +844,7 @@ public class    BonusBlocks implements ModInitializer {
             .setVisualUpdateOnMetadata()
             .setTextures(9, 8)
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-            .build(new BlockSlab(Block.brickLapis, 918));
+            .build(new BlockSlab(brickLapis, 918));
     public static final Block slabBrickPermafrost = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
             .setHardness(1.0f)
@@ -946,7 +949,7 @@ public class    BonusBlocks implements ModInitializer {
             .setVisualUpdateOnMetadata()
             .setTextures(9, 8)
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-            .build(new BlockStairs(Block.brickLapis, 933));
+            .build(new BlockStairs(brickLapis, 933));
     public static final Block stairsBrickPermafrost = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
             .setHardness(1.0f)
@@ -1022,7 +1025,7 @@ public class    BonusBlocks implements ModInitializer {
 
         Item.itemsList[slabScorchedstone.id] = new ItemBlockSlab(slabScorchedstone);
         Item.itemsList[slabCobblePermafrost.id] = new ItemBlockSlab(slabCobblePermafrost);
-
+        Item.itemsList[stairsBrickLapis.id] = new ItemBlock(stairsBrickLapis);
     }
 
     @Override
@@ -1038,6 +1041,7 @@ public class    BonusBlocks implements ModInitializer {
 
         Item.jar = new ItemJarPlacable("jar", 16519, BonusBlocks.jar).setIconCoord(3, 9);
 
+//        Block.stoneCarved = new Block("stone.carved", 40, Material.stone).withTexCoords(6, 0, 5, 0).withHardness(2.0F).withBlastResistance(10.0F).withTags(BlockTags.MINEABLE_BY_PICKAXE);
 
         RecipeHelper.removeRecipe(Block.pillarMarble, 0);
         RecipeHelper.Crafting.createRecipe(Block.pillarMarble, 3, new Object[]{"P", "P", "P", 'P', Block.marble});
@@ -1188,7 +1192,7 @@ public class    BonusBlocks implements ModInitializer {
 
         RecipeHelper.Crafting.createRecipe(BonusBlocks.slabBrickGold,3,new Object[]{"PPP", 'P' , Block.brickGold});
         RecipeHelper.Crafting.createRecipe(BonusBlocks.slabBrickIron,3,new Object[]{"PPP", 'P' , Block.brickIron});
-        RecipeHelper.Crafting.createRecipe(BonusBlocks.slabBrickLapis,3,new Object[]{"PPP", 'P' , Block.brickLapis});
+        RecipeHelper.Crafting.createRecipe(BonusBlocks.slabBrickLapis,3,new Object[]{"PPP", 'P' , brickLapis});
         RecipeHelper.Crafting.createRecipe(BonusBlocks.slabBrickMud,3,new Object[]{"PPP", 'P' , BonusBlocks.brickMud});
         RecipeHelper.Crafting.createRecipe(BonusBlocks.slabBrickNetherrack,3,new Object[]{"PPP", 'P' , BonusBlocks.brickNetherrack});
         RecipeHelper.Crafting.createRecipe(BonusBlocks.slabBrickPermafrost,3,new Object[]{"PPP", 'P' , Block.brickPermafrost});
