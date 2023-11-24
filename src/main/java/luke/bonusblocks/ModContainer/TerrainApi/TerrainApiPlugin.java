@@ -20,7 +20,12 @@ public class TerrainApiPlugin implements TerrainAPI {
     public void onInitialize() {
         overworldConfig.addGrassDensity(ModBiomes.OVERWORLD_OVERGROWN, 2);
         overworldConfig.addGrassDensity(ModBiomes.OVERWORLD_MESA, 1);
-        overworldConfig.addGrassDensity(ModBiomes.OVERWORLD_MAPLE, 3);
+        overworldConfig.addGrassDensity(ModBiomes.OVERWORLD_MAPLE, 2);
+
+        overworldConfig.addTreeDensity(ModBiomes.OVERWORLD_MAPLE, 2);
+
+        overworldConfig.addLakeDensity(ModBiomes.OVERWORLD_MAPLE, 1);
+        overworldConfig.addLakeDensity(ModBiomes.OVERWORLD_OVERGROWN, 1);
 
         overworldConfig.addFlowerDensity(ModBiomes.OVERWORLD_OVERGROWN, 1);
         overworldConfig.addFlowerDensity(ModBiomes.OVERWORLD_MAPLE, 2);
@@ -29,7 +34,7 @@ public class TerrainApiPlugin implements TerrainAPI {
         overworldConfig.addYellowFlowerDensity(ModBiomes.OVERWORLD_MAPLE, 2);
 
         overworldConfig.addRandomGrassBlock(ModBiomes.OVERWORLD_OVERGROWN, Block.tallgrassFern);
-        overworldConfig.addRandomGrassBlock(ModBiomes.OVERWORLD_MAPLE, Block.tallgrassFern);
+        overworldConfig.addRandomGrassBlock(ModBiomes.OVERWORLD_MAPLE, Block.overlayPebbles);
         overworldConfig.addRandomGrassBlock(ModBiomes.OVERWORLD_MESA, Block.deadbush);
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.flowerCyan.id), 4, -1f, 1,

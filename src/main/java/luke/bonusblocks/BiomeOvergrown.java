@@ -21,8 +21,8 @@ public class BiomeOvergrown extends Biome {
         if (random.nextInt(5) == 0) {
             return new WorldFeatureTreeShrub(Block.leavesShrub.id, BonusBlocks.logShrub.id);
         } else if (random.nextInt(20) == 0) {
-            return new WorldFeatureTreeMassive(BonusBlocks.leavesJacaranda.id, BonusBlocks.logJacaranda.id, 100);
+            return new WorldFeatureTreeFancy(BonusBlocks.leavesJacaranda.id, BonusBlocks.logJacaranda.id);
         }
-        return new WorldFeatureTreeMassive(BonusBlocks.leavesJacaranda.id, BonusBlocks.logJacaranda.id, 100);
+        return new WorldFeatureTreeFancy(BonusBlocks.leavesJacaranda.id, BonusBlocks.logJacaranda.id);
     }
 }

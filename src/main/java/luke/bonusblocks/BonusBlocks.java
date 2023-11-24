@@ -687,7 +687,7 @@ public class    BonusBlocks implements ModInitializer {
             .setSideTextures(0, 0)
             .setBlockColor(new BlockColorGrass())
             .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.GROWS_FLOWERS, BlockTags.GROWS_SUGAR_CANE, BlockTags.GROWS_TREES, BlockTags.PASSIVE_MOBS_SPAWN, BlockTags.FIREFLIES_CAN_SPAWN, BlockTags.CAVE_GEN_REPLACES_SURFACE, BlockTags.CAVES_CUT_THROUGH)
-            .build(new BlockOvergrownGrass("grass.overgrown", 203, Material.grass));
+            .build(new Block("grass.overgrown", 203, Material.grass));
 
     public static final Block grassRetroOvergrown = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
@@ -695,7 +695,7 @@ public class    BonusBlocks implements ModInitializer {
             .setResistance(1.0f)
             .setTextures(8, 1)
             .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.GROWS_FLOWERS, BlockTags.GROWS_SUGAR_CANE, BlockTags.GROWS_TREES, BlockTags.PASSIVE_MOBS_SPAWN, BlockTags.FIREFLIES_CAN_SPAWN, BlockTags.CAVE_GEN_REPLACES_SURFACE, BlockTags.CAVES_CUT_THROUGH)
-            .build(new BlockOvergrownGrass("grass.retro.overgrown", 204, Material.grass));
+            .build(new Block("grass.retro.overgrown", 204, Material.grass));
 
     public static final Block pathOvergrown = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
@@ -921,6 +921,7 @@ public class    BonusBlocks implements ModInitializer {
             .setUseInternalLight()
             .setVisualUpdateOnMetadata()
             .setTextures(11, 8)
+            .setBlockModel(new BlockModelRenderBlocks(10))
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockStairs(Block.brickStonePolishedMossy, 930));
     public static final Block stairsBrickSandstone = new BlockBuilder(MOD_ID)
@@ -930,6 +931,7 @@ public class    BonusBlocks implements ModInitializer {
             .setUseInternalLight()
             .setVisualUpdateOnMetadata()
             .setTextures(0, 14)
+            .setBlockModel(new BlockModelRenderBlocks(10))
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockStairs(Block.brickSandstone, 931));
     public static final Block stairsBrickGold = new BlockBuilder(MOD_ID)
@@ -939,6 +941,7 @@ public class    BonusBlocks implements ModInitializer {
             .setUseInternalLight()
             .setVisualUpdateOnMetadata()
             .setTextures(9, 9)
+            .setBlockModel(new BlockModelRenderBlocks(10))
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockStairs(Block.brickGold, 932));
     public static final Block stairsBrickLapis = new BlockBuilder(MOD_ID)
@@ -948,6 +951,7 @@ public class    BonusBlocks implements ModInitializer {
             .setUseInternalLight()
             .setVisualUpdateOnMetadata()
             .setTextures(9, 8)
+            .setBlockModel(new BlockModelRenderBlocks(10))
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockStairs(brickLapis, 933));
     public static final Block stairsBrickPermafrost = new BlockBuilder(MOD_ID)
@@ -957,6 +961,7 @@ public class    BonusBlocks implements ModInitializer {
             .setUseInternalLight()
             .setVisualUpdateOnMetadata()
             .setTextures(13, 15)
+            .setBlockModel(new BlockModelRenderBlocks(10))
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockStairs(Block.brickPermafrost, 934));
     public static final Block stairsBrickIron = new BlockBuilder(MOD_ID)
@@ -966,6 +971,7 @@ public class    BonusBlocks implements ModInitializer {
             .setUseInternalLight()
             .setVisualUpdateOnMetadata()
             .setTextures(8, 8)
+            .setBlockModel(new BlockModelRenderBlocks(10))
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockStairs(Block.brickIron, 935));
     public static final Block stairsBrickNetherrack = new BlockBuilder(MOD_ID)
@@ -975,6 +981,7 @@ public class    BonusBlocks implements ModInitializer {
             .setUseInternalLight()
             .setVisualUpdateOnMetadata()
             .setTextures("netherbrick.png")
+            .setBlockModel(new BlockModelRenderBlocks(10))
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockStairs(BonusBlocks.brickNetherrack, 936));
     public static final Block stairsBrickScorchedstone = new BlockBuilder(MOD_ID)
@@ -984,6 +991,7 @@ public class    BonusBlocks implements ModInitializer {
             .setUseInternalLight()
             .setVisualUpdateOnMetadata()
             .setTextures("redsandstonebrick.png")
+            .setBlockModel(new BlockModelRenderBlocks(10))
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockStairs(BonusBlocks.brickScorchedstone, 937));
     public static final Block stairsBrickMud = new BlockBuilder(MOD_ID)
@@ -993,6 +1001,7 @@ public class    BonusBlocks implements ModInitializer {
             .setUseInternalLight()
             .setVisualUpdateOnMetadata()
             .setTextures("mudbrick.png")
+            .setBlockModel(new BlockModelRenderBlocks(10))
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockStairs(BonusBlocks.brickMud, 938));
 
@@ -1003,6 +1012,7 @@ public class    BonusBlocks implements ModInitializer {
             .setUseInternalLight()
             .setVisualUpdateOnMetadata()
             .setTextures(12, 15)
+            .setBlockModel(new BlockModelRenderBlocks(10))
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockStairs(Block.cobblePermafrost, 939));
 
@@ -1025,7 +1035,6 @@ public class    BonusBlocks implements ModInitializer {
 
         Item.itemsList[slabScorchedstone.id] = new ItemBlockSlab(slabScorchedstone);
         Item.itemsList[slabCobblePermafrost.id] = new ItemBlockSlab(slabCobblePermafrost);
-        Item.itemsList[stairsBrickLapis.id] = new ItemBlock(stairsBrickLapis);
     }
 
     @Override
@@ -1140,15 +1149,15 @@ public class    BonusBlocks implements ModInitializer {
 
         RecipeHelper.Crafting.createRecipe(BonusBlocks.blockBone,1,new Object[]{"PPP","PPP","PPP", 'P' , Item.bone});
         RecipeHelper.Crafting.createRecipe(Item.bone,9,new Object[]{"P", 'P' , BonusBlocks.blockBone});
-        RecipeHelper.Crafting.createRecipe(BonusBlocks.thatch,1,new Object[]{"PSP","SPS","PSP", 'P' , Item.wheat, 'S' , Item.stick});
+        RecipeHelper.Crafting.createRecipe(BonusBlocks.thatch,1,new Object[]{"PS","SP", 'P' , Item.wheat, 'S' , Item.stick});
         RecipeHelper.Crafting.createRecipe(BonusBlocks.blockSlime,1,new Object[]{"PP","PP", 'P' , Item.slimeball});
         RecipeHelper.Crafting.createRecipe(Item.slimeball,4,new Object[]{"P", 'P' , BonusBlocks.blockSlime});
         RecipeHelper.Crafting.createRecipe(BonusBlocks.blockSulphur,1,new Object[]{"PPP","PPP","PPP", 'P' , Item.sulphur});
         RecipeHelper.Crafting.createRecipe(Item.sulphur,9,new Object[]{"P", 'P' , BonusBlocks.blockSulphur});
         RecipeHelper.Crafting.createRecipe(BonusBlocks.blockCloth,1,new Object[]{"PPP","PPP","PPP", 'P' , Item.cloth});
         RecipeHelper.Crafting.createRecipe(Item.cloth,9,new Object[]{"P", 'P' , BonusBlocks.blockCloth});
-        RecipeHelper.Crafting.createRecipe(BonusBlocks.blockSugarcane,1,new Object[]{"PPP","PPP","PPP", 'P' , Item.sugarcane});
-        RecipeHelper.Crafting.createRecipe(Item.sugarcane,9,new Object[]{"P", 'P' , BonusBlocks.blockSugarcane});
+        RecipeHelper.Crafting.createRecipe(BonusBlocks.blockCrudeSteel,1,new Object[]{"PPP","PPP","PPP", 'P' , Item.ingotSteelCrude});
+        RecipeHelper.Crafting.createRecipe(Item.ingotSteelCrude,9,new Object[]{"P", 'P' , BonusBlocks.blockCrudeSteel});
         RecipeHelper.Crafting.createRecipe(BonusBlocks.blockFlint,1,new Object[]{"PPP","PPP","PPP", 'P' , Item.flint});
         RecipeHelper.Crafting.createRecipe(Item.flint,9,new Object[]{"P", 'P' , BonusBlocks.blockFlint});
         RecipeHelper.Crafting.createRecipe(BonusBlocks.blockLeather,1,new Object[]{"PPP","PPP","PPP", 'P' , Item.leather});
@@ -1157,7 +1166,9 @@ public class    BonusBlocks implements ModInitializer {
 
         RecipeHelper.Crafting.createRecipe(BonusBlocks.blockSugarcane,1,new Object[]{"PPP","PPP","PPP", 'P' , Item.sugarcane});
         RecipeHelper.Crafting.createRecipe(Item.sugarcane,9,new Object[]{"P", 'P' , BonusBlocks.blockSugarcane});
-        RecipeHelper.Crafting.createRecipe(BonusBlocks.blockPaper,1,new Object[]{"SPS","PSP","SPS", 'P' , Item.paper, 'S', Item.stick});
+        RecipeHelper.Crafting.createRecipe(BonusBlocks.blockPaper,1,new Object[]{"SP","PS", 'P' , Item.paper, 'S', Item.stick});
+
+        RecipeHelper.Crafting.createRecipe(BonusBlocks.blockWicker,1,new Object[]{"SP","PS", 'P' , Item.wheat, 'S', Item.leather});
 
         RecipeHelper.Crafting.createRecipe(BonusBlocks.grassOvergrown,2,new Object[]{"P","P", 'P' , Block.grass});
         RecipeHelper.Crafting.createRecipe(BonusBlocks.grassRetroOvergrown,2,new Object[]{"P","P", 'P' , Block.grassRetro});

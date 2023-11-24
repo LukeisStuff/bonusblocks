@@ -9,7 +9,7 @@ public abstract class ModBiomes {
                     new BiomeOvergrown());
 
     public static final Biome OVERWORLD_MESA =
-            Biomes.register(BonusBlocks.MOD_ID+":overworld.mesa",
+            Biomes.register(BonusBlocks.MOD_ID+":overworld.outback.mesa",
                     new BiomeMesa());
 
     public static final Biome OVERWORLD_MAPLE =
