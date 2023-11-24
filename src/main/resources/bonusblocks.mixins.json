@@ -5,11 +5,14 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "BiomeProviderOverworldMixin",
+    "BiomeShrublandMixin",
+    "BlockDeadBushMixin",
     "BlockGrassMixin",
+    "BlockSaplingShrubMixin",
     "ChunkDecoratorOverworldMixin",
     "EntityMixin",
     "ItemToolShovelMixin",
-    "BlockDeadBushMixin"
+    "WorldFeatureLabyrinthMixin"
   ],
   "client": [
   ],

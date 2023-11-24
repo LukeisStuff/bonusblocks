@@ -100,8 +100,8 @@ tile.bonusblocks.log.maple.name=Maple Log
 tile.bonusblocks.log.maple.desc=A log from a maple tree.
 tile.bonusblocks.log.shrub.name=Shrub Log
 tile.bonusblocks.log.shrub.desc=A log from a shrub tree.
-tile.bonusblocks.log.shrub.name=Jacaranda Log
-tile.bonusblocks.log.shrub.desc=A log from a jacaranda tree.
+tile.bonusblocks.log.jacaranda.name=Jacaranda Log
+tile.bonusblocks.log.jacaranda.desc=A log from a jacaranda tree.
 tile.bonusblocks.log.scorched.name=Scorched Log
 tile.bonusblocks.log.scorched.desc=A log from a burnt down tree.
 
@@ -134,6 +134,12 @@ tile.bonusblocks.brick.scorchedstone.name=Scorchedstone Bricks
 tile.bonusblocks.brick.scorchedstone.desc=Stacked bricks of scorchedstone.
 tile.bonusblocks.brick.mud.name=Baked Mud Bricks
 tile.bonusblocks.brick.mud.desc=Stacked bricks of baked mud.
+tile.bonusblocks.brick.steel.name=Steel Bricks
+tile.bonusblocks.brick.steel.desc=Stacked bricks of steel.
+tile.bonusblocks.brick.quartz.name=Quartz Bricks
+tile.bonusblocks.brick.quartz.desc=Stacked bricks of quartz.
+tile.bonusblocks.brick.olivine.name=Olivine Bricks
+tile.bonusblocks.brick.olivine.desc=Stacked bricks of olivine.
 tile.bonusblocks.soulslate.name=Soulslate
 tile.bonusblocks.soulslate.desc=A block of solid soul sand. Probably haunted.
 
@@ -218,78 +224,77 @@ tile.bonusblocks.sapling.jacaranda.desc=A plant to grow a jacaranda tree.
 
 tile.bonusblocks.slab.slate.carved.name=Polished Slate Slab
 tile.bonusblocks.slab.slate.carved.desc=A slab of polished slate.
-
 tile.bonusblocks.slab.marble.carved.name=Polished Marble Slab
 tile.bonusblocks.slab.marble.carved.desc=A slab of polished marble.
-
 tile.bonusblocks.slab.sandstone.carved.name=Polished Sandstone Slab
 tile.bonusblocks.slab.sandstone.carved.desc=A slab of polished sandstone.
-
 tile.bonusblocks.slab.permafrost.carved.name=Polished Permafrost Slab
 tile.bonusblocks.slab.permafrost.carved.desc=A slab of polished permafrost.
-
 tile.bonusblocks.slab.scorchedstone.carved.name=Polished Scorchedstone Slab
 tile.bonusblocks.slab.scorchedstone.carved.desc=A slab of polished scorchedstone.
-
 tile.bonusblocks.slab.brick.stone.polished.mossy.name=Mossy Polished Stone Brick Slab
 tile.bonusblocks.slab.brick.stone.polished.mossy.desc=A slab of mossy polished stone bricks.
-
 tile.bonusblocks.slab.brick.sandstone.name=Sandstone Brick Slab
 tile.bonusblocks.slab.brick.sandstone.desc=A slab of sandstone bricks.
-
 tile.bonusblocks.slab.brick.gold.name=Gold Brick Slab
 tile.bonusblocks.slab.brick.gold.desc=A slab of gold bricks.
-
 tile.bonusblocks.slab.brick.lapis.name=Lapis Brick Slab
 tile.bonusblocks.slab.brick.lapis.desc=A slab of lapis bricks.
-
 tile.bonusblocks.slab.brick.permafrost.name=Permafrost Brick Slab
 tile.bonusblocks.slab.brick.permafrost.desc=A slab of permafrost bricks.
-
 tile.bonusblocks.slab.brick.iron.name=Iron Brick Slab
 tile.bonusblocks.slab.brick.iron.desc=A slab of iron bricks.
-
 tile.bonusblocks.slab.brick.netherrack.name=Netherrack Brick Slab
 tile.bonusblocks.slab.brick.netherrack.desc=A slab of netherrack bricks.
-
 tile.bonusblocks.slab.brick.scorchedstone.name=Scorchedstone Brick Slab
 tile.bonusblocks.slab.brick.scorchedstone.desc=A slab of scorchedstone bricks.
-
 tile.bonusblocks.slab.brick.mud.name=Mud Brick Slab
 tile.bonusblocks.slab.brick.mud.desc=A slab of mud bricks.
 
+tile.bonusblocks.slab.brick.steel.name=Steel Brick Slab
+tile.bonusblocks.slab.brick.steel.desc=A slab of steel bricks.
+tile.bonusblocks.slab.brick.quartz.name=Quartz Brick Slab
+tile.bonusblocks.slab.brick.quartz.desc=A slab of quartz bricks.
+tile.bonusblocks.slab.brick.olivine.name=Olivine Brick Slab
+tile.bonusblocks.slab.brick.olivine.desc=A slab of olivine bricks.
+
 tile.bonusblocks.slab.cobble.permafrost.name=Cobbled Permafrost Slab
 tile.bonusblocks.slab.cobble.permafrost.desc=A slab of cobbled permafrost.
-
 tile.bonusblocks.slab.scorchedstone.name=Scorchedstone Slab
 tile.bonusblocks.slab.scorchedstone.desc=A slab of scorchedstone.
 
 tile.bonusblocks.stairs.brick.stone.polished.mossy.name=Mossy Polished Stone Brick Stairs
 tile.bonusblocks.stairs.brick.stone.polished.mossy.desc=Mossy polished stone brick block used for rapid vertical movement.
-
 tile.bonusblocks.stairs.brick.sandstone.name=Sandstone Brick Stairs
 tile.bonusblocks.stairs.brick.sandstone.desc=Sandstone brick block used for rapid vertical movement.
-
 tile.bonusblocks.stairs.brick.gold.name=Gold Brick Stairs
 tile.bonusblocks.stairs.brick.gold.desc=Gold brick block used for rapid vertical movement.
-
 tile.bonusblocks.stairs.brick.lapis.name=Lapis Brick Stairs
 tile.bonusblocks.stairs.brick.lapis.desc=Lapis brick block used for rapid vertical movement.
-
 tile.bonusblocks.stairs.brick.permafrost.name=Permafrost Brick Stairs
 tile.bonusblocks.stairs.brick.permafrost.desc=Permafrost brick block used for rapid vertical movement.
-
 tile.bonusblocks.stairs.brick.iron.name=Iron Brick Stairs
 tile.bonusblocks.stairs.brick.iron.desc=Iron brick block used for rapid vertical movement.
-
 tile.bonusblocks.stairs.brick.netherrack.name=Netherrack Brick Stairs
 tile.bonusblocks.stairs.brick.netherrack.desc=Netherrack brick block used for rapid vertical movement.
-
 tile.bonusblocks.stairs.brick.scorchedstone.name=Scorchedstone Brick Stairs
 tile.bonusblocks.stairs.brick.scorchedstone.desc=Scorchedstone brick block used for rapid vertical movement.
-
 tile.bonusblocks.stairs.brick.mud.name=Mud Brick Stairs
 tile.bonusblocks.stairs.brick.mud.desc=Mud brick block used for rapid vertical movement.
+tile.bonusblocks.stairs.brick.steel.name=Steel Brick Stairs
+tile.bonusblocks.stairs.brick.steel.desc=Steel brick block used for rapid vertical movement.
+tile.bonusblocks.stairs.brick.quartz.name=Quartz Brick Stairs
+tile.bonusblocks.stairs.brick.quartz.desc=Quartz brick block used for rapid vertical movement.
+tile.bonusblocks.stairs.brick.olivine.name=Olivine Brick Stairs
+tile.bonusblocks.stairs.brick.olivine.desc=Olivine brick block used for rapid vertical movement.
 
 tile.bonusblocks.stairs.cobble.permafrost.name=Cobbled Permafrost Stairs
 tile.bonusblocks.stairs.cobble.permafrost.desc=Cobbled permafrost block used for rapid vertical movement.
+
+tile.bonusblocks.candle.soulwax.name=Soul Wax Candle
+tile.bonusblocks.candle.soulwax.desc=Say the line souljak.
+
+item.bonusblocks.candle.soulwax.name=Soul Wax Candle
+item.bonusblocks.candle.soulwax.desc=A waxy brown candle that glows with an unnatural light.
+item.bonusblocks.soulwax.name=Soul Wax
+item.bonusblocks.soulwax.desc=A sticky substance secreted from squishy brown sand.
