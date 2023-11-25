@@ -47,7 +47,7 @@
   + White Dandelion
   + Crafts into light gray dye
   + Gladiola
-  + Crafts into orange dye.
+  + Crafts into orange dye
   + Clovers
   + Crafts into lime dye
   + Each flower generates in different biomes
@@ -105,11 +105,11 @@
   + 13 blocks now have stairs to go along with them
  
 * Overgrown Biome
-  + Found inbetween boreal forests and taigas
+  + Found between boreal forests and taigas
   + Jacaranda trees are rarely found here with purple wood
 * Mesa Biome
   + Scorchedstone and Scorched trees are found here that give black wood
-  + Found between deserts and 
+  + Found between deserts and outbacks
 * Maple Forest Biome
   + Maple trees are found here, they give red wood
   + Found near rainforests
@@ -120,9 +120,15 @@
 ## Changes
 * Pillars now use a new recipe with 3 of the respective stone type instead of 2
   + this affects marble and slate pillars
-* Carved stones now have recipes
+* Carved stones now have recipes and appear in the creative inventory
   + This affects Carved Stone, Carved Basalt, Carved Granite, Carved Limestone and Carved Basalt
 
+## Requirements
+
+BTA 1.7.7.0_02
+Babric
+Halplibe
+TerrainAPI
 
 ## Instructions
 
@@ -133,5 +139,5 @@ LukeisStuff - Creator
 
 Tocinin, AFK, Spicyfiction, Mak, mzov, perry26, jonkadelic, beat_your_rice, PedroThePanda64, denatidum, txar - Textures
 
-Useless, azurelmao, Grease, MartinSVK12 - Mod Help
+Useless, azurelmao, Grease, MartinSVK12, Killi - Mod Help
 

@@ -19,9 +19,20 @@ public abstract class ContainerPlayerCreativeMixin {
     public static int creativeItemsCount;
     @Inject(method="<clinit>",at=@At("TAIL"))
     private static void inject(CallbackInfo ci) {
+
+        creativeItems.add(new ItemStack(Block.blocksList[Block.stoneCarved.id]));
+        creativeItemsCount++;
+        creativeItems.add(new ItemStack(Block.blocksList[Block.graniteCarved.id]));
+        creativeItemsCount++;
+        creativeItems.add(new ItemStack(Block.blocksList[Block.limestoneCarved.id]));
+        creativeItemsCount++;
+        creativeItems.add(new ItemStack(Block.blocksList[Block.basaltCarved.id]));
+        creativeItemsCount++;
+
         for (int metadata = 0b0000; metadata < 0b10000; metadata += 0b0001) {
             creativeItems.add(new ItemStack(Block.blocksList[BonusBlocks.boxPainted.id], 1, metadata));
             creativeItemsCount++;
+
         }
     }
 }
