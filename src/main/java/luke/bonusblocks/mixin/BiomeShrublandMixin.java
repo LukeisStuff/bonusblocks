@@ -17,13 +17,8 @@ import java.util.Random;
 public class BiomeShrublandMixin {
     @Inject(method = "getRandomWorldGenForTrees", at = @At(value = "TAIL", target = "Lnet/minecraft/core/world/biome/BiomeShrubland;getRandomWorldGenForTrees(Ljava/util/Random;)Lnet/minecraft/core/world/generate/feature/WorldFeature;"), cancellable = true)
     public void getRandomWorldGenForTrees(Random random, CallbackInfoReturnable<WorldFeature> cir) {
-        new WorldFeatureTreeShrub(Block.leavesShrub.id, BonusBlocks.logShrub.id);
-        cir.setReturnValue(new WorldFeatureTreeShrub(Block.leavesShrub.id, BonusBlocks.logShrub.id) {
-            @Override
-            public boolean generate(World world, Random random, int i, int j, int k) {
-                return true;
-            }
-        });
+        {
+            cir.setReturnValue(new WorldFeatureTreeShrub(Block.leavesShrub.id, BonusBlocks.logShrub.id));
+        }
     }
-
 }

@@ -21,7 +21,7 @@ public abstract class BiomeProviderOverworldMixin {
         brm.addRange(ModBiomes.OVERWORLD_MESA, new BiomeRange(0.93,0.96,0.00,0.12,0.00,1.00,0.15,1.0));
         brm.addRange(ModBiomes.OVERWORLD_MAPLE, new BiomeRange(0.76,0.95,0.39,0.20,0.00,1.00,0.00,1.0));
         brm.addRange(ModBiomes.OVERWORLD_MAPLE, new BiomeRange(0.76,1.01,0.76,0.85,0.00,1.00,0.00,1.0));
-        brm.addRange(Biomes.OVERWORLD_SHRUBLAND, new BiomeRange(0.00,1.01,0.00,1.01,0.00,2.00,0.00,1.0));
+//        brm.addRange(Biomes.OVERWORLD_RAINFOREST, new BiomeRange(0.00,1.01,0.00,1.01,0.00,2.00,0.00,1.0));
 
     }
 }

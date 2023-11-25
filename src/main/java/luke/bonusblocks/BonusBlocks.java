@@ -1165,6 +1165,8 @@ public class    BonusBlocks implements ModInitializer {
         RecipeHelper.Crafting.createRecipe(Block.pillarMarble, 3, new Object[]{"P", "P", "P", 'P', Block.marble});
         RecipeHelper.Crafting.createRecipe(BonusBlocks.pillarSlate, 3, new Object[]{"P", "P", "P", 'P', Block.slate});
 
+        RecipeHelper.Crafting.createRecipe(Block.cobblePermafrost, 2, new Object[]{"PI", "IP", 'P', Item.ammoPebble, 'I', Block.ice});
+
         RecipeHelper.Crafting.createRecipe(BonusBlocks.crate,9, new Object[]{"PPP","PPP", "PPP", 'P' , Block.planksOak});
         RecipeHelper.Crafting.createRecipe(BonusBlocks.crateSticky,4, new Object[]{"S","P", 'P' , BonusBlocks.crate, 'S', Item.slimeball});
         RecipeHelper.Crafting.createRecipe(BonusBlocks.box,8, new Object[]{"PP","PP", 'P' , Block.chestPlanksOak});

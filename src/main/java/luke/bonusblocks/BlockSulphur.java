@@ -6,7 +6,6 @@ import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.entity.EntityFallingSand;
-import net.minecraft.core.entity.EntityTNT;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.ItemFirestriker;
@@ -15,8 +14,6 @@ import net.minecraft.core.sound.SoundType;
 import net.minecraft.core.world.World;
 
 import java.util.Random;
-
-import static net.minecraft.core.block.BlockSand.fallInstantly;
 
 public class BlockSulphur extends BlockSand {
     public BlockSulphur(String key, int id, Material material) {

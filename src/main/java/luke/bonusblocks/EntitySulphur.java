@@ -35,6 +35,11 @@ public class EntitySulphur extends Entity {
     protected void init() {
     }
 
+    @Override
+    public String getEntityTexture() {
+        return "/assets/bonusblocks/block/sulphurblock.png";
+    }
+
     protected boolean makeStepSound() {
         return false;
     }
