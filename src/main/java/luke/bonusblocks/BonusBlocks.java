@@ -71,7 +71,7 @@ public class    BonusBlocks implements ModInitializer {
             .setBlockModel(new BlockModelRenderBlocks(22))
             .setTextures("paintedbox.png")
             .setFlammability(2, 2)
-            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
+            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT, BlockTags.NOT_IN_CREATIVE_MENU)
             .setBlockColor(new BlockColorPlanksPainted(false))
             .build(new BlockPaintedBox("box.painted", 685, Material.wood));
 

@@ -23,6 +23,7 @@ public class TerrainApiPlugin implements TerrainAPI {
         overworldConfig.addGrassDensity(ModBiomes.OVERWORLD_MAPLE, 2);
 
         overworldConfig.addTreeDensity(ModBiomes.OVERWORLD_MAPLE, 2);
+        overworldConfig.addTreeDensity(ModBiomes.OVERWORLD_MESA, 1);
 
         overworldConfig.addLakeDensity(ModBiomes.OVERWORLD_MAPLE, 1);
         overworldConfig.addLakeDensity(ModBiomes.OVERWORLD_OVERGROWN, 1);

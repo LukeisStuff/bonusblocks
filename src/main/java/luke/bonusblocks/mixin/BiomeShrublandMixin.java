@@ -2,6 +2,7 @@ package luke.bonusblocks.mixin;
 
 import luke.bonusblocks.BonusBlocks;
 import net.minecraft.core.block.Block;
+import net.minecraft.core.world.World;
 import net.minecraft.core.world.biome.BiomeShrubland;
 import net.minecraft.core.world.generate.feature.WorldFeature;
 import net.minecraft.core.world.generate.feature.tree.WorldFeatureTreeShrub;
@@ -14,8 +15,15 @@ import java.util.Random;
 
 @Mixin(value= BiomeShrubland.class,remap=false)
 public class BiomeShrublandMixin {
-    @Inject(method = "getRandomWorldGenForTrees", at = @At(value = "HEAD", target = "Lnet/minecraft/core/world/biome/BiomeShrubland;getRandomWorldGenForTrees(Ljava/util/Random;)Lnet/minecraft/core/world/generate/feature/WorldFeature;"), cancellable = true)
+    @Inject(method = "getRandomWorldGenForTrees", at = @At(value = "TAIL", target = "Lnet/minecraft/core/world/biome/BiomeShrubland;getRandomWorldGenForTrees(Ljava/util/Random;)Lnet/minecraft/core/world/generate/feature/WorldFeature;"), cancellable = true)
     public void getRandomWorldGenForTrees(Random random, CallbackInfoReturnable<WorldFeature> cir) {
         new WorldFeatureTreeShrub(Block.leavesShrub.id, BonusBlocks.logShrub.id);
+        cir.setReturnValue(new WorldFeatureTreeShrub(Block.leavesShrub.id, BonusBlocks.logShrub.id) {
+            @Override
+            public boolean generate(World world, Random random, int i, int j, int k) {
+                return true;
+            }
+        });
     }
+
 }

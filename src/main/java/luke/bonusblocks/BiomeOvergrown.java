@@ -12,7 +12,6 @@ import java.util.Random;
 
 public class BiomeOvergrown extends Biome {
     public BiomeOvergrown() {
-        this.spawnableMonsterList.clear();
         this.topBlock = (short) BonusBlocks.grassOvergrown.id;
         this.fillerBlock = (short) Block.stone.id;
     }

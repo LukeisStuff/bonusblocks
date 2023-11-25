@@ -18,10 +18,10 @@ public class BlockSaplingShrubMixin {
     @Inject(method = "growTree", at = @At(value = "TAIL", target = "growTree(Lnet/minecraft/core/world/World;IIILjava/util/Random;)V"), cancellable = true)
 
     public void growTree(World world, int i, int j, int k, Random random, CallbackInfo ci) {
-        Object obj = null;
+        WorldFeature obj;
         world.setBlock(i, j, k, 0);
         obj = new WorldFeatureTreeShrub(Block.leavesShrub.id, BonusBlocks.logShrub.id);
-        if (!((WorldFeature)obj).generate(world, random, i, j, k)) {
+        if (!obj.generate(world, random, i, j, k)) {
             world.setBlock(i, j, k, Block.saplingShrub.id);
         }
 
