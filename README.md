@@ -79,7 +79,15 @@
   + Fire burns forever on it
 * Block of Raw Iron and Raw Gold
   + Crafted with 9 raw iron or raw gold
-* Netherrack Brick
+* Mud Bricks
+  + Crafted from 4 baked mud
+* Steel Bricks
+  + Crafted from 4 steel ingots
+* Quartz Bricks
+  + Crafted from 4 quartz
+* Olivine Bricks
+  + Crafted from 4 olivine
+* Netherrack Bricks
   + Crafted from 4 netherrack
 * Soulslate
   + Crafted from 4 soulsand
@@ -88,10 +96,26 @@
   + Crafted with 4 of each mushroom
 * Empty Jar
   + Place down empty jars finally
+* Soul Wax Candle and Soul Wax
+  + Crafted with soul wax and string
+  + Soul wax is made from smelting soul sand
 * More Slabs
-  + 16 blocks now have slabs to go along with them
+  + 19 blocks now have slabs to go along with them
 * More Stairs
-  + 10 blocks now have stairs to go along with them
+  + 13 blocks now have stairs to go along with them
+ 
+* Overgrown Biome
+  + Found inbetween boreal forests and taigas
+  + Jacaranda trees are rarely found here with purple wood
+* Mesa Biome
+  + Scorchedstone and Scorched trees are found here that give black wood
+  + Found between deserts and 
+* Maple Forest Biome
+  + Maple trees are found here, they give red wood
+  + Found near rainforests
+* 3 Peak Biomes
+  + Stony, Icy and Snowy
+  + Generate only at the highest parts of the world
 
 ## Changes
 * Pillars now use a new recipe with 3 of the respective stone type instead of 2
