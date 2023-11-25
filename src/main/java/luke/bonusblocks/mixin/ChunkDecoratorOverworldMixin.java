@@ -1,7 +1,7 @@
 package luke.bonusblocks.mixin;
 
 import luke.bonusblocks.BonusBlocks;
-import luke.bonusblocks.ModBiomes;
+import luke.bonusblocks.biomes.ModBiomes;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockSand;
 import net.minecraft.core.world.World;
@@ -57,7 +57,7 @@ public abstract class ChunkDecoratorOverworldMixin {
             blockY = world.getHeightValue(blockX, blockZ);
             new WorldFeatureTallGrass(Block.tallgrassFern.id).generate(this.world, rand, blockX, blockY, blockZ);
         }
-        if ((biome == ModBiomes.OVERWORLD_MESA) &&
+        if ((biome == ModBiomes.OVERWORLD_OUTBACK_MESA) &&
                 rand.nextInt(4) == 0) {
             blockX = x + rand.nextInt(16) + 8;
             blockZ = z + rand.nextInt(16) + 8;
@@ -77,7 +77,7 @@ public abstract class ChunkDecoratorOverworldMixin {
         }
         if ((biome == Biomes.OVERWORLD_OUTBACK ||
                 biome == Biomes.OVERWORLD_OUTBACK_GRASSY ||
-                biome == ModBiomes.OVERWORLD_MESA ||
+                biome == ModBiomes.OVERWORLD_OUTBACK_MESA ||
                 biome == Biomes.OVERWORLD_DESERT ||
                 biome == Biomes.PARADISE_PARADISE ||
                 biome == Biomes.OVERWORLD_RETRO ||

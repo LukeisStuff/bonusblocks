@@ -1,5 +1,6 @@
-package luke.bonusblocks;
+package luke.bonusblocks.biomes;
 
+import luke.bonusblocks.BonusBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.world.biome.BiomeForest;
 import net.minecraft.core.world.generate.feature.WorldFeature;

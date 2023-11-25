@@ -1,5 +1,6 @@
-package luke.bonusblocks;
+package luke.bonusblocks.biomes;
 
+import luke.bonusblocks.BonusBlocks;
 import net.minecraft.core.entity.SpawnListEntry;
 import net.minecraft.core.entity.monster.EntitySpider;
 import net.minecraft.core.world.biome.BiomeOutback;
@@ -16,7 +17,7 @@ public class BiomeMesa extends BiomeOutback {
         this.spawnableCreatureList.clear();
         this.spawnableWaterCreatureList.clear();
         this.setBlockedWeathers(Weather.overworldSnow, Weather.overworldRain, Weather.overworldStorm);
-        this.topBlock = (short)BonusBlocks.scorchedstone.id;
+        this.topBlock = (short) BonusBlocks.scorchedstone.id;
         this.fillerBlock = (short)BonusBlocks.scorchedstone.id;
     }
 

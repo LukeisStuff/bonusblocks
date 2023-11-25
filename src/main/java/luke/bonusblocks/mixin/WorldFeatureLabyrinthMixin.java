@@ -1,6 +1,6 @@
 package luke.bonusblocks.mixin;
 
-import luke.bonusblocks.ModBiomes;
+import luke.bonusblocks.biomes.ModBiomes;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.biome.Biome;
@@ -27,7 +27,7 @@ public abstract class WorldFeatureLabyrinthMixin {
     @Inject(method = "generate", at = @At(value = "HEAD", target = "Lnet/minecraft/core/world/generate/feature/WorldFeatureLabyrinth;generate(Lnet/minecraft/core/world/World;Ljava/util/Random;III)Z"))
     public void generate(World world, Random random, int x, int y, int z, CallbackInfoReturnable<Boolean> cir) {
         Biome biome = world.getBlockBiome(x, y, z);
-        if (biome == ModBiomes.OVERWORLD_MESA) {
+        if (biome == ModBiomes.OVERWORLD_OUTBACK_MESA) {
             this.wallBlockA = Block.sandstone.id;
             this.wallBlockB = Block.sandstone.id;
             this.brickBlockA = Block.brickSandstone.id;
