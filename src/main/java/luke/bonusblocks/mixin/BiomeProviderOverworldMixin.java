@@ -22,12 +22,7 @@ public abstract class BiomeProviderOverworldMixin {
         brm.addRange(ModBiomes.OVERWORLD_MAPLE, new BiomeRange(0.76,1.01,0.76,0.85,0.00,1.00,0.00,1.0));
         brm.addRange(ModBiomes.OVERWORLD_PEAK_ICE, new BiomeRange(0.00,0.49,0.00,1.01,0.75,2.00,0.00,1.0));
         brm.addRange(ModBiomes.OVERWORLD_PEAK_SNOW, new BiomeRange(0.50,1.01,0.20,1.01,0.75,2.00,0.00,1.0));
-
         brm.addRange(ModBiomes.OVERWORLD_PEAK_STONE, new BiomeRange(0.00,1.01,0.86,1.01,0.75,2.00,0.00,1.0));
-
         brm.addRange(ModBiomes.OVERWORLD_PEAK_STONE, new BiomeRange(0.50,1.01,0.00,0.19,0.75,2.00,0.00,1.0));
-
-//        brm.addRange(Biomes.OVERWORLD_RAINFOREST, new BiomeRange(0.00,1.01,0.00,1.01,0.00,2.00,0.00,1.0));
-
     }
 }

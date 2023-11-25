@@ -9,7 +9,6 @@ import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.Biomes;
 import net.minecraft.core.world.chunk.Chunk;
 import net.minecraft.core.world.generate.chunk.perlin.overworld.ChunkDecoratorOverworld;
-import net.minecraft.core.world.generate.feature.WorldFeatureDeadBush;
 import net.minecraft.core.world.generate.feature.WorldFeatureFlowers;
 import net.minecraft.core.world.generate.feature.WorldFeatureTallGrass;
 import org.spongepowered.asm.mixin.Final;
@@ -62,7 +61,14 @@ public abstract class ChunkDecoratorOverworldMixin {
             blockX = x + rand.nextInt(16) + 8;
             blockZ = z + rand.nextInt(16) + 8;
             blockY = world.getHeightValue(blockX, blockZ);
-            new WorldFeatureDeadBush(Block.deadbush.id).generate(this.world, rand, blockX, blockY, blockZ);
+            new WorldFeatureFlowers(Block.deadbush.id).generate(this.world, rand, blockX, blockY, blockZ);
+        }
+        if ((biome == ModBiomes.OVERWORLD_OUTBACK_MESA) &&
+                rand.nextInt(4) == 0) {
+            blockX = x + rand.nextInt(16) + 8;
+            blockZ = z + rand.nextInt(16) + 8;
+            blockY = world.getHeightValue(blockX, blockZ);
+            new WorldFeatureFlowers(Block.spinifex.id).generate(this.world, rand, blockX, blockY, blockZ);
         }
         if ((biome == Biomes.OVERWORLD_SWAMPLAND ||
                 biome == Biomes.OVERWORLD_SWAMPLAND_MUDDY ||
