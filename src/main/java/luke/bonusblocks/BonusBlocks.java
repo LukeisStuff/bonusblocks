@@ -29,7 +29,7 @@ import java.util.Arrays;
 import java.util.List;
 
 
-public class    BonusBlocks implements ModInitializer {
+public class BonusBlocks implements ModInitializer {
     public static final String MOD_ID = "bonusblocks";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
@@ -799,7 +799,7 @@ public class    BonusBlocks implements ModInitializer {
             "soulwaxcandle.png");
 
     public static Item soulwax = ItemHelper.createItem(BonusBlocks.MOD_ID,
-            new ItemPlaceable("soulwax", 16530, candleSoulwax),
+            new Item("soulwax", 16530),
             "soulwax",
             "soulwax.png");
     public static final Block slabSlatePolished = new BlockBuilder(MOD_ID)
