@@ -28,6 +28,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static net.minecraft.core.block.BlockMoss.stoneToMossMap;
+
 
 public class BonusBlocks implements ModInitializer {
     public static final String MOD_ID = "bonusblocks";
@@ -124,7 +126,7 @@ public class BonusBlocks implements ModInitializer {
 
 
     public static final Block saplingMaple = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.grass", "step.gras", 1.0f, 1.0f))
+            .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
             .setHardness(0.0f)
             .setResistance(0.0f)
             .setFlammability(2, 1)
@@ -133,7 +135,7 @@ public class BonusBlocks implements ModInitializer {
             .setTags(BlockTags.BROKEN_BY_FLUIDS)
             .build(new BlockSaplingMaple("sapling.maple", 317));
     public static final Block saplingJacaranda = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.grass", "step.gras", 1.0f, 1.0f))
+            .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
             .setHardness(0.0f)
             .setResistance(0.0f)
             .setFlammability(2, 1)
@@ -142,7 +144,15 @@ public class BonusBlocks implements ModInitializer {
             .setTags(BlockTags.BROKEN_BY_FLUIDS)
             .build(new BlockSaplingJacaranda("sapling.jacaranda", 318));
 
-
+    public static final Block saplingOakMossy = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
+            .setHardness(0.0f)
+            .setResistance(0.0f)
+            .setFlammability(2, 1)
+            .setTextures("mossyoaksapling.png")
+            .setBlockModel(new BlockModelRenderBlocks(1))
+            .setTags(BlockTags.BROKEN_BY_FLUIDS)
+            .build(new BlockSaplingMossyOak("sapling.oak.mossy", 319));
 
     public static final Block logShrub = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.0f))
@@ -1147,7 +1157,7 @@ public class BonusBlocks implements ModInitializer {
     public void onInitialize() {
         LOGGER.info("BonusBlocks initialized.");
 
-
+        stoneToMossMap.put(Block.saplingOak, BonusBlocks.saplingOakMossy);
 
         ItemToolPickaxe.miningLevels.put(blockRawIron, 1);
         ItemToolPickaxe.miningLevels.put(slabBrickLapis, 1);
@@ -1166,8 +1176,6 @@ public class BonusBlocks implements ModInitializer {
         Item.itemsList[boxPainted.id] = new ItemBlockPainted(boxPainted, false);
 
         Item.jar = new ItemJarPlacable("jar", 16519, jar).setIconCoord(3, 9);
-
-//        Block.stoneCarved = new Block("stone.carved", 40, Material.stone).withTexCoords(6, 0, 5, 0).withHardness(2.0F).withBlastResistance(10.0F).withTags(BlockTags.MINEABLE_BY_PICKAXE);
 
         RecipeHelper.removeRecipe(Block.pillarMarble, 0);
         RecipeHelper.Crafting.createRecipe(Block.pillarMarble, 3, new Object[]{"P", "P", "P", 'P', Block.marble});
@@ -1227,6 +1235,7 @@ public class BonusBlocks implements ModInitializer {
         RecipeHelper.Crafting.createRecipe(barkScorched,4, new Object[]{"PP","PP", 'P' , logScorched});
 
         RecipeHelper.Crafting.createRecipe(new ItemStack(Block.planksOakPainted, 4, 14), new Object[]{"P", 'P' , logMaple});
+        RecipeHelper.Crafting.createRecipe(new ItemStack(Block.planksOakPainted, 4, 10), new Object[]{"P", 'P' , logJacaranda});
         RecipeHelper.Crafting.createRecipe(new ItemStack(Block.planksOakPainted, 4, 15), new Object[]{"P", 'P' , logScorched});
         RecipeHelper.Crafting.createRecipe(new ItemStack(Block.planksOakPainted, 4, 5), new Object[]{"P", 'P' , logShrub});
         RecipeHelper.Crafting.createRecipe(Block.planksOak,4,new Object[]{"P", 'P' , barkOak});
@@ -1236,6 +1245,7 @@ public class BonusBlocks implements ModInitializer {
         RecipeHelper.Crafting.createRecipe(new ItemStack(Block.planksOakPainted, 4, 6), new Object[]{"P", 'P' , barkCherry});
         RecipeHelper.Crafting.createRecipe(new ItemStack(Block.planksOakPainted, 4, 1), new Object[]{"P", 'P' , barkEucalyptus});
         RecipeHelper.Crafting.createRecipe(new ItemStack(Block.planksOakPainted, 4, 14), new Object[]{"P", 'P' , barkMaple});
+        RecipeHelper.Crafting.createRecipe(new ItemStack(Block.planksOakPainted, 4, 10), new Object[]{"P", 'P' , barkJacaranda});
         RecipeHelper.Crafting.createRecipe(new ItemStack(Block.planksOakPainted, 4, 15), new Object[]{"P", 'P' , barkScorched});
         RecipeHelper.Crafting.createRecipe(new ItemStack(Block.planksOakPainted, 4, 5), new Object[]{"P", 'P' , barkShrub});
 
@@ -1246,13 +1256,6 @@ public class BonusBlocks implements ModInitializer {
         RecipeHelper.Crafting.createRecipe(cobbleGraniteReinforced,8,new Object[]{"PPP","POP","PPP", 'P' , Block.cobbleGranite, 'O', Block.obsidian});
         RecipeHelper.Crafting.createRecipe(cobbleLimestoneReinforced,8,new Object[]{"PPP","POP","PPP", 'P' , Block.cobbleLimestone, 'O', Block.obsidian});
         RecipeHelper.Crafting.createRecipe(cobblePermafrostReinforced,8,new Object[]{"PPP","POP","PPP", 'P' , Block.cobblePermafrost, 'O', Block.obsidian});
-
-        RecipeHelper.Crafting.createRecipe(Block.cobbleStone,9,new Object[]{"P", 'P' , cobbleStoneReinforced});
-        RecipeHelper.Crafting.createRecipe(Block.cobbleStoneMossy,9,new Object[]{"P", 'P' , cobbleStoneMossyReinforced});
-        RecipeHelper.Crafting.createRecipe(Block.cobbleBasalt,9,new Object[]{"P", 'P' , cobbleBasaltReinforced});
-        RecipeHelper.Crafting.createRecipe(Block.cobbleGranite,9,new Object[]{"P", 'P' , cobbleGraniteReinforced});
-        RecipeHelper.Crafting.createRecipe(Block.cobbleLimestone,9,new Object[]{"P", 'P' , cobbleLimestoneReinforced});
-        RecipeHelper.Crafting.createRecipe(Block.cobblePermafrost,9,new Object[]{"P", 'P' , cobblePermafrostReinforced});
 
 
         RecipeHelper.Crafting.createRecipe(blockRawIron,1,new Object[]{"PPP","PPP","PPP", 'P' , Item.oreRawIron});
@@ -1270,7 +1273,7 @@ public class BonusBlocks implements ModInitializer {
 
         RecipeHelper.Crafting.createRecipe(blockBone,1,new Object[]{"PPP","PPP","PPP", 'P' , Item.bone});
         RecipeHelper.Crafting.createRecipe(Item.bone,9,new Object[]{"P", 'P' , blockBone});
-        RecipeHelper.Crafting.createRecipe(thatch,1,new Object[]{"PS","SP", 'P' , Item.wheat, 'S' , Item.stick});
+        RecipeHelper.Crafting.createRecipe(thatch,4,new Object[]{"PS","SP", 'P' , Item.wheat, 'S' , Item.stick});
         RecipeHelper.Crafting.createRecipe(blockSlime,1,new Object[]{"PP","PP", 'P' , Item.slimeball});
         RecipeHelper.Crafting.createRecipe(Item.slimeball,4,new Object[]{"P", 'P' , blockSlime});
         RecipeHelper.Crafting.createRecipe(blockSulphur,1,new Object[]{"PPP","PPP","PPP", 'P' , Item.sulphur});
@@ -1287,9 +1290,9 @@ public class BonusBlocks implements ModInitializer {
 
         RecipeHelper.Crafting.createRecipe(blockSugarcane,1,new Object[]{"PPP","PPP","PPP", 'P' , Item.sugarcane});
         RecipeHelper.Crafting.createRecipe(Item.sugarcane,9,new Object[]{"P", 'P' , blockSugarcane});
-        RecipeHelper.Crafting.createRecipe(blockPaper,1,new Object[]{"SP","PS", 'P' , Item.paper, 'S', Item.stick});
+        RecipeHelper.Crafting.createRecipe(blockPaper,4,new Object[]{"SP","PS", 'P' , Item.paper, 'S', Item.stick});
 
-        RecipeHelper.Crafting.createRecipe(blockWicker,1,new Object[]{"SP","PS", 'P' , Item.wheat, 'S', Item.leather});
+        RecipeHelper.Crafting.createRecipe(blockWicker,4,new Object[]{"SP","PS", 'P' , Item.wheat, 'S', Item.leather});
 
         RecipeHelper.Crafting.createRecipe(grassOvergrown,2,new Object[]{"P","P", 'P' , Block.grass});
         RecipeHelper.Crafting.createRecipe(grassRetroOvergrown,2,new Object[]{"P","P", 'P' , Block.grassRetro});
@@ -1298,6 +1301,7 @@ public class BonusBlocks implements ModInitializer {
 
 
         RecipeHelper.Crafting.createRecipe(brickNetherrack,4,new Object[]{"PP","PP", 'P' , Block.netherrack});
+        RecipeHelper.Crafting.createRecipe(Block.brickClay,16,new Object[]{"PP","PP", 'P' , clayBaked});
         RecipeHelper.Crafting.createRecipe(scorchedstone,4,new Object[]{"PP","PP", 'P' , Block.dirtScorched});
         RecipeHelper.Crafting.createRecipe(brickScorchedstone,4,new Object[]{"PP","PP", 'P' , scorchedstone});
         RecipeHelper.Crafting.createRecipe(brickMud,4,new Object[]{"PP","PP", 'P' , Block.mudBaked});
@@ -1356,9 +1360,9 @@ public class BonusBlocks implements ModInitializer {
 
         RecipeHelper.Crafting.createRecipe(stairsCobblePermafrost,6,new Object[]{"P  ", "PP ", "PPP", 'P' , Block.cobblePermafrost});
 
-        RecipeHelper.Crafting.createRecipe(blockMushroomRed,2,new Object[]{"PP","PP", 'P' , Block.mushroomRed});
-        RecipeHelper.Crafting.createRecipe(blockMushroomBrown,2,new Object[]{"PP","PP", 'P' , Block.mushroomBrown});
-        RecipeHelper.Crafting.createRecipe(blockMushroomGray,2,new Object[]{"PP","PP", 'P' , mushroomGray});
+        RecipeHelper.Crafting.createRecipe(blockMushroomRed,4,new Object[]{"PP","PP", 'P' , Block.mushroomRed});
+        RecipeHelper.Crafting.createRecipe(blockMushroomBrown,4,new Object[]{"PP","PP", 'P' , Block.mushroomBrown});
+        RecipeHelper.Crafting.createRecipe(blockMushroomGray,4,new Object[]{"PP","PP", 'P' , mushroomGray});
 
         RecipeHelper.Crafting.createRecipe(candleSoulwaxItem,2,new Object[]{"S", "W", 'S', Item.string, 'W', soulwax});
 
@@ -1392,7 +1396,8 @@ public class BonusBlocks implements ModInitializer {
         RecipeHelper.smeltingManager.addSmelting(Block.soulsand.id, new ItemStack(soulwax, 1));
 
         RecipeHelper.blastingManager.addSmelting(logMaple.id, new ItemStack(Item.coal, 1, 1));
-        RecipeHelper.blastingManager.addSmelting(logScorched.id, new ItemStack(Item.coal, 1, 1));
+        RecipeHelper.blastingManager.addSmelting(logJacaranda.id, new ItemStack(Item.coal, 1, 1));
+        RecipeHelper.blastingManager.addSmelting(logScorched.id, new ItemStack(Item.coal, 2, 1));
         RecipeHelper.blastingManager.addSmelting(logShrub.id, new ItemStack(Item.coal, 1, 1));
         RecipeHelper.blastingManager.addSmelting(barkOak.id, new ItemStack(Item.coal, 1, 1));
         RecipeHelper.blastingManager.addSmelting(barkOakMossy.id, new ItemStack(Item.coal, 1, 1));
@@ -1401,8 +1406,9 @@ public class BonusBlocks implements ModInitializer {
         RecipeHelper.blastingManager.addSmelting(barkCherry.id, new ItemStack(Item.coal, 1, 1));
         RecipeHelper.blastingManager.addSmelting(barkEucalyptus.id, new ItemStack(Item.coal, 1, 1));
         RecipeHelper.blastingManager.addSmelting(barkMaple.id, new ItemStack(Item.coal, 1, 1));
-        RecipeHelper.blastingManager.addSmelting(barkScorched.id, new ItemStack(Item.coal, 1, 1));
+        RecipeHelper.blastingManager.addSmelting(barkScorched.id, new ItemStack(Item.coal, 2, 1));
         RecipeHelper.blastingManager.addSmelting(barkShrub.id, new ItemStack(Item.coal, 1, 1));
+        RecipeHelper.blastingManager.addSmelting(barkJacaranda.id, new ItemStack(Item.coal, 1, 1));
 
         RecipeHelper.blastingManager.addSmelting(Block.blockClay.id, new ItemStack(clayBaked, 1));
         RecipeHelper.blastingManager.addSmelting(blockSugarcane.id, new ItemStack(blockSugarcaneBaked, 1));
