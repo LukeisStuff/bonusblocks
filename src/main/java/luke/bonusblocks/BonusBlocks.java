@@ -1323,27 +1323,27 @@ public class BonusBlocks implements ModInitializer {
         RecipeHelper.Crafting.createRecipe(scorchedstoneCarved,1,new Object[]{"P","P", 'P' , slabScorchedstonePolished});
         RecipeHelper.Crafting.createRecipe(permafrostCarved,1,new Object[]{"P","P", 'P' , slabPermafrostPolished});
 
-        RecipeHelper.Crafting.createRecipe(slabSlatePolished,3,new Object[]{"PPP", 'P' , Block.slatePolished});
-        RecipeHelper.Crafting.createRecipe(slabMarblePolished,3,new Object[]{"PPP", 'P' , marblePolished});
-        RecipeHelper.Crafting.createRecipe(slabPermafrostPolished,3,new Object[]{"PPP", 'P' , permafrostPolished});
-        RecipeHelper.Crafting.createRecipe(slabSandstonePolished,3,new Object[]{"PPP", 'P' , sandstonePolished});
-        RecipeHelper.Crafting.createRecipe(slabScorchedstonePolished,3,new Object[]{"PPP", 'P' , scorchedstonePolished});
+        RecipeHelper.Crafting.createRecipe(slabSlatePolished,6,new Object[]{"PPP", 'P' , Block.slatePolished});
+        RecipeHelper.Crafting.createRecipe(slabMarblePolished,6,new Object[]{"PPP", 'P' , marblePolished});
+        RecipeHelper.Crafting.createRecipe(slabPermafrostPolished,6,new Object[]{"PPP", 'P' , permafrostPolished});
+        RecipeHelper.Crafting.createRecipe(slabSandstonePolished,6,new Object[]{"PPP", 'P' , sandstonePolished});
+        RecipeHelper.Crafting.createRecipe(slabScorchedstonePolished,6,new Object[]{"PPP", 'P' , scorchedstonePolished});
 
-        RecipeHelper.Crafting.createRecipe(slabBrickGold,3,new Object[]{"PPP", 'P' , Block.brickGold});
-        RecipeHelper.Crafting.createRecipe(slabBrickIron,3,new Object[]{"PPP", 'P' , Block.brickIron});
-        RecipeHelper.Crafting.createRecipe(slabBrickLapis,3,new Object[]{"PPP", 'P' , Block.brickLapis});
-        RecipeHelper.Crafting.createRecipe(slabBrickMud,3,new Object[]{"PPP", 'P' , brickMud});
-        RecipeHelper.Crafting.createRecipe(slabBrickNetherrack,3,new Object[]{"PPP", 'P' , brickNetherrack});
-        RecipeHelper.Crafting.createRecipe(slabBrickPermafrost,3,new Object[]{"PPP", 'P' , Block.brickPermafrost});
-        RecipeHelper.Crafting.createRecipe(slabBrickSandstone,3,new Object[]{"PPP", 'P' , Block.brickSandstone});
-        RecipeHelper.Crafting.createRecipe(slabBrickStonePolishedMossy,3,new Object[]{"PPP", 'P' , Block.brickStonePolishedMossy});
-        RecipeHelper.Crafting.createRecipe(slabBrickScorchedstone,3,new Object[]{"PPP", 'P' , brickScorchedstone});
-        RecipeHelper.Crafting.createRecipe(slabBrickSteel,3,new Object[]{"PPP", 'P' , brickSteel});
-        RecipeHelper.Crafting.createRecipe(slabBrickQuartz,3,new Object[]{"PPP", 'P' , brickQuartz});
-        RecipeHelper.Crafting.createRecipe(slabBrickOlivine,3,new Object[]{"PPP", 'P' , brickOlivine});
+        RecipeHelper.Crafting.createRecipe(slabBrickGold,6,new Object[]{"PPP", 'P' , Block.brickGold});
+        RecipeHelper.Crafting.createRecipe(slabBrickIron,6,new Object[]{"PPP", 'P' , Block.brickIron});
+        RecipeHelper.Crafting.createRecipe(slabBrickLapis,6,new Object[]{"PPP", 'P' , Block.brickLapis});
+        RecipeHelper.Crafting.createRecipe(slabBrickMud,6,new Object[]{"PPP", 'P' , brickMud});
+        RecipeHelper.Crafting.createRecipe(slabBrickNetherrack,6,new Object[]{"PPP", 'P' , brickNetherrack});
+        RecipeHelper.Crafting.createRecipe(slabBrickPermafrost,6,new Object[]{"PPP", 'P' , Block.brickPermafrost});
+        RecipeHelper.Crafting.createRecipe(slabBrickSandstone,6,new Object[]{"PPP", 'P' , Block.brickSandstone});
+        RecipeHelper.Crafting.createRecipe(slabBrickStonePolishedMossy,6,new Object[]{"PPP", 'P' , Block.brickStonePolishedMossy});
+        RecipeHelper.Crafting.createRecipe(slabBrickScorchedstone,6,new Object[]{"PPP", 'P' , brickScorchedstone});
+        RecipeHelper.Crafting.createRecipe(slabBrickSteel,6,new Object[]{"PPP", 'P' , brickSteel});
+        RecipeHelper.Crafting.createRecipe(slabBrickQuartz,6,new Object[]{"PPP", 'P' , brickQuartz});
+        RecipeHelper.Crafting.createRecipe(slabBrickOlivine,6,new Object[]{"PPP", 'P' , brickOlivine});
 
-        RecipeHelper.Crafting.createRecipe(slabCobblePermafrost,3,new Object[]{"PPP", 'P' , Block.cobblePermafrost});
-        RecipeHelper.Crafting.createRecipe(slabScorchedstone,3,new Object[]{"PPP", 'P' , scorchedstone});
+        RecipeHelper.Crafting.createRecipe(slabCobblePermafrost,6,new Object[]{"PPP", 'P' , Block.cobblePermafrost});
+        RecipeHelper.Crafting.createRecipe(slabScorchedstone,6,new Object[]{"PPP", 'P' , scorchedstone});
 
         RecipeHelper.Crafting.createRecipe(stairsBrickGold,6,new Object[]{"P  ", "PP ", "PPP", 'P' , Block.brickGold});
         RecipeHelper.Crafting.createRecipe(stairsBrickIron,6,new Object[]{"P  ", "PP ", "PPP", 'P' , Block.brickIron});
