@@ -95,6 +95,8 @@ tile.bonusblocks.leaves.maple.desc=Leaves from a maple tree.
 
 tile.bonusblocks.sapling.maple.name=Maple Sapling
 tile.bonusblocks.sapling.maple.desc=A plant to grow a maple tree.
+tile.bonusblocks.sapling.oak.mossy.name=Mossy Oak Sapling
+tile.bonusblocks.sapling.oak.mossy.desc=A plant to grow an oak tree covered in moss.
 
 tile.bonusblocks.log.maple.name=Maple Log
 tile.bonusblocks.log.maple.desc=A log from a maple tree.
