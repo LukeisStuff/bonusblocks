@@ -92,13 +92,10 @@ public class BonusBlocks implements ModInitializer {
             .setResistance(0.2f)
             .setFlammability(4, 2)
             .setTextures("branch.png")
+            .setTickOnLoad()
+            .setVisualUpdateOnMetadata()
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
-            .build(new BlockLeavesBase("branch", 325, Material.leaves, false) {
-                @Override
-                protected Block getSapling() {
-                    return null;
-                }
-            });
+            .build(new BlockBranch("branch", 325, Material.leaves));
 
 
 
@@ -110,6 +107,8 @@ public class BonusBlocks implements ModInitializer {
             .setSideTextures("mapleleaves.png")
             .setBottomTexture("mapleleavesfast.png")
             .setTopBottomTexture("mapleleaves.png")
+            .setTickOnLoad()
+            .setVisualUpdateOnMetadata()
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_HOE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS)
             .build(new BlockLeavesMaple("leaves.maple", 298));
     public static final Block leavesJacaranda = new BlockBuilder(MOD_ID)
@@ -120,6 +119,8 @@ public class BonusBlocks implements ModInitializer {
             .setSideTextures("jacaleaves.png")
             .setBottomTexture("jacaleavesfast.png")
             .setTopBottomTexture("jacaleaves.png")
+            .setTickOnLoad()
+            .setVisualUpdateOnMetadata()
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_HOE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS)
             .build(new BlockLeavesJacaranda("leaves.jacaranda", 299));
 
@@ -1223,6 +1224,23 @@ public class BonusBlocks implements ModInitializer {
             i++;
         }
         CraftingManager.blockAlternatives[6] = logBlocks;
+
+
+
+        List<Block> leafBlockGroup = new ArrayList<>(Arrays.asList(CraftingManager.blockAlternatives[7]));
+        leafBlockGroup.add(leavesMaple);
+        leafBlockGroup.add(leavesJacaranda);
+        leafBlockGroup.add(branch);
+
+        Block[] leafBlocks = new Block[leafBlockGroup.size()];
+        int j = 0;
+        for (Block block: leafBlockGroup) {
+            leafBlocks[j] = block;
+            j++;
+        }
+        CraftingManager.blockAlternatives[7] = leafBlocks;
+
+
 
         RecipeHelper.Crafting.createRecipe(barkOak,4, new Object[]{"PP","PP", 'P' , Block.logOak});
         RecipeHelper.Crafting.createRecipe(barkOakMossy,4, new Object[]{"PP","PP", 'P' , Block.logOakMossy});
