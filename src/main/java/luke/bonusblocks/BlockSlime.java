@@ -10,11 +10,11 @@ import net.minecraft.core.world.WorldSource;
 
 public class BlockSlime extends BlockTransparent {
     public BlockSlime(String key, int id, boolean renderInside){
-        super(key, id, Material.leaves, false);
-        this.setTickOnLoad(true);
+        super(key, id, Material.leaves, renderInside);
+        setTicking(true);
     }
 
-    public boolean isOpaqueCube() {
+    public boolean isSolidRender() {
         return false;
     }
 
@@ -31,7 +31,7 @@ public class BlockSlime extends BlockTransparent {
 
     public AABB getCollisionBoundingBoxFromPool(World world, int x, int y, int z) {
         float f = 0.125F;
-        return AABB.getBoundingBoxFromPool((double)(float)(x + f), (double)(float)(y + f), (double)(float)(z + f), (double)((float)(x + 1) - f), (double)((float)(y + 1) - f), (double)((float)(z + 1) - f));
+        return AABB.getBoundingBoxFromPool(x + f, y + f, z + f, (float)(x + 1) - f, (float)(y + 1) - f, (float)(z + 1) - f);
     }
 
     public void onEntityCollidedWithBlock(World world, int x, int y, int z, Entity entity) {

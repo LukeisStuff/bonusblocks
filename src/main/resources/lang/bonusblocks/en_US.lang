@@ -184,18 +184,8 @@ tile.bonusblocks.block.flint.desc=A solid block of flint. Sharp!
 tile.bonusblocks.block.leather.name=Block of Leather
 tile.bonusblocks.block.leather.desc=A box cow.
 
-tile.bonusblocks.block.sugarcane.name=Reeds
-tile.bonusblocks.block.sugarcane.desc=Bundled up collection of cane and reeds.
-tile.bonusblocks.block.sugarcane.baked.name=Baked Reeds
-tile.bonusblocks.block.sugarcane.baked.desc=A scorched block of reeds.
-tile.bonusblocks.block.paper.name=Paper Shoji
-tile.bonusblocks.block.paper.desc=Decorative wallpaper supported with sticks.
-
 tile.bonusblocks.block.wicker.name=Wicker
 tile.bonusblocks.block.wicker.desc=A decorative block of wicker.
-
-tile.bonusblocks.jar.name=Empty Jar
-tile.bonusblocks.jar.desc=A glass jar containing nothing.
 
 tile.bonusblocks.flower.lime.name=Clovers
 tile.bonusblocks.flower.lime.desc=A lucky plant found commonly.
