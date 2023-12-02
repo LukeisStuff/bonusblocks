@@ -9,6 +9,7 @@
     "BiomeShrublandMixin",
     "BlockDeadBushMixin",
     "BlockGrassMixin",
+    "BlockSaplingCacaoMixin",
     "BlockSaplingShrubMixin",
     "ChunkDecoratorOverworldMixin",
     "ContainerPlayerCreativeMixin",
