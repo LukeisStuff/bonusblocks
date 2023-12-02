@@ -9,9 +9,9 @@ import net.minecraft.core.block.*;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.crafting.LookupFuelFurnace;
+import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemPlaceable;
-import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.block.ItemBlockPainted;
 import net.minecraft.core.item.block.ItemBlockSlab;
 import net.minecraft.core.item.tool.ItemToolPickaxe;
@@ -19,10 +19,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.BlockBuilder;
 import turniplabs.halplibe.helper.ItemHelper;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import static net.minecraft.core.block.BlockMoss.stoneToMossMap;
 
@@ -130,7 +126,7 @@ public class BonusBlocks implements ModInitializer {
             .setFlammability(2, 1)
             .setTextures("maplesapling.png")
             .setBlockModel(new BlockModelRenderBlocks(1))
-            .setTags(BlockTags.BROKEN_BY_FLUIDS)
+            .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR)
             .build(new BlockSaplingMaple("sapling.maple", blockID++));
     public static final Block saplingJacaranda = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
@@ -139,7 +135,7 @@ public class BonusBlocks implements ModInitializer {
             .setFlammability(2, 1)
             .setTextures("jacasapling.png")
             .setBlockModel(new BlockModelRenderBlocks(1))
-            .setTags(BlockTags.BROKEN_BY_FLUIDS)
+            .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR)
             .build(new BlockSaplingJacaranda("sapling.jacaranda", blockID++));
 
     public static final Block saplingOakMossy = new BlockBuilder(MOD_ID)
@@ -149,7 +145,7 @@ public class BonusBlocks implements ModInitializer {
             .setFlammability(2, 1)
             .setTextures("mossyoaksapling.png")
             .setBlockModel(new BlockModelRenderBlocks(1))
-            .setTags(BlockTags.BROKEN_BY_FLUIDS)
+            .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR)
             .build(new BlockSaplingMossyOak("sapling.oak.mossy", blockID++));
 
     public static final Block logShrub = new BlockBuilder(MOD_ID)
@@ -310,7 +306,7 @@ public class BonusBlocks implements ModInitializer {
             .setResistance(0.0f)
             .setBlockSound(BlockSounds.GRASS)
             .setBlockModel(new BlockModelRenderBlocks(1))
-            .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.BROKEN_BY_FLUIDS);
+            .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR);
 
     public static final Block flowerCyan = flowerBuilder
             .setTextures("bluebell.png")
@@ -344,7 +340,7 @@ public class BonusBlocks implements ModInitializer {
             .setResistance(0.0f)
             .setTextures("shroom.png")
             .setBlockModel(new BlockModelRenderBlocks(1))
-            .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.BROKEN_BY_FLUIDS)
+            .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR)
             .build(new BlockMushroom("mushroom.gray", blockID++));
 
 
@@ -657,39 +653,6 @@ public class BonusBlocks implements ModInitializer {
             .build(new Block("soulslate", blockID++, Material.stone));
 
 
-
-    public static final Block blockSugarcane = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
-            .setHardness(0.6f)
-            .setResistance(0.6f)
-            .setSideTextures("sugarcaneside.png")
-            .setTopBottomTexture("sugarcanetop.png")
-            .setFlammability(3, 3)
-            .setBlockModel(new BlockModelRenderBlocks(27))
-            .setTags(BlockTags.MINEABLE_BY_AXE)
-            .build(new BlockAxisAligned("block.sugarcane", blockID++, Material.grass));
-
-    public static final Block blockSugarcaneBaked = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
-            .setHardness(0.6f)
-            .setResistance(0.6f)
-            .setSideTextures("bakedsugarcaneside.png")
-            .setTopBottomTexture("bakedsugarcanetop.png")
-            .setFlammability(1, 1)
-            .setBlockModel(new BlockModelRenderBlocks(27))
-            .setTags(BlockTags.MINEABLE_BY_AXE)
-            .build(new BlockAxisAligned("block.sugarcane.baked", blockID++, Material.grass));
-
-    public static final Block blockPaper = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
-            .setHardness(0.6f)
-            .setResistance(0.6f)
-            .setTextures("paperblock.png")
-            .setFlammability(3, 3)
-            .setTags(BlockTags.MINEABLE_BY_AXE)
-            .build(new Block("block.paper", blockID++, Material.grass));
-
-
     public static final Block clayBaked = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
             .setHardness(3.0f)
@@ -774,19 +737,6 @@ public class BonusBlocks implements ModInitializer {
             .setFlammability(4, 4)
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SHEARS)
             .build(new Block("block.mushroom.gray", blockID++, Material.dirt));
-
-
-
-    public static final Block jar = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
-            .setHardness(0.1f)
-            .setResistance(0.1f)
-            .setTextures("jar.png")
-            .setVisualUpdateOnMetadata()
-            .setBlockModel(new BlockModelRenderBlocks(26))
-            .setTags(BlockTags.MINEABLE_BY_SWORD, BlockTags.BROKEN_BY_FLUIDS, BlockTags.NOT_IN_CREATIVE_MENU)
-            .build(new BlockLanternJar("jar", blockID++, Material.glass));
-
 
 
     public static final Block candleSoulwax = new BlockBuilder(MOD_ID)
@@ -1173,8 +1123,6 @@ public class BonusBlocks implements ModInitializer {
 
         Item.itemsList[boxPainted.id] = new ItemBlockPainted(boxPainted, false);
 
-        Item.jar = new ItemJarPlacable("jar", 16519, jar).setIconCoord(3, 9);
-
 //        RecipeHelper.removeRecipe(Block.pillarMarble, 0);
 //        RecipeHelper.Crafting.createRecipe(Block.pillarMarble, 3, new Object[]{"P", "P", "P", 'P', Block.marble});
 //        RecipeHelper.Crafting.createRecipe(pillarSlate, 3, new Object[]{"P", "P", "P", 'P', Block.slate});
@@ -1274,6 +1222,7 @@ public class BonusBlocks implements ModInitializer {
 //
 //
 //        RecipeHelper.Crafting.createRecipe(blockRawIron,1,new Object[]{"PPP","PPP","PPP", 'P' , Item.oreRawIron});
+        Registries.RECIPES.addRecipe("blockRawIron",BonusBlocks.blockRawIron,new Object[]{"PPP","PPP","PPP", 'P' , Item.oreRawIron});
 //        RecipeHelper.Crafting.createRecipe(blockRawGold,1,new Object[]{"PPP","PPP","PPP", 'P' , Item.oreRawGold});
 //
 //        RecipeHelper.Crafting.createRecipe(Item.oreRawIron,9,new Object[]{"P", 'P' , blockRawIron});
@@ -1303,9 +1252,6 @@ public class BonusBlocks implements ModInitializer {
 //        RecipeHelper.Crafting.createRecipe(Item.leather,9,new Object[]{"P", 'P' , blockLeather});
 //
 //
-//        RecipeHelper.Crafting.createRecipe(blockSugarcane,1,new Object[]{"PPP","PPP","PPP", 'P' , Item.sugarcane});
-//        RecipeHelper.Crafting.createRecipe(Item.sugarcane,9,new Object[]{"P", 'P' , blockSugarcane});
-//        RecipeHelper.Crafting.createRecipe(blockPaper,4,new Object[]{"SP","PS", 'P' , Item.paper, 'S', Item.stick});
 //
 //        RecipeHelper.Crafting.createRecipe(blockWicker,4,new Object[]{"SP","PS", 'P' , Item.wheat, 'S', Item.leather});
 //
@@ -1404,7 +1350,6 @@ public class BonusBlocks implements ModInitializer {
 //        RecipeHelper.smeltingManager.addSmelting(barkShrub.id, new ItemStack(Item.coal, 1, 1));
 //
 //        RecipeHelper.smeltingManager.addSmelting(Block.blockClay.id, new ItemStack(clayBaked, 1));
-//        RecipeHelper.smeltingManager.addSmelting(blockSugarcane.id, new ItemStack(blockSugarcaneBaked, 1));
 //
 //        RecipeHelper.smeltingManager.addSmelting(Block.netherrack.id, new ItemStack(Block.netherrackIgneous, 1));
 //
@@ -1426,7 +1371,6 @@ public class BonusBlocks implements ModInitializer {
 //        RecipeHelper.blastingManager.addSmelting(barkJacaranda.id, new ItemStack(Item.coal, 1, 1));
 //
 //        RecipeHelper.blastingManager.addSmelting(Block.blockClay.id, new ItemStack(clayBaked, 1));
-//        RecipeHelper.blastingManager.addSmelting(blockSugarcane.id, new ItemStack(blockSugarcaneBaked, 1));
 //
 //        RecipeHelper.blastingManager.addSmelting(Block.netherrack.id, new ItemStack(Block.netherrackIgneous, 1));
 //
@@ -1453,7 +1397,6 @@ public class BonusBlocks implements ModInitializer {
         LookupFuelFurnace.instance.addFuelEntry(crateSticky.id, 300);
         LookupFuelFurnace.instance.addFuelEntry(bookshelfEmptyPlanksOak.id, 300);
         LookupFuelFurnace.instance.addFuelEntry(thatch.id, 400);
-        LookupFuelFurnace.instance.addFuelEntry(blockPaper.id, 300);
         LookupFuelFurnace.instance.addFuelEntry(branch.id, 300);
         LookupFuelFurnace.instance.addFuelEntry(saplingJacaranda.id, 10);
         LookupFuelFurnace.instance.addFuelEntry(saplingMaple.id, 10);
