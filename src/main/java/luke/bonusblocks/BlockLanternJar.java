@@ -46,7 +46,7 @@ public class BlockLanternJar extends Block {
         this.maxZ = aabb.maxZ - (double)z;
     }
 
-    public boolean isOpaqueCube() {
+    public boolean isSolidRender() {
         return false;
     }
 
@@ -75,7 +75,7 @@ public class BlockLanternJar extends Block {
     }
 
     public boolean canPlaceBlockAt(World world, int x, int y, int z) {
-        return !world.isBlockNormalCube(x, y + 1, z) && !Block.hasTag(world.getBlockId(x, y + 1, z), BlockTags.CAN_HANG_OFF) ? world.canPlaceOnSurfaceOfBlock(x, y - 1, z) : true;
+        return world.isBlockNormalCube(x, y + 1, z) || Block.hasTag(world.getBlockId(x, y + 1, z), BlockTags.CAN_HANG_OFF) || world.canPlaceOnSurfaceOfBlock(x, y - 1, z);
     }
 
     public void onNeighborBlockChange(World world, int x, int y, int z, int blockId) {

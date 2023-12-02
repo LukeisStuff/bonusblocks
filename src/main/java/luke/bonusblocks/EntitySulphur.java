@@ -23,9 +23,9 @@ public class EntitySulphur extends Entity {
         this.setPos(d, d1, d2);
         this.blockID = BonusBlocks.blockSulphur.id;
         float f = (float)(Math.random() * 3.1415927410125732 * 2.0);
-        this.xd = (double)(-MathHelper.sin(f * 3.141593F / 180.0F) * 0.02F);
+        this.xd = -MathHelper.sin(f * 3.141593F / 180.0F) * 0.02F;
         this.yd = 0.20000000298023224;
-        this.zd = (double)(-MathHelper.cos(f * 3.141593F / 180.0F) * 0.02F);
+        this.zd = -MathHelper.cos(f * 3.141593F / 180.0F) * 0.02F;
         this.fuse = 80;
         this.xo = d;
         this.yo = d1;
