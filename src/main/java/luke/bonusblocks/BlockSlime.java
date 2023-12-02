@@ -11,7 +11,7 @@ import net.minecraft.core.world.WorldSource;
 public class BlockSlime extends BlockTransparent {
     public BlockSlime(String key, int id, boolean renderInside){
         super(key, id, Material.leaves, false);
-        this.setTickOnLoad(true);
+        setTicking(true);
     }
 
     public boolean isOpaqueCube() {

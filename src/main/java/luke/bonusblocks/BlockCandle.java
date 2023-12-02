@@ -15,7 +15,7 @@ import java.util.Random;
 public class BlockCandle extends Block {
     public BlockCandle(String key, int id, Material material) {
         super(key, id, Material.decoration);
-        this.setTickOnLoad(true);
+        this.setTicking(true);
         this.setBlockBounds(0.40625F, 0.0F, 0.40625F, 0.59375F, 0.5F, 0.59375F);
     }
 

@@ -4,6 +4,7 @@ import luke.bonusblocks.biomes.ModBiomes;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.chunk.Chunk;
+import net.minecraft.core.world.generate.chunk.ChunkGeneratorResult;
 import net.minecraft.core.world.generate.chunk.perlin.overworld.SurfaceGeneratorOverworld;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -21,7 +22,7 @@ public abstract class SurfaceGeneratorOverworldMixin {
     int fillerBlock = -1;
 
     @Inject(method = "generateSurface", at = @At(value = "TAIL", target = "Lnet/minecraft/core/world/generate/chunk/perlin/overworld/SurfaceGeneratorOverworld;generateSurface(Lnet/minecraft/core/world/chunk/Chunk;[S)V"))
-    public void generateSurface(Chunk chunk, short[] blocks, CallbackInfo ci) {
+    public void generateSurface(Chunk chunk, ChunkGeneratorResult result, CallbackInfo ci) {
         int chunkX = chunk.xPosition;
         int chunkZ = chunk.zPosition;
         Random rand = new Random((long)chunkX * 341873128712L + (long)chunkZ * 132897987541L);

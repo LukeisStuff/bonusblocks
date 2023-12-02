@@ -12,7 +12,7 @@ public class BlockBranch extends BlockLog {
     }
 
     @Override
-    public void onBlockRemoval(World world, int x, int y, int z) {
+    public void onBlockRemoved(World world, int x, int y, int z, int data) {
         int byte0 = 4;
         int l = byte0 + 1;
         if (world.areBlocksLoaded(x - l, y - l, z - l, x + l, y + l, z + l)) {
@@ -30,7 +30,7 @@ public class BlockBranch extends BlockLog {
     }
 
     @Override
-    public boolean isOpaqueCube() {
+    public boolean isSolidRender() {
         return false;
     }
 
