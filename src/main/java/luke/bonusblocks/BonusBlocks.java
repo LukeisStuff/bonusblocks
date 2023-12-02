@@ -22,7 +22,6 @@ import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.BlockBuilder;
 import turniplabs.halplibe.helper.ItemHelper;
 import turniplabs.halplibe.helper.RecipeHelper;
-import turniplabs.halplibe.mixin.accessors.CraftingManagerAccessor;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -92,6 +91,7 @@ public class BonusBlocks implements ModInitializer {
             .setTextures("obsidianglass.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockGlassObsidian("glass.obsidian", 192, Material.glass, true));
+
 //    public static final Block trapdoorGlassTinted = new BlockBuilder(MOD_ID)
 //            .setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
 //            .setHardness(0.5f)
@@ -1292,7 +1292,6 @@ public class BonusBlocks implements ModInitializer {
         RecipeHelper.Crafting.createRecipe(new ItemStack(Block.planksOakPainted, 4, 15), new Object[]{"P", 'P' , barkScorched});
         RecipeHelper.Crafting.createRecipe(new ItemStack(Block.planksOakPainted, 4, 5), new Object[]{"P", 'P' , barkShrub});
 
-
         RecipeHelper.Crafting.createRecipe(cobbleStoneReinforced,8,new Object[]{"PPP","POP","PPP", 'P' , Block.cobbleStone, 'O', Block.obsidian});
         RecipeHelper.Crafting.createRecipe(cobbleStoneMossyReinforced,8,new Object[]{"PPP","POP","PPP", 'P' , Block.cobbleStoneMossy, 'O', Block.obsidian});
         RecipeHelper.Crafting.createRecipe(cobbleBasaltReinforced,8,new Object[]{"PPP","POP","PPP", 'P' , Block.cobbleBasalt, 'O', Block.obsidian});
@@ -1303,19 +1302,16 @@ public class BonusBlocks implements ModInitializer {
         RecipeHelper.Crafting.createRecipe(trapdoorGlassObsidian,6,new Object[]{"PPP","PPP", 'P' , glassObsidian});
 //        RecipeHelper.Crafting.createRecipe(trapdoorGlassTinted,6,new Object[]{"PPP","PPP", 'P' , Block.glassTinted});
 
-
         RecipeHelper.Crafting.createRecipe(blockRawIron,1,new Object[]{"PPP","PPP","PPP", 'P' , Item.oreRawIron});
         RecipeHelper.Crafting.createRecipe(blockRawGold,1,new Object[]{"PPP","PPP","PPP", 'P' , Item.oreRawGold});
 
         RecipeHelper.Crafting.createRecipe(Item.oreRawIron,9,new Object[]{"P", 'P' , blockRawIron});
         RecipeHelper.Crafting.createRecipe(Item.oreRawGold,9,new Object[]{"P", 'P' , blockRawGold});
 
-
         RecipeHelper.Crafting.createRecipe(marblePolished,2,new Object[]{"P","P", 'P' , Block.marble});
         RecipeHelper.Crafting.createRecipe(permafrostPolished,2,new Object[]{"P","P", 'P' , Block.permafrost});
         RecipeHelper.Crafting.createRecipe(sandstonePolished,2,new Object[]{"P","P", 'P' , Block.sandstone});
         RecipeHelper.Crafting.createRecipe(scorchedstonePolished,2,new Object[]{"P","P", 'P' , scorchedstone});
-
 
         RecipeHelper.Crafting.createRecipe(blockBone,1,new Object[]{"PPP","PPP","PPP", 'P' , Item.bone});
         RecipeHelper.Crafting.createRecipe(Item.bone,9,new Object[]{"P", 'P' , blockBone});
@@ -1333,7 +1329,6 @@ public class BonusBlocks implements ModInitializer {
         RecipeHelper.Crafting.createRecipe(blockLeather,1,new Object[]{"PPP","PPP","PPP", 'P' , Item.leather});
         RecipeHelper.Crafting.createRecipe(Item.leather,9,new Object[]{"P", 'P' , blockLeather});
 
-
         RecipeHelper.Crafting.createRecipe(blockSugarcane,1,new Object[]{"PPP","PPP","PPP", 'P' , Item.sugarcane});
         RecipeHelper.Crafting.createRecipe(Item.sugarcane,9,new Object[]{"P", 'P' , blockSugarcane});
         RecipeHelper.Crafting.createRecipe(blockPaper,4,new Object[]{"SP","PS", 'P' , Item.paper, 'S', Item.stick});
@@ -1345,7 +1340,6 @@ public class BonusBlocks implements ModInitializer {
         RecipeHelper.Crafting.createRecipe(grassScorchedOvergrown,2,new Object[]{"P","P", 'P' , Block.grassScorched});
         RecipeHelper.Crafting.createRecipe(pathOvergrown,2,new Object[]{"P","P", 'P' , Block.pathDirt});
 
-
         RecipeHelper.Crafting.createRecipe(brickNetherrack,4,new Object[]{"PP","PP", 'P' , Block.netherrack});
         RecipeHelper.Crafting.createRecipe(Block.brickClay,16,new Object[]{"PP","PP", 'P' , clayBaked});
         RecipeHelper.Crafting.createRecipe(scorchedstone,4,new Object[]{"PP","PP", 'P' , Block.dirtScorched});
@@ -1355,7 +1349,6 @@ public class BonusBlocks implements ModInitializer {
         RecipeHelper.Crafting.createRecipe(brickQuartz,4,new Object[]{"PP","PP", 'P' , Item.quartz});
         RecipeHelper.Crafting.createRecipe(brickOlivine,4,new Object[]{"PP","PP", 'P' , Item.olivine});
         RecipeHelper.Crafting.createRecipe(soulslate,4,new Object[]{"PP","PP", 'P' , Block.soulsand});
-
 
         RecipeHelper.Crafting.createRecipe(capstoneMarbleCarved,1,new Object[]{"P","P", 'P' , Block.slabCapstoneMarble});
         RecipeHelper.Crafting.createRecipe(Block.capstoneMarble,1,new Object[]{"P", 'P' , capstoneMarbleCarved});
@@ -1412,14 +1405,13 @@ public class BonusBlocks implements ModInitializer {
 
         RecipeHelper.Crafting.createRecipe(candleSoulwaxItem,2,new Object[]{"S", "W", 'S', Item.string, 'W', soulwax});
 
-
-        ((CraftingManagerAccessor) RecipeHelper.craftingManager).callAddRecipe(new ItemStack(Item.dye, 2, 6),new Object[]{"P", 'P' , flowerCyan});
-        ((CraftingManagerAccessor) RecipeHelper.craftingManager).callAddRecipe(new ItemStack(Item.dye, 2, 5),new Object[]{"P", 'P' , flowerPurple});
-        ((CraftingManagerAccessor) RecipeHelper.craftingManager).callAddRecipe(new ItemStack(Item.dye, 2, 9),new Object[]{"P", 'P' , flowerPink});
-        ((CraftingManagerAccessor) RecipeHelper.craftingManager).callAddRecipe(new ItemStack(Item.dye, 2, 7),new Object[]{"P", 'P' , flowerSilver});
-        ((CraftingManagerAccessor) RecipeHelper.craftingManager).callAddRecipe(new ItemStack(Item.dye, 2, 14),new Object[]{"P", 'P' , flowerOrange});
-        ((CraftingManagerAccessor) RecipeHelper.craftingManager).callAddRecipe(new ItemStack(Item.dye, 2, 10),new Object[]{"P", 'P' , flowerLime});
-        ((CraftingManagerAccessor) RecipeHelper.craftingManager).callAddRecipe(new ItemStack(Item.dye, 2, 8),new Object[]{"P", 'P' , mushroomGray});
+        RecipeHelper.Crafting.createRecipe(new ItemStack(Item.dye, 2, 6),new Object[]{"P", 'P' , flowerCyan});
+        RecipeHelper.Crafting.createRecipe(new ItemStack(Item.dye, 2, 5),new Object[]{"P", 'P' , flowerPurple});
+        RecipeHelper.Crafting.createRecipe(new ItemStack(Item.dye, 2, 9),new Object[]{"P", 'P' , flowerPink});
+        RecipeHelper.Crafting.createRecipe(new ItemStack(Item.dye, 2, 7),new Object[]{"P", 'P' , flowerSilver});
+        RecipeHelper.Crafting.createRecipe(new ItemStack(Item.dye, 2, 14),new Object[]{"P", 'P' , flowerOrange});
+        RecipeHelper.Crafting.createRecipe(new ItemStack(Item.dye, 2, 10),new Object[]{"P", 'P' , flowerLime});
+        RecipeHelper.Crafting.createRecipe(new ItemStack(Item.dye, 2, 8),new Object[]{"P", 'P' , mushroomGray});
 
         RecipeHelper.smeltingManager.addSmelting(logMaple.id, new ItemStack(Item.coal, 1, 1));
         RecipeHelper.smeltingManager.addSmelting(logScorched.id, new ItemStack(Item.coal, 1, 1));
