@@ -85,6 +85,31 @@ public class BonusBlocks implements ModInitializer {
             .build(new Block("bookshelf.empty.planks.oak", 101, Material.wood));
 
 
+    public static final Block glassObsidian = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
+            .setHardness(5.0f)
+            .setResistance(1000.0f)
+            .setTextures("obsidianglass.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new BlockGlassObsidian("glass.obsidian", 192, Material.glass, true));
+//    public static final Block trapdoorGlassTinted = new BlockBuilder(MOD_ID)
+//            .setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
+//            .setHardness(0.5f)
+//            .setResistance(0.5f)
+//            .setTextures(6, 12)
+//            .setVisualUpdateOnMetadata()
+//            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+//            .build(new BlockTrapDoorTinted("trapdoor.glass.tinted", 573, Material.glass, false));
+    public static final Block trapdoorGlassObsidian = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
+            .setHardness(5.0f)
+            .setResistance(1000.0f)
+            .setTextures("obsidianglass.png")
+            .setVisualUpdateOnMetadata()
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new BlockTrapDoorObsidian("trapdoor.glass.obsidian", 574, Material.glass, false));
+
+
 
     public static final Block branch = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 0.5f))
@@ -1275,6 +1300,9 @@ public class BonusBlocks implements ModInitializer {
         RecipeHelper.Crafting.createRecipe(cobbleLimestoneReinforced,8,new Object[]{"PPP","POP","PPP", 'P' , Block.cobbleLimestone, 'O', Block.obsidian});
         RecipeHelper.Crafting.createRecipe(cobblePermafrostReinforced,8,new Object[]{"PPP","POP","PPP", 'P' , Block.cobblePermafrost, 'O', Block.obsidian});
 
+        RecipeHelper.Crafting.createRecipe(trapdoorGlassObsidian,6,new Object[]{"PPP","PPP", 'P' , glassObsidian});
+//        RecipeHelper.Crafting.createRecipe(trapdoorGlassTinted,6,new Object[]{"PPP","PPP", 'P' , Block.glassTinted});
+
 
         RecipeHelper.Crafting.createRecipe(blockRawIron,1,new Object[]{"PPP","PPP","PPP", 'P' , Item.oreRawIron});
         RecipeHelper.Crafting.createRecipe(blockRawGold,1,new Object[]{"PPP","PPP","PPP", 'P' , Item.oreRawGold});
@@ -1434,6 +1462,8 @@ public class BonusBlocks implements ModInitializer {
         RecipeHelper.blastingManager.addSmelting(Block.netherrack.id, new ItemStack(Block.netherrackIgneous, 1));
 
         RecipeHelper.blastingManager.addSmelting(Block.soulsand.id, new ItemStack(soulwax, 1));
+
+        RecipeHelper.blastingManager.addSmelting(Block.obsidian.id, new ItemStack(glassObsidian, 1));
 
 
         LookupFuelFurnace.instance.addFuelEntry(logMaple.id, 300);

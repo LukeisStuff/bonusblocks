@@ -148,6 +148,13 @@ tile.bonusblocks.soulslate.desc=A block of solid soul sand. Probably haunted.
 tile.bonusblocks.clay.baked.name=Baked Clay
 tile.bonusblocks.clay.baked.desc=A scorched block of solid clay.
 
+tile.bonusblocks.glass.obsidian.name=Obsidian Glass
+tile.bonusblocks.glass.obsidian.desc=Obsidian heated until it became translucent.
+tile.bonusblocks.trapdoor.glass.obsidian.name=Obsidian Glass Trapdoor
+tile.bonusblocks.trapdoor.glass.obsidian.desc=Still useless at its job.
+tile.bonusblocks.trapdoor.glass.tinted.name=Tinted Glass Trapdoor
+tile.bonusblocks.trapdoor.glass.tinted.desc=Slightly less useless at its job.
+
 
 tile.bonusblocks.block.raw.iron.name=Block of Raw Iron
 tile.bonusblocks.block.raw.iron.desc=A solid block of raw iron. Heavy!

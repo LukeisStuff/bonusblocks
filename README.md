@@ -94,6 +94,9 @@
 * Mushroom Blocks
   + Red, Brown and Gray variants
   + Crafted with 4 of each mushroom
+* Obsidian Glass
+  + Crafted by blast furnace smelting obsidian
+  + Explosive proof window
 * Empty Jar
   + Place down empty jars finally
 * Soul Wax Candle and Soul Wax
@@ -125,10 +128,10 @@
 
 ## Requirements
 
-BTA 1.7.7.0_02
-Babric
-Halplibe
-TerrainAPI
++ BTA 1.7.7.0_02
++ Babric
++ Halplibe
++ TerrainAPI
 
 ## Instructions
 
@@ -137,7 +140,7 @@ Check the [BTA! wiki page about modding](https://bta.miraheze.org/wiki/Modding)
 ## Credits
 LukeisStuff - Creator
 
-Tocinin, AFK, Spicyfiction, Mak, mzov, perry26, jonkadelic, beat_your_rice, PedroThePanda64, denatidum, txar - Textures
+Tocinin, AFK, Spicyfiction, Mak, mzov, perry26, jonkadelic, beat_your_rice, PedroThePanda64, denatidum, txar, senatorslunky - Textures
 
 Useless, azurelmao, Grease, MartinSVK12, Killi - Mod Help
 
