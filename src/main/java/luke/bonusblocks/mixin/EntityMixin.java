@@ -14,9 +14,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(value = Entity.class, remap = false)
 public class EntityMixin {
-    @Final
-    @Shadow
-    public final AABB bb= AABB.getBoundingBox(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
     @Shadow
     public double y;
     @Unique
@@ -31,6 +28,6 @@ public class EntityMixin {
 
     @Redirect(method = "move(DDD)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/util/helper/MathHelper;floor_double(D)I", ordinal = 5))
     private int extendBlockRange(double d){
-        return MathHelper.floor_double(this.bb.minY + 0.001 + deltaY);
+        return MathHelper.floor_double(((Entity)(Object)this).bb.minY + 0.001 + deltaY);
     }
 }
