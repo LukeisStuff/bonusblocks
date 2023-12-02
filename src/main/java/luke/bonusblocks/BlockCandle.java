@@ -23,7 +23,7 @@ public class BlockCandle extends Block {
         return null;
     }
 
-    public boolean isOpaqueCube() {
+    public boolean isSolidRender() {
         return false;
     }
 
