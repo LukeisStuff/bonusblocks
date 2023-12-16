@@ -82,11 +82,11 @@ public class EntitySulphur extends Entity {
         this.world.createExplosion((Entity)null, this.x, this.y, this.z, f);
     }
 
-    protected void addAdditionalSaveData(CompoundTag tag) {
+    public void addAdditionalSaveData(CompoundTag tag) {
         tag.putByte("Fuse", (byte)this.fuse);
     }
 
-    protected void readAdditionalSaveData(CompoundTag tag) {
+    public void readAdditionalSaveData(CompoundTag tag) {
         this.fuse = tag.getByte("Fuse");
     }
 
