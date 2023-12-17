@@ -7,7 +7,7 @@ public class BonusRecipes implements RecipeEntrypoint {
     @Override
     public void onRecipesReady() {
 
-        DataLoader.loadRecipes("/resources/assets/bonusblocks/recipes/workbench.json");
+        DataLoader.loadRecipes("/assets/bonusblocks/recipes/workbench/workbench.json");
 
     }
 }

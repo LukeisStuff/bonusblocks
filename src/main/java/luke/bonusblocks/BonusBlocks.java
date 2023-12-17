@@ -1260,15 +1260,15 @@ public class BonusBlocks implements ModInitializer {
 //        RecipeHelper.Crafting.createRecipe(new ItemStack(Block.planksOakPainted, 4, 5), new Object[]{"P", 'P' , barkShrub});
 //
 //
-        createRecipe(new ItemStack(cobbleStoneReinforced,8),new Object[]{"PPP","POP","PPP", 'P' , Block.cobbleStone, 'O', Block.obsidian});
-        createRecipe(new ItemStack(cobbleStoneMossyReinforced,8),new Object[]{"PPP","POP","PPP", 'P' , Block.cobbleStoneMossy, 'O', Block.obsidian});
-        createRecipe(new ItemStack(cobbleBasaltReinforced,8),new Object[]{"PPP","POP","PPP", 'P' , Block.cobbleBasalt, 'O', Block.obsidian});
-        createRecipe(new ItemStack(cobbleGraniteReinforced,8),new Object[]{"PPP","POP","PPP", 'P' , Block.cobbleGranite, 'O', Block.obsidian});
-        createRecipe(new ItemStack(cobbleLimestoneReinforced,8),new Object[]{"PPP","POP","PPP", 'P' , Block.cobbleLimestone, 'O', Block.obsidian});
-        createRecipe(new ItemStack(cobblePermafrostReinforced,8),new Object[]{"PPP","POP","PPP", 'P' , Block.cobblePermafrost, 'O', Block.obsidian});
+//        createRecipe(new ItemStack(cobbleStoneReinforced,8),new Object[]{"PPP","POP","PPP", 'P' , Block.cobbleStone, 'O', Block.obsidian});
+//        createRecipe(new ItemStack(cobbleStoneMossyReinforced,8),new Object[]{"PPP","POP","PPP", 'P' , Block.cobbleStoneMossy, 'O', Block.obsidian});
+//        createRecipe(new ItemStack(cobbleBasaltReinforced,8),new Object[]{"PPP","POP","PPP", 'P' , Block.cobbleBasalt, 'O', Block.obsidian});
+//        createRecipe(new ItemStack(cobbleGraniteReinforced,8),new Object[]{"PPP","POP","PPP", 'P' , Block.cobbleGranite, 'O', Block.obsidian});
+//        createRecipe(new ItemStack(cobbleLimestoneReinforced,8),new Object[]{"PPP","POP","PPP", 'P' , Block.cobbleLimestone, 'O', Block.obsidian});
+//        createRecipe(new ItemStack(cobblePermafrostReinforced,8),new Object[]{"PPP","POP","PPP", 'P' , Block.cobblePermafrost, 'O', Block.obsidian});
 //
 //
-        createRecipe(new ItemStack(blockRawIron, 1),new Object[]{"PPP","PPP","PPP",'P',new ItemStack(Item.oreRawIron)});
+//        createRecipe(new ItemStack(blockRawIron, 1),new Object[]{"PPP","PPP","PPP",'P',new ItemStack(Item.oreRawIron)});
 
 //        RecipeHelper.Crafting.createRecipe(blockRawGold,1,new Object[]{"PPP","PPP","PPP", 'P' , Item.oreRawGold});
 //
