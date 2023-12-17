@@ -21,6 +21,9 @@
     "main": [
       "luke.bonusblocks.BonusBlocks"
     ],
+    "recipesReady": [
+      "luke.bonusblocks.BonusRecipes"
+    ],
     "terrain-api": [
       "luke.bonusblocks.ModContainer.TerrainApi.TerrainApiPlugin"
     ]

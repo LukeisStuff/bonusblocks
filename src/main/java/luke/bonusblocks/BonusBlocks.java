@@ -10,8 +10,10 @@ import net.minecraft.core.block.*;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.crafting.LookupFuelFurnace;
+import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemPlaceable;
+import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.block.ItemBlockPainted;
 import net.minecraft.core.item.block.ItemBlockSlab;
 import net.minecraft.core.item.tool.ItemToolPickaxe;
@@ -21,6 +23,7 @@ import turniplabs.halplibe.helper.BlockBuilder;
 import turniplabs.halplibe.helper.ItemHelper;
 
 import static net.minecraft.core.block.BlockMoss.stoneToMossMap;
+import static turniplabs.halplibe.helper.RecipeHelper.Crafting.createRecipe;
 
 
 public class BonusBlocks implements ModInitializer {
@@ -397,7 +400,7 @@ public class BonusBlocks implements ModInitializer {
             .setResistance(15.0f)
             .setTextures(14, 3)
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-            .build(new Block("cobble.stone.reinforced", blockID++, Material.stone));
+            .build(new Block("cobble.stone.reinforced", 23, Material.stone));
 
     public static final Block cobbleStoneMossyReinforced = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 0.8f))
@@ -405,7 +408,7 @@ public class BonusBlocks implements ModInitializer {
             .setResistance(15.0f)
             .setTextures(10, 12)
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-            .build(new Block("cobble.stone.mossy.reinforced", blockID++, Material.stone));
+            .build(new Block("cobble.stone.mossy.reinforced", 24, Material.stone));
 
     public static final Block cobbleBasaltReinforced = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 0.8f))
@@ -413,7 +416,7 @@ public class BonusBlocks implements ModInitializer {
             .setResistance(15.0f)
             .setTextures("compressedbasalt.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-            .build(new Block("cobble.basalt.reinforced", blockID++, Material.stone));
+            .build(new Block("cobble.basalt.reinforced", 25, Material.stone));
 
     public static final Block cobbleGraniteReinforced = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 0.8f))
@@ -421,7 +424,7 @@ public class BonusBlocks implements ModInitializer {
             .setResistance(15.0f)
             .setTextures("compressedgranite.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-            .build(new Block("cobble.granite.reinforced", blockID++, Material.stone));
+            .build(new Block("cobble.granite.reinforced", 26, Material.stone));
 
     public static final Block cobbleLimestoneReinforced = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 0.8f))
@@ -429,7 +432,7 @@ public class BonusBlocks implements ModInitializer {
             .setResistance(15.0f)
             .setTextures("compressedlimestone.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-            .build(new Block("cobble.limestone.reinforced", blockID++, Material.stone));
+            .build(new Block("cobble.limestone.reinforced", 27, Material.stone));
 
     public static final Block cobblePermafrostReinforced = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 0.8f))
@@ -437,7 +440,7 @@ public class BonusBlocks implements ModInitializer {
             .setResistance(15.0f)
             .setTextures("compressedpermafrost.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-            .build(new Block("cobble.permafrost.reinforced", blockID++, Material.stone));
+            .build(new Block("cobble.permafrost.reinforced", 28, Material.stone));
 
 
 
@@ -461,7 +464,7 @@ public class BonusBlocks implements ModInitializer {
             .setTopBottomTexture("slatepillartop.png")
             .setBlockModel(new BlockModelRenderBlocks(27))
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-            .build(new BlockAxisAligned("pillar.slate", blockID++, Material.stone));
+            .build(new BlockAxisAligned("pillar.slate", 22, Material.stone));
     public static final Block marblePolished = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
             .setHardness(1.0f)
@@ -562,7 +565,7 @@ public class BonusBlocks implements ModInitializer {
             .setTopBottomTexture("bonetop.png")
             .setBlockModel(new BlockModelRenderBlocks(27))
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-            .build(new BlockAxisAligned("block.bone", 441, Material.stone));
+            .build(new BlockAxisAligned("block.bone", 444, Material.stone));
 
     public static final Block thatch = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.grass", "step.grass", 0.6f, 1.2f))
@@ -572,7 +575,7 @@ public class BonusBlocks implements ModInitializer {
             .setTopBottomTexture("thatchtop.png")
             .setFlammability(4, 4)
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS)
-            .build(new BlockThatch("thatch", blockID++, Material.grass));
+            .build(new BlockThatch("thatch", 445, Material.grass));
 
     public static final Block blockCloth = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 0.8f))
@@ -581,7 +584,7 @@ public class BonusBlocks implements ModInitializer {
             .setTextures("clothblock.png")
             .setFlammability(4, 4)
             .setTags(BlockTags.MINEABLE_BY_SHEARS)
-            .build(new BlockCloth("block.cloth", 442, Material.cloth));
+            .build(new BlockCloth("block.cloth", 446, Material.cloth));
 
     public static final Block blockSlime = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.5f))
@@ -590,7 +593,7 @@ public class BonusBlocks implements ModInitializer {
             .setLightOpacity(6)
             .setTextures("slimeblock.png")
             .setTags(BlockTags.MINEABLE_BY_AXE)
-            .build(new BlockSlime("block.slime", blockID++, false));
+            .build(new BlockSlime("block.slime", 447, false));
 
     public static final Block blockSulphur = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.sand", "step.sand", 1.0f, 0.8f))
@@ -598,7 +601,7 @@ public class BonusBlocks implements ModInitializer {
             .setResistance(0.5f)
             .setTextures("sulphurblock.png")
             .setTags(BlockTags.MINEABLE_BY_SHOVEL)
-            .build(new BlockSulphur("block.sulphur", blockID++, Material.explosive));
+            .build(new BlockSulphur("block.sulphur", 252, Material.explosive));
 
     public static final Block blockCrudeSteel = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
@@ -606,7 +609,7 @@ public class BonusBlocks implements ModInitializer {
             .setResistance(1000.0f)
             .setTextures(15, 8)
             .setTags(BlockTags.MINEABLE_BY_AXE)
-            .build(new Block("block.steel.crude", blockID++, Material.metal));
+            .build(new Block("block.steel.crude", 448, Material.metal));
 
     public static final Block blockLeather = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 0.6f))
@@ -615,7 +618,7 @@ public class BonusBlocks implements ModInitializer {
             .setTextures("leatherblock.png")
             .setFlammability(3, 3)
             .setTags(BlockTags.MINEABLE_BY_AXE)
-            .build(new Block("block.leather", blockID++, Material.cloth));
+            .build(new Block("block.leather", 449, Material.cloth));
 
 
     public static final Block blockRawIron = new BlockBuilder(MOD_ID)
@@ -624,7 +627,7 @@ public class BonusBlocks implements ModInitializer {
             .setResistance(10.0f)
             .setTextures("rawiron.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-            .build(new Block("block.raw.iron", blockID++, Material.metal));
+            .build(new Block("block.raw.iron", 441, Material.metal));
 
     public static final Block blockRawGold = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
@@ -632,7 +635,7 @@ public class BonusBlocks implements ModInitializer {
             .setResistance(10.0f)
             .setTextures("rawgold.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-            .build(new Block("block.raw.gold", blockID++, Material.metal));
+            .build(new Block("block.raw.gold", 442, Material.metal));
 
     public static final Block blockFlint = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
@@ -641,7 +644,7 @@ public class BonusBlocks implements ModInitializer {
             .setTextures("flintblock.png")
             .setInfiniburn()
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-            .build(new Block("block.flint", blockID++, Material.stone));
+            .build(new Block("block.flint", 443, Material.stone));
 
 
     public static final Block brickNetherrack = new BlockBuilder(MOD_ID)
@@ -791,7 +794,7 @@ public class BonusBlocks implements ModInitializer {
             .setVisualUpdateOnMetadata()
             .setBlockModel(new BlockModelRenderBlocks(25))
             .setTags(BlockTags.MINEABLE_BY_SWORD, BlockTags.BROKEN_BY_FLUIDS, BlockTags.NOT_IN_CREATIVE_MENU)
-            .build(new BlockCandle("candle.soulwax", blockID++, Material.decoration));
+            .build(new BlockCandle("candle.soulwax", 61, Material.decoration));
 
 
     public static Item candleSoulwaxItem = ItemHelper.createItem(BonusBlocks.MOD_ID,
@@ -1165,7 +1168,8 @@ public class BonusBlocks implements ModInitializer {
 
 
         Item.itemsList[boxPainted.id] = new ItemBlockPainted(boxPainted, false);
-      
+
+
 //        RecipeHelper.removeRecipe(Block.pillarMarble, 0);
 //        RecipeHelper.Crafting.createRecipe(Block.pillarMarble, 3, new Object[]{"P", "P", "P", 'P', Block.marble});
 //        RecipeHelper.Crafting.createRecipe(pillarSlate, 3, new Object[]{"P", "P", "P", 'P', Block.slate});
@@ -1256,16 +1260,16 @@ public class BonusBlocks implements ModInitializer {
 //        RecipeHelper.Crafting.createRecipe(new ItemStack(Block.planksOakPainted, 4, 5), new Object[]{"P", 'P' , barkShrub});
 //
 //
-//        RecipeHelper.Crafting.createRecipe(cobbleStoneReinforced,8,new Object[]{"PPP","POP","PPP", 'P' , Block.cobbleStone, 'O', Block.obsidian});
-//        RecipeHelper.Crafting.createRecipe(cobbleStoneMossyReinforced,8,new Object[]{"PPP","POP","PPP", 'P' , Block.cobbleStoneMossy, 'O', Block.obsidian});
-//        RecipeHelper.Crafting.createRecipe(cobbleBasaltReinforced,8,new Object[]{"PPP","POP","PPP", 'P' , Block.cobbleBasalt, 'O', Block.obsidian});
-//        RecipeHelper.Crafting.createRecipe(cobbleGraniteReinforced,8,new Object[]{"PPP","POP","PPP", 'P' , Block.cobbleGranite, 'O', Block.obsidian});
-//        RecipeHelper.Crafting.createRecipe(cobbleLimestoneReinforced,8,new Object[]{"PPP","POP","PPP", 'P' , Block.cobbleLimestone, 'O', Block.obsidian});
-//        RecipeHelper.Crafting.createRecipe(cobblePermafrostReinforced,8,new Object[]{"PPP","POP","PPP", 'P' , Block.cobblePermafrost, 'O', Block.obsidian});
+        createRecipe(new ItemStack(cobbleStoneReinforced,8),new Object[]{"PPP","POP","PPP", 'P' , Block.cobbleStone, 'O', Block.obsidian});
+        createRecipe(new ItemStack(cobbleStoneMossyReinforced,8),new Object[]{"PPP","POP","PPP", 'P' , Block.cobbleStoneMossy, 'O', Block.obsidian});
+        createRecipe(new ItemStack(cobbleBasaltReinforced,8),new Object[]{"PPP","POP","PPP", 'P' , Block.cobbleBasalt, 'O', Block.obsidian});
+        createRecipe(new ItemStack(cobbleGraniteReinforced,8),new Object[]{"PPP","POP","PPP", 'P' , Block.cobbleGranite, 'O', Block.obsidian});
+        createRecipe(new ItemStack(cobbleLimestoneReinforced,8),new Object[]{"PPP","POP","PPP", 'P' , Block.cobbleLimestone, 'O', Block.obsidian});
+        createRecipe(new ItemStack(cobblePermafrostReinforced,8),new Object[]{"PPP","POP","PPP", 'P' , Block.cobblePermafrost, 'O', Block.obsidian});
 //
 //
-//        RecipeHelper.Crafting.createRecipe(blockRawIron,1,new Object[]{"PPP","PPP","PPP", 'P' , Item.oreRawIron});
-//        Registries.RECIPES.addRecipe("bonusblocks:workbench/rawironblock", (new ItemStack(BonusBlocks.blockRawIron)), false,"PPP","PPP", "PPP", 'P' , Item.oreRawIron);
+        createRecipe(new ItemStack(blockRawIron, 1),new Object[]{"PPP","PPP","PPP",'P',new ItemStack(Item.oreRawIron)});
+
 //        RecipeHelper.Crafting.createRecipe(blockRawGold,1,new Object[]{"PPP","PPP","PPP", 'P' , Item.oreRawGold});
 //
 //        RecipeHelper.Crafting.createRecipe(Item.oreRawIron,9,new Object[]{"P", 'P' , blockRawIron});
