@@ -18,9 +18,6 @@
 
   "environment": "*",
   "entrypoints": {
-    "beforeGameStart": [
-      "luke.bonusblocks.BonusBlocks"
-    ],
     "recipesReady": [
       "luke.bonusblocks.BonusRecipes"
     ],

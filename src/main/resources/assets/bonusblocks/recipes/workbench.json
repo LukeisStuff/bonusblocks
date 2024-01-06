@@ -10,19 +10,14 @@
     "symbols": [
       {
         "symbol": "X",
+        "key": "item.ore.raw.iron",
+        "amount": 1,
+        "meta": 0,
         "group": "minecraft:rawiron"
-      },
-      {
-        "symbol": "#",
-        "stack": {
-          "id": 16408,
-          "amount": 1,
-          "meta": 0
-        }
       }
     ],
     "result": {
-      "id": 16398,
+      "key": "tile.bonusblocks.block.raw.iron",
       "amount": 1,
       "meta": 0
     },
