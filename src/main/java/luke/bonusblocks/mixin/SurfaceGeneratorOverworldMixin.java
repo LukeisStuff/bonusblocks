@@ -1,8 +1,10 @@
 package luke.bonusblocks.mixin;
 
+import luke.bonusblocks.BonusBlocks;
 import luke.bonusblocks.biomes.ModBiomes;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.world.biome.Biome;
+import net.minecraft.core.world.biome.Biomes;
 import net.minecraft.core.world.chunk.Chunk;
 import net.minecraft.core.world.generate.chunk.ChunkGeneratorResult;
 import net.minecraft.core.world.generate.chunk.perlin.overworld.SurfaceGeneratorOverworld;
@@ -23,14 +25,20 @@ public abstract class SurfaceGeneratorOverworldMixin {
 
     @Inject(method = "generateSurface", at = @At(value = "TAIL", target = "Lnet/minecraft/core/world/generate/chunk/perlin/overworld/SurfaceGeneratorOverworld;generateSurface(Lnet/minecraft/core/world/chunk/Chunk;[S)V"))
     public void generateSurface(Chunk chunk, ChunkGeneratorResult result, CallbackInfo ci) {
+
         int chunkX = chunk.xPosition;
         int chunkZ = chunk.zPosition;
-        Random rand = new Random((long)chunkX * 341873128712L + (long)chunkZ * 132897987541L);
+        Random rand = new Random((long) chunkX * 341873128712L + (long) chunkZ * 132897987541L);
         Biome biome = new Biome();
 
-        if (!biome.equals(ModBiomes.OVERWORLD_PEAK_SNOW) || fillerBlock != Block.blockSnow.id)
-        currentLayerDepth = rand.nextInt(8) + 14;
-        fillerBlock = (short) Block.permafrost.id;
+        if (currentLayerDepth == 0) {
+            if (biome == Biomes.OVERWORLD_OUTBACK && fillerBlock == Block.dirtScorched.id) {
+                currentLayerDepth = rand.nextInt(8) + 2;
+                fillerBlock = (short) BonusBlocks.scorchedstone.id;
+            } else if (biome == Biomes.OVERWORLD_OUTBACK && fillerBlock == Block.dirtScorched.id) {
+                currentLayerDepth = rand.nextInt(8) + 14;
+                fillerBlock = (short) BonusBlocks.scorchedstone.id;
+            }
+        }
     }
 }
-

@@ -18,11 +18,14 @@
 
   "environment": "*",
   "entrypoints": {
-    "main": [
+    "beforeGameStart": [
       "luke.bonusblocks.BonusBlocks"
     ],
     "recipesReady": [
       "luke.bonusblocks.BonusRecipes"
+    ],
+    "main": [
+      "luke.bonusblocks.BonusBlocks"
     ],
     "terrain-api": [
       "luke.bonusblocks.ModContainer.TerrainApi.TerrainApiPlugin"
