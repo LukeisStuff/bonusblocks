@@ -1,4 +1,4 @@
-package luke.bonusblocks;
+package luke.bonusblocks.block;
 
 import net.minecraft.core.block.BlockGlass;
 import net.minecraft.core.block.entity.TileEntity;

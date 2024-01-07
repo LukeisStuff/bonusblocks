@@ -153,10 +153,10 @@ public abstract class ChunkDecoratorOverworldMixin {
             blockY = world.getHeightValue(blockX, blockZ);
             new WorldFeatureFlowers(BonusBlocks.flowerLime.id).generate(world, rand, blockX, blockY, blockZ);
         }
-        if (rand.nextInt(12) == 0) {
+        if (rand.nextInt(2) == 0) {
             blockX = x + rand.nextInt(16) + 8;
             blockZ = z + rand.nextInt(16) + 8;
-            blockY = world.getHeightValue(blockX, blockZ);
+            blockY = minY + rand.nextInt(rangeY);
             new WorldFeatureFlowers(BonusBlocks.mushroomGray.id).generate(world, rand, blockX, blockY, blockZ);
         }
     }

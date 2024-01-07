@@ -1,19 +1,19 @@
 package luke.bonusblocks;
 
+import luke.bonusblocks.block.*;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.render.block.color.BlockColorGrass;
 import net.minecraft.client.render.block.color.BlockColorLeavesOak;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.client.sound.block.BlockSound;
 import net.minecraft.client.sound.block.BlockSounds;
+import net.minecraft.core.block.BlockCandle;
 import net.minecraft.core.block.*;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.crafting.LookupFuelFurnace;
-import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemPlaceable;
-import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.block.ItemBlockPainted;
 import net.minecraft.core.item.block.ItemBlockSlab;
 import net.minecraft.core.item.tool.ItemToolPickaxe;
@@ -23,7 +23,6 @@ import turniplabs.halplibe.helper.BlockBuilder;
 import turniplabs.halplibe.helper.ItemHelper;
 
 import static net.minecraft.core.block.BlockMoss.stoneToMossMap;
-import static turniplabs.halplibe.helper.RecipeHelper.Crafting.createRecipe;
 
 
 public class BonusBlocks implements ModInitializer {
@@ -701,6 +700,14 @@ public class BonusBlocks implements ModInitializer {
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new Block("soulslate", 811, Material.stone));
 
+    public static final Block brimstone = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 0.4f))
+            .setHardness(400.0f)
+            .setResistance(20000.0f)
+            .setTextures("brimstone.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new BlockBrimstone("brimstone", 261, Material.piston));
+
 
 
     public static final Block clayBaked = new BlockBuilder(MOD_ID)
@@ -721,6 +728,18 @@ public class BonusBlocks implements ModInitializer {
             .setFlammability(3, 3)
             .setTags(BlockTags.MINEABLE_BY_AXE)
             .build(new Block("block.wicker", 901, Material.cloth));
+
+
+
+    public static final Block pie = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
+            .setHardness(0.5f)
+            .setResistance(0.5f)
+            .setTopTexture("pietop.png")
+            .setBottomTexture("piebottom.png")
+            .setSideTextures("pieside.png")
+            .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.NOT_IN_CREATIVE_MENU)
+            .build(new BlockPie("pie", 841));
 
 
 
@@ -806,6 +825,11 @@ public class BonusBlocks implements ModInitializer {
             new Item("soulwax", 16535),
             "soulwax",
             "soulwax.png");
+
+    public static Item foodPie = ItemHelper.createItem(BonusBlocks.MOD_ID,
+            new ItemPlaceable("Pumpkin Pie", 16536, pie).setMaxStackSize(1),
+            "food.pie",
+            "pie.png");
     public static final Block slabSlatePolished = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
             .setHardness(1.0f)

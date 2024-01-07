@@ -1,5 +1,6 @@
-package luke.bonusblocks;
+package luke.bonusblocks.block;
 
+import luke.bonusblocks.BonusBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLeavesBase;
 import net.minecraft.core.block.material.Material;
@@ -8,13 +9,13 @@ import net.minecraft.core.world.wind.WindManager;
 
 import java.util.Random;
 
-public class BlockLeavesJacaranda extends BlockLeavesBase {
-    public BlockLeavesJacaranda(String key, int id) {
+public class BlockLeavesOakMossy extends BlockLeavesBase {
+    public BlockLeavesOakMossy(String key, int id) {
         super(key, id, Material.leaves, false);
     }
 
     protected Block getSapling() {
-        return BonusBlocks.saplingJacaranda;
+        return BonusBlocks.saplingOakMossy;
     }
 
     public void randomDisplayTick(World world, int x, int y, int z, Random rand) {

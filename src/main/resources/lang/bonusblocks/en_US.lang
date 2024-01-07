@@ -142,8 +142,10 @@ tile.bonusblocks.brick.quartz.name=Quartz Bricks
 tile.bonusblocks.brick.quartz.desc=Stacked bricks of quartz.
 tile.bonusblocks.brick.olivine.name=Olivine Bricks
 tile.bonusblocks.brick.olivine.desc=Stacked bricks of olivine.
-tile.bonusblocks.soulslate.name=Soulslate
-tile.bonusblocks.soulslate.desc=A block of solid soul sand. Probably haunted.
+tile.bonusblocks.soulslate.name=Soul Slate
+tile.bonusblocks.soulslate.desc=Highly compacted soul sand. Listen and you can almost hear it whisper.
+tile.bonusblocks.brimstone.name=Brimstone
+tile.bonusblocks.brimstone.desc=Incredibly tough blackened rock from the depths of hell.
 
 tile.bonusblocks.clay.baked.name=Baked Clay
 tile.bonusblocks.clay.baked.desc=A scorched block of solid clay.
@@ -289,6 +291,12 @@ tile.bonusblocks.stairs.brick.olivine.desc=Olivine brick block used for rapid ve
 
 tile.bonusblocks.stairs.cobble.permafrost.name=Cobbled Permafrost Stairs
 tile.bonusblocks.stairs.cobble.permafrost.desc=Cobbled permafrost block used for rapid vertical movement.
+
+tile.bonusblocks.pie.name=Pumpkin Pie
+tile.bonusblocks.pie.desc=I just want to pie already.
+
+item.bonusblocks.food.pie.name=Pumpkin Pie
+item.bonusblocks.food.pie.desc=Pumpkin spiced custard filled dessert.
 
 tile.bonusblocks.candle.soulwax.name=Soul Wax Candle
 tile.bonusblocks.candle.soulwax.desc=Say the line souljak.

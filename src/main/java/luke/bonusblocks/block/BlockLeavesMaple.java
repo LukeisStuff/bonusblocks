@@ -1,5 +1,6 @@
-package luke.bonusblocks;
+package luke.bonusblocks.block;
 
+import luke.bonusblocks.BonusBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLeavesBase;
 import net.minecraft.core.block.material.Material;

@@ -13,14 +13,14 @@ import net.minecraft.core.item.ItemStack;
 import turniplabs.halplibe.util.RecipeEntrypoint;
 
 public class BonusRecipes implements RecipeEntrypoint {
-    public static final RecipeNamespace bonusblocks = new RecipeNamespace();
+    public static final RecipeNamespace BONUSBLOCKS = new RecipeNamespace();
     public static final RecipeGroup<RecipeEntryCrafting<?, ?>> WORKBENCH = new RecipeGroup<>(new RecipeSymbol(new ItemStack(Block.workbench)));
     public static final Registry<Class<? extends RecipeEntryBase<?, ?, ?>>> RECIPE_TYPES = new Registry<>();
     @Override
     public void onRecipesReady() {
-        bonusblocks.register("workbench", WORKBENCH);
+        BONUSBLOCKS.register("workbench", WORKBENCH);
 
-        Registries.RECIPES.register("bonusblocks", bonusblocks);
+        Registries.RECIPES.register("bonusblocks", BONUSBLOCKS);
 
         DataLoader.loadRecipes("/assets/bonusblocks/recipes/workbench.json");
     }

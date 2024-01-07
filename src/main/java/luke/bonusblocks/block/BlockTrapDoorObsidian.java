@@ -1,4 +1,4 @@
-package luke.bonusblocks;
+package luke.bonusblocks.block;
 
 import net.minecraft.core.block.BlockTrapDoor;
 import net.minecraft.core.block.material.Material;

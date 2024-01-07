@@ -1,4 +1,4 @@
-package luke.bonusblocks;
+package luke.bonusblocks.block;
 
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLeavesBase;
