@@ -14,6 +14,7 @@ import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.crafting.LookupFuelFurnace;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemPlaceable;
+import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.block.ItemBlockPainted;
 import net.minecraft.core.item.block.ItemBlockSlab;
 import net.minecraft.core.item.tool.ItemToolPickaxe;
@@ -21,6 +22,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.BlockBuilder;
 import turniplabs.halplibe.helper.ItemHelper;
+import turniplabs.halplibe.helper.RecipeHelper;
 
 import static net.minecraft.core.block.BlockMoss.stoneToMossMap;
 
@@ -1292,9 +1294,6 @@ public class BonusBlocks implements ModInitializer {
 //        createRecipe(new ItemStack(cobblePermafrostReinforced,8),new Object[]{"PPP","POP","PPP", 'P' , Block.cobblePermafrost, 'O', Block.obsidian});
 //
 //
-//        createRecipe(new ItemStack(blockRawIron, 1),new Object[]{"PPP","PPP","PPP",'P',new ItemStack(Item.oreRawIron)});
-
-//        RecipeHelper.Crafting.createRecipe(blockRawGold,1,new Object[]{"PPP","PPP","PPP", 'P' , Item.oreRawGold});
 //
 //        RecipeHelper.Crafting.createRecipe(Item.oreRawIron,9,new Object[]{"P", 'P' , blockRawIron});
 //        RecipeHelper.Crafting.createRecipe(Item.oreRawGold,9,new Object[]{"P", 'P' , blockRawGold});
@@ -1425,21 +1424,6 @@ public class BonusBlocks implements ModInitializer {
 //        RecipeHelper.smeltingManager.addSmelting(Block.netherrack.id, new ItemStack(Block.netherrackIgneous, 1));
 //
 //        RecipeHelper.smeltingManager.addSmelting(Block.soulsand.id, new ItemStack(soulwax, 1));
-//
-//        RecipeHelper.blastingManager.addSmelting(logMaple.id, new ItemStack(Item.coal, 1, 1));
-//        RecipeHelper.blastingManager.addSmelting(logJacaranda.id, new ItemStack(Item.coal, 1, 1));
-//        RecipeHelper.blastingManager.addSmelting(logScorched.id, new ItemStack(Item.coal, 2, 1));
-//        RecipeHelper.blastingManager.addSmelting(logShrub.id, new ItemStack(Item.coal, 1, 1));
-//        RecipeHelper.blastingManager.addSmelting(barkOak.id, new ItemStack(Item.coal, 1, 1));
-//        RecipeHelper.blastingManager.addSmelting(barkOakMossy.id, new ItemStack(Item.coal, 1, 1));
-//        RecipeHelper.blastingManager.addSmelting(barkPine.id, new ItemStack(Item.coal, 1, 1));
-//        RecipeHelper.blastingManager.addSmelting(barkBirch.id, new ItemStack(Item.coal, 1, 1));
-//        RecipeHelper.blastingManager.addSmelting(barkCherry.id, new ItemStack(Item.coal, 1, 1));
-//        RecipeHelper.blastingManager.addSmelting(barkEucalyptus.id, new ItemStack(Item.coal, 1, 1));
-//        RecipeHelper.blastingManager.addSmelting(barkMaple.id, new ItemStack(Item.coal, 1, 1));
-//        RecipeHelper.blastingManager.addSmelting(barkScorched.id, new ItemStack(Item.coal, 2, 1));
-//        RecipeHelper.blastingManager.addSmelting(barkShrub.id, new ItemStack(Item.coal, 1, 1));
-//        RecipeHelper.blastingManager.addSmelting(barkJacaranda.id, new ItemStack(Item.coal, 1, 1));
 //
 //        RecipeHelper.blastingManager.addSmelting(Block.blockClay.id, new ItemStack(clayBaked, 1));
 //

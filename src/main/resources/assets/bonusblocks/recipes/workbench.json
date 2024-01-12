@@ -1,6 +1,6 @@
 [
   {
-    "name": "bonusblocks:workbench/rawironblock",
+    "name": "bonusblocks:workbench/workbench_raw_iron_block",
     "type": "minecraft:crafting/shaped",
     "pattern": [
       "XXX",
@@ -10,14 +10,65 @@
     "symbols": [
       {
         "symbol": "X",
-        "key": "item.ore.raw.iron",
-        "amount": 1,
-        "meta": 0,
-        "group": "minecraft:rawiron"
+        "stack": {
+          "key": "item.ore.raw.iron",
+          "amount": 1,
+          "meta": 0
+        }
       }
     ],
     "result": {
       "key": "tile.bonusblocks.block.raw.iron",
+      "amount": 1,
+      "meta": 0
+    },
+    "consumeContainers": true
+  },
+  {
+    "name": "bonusblocks:workbench/workbench_raw_gold_block",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "XXX",
+      "XXX",
+      "XXX"
+    ],
+    "symbols": [
+      {
+        "symbol": "X",
+        "stack": {
+          "key": "item.ore.raw.gold",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key": "tile.bonusblocks.block.raw.gold",
+      "amount": 1,
+      "meta": 0
+    },
+    "consumeContainers": true
+  },
+  {
+    "name": "bonusblocks:workbench/workbench_reinforced_cobblestone",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "XXX",
+      "XOX",
+      "XXX"
+    ],
+    "symbols": [
+      {
+        "symbol": "X",
+        "stack": {
+          "key": "tile.",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key": "tile.bonusblocks.block.raw.gold",
       "amount": 1,
       "meta": 0
     },
