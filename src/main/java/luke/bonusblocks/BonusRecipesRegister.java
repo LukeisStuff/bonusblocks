@@ -14,7 +14,7 @@ import net.minecraft.core.data.registry.recipe.entry.RecipeEntryFurnace;
 import net.minecraft.core.item.ItemStack;
 import turniplabs.halplibe.util.RecipeEntrypoint;
 
-public class BonusRecipes implements RecipeEntrypoint {
+public class BonusRecipesRegister implements RecipeEntrypoint {
     public static final RecipeNamespace BONUSBLOCKS = new RecipeNamespace();
     public static final RecipeGroup<RecipeEntryCrafting<?, ?>> WORKBENCH = new RecipeGroup<>(new RecipeSymbol(new ItemStack(Block.workbench)));
     public static final RecipeGroup<RecipeEntryFurnace> FURNACE = new RecipeGroup<>(new RecipeSymbol(new ItemStack(Block.furnaceStoneIdle)));
@@ -51,6 +51,5 @@ public class BonusRecipes implements RecipeEntrypoint {
 
         DataLoader.loadRecipes("/assets/bonusblocks/recipes/workbench.json");
         DataLoader.loadRecipes("/assets/bonusblocks/recipes/furnace.json");
-        DataLoader.loadRecipes("/assets/bonusblocks/recipes/blastfurnace.json");
     }
 }

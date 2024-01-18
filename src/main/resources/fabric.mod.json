@@ -19,9 +19,12 @@
   "environment": "*",
   "entrypoints": {
     "recipesReady": [
-      "luke.bonusblocks.BonusRecipes"
+      "luke.bonusblocks.BonusRecipesRegister"
     ],
     "main": [
+      "luke.bonusblocks.BonusBlocks"
+    ],
+    "recipesReady": [
       "luke.bonusblocks.BonusBlocks"
     ],
     "terrain-api": [
