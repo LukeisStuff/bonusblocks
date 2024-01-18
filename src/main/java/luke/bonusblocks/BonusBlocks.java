@@ -1329,11 +1329,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint {
         templateOvergrown.addInput('X', Block.grassScorched).create("overgrown_grass_scorched", new ItemStack(BonusBlocks.grassScorchedOvergrown, 2));
         templateOvergrown.addInput('X', Block.pathDirt).create("overgrown_path", new ItemStack(BonusBlocks.pathOvergrown, 2));
 
-        RecipeBuilder.Shaped(MOD_ID, "LW", "WL")
-                .addInput('L', Item.leather)
-                .addInput('W', Item.wheat)
-                .create("block_of_wicker", new ItemStack(BonusBlocks.thatch, 4));
-
         RecipeBuilder.ModifyWorkbench("minecraft").removeRecipe("marble_pillar");
 
         RecipeBuilderShaped templatePillar = new RecipeBuilderShaped(MOD_ID, "X", "X", "X");
