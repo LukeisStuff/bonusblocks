@@ -1319,6 +1319,8 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint {
         templateBricks.addInput('X', Item.quartz).create("quartz_bricks", new ItemStack(BonusBlocks.brickQuartz, 4));
         templateBricks.addInput('X', Item.olivine).create("olivine_bricks", new ItemStack(BonusBlocks.brickOlivine, 4));
         templateBricks.addInput('X', Block.soulsand).create("soulslate", new ItemStack(BonusBlocks.soulslate, 4));
+        templateBricks.addInput('X', BonusBlocks.soulslate).create("brimstone", new ItemStack(BonusBlocks.brimstone, 4));
+
         templateBricks.addInput('X', Block.dirtScorched).create("scorchedstone", new ItemStack(BonusBlocks.scorchedstone, 4));
 
         RecipeBuilderShaped templateOvergrown = new RecipeBuilderShaped(MOD_ID, "X", "X");
