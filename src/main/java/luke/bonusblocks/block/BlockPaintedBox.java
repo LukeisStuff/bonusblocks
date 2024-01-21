@@ -29,11 +29,12 @@ public class BlockPaintedBox extends Block {
         return new ItemStack[]{new ItemStack(this, 1, meta)};
     }
 
+
     static {
         texCoords[0] = Block.texCoordToIndex(29, 29);
 
         for(int i = 1; i < 16; ++i) {
-            texCoords[i] = texCoords[0] - (i % 4 * Global.TEXTURE_ATLAS_WIDTH_TILES * TEX_COORD_OFFSET + i / 4 * TEX_COORD_OFFSET);
+            texCoords[i] = texCoords[0] - (i % 4 * (Global.TEXTURE_ATLAS_WIDTH_TILES * 3) + i / 4 * 3);
         }
 
     }
