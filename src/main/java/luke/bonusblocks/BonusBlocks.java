@@ -25,7 +25,10 @@ import turniplabs.halplibe.helper.BlockBuilder;
 import turniplabs.halplibe.helper.ItemHelper;
 import turniplabs.halplibe.helper.RecipeBuilder;
 import turniplabs.halplibe.helper.recipeBuilders.RecipeBuilderShaped;
+import turniplabs.halplibe.util.ConfigHandler;
 import turniplabs.halplibe.util.RecipeEntrypoint;
+
+import java.util.Properties;
 
 import static net.minecraft.core.block.BlockMoss.stoneToMossMap;
 
@@ -33,8 +36,17 @@ import static net.minecraft.core.block.BlockMoss.stoneToMossMap;
 public class BonusBlocks implements ModInitializer, RecipeEntrypoint {
     public static final String MOD_ID = "bonusblocks";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-    private static int blockID = 1500;
-
+    public static ConfigHandler config;
+    private static int blockID;
+    private static int itemID;
+    static {
+        Properties properties = new Properties();
+        properties.put("blockID", "1500");
+        properties.put("itemID", "16000");
+        config = new ConfigHandler(MOD_ID, properties);
+        blockID = config.getInt("blockID");
+        itemID = config.getInt("itemID");
+    }
     // Blocks
     public static final Block crate = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.0f))
@@ -816,17 +828,17 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint {
 
 
     public static Item candleSoulwaxItem = ItemHelper.createItem(BonusBlocks.MOD_ID,
-            new ItemPlaceable("candle.soulwax", 16600, candleSoulwax),
+            new ItemPlaceable("candle.soulwax", itemID++, candleSoulwax),
             "candle.soulwax",
             "soulwaxcandle.png");
 
     public static Item soulwax = ItemHelper.createItem(BonusBlocks.MOD_ID,
-            new Item("soulwax", 16601),
+            new Item("soulwax", itemID++),
             "soulwax",
             "soulwax.png");
 
     public static Item foodPie = ItemHelper.createItem(BonusBlocks.MOD_ID,
-            new ItemPlaceable("Pumpkin Pie", 16002, pie).setMaxStackSize(1),
+            new ItemPlaceable("Pumpkin Pie", itemID++, pie).setMaxStackSize(1),
             "food.pie",
             "pie.png");
     public static final Block slabSlatePolished = new BlockBuilder(MOD_ID)
