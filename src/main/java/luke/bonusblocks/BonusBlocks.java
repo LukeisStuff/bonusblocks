@@ -42,7 +42,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint {
     static {
         Properties properties = new Properties();
         properties.put("blockID", "1500");
-        properties.put("itemID", "16500");
+        properties.put("itemID", "16750");
         config = new ConfigHandler(MOD_ID, properties);
         blockID = config.getInt("blockID");
         itemID = config.getInt("itemID");
@@ -1479,6 +1479,14 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint {
         templateStairs.addInput('X', BonusBlocks.brickQuartz).create("quartz_brick_stairs", new ItemStack(BonusBlocks.stairsBrickQuartz, 6));
         templateStairs.addInput('X', BonusBlocks.brickOlivine).create("olivine_brick_stairs", new ItemStack(BonusBlocks.stairsBrickOlivine, 6));
         templateStairs.addInput('X', Block.cobblePermafrost).create("cobbled_permafrost_stairs", new ItemStack(BonusBlocks.stairsCobblePermafrost, 6));
+
+        RecipeBuilder.Shaped(MOD_ID, " M ", "SES", "WPW")
+                .addInput('M', (Item.bucketMilk))
+                .addInput('W', (Item.wheat))
+                .addInput('S', (Item.dustSugar))
+                .addInput('E', (Item.eggChicken))
+                .addInput('P', (Block.pumpkin))
+                .create("pumpkin_pie", new ItemStack(BonusBlocks.foodPie, 1));
 
         RecipeBuilder.Furnace(MOD_ID)
                 .setInput("bonusblocks:bark")
