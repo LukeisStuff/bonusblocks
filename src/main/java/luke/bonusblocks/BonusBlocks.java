@@ -1,13 +1,13 @@
 package luke.bonusblocks;
 
 import luke.bonusblocks.block.*;
+import luke.bonusblocks.block.BlockCandle;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.render.block.color.BlockColorGrass;
 import net.minecraft.client.render.block.color.BlockColorLeavesOak;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.client.sound.block.BlockSound;
 import net.minecraft.client.sound.block.BlockSounds;
-import net.minecraft.core.block.BlockCandle;
 import net.minecraft.core.block.*;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
@@ -42,7 +42,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint {
     static {
         Properties properties = new Properties();
         properties.put("blockID", "1500");
-        properties.put("itemID", "16000");
+        properties.put("itemID", "16500");
         config = new ConfigHandler(MOD_ID, properties);
         blockID = config.getInt("blockID");
         itemID = config.getInt("itemID");

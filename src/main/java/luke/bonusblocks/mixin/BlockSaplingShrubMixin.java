@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Random;
 
-@Mixin(value= BlockSaplingShrub.class,remap=false)
+@Mixin(value=BlockSaplingShrub.class,remap=false)
 public class BlockSaplingShrubMixin {
     @Inject(method = "growTree", at = @At(value = "TAIL", target = "growTree(Lnet/minecraft/core/world/World;IIILjava/util/Random;)V"), cancellable = true)
 
@@ -24,6 +24,5 @@ public class BlockSaplingShrubMixin {
         if (!obj.generate(world, random, i, j, k)) {
             world.setBlock(i, j, k, Block.saplingShrub.id);
         }
-
     }
 }
