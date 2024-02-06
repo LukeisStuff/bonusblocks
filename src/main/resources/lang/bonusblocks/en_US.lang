@@ -92,6 +92,8 @@ tile.bonusblocks.branch.desc=Woody structure connecting leaves.
 
 tile.bonusblocks.leaves.maple.name=Maple Leaves
 tile.bonusblocks.leaves.maple.desc=Leaves from a maple tree.
+tile.bonusblocks.leaves.oak.mossy.name=Mossy Oak Leaves
+tile.bonusblocks.leaves.oak.mossy.desc=Leaves from a mossy oak tree.
 
 tile.bonusblocks.sapling.maple.name=Maple Sapling
 tile.bonusblocks.sapling.maple.desc=A plant to grow a maple tree.
@@ -106,6 +108,8 @@ tile.bonusblocks.log.jacaranda.name=Jacaranda Log
 tile.bonusblocks.log.jacaranda.desc=A log from a jacaranda tree.
 tile.bonusblocks.log.scorched.name=Scorched Log
 tile.bonusblocks.log.scorched.desc=A log from a burnt down tree.
+tile.bonusblocks.log.cacao.name=Cacao Log
+tile.bonusblocks.log.cacao.desc=A log from a cacao tree.
 
 tile.bonusblocks.bark.oak.name=Oak Bark
 tile.bonusblocks.bark.oak.desc=The bark of an oak tree.
@@ -127,6 +131,8 @@ tile.bonusblocks.bark.jacaranda.name=Jacaranda Bark
 tile.bonusblocks.bark.jacaranda.desc=The bark of a jacaranda tree.
 tile.bonusblocks.bark.scorched.name=Scorched Bark
 tile.bonusblocks.bark.scorched.desc=The bark of a burnt down tree.
+tile.bonusblocks.bark.cacao.name=Cacao Bark
+tile.bonusblocks.bark.cacao.desc=The bark of a cacao tree.
 
 tile.bonusblocks.brick.netherrack.name=Netherrack Brick
 tile.bonusblocks.brick.netherrack.desc=Stacked bricks of netherrack.
@@ -251,6 +257,8 @@ tile.bonusblocks.slab.brick.scorchedstone.name=Scorchedstone Brick Slab
 tile.bonusblocks.slab.brick.scorchedstone.desc=A slab of scorchedstone bricks.
 tile.bonusblocks.slab.brick.mud.name=Mud Brick Slab
 tile.bonusblocks.slab.brick.mud.desc=A slab of mud bricks.
+tile.bonusblocks.slab.cobble.stone.mossy.name=Mossy Cobblestone Slab
+tile.bonusblocks.slab.cobble.stone.mossy.desc=A slab of mossy cobblestone.
 
 tile.bonusblocks.slab.brick.steel.name=Steel Brick Slab
 tile.bonusblocks.slab.brick.steel.desc=A slab of steel bricks.
@@ -264,6 +272,8 @@ tile.bonusblocks.slab.cobble.permafrost.desc=A slab of cobbled permafrost.
 tile.bonusblocks.slab.scorchedstone.name=Scorchedstone Slab
 tile.bonusblocks.slab.scorchedstone.desc=A slab of scorchedstone.
 
+tile.bonusblocks.stairs.cobble.stone.mossy.name=Mossy Cobblestone Stairs
+tile.bonusblocks.stairs.cobble.stone.mossy.desc=Mossy cobblestone block used for rapid vertical movement.
 tile.bonusblocks.stairs.brick.stone.polished.mossy.name=Mossy Polished Stone Brick Stairs
 tile.bonusblocks.stairs.brick.stone.polished.mossy.desc=Mossy polished stone brick block used for rapid vertical movement.
 tile.bonusblocks.stairs.brick.sandstone.name=Sandstone Brick Stairs

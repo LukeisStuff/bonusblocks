@@ -19,5 +19,6 @@ public class BiomeShrublandMixin {
         {
             cir.setReturnValue(new WorldFeatureTreeShrub(Block.leavesShrub.id, BonusBlocks.logShrub.id));
         }
+        cir.cancel();
     }
 }

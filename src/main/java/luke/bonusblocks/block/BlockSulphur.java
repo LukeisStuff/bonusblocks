@@ -23,24 +23,16 @@ public class BlockSulphur extends BlockSand {
     public void onBlockAdded(World world, int i, int j, int k) {
         super.onBlockAdded(world, i, j, k);
         world.scheduleBlockUpdate(i, j, k, this.id, this.tickRate());
-        if (world.isBlockIndirectlyGettingPowered(i, j, k)) {
-            this.ignite(world, i, j, k, true);
         }
-
-    }
 
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
         return dropCause == EnumDropCause.EXPLOSION ? null : new ItemStack[]{new ItemStack(this)};
     }
 
     public void onBlockDestroyedByExplosion(World world, int x, int y, int z) {
-        luke.bonusblocks.block.EntitySulphur entity = new luke.bonusblocks.block.EntitySulphur(world, (double)((float)x + 0.5F), (double)((float)y + 0.5F), (double)((float)z + 0.5F));
+        EntitySulphur entity = new EntitySulphur(world, (double)((float)x + 0.5F), (double)((float)y + 0.5F), (double)((float)z + 0.5F));
         entity.fuse = world.rand.nextInt(entity.fuse / 2) + entity.fuse / 4;
         world.entityJoinedWorld(entity);
-    }
-
-    public void ignite(World world, int x, int y, int z, boolean sound) {
-        this.ignite(world, x, y, z, (EntityPlayer)null, sound);
     }
 
     public void ignite(World world, int x, int y, int z, EntityPlayer player, boolean sound) {
@@ -52,7 +44,7 @@ public class BlockSulphur extends BlockSand {
 
         } else {
             world.setBlockWithNotify(x, y, z, 0);
-            luke.bonusblocks.block.EntitySulphur e = new luke.bonusblocks.block.EntitySulphur(world, (double)((float)x + 0.5F), (double)((float)y + 0.5F), (double)((float)z + 0.5F));
+            EntitySulphur e = new EntitySulphur(world, (double)((float)x + 0.5F), (double)((float)y + 0.5F), (double)((float)z + 0.5F));
             world.entityJoinedWorld(e);
             world.playSoundAtEntity(e, "random.fuse", 1.0F, 1.0F);
             if (player != null && player.inventory.getCurrentItem() != null && player.inventory.getCurrentItem().getItem() instanceof ItemFirestriker) {
@@ -115,7 +107,7 @@ public class BlockSulphur extends BlockSand {
         } else if (blockId == Block.fire.id) {
             return true;
         } else {
-            return Block.hasTag(blockId, BlockTags.IS_WATER) ? true : Block.hasTag(blockId, BlockTags.IS_LAVA);
+            return Block.hasTag(blockId, BlockTags.IS_WATER) || Block.hasTag(blockId, BlockTags.IS_LAVA);
         }
     }
 }

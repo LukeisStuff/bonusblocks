@@ -1,5 +1,6 @@
 package luke.bonusblocks.block;
 
+import luke.bonusblocks.BonusBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockSaplingBase;
 import net.minecraft.core.world.World;
@@ -14,7 +15,7 @@ public class BlockSaplingMossyOak extends BlockSaplingBase {
     }
 
     public void growTree(World world, int i, int j, int k, Random random) {
-        Object treeBig = new WorldFeatureTreeShapeSwamp(Block.leavesOak.id, Block.logOakMossy.id, 6);
+        Object treeBig = new WorldFeatureTreeShapeSwamp(BonusBlocks.leavesOakMossy.id, Block.logOakMossy.id, 6);
         world.setBlock(i, j, k, 0);
         if (!((WorldFeature)treeBig).generate(world, random, i, j, k)) {
             world.setBlock(i, j, k, this.id);

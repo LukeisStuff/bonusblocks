@@ -4,9 +4,11 @@
   "package": "luke.bonusblocks.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "BiomeForestMixin",
     "BiomeProviderOverworldMixin",
     "BiomeRainforestMixin",
     "BiomeShrublandMixin",
+    "BiomeSwampMixin",
     "BlockDeadBushMixin",
     "BlockGrassMixin",
     "BlockSaplingCacaoMixin",

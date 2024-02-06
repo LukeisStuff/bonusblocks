@@ -20,7 +20,7 @@ public class BiomeRainforestMixin {
     public void getRandomWorldGenForTrees(Random random, CallbackInfoReturnable<WorldFeature> cir) {
         if (random.nextInt(3) == 0) {
             if (random.nextInt(10) == 0) {
-                cir.setReturnValue(new WorldFeatureTreeFancyRainforest(Block.leavesOak.id, Block.logOakMossy.id, 0));
+                cir.setReturnValue(new WorldFeatureTreeFancyRainforest(BonusBlocks.leavesOakMossy.id, Block.logOakMossy.id, 0));
             } else {
                 cir.setReturnValue(new WorldFeatureTreeFancyRainforest(Block.leavesOak.id, Block.logOak.id, 0));
             }
@@ -28,10 +28,11 @@ public class BiomeRainforestMixin {
             cir.setReturnValue(new WorldFeatureTreeShrub(Block.leavesShrub.id, BonusBlocks.logShrub.id));
         } else {
             if (random.nextInt(10) == 0) {
-                cir.setReturnValue(new WorldFeatureTree(Block.leavesCacao.id, Block.logOakMossy.id, 4));
+                cir.setReturnValue(new WorldFeatureTree(Block.leavesCacao.id, BonusBlocks.logCacao.id, 4));
             } else {
                 cir.setReturnValue(new WorldFeatureTree(Block.leavesOak.id, Block.logOak.id, 6));
             }
+            cir.cancel();
         }
     }
 }

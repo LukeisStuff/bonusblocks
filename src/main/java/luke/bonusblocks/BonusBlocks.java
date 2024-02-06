@@ -1,11 +1,12 @@
 package luke.bonusblocks;
 
 import luke.bonusblocks.block.*;
-import luke.bonusblocks.block.BlockCandle;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.render.block.color.BlockColorGrass;
+import net.minecraft.client.render.block.color.BlockColorLeaves;
 import net.minecraft.client.render.block.color.BlockColorLeavesOak;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
+import net.minecraft.client.render.entity.FallingSandRenderer;
 import net.minecraft.client.sound.block.BlockSound;
 import net.minecraft.client.sound.block.BlockSounds;
 import net.minecraft.core.block.*;
@@ -22,9 +23,12 @@ import net.minecraft.core.item.tool.ItemToolPickaxe;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.BlockBuilder;
+import turniplabs.halplibe.helper.EntityHelper;
 import turniplabs.halplibe.helper.ItemHelper;
 import turniplabs.halplibe.helper.RecipeBuilder;
 import turniplabs.halplibe.helper.recipeBuilders.RecipeBuilderShaped;
+import turniplabs.halplibe.helper.recipeBuilders.RecipeBuilderShapeless;
+import turniplabs.halplibe.util.ClientStartEntrypoint;
 import turniplabs.halplibe.util.ConfigHandler;
 import turniplabs.halplibe.util.RecipeEntrypoint;
 
@@ -33,7 +37,7 @@ import java.util.Properties;
 import static net.minecraft.core.block.BlockMoss.stoneToMossMap;
 
 
-public class BonusBlocks implements ModInitializer, RecipeEntrypoint {
+public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStartEntrypoint {
     public static final String MOD_ID = "bonusblocks";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
     public static ConfigHandler config;
@@ -219,7 +223,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint {
             .setSideTextures("cacaologside.png")
             .setBlockModel(new BlockModelRenderBlocks(27))
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
-            .build(new BlockLog("log.cacoa", blockID++));
+            .build(new BlockLog("log.cacao", blockID++));
     public static final Block logMaple = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.0f))
             .setHardness(2.0F)
@@ -824,7 +828,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint {
             .setVisualUpdateOnMetadata()
             .setBlockModel(new BlockModelRenderBlocks(25))
             .setTags(BlockTags.MINEABLE_BY_SWORD, BlockTags.BROKEN_BY_FLUIDS, BlockTags.NOT_IN_CREATIVE_MENU)
-            .build(new BlockCandle("candle.soulwax", blockID++, Material.decoration));
+            .build(new BlockSoulCandle("candle.soulwax", blockID++));
 
 
     public static Item candleSoulwaxItem = ItemHelper.createItem(BonusBlocks.MOD_ID,
@@ -841,6 +845,8 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint {
             new ItemPlaceable("Pumpkin Pie", itemID++, pie).setMaxStackSize(1),
             "food.pie",
             "pie.png");
+
+
     public static final Block slabSlatePolished = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
             .setHardness(1.0f)
@@ -891,6 +897,15 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint {
             .setTopBottomTexture("polishedredsandstonetop.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockSlab(scorchedstoneCarved, blockID++));
+    public static final Block slabCobblestoneMossy = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
+            .setHardness(2.0F)
+            .setResistance(10.0f)
+            .setUseInternalLight()
+            .setVisualUpdateOnMetadata()
+            .setTextures(4, 2)
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new BlockSlab(Block.cobbleStoneMossy, blockID++));
     public static final Block slabBrickStonePolishedMossy = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
             .setHardness(2.0F)
@@ -1022,7 +1037,16 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint {
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockSlab(brickOlivine, blockID++));
 
-
+    public static final Block stairsCobblestoneMossy = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
+            .setHardness(2.0F)
+            .setResistance(10.0f)
+            .setUseInternalLight()
+            .setVisualUpdateOnMetadata()
+            .setTextures(4, 2)
+            .setBlockModel(new BlockModelRenderBlocks(10))
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new BlockStairs(Block.cobbleStoneMossy, blockID++));
     public static final Block stairsBrickStonePolishedMossy = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
             .setHardness(2.0F)
@@ -1159,6 +1183,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint {
             .build(new BlockStairs(brickOlivine, blockID++));
 
     static {
+        Item.itemsList[slabCobblestoneMossy.id] = new ItemBlockSlab(slabCobblestoneMossy);
         Item.itemsList[slabSlatePolished.id] = new ItemBlockSlab(slabSlatePolished);
         Item.itemsList[slabPermafrostPolished.id] = new ItemBlockSlab(slabPermafrostPolished);
         Item.itemsList[slabSandstonePolished.id] = new ItemBlockSlab(slabSandstonePolished);
@@ -1262,14 +1287,14 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint {
         templateBarktoPlank.addInput('X', BonusBlocks.barkMaple).create("barkMapletoPlanks", new ItemStack(Block.planksOakPainted, 4, 14));
         templateBarktoPlank.addInput('X', BonusBlocks.barkJacaranda).create("barkJacarandatoPlanks", new ItemStack(Block.planksOakPainted, 4, 10));
         templateBarktoPlank.addInput('X', BonusBlocks.barkScorched).create("barkScorchedtoPlanks", new ItemStack(Block.planksOakPainted, 4, 15));
-        templateBarktoPlank.addInput('X', BonusBlocks.barkShrub).create("barkShrubtoPlanks", new ItemStack(Block.planksOakPainted, 4, 4));
+        templateBarktoPlank.addInput('X', BonusBlocks.barkShrub).create("barkShrubtoPlanks", new ItemStack(Block.planksOakPainted, 4, 8));
         templateBarktoPlank.addInput('X', BonusBlocks.barkCacao).create("barkCacaotoPlanks", new ItemStack(Block.planksOakPainted, 4, 5));
 
         RecipeBuilderShaped templateLogtoPlank = new RecipeBuilderShaped(MOD_ID, "X");
         templateLogtoPlank.addInput('X', BonusBlocks.logMaple).create("logMapletoPlanks", new ItemStack(Block.planksOakPainted, 4, 14));
         templateLogtoPlank.addInput('X', BonusBlocks.logJacaranda).create("logJacarandatoPlanks", new ItemStack(Block.planksOakPainted, 4, 10));
         templateLogtoPlank.addInput('X', BonusBlocks.logScorched).create("logScorchedtoPlanks", new ItemStack(Block.planksOakPainted, 4, 15));
-        templateLogtoPlank.addInput('X', BonusBlocks.logShrub).create("logShrubtoPlanks", new ItemStack(Block.planksOakPainted, 4, 4));
+        templateLogtoPlank.addInput('X', BonusBlocks.logShrub).create("logShrubtoPlanks", new ItemStack(Block.planksOakPainted, 4, 8));
         templateLogtoPlank.addInput('X', BonusBlocks.logCacao).create("logCacaotoPlanks", new ItemStack(Block.planksOakPainted, 4, 5));
 
         RecipeBuilderShaped templateItemtoBlock = new RecipeBuilderShaped(MOD_ID, "XXX", "XXX", "XXX");
@@ -1342,6 +1367,12 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint {
         templateOvergrown.addInput('X', Block.pathDirt).create("overgrown_path", new ItemStack(BonusBlocks.pathOvergrown, 2));
 
         RecipeBuilder.ModifyWorkbench("minecraft").removeRecipe("marble_pillar");
+        RecipeBuilder.ModifyWorkbench("minecraft").removeRecipe("green_dye_white_dye_to_lime_dye");
+
+        RecipeBuilder.Shapeless(MOD_ID)
+                .addInput(new ItemStack(Item.dye, 1, 2))
+                .addInput(new ItemStack(Item.dye, 1, 11))
+                .create("green_dye_white_dye_to_lime_dye", new ItemStack(Item.dye, 2, 10));
 
         RecipeBuilderShaped templatePillar = new RecipeBuilderShaped(MOD_ID, "X", "X", "X");
         templatePillar.addInput('X', Block.marble).create("marble_pillar", new ItemStack(Block.pillarMarble, 3));
@@ -1363,12 +1394,15 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint {
                 .addInput('C', Block.chestPlanksOak)
                 .create("box", new ItemStack(BonusBlocks.box, 8));
 
-        // Modify an existing recipe group, this adds the coal block to the coal ores group
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.logMaple.getDefaultStack());
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.logScorched.getDefaultStack());
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.logShrub.getDefaultStack());
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.logJacaranda.getDefaultStack());
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.logCacao.getDefaultStack());
+
+        Registries.ITEM_GROUPS.getItem("minecraft:leaves").add(BonusBlocks.leavesOakMossy.getDefaultStack());
+        Registries.ITEM_GROUPS.getItem("minecraft:leaves").add(BonusBlocks.leavesMaple.getDefaultStack());
+        Registries.ITEM_GROUPS.getItem("minecraft:leaves").add(BonusBlocks.leavesJacaranda.getDefaultStack());
 
         Registries.ITEM_GROUPS.register("bonusblocks:bark", Registries.stackListOf(BonusBlocks.barkBirch,
                 BonusBlocks.barkCacao,
@@ -1464,6 +1498,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint {
         templateSlab.addInput('X', BonusBlocks.brickOlivine).create("olivine_brick_slab", new ItemStack(BonusBlocks.slabBrickOlivine, 3));
         templateSlab.addInput('X', Block.cobblePermafrost).create("cobbled_permafrost_slab", new ItemStack(BonusBlocks.slabCobblePermafrost, 3));
         templateSlab.addInput('X', BonusBlocks.scorchedstone).create("scorchedstone_slab", new ItemStack(BonusBlocks.slabScorchedstone, 3));
+        templateSlab.addInput('X', Block.cobbleStoneMossy).create("cobblestone_mossy_slab", new ItemStack(BonusBlocks.slabCobblestoneMossy, 3));
 
         RecipeBuilderShaped templateStairs = new RecipeBuilderShaped(MOD_ID, "X ", "XX ", "XXX");
         templateStairs.addInput('X', Block.brickGold).create("gold_brick_stairs", new ItemStack(BonusBlocks.stairsBrickGold, 6));
@@ -1479,6 +1514,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint {
         templateStairs.addInput('X', BonusBlocks.brickQuartz).create("quartz_brick_stairs", new ItemStack(BonusBlocks.stairsBrickQuartz, 6));
         templateStairs.addInput('X', BonusBlocks.brickOlivine).create("olivine_brick_stairs", new ItemStack(BonusBlocks.stairsBrickOlivine, 6));
         templateStairs.addInput('X', Block.cobblePermafrost).create("cobbled_permafrost_stairs", new ItemStack(BonusBlocks.stairsCobblePermafrost, 6));
+        templateSlab.addInput('X', Block.cobbleStoneMossy).create("cobblestone_mossy_stairs", new ItemStack(BonusBlocks.stairsCobblestoneMossy, 6));
 
         RecipeBuilder.Shaped(MOD_ID, " M ", "SES", "WPW")
                 .addInput('M', (Item.bucketMilk))
@@ -1516,21 +1552,18 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint {
                 .setInput(Block.obsidian)
                 .create("obsidian_glass", BonusBlocks.glassObsidian.getDefaultStack());
 
+        RecipeBuilder.BlastFurnace(MOD_ID)
+                .setInput(Block.soulsand)
+                .create("soulwax_blast", BonusBlocks.soulwax.getDefaultStack());
+
+    }
+
+    @Override
+    public void beforeClientStart() {
+        EntityHelper.Client.assignEntityRenderer(EntitySulphur.class, new FallingSandRenderer());
+    }
+
+    @Override
+    public void afterClientStart() {
     }
 }
-
-
-//
-//        RecipeHelper.smeltingManager.addSmelting(Block.blockClay.id, new ItemStack(clayBaked, 1));
-//
-//        RecipeHelper.smeltingManager.addSmelting(Block.netherrack.id, new ItemStack(Block.netherrackIgneous, 1));
-//
-//        RecipeHelper.smeltingManager.addSmelting(Block.soulsand.id, new ItemStack(soulwax, 1));
-//
-//        RecipeHelper.blastingManager.addSmelting(Block.blockClay.id, new ItemStack(clayBaked, 1));
-//
-//        RecipeHelper.blastingManager.addSmelting(Block.netherrack.id, new ItemStack(Block.netherrackIgneous, 1));
-//
-//        RecipeHelper.blastingManager.addSmelting(Block.soulsand.id, new ItemStack(soulwax, 1));
-//
-//        RecipeHelper.blastingManager.addSmelting(Block.obsidian.id, new ItemStack(glassObsidian, 1));

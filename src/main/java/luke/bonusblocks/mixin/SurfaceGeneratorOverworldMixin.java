@@ -23,7 +23,7 @@ public abstract class SurfaceGeneratorOverworldMixin {
     @Unique
     int fillerBlock = -1;
 
-    @Inject(method = "generateSurface", at = @At(value = "TAIL", target = "Lnet/minecraft/core/world/generate/chunk/perlin/overworld/SurfaceGeneratorOverworld;generateSurface(Lnet/minecraft/core/world/chunk/Chunk;[S)V"))
+    @Inject(method = "generateSurface", at = @At(value = "TAIL", target = "Lnet/minecraft/core/world/generate/chunk/perlin/overworld/SurfaceGeneratorOverworld;generateSurface(Lnet/minecraft/core/world/chunk/Chunk;[S)V"), cancellable = true)
     public void generateSurface(Chunk chunk, ChunkGeneratorResult result, CallbackInfo ci) {
 
         int chunkX = chunk.xPosition;
@@ -32,13 +32,14 @@ public abstract class SurfaceGeneratorOverworldMixin {
         Biome biome = new Biome();
 
         if (currentLayerDepth == 0) {
-            if (biome == Biomes.OVERWORLD_OUTBACK && fillerBlock == Block.dirtScorched.id) {
+            if (biome.equals(Biomes.OVERWORLD_OUTBACK) && fillerBlock == Block.dirtScorched.id) {
                 currentLayerDepth = rand.nextInt(8) + 2;
                 fillerBlock = (short) BonusBlocks.scorchedstone.id;
-            } else if (biome == Biomes.OVERWORLD_OUTBACK && fillerBlock == Block.dirtScorched.id) {
-                currentLayerDepth = rand.nextInt(8) + 14;
+            } else if (biome.equals(Biomes.OVERWORLD_OUTBACK_GRASSY) && fillerBlock == Block.dirtScorched.id) {
+                currentLayerDepth = rand.nextInt(8) + 2;
                 fillerBlock = (short) BonusBlocks.scorchedstone.id;
             }
+            ci.cancel();
         }
     }
 }

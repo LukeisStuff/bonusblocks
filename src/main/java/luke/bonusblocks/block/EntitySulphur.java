@@ -3,6 +3,7 @@ package luke.bonusblocks.block;
 import com.mojang.nbt.CompoundTag;
 import luke.bonusblocks.BonusBlocks;
 import net.minecraft.core.entity.Entity;
+import net.minecraft.core.entity.EntityFallingSand;
 import net.minecraft.core.util.helper.MathHelper;
 import net.minecraft.core.world.World;
 
@@ -27,7 +28,7 @@ public class EntitySulphur extends Entity {
         this.xd = -MathHelper.sin(f * 3.141593F / 180.0F) * 0.02F;
         this.yd = 0.20000000298023224;
         this.zd = -MathHelper.cos(f * 3.141593F / 180.0F) * 0.02F;
-        this.fuse = 80;
+        this.fuse = 0;
         this.xo = d;
         this.yo = d1;
         this.zo = d2;
@@ -67,8 +68,8 @@ public class EntitySulphur extends Entity {
 
         if (this.fuse-- <= 0) {
             if (!this.world.isClientSide) {
+                this.world.newExplosion(this, this.x, this.y, this.z, 1.5F, false, true);
                 this.remove();
-                this.explode();
             } else {
                 this.remove();
             }
@@ -78,17 +79,14 @@ public class EntitySulphur extends Entity {
 
     }
 
-    private void explode() {
-        float f = 2.0F;
-        this.world.createExplosion((Entity)null, this.x, this.y, this.z, f);
-    }
-
     public void addAdditionalSaveData(CompoundTag tag) {
         tag.putByte("Fuse", (byte)this.fuse);
+        tag.putShort("Tile", (short)this.blockID);
     }
 
     public void readAdditionalSaveData(CompoundTag tag) {
         this.fuse = tag.getByte("Fuse");
+        this.blockID = tag.getShort("Tile") & 16383;
     }
 
     public float getShadowHeightOffs() {

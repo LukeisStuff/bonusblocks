@@ -15,6 +15,7 @@ import java.util.Random;
 
 @Mixin(value=BlockSaplingShrub.class,remap=false)
 public class BlockSaplingShrubMixin {
+
     @Inject(method = "growTree", at = @At(value = "TAIL", target = "growTree(Lnet/minecraft/core/world/World;IIILjava/util/Random;)V"), cancellable = true)
 
     public void growTree(World world, int i, int j, int k, Random random, CallbackInfo ci) {
