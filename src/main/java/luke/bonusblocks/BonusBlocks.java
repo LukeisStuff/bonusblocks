@@ -3,7 +3,6 @@ package luke.bonusblocks;
 import luke.bonusblocks.block.*;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.render.block.color.BlockColorGrass;
-import net.minecraft.client.render.block.color.BlockColorLeaves;
 import net.minecraft.client.render.block.color.BlockColorLeavesOak;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.client.render.entity.FallingSandRenderer;
@@ -27,7 +26,6 @@ import turniplabs.halplibe.helper.EntityHelper;
 import turniplabs.halplibe.helper.ItemHelper;
 import turniplabs.halplibe.helper.RecipeBuilder;
 import turniplabs.halplibe.helper.recipeBuilders.RecipeBuilderShaped;
-import turniplabs.halplibe.helper.recipeBuilders.RecipeBuilderShapeless;
 import turniplabs.halplibe.util.ClientStartEntrypoint;
 import turniplabs.halplibe.util.ConfigHandler;
 import turniplabs.halplibe.util.RecipeEntrypoint;
@@ -622,6 +620,14 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTextures("sulphurblock.png")
             .setTags(BlockTags.MINEABLE_BY_SHOVEL)
             .build(new BlockSulphur("block.sulphur", blockID++, Material.explosive));
+
+    public static final Block blockSugar = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.sand", "step.sand", 1.0f, 0.8f))
+            .setHardness(0.3f)
+            .setResistance(0.3f)
+            .setTextures("sugarblock.png")
+            .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.BROKEN_BY_FLUIDS)
+            .build(new BlockSand("block.sugar", blockID++));
 
     public static final Block blockCrudeSteel = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
@@ -1301,6 +1307,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
         templateItemtoBlock.addInput('X', Item.bone).create("block_of_bone", new ItemStack(BonusBlocks.blockBone, 1));
         templateItemtoBlock.addInput('X', Item.slimeball).create("block_of_slime", new ItemStack(BonusBlocks.blockSlime, 1));
         templateItemtoBlock.addInput('X', Item.sulphur).create("block_of_sulphur", new ItemStack(BonusBlocks.blockSulphur, 1));
+        templateItemtoBlock.addInput('X', Item.dustSugar).create("block_of_sugar", new ItemStack(BonusBlocks.blockSugar, 1));
         templateItemtoBlock.addInput('X', Item.cloth).create("block_of_cloth", new ItemStack(BonusBlocks.blockCloth, 1));
         templateItemtoBlock.addInput('X', Item.ingotSteelCrude).create("block_of_crude_steel", new ItemStack(BonusBlocks.blockCrudeSteel, 1));
         templateItemtoBlock.addInput('X', Item.flint).create("block_of_flint", new ItemStack(BonusBlocks.blockFlint, 1));
