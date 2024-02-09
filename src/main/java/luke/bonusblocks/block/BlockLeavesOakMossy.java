@@ -26,6 +26,5 @@ public class BlockLeavesOakMossy extends BlockLeavesBase {
                 world.spawnParticle("fallingleaf", (double)x, (double)((float)y - 0.1F), (double)z, 0.0, 0.0, 0.0);
             }
         }
-
     }
 }

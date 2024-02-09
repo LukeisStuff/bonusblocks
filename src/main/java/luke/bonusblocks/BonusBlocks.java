@@ -16,6 +16,7 @@ import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemPlaceable;
 import net.minecraft.core.item.ItemStack;
+import net.minecraft.core.item.block.ItemBlockLeaves;
 import net.minecraft.core.item.block.ItemBlockPainted;
 import net.minecraft.core.item.block.ItemBlockSlab;
 import net.minecraft.core.item.tool.ItemToolPickaxe;
@@ -121,11 +122,13 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setHardness(0.2f)
             .setResistance(0.2f)
             .setFlammability(4, 2)
-            .setTextures("branch.png")
+            .setSideTextures("branch.png")
+            .setBottomTexture("branchfast.png")
+            .setTopBottomTexture("branch.png")
             .setTickOnLoad()
             .setVisualUpdateOnMetadata()
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
-            .build(new BlockBranch("branch", blockID++, Material.leaves));
+            .build(new BlockBranch("branch", blockID++, Material.leaves, false));
 
 
     public static final Block leavesOakMossy = new BlockBuilder(MOD_ID)
@@ -139,7 +142,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTopBottomTexture("mossyleaves.png")
             .setTickOnLoad()
             .setVisualUpdateOnMetadata()
-            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_HOE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS)
+            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_HOE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS, BlockTags.SHEARS_DO_SILK_TOUCH)
             .build(new BlockLeavesOakMossy("leaves.oak.mossy", blockID++));
     public static final Block leavesMaple = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
@@ -151,7 +154,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTopBottomTexture("mapleleaves.png")
             .setTickOnLoad()
             .setVisualUpdateOnMetadata()
-            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_HOE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS)
+            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_HOE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS, BlockTags.SHEARS_DO_SILK_TOUCH)
             .build(new BlockLeavesMaple("leaves.maple", blockID++));
     public static final Block leavesJacaranda = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
@@ -163,7 +166,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTopBottomTexture("jacaleaves.png")
             .setTickOnLoad()
             .setVisualUpdateOnMetadata()
-            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_HOE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS)
+            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_HOE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS, BlockTags.SHEARS_DO_SILK_TOUCH)
             .build(new BlockLeavesJacaranda("leaves.jacaranda", blockID++));
 
 
@@ -1196,6 +1199,12 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
 
         Item.itemsList[slabScorchedstone.id] = new ItemBlockSlab(slabScorchedstone);
         Item.itemsList[slabCobblePermafrost.id] = new ItemBlockSlab(slabCobblePermafrost);
+
+        Item.itemsList[leavesJacaranda.id] = new ItemBlockLeaves(leavesJacaranda);
+        Item.itemsList[leavesMaple.id] = new ItemBlockLeaves(leavesMaple);
+        Item.itemsList[leavesOakMossy.id] = new ItemBlockLeaves(leavesOakMossy);
+        Item.itemsList[branch.id] = new ItemBlockLeaves(branch);
+
     }
 
     @Override

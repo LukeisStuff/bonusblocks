@@ -17,15 +17,4 @@ public class BlockLeavesJacaranda extends BlockLeavesBase {
     protected Block getSapling() {
         return BonusBlocks.saplingJacaranda;
     }
-
-    public void randomDisplayTick(World world, int x, int y, int z, Random rand) {
-        if (world.seasonManager.getCurrentSeason() != null && world.seasonManager.getCurrentSeason().hasFallingLeaves) {
-            WindManager wind = world.getWorldType().getWindManager();
-            float windIntensity = wind.getWindIntensity(world, (float)x, (float)y, (float)z);
-            if (rand.nextInt((int)(40.0F + 200.0F * (1.0F - windIntensity))) == 0) {
-                world.spawnParticle("fallingleaf", (double)x, (double)((float)y - 0.1F), (double)z, 0.0, 0.0, 0.0);
-            }
-        }
-
-    }
 }
