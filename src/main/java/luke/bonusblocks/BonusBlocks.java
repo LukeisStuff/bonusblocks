@@ -105,14 +105,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockGlassObsidian("glass.obsidian", blockID++, Material.glass, true));
 
-//    public static final Block trapdoorGlassTinted = new BlockBuilder(MOD_ID)
-//            .setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
-//            .setHardness(0.5f)
-//            .setResistance(0.5f)
-//            .setTextures(6, 12)
-//            .setVisualUpdateOnMetadata()
-//            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-//            .build(new BlockTrapDoorTinted("trapdoor.glass.tinted", 573, Material.glass, false));
+
     public static final Block trapdoorGlassObsidian = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
             .setHardness(5.0f)
@@ -836,22 +829,14 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTags(BlockTags.MINEABLE_BY_SWORD, BlockTags.BROKEN_BY_FLUIDS, BlockTags.NOT_IN_CREATIVE_MENU)
             .build(new BlockSoulCandle("candle.soulwax", blockID++));
 
-
     public static Item candleSoulwaxItem = ItemHelper.createItem(BonusBlocks.MOD_ID,
-            new ItemPlaceable("candle.soulwax", itemID++, candleSoulwax),
-            "candle.soulwax",
-            "soulwaxcandle.png");
+            new ItemPlaceable("candle.soulwax", itemID++, candleSoulwax), "soulwaxcandle.png");
 
     public static Item soulwax = ItemHelper.createItem(BonusBlocks.MOD_ID,
-            new Item("soulwax", itemID++),
-            "soulwax",
-            "soulwax.png");
+            new Item("soulwax", itemID++), "soulwax.png");
 
     public static Item foodPie = ItemHelper.createItem(BonusBlocks.MOD_ID,
-            new ItemPlaceable("Pumpkin Pie", itemID++, pie).setMaxStackSize(1),
-            "food.pie",
-            "pie.png");
-
+            new ItemPlaceable("food.pie", itemID++, pie), "pie.png").setMaxStackSize(1);
 
     public static final Block slabSlatePolished = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
