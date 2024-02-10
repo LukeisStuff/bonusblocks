@@ -16,12 +16,12 @@ public class BiomeDryland extends Biome {
     }
 
     public WorldFeature getRandomWorldGenForTrees(Random random) {
-        if (random.nextInt(5) == 0) {
+        if (random.nextInt(8) == 0) {
             return new WorldFeatureTreeShrub(Block.leavesShrub.id, BonusBlocks.logShrub.id);
-        } else if (random.nextInt(5) == 0) {
+        } else if (random.nextInt(8) == 0) {
             return new WorldFeatureTreeFancy(Block.leavesShrub.id, BonusBlocks.logShrub.id);
         }
-        return new WorldFeatureTreeFancy(Block.leavesShrub.id, BonusBlocks.logShrub.id);
+        return new WorldFeatureTreeShrub(Block.leavesShrub.id, BonusBlocks.logShrub.id);
     }
 
 }

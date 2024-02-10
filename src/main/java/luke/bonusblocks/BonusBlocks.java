@@ -121,11 +121,9 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
 
     public static final Block branch = leaves
             .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 0.5f))
-            .setSideTextures("branch.png")
-            .setBottomTexture("branchfast.png")
-            .setTopBottomTexture("branch.png")
+            .setTextures("branch.png")
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
-            .build(new BlockBranch("branch", blockID++, Material.leaves, false));
+            .build(new BlockBranch("branch", blockID++, Material.leaves));
 
     public static final Block leavesOakMossy = leaves
             .setBlockColor(new BlockColorLeavesOak())

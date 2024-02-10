@@ -74,6 +74,7 @@ public abstract class ChunkDecoratorOverworldMixin {
                 biome == Biomes.OVERWORLD_SWAMPLAND_MUDDY ||
                 biome == Biomes.PARADISE_PARADISE ||
                 biome == Biomes.OVERWORLD_RETRO ||
+                biome == ModBiomes.OVERWORLD_OVERGROWN ||
                 biome == Biomes.OVERWORLD_MEADOW) &&
                 rand.nextInt(4) == 0) {
             blockX = x + rand.nextInt(16) + 8;
@@ -87,6 +88,7 @@ public abstract class ChunkDecoratorOverworldMixin {
                 biome == Biomes.OVERWORLD_DESERT ||
                 biome == Biomes.PARADISE_PARADISE ||
                 biome == Biomes.OVERWORLD_RETRO ||
+                biome == ModBiomes.OVERWORLD_OVERGROWN ||
                 biome == Biomes.OVERWORLD_MEADOW) &&
                 rand.nextInt(4) == 0) {
             blockX = x + rand.nextInt(16) + 8;
@@ -99,6 +101,7 @@ public abstract class ChunkDecoratorOverworldMixin {
                 biome == Biomes.OVERWORLD_SHRUBLAND ||
                 biome == Biomes.PARADISE_PARADISE ||
                 biome == Biomes.OVERWORLD_RETRO ||
+                biome == ModBiomes.OVERWORLD_OVERGROWN ||
                 biome == Biomes.OVERWORLD_MEADOW) &&
                 rand.nextInt(4) == 0) {
             blockX = x + rand.nextInt(16) + 8;
@@ -126,6 +129,7 @@ public abstract class ChunkDecoratorOverworldMixin {
                 biome == Biomes.OVERWORLD_BIRCH_FOREST ||
                 biome == Biomes.OVERWORLD_BOREAL_FOREST ||
                 biome == Biomes.PARADISE_PARADISE ||
+                biome == ModBiomes.OVERWORLD_OVERGROWN ||
                 biome == Biomes.OVERWORLD_RETRO ||
                 biome == Biomes.OVERWORLD_MEADOW) &&
                 rand.nextInt(4) == 0) {

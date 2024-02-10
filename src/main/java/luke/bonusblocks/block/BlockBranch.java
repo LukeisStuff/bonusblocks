@@ -4,16 +4,16 @@ import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLeavesBase;
 import net.minecraft.core.block.BlockLog;
 import net.minecraft.core.block.material.Material;
-import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
-import net.minecraft.core.world.WorldSource;
 
-public class BlockBranch extends Block {
-    protected static boolean fancyGraphics;
-    public BlockBranch(String key, int id, Material material, boolean flag) {
-        super(key, id, material);
-        fancyGraphics = flag;
+public class BlockBranch extends BlockLog {
+    public BlockBranch(String key, int id, Material leaves) {
+        super(key, id);
         this.setTicking(true);
+    }
+
+    public boolean isSolidRender() {
+        return false;
     }
 
     @Override
@@ -35,25 +35,6 @@ public class BlockBranch extends Block {
                 }
             }
         }
-
-    }
-
-    public int getBlockTextureFromSideAndMetadata(Side side, int data) {
-        return !fancyGraphics ? this.atlasIndices[side.getId()] + 1 : this.atlasIndices[side.getId()];
-    }
-
-    public boolean shouldSideBeRendered(WorldSource blockAccess, int x, int y, int z, int side) {
-        int i1 = blockAccess.getBlockId(x, y, z);
-        return (fancyGraphics || i1 != this.id) && super.shouldSideBeRendered(blockAccess, x, y, z, side);
-    }
-
-    public static void setGraphicsLevel(boolean graphicsLevel) {
-        fancyGraphics = graphicsLevel;
-    }
-
-    @Override
-    public boolean isSolidRender() {
-        return false;
     }
 
 }
