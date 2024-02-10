@@ -107,6 +107,17 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setVisualUpdateOnMetadata()
             .build(new BlockTrapDoorObsidian("trapdoor.glass.obsidian", blockID++, Material.glass, false));
 
+    // Quartz Glass
+    public static final Block glassQuartz = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
+            .setHardness(0.3F)
+            .setResistance(0.3F)
+            .setLightOpacity(-1)
+            .setVisualUpdateOnMetadata()
+            .setUseInternalLight()
+            .setTextures("quartzglass.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new BlockGlassQuartz("glass.quartz", blockID++, Material.glass, false));
 
     // Leaves and Branch
     public static final BlockBuilder leaves = new BlockBuilder(MOD_ID)
@@ -902,6 +913,11 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
         RecipeBuilder.Shaped(MOD_ID, "GGG", "GGG")
                 .addInput('G', BonusBlocks.glassObsidian)
                 .create("glass_obsidian_trapdoor", new ItemStack(BonusBlocks.trapdoorGlassObsidian, 8));
+
+        RecipeBuilder.Shaped(MOD_ID, "GQ", "QG")
+                .addInput('G', Block.glass)
+                .addInput('Q', Item.quartz)
+                .create("glass_quartz", new ItemStack(BonusBlocks.glassQuartz, 4));
 
         RecipeBuilderShaped templateFlowertoDye = new RecipeBuilderShaped(MOD_ID, "X");
         templateFlowertoDye.addInput('X', BonusBlocks.flowerCyan).create("flower_cyan_to_dye", new ItemStack(Item.dye, 2, 6));

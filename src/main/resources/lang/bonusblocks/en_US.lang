@@ -160,6 +160,8 @@ tile.bonusblocks.glass.obsidian.name=Obsidian Glass
 tile.bonusblocks.glass.obsidian.desc=Obsidian heated until it became translucent.
 tile.bonusblocks.trapdoor.glass.obsidian.name=Obsidian Glass Trapdoor
 tile.bonusblocks.trapdoor.glass.obsidian.desc=Still useless at its job.
+tile.bonusblocks.glass.obsidian.name=Quartz Glass
+tile.bonusblocks.glass.obsidian.desc=Brightened glass that reflects light.
 tile.bonusblocks.trapdoor.glass.tinted.name=Tinted Glass Trapdoor
 tile.bonusblocks.trapdoor.glass.tinted.desc=Slightly less useless at its job.
 
