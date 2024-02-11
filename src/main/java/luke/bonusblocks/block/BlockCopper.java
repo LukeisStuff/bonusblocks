@@ -7,7 +7,7 @@ import net.minecraft.core.world.World;
 
 import java.util.Random;
 
-public class BlockCopper extends BlockCopperBase {
+public class BlockCopper extends Block {
     int ticks;
     public BlockCopper(String key, int id, Material material) {
         super(key, id, material);

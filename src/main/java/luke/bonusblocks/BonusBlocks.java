@@ -1,25 +1,30 @@
 package luke.bonusblocks;
 
 import luke.bonusblocks.block.*;
+import luke.bonusblocks.item.ItemCopperDoor;
+import luke.bonusblocks.item.ItemSteelDoor;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.render.block.color.BlockColorGrass;
 import net.minecraft.client.render.block.color.BlockColorLeavesOak;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.client.render.entity.FallingSandRenderer;
 import net.minecraft.client.sound.block.BlockSound;
-import net.minecraft.client.sound.block.BlockSounds;
 import net.minecraft.core.block.*;
+import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.crafting.LookupFuelFurnace;
 import net.minecraft.core.data.registry.Registries;
+import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.Item;
+import net.minecraft.core.item.ItemDoor;
 import net.minecraft.core.item.ItemPlaceable;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.block.ItemBlockLeaves;
 import net.minecraft.core.item.block.ItemBlockPainted;
 import net.minecraft.core.item.block.ItemBlockSlab;
 import net.minecraft.core.item.tool.ItemToolPickaxe;
+import net.minecraft.core.world.World;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.BlockBuilder;
@@ -105,8 +110,9 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
     public static final Block glassObsidian = obsidian
             .build(new BlockGlassObsidian("glass.obsidian", blockID++, Material.glass, true));
     public static final Block trapdoorGlassObsidian = obsidian
+            .setBlockModel(new BlockModelRenderBlocks(30))
             .setVisualUpdateOnMetadata()
-            .build(new BlockTrapDoorObsidian("trapdoor.glass.obsidian", blockID++, Material.glass, false));
+            .build(new BlockTrapDoorObsidian("trapdoor.glass.obsidian", blockID++));
 
     // Quartz Glass
     public static final Block glassQuartz = new BlockBuilder(MOD_ID)
@@ -214,32 +220,26 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTopBottomTexture(0, 21)
             .setSideTextures(0, 21)
             .build(new BlockLog("bark.oak.mossy", blockID++));
-
     public static final Block barkPine = log
             .setTopBottomTexture(0, 23)
             .setSideTextures(0, 23)
             .build(new BlockLog("bark.pine", blockID++));
-
     public static final Block barkBirch = log
             .setTopBottomTexture(0, 24)
             .setSideTextures(0, 24)
             .build(new BlockLog("bark.birch", blockID++));
-
     public static final Block barkCherry = log
             .setTopBottomTexture(0, 25)
             .setSideTextures(0, 25)
             .build(new BlockLog("bark.cherry", blockID++));
-
     public static final Block barkEucalyptus = log
             .setTopBottomTexture(0, 26)
             .setSideTextures(0, 26)
             .build(new BlockLog("bark.eucalyptus", blockID++));
-
     public static final Block barkShrub = log
             .setTopBottomTexture("shrublogside.png")
             .setSideTextures("shrublogside.png")
             .build(new BlockLog("bark.shrub", blockID++));
-
     public static final Block barkMaple = log
             .setTopBottomTexture("maplelogside.png")
             .setSideTextures("maplelogside.png")
@@ -504,6 +504,32 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setInfiniburn()
             .build(new Block("block.flint", blockID++, Material.stone));
 
+//    public static final BlockBuilder pebble = new BlockBuilder(MOD_ID)
+//            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+//            .setHardness(0.0f)
+//            .setResistance(0.0f)
+//            .setBlockModel(new BlockModelRenderBlocks(29))
+//            .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.NOT_IN_CREATIVE_MENU);
+//
+//    public static final Block overlayRawIron = pebble
+//            .setTextures("ironpebble1.png")
+//            .setTextures("ironpebble2.png")
+//            .setTextures("ironpebble3.png")
+//            .setInfiniburn()
+//            .build(new BlockOverlayPebbles("overlay.iron", blockID++, Material.metal));
+//    public static final Block overlayRawGold = pebble
+//            .setTextures("goldpebble1.png")
+//            .setTextures("goldpebble2.png")
+//            .setTextures("goldpebble3.png")
+//            .setInfiniburn()
+//            .build(new BlockOverlayPebbles("overlay.gold", blockID++, Material.metal));
+//    public static final Block overlayRawCopper = pebble
+//            .setTextures("copperpebble1.png")
+//            .setTextures("copperpebble2.png")
+//            .setTextures("copperpebble3.png")
+//            .setInfiniburn()
+//            .build(new BlockOverlayPebbles("overlay.copper", blockID++, Material.metal));
+
 
     // Copper Blocks
     public static final Block blockCopper = raw
@@ -515,6 +541,100 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
     public static final Block blockCopperCorroded = raw
             .setTextures("corrodedcopperblock.png")
             .build(new BlockCopperCorroded("block.copper.corroded", blockID++, Material.metal));
+
+    public static final Block blockCopperPipe = raw
+            .setBlockModel(new BlockModelRenderBlocks(1))
+            .setTextures("copperpipe.png")
+            .build(new BlockCopperPipe("block.copper.pipe", blockID++, Material.metal));
+
+    public static final Block trapdoorCopper = raw
+            .setBlockModel(new BlockModelRenderBlocks(30))
+            .setTopBottomTexture("coppertrapdoortop.png")
+            .setSideTextures("coppertrapdoorside.png")
+            .setVisualUpdateOnMetadata()
+            .build(new BlockTrapDoor("trapdoor.copper", blockID++, Material.stone, false));
+
+    public static final Block doorCopperBottom = raw
+            .setBlockModel(new BlockModelRenderBlocks(7))
+            .setTextures("copperdoorbottom.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+            .setVisualUpdateOnMetadata()
+            .build(new BlockDoor("door.copper.bottom", blockID++, Material.stone, false) {
+                public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+                    if (this.blockMaterial == Material.metal && dropCause != EnumDropCause.IMPROPER_TOOL) {
+                        return new ItemStack[]{new ItemStack(doorCopper)};
+                    } else {
+                        return this.blockMaterial == Material.stone ? new ItemStack[]{new ItemStack(doorCopper)} : null;
+                    }
+                }
+
+            });
+
+    public static final Block doorCopperTop = raw
+            .setBlockModel(new BlockModelRenderBlocks(7))
+            .setTextures("copperdoortop.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+            .setVisualUpdateOnMetadata()
+            .build(new BlockDoor("door.copper.top", blockID++, Material.stone, true) {
+                public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+                    if (this.blockMaterial == Material.metal && dropCause != EnumDropCause.IMPROPER_TOOL) {
+                        return new ItemStack[]{new ItemStack(doorCopper)};
+                    } else {
+                        return this.blockMaterial == Material.stone ? new ItemStack[]{new ItemStack(doorCopper)} : null;
+                    }
+                }
+
+            });
+
+    public static final Block fenceCopper = raw
+            .setBlockModel(new BlockModelRenderBlocks(31))
+            .setTextures("copperfence.png")
+            .setTextures("copperframe.png")
+            .setTextures("copperrod.png")
+            .setVisualUpdateOnMetadata()
+            .build(new BlockFenceCopper("fence.copper", blockID++, Material.metal));
+
+    public static final Block trapdoorSteel = raw
+            .setBlockModel(new BlockModelRenderBlocks(30))
+            .setResistance(2000.0f)
+            .setTopBottomTexture("steeltrapdoortop.png")
+            .setSideTextures("steeltrapdoorside.png")
+            .setVisualUpdateOnMetadata()
+            .build(new BlockTrapDoor("trapdoor.steel", blockID++, Material.metal, false));
+
+    public static final Block doorSteelBottom = raw
+            .setBlockModel(new BlockModelRenderBlocks(7))
+            .setResistance(2000.0f)
+            .setTextures("steeldoorbottom.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+            .setVisualUpdateOnMetadata()
+            .build(new BlockDoor("door.steel.bottom", blockID++, Material.metal, false) {
+        public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+            if (this.blockMaterial == Material.metal && dropCause != EnumDropCause.IMPROPER_TOOL) {
+                return new ItemStack[]{new ItemStack(doorSteel)};
+            } else {
+                return this.blockMaterial == Material.wood ? new ItemStack[]{new ItemStack(doorSteel)} : null;
+            }
+        }
+
+    });
+
+    public static final Block doorSteelTop = raw
+            .setBlockModel(new BlockModelRenderBlocks(7))
+            .setResistance(2000.0f)
+            .setTextures("steeldoortop.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+            .setVisualUpdateOnMetadata()
+            .build(new BlockDoor("door.steel.top", blockID++, Material.metal, true) {
+                public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+                    if (this.blockMaterial == Material.metal && dropCause != EnumDropCause.IMPROPER_TOOL) {
+                        return new ItemStack[]{new ItemStack(doorSteel)};
+                    } else {
+                        return this.blockMaterial == Material.wood ? new ItemStack[]{new ItemStack(doorSteel)} : null;
+                    }
+                }
+
+            });
 
     // Bricks
     public static final BlockBuilder brick = new BlockBuilder(MOD_ID)
@@ -662,6 +782,12 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
 
     public static Item ingotCopper = ItemHelper.createItem(BonusBlocks.MOD_ID,
             new Item("ingot.copper", itemID++), "copperingot.png");
+
+    public static Item doorCopper = ItemHelper.createItem(BonusBlocks.MOD_ID,
+            new ItemCopperDoor("door.copper", itemID++, Material.metal), "copperdoor.png");
+
+    public static Item doorSteel = ItemHelper.createItem(BonusBlocks.MOD_ID,
+            new ItemSteelDoor("door.steel", itemID++, Material.metal), "steeldoor.png");
 
     public static Item foodPie = ItemHelper.createItem(BonusBlocks.MOD_ID,
             new ItemPlaceable("food.pie", itemID++, pie), "pie.png").setMaxStackSize(1);
@@ -845,6 +971,11 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
         ItemToolPickaxe.miningLevels.put(blockCopper, 1);
         ItemToolPickaxe.miningLevels.put(blockCopperTarnished, 1);
         ItemToolPickaxe.miningLevels.put(blockCopperCorroded, 1);
+        ItemToolPickaxe.miningLevels.put(blockCopperPipe, 1);
+        ItemToolPickaxe.miningLevels.put(trapdoorCopper, 1);
+        ItemToolPickaxe.miningLevels.put(doorCopperBottom, 1);
+        ItemToolPickaxe.miningLevels.put(doorCopperTop, 1);
+        ItemToolPickaxe.miningLevels.put(fenceCopper, 1);
         ItemToolPickaxe.miningLevels.put(slabBrickLapis, 1);
         ItemToolPickaxe.miningLevels.put(stairsBrickLapis, 1);
 
@@ -939,6 +1070,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
         templateItemtoBlock.addInput('X', Item.oreRawGold).create("block_of_raw_gold", new ItemStack(BonusBlocks.blockRawGold, 1));
         templateItemtoBlock.addInput('X', Item.oreRawIron).create("block_of_raw_iron", new ItemStack(BonusBlocks.blockRawIron, 1));
         templateItemtoBlock.addInput('X', BonusBlocks.oreRawCopper).create("block_of_raw_copper", new ItemStack(BonusBlocks.blockRawCopper, 1));
+        templateItemtoBlock.addInput('X', BonusBlocks.ingotCopper).create("block_of_raw_copper", new ItemStack(BonusBlocks.blockCopper, 1));
         templateItemtoBlock.addInput('X', Item.leather).create("block_of_leather", new ItemStack(BonusBlocks.blockLeather, 1));
 
         RecipeBuilderShaped templateBlocktoItem = new RecipeBuilderShaped(MOD_ID, "X");
@@ -1161,6 +1293,19 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
                 .addInput('E', (Item.eggChicken))
                 .addInput('P', (Block.pumpkin))
                 .create("pumpkin_pie", new ItemStack(BonusBlocks.foodPie, 1));
+
+        RecipeBuilder.Shaped(MOD_ID, "PP", "PP", "PP")
+                .addInput('P', BonusBlocks.ingotCopper)
+                .create("crate", new ItemStack(BonusBlocks.doorCopper, 2));
+
+        RecipeBuilder.Shaped(MOD_ID, "CPC", "CPC")
+                .addInput('P', BonusBlocks.ingotCopper)
+                .addInput('C', BonusBlocks.blockCopper)
+                .create("crate", new ItemStack(BonusBlocks.fenceCopper, 8));
+
+        RecipeBuilder.Shaped(MOD_ID, "PPP", "PPP")
+                .addInput('P', BonusBlocks.ingotCopper)
+                .create("crate", new ItemStack(BonusBlocks.trapdoorCopper, 6));
 
         RecipeBuilder.Furnace(MOD_ID)
                 .setInput("bonusblocks:bark")

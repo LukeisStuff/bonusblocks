@@ -1,12 +1,13 @@
 package luke.bonusblocks.block;
 
 import luke.bonusblocks.BonusBlocks;
+import net.minecraft.core.block.Block;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.world.World;
 
 import java.util.Random;
 
-public class BlockCopperTarnished extends BlockCopperBase {
+public class BlockCopperTarnished extends Block {
     int ticks;
     public BlockCopperTarnished(String key, int id, Material material) {
         super(key, id, material);

@@ -180,6 +180,15 @@ tile.bonusblocks.block.copper.tarnished.desc=A solid block of tarnished copper. 
 tile.bonusblocks.block.copper.corroded.name=Block of Corroded Copper
 tile.bonusblocks.block.copper.corroded.desc=A solid block of corroded copper. Corrosive!
 
+tile.bonusblocks.trapdoor.copper.name=Copper Trapdoor
+tile.bonusblocks.trapdoor.copper.desc=Like a door but flat and made of copper.
+tile.bonusblocks.door.copper.top.name=Top Copper Door
+tile.bonusblocks.door.copper.top.desc=I hope you enjoy this mod.
+tile.bonusblocks.door.copper.bottom.name=Bottom Copper Door
+tile.bonusblocks.door.copper.bottom.desc=It has been a lot of fun working on it!
+tile.bonusblocks.fence.copper.name=Copper Fence
+tile.bonusblocks.fence.copper.desc=A fence made of lattice locked copper. Can be climbed!
+
 tile.bonusblocks.ore.copper.stone.name=Stone Copper Ore
 tile.bonusblocks.ore.copper.stone.desc=Raw copper embedded in stone.
 tile.bonusblocks.ore.copper.basalt.name=Basalt Copper Ore
@@ -193,6 +202,8 @@ item.bonusblocks.ore.raw.copper.name=Raw Copper Ore
 item.bonusblocks.ore.raw.copper.desc=A chunk of unprocessed copper. Can be smelted into a copper ingot.
 item.bonusblocks.ingot.copper.name=Copper Ingot
 item.bonusblocks.ingot.copper.desc=A metal bar of copper used to make decorative blocks.
+item.bonusblocks.door.copper.name=Copper Door
+item.bonusblocks.door.copper.desc=Every factory needs one.
 
 tile.bonusblocks.block.slime.name=Block of Slime
 tile.bonusblocks.block.slime.desc=Sticky and slimy mass of slime.
