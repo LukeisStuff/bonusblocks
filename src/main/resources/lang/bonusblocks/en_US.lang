@@ -170,6 +170,29 @@ tile.bonusblocks.block.raw.iron.name=Block of Raw Iron
 tile.bonusblocks.block.raw.iron.desc=A solid block of raw iron. Heavy!
 tile.bonusblocks.block.raw.gold.name=Block of Raw Gold
 tile.bonusblocks.block.raw.gold.desc=A solid block of raw gold, for flaunting your bling.
+tile.bonusblocks.block.raw.copper.name=Block of Raw Copper
+tile.bonusblocks.block.raw.copper.desc=A solid block of raw copper. Corrosive!
+
+tile.bonusblocks.block.copper.name=Block of Copper
+tile.bonusblocks.block.copper.desc=A solid block of copper. Corrosive!
+tile.bonusblocks.block.copper.tarnished.name=Block of Tarnished Copper
+tile.bonusblocks.block.copper.tarnished.desc=A solid block of tarnished copper. Corrosive!
+tile.bonusblocks.block.copper.corroded.name=Block of Corroded Copper
+tile.bonusblocks.block.copper.corroded.desc=A solid block of corroded copper. Corrosive!
+
+tile.bonusblocks.ore.copper.stone.name=Stone Copper Ore
+tile.bonusblocks.ore.copper.stone.desc=Raw copper embedded in stone.
+tile.bonusblocks.ore.copper.basalt.name=Basalt Copper Ore
+tile.bonusblocks.ore.copper.basalt.desc=Raw copper embedded in basalt.
+tile.bonusblocks.ore.copper.limestone.name=Limestone Copper Ore
+tile.bonusblocks.ore.copper.limestone.desc=Raw copper embedded in limestone.
+tile.bonusblocks.ore.copper.granite.name=Granite Copper Ore
+tile.bonusblocks.ore.copper.granite.desc=Raw copper embedded in granite.
+
+item.bonusblocks.ore.raw.copper.name=Raw Copper Ore
+item.bonusblocks.ore.raw.copper.desc=A chunk of unprocessed copper. Can be smelted into a copper ingot.
+item.bonusblocks.ingot.copper.name=Copper Ingot
+item.bonusblocks.ingot.copper.desc=A metal bar of copper used to make decorative blocks.
 
 tile.bonusblocks.block.slime.name=Block of Slime
 tile.bonusblocks.block.slime.desc=Sticky and slimy mass of slime.

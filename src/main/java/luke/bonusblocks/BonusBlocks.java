@@ -7,6 +7,7 @@ import net.minecraft.client.render.block.color.BlockColorLeavesOak;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.client.render.entity.FallingSandRenderer;
 import net.minecraft.client.sound.block.BlockSound;
+import net.minecraft.client.sound.block.BlockSounds;
 import net.minecraft.core.block.*;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
@@ -318,6 +319,27 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .build(new Block("cobble.permafrost.reinforced", blockID++, Material.stone));
 
 
+    // Ores
+    private static final BlockBuilder ore = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
+            .setHardness(3.0f)
+            .setResistance(5.0f)
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE);
+
+    public static final Block oreCopperStone = ore
+            .setTextures("copperstone.png")
+            .build(new BlockOreCopper("ore.copper.stone", blockID++));
+    public static final Block oreCopperBasalt = ore
+            .setTextures("copperbasalt.png")
+            .build(new BlockOreCopper("ore.copper.basalt", blockID++));
+    public static final Block oreCopperLimestone = ore
+            .setTextures("copperlimestone.png")
+            .build(new BlockOreCopper("ore.copper.limestone", blockID++));
+    public static final Block oreCopperGranite = ore
+            .setTextures("coppergranite.png")
+            .build(new BlockOreCopper("ore.copper.granite", blockID++));
+
+
     // Scorched Stone
     public static final Block scorchedstone = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
@@ -474,10 +496,25 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
     public static final Block blockRawGold = raw
             .setTextures("rawgold.png")
             .build(new Block("block.raw.gold", blockID++, Material.metal));
+    public static final Block blockRawCopper = raw
+            .setTextures("rawcopper.png")
+            .build(new Block("block.raw.copper", blockID++, Material.metal));
     public static final Block blockFlint = raw
             .setTextures("flintblock.png")
             .setInfiniburn()
             .build(new Block("block.flint", blockID++, Material.stone));
+
+
+    // Copper Blocks
+    public static final Block blockCopper = raw
+            .setTextures("copperblock.png")
+            .build(new Block("block.copper", blockID++, Material.metal));
+    public static final Block blockCopperTarnished = raw
+            .setTextures("tarnishedcopperblock.png")
+            .build(new Block("block.copper.tarnished", blockID++, Material.metal));
+    public static final Block blockCopperCorroded = raw
+            .setTextures("corrodedcopperblock.png")
+            .build(new Block("block.copper.corroded", blockID++, Material.metal));
 
     // Bricks
     public static final BlockBuilder brick = new BlockBuilder(MOD_ID)
@@ -619,6 +656,12 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
 
     public static Item soulwax = ItemHelper.createItem(BonusBlocks.MOD_ID,
             new Item("soulwax", itemID++), "soulwax.png");
+
+    public static Item oreRawCopper = ItemHelper.createItem(BonusBlocks.MOD_ID,
+            new Item("ore.raw.copper", itemID++), "rawcopper.png");
+
+    public static Item ingotCopper = ItemHelper.createItem(BonusBlocks.MOD_ID,
+            new Item("ingot.copper", itemID++), "copperingot.png");
 
     public static Item foodPie = ItemHelper.createItem(BonusBlocks.MOD_ID,
             new ItemPlaceable("food.pie", itemID++, pie), "pie.png").setMaxStackSize(1);
@@ -1119,6 +1162,10 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
                 .create("baked_clay_furnace", BonusBlocks.clayBaked.getDefaultStack());
 
         RecipeBuilder.Furnace(MOD_ID)
+                .setInput(BonusBlocks.oreRawCopper)
+                .create("copper_ingot", BonusBlocks.ingotCopper.getDefaultStack());
+
+        RecipeBuilder.Furnace(MOD_ID)
                 .setInput(Block.netherrack)
                 .create("igneous_netherrack_furnace", Block.netherrackIgneous.getDefaultStack());
 
@@ -1129,6 +1176,10 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
         RecipeBuilder.BlastFurnace(MOD_ID)
                 .setInput(Block.blockClay)
                 .create("baked_clay_blast", BonusBlocks.clayBaked.getDefaultStack());
+
+        RecipeBuilder.BlastFurnace(MOD_ID)
+                .setInput(BonusBlocks.oreRawCopper)
+                .create("copper_ingot_blast", BonusBlocks.ingotCopper.getDefaultStack());
 
         RecipeBuilder.BlastFurnace(MOD_ID)
                 .setInput(Block.netherrack)
