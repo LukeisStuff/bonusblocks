@@ -508,13 +508,13 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
     // Copper Blocks
     public static final Block blockCopper = raw
             .setTextures("copperblock.png")
-            .build(new Block("block.copper", blockID++, Material.metal));
+            .build(new BlockCopper("block.copper", blockID++, Material.metal));
     public static final Block blockCopperTarnished = raw
             .setTextures("tarnishedcopperblock.png")
-            .build(new Block("block.copper.tarnished", blockID++, Material.metal));
+            .build(new BlockCopperTarnished("block.copper.tarnished", blockID++, Material.metal));
     public static final Block blockCopperCorroded = raw
             .setTextures("corrodedcopperblock.png")
-            .build(new Block("block.copper.corroded", blockID++, Material.metal));
+            .build(new BlockCopperCorroded("block.copper.corroded", blockID++, Material.metal));
 
     // Bricks
     public static final BlockBuilder brick = new BlockBuilder(MOD_ID)
@@ -837,6 +837,14 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
         stoneToMossMap.put(Block.saplingOak, BonusBlocks.saplingOakMossy);
 
         ItemToolPickaxe.miningLevels.put(blockRawIron, 1);
+        ItemToolPickaxe.miningLevels.put(blockRawCopper, 1);
+        ItemToolPickaxe.miningLevels.put(oreCopperStone, 1);
+        ItemToolPickaxe.miningLevels.put(oreCopperBasalt, 1);
+        ItemToolPickaxe.miningLevels.put(oreCopperLimestone, 1);
+        ItemToolPickaxe.miningLevels.put(oreCopperGranite, 1);
+        ItemToolPickaxe.miningLevels.put(blockCopper, 1);
+        ItemToolPickaxe.miningLevels.put(blockCopperTarnished, 1);
+        ItemToolPickaxe.miningLevels.put(blockCopperCorroded, 1);
         ItemToolPickaxe.miningLevels.put(slabBrickLapis, 1);
         ItemToolPickaxe.miningLevels.put(stairsBrickLapis, 1);
 
@@ -930,6 +938,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
         templateItemtoBlock.addInput('X', Item.flint).create("block_of_flint", new ItemStack(BonusBlocks.blockFlint, 1));
         templateItemtoBlock.addInput('X', Item.oreRawGold).create("block_of_raw_gold", new ItemStack(BonusBlocks.blockRawGold, 1));
         templateItemtoBlock.addInput('X', Item.oreRawIron).create("block_of_raw_iron", new ItemStack(BonusBlocks.blockRawIron, 1));
+        templateItemtoBlock.addInput('X', BonusBlocks.oreRawCopper).create("block_of_raw_copper", new ItemStack(BonusBlocks.blockRawCopper, 1));
         templateItemtoBlock.addInput('X', Item.leather).create("block_of_leather", new ItemStack(BonusBlocks.blockLeather, 1));
 
         RecipeBuilderShaped templateBlocktoItem = new RecipeBuilderShaped(MOD_ID, "X");

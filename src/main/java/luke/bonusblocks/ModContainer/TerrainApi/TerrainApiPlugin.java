@@ -19,7 +19,7 @@ public class TerrainApiPlugin implements TerrainAPI {
     public static final OverworldConfig overworldConfig = ChunkDecoratorOverworldAPI.overworldConfig;
     @Override
     public void onInitialize() {
-        ChunkDecoratorOverworldAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.oreCopperStone, 12, 10, 0, 255, true);
+        ChunkDecoratorOverworldAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.oreCopperStone, 12, 15, 0.0f, 1.0f, true);
 
         overworldConfig.addGrassDensity(ModBiomes.OVERWORLD_OVERGROWN, 2);
         overworldConfig.addGrassDensity(ModBiomes.OVERWORLD_DRYLAND, 2);
