@@ -644,6 +644,20 @@ public static final Block permafrostCarved = stone
             .setResistance(10.0f)
             .setTags(BlockTags.MINEABLE_BY_PICKAXE);
 
+    public static final Block netherrack = brick
+            .setHardness(0.4F)
+            .setResistance(0.4F)
+            .setTextures("netherrack.png")
+            .setInfiniburn()
+            .build(new Block("netherrack", blockID++, Material.stone));
+
+    public static final Block cobblednetherrack = brick
+            .setHardness(0.4F)
+            .setResistance(0.4F)
+            .setTextures("cobblednetherrack.png")
+            .setInfiniburn()
+            .build(new Block("cobble.netherrack", blockID++, Material.stone));
+
     public static final Block brickNetherrack = brick
             .setHardness(1.0f)
             .setTextures("netherbrick.png")
@@ -979,6 +993,7 @@ public static final Block slabPermafrostPolished = slab
         LOGGER.info("BonusBlocks initialized.");
 
         stoneToMossMap.put(Block.saplingOak, BonusBlocks.saplingOakMossy);
+        stoneToMossMap.put(BonusBlocks.cobblednetherrack, Block.netherrack);
 
         ItemToolPickaxe.miningLevels.put(blockRawIron, 1);
         ItemToolPickaxe.miningLevels.put(blockRawCopper, 1);
