@@ -14,10 +14,12 @@ import java.util.List;
 
 @Mixin(value= ContainerPlayerCreative.class, remap=false)
 public abstract class ContainerPlayerCreativeMixin {
-    @Shadow public static List<ItemStack> creativeItems;
+    @Shadow
+    public static List<ItemStack> creativeItems;
     @Shadow
     public static int creativeItemsCount;
-    @Inject(method="<clinit>",at=@At("TAIL"))
+
+    @Inject(method = "<clinit>", at = @At("TAIL"))
     private static void inject(CallbackInfo ci) {
 
         creativeItems.add(new ItemStack(Block.blocksList[Block.capstoneMarble.id]));
@@ -34,7 +36,16 @@ public abstract class ContainerPlayerCreativeMixin {
         for (int metadata = 0b0000; metadata < 0b10000; metadata += 0b0001) {
             creativeItems.add(new ItemStack(Block.blocksList[BonusBlocks.boxPainted.id], 1, metadata));
             creativeItemsCount++;
+        }
 
+        for (int metadata2 = 0b0000; metadata2 < 0b100000000; metadata2 += 0b00010000) {
+            creativeItems.add(new ItemStack(Block.blocksList[BonusBlocks.slabWool.id], 1, metadata2));
+            creativeItemsCount++;
+        }
+
+        for (int metadata3 = 0b0000; metadata3 < 0b100000000; metadata3 += 0b00010000) {
+            creativeItems.add(new ItemStack(Block.blocksList[BonusBlocks.stairsWool.id], 1, metadata3));
+            creativeItemsCount++;
         }
     }
 }

@@ -12,17 +12,12 @@ import net.minecraft.core.world.World;
 public class BlockPaintedBox extends Block {
     public static final int[] texCoords = new int[16];
 
-    public static int TEX_COORD_OFFSET = 3;
-    public BlockPaintedBox(String key, int id, Material material) {
-        super(key, id, material.wood);
+    public BlockPaintedBox(String key, int id) {
+        super(key, id, Material.wood);
     }
 
     public int getBlockTextureFromSideAndMetadata(Side side, int meta) {
         return texCoords[meta & 15];
-    }
-
-    public static int getMetadataForColour(int i) {
-        return ~i & 15;
     }
 
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {

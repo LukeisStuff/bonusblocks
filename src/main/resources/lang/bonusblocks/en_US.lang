@@ -22,8 +22,8 @@ tile.bonusblocks.box.painted.purple.name=Purple Box
 tile.bonusblocks.box.painted.purple.desc=A colored wood box, stained purple.
 tile.bonusblocks.box.painted.cyan.name=Cyan Box
 tile.bonusblocks.box.painted.cyan.desc=A colored wood box, stained cyan.
-tile.bonusblocks.box.painted.silver.name=Light Gray Box
-tile.bonusblocks.box.painted.silver.desc=A colored wood box, stained light gray.
+tile.bonusblocks.box.painted.silver.name=Silver Box
+tile.bonusblocks.box.painted.silver.desc=A colored wood box, stained silver.
 tile.bonusblocks.box.painted.gray.name=Gray Box
 tile.bonusblocks.box.painted.gray.desc=A colored wood box, stained gray.
 tile.bonusblocks.box.painted.pink.name=Pink Box
@@ -179,6 +179,9 @@ tile.bonusblocks.block.copper.tarnished.name=Block of Tarnished Copper
 tile.bonusblocks.block.copper.tarnished.desc=A solid block of tarnished copper. Corrosive!
 tile.bonusblocks.block.copper.corroded.name=Block of Corroded Copper
 tile.bonusblocks.block.copper.corroded.desc=A solid block of corroded copper. Corrosive!
+
+tile.netherrack.name=Mossy Netherrack
+tile.netherrack.desc=Cobbled Netherrack with added red moss.
 
 tile.bonusblocks.trapdoor.copper.name=Copper Trapdoor
 tile.bonusblocks.trapdoor.copper.desc=Like a door but flat and made of copper.
@@ -353,3 +356,128 @@ item.bonusblocks.candle.soulwax.name=Soul Wax Candle
 item.bonusblocks.candle.soulwax.desc=A waxy brown candle that glows with an unnatural light.
 item.bonusblocks.soulwax.name=Soul Wax
 item.bonusblocks.soulwax.desc=A sticky substance secreted from squishy brown sand.
+
+tile.bonusblocks.slab.wool.black.name=Black Wool Slab
+tile.bonusblocks.slab.wool.black.desc=A slab of black wool.
+tile.bonusblocks.slab.wool.red.name=Red Wool Slab
+tile.bonusblocks.slab.wool.red.desc=A slab of red wool.
+tile.bonusblocks.slab.wool.green.name=Green Wool Slab
+tile.bonusblocks.slab.wool.green.desc=A slab of green wool.
+tile.bonusblocks.slab.wool.brown.name=Brown Wool Slab
+tile.bonusblocks.slab.wool.brown.desc=A slab of brown wool.
+tile.bonusblocks.slab.wool.blue.name=Blue Wool Slab
+tile.bonusblocks.slab.wool.blue.desc=A slab of blue wool.
+tile.bonusblocks.slab.wool.purple.name=Purple Wool Slab
+tile.bonusblocks.slab.wool.purple.desc=A slab of purple wool.
+tile.bonusblocks.slab.wool.cyan.name=Cyan Wool Slab
+tile.bonusblocks.slab.wool.cyan.desc=A slab of cyan wool.
+tile.bonusblocks.slab.wool.silver.name=Silver Wool Slab
+tile.bonusblocks.slab.wool.silver.desc=A slab of silver wool.
+tile.bonusblocks.slab.wool.gray.name=Gray Wool Slab
+tile.bonusblocks.slab.wool.gray.desc=A slab of gray wool.
+tile.bonusblocks.slab.wool.pink.name=Pink Wool Slab
+tile.bonusblocks.slab.wool.pink.desc=A slab of pink wool.
+tile.bonusblocks.slab.wool.lime.name=Lime Wool Slab
+tile.bonusblocks.slab.wool.lime.desc=A slab of lime wool.
+tile.bonusblocks.slab.wool.yellow.name=Yellow Wool Slab
+tile.bonusblocks.slab.wool.yellow.desc=A slab of yellow wool.
+tile.bonusblocks.slab.wool.lightblue.name=Light Blue Wool Slab
+tile.bonusblocks.slab.wool.lightblue.desc=A slab of light blue wool.
+tile.bonusblocks.slab.wool.magenta.name=Magenta Wool Slab
+tile.bonusblocks.slab.wool.magenta.desc=A slab of magenta wool.
+tile.bonusblocks.slab.wool.orange.name=Orange Wool Slab
+tile.bonusblocks.slab.wool.orange.desc=A slab of orange wool.
+tile.bonusblocks.slab.wool.white.name=White Wool Slab
+tile.bonusblocks.slab.wool.white.desc=A slab of white wool.
+
+tile.bonusblocks.stairs.wool.black.name=Black Wool Stairs
+tile.bonusblocks.stairs.wool.black.desc=Black wool block used for rapid vertical movement.
+tile.bonusblocks.stairs.wool.red.name=Red Wool Stairs
+tile.bonusblocks.stairs.wool.red.desc=Red wool block used for rapid vertical movement.
+tile.bonusblocks.stairs.wool.green.name=Green Wool Stairs
+tile.bonusblocks.stairs.wool.green.desc=Green wool block used for rapid vertical movement.
+tile.bonusblocks.stairs.wool.brown.name=Brown Wool Stairs
+tile.bonusblocks.stairs.wool.brown.desc=Brown wool block used for rapid vertical movement.
+tile.bonusblocks.stairs.wool.blue.name=Blue Wool Stairs
+tile.bonusblocks.stairs.wool.blue.desc=Blue wool block used for rapid vertical movement.
+tile.bonusblocks.stairs.wool.purple.name=Purple Wool Stairs
+tile.bonusblocks.stairs.wool.purple.desc=Purple wool block used for rapid vertical movement.
+tile.bonusblocks.stairs.wool.cyan.name=Cyan Wool Stairs
+tile.bonusblocks.stairs.wool.cyan.desc=Cyan wool block used for rapid vertical movement.
+tile.bonusblocks.stairs.wool.silver.name=Silver Wool Stairs
+tile.bonusblocks.stairs.wool.silver.desc=Silver wool block used for rapid vertical movement.
+tile.bonusblocks.stairs.wool.gray.name=Gray Wool Stairs
+tile.bonusblocks.stairs.wool.gray.desc=Gray wool block used for rapid vertical movement.
+tile.bonusblocks.stairs.wool.pink.name=Pink Wool Stairs
+tile.bonusblocks.stairs.wool.pink.desc=Pink wool block used for rapid vertical movement.
+tile.bonusblocks.stairs.wool.lime.name=Lime Wool Stairs
+tile.bonusblocks.stairs.wool.lime.desc=Lime wool block used for rapid vertical movement.
+tile.bonusblocks.stairs.wool.yellow.name=Yellow Wool Stairs
+tile.bonusblocks.stairs.wool.yellow.desc=Yellow wool block used for rapid vertical movement.
+tile.bonusblocks.stairs.wool.lightblue.name=Light Blue Wool Stairs
+tile.bonusblocks.stairs.wool.lightblue.desc=Light Blue wool block used for rapid vertical movement.
+tile.bonusblocks.stairs.wool.magenta.name=Magenta Wool Stairs
+tile.bonusblocks.stairs.wool.magenta.desc=Magenta wool block used for rapid vertical movement.
+tile.bonusblocks.stairs.wool.orange.name=Orange Wool Stairs
+tile.bonusblocks.stairs.wool.orange.desc=Orange wool block used for rapid vertical movement.
+tile.bonusblocks.stairs.wool.white.name=White Wool Stairs
+tile.bonusblocks.stairs.wool.white.desc=White wool block used for rapid vertical movement.
+
+tile.planks.oak.painted.silver.name=Silver Wooden Planks
+tile.planks.oak.painted.silver.desc=Wooden planks, stained silver.
+tile.fence.planks.oak.painted.silver.name=Silver Wooden Fence
+tile.fence.planks.oak.painted.silver.desc=A wooden fence, stained silver.
+tile.fencegate.planks.oak.painted.silver.name=Silver Wooden Fence Gate
+tile.fencegate.planks.oak.painted.silver.desc=A wooden fence gate, stained silver.
+tile.wool.silver.name=Silver Wool
+tile.wool.silver.desc=Sheep's wool, dyed silver.
+tile.slab.planks.oak.painted.silver.name=Silver Wooden Slab
+tile.slab.planks.oak.painted.silver.desc=A slab of wooden planks, stained silver.
+tile.stairs.planks.oak.painted.silver.name=Silver Wooden Stairs
+tile.stairs.planks.oak.painted.silver.desc=Wooden steps, stained silver.
+tile.chest.planks.oak.painted.silver.name=Silver Wooden Chest
+tile.chest.planks.oak.painted.silver.desc=A place to store your items.
+tile.lamp.idle.silver.name=Silver Lamp
+tile.lamp.idle.silver.desc=A redstone lamp that can emit light. Tinted silver.
+item.dye.silver.name=Silver Dye
+item.dye.silver.desc=Can be used to color certain blocks silver.
+item.dye.black.name=Ink Sac
+item.dye.black.desc=Can be used to color certain blocks black.
+item.dye.red.name=Rose Red Dye
+item.dye.red.desc=Can be used to color certain blocks red.
+item.dye.green.name=Cactus Green Dye
+item.dye.green.desc=Can be used to color certain blocks green.
+item.dye.brown.name=Cocoa Beans
+item.dye.brown.desc=Smells like chocolate... Can also be used to color certain blocks brown.
+item.dye.blue.name=Lapis Lazuli
+item.dye.blue.desc=Can be used to color certain blocks blue.
+item.dye.purple.name=Purple Dye
+item.dye.purple.desc=Can be used to color certain blocks purple.
+item.dye.cyan.name=Cyan Dye
+item.dye.cyan.desc=Can be used to color certain blocks cyan.
+item.dye.magenta.name=Magenta Dye
+item.dye.magenta.desc=Can be used to color certain blocks magenta.
+item.dye.gray.name=Gray Dye
+item.dye.gray.desc=Can be used to color certain blocks gray.
+item.dye.pink.name=Pink Dye
+item.dye.pink.desc=Can be used to color certain blocks pink.
+item.dye.lime.name=Lime Dye
+item.dye.lime.desc=Can be used to color certain blocks lime.
+item.dye.yellow.name=Dandelion Yellow Dye
+item.dye.yellow.desc=Can be used to color certain blocks yellow.
+item.dye.lightblue.name=Light Blue Dye
+item.dye.lightblue.desc=Can be used to color certain blocks light blue.
+item.dye.orange.name=Orange Dye
+item.dye.orange.desc=Can be used to color certain blocks orange.
+item.dye.white.name=Bonemeal
+item.dye.white.desc=A nourishing meal for plants. Can be used to color certain blocks white.
+
+
+
+
+
+
+
+
+
+

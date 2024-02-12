@@ -35,6 +35,7 @@ public class BonusRecipesRegister implements RecipeEntrypoint {
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.logScorched.getDefaultStack());
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.logMaple.getDefaultStack());
 
+/*
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.barkJacaranda.getDefaultStack());
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.barkScorched.getDefaultStack());
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.barkShrub.getDefaultStack());
@@ -44,6 +45,7 @@ public class BonusRecipesRegister implements RecipeEntrypoint {
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.barkOak.getDefaultStack());
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.barkOakMossy.getDefaultStack());
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.barkPine.getDefaultStack());
+*/
 
         Registries.ITEM_GROUPS.getItem("minecraft:leaves").add(BonusBlocks.leavesJacaranda.getDefaultStack());
         Registries.ITEM_GROUPS.getItem("minecraft:leaves").add(BonusBlocks.leavesMaple.getDefaultStack());
