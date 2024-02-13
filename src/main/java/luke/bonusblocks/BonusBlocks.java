@@ -1,20 +1,22 @@
 package luke.bonusblocks;
 
 import luke.bonusblocks.block.*;
-import luke.bonusblocks.item.ItemCopperDoor;
-import luke.bonusblocks.item.ItemSteelDoor;
+import luke.bonusblocks.item.*;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.render.block.color.BlockColorGrass;
 import net.minecraft.client.render.block.color.BlockColorLeavesOak;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.client.render.entity.FallingSandRenderer;
 import net.minecraft.client.sound.block.BlockSound;
+import net.minecraft.core.achievement.AchievementList;
+import net.minecraft.core.achievement.stat.StatList;
 import net.minecraft.core.block.*;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.crafting.LookupFuelFurnace;
 import net.minecraft.core.data.registry.Registries;
+import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemPlaceable;
@@ -34,8 +36,10 @@ import turniplabs.halplibe.util.ConfigHandler;
 import turniplabs.halplibe.util.RecipeEntrypoint;
 
 import java.util.Properties;
+import java.util.Random;
 
 import static net.minecraft.core.block.BlockMoss.stoneToMossMap;
+import static org.spongepowered.asm.util.Constants.ManifestAttributes.MAINCLASS;
 
 
 public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStartEntrypoint {
@@ -147,17 +151,32 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setSideTextures("mossyleaves.png")
             .setBottomTexture("mossyleavesfast.png")
             .setTopBottomTexture("mossyleaves.png")
-            .build(new BlockLeavesOakMossy("leaves.oak.mossy", blockID++));
+            .build(new BlockLeavesBase("leaves.oak.mossy", blockID++, Material.leaves, true) {
+                @Override
+                protected Block getSapling() {
+                    return BonusBlocks.saplingOakMossy;
+                }
+            });
     public static final Block leavesMaple = leaves
             .setSideTextures("mapleleaves.png")
             .setBottomTexture("mapleleavesfast.png")
             .setTopBottomTexture("mapleleaves.png")
-            .build(new BlockLeavesMaple("leaves.maple", blockID++));
+            .build(new BlockLeavesBase("leaves.maple", blockID++, Material.leaves, true) {
+                @Override
+                protected Block getSapling() {
+                    return BonusBlocks.saplingMaple;
+                }
+            });
     public static final Block leavesJacaranda = leaves
             .setSideTextures("jacaleaves.png")
             .setBottomTexture("jacaleavesfast.png")
             .setTopBottomTexture("jacaleaves.png")
-            .build(new BlockLeavesJacaranda("leaves.jacaranda", blockID++));
+            .build(new BlockLeavesBase("leaves.jacaranda", blockID++, Material.leaves, true) {
+                @Override
+                protected Block getSapling() {
+                    return BonusBlocks.saplingJacaranda;
+                }
+            });
 
     // Saplings
     public static final BlockBuilder sapling = new BlockBuilder(MOD_ID)
@@ -297,15 +316,15 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
     public static final BlockBuilder petal = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
             .setHardness(0.6f)
-            .setResistance(1.0f)
+            .setResistance(0.6f)
             .setFlammability(30, 60)
-            .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR, BlockTags.GROWS_FLOWERS);
-    public static final Block petalRed = petal
-            .setTextures("redpetal.png")
-            .build(new BlockPetal("petal.red", blockID++, Material.grass));
+            .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.GROWS_FLOWERS, BlockTags.MINEABLE_BY_AXE);
     public static final Block petalYellow = petal
             .setTextures("yellowpetal.png")
             .build(new BlockPetal("petal.yellow", blockID++, Material.grass));
+    public static final Block petalRed = petal
+            .setTextures("redpetal.png")
+            .build(new BlockPetal("petal.red", blockID++, Material.grass));
     public static final Block petalCyan = petal
             .setTextures("cyanpetal.png")
             .build(new BlockPetal("petal.cyan", blockID++, Material.grass));
@@ -331,43 +350,42 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTextures("limepetal.png")
             .build(new BlockPetal("petal.lime", blockID++, Material.grass));
 
-    public static final Block layerPetalRed = petal
-            .setTextures("redpetal.png")
+
+    public static final BlockBuilder petalLayer = petal
+            .setHardness(0.0f)
+            .setResistance(0.0f)
             .setItemBlock(ItemBlockLayer::new)
-            .build(new BlockLayerPetal("layer.petal.red", blockID++, Material.grass));
-    public static final Block layerPetalYellow = petal
-            .setTextures("yellowpetal.png")
-            .setItemBlock(ItemBlockLayer::new)
+            .setUseInternalLight()
+            .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.BROKEN_BY_FLUIDS, BlockTags.MINEABLE_BY_AXE);
+    public static final Block layerPetalYellow = petalLayer
+            .setTextures("yellowpetallayer.png")
             .build(new BlockLayerPetal("layer.petal.yellow", blockID++, Material.grass));
-    public static final Block layerPetalCyan = petal
-            .setTextures("cyanpetal.png")
-            .setItemBlock(ItemBlockLayer::new)
+    public static final Block layerPetalRed = petalLayer
+            .setTextures("redpetallayer.png")
+            .build(new BlockLayerPetal("layer.petal.red", blockID++, Material.grass));
+    public static final Block layerPetalCyan = petalLayer
+            .setTextures("cyanpetallayer.png")
             .build(new BlockLayerPetal("layer.petal.cyan", blockID++, Material.grass));
-    public static final Block layerPetalPurple = petal
-            .setTextures("purplepetal.png")
-            .setItemBlock(ItemBlockLayer::new)
+    public static final Block layerPetalPurple = petalLayer
+            .setTextures("purplepetallayer.png")
             .build(new BlockLayerPetal("layer.petal.purple", blockID++, Material.grass));
-    public static final Block layerPetalPink = petal
-            .setTextures("pinkpetal.png")
-            .setItemBlock(ItemBlockLayer::new)
+    public static final Block layerPetalPink = petalLayer
+            .setTextures("pinkpetallayer.png")
             .build(new BlockLayerPetal("layer.petal.pink", blockID++, Material.grass));
-    public static final Block layerPetalSilver = petal
-            .setTextures("silverpetal.png")
-            .setItemBlock(ItemBlockLayer::new)
+    public static final Block layerPetalSilver = petalLayer
+            .setTextures("silverpetallayer.png")
             .build(new BlockLayerPetal("layer.petal.silver", blockID++, Material.grass));
-    public static final Block layerPetalOrange = petal
-            .setTextures("orangepetal.png")
-            .setItemBlock(ItemBlockLayer::new)
+    public static final Block layerPetalOrange = petalLayer
+            .setTextures("orangepetallayer.png")
             .build(new BlockLayerPetal("layer.petal.orange", blockID++, Material.grass));
-    public static final Block layerPetalLightBlue = petal
-            .setTextures("lightbluepetal.png")
+    public static final Block layerPetalLightBlue = petalLayer
+            .setTextures("lightbluepetallayer.png")
             .build(new BlockLayerPetal("layer.petal.lightblue", blockID++, Material.grass));
-    public static final Block layerPetalMagenta = petal
-            .setTextures("magentapetal.png")
+    public static final Block layerPetalMagenta = petalLayer
+            .setTextures("magentapetallayer.png")
             .build(new BlockLayerPetal("layer.petal.magenta", blockID++, Material.grass));
-    public static final Block layerPetalLime = petal
-            .setTextures("limepetal.png")
-            .setItemBlock(ItemBlockLayer::new)
+    public static final Block layerPetalLime = petalLayer
+            .setTextures("limepetallayer.png")
             .build(new BlockLayerPetal("layer.petal.lime", blockID++, Material.grass));
 
     // Mushroom
@@ -594,33 +612,31 @@ public static final Block permafrostCarved = stone
             .setInfiniburn()
             .build(new Block("block.flint", blockID++, Material.stone));
 
-/*
+
     public static final BlockBuilder pebble = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
             .setHardness(0.0f)
             .setResistance(0.0f)
             .setBlockModel(new BlockModelRenderBlocks(29))
+            .setVisualUpdateOnMetadata()
             .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.NOT_IN_CREATIVE_MENU);
 
     public static final Block overlayRawIron = pebble
             .setTextures("ironpebble1.png")
             .setTextures("ironpebble2.png")
             .setTextures("ironpebble3.png")
-            .setInfiniburn()
-            .build(new BlockOverlayPebbles("overlay.iron", blockID++, Material.metal));
+            .build(new BlockOverlayRawIron("overlay.iron", blockID++, Material.metal));
     public static final Block overlayRawGold = pebble
             .setTextures("goldpebble1.png")
             .setTextures("goldpebble2.png")
             .setTextures("goldpebble3.png")
-            .setInfiniburn()
-            .build(new BlockOverlayPebbles("overlay.gold", blockID++, Material.metal));
+            .build(new BlockOverlayRawGold("overlay.gold", blockID++, Material.metal));
     public static final Block overlayRawCopper = pebble
             .setTextures("copperpebble1.png")
             .setTextures("copperpebble2.png")
             .setTextures("copperpebble3.png")
-            .setInfiniburn()
-            .build(new BlockOverlayPebbles("overlay.copper", blockID++, Material.metal));
-*/
+            .build(new BlockOverlayRawCopper("overlay.copper", blockID++, Material.metal));
+
 
 
     // Copper Blocks
@@ -632,7 +648,7 @@ public static final Block permafrostCarved = stone
             .build(new BlockCopperTarnished("block.copper.tarnished", blockID++, Material.metal));
     public static final Block blockCopperCorroded = raw
             .setTextures("corrodedcopperblock.png")
-            .build(new BlockCopperCorroded("block.copper.corroded", blockID++, Material.metal));
+            .build(new Block("block.copper.corroded", blockID++, Material.metal));
 
     public static final Block pipeCopper = raw
             .setTextures("copperpipe.png")
@@ -725,13 +741,6 @@ public static final Block permafrostCarved = stone
             .setResistance(10.0f)
             .setTags(BlockTags.MINEABLE_BY_PICKAXE);
 
-    public static final Block netherrack = brick
-            .setHardness(0.4F)
-            .setResistance(0.4F)
-            .setTextures("netherrack.png")
-            .setInfiniburn()
-            .build(new Block("netherrack", blockID++, Material.stone));
-
     public static final Block cobblednetherrack = brick
             .setHardness(0.4F)
             .setResistance(0.4F)
@@ -739,8 +748,29 @@ public static final Block permafrostCarved = stone
             .setInfiniburn()
             .build(new Block("cobble.netherrack", blockID++, Material.stone));
 
+    public static final Block netherrack = brick
+            .setHardness(0.9F)
+            .setResistance(0.9F)
+            .setTextures("netherrack.png")
+            .setInfiniburn()
+            .build(new Block("netherrack", blockID++, Material.stone) {
+                public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+                    switch (dropCause) {
+                        case WORLD:
+                        case EXPLOSION:
+                        case PROPER_TOOL:
+                            return new ItemStack[]{new ItemStack(cobblednetherrack)};
+                        case PICK_BLOCK:
+                        case SILK_TOUCH:
+                            return new ItemStack[]{new ItemStack(this)};
+                        default:
+                            return null;
+                    }
+                }
+            });
+
     public static final Block brickNetherrack = brick
-            .setHardness(1.0f)
+            .setHardness(0.9f)
             .setTextures("netherbrick.png")
             .setInfiniburn()
             .build(new Block("brick.netherrack", blockID++, Material.stone));
@@ -778,7 +808,7 @@ public static final Block permafrostCarved = stone
     // Brimstone
     public static final Block brimstone = stone
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 0.4f))
-            .setHardness(400.0f)
+            .setHardness(200.0f)
             .setResistance(20000.0f)
             .setTextures("brimstone.png")
             .setInfiniburn()
@@ -876,7 +906,7 @@ public static final Block permafrostCarved = stone
             new Item("soulwax", itemID++), "soulwax.png");
 
     public static Item oreRawCopper = ItemHelper.createItem(BonusBlocks.MOD_ID,
-            new Item("ore.raw.copper", itemID++), "rawcopper.png");
+            new ItemRawCopper("ore.raw.copper", itemID++), "rawcopper.png");
 
     public static Item ingotCopper = ItemHelper.createItem(BonusBlocks.MOD_ID,
             new Item("ingot.copper", itemID++), "copperingot.png");
@@ -960,6 +990,12 @@ public static final Block slabPermafrostPolished = slab
             .setHardness(5.0F)
             .setTextures(8, 8)
             .build(new BlockSlab(Block.brickIron, blockID++));
+    public static final Block slabCobbledNetherrack = slab
+            .setTextures("cobblednetherrack.png")
+            .build(new BlockSlab(cobblednetherrack, blockID++));
+    public static final Block slabMossyCobbledNetherrack = slab
+            .setTextures(7, 6)
+            .build(new BlockSlab(Block.netherrack, blockID++));
     public static final Block slabBrickNetherrack = slab
             .setTextures("netherbrick.png")
             .build(new BlockSlab(brickNetherrack, blockID++));
@@ -995,6 +1031,24 @@ public static final Block slabPermafrostPolished = slab
             .setHardness(3.0f)
             .setTextures("olivinebrick.png")
             .build(new BlockSlab(brickOlivine, blockID++));
+    public static final Block slabCopper = slab
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+            .setHardness(5.0f)
+            .setResistance(10.0f)
+            .setTextures("copperblock.png")
+            .build(new BlockCopperSlab(blockCopper, blockID++));
+    public static final Block slabCopperTarnished = slab
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+            .setHardness(5.0f)
+            .setResistance(10.0f)
+            .setTextures("tarnishedcopperblock.png")
+            .build(new BlockCopperTarnishedSlab(blockCopperTarnished, blockID++));
+    public static final Block slabCopperCorroded = slab
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+            .setHardness(5.0f)
+            .setResistance(10.0f)
+            .setTextures("corrodedcopperblock.png")
+            .build(new BlockSlab(blockCopperCorroded, blockID++));
 
 
     // Stairs
@@ -1041,6 +1095,12 @@ public static final Block slabPermafrostPolished = slab
             .setHardness(5.0F)
             .setTextures(8, 8)
             .build(new BlockStairs(Block.brickIron, blockID++));
+    public static final Block stairsCobbledNetherrack = stairs
+            .setTextures("cobblednetherrack.png")
+            .build(new BlockStairs(cobblednetherrack, blockID++));
+    public static final Block stairsMossyCobbledNetherrack = stairs
+            .setTextures(7, 6)
+            .build(new BlockStairs(Block.netherrack, blockID++));
     public static final Block stairsBrickNetherrack = stairs
             .setTextures("netherbrick.png")
             .build(new BlockStairs(brickNetherrack, blockID++));
@@ -1069,10 +1129,32 @@ public static final Block slabPermafrostPolished = slab
             .setHardness(3.0f)
             .setTextures("olivinebrick.png")
             .build(new BlockStairs(brickOlivine, blockID++));
+    public static final Block stairsCopper = stairs
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+            .setHardness(5.0f)
+            .setResistance(10.0f)
+            .setTextures("copperblock.png")
+            .build(new BlockCopperStairs(blockCopper, blockID++));
+    public static final Block stairsCopperTarnished = stairs
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+            .setHardness(5.0f)
+            .setResistance(10.0f)
+            .setTextures("tarnishedcopperblock.png")
+            .build(new BlockCopperTarnishedStairs(blockCopperTarnished, blockID++));
+    public static final Block stairsCopperCorroded = stairs
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+            .setHardness(5.0f)
+            .setResistance(10.0f)
+            .setTextures("corrodedcopperblock.png")
+            .build(new BlockStairs(blockCopperCorroded, blockID++));
 
     @Override
     public void onInitialize() {
         LOGGER.info("BonusBlocks initialized.");
+
+        Item.oreRawGold = new ItemRawGold("ore.raw.gold", 16510).setIconCoord(10, 8);
+        Item.oreRawIron = new ItemRawIron("ore.raw.iron", 16511).setIconCoord(9, 8);
+
 
         stoneToMossMap.put(Block.saplingOak, BonusBlocks.saplingOakMossy);
         stoneToMossMap.put(BonusBlocks.cobblednetherrack, Block.netherrack);
@@ -1091,6 +1173,12 @@ public static final Block slabPermafrostPolished = slab
         ItemToolPickaxe.miningLevels.put(doorCopperBottom, 1);
         ItemToolPickaxe.miningLevels.put(doorCopperTop, 1);
         ItemToolPickaxe.miningLevels.put(fenceCopper, 1);
+        ItemToolPickaxe.miningLevels.put(slabCopper, 1);
+        ItemToolPickaxe.miningLevels.put(slabCopperTarnished, 1);
+        ItemToolPickaxe.miningLevels.put(slabCopperCorroded, 1);
+        ItemToolPickaxe.miningLevels.put(stairsCopper, 1);
+        ItemToolPickaxe.miningLevels.put(stairsCopperTarnished, 1);
+        ItemToolPickaxe.miningLevels.put(stairsCopperCorroded, 1);
         ItemToolPickaxe.miningLevels.put(slabBrickLapis, 1);
         ItemToolPickaxe.miningLevels.put(stairsBrickLapis, 1);
 
@@ -1146,6 +1234,7 @@ public static final Block slabPermafrostPolished = slab
         LookupFuelFurnace.instance.addFuelEntry(branch.id, 300);
         LookupFuelFurnace.instance.addFuelEntry(saplingJacaranda.id, 10);
         LookupFuelFurnace.instance.addFuelEntry(saplingMaple.id, 10);
+        LookupFuelFurnace.instance.addFuelEntry(saplingOakMossy.id, 10);
     }
 
     public void onRecipesReady() {
@@ -1203,19 +1292,19 @@ public static final Block slabPermafrostPolished = slab
         templateItemtoBlock.addInput('X', Item.oreRawGold).create("block_of_raw_gold", new ItemStack(BonusBlocks.blockRawGold, 1));
         templateItemtoBlock.addInput('X', Item.oreRawIron).create("block_of_raw_iron", new ItemStack(BonusBlocks.blockRawIron, 1));
         templateItemtoBlock.addInput('X', BonusBlocks.oreRawCopper).create("block_of_raw_copper", new ItemStack(BonusBlocks.blockRawCopper, 1));
-        templateItemtoBlock.addInput('X', BonusBlocks.ingotCopper).create("block_of_raw_copper", new ItemStack(BonusBlocks.blockCopper, 1));
         templateItemtoBlock.addInput('X', Item.leather).create("block_of_leather", new ItemStack(BonusBlocks.blockLeather, 1));
 
         RecipeBuilderShaped templateBlocktoItem = new RecipeBuilderShaped(MOD_ID, "X");
         templateBlocktoItem.addInput('X', BonusBlocks.blockBone).create("block_of_bone_to_bone", new ItemStack(Item.bone, 9));
-        templateBlocktoItem.addInput('X', BonusBlocks.blockSlime).create("block_of_slime", new ItemStack(Item.slimeball, 9));
-        templateBlocktoItem.addInput('X', BonusBlocks.blockSulphur).create("block_of_sulphur", new ItemStack(Item.sulphur, 9));
-        templateBlocktoItem.addInput('X', BonusBlocks.blockCloth).create("block_of_cloth", new ItemStack(Item.cloth, 9));
-        templateBlocktoItem.addInput('X', BonusBlocks.blockCrudeSteel).create("block_of_crude_steel", new ItemStack(Item.ingotSteelCrude, 9));
-        templateBlocktoItem.addInput('X', BonusBlocks.blockFlint).create("block_of_flint", new ItemStack(Item.flint, 9));
-        templateBlocktoItem.addInput('X', BonusBlocks.blockRawGold).create("block_of_raw_gold", new ItemStack(Item.oreRawGold, 9));
-        templateBlocktoItem.addInput('X', BonusBlocks.blockRawIron).create("block_of_raw_iron", new ItemStack(Item.oreRawIron, 9));
-        templateBlocktoItem.addInput('X', BonusBlocks.blockLeather).create("block_of_leather", new ItemStack(Item.leather, 9));
+        templateBlocktoItem.addInput('X', BonusBlocks.blockSlime).create("block_of_slime_to_slime", new ItemStack(Item.slimeball, 9));
+        templateBlocktoItem.addInput('X', BonusBlocks.blockSulphur).create("block_of_sulphur_to_sulphur", new ItemStack(Item.sulphur, 9));
+        templateBlocktoItem.addInput('X', BonusBlocks.blockCloth).create("block_of_cloth_to_cloth", new ItemStack(Item.cloth, 9));
+        templateBlocktoItem.addInput('X', BonusBlocks.blockCrudeSteel).create("block_of_crude_steel_to_crude_steel", new ItemStack(Item.ingotSteelCrude, 9));
+        templateBlocktoItem.addInput('X', BonusBlocks.blockFlint).create("block_of_flint_to_flint", new ItemStack(Item.flint, 9));
+        templateBlocktoItem.addInput('X', BonusBlocks.blockRawGold).create("block_of_raw_gold_to_raw_gold", new ItemStack(Item.oreRawGold, 9));
+        templateBlocktoItem.addInput('X', BonusBlocks.blockRawIron).create("block_of_raw_iron_to_raw_iron", new ItemStack(Item.oreRawIron, 9));
+        templateBlocktoItem.addInput('X', BonusBlocks.blockLeather).create("block_of_leather_to_leather", new ItemStack(Item.leather, 9));
+        templateBlocktoItem.addInput('X', BonusBlocks.blockCopper).create("block_of_copper_to_copper", new ItemStack(BonusBlocks.ingotCopper, 4));
 
         RecipeBuilder.Shaped(MOD_ID, "WS", "SW")
                 .addInput('W', Item.wheat)
@@ -1242,6 +1331,8 @@ public static final Block slabPermafrostPolished = slab
         templateFlowertoDye.addInput('X', BonusBlocks.flowerPink).create("flower_pink_to_dye", new ItemStack(Item.dye, 2, 9));
         templateFlowertoDye.addInput('X', BonusBlocks.flowerSilver).create("flower_silver_to_dye", new ItemStack(Item.dye, 2, 7));
         templateFlowertoDye.addInput('X', BonusBlocks.flowerOrange).create("flower_orange_to_dye", new ItemStack(Item.dye, 2, 14));
+        templateFlowertoDye.addInput('X', BonusBlocks.flowerLightBlue).create("flower_lightblue_to_dye", new ItemStack(Item.dye, 2, 12));
+        templateFlowertoDye.addInput('X', BonusBlocks.flowerMagenta).create("flower_magenta_to_dye", new ItemStack(Item.dye, 2, 13));
         templateFlowertoDye.addInput('X', BonusBlocks.flowerLime).create("flower_lime_to_dye", new ItemStack(Item.dye, 2, 10));
         templateFlowertoDye.addInput('X', BonusBlocks.mushroomGray).create("mushroom_gray_to_dye", new ItemStack(Item.dye, 2, 8));
 
@@ -1250,6 +1341,8 @@ public static final Block slabPermafrostPolished = slab
         templateMushroomToBlock.addInput('X', Block.mushroomBrown).create("brown_mushroom_block", new ItemStack(BonusBlocks.blockMushroomBrown, 4));
         templateMushroomToBlock.addInput('X', BonusBlocks.mushroomGray).create("gray_mushroom_block", new ItemStack(BonusBlocks.blockMushroomGray, 4));
 
+        templateMushroomToBlock.addInput('X', BonusBlocks.ingotCopper).create("block_of_raw_copper", new ItemStack(BonusBlocks.blockCopper, 1));
+
         templateMushroomToBlock.addInput('X', Block.flowerRed).create("petal_red", new ItemStack(BonusBlocks.petalRed, 4));
         templateMushroomToBlock.addInput('X', Block.flowerYellow).create("petal_yellow", new ItemStack(BonusBlocks.petalYellow, 4));
         templateMushroomToBlock.addInput('X', BonusBlocks.flowerCyan).create("petal_cyan", new ItemStack(BonusBlocks.petalCyan, 4));
@@ -1257,11 +1350,24 @@ public static final Block slabPermafrostPolished = slab
         templateMushroomToBlock.addInput('X', BonusBlocks.flowerPink).create("petal_pink", new ItemStack(BonusBlocks.petalPink, 4));
         templateMushroomToBlock.addInput('X', BonusBlocks.flowerSilver).create("petal_silver", new ItemStack(BonusBlocks.petalSilver, 4));
         templateMushroomToBlock.addInput('X', BonusBlocks.flowerOrange).create("petal_orange", new ItemStack(BonusBlocks.petalOrange, 4));
+        templateMushroomToBlock.addInput('X', BonusBlocks.flowerLightBlue).create("petal_lightblue", new ItemStack(BonusBlocks.petalLightBlue, 4));
+        templateMushroomToBlock.addInput('X', BonusBlocks.flowerMagenta).create("petal_magenta", new ItemStack(BonusBlocks.petalMagenta, 4));
         templateMushroomToBlock.addInput('X', BonusBlocks.flowerLime).create("petal_lime", new ItemStack(BonusBlocks.petalLime, 4));
 
+        RecipeBuilderShaped templateFlowerBed = new RecipeBuilderShaped(MOD_ID, "XX");
+        templateFlowerBed.addInput('X', BonusBlocks.petalRed).create("petal_red_to_layer", new ItemStack(BonusBlocks.layerPetalRed, 8));
+        templateFlowerBed.addInput('X', BonusBlocks.petalYellow).create("petal_yellow_to_layer", new ItemStack(BonusBlocks.layerPetalYellow, 8));
+        templateFlowerBed.addInput('X', BonusBlocks.petalCyan).create("petal_cyan_to_layer", new ItemStack(BonusBlocks.layerPetalCyan, 8));
+        templateFlowerBed.addInput('X', BonusBlocks.petalPurple).create("petal_purple_to_layer", new ItemStack(BonusBlocks.layerPetalPurple, 8));
+        templateFlowerBed.addInput('X', BonusBlocks.petalPink).create("petal_pink_to_layer", new ItemStack(BonusBlocks.layerPetalPink, 8));
+        templateFlowerBed.addInput('X', BonusBlocks.petalSilver).create("petal_silver_to_layer", new ItemStack(BonusBlocks.layerPetalSilver, 8));
+        templateFlowerBed.addInput('X', BonusBlocks.petalOrange).create("petal_orange_to_layer", new ItemStack(BonusBlocks.layerPetalOrange, 8));
+        templateFlowerBed.addInput('X', BonusBlocks.petalLightBlue).create("petal_lightblue_to_layer", new ItemStack(BonusBlocks.layerPetalLightBlue, 8));
+        templateFlowerBed.addInput('X', BonusBlocks.petalMagenta).create("petal_magenta_to_layer", new ItemStack(BonusBlocks.layerPetalMagenta, 8));
+        templateFlowerBed.addInput('X', BonusBlocks.petalLime).create("petal_lime_to_layer", new ItemStack(BonusBlocks.layerPetalLime, 8));
 
         RecipeBuilderShaped templateBricks = new RecipeBuilderShaped(MOD_ID, "XX", "XX");
-        templateBricks.addInput('X', Block.netherrack).create("netherrack_bricks", new ItemStack(BonusBlocks.brickNetherrack, 4));
+        templateBricks.addInput('X', BonusBlocks.netherrack).create("netherrack_bricks", new ItemStack(BonusBlocks.brickNetherrack, 4));
         templateBricks.addInput('X', BonusBlocks.clayBaked).create("clay_bricks", new ItemStack(Block.brickClay, 16));
         templateBricks.addInput('X', BonusBlocks.scorchedstone).create("scorched_bricks", new ItemStack(BonusBlocks.brickScorchedstone, 4));
         templateBricks.addInput('X', Block.mudBaked).create("mud_bricks", new ItemStack(BonusBlocks.brickMud, 4));
@@ -1269,7 +1375,6 @@ public static final Block slabPermafrostPolished = slab
         templateBricks.addInput('X', Item.quartz).create("quartz_bricks", new ItemStack(BonusBlocks.brickQuartz, 4));
         templateBricks.addInput('X', Item.olivine).create("olivine_bricks", new ItemStack(BonusBlocks.brickOlivine, 4));
         templateBricks.addInput('X', Block.soulsand).create("soulslate", new ItemStack(BonusBlocks.soulslate, 4));
-        templateBricks.addInput('X', BonusBlocks.soulslate).create("brimstone", new ItemStack(BonusBlocks.brimstone, 4));
 
         templateBricks.addInput('X', Block.dirtScorched).create("scorchedstone", new ItemStack(BonusBlocks.scorchedstone, 4));
 
@@ -1281,11 +1386,21 @@ public static final Block slabPermafrostPolished = slab
 
         RecipeBuilder.ModifyWorkbench("minecraft").removeRecipe("marble_pillar");
         RecipeBuilder.ModifyWorkbench("minecraft").removeRecipe("green_dye_white_dye_to_lime_dye");
+        RecipeBuilder.ModifyWorkbench("minecraft").removeRecipe("pebbles_to_granite");
+
+        RecipeBuilder.ModifyBlastFurnace("minecraft").removeRecipe("cobble_basalt_to_olivine");
+        RecipeBuilder.ModifyBlastFurnace("minecraft").removeRecipe("cobble_stone_to_slate");
+        RecipeBuilder.ModifyBlastFurnace("minecraft").removeRecipe("cobble_granite_to_quartz");
 
         RecipeBuilder.Shapeless(MOD_ID)
                 .addInput(new ItemStack(Item.dye, 1, 2))
                 .addInput(new ItemStack(Item.dye, 1, 11))
                 .create("green_dye_white_dye_to_lime_dye", new ItemStack(Item.dye, 2, 10));
+
+        RecipeBuilder.Shaped(MOD_ID, "PX", "XP")
+                .addInput('P', (Item.ammoPebble))
+                .addInput('X', (Item.quartz))
+                .create("pebbles_to_granite", new ItemStack(Block.granite, 2));
 
         RecipeBuilderShaped templatePillar = new RecipeBuilderShaped(MOD_ID, "X", "X", "X");
         templatePillar.addInput('X', Block.marble).create("marble_pillar", new ItemStack(Block.pillarMarble, 3));
@@ -1316,6 +1431,15 @@ public static final Block slabPermafrostPolished = slab
         Registries.ITEM_GROUPS.getItem("minecraft:leaves").add(BonusBlocks.leavesOakMossy.getDefaultStack());
         Registries.ITEM_GROUPS.getItem("minecraft:leaves").add(BonusBlocks.leavesMaple.getDefaultStack());
         Registries.ITEM_GROUPS.getItem("minecraft:leaves").add(BonusBlocks.leavesJacaranda.getDefaultStack());
+
+        Registries.ITEM_GROUPS.getItem("minecraft:stones").add(BonusBlocks.netherrack.getDefaultStack());
+
+        Registries.ITEM_GROUPS.getItem("minecraft:cobblestones").add(BonusBlocks.cobblednetherrack.getDefaultStack());
+
+        Registries.ITEM_GROUPS.getItem("minecraft:grasses").add(BonusBlocks.grassOvergrown.getDefaultStack());
+        Registries.ITEM_GROUPS.getItem("minecraft:grasses").add(BonusBlocks.grassRetroOvergrown.getDefaultStack());
+        Registries.ITEM_GROUPS.getItem("minecraft:grasses").add(BonusBlocks.grassScorchedOvergrown.getDefaultStack());
+        Registries.ITEM_GROUPS.getItem("minecraft:grasses").add(Block.grassScorched.getDefaultStack());
 
 //        Registries.ITEM_GROUPS.register("bonusblocks:bark", Registries.stackListOf(BonusBlocks.barkBirch,
 //                BonusBlocks.barkCacao,
@@ -1469,6 +1593,9 @@ public static final Block slabPermafrostPolished = slab
         templateSlab.addInput('X', Block.cobblePermafrost).create("cobbled_permafrost_slab", new ItemStack(BonusBlocks.slabCobblePermafrost, 6));
         templateSlab.addInput('X', BonusBlocks.scorchedstone).create("scorchedstone_slab", new ItemStack(BonusBlocks.slabScorchedstone, 6));
         templateSlab.addInput('X', Block.cobbleStoneMossy).create("cobblestone_mossy_slab", new ItemStack(BonusBlocks.slabCobblestoneMossy, 6));
+        templateSlab.addInput('X', Block.netherrack).create("cobblestone_netherrack_mossy_slab", new ItemStack(BonusBlocks.slabMossyCobbledNetherrack, 6));
+        templateSlab.addInput('X', BonusBlocks.cobblednetherrack).create("cobblestone_netherrack_slab", new ItemStack(BonusBlocks.slabCobbledNetherrack, 6));
+        templateSlab.addInput('X', BonusBlocks.ingotCopper).create("copper_slab", new ItemStack(BonusBlocks.slabCopper, 6));
 
         RecipeBuilderShaped templateStairs = new RecipeBuilderShaped(MOD_ID, "X ", "XX ", "XXX");
         templateStairs.addInput('X', Block.brickGold).create("gold_brick_stairs", new ItemStack(BonusBlocks.stairsBrickGold, 6));
@@ -1485,6 +1612,9 @@ public static final Block slabPermafrostPolished = slab
         templateStairs.addInput('X', BonusBlocks.brickOlivine).create("olivine_brick_stairs", new ItemStack(BonusBlocks.stairsBrickOlivine, 6));
         templateStairs.addInput('X', Block.cobblePermafrost).create("cobbled_permafrost_stairs", new ItemStack(BonusBlocks.stairsCobblePermafrost, 6));
         templateStairs.addInput('X', Block.cobbleStoneMossy).create("cobblestone_mossy_stairs", new ItemStack(BonusBlocks.stairsCobblestoneMossy, 6));
+        templateStairs.addInput('X', Block.netherrack).create("cobblestone_netherrack_mossy_stairs", new ItemStack(BonusBlocks.stairsMossyCobbledNetherrack, 6));
+        templateStairs.addInput('X', BonusBlocks.cobblednetherrack).create("cobblestone_netherrack_stairs", new ItemStack(BonusBlocks.stairsCobbledNetherrack, 6));
+        templateStairs.addInput('X', BonusBlocks.ingotCopper).create("copper_stairs", new ItemStack(BonusBlocks.stairsCopper, 6));
 
         RecipeBuilder.Shaped(MOD_ID, " M ", "SES", "WPW")
                 .addInput('M', (Item.bucketMilk))
@@ -1522,8 +1652,12 @@ public static final Block slabPermafrostPolished = slab
                 .create("copper_ingot", BonusBlocks.ingotCopper.getDefaultStack());
 
         RecipeBuilder.Furnace(MOD_ID)
+                .setInput(BonusBlocks.cobblednetherrack)
+                .create("cobble_netherrack_to_netherrack", BonusBlocks.netherrack.getDefaultStack());
+
+        RecipeBuilder.Furnace(MOD_ID)
                 .setInput(Block.netherrack)
-                .create("igneous_netherrack_furnace", Block.netherrackIgneous.getDefaultStack());
+                .create("mossy_netherrack_to_cobbled_netherrack", BonusBlocks.cobblednetherrack.getDefaultStack());
 
         RecipeBuilder.Furnace(MOD_ID)
                 .setInput(Block.soulsand)
@@ -1538,8 +1672,12 @@ public static final Block slabPermafrostPolished = slab
                 .create("copper_ingot_blast", BonusBlocks.ingotCopper.getDefaultStack());
 
         RecipeBuilder.BlastFurnace(MOD_ID)
+                .setInput(BonusBlocks.cobblednetherrack)
+                .create("cobble_netherrack_to_netherrack", BonusBlocks.netherrack.getDefaultStack());
+
+        RecipeBuilder.BlastFurnace(MOD_ID)
                 .setInput(Block.netherrack)
-                .create("igneous_netherrack_blast", Block.netherrackIgneous.getDefaultStack());
+                .create("mossy_netherrack_to_cobbled_netherrack", BonusBlocks.cobblednetherrack.getDefaultStack());
 
         RecipeBuilder.BlastFurnace(MOD_ID)
                 .setInput(Block.obsidian)
@@ -1548,6 +1686,38 @@ public static final Block slabPermafrostPolished = slab
         RecipeBuilder.BlastFurnace(MOD_ID)
                 .setInput(Block.soulsand)
                 .create("soulwax_blast", BonusBlocks.soulwax.getDefaultStack());
+
+        RecipeBuilder.BlastFurnace(MOD_ID)
+                .setInput(Block.cobbleStone)
+                .create("cobble_stone_to_stone", Block.stone.getDefaultStack());
+
+        RecipeBuilder.BlastFurnace(MOD_ID)
+                .setInput(Block.cobbleBasalt)
+                .create("cobble_basalt_to_basalt", Block.basalt.getDefaultStack());
+
+        RecipeBuilder.BlastFurnace(MOD_ID)
+                .setInput(Block.cobbleGranite)
+                .create("cobble_granite_to_granite", Block.granite.getDefaultStack());
+
+        RecipeBuilder.BlastFurnace(MOD_ID)
+                .setInput(Block.limestone)
+                .create("limestone_to_marble", Block.marble.getDefaultStack());
+
+        RecipeBuilder.BlastFurnace(MOD_ID)
+                .setInput(Block.stone)
+                .create("stone_to_slate", Block.slate.getDefaultStack());
+
+        RecipeBuilder.BlastFurnace(MOD_ID)
+                .setInput(Block.basalt)
+                .create("basalt_to_olivine", Item.olivine.getDefaultStack());
+
+        RecipeBuilder.BlastFurnace(MOD_ID)
+                .setInput(Block.granite)
+                .create("granite_to_quartz", Item.quartz.getDefaultStack());
+
+        RecipeBuilder.BlastFurnace(MOD_ID)
+                .setInput(BonusBlocks.netherrack)
+                .create("netherrack_to_brimstone", BonusBlocks.brimstone.getDefaultStack());
 
     }
 

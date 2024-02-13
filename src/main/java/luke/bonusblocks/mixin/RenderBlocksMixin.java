@@ -5,11 +5,9 @@ import net.minecraft.client.render.RenderBlockCache;
 import net.minecraft.client.render.RenderBlocks;
 import net.minecraft.client.render.Tessellator;
 import net.minecraft.client.render.TextureFX;
-import net.minecraft.client.render.block.color.BlockColor;
 import net.minecraft.client.render.block.color.BlockColorDispatcher;
 import net.minecraft.core.Global;
 import net.minecraft.core.block.Block;
-import net.minecraft.core.block.BlockRotatable;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.WorldSource;
@@ -53,12 +51,13 @@ public abstract class RenderBlocksMixin  {
         float f3 = (float)(l & 255) / 255.0F;
         tessellator.setColorOpaque_F(f * f1, f * f2, f * f3);
 
-        this.renderCrossedSquares(block, this.blockAccess.getBlockMetadata(x, y, z), x, y, z);
+        // in the future, render a different one based on metadata, also make the north/south one
+        this.renderCrossedSquaresEastWest(block, this.blockAccess.getBlockMetadata(x, y, z), x, y, z);
         return true;
     }
 
     @Unique
-    public void renderCrossedSquares(Block block, int i, double d, double d1, double d2) {
+    public void renderCrossedSquaresVertical(Block block, int i, double x, double d1, double z) {
         Tessellator tessellator = Tessellator.instance;
         int texIndex = block.getBlockTextureFromSideAndMetadata(Side.BOTTOM, i);
         if (this.overrideBlockTexture >= 0) {
@@ -67,36 +66,78 @@ public abstract class RenderBlocksMixin  {
 
         int texX = texIndex % Global.TEXTURE_ATLAS_WIDTH_TILES * TextureFX.tileWidthTerrain;
         int texY = texIndex / Global.TEXTURE_ATLAS_WIDTH_TILES * TextureFX.tileWidthTerrain;
+
         double minU = (float)texX / (float)(TextureFX.tileWidthTerrain * Global.TEXTURE_ATLAS_WIDTH_TILES);
         double maxU = ((float)texX + ((float)TextureFX.tileWidthTerrain - 0.01F)) / (float)(TextureFX.tileWidthTerrain * Global.TEXTURE_ATLAS_WIDTH_TILES);
+
         double minV = (float)texY / (float)(TextureFX.tileWidthTerrain * Global.TEXTURE_ATLAS_WIDTH_TILES);
         double maxV = ((float)texY + ((float)TextureFX.tileWidthTerrain - 0.01F)) / (float)(TextureFX.tileWidthTerrain * Global.TEXTURE_ATLAS_WIDTH_TILES);
-        float yOffset = 0.0F;
-        if (block == Block.tallgrass && i == 3) {
-            minV = (float)(texY - TextureFX.tileWidthTerrain) / (float)(TextureFX.tileWidthTerrain * Global.TEXTURE_ATLAS_WIDTH_TILES);
-            yOffset = 1.0F;
-        }
 
-        double d7 = d + 0.5 - 0.45;
-        double d8 = d + 0.5 + 0.45;
-        double d9 = d2 + 0.5 - 0.45;
-        double d10 = d2 + 0.5 + 0.45;
-        tessellator.addVertexWithUV(d7, d1 + 1.0 + (double)yOffset, d9, minU, minV);
-        tessellator.addVertexWithUV(d7, d1 + 0.0, d9, minU, maxV);
-        tessellator.addVertexWithUV(d8, d1 + 0.0, d10, maxU, maxV);
-        tessellator.addVertexWithUV(d8, d1 + 1.0 + (double)yOffset, d10, maxU, minV);
-        tessellator.addVertexWithUV(d8, d1 + 1.0 + (double)yOffset, d10, minU, minV);
-        tessellator.addVertexWithUV(d8, d1 + 0.0, d10, minU, maxV);
-        tessellator.addVertexWithUV(d7, d1 + 0.0, d9, maxU, maxV);
-        tessellator.addVertexWithUV(d7, d1 + 1.0 + (double)yOffset, d9, maxU, minV);
-        tessellator.addVertexWithUV(d7, d1 + 1.0 + (double)yOffset, d10, minU, minV);
-        tessellator.addVertexWithUV(d7, d1 + 0.0, d10, minU, maxV);
-        tessellator.addVertexWithUV(d8, d1 + 0.0, d9, maxU, maxV);
-        tessellator.addVertexWithUV(d8, d1 + 1.0 + (double)yOffset, d9, maxU, minV);
-        tessellator.addVertexWithUV(d8, d1 + 1.0 + (double)yOffset, d9, minU, minV);
-        tessellator.addVertexWithUV(d8, d1 + 0.0, d9, minU, maxV);
-        tessellator.addVertexWithUV(d7, d1 + 0.0, d10, maxU, maxV);
-        tessellator.addVertexWithUV(d7, d1 + 1.0 + (double)yOffset, d10, maxU, minV);
+        float yOffset = 0.0F;
+
+        double x_max = x + 1.0d;
+        double z_max = z + 1.0d;
+        // x, y, z , u, v
+        tessellator.addVertexWithUV(x, d1 + 1.0 + (double)yOffset, z, minU, minV);
+        tessellator.addVertexWithUV(x, d1 + 0.0, z, minU, maxV);
+        tessellator.addVertexWithUV(x_max, d1 + 0.0, z_max, maxU, maxV);
+        tessellator.addVertexWithUV(x_max, d1 + 1.0 + (double)yOffset, z_max, maxU, minV);
+        tessellator.addVertexWithUV(x_max, d1 + 1.0 + (double)yOffset, z_max, minU, minV);
+        tessellator.addVertexWithUV(x_max, d1 + 0.0, z_max, minU, maxV);
+        tessellator.addVertexWithUV(x, d1 + 0.0, z, maxU, maxV);
+        tessellator.addVertexWithUV(x, d1 + 1.0 + (double)yOffset, z, maxU, minV);
+        tessellator.addVertexWithUV(x, d1 + 1.0 + (double)yOffset, z_max, minU, minV);
+        tessellator.addVertexWithUV(x, d1 + 0.0, z_max, minU, maxV);
+        tessellator.addVertexWithUV(x_max, d1 + 0.0, z, maxU, maxV);
+        tessellator.addVertexWithUV(x_max, d1 + 1.0 + (double)yOffset, z, maxU, minV);
+        tessellator.addVertexWithUV(x_max, d1 + 1.0 + (double)yOffset, z, minU, minV);
+        tessellator.addVertexWithUV(x_max, d1 + 0.0, z, minU, maxV);
+        tessellator.addVertexWithUV(x, d1 + 0.0, z_max, maxU, maxV);
+        tessellator.addVertexWithUV(x, d1 + 1.0 + (double)yOffset, z_max, maxU, minV);
     }
 
+    @Unique
+    public void renderCrossedSquaresEastWest(Block block, int meta, double x, double y, double z) {
+        Tessellator tessellator = Tessellator.instance;
+        int texIndex = block.getBlockTextureFromSideAndMetadata(Side.BOTTOM, meta);
+        if (this.overrideBlockTexture >= 0) {
+            texIndex = this.overrideBlockTexture;
+        }
+
+        int texX = texIndex % Global.TEXTURE_ATLAS_WIDTH_TILES * TextureFX.tileWidthTerrain;
+        int texY = texIndex / Global.TEXTURE_ATLAS_WIDTH_TILES * TextureFX.tileWidthTerrain;
+
+        double minU = (float)texX / (float)(TextureFX.tileWidthTerrain * Global.TEXTURE_ATLAS_WIDTH_TILES);
+        double maxU = ((float)texX + ((float)TextureFX.tileWidthTerrain - 0.01F)) / (float)(TextureFX.tileWidthTerrain * Global.TEXTURE_ATLAS_WIDTH_TILES);
+
+        double minV = (float)texY / (float)(TextureFX.tileWidthTerrain * Global.TEXTURE_ATLAS_WIDTH_TILES);
+        double maxV = ((float)texY + ((float)TextureFX.tileWidthTerrain - 0.01F)) / (float)(TextureFX.tileWidthTerrain * Global.TEXTURE_ATLAS_WIDTH_TILES);
+
+        double x_max = x + 1.0d;
+        double z_max = z + 1.0d;
+        double y_max = y + 1.0d;
+
+        // x, y, z , u, v
+        // Lyzantra says the UVs are still screwed up here idk
+        tessellator.addVertexWithUV(x     , y_max , z     , minU , minV);
+        tessellator.addVertexWithUV(x_max , y_max , z     , minU , maxV);
+        tessellator.addVertexWithUV(x_max , y     , z_max , maxU , maxV);
+        tessellator.addVertexWithUV(x     , y     , z_max , maxU , minV);
+
+        tessellator.addVertexWithUV(x     , y_max , z     , minU , minV);
+        tessellator.addVertexWithUV(x     , y     , z_max , maxU , minV);
+        tessellator.addVertexWithUV(x_max , y     , z_max , maxU , maxV);
+        tessellator.addVertexWithUV(x_max , y_max , z     , minU , maxV);
+
+
+        tessellator.addVertexWithUV(x     , y_max     , z_max , maxU , minV);
+        tessellator.addVertexWithUV(x_max , y_max     , z_max , maxU , maxV);
+        tessellator.addVertexWithUV(x_max , y  , z    , minU  , maxV);
+        tessellator.addVertexWithUV(x     , y  , z    , minU  , minV);
+
+        tessellator.addVertexWithUV(x_max , y , z     , minU , maxV);
+        tessellator.addVertexWithUV(x_max , y_max     , z_max , maxU , maxV);
+        tessellator.addVertexWithUV(x     , y_max     , z_max , maxU , minV);
+        tessellator.addVertexWithUV(x     , y , z     , minU , minV);
+    }
 }

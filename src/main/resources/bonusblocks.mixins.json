@@ -16,6 +16,7 @@
     "ChunkDecoratorOverworldMixin",
     "ContainerPlayerCreativeMixin",
     "EntityMixin",
+    "ItemDyeMixin",
     "ItemToolAxeMixin",
     "ItemToolShovelMixin",
     "RenderBlocksMixin",

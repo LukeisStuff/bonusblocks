@@ -11,16 +11,16 @@ public class BlockPetal extends BlockTransparent {
         super(key, id, material, true);
     }
 
+    public AABB getCollisionBoundingBoxFromPool(World world, int x, int y, int z) {
+        return AABB.getBoundingBoxFromPool(x, y, z, x + 1, y, z + 1);
+    }
+
     public boolean isSolidRender() {
         return false;
     }
 
     public boolean renderAsNormalBlock() {
         return false;
-    }
-
-    public AABB getCollisionBoundingBoxFromPool(World world, int x, int y, int z) {
-        return null;
     }
 
 }

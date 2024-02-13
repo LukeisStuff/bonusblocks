@@ -180,11 +180,15 @@ tile.bonusblocks.block.copper.tarnished.desc=A solid block of tarnished copper. 
 tile.bonusblocks.block.copper.corroded.name=Block of Corroded Copper
 tile.bonusblocks.block.copper.corroded.desc=A solid block of corroded copper. Corrosive!
 
-tile.bonusblocks.block.copper.pipe.name=Copper Pipe
-tile.bonusblocks.block.copper.pipe.desc=A long tube of copper, purely for decoration.
+tile.bonusblocks.pipe.copper.name=Copper Pipe
+tile.bonusblocks.pipe.copper.desc=A long tube of copper, purely for decoration.
 
-tile.netherrack.name=Mossy Netherrack
-tile.netherrack.desc=Cobbled Netherrack with added red moss.
+tile.netherrack.name=Mossy Cobbled Netherrack
+tile.netherrack.desc=Cobbled Netherrack with added red greenery.
+tile.bonusblocks.netherrack.name=Netherrack
+tile.bonusblocks.netherrack.desc=A block of solid netherrack.
+tile.bonusblocks.cobble.netherrack.name=Cobbled Netherrack
+tile.bonusblocks.cobble.netherrack.desc=Netherrack, smashed apart and reconstituted.
 
 tile.bonusblocks.trapdoor.copper.name=Copper Trapdoor
 tile.bonusblocks.trapdoor.copper.desc=Like a door but flat and made of copper.
@@ -248,18 +252,70 @@ tile.bonusblocks.block.leather.desc=A box cow.
 tile.bonusblocks.block.wicker.name=Wicker
 tile.bonusblocks.block.wicker.desc=A decorative block of wicker.
 
+
+tile.flower.red.name=Rose Flower
+tile.flower.red.desc=A beautiful red flower.
+tile.flower.yellow.name=Dandelion Flower
+tile.flower.yellow.desc=A beautiful yellow flower.
 tile.bonusblocks.flower.lime.name=Clovers
 tile.bonusblocks.flower.lime.desc=A lucky plant found commonly.
-tile.bonusblocks.flower.purple.name=Heather
+tile.bonusblocks.flower.purple.name=Heather Flower
 tile.bonusblocks.flower.purple.desc=A beautiful purple flower.
-tile.bonusblocks.flower.cyan.name=Bluebell
+tile.bonusblocks.flower.cyan.name=Bluebell Flower
 tile.bonusblocks.flower.cyan.desc=A beautiful cyan flower.
-tile.bonusblocks.flower.pink.name=Orchid
+tile.bonusblocks.flower.pink.name=Orchid Flower
 tile.bonusblocks.flower.pink.desc=A beautiful pink flower.
-tile.bonusblocks.flower.silver.name=White Dandelion
+tile.bonusblocks.flower.silver.name=White Dandelion Flower
 tile.bonusblocks.flower.silver.desc=A beautiful silver flower.
-tile.bonusblocks.flower.orange.name=Gladiola
+tile.bonusblocks.flower.orange.name=Gladiola Flower
 tile.bonusblocks.flower.orange.desc=A beautiful orange flower.
+tile.bonusblocks.flower.lightblue.name=Pansy Flower
+tile.bonusblocks.flower.lightblue.desc=A beautiful light blue flower.
+tile.bonusblocks.flower.magenta.name=Hyacinth Flower
+tile.bonusblocks.flower.magenta.desc=A beautiful magenta flower.
+
+
+tile.bonusblocks.petal.red.name=Rose Petals
+tile.bonusblocks.petal.red.desc=Petals from roses.
+tile.bonusblocks.petal.yellow.name=Dandelion Petals
+tile.bonusblocks.petal.yellow.desc=Petals from dandelions.
+tile.bonusblocks.petal.lime.name=Clover Petals
+tile.bonusblocks.petal.lime.desc=Petals from clovers.
+tile.bonusblocks.petal.purple.name=Heather Petals
+tile.bonusblocks.petal.purple.desc=Petals from heathers.
+tile.bonusblocks.petal.cyan.name=Bluebell Petals
+tile.bonusblocks.petal.cyan.desc=Petals from bluebells.
+tile.bonusblocks.petal.pink.name=Orchid Petals
+tile.bonusblocks.petal.pink.desc=Petals from orchids.
+tile.bonusblocks.petal.silver.name=White Dandelion Petals
+tile.bonusblocks.petal.silver.desc=Petals from white dandelions.
+tile.bonusblocks.petal.orange.name=Gladiola Petals
+tile.bonusblocks.petal.orange.desc=Petals from gladiolas.
+tile.bonusblocks.petal.lightblue.name=Pansy Petals
+tile.bonusblocks.petal.lightblue.desc=Petals from pansies.
+tile.bonusblocks.petal.magenta.name=Hyacinth Petals
+tile.bonusblocks.petal.magenta.desc=Petals from hyacinths.
+
+tile.bonusblocks.layer.petal.red.name=Rose Petal Bed
+tile.bonusblocks.layer.petal.red.desc=A flower bed made from roses.
+tile.bonusblocks.layer.petal.yellow.name=Dandelion Petal Bed
+tile.bonusblocks.layer.petal.yellow.desc=A flower bed made from dandelions.
+tile.bonusblocks.layer.petal.lime.name=Clover Petal Bed
+tile.bonusblocks.layer.petal.lime.desc=A flower bed made from clovers.
+tile.bonusblocks.layer.petal.purple.name=Heather Petal Bed
+tile.bonusblocks.layer.petal.purple.desc=A flower bed made from heathers.
+tile.bonusblocks.layer.petal.cyan.name=Bluebell Petal Bed
+tile.bonusblocks.layer.petal.cyan.desc=A flower bed made from bluebells.
+tile.bonusblocks.layer.petal.pink.name=Orchid Petal Bed
+tile.bonusblocks.layer.petal.pink.desc=A flower bed made from orchids.
+tile.bonusblocks.layer.petal.silver.name=White Dandelion Petal Bed
+tile.bonusblocks.layer.petal.silver.desc=A flower bed made from white dandelions.
+tile.bonusblocks.layer.petal.orange.name=Gladiola Petal Bed
+tile.bonusblocks.layer.petal.orange.desc=A flower bed made from gladiolas.
+tile.bonusblocks.layer.petal.lightblue.name=Pansy Petal Bed
+tile.bonusblocks.layer.petal.lightblue.desc=A flower bed made from pansies.
+tile.bonusblocks.layer.petal.magenta.name=Hyacinth Petal Bed
+tile.bonusblocks.layer.petal.magenta.desc=A flower bed made from hyacinths.
 
 tile.bonusblocks.mushroom.gray.name=Gray Mushroom
 tile.bonusblocks.mushroom.gray.desc=A nasty gray mushroom. Good for dye.
@@ -312,14 +368,22 @@ tile.bonusblocks.slab.brick.mud.name=Mud Brick Slab
 tile.bonusblocks.slab.brick.mud.desc=A slab of mud bricks.
 tile.bonusblocks.slab.cobble.stone.mossy.name=Mossy Cobblestone Slab
 tile.bonusblocks.slab.cobble.stone.mossy.desc=A slab of mossy cobblestone.
-
+tile.bonusblocks.slab.cobble.netherrack.name=Cobbled Netherrack Slab
+tile.bonusblocks.slab.cobble.netherrack.desc=A slab of cobbled netherrack
+tile.bonusblocks.slab.netherrack.name=Mossy Cobbled Netherrack Slab
+tile.bonusblocks.slab.netherrack.desc=A slab of mossy cobbled netherrack
+tile.bonusblocks.slab.block.copper.name=Copper Slab
+tile.bonusblocks.slab.block.copper.desc=A slab of copper.
+tile.bonusblocks.slab.block.copper.tarnished.name=Tarnished Copper Slab
+tile.bonusblocks.slab.block.copper.tarnished.desc=A slab of tarnished copper.
+tile.bonusblocks.slab.block.copper.corroded.name=Corroded Copper Slab
+tile.bonusblocks.slab.block.copper.corroded.desc=A slab of corroded copper.
 tile.bonusblocks.slab.brick.steel.name=Steel Brick Slab
 tile.bonusblocks.slab.brick.steel.desc=A slab of steel bricks.
 tile.bonusblocks.slab.brick.quartz.name=Quartz Brick Slab
 tile.bonusblocks.slab.brick.quartz.desc=A slab of quartz bricks.
 tile.bonusblocks.slab.brick.olivine.name=Olivine Brick Slab
 tile.bonusblocks.slab.brick.olivine.desc=A slab of olivine bricks.
-
 tile.bonusblocks.slab.cobble.permafrost.name=Cobbled Permafrost Slab
 tile.bonusblocks.slab.cobble.permafrost.desc=A slab of cobbled permafrost.
 tile.bonusblocks.slab.scorchedstone.name=Scorchedstone Slab
@@ -351,9 +415,18 @@ tile.bonusblocks.stairs.brick.quartz.name=Quartz Brick Stairs
 tile.bonusblocks.stairs.brick.quartz.desc=Quartz brick block used for rapid vertical movement.
 tile.bonusblocks.stairs.brick.olivine.name=Olivine Brick Stairs
 tile.bonusblocks.stairs.brick.olivine.desc=Olivine brick block used for rapid vertical movement.
-
 tile.bonusblocks.stairs.cobble.permafrost.name=Cobbled Permafrost Stairs
 tile.bonusblocks.stairs.cobble.permafrost.desc=Cobbled permafrost block used for rapid vertical movement.
+tile.bonusblocks.stairs.cobble.netherrack.name=Cobbled Netherrack Stairs
+tile.bonusblocks.stairs.cobble.netherrack.desc=Cobbled netherrack block used for rapid vertical movement.
+tile.bonusblocks.stairs.netherrack.name=Mossy Cobbled Netherrack Stairs
+tile.bonusblocks.stairs.netherrack.desc=Mossy cobbled netherrack block used for rapid vertical movement.
+tile.bonusblocks.stairs.block.copper.name=Copper Stairs
+tile.bonusblocks.stairs.block.copper.desc=Copper block used for rapid vertical movement.
+tile.bonusblocks.stairs.block.copper.tarnished.name=Tarnished Copper Stairs
+tile.bonusblocks.stairs.block.copper.tarnished.desc=Tarnished copper block used for rapid vertical movement.
+tile.bonusblocks.stairs.block.copper.corroded.name=Corroded Copper Stairs
+tile.bonusblocks.stairs.block.copper.corroded.desc=Corroded copper block used for rapid vertical movement.
 
 tile.bonusblocks.pie.name=Pumpkin Pie
 tile.bonusblocks.pie.desc=I just want to pie already.
@@ -484,6 +557,8 @@ item.dye.orange.desc=Can be used to color certain blocks orange.
 item.dye.white.name=Bonemeal
 item.dye.white.desc=A nourishing meal for plants. Can be used to color certain blocks white.
 
+tile.jar.glass.name=Glass Jar
+tile.jar.glass.desc=A small cup to hold your flowers and foliage.
 
 
 

@@ -6,15 +6,12 @@ import net.minecraft.core.block.material.Material;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
-import net.minecraft.core.world.WorldSource;
 
 public class BlockLayerPetal extends BlockLayerBase {
-    private boolean renderInside;
     public BlockLayerPetal(String key, int id, Material material) {
         super(key, id, material);
         this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.125F, 1.0F);
         this.setTicking(true);
-        this.renderInside = renderInside;
     }
 
     public AABB getCollisionBoundingBoxFromPool(World world, int x, int y, int z) {
@@ -23,10 +20,6 @@ public class BlockLayerPetal extends BlockLayerBase {
 
     public boolean isSolidRender() {
         return false;
-    }
-@Override
-    public boolean shouldSideBeRendered(WorldSource blockAccess, int x, int y, int z, int side) {
-        return (this.renderInside || blockAccess.getBlockId(x, y, z) != this.id) && super.shouldSideBeRendered(blockAccess, x, y, z, side);
     }
 
     public boolean renderAsNormalBlock() {
