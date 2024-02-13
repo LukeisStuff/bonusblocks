@@ -59,7 +59,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.0f))
             .setHardness(1.0f)
             .setResistance(1.0f)
-            .setFlammability(2, 2)
+            .setFlammability(5, 20)
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT);
 
     public static final Block crate = crates
@@ -76,7 +76,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.0f))
             .setHardness(2.5f)
             .setResistance(5.0f)
-            .setFlammability(2, 2)
+            .setFlammability(5, 20)
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT);
 
     public static final Block box = boxes
@@ -93,7 +93,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setHardness(1.5f)
             .setResistance(1.0f)
             .setTopBottomTexture(4, 0)
-            .setFlammability(2, 2)
+            .setFlammability(30, 20)
             .setSideTextures("emptybookshelf.png")
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
             .build(new Block("bookshelf.empty.planks.oak", blockID++, Material.wood));
@@ -130,7 +130,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
             .setHardness(0.2F)
             .setResistance(0.2F)
-            .setFlammability(4, 2)
+            .setFlammability(30, 60)
             .setTickOnLoad()
             .setVisualUpdateOnMetadata()
             .setItemBlock(ItemBlockLeaves::new)
@@ -164,7 +164,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
             .setHardness(0.0f)
             .setResistance(0.0f)
-            .setFlammability(2, 1)
             .setBlockModel(new BlockModelRenderBlocks(1))
             .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR);
 
@@ -183,7 +182,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.0f))
             .setHardness(2.0F)
             .setResistance(1.0f)
-            .setFlammability(2, 1)
+            .setFlammability(5, 5)
             .setBlockModel(new BlockModelRenderBlocks(27))
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT);
 
@@ -284,9 +283,92 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
     public static final Block flowerOrange = flower
             .setTextures("gladiola.png")
             .build(new BlockFlower("flower.orange", blockID++));
+    public static final Block flowerLightBlue = flower
+            .setTextures("pansy.png")
+            .build(new BlockFlower("flower.lightblue", blockID++));
+    public static final Block flowerMagenta = flower
+            .setTextures("hyacinth.png")
+            .build(new BlockFlower("flower.magenta", blockID++));
     public static final Block flowerLime = flower
             .setTextures("clovers.png")
             .build(new BlockFlower("flower.lime", blockID++));
+
+
+    public static final BlockBuilder petal = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
+            .setHardness(0.6f)
+            .setResistance(1.0f)
+            .setFlammability(30, 60)
+            .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR, BlockTags.GROWS_FLOWERS);
+    public static final Block petalRed = petal
+            .setTextures("redpetal.png")
+            .build(new BlockPetal("petal.red", blockID++, Material.grass));
+    public static final Block petalYellow = petal
+            .setTextures("yellowpetal.png")
+            .build(new BlockPetal("petal.yellow", blockID++, Material.grass));
+    public static final Block petalCyan = petal
+            .setTextures("cyanpetal.png")
+            .build(new BlockPetal("petal.cyan", blockID++, Material.grass));
+    public static final Block petalPurple = petal
+            .setTextures("purplepetal.png")
+            .build(new BlockPetal("petal.purple", blockID++, Material.grass));
+    public static final Block petalPink = petal
+            .setTextures("pinkpetal.png")
+            .build(new BlockPetal("petal.pink", blockID++, Material.grass));
+    public static final Block petalSilver = petal
+            .setTextures("silverpetal.png")
+            .build(new BlockPetal("petal.silver", blockID++, Material.grass));
+    public static final Block petalOrange = petal
+            .setTextures("orangepetal.png")
+            .build(new BlockPetal("petal.orange", blockID++, Material.grass));
+    public static final Block petalLightBlue = petal
+            .setTextures("lightbluepetal.png")
+            .build(new BlockPetal("petal.lightblue", blockID++, Material.grass));
+    public static final Block petalMagenta = petal
+            .setTextures("magentapetal.png")
+            .build(new BlockPetal("petal.magenta", blockID++, Material.grass));
+    public static final Block petalLime = petal
+            .setTextures("limepetal.png")
+            .build(new BlockPetal("petal.lime", blockID++, Material.grass));
+
+    public static final Block layerPetalRed = petal
+            .setTextures("redpetal.png")
+            .setItemBlock(ItemBlockLayer::new)
+            .build(new BlockLayerPetal("layer.petal.red", blockID++, Material.grass));
+    public static final Block layerPetalYellow = petal
+            .setTextures("yellowpetal.png")
+            .setItemBlock(ItemBlockLayer::new)
+            .build(new BlockLayerPetal("layer.petal.yellow", blockID++, Material.grass));
+    public static final Block layerPetalCyan = petal
+            .setTextures("cyanpetal.png")
+            .setItemBlock(ItemBlockLayer::new)
+            .build(new BlockLayerPetal("layer.petal.cyan", blockID++, Material.grass));
+    public static final Block layerPetalPurple = petal
+            .setTextures("purplepetal.png")
+            .setItemBlock(ItemBlockLayer::new)
+            .build(new BlockLayerPetal("layer.petal.purple", blockID++, Material.grass));
+    public static final Block layerPetalPink = petal
+            .setTextures("pinkpetal.png")
+            .setItemBlock(ItemBlockLayer::new)
+            .build(new BlockLayerPetal("layer.petal.pink", blockID++, Material.grass));
+    public static final Block layerPetalSilver = petal
+            .setTextures("silverpetal.png")
+            .setItemBlock(ItemBlockLayer::new)
+            .build(new BlockLayerPetal("layer.petal.silver", blockID++, Material.grass));
+    public static final Block layerPetalOrange = petal
+            .setTextures("orangepetal.png")
+            .setItemBlock(ItemBlockLayer::new)
+            .build(new BlockLayerPetal("layer.petal.orange", blockID++, Material.grass));
+    public static final Block layerPetalLightBlue = petal
+            .setTextures("lightbluepetal.png")
+            .build(new BlockLayerPetal("layer.petal.lightblue", blockID++, Material.grass));
+    public static final Block layerPetalMagenta = petal
+            .setTextures("magentapetal.png")
+            .build(new BlockLayerPetal("layer.petal.magenta", blockID++, Material.grass));
+    public static final Block layerPetalLime = petal
+            .setTextures("limepetal.png")
+            .setItemBlock(ItemBlockLayer::new)
+            .build(new BlockLayerPetal("layer.petal.lime", blockID++, Material.grass));
 
     // Mushroom
     public static final Block mushroomGray = flower
@@ -436,7 +518,7 @@ public static final Block permafrostCarved = stone
             .setResistance(0.6f)
             .setSideTextures("thatchside.png")
             .setTopBottomTexture("thatchtop.png")
-            .setFlammability(4, 4)
+            .setFlammability(60, 120)
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS)
             .build(new BlockThatch("thatch", blockID++, Material.grass));
 
@@ -445,7 +527,7 @@ public static final Block permafrostCarved = stone
             .setHardness(0.8f)
             .setResistance(0.8f)
             .setTextures("clothblock.png")
-            .setFlammability(4, 4)
+            .setFlammability(30, 60)
             .setTags(BlockTags.MINEABLE_BY_SHEARS)
             .build(new BlockCloth("block.cloth", blockID++, Material.cloth));
 
@@ -487,7 +569,7 @@ public static final Block permafrostCarved = stone
             .setHardness(0.8f)
             .setResistance(0.8f)
             .setTextures("leatherblock.png")
-            .setFlammability(3, 3)
+            .setFlammability(5, 10)
             .setTags(BlockTags.MINEABLE_BY_AXE)
             .build(new Block("block.leather", blockID++, Material.cloth));
 
@@ -552,10 +634,9 @@ public static final Block permafrostCarved = stone
             .setTextures("corrodedcopperblock.png")
             .build(new BlockCopperCorroded("block.copper.corroded", blockID++, Material.metal));
 
-    public static final Block blockCopperPipe = raw
-            .setBlockModel(new BlockModelRenderBlocks(1))
+    public static final Block pipeCopper = raw
             .setTextures("copperpipe.png")
-            .build(new BlockCopperPipe("block.copper.pipe", blockID++, Material.metal));
+            .build(new BlockCopperPipe("pipe.copper", blockID++, Material.metal));
 
     public static final Block trapdoorCopper = raw
             .setBlockModel(new BlockModelRenderBlocks(30))
@@ -700,6 +781,7 @@ public static final Block permafrostCarved = stone
             .setHardness(400.0f)
             .setResistance(20000.0f)
             .setTextures("brimstone.png")
+            .setInfiniburn()
             .build(new BlockBrimstone("brimstone", blockID++, Material.piston));
 
     // Baked Clay
@@ -714,7 +796,7 @@ public static final Block permafrostCarved = stone
             .setHardness(0.5f)
             .setResistance(0.5f)
             .setTextures(4, 9)
-            .setFlammability(3, 3)
+            .setFlammability(60, 120)
             .setTags(BlockTags.MINEABLE_BY_AXE)
             .build(new Block("block.wicker", blockID++, Material.cloth));
 
@@ -757,17 +839,17 @@ public static final Block permafrostCarved = stone
     public static final Block blockMushroomBrown = grass
             .setLuminance(2)
             .setTextures("brownmushroom.png")
-            .setFlammability(4, 4)
+            .setFlammability(30, 60)
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SHEARS)
             .build(new Block("block.mushroom.brown", blockID++, Material.dirt));
     public static final Block blockMushroomRed = grass
             .setTextures("redmushroom.png")
-            .setFlammability(4, 4)
+            .setFlammability(30, 60)
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SHEARS)
             .build(new Block("block.mushroom.red", blockID++, Material.dirt));
     public static final Block blockMushroomGray = grass
             .setTextures("graymushroom.png")
-            .setFlammability(4, 4)
+            .setFlammability(30, 60)
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SHEARS)
             .build(new Block("block.mushroom.gray", blockID++, Material.dirt));
 
@@ -1004,7 +1086,7 @@ public static final Block slabPermafrostPolished = slab
         ItemToolPickaxe.miningLevels.put(blockCopper, 1);
         ItemToolPickaxe.miningLevels.put(blockCopperTarnished, 1);
         ItemToolPickaxe.miningLevels.put(blockCopperCorroded, 1);
-        ItemToolPickaxe.miningLevels.put(blockCopperPipe, 1);
+        ItemToolPickaxe.miningLevels.put(pipeCopper, 1);
         ItemToolPickaxe.miningLevels.put(trapdoorCopper, 1);
         ItemToolPickaxe.miningLevels.put(doorCopperBottom, 1);
         ItemToolPickaxe.miningLevels.put(doorCopperTop, 1);
@@ -1019,7 +1101,21 @@ public static final Block slabPermafrostPolished = slab
         ItemToolPickaxe.miningLevels.put(brickSteel, 2);
         ItemToolPickaxe.miningLevels.put(slabBrickSteel, 2);
         ItemToolPickaxe.miningLevels.put(stairsBrickSteel, 2);
+        ItemToolPickaxe.miningLevels.put(trapdoorSteel, 2);
+        ItemToolPickaxe.miningLevels.put(doorSteelTop, 2);
+        ItemToolPickaxe.miningLevels.put(doorSteelBottom, 2);
         ItemToolPickaxe.miningLevels.put(blockCrudeSteel, 2);
+
+        ((BlockLayerBase)layerPetalRed).setFullBlockID(petalRed.id);
+        ((BlockLayerBase)layerPetalYellow).setFullBlockID(petalYellow.id);
+        ((BlockLayerBase)layerPetalCyan).setFullBlockID(petalCyan.id);
+        ((BlockLayerBase)layerPetalPurple).setFullBlockID(petalPurple.id);
+        ((BlockLayerBase)layerPetalPink).setFullBlockID(petalPink.id);
+        ((BlockLayerBase)layerPetalSilver).setFullBlockID(petalSilver.id);
+        ((BlockLayerBase)layerPetalOrange).setFullBlockID(petalOrange.id);
+        ((BlockLayerBase)layerPetalMagenta).setFullBlockID(petalMagenta.id);
+        ((BlockLayerBase)layerPetalLightBlue).setFullBlockID(petalLightBlue.id);
+        ((BlockLayerBase)layerPetalLime).setFullBlockID(petalLime.id);
 
 
         Item.itemsList[boxPainted.id] = new ItemBlockPainted(boxPainted, false);
@@ -1153,6 +1249,16 @@ public static final Block slabPermafrostPolished = slab
         templateMushroomToBlock.addInput('X', Block.mushroomRed).create("red_mushroom_block", new ItemStack(BonusBlocks.blockMushroomRed, 4));
         templateMushroomToBlock.addInput('X', Block.mushroomBrown).create("brown_mushroom_block", new ItemStack(BonusBlocks.blockMushroomBrown, 4));
         templateMushroomToBlock.addInput('X', BonusBlocks.mushroomGray).create("gray_mushroom_block", new ItemStack(BonusBlocks.blockMushroomGray, 4));
+
+        templateMushroomToBlock.addInput('X', Block.flowerRed).create("petal_red", new ItemStack(BonusBlocks.petalRed, 4));
+        templateMushroomToBlock.addInput('X', Block.flowerYellow).create("petal_yellow", new ItemStack(BonusBlocks.petalYellow, 4));
+        templateMushroomToBlock.addInput('X', BonusBlocks.flowerCyan).create("petal_cyan", new ItemStack(BonusBlocks.petalCyan, 4));
+        templateMushroomToBlock.addInput('X', BonusBlocks.flowerPurple).create("petal_purple", new ItemStack(BonusBlocks.petalPurple, 4));
+        templateMushroomToBlock.addInput('X', BonusBlocks.flowerPink).create("petal_pink", new ItemStack(BonusBlocks.petalPink, 4));
+        templateMushroomToBlock.addInput('X', BonusBlocks.flowerSilver).create("petal_silver", new ItemStack(BonusBlocks.petalSilver, 4));
+        templateMushroomToBlock.addInput('X', BonusBlocks.flowerOrange).create("petal_orange", new ItemStack(BonusBlocks.petalOrange, 4));
+        templateMushroomToBlock.addInput('X', BonusBlocks.flowerLime).create("petal_lime", new ItemStack(BonusBlocks.petalLime, 4));
+
 
         RecipeBuilderShaped templateBricks = new RecipeBuilderShaped(MOD_ID, "XX", "XX");
         templateBricks.addInput('X', Block.netherrack).create("netherrack_bricks", new ItemStack(BonusBlocks.brickNetherrack, 4));

@@ -18,6 +18,7 @@
     "EntityMixin",
     "ItemToolAxeMixin",
     "ItemToolShovelMixin",
+    "RenderBlocksMixin",
     "SurfaceGeneratorOverworldMixin",
     "WorldFeatureLabyrinthMixin"
   ],
