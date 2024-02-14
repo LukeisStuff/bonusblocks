@@ -8,15 +8,12 @@ import net.minecraft.client.render.block.color.BlockColorLeavesOak;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.client.render.entity.FallingSandRenderer;
 import net.minecraft.client.sound.block.BlockSound;
-import net.minecraft.core.achievement.AchievementList;
-import net.minecraft.core.achievement.stat.StatList;
 import net.minecraft.core.block.*;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.crafting.LookupFuelFurnace;
 import net.minecraft.core.data.registry.Registries;
-import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemPlaceable;
@@ -34,12 +31,12 @@ import turniplabs.halplibe.helper.recipeBuilders.RecipeBuilderShaped;
 import turniplabs.halplibe.util.ClientStartEntrypoint;
 import turniplabs.halplibe.util.ConfigHandler;
 import turniplabs.halplibe.util.RecipeEntrypoint;
+import useless.dragonfly.helper.ModelHelper;
+import useless.dragonfly.model.block.BlockModelDragonFly;
 
 import java.util.Properties;
-import java.util.Random;
 
 import static net.minecraft.core.block.BlockMoss.stoneToMossMap;
-import static org.spongepowered.asm.util.Constants.ManifestAttributes.MAINCLASS;
 
 
 public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStartEntrypoint {
@@ -652,7 +649,18 @@ public static final Block permafrostCarved = stone
 
     public static final Block pipeCopper = raw
             .setTextures("copperpipe.png")
-            .build(new BlockCopperPipe("pipe.copper", blockID++, Material.metal));
+            .setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(MOD_ID, "pipe.json"), ModelHelper.getOrCreateBlockState(MOD_ID, "pipe_states.json"), new PipeMetaStateInterpreter(), false, 0.25f))
+            .build(new BlockCopperPipe("pipe.copper", blockID++, Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "pipe.json"), false));
+
+    public static final Block pipeCopperTarnished = raw
+            .setTextures("tarnishedcopperpipe.png")
+            .setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(MOD_ID, "tarnishedpipe.json"), ModelHelper.getOrCreateBlockState(MOD_ID, "tarnished_pipe_states.json"), new PipeMetaStateInterpreter(), false, 0.25f))
+            .build(new BlockCopperTarnishedPipe("pipe.copper.tarnished", blockID++, Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "tarnishedpipe.json"), false));
+
+    public static final Block pipeCopperCorroded = raw
+            .setTextures("corrodedcopperpipe.png")
+            .setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(MOD_ID, "corrodedpipe.json"), ModelHelper.getOrCreateBlockState(MOD_ID, "corroded_pipe_states.json"), new PipeMetaStateInterpreter(), false, 0.25f))
+            .build(new BlockCopperPipeCorroded("pipe.copper.corroded", blockID++, Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "corrodedpipe.json"), false));
 
     public static final Block trapdoorCopper = raw
             .setBlockModel(new BlockModelRenderBlocks(30))

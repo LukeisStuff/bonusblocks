@@ -10,9 +10,9 @@ import useless.dragonfly.model.block.processed.BlockModel;
 
 import java.util.Random;
 
-public class BlockCopperPipe extends BlockAxisAligned {
+public class BlockCopperTarnishedPipe extends BlockAxisAligned {
     protected int ticks;
-    public BlockCopperPipe(String key, int id, Material material, BlockModel orCreateBlockModel, boolean render3d) {
+    public BlockCopperTarnishedPipe(String key, int id, Material material, BlockModel orCreateBlockModel, boolean render3d) {
         super(key, id, material);
         this.setTicking(true);
     }
@@ -25,7 +25,7 @@ public class BlockCopperPipe extends BlockAxisAligned {
         if (world.getBlockMetadata(x, y, z) >= 0) {
             ++this.ticks;
             if (this.ticks == 200) {
-                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.pipeCopperTarnished.id, world.getBlockMetadata(x, y, z));
+                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.pipeCopperCorroded.id, world.getBlockMetadata(x, y, z));
                 this.ticks = 0;
             }
         }
