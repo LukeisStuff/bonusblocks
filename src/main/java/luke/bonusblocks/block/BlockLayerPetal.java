@@ -7,7 +7,7 @@ import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
 
-public class BlockLayerPetal extends BlockLayerBase {
+public class BlockLayerPetal extends Block {
     public BlockLayerPetal(String key, int id, Material material) {
         super(key, id, material);
         this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.125F, 1.0F);
@@ -16,6 +16,10 @@ public class BlockLayerPetal extends BlockLayerBase {
 
     public AABB getCollisionBoundingBoxFromPool(World world, int x, int y, int z) {
         return null;
+    }
+
+    public void setBlockBoundsForItemRender() {
+        this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.125F, 1.0F);
     }
 
     public boolean isSolidRender() {

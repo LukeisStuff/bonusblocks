@@ -351,7 +351,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
     public static final BlockBuilder petalLayer = petal
             .setHardness(0.0f)
             .setResistance(0.0f)
-            .setItemBlock(ItemBlockLayer::new)
             .setUseInternalLight()
             .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.BROKEN_BY_FLUIDS, BlockTags.MINEABLE_BY_AXE);
     public static final Block layerPetalYellow = petalLayer
@@ -1180,6 +1179,8 @@ public static final Block slabPermafrostPolished = slab
         ItemToolPickaxe.miningLevels.put(blockCopperTarnished, 1);
         ItemToolPickaxe.miningLevels.put(blockCopperCorroded, 1);
         ItemToolPickaxe.miningLevels.put(pipeCopper, 1);
+        ItemToolPickaxe.miningLevels.put(pipeCopperTarnished, 1);
+        ItemToolPickaxe.miningLevels.put(pipeCopperCorroded, 1);
         ItemToolPickaxe.miningLevels.put(trapdoorCopper, 1);
         ItemToolPickaxe.miningLevels.put(doorCopperBottom, 1);
         ItemToolPickaxe.miningLevels.put(doorCopperTop, 1);
@@ -1204,17 +1205,6 @@ public static final Block slabPermafrostPolished = slab
         ItemToolPickaxe.miningLevels.put(doorSteelTop, 2);
         ItemToolPickaxe.miningLevels.put(doorSteelBottom, 2);
         ItemToolPickaxe.miningLevels.put(blockCrudeSteel, 2);
-
-        ((BlockLayerBase)layerPetalRed).setFullBlockID(petalRed.id);
-        ((BlockLayerBase)layerPetalYellow).setFullBlockID(petalYellow.id);
-        ((BlockLayerBase)layerPetalCyan).setFullBlockID(petalCyan.id);
-        ((BlockLayerBase)layerPetalPurple).setFullBlockID(petalPurple.id);
-        ((BlockLayerBase)layerPetalPink).setFullBlockID(petalPink.id);
-        ((BlockLayerBase)layerPetalSilver).setFullBlockID(petalSilver.id);
-        ((BlockLayerBase)layerPetalOrange).setFullBlockID(petalOrange.id);
-        ((BlockLayerBase)layerPetalMagenta).setFullBlockID(petalMagenta.id);
-        ((BlockLayerBase)layerPetalLightBlue).setFullBlockID(petalLightBlue.id);
-        ((BlockLayerBase)layerPetalLime).setFullBlockID(petalLime.id);
 
 
         Item.itemsList[boxPainted.id] = new ItemBlockPainted(boxPainted, false);
@@ -1335,6 +1325,15 @@ public static final Block slabPermafrostPolished = slab
                 .addInput('G', Block.glass)
                 .addInput('Q', Item.quartz)
                 .create("glass_quartz", new ItemStack(BonusBlocks.glassQuartz, 4));
+
+        RecipeBuilder.Shaped(MOD_ID, "CIC")
+                .addInput('C', BonusBlocks.blockCopper)
+                .addInput('I', BonusBlocks.ingotCopper)
+                .create("copper_pipe", new ItemStack(BonusBlocks.pipeCopper, 8));
+        RecipeBuilder.Shaped(MOD_ID, "C", "I", "C")
+                .addInput('C', BonusBlocks.blockCopper)
+                .addInput('I', BonusBlocks.ingotCopper)
+                .create("copper_pipe", new ItemStack(BonusBlocks.pipeCopper, 8));
 
         RecipeBuilderShaped templateFlowertoDye = new RecipeBuilderShaped(MOD_ID, "X");
         templateFlowertoDye.addInput('X', BonusBlocks.flowerCyan).create("flower_cyan_to_dye", new ItemStack(Item.dye, 2, 6));
