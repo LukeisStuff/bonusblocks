@@ -165,6 +165,10 @@ tile.bonusblocks.glass.quartz.desc=Brightened glass that reflects light.
 tile.bonusblocks.trapdoor.glass.tinted.name=Tinted Glass Trapdoor
 tile.bonusblocks.trapdoor.glass.tinted.desc=Slightly less useless at its job.
 
+tile.bonusblocks.pumice.dry.name=Pumice
+tile.bonusblocks.pumice.dry.desc=Dried pumice, good for absorbing up lava.
+tile.bonusblocks.pumice.wet.name=Molten Pumice
+tile.bonusblocks.pumice.wet.desc=Pumice full of lava.
 
 tile.bonusblocks.block.raw.iron.name=Block of Raw Iron
 tile.bonusblocks.block.raw.iron.desc=A solid block of raw iron. Heavy!

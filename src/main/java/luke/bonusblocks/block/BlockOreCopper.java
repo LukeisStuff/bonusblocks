@@ -22,7 +22,7 @@ public class BlockOreCopper extends Block {
                 return new ItemStack[]{new ItemStack(this)};
             case EXPLOSION:
             case PROPER_TOOL:
-                return new ItemStack[]{new ItemStack(BonusBlocks.oreRawCopper, 2 + world.rand.nextInt(6))};
+                return new ItemStack[]{new ItemStack(BonusBlocks.oreRawCopper, 1 + world.rand.nextInt(5))};
             default:
                 return null;
         }

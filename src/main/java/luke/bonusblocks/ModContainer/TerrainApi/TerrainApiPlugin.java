@@ -3,12 +3,11 @@ package luke.bonusblocks.ModContainer.TerrainApi;
 import luke.bonusblocks.BonusBlocks;
 import luke.bonusblocks.biomes.ModBiomes;
 import luke.bonusblocks.biomes.WorldFeaturePebbles;
+import luke.bonusblocks.biomes.WorldFeaturePumice;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.Biomes;
 import net.minecraft.core.world.generate.feature.WorldFeatureFlowers;
-import net.minecraft.core.world.generate.feature.WorldFeatureGrassPatch;
-import net.minecraft.core.world.generate.feature.WorldFeatureOre;
 import net.minecraft.core.world.generate.feature.tree.WorldFeatureTreeShrub;
 import useless.terrainapi.api.TerrainAPI;
 import useless.terrainapi.generation.nether.api.ChunkDecoratorNetherAPI;
@@ -84,6 +83,8 @@ public class TerrainApiPlugin implements TerrainAPI {
         ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), Block.slate, 32, 4, 0.75f, 1.0f, false);
         ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.brimstone, 32, 2, 0.0f, 0.25f, false);
         ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.soulslate, 32, 4, 0.0f, 0.50f, false);
+        ChunkDecoratorNetherAPI.randomFeatures.addFeature(new WorldFeaturePumice(), 2, 1f,  4,
+                new Biome[]{Biomes.NETHER_NETHER});
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(Block.spinifex.id), 4, -1f, 1,
                 new Biome[]{ModBiomes.OVERWORLD_OUTBACK_MESA});

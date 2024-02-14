@@ -84,7 +84,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTextures(9, 1)
             .build(new Block("box", blockID++, Material.wood));
     public static final Block boxPainted = boxes
-            .setTextures("paintedbox.png")
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT, BlockTags.NOT_IN_CREATIVE_MENU)
             .build(new BlockPaintedBox("box.painted", blockID++));
 
@@ -944,6 +943,24 @@ public static final Block permafrostCarved = stone
             .build(new BlockSoulCandle("candle.soulwax", blockID++));
 
 
+    public static final Block pumiceDry = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
+            .setHardness(1.0f)
+            .setResistance(1.0f)
+            .setTextures("pumicedry.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new BlockPumice("pumice.dry", blockID++, false));
+
+    public static final Block pumiceWet = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
+            .setHardness(1.0f)
+            .setResistance(1.0f)
+            .setLuminance(13)
+            .setTextures("pumicewet.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new BlockPumice("pumice.wet", blockID++, true));
+
+
     public static final Block bedroll = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
             .setHardness(0.2f)
@@ -1467,6 +1484,11 @@ public static final Block slabPermafrostPolished = slab
                 .addInput(new ItemStack(Item.dye, 1, 2))
                 .addInput(new ItemStack(Item.dye, 1, 11))
                 .create("green_dye_white_dye_to_lime_dye", new ItemStack(Item.dye, 2, 10));
+
+        RecipeBuilder.Shapeless(MOD_ID)
+                .addInput(BonusBlocks.pumiceDry)
+                .addInput(Item.bucketLava)
+                .create("molten_pumice", new ItemStack(BonusBlocks.pumiceWet, 1));
 
         RecipeBuilder.Shaped(MOD_ID, "PX", "XP")
                 .addInput('P', (Item.ammoPebble))
