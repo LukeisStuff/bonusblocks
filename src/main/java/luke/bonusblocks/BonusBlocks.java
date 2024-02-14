@@ -669,35 +669,61 @@ public static final Block permafrostCarved = stone
             .setTopBottomTexture("coppertrapdoortop.png")
             .setSideTextures("coppertrapdoorside.png")
             .setVisualUpdateOnMetadata()
-            .build(new BlockTrapDoor("trapdoor.copper", blockID++, Material.stone, false));
+            .build(new BlockCopperTrapDoor("trapdoor.copper", blockID++, Material.stone, false));
+    public static final Block trapdoorCopperTarnished = raw
+            .setBlockModel(new BlockModelRenderBlocks(30))
+            .setTopBottomTexture("tarnishedcoppertrapdoortop.png")
+            .setSideTextures("tarnishedcoppertrapdoorside.png")
+            .setVisualUpdateOnMetadata()
+            .build(new BlockCopperTarnishedTrapDoor("trapdoor.copper.tarnished", blockID++, Material.stone, false));
+    public static final Block trapdoorCopperCorroded = raw
+            .setBlockModel(new BlockModelRenderBlocks(30))
+            .setTopBottomTexture("corrodedcoppertrapdoortop.png")
+            .setSideTextures("corrodedcoppertrapdoorside.png")
+            .setVisualUpdateOnMetadata()
+            .build(new BlockTrapDoor("trapdoor.copper.corroded", blockID++, Material.stone, false));
 
     public static final Block doorCopperBottom = raw
             .setBlockModel(new BlockModelRenderBlocks(7))
             .setTextures("copperdoorbottom.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
             .setVisualUpdateOnMetadata()
-            .build(new BlockDoor("door.copper.bottom", blockID++, Material.stone, false) {
-                public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                    if (this.blockMaterial == Material.stone && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                        return new ItemStack[]{new ItemStack(doorCopper)};
-                    }
-                    return null;
-                }
-            });
+            .build(new BlockCopperDoor("door.copper.bottom", blockID++, Material.stone, false));
 
     public static final Block doorCopperTop = raw
             .setBlockModel(new BlockModelRenderBlocks(7))
             .setTextures("copperdoortop.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
             .setVisualUpdateOnMetadata()
-            .build(new BlockDoor("door.copper.top", blockID++, Material.stone, true) {
-                public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                    if (this.blockMaterial == Material.stone && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                        return new ItemStack[]{new ItemStack(doorCopper)};
-                    }
-                    return null;
-                }
-            });
+            .build(new BlockCopperDoor("door.copper.top", blockID++, Material.stone, true));
+
+    public static final Block doorCopperTarnishedBottom = raw
+            .setBlockModel(new BlockModelRenderBlocks(7))
+            .setTextures("tarnishedcopperdoorbottom.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+            .setVisualUpdateOnMetadata()
+            .build(new BlockCopperTarnishedDoor("door.copper.tarnished.bottom", blockID++, Material.stone, false));
+
+    public static final Block doorCopperTarnishedTop = raw
+            .setBlockModel(new BlockModelRenderBlocks(7))
+            .setTextures("tarnishedcopperdoortop.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+            .setVisualUpdateOnMetadata()
+            .build(new BlockCopperTarnishedDoor("door.copper.tarnished.top", blockID++, Material.stone, true));
+
+    public static final Block doorCopperCorrodedBottom = raw
+            .setBlockModel(new BlockModelRenderBlocks(7))
+            .setTextures("corrodedcopperdoorbottom.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+            .setVisualUpdateOnMetadata()
+            .build(new BlockCopperTarnishedDoor("door.copper.corroded.bottom", blockID++, Material.stone, false));
+
+    public static final Block doorCopperCorrodedTop = raw
+            .setBlockModel(new BlockModelRenderBlocks(7))
+            .setTextures("corrodedcopperdoortop.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+            .setVisualUpdateOnMetadata()
+            .build(new BlockCopperCorrodedDoor("door.copper.corroded.top", blockID++, Material.stone, true));
 
     public static final Block fenceCopper = raw
             .setBlockModel(new BlockModelRenderBlocks(31))
@@ -907,6 +933,21 @@ public static final Block permafrostCarved = stone
             .build(new BlockSoulCandle("candle.soulwax", blockID++));
 
 
+    public static final Block bedroll = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
+            .setHardness(0.2f)
+            .setResistance(0.2f)
+            .setNorthTexture("bedrollfront")
+            .setTopBottomTexture("bedrolltop2")
+            .setTopTexture("bedrolltop1")
+            .setSideTextures("bedrollside1")
+            .setSideTextures("bedrollside2")
+            .setSouthTexture("bedrollback")
+            .setVisualUpdateOnMetadata()
+            .setTags(BlockTags.NOT_IN_CREATIVE_MENU, BlockTags.MINEABLE_BY_AXE)
+            .build(new BlockBedroll("bedroll", blockID++));
+
+
     // Items
 
     public static Item candleSoulwaxItem = ItemHelper.createItem(BonusBlocks.MOD_ID,
@@ -922,10 +963,19 @@ public static final Block permafrostCarved = stone
             new Item("ingot.copper", itemID++), "copperingot.png");
 
     public static Item doorCopper = ItemHelper.createItem(BonusBlocks.MOD_ID,
-            new ItemCopperDoor("door.copper", itemID++, Material.metal), "copperdoor.png");
+            new ItemCopperDoor("door.copper", itemID++), "copperdoor.png");
+
+    public static Item doorCopperTarnished = ItemHelper.createItem(BonusBlocks.MOD_ID,
+            new ItemCopperTarnishedDoor("door.copper.tarnished", itemID++), "tarnishedcopperdoor.png");
+
+    public static Item doorCopperCorroded = ItemHelper.createItem(BonusBlocks.MOD_ID,
+            new ItemCopperCorrodedDoor("door.copper.corroded", itemID++), "corrodedcopperdoor.png");
 
     public static Item doorSteel = ItemHelper.createItem(BonusBlocks.MOD_ID,
             new ItemSteelDoor("door.steel", itemID++, Material.metal), "steeldoor.png");
+
+    public static Item bedrollItem = ItemHelper.createItem(BonusBlocks.MOD_ID,
+            new ItemBedroll("bedroll", itemID++), "bedroll.png");
 
     public static Item foodPie = ItemHelper.createItem(BonusBlocks.MOD_ID,
             new ItemPlaceable("food.pie", itemID++, pie), "pie.png").setMaxStackSize(1);

@@ -31,7 +31,6 @@ public class ItemToolAxeMixin extends ItemTool {
                 itemstack.damageItem(1, entityplayer);
                 entityplayer.swingItem();
             }
-            return false;
         }
         if (i1 == BonusBlocks.blockCopperTarnished.id) {
             Block copperBlock = BonusBlocks.blockCopper;
@@ -93,6 +92,68 @@ public class ItemToolAxeMixin extends ItemTool {
             if (!world.isClientSide) {
                 world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, copperBlock.id, world.getBlockMetadata(blockX, blockY, blockZ));
                 itemstack.damageItem(1, entityplayer);
+                entityplayer.swingItem();
+            }
+        }
+        if (i1 == BonusBlocks.trapdoorCopperCorroded.id) {
+            Block copperBlock = BonusBlocks.trapdoorCopperTarnished;
+            world.playBlockSoundEffect((float) blockX + 0.5f, (float) blockY + 0.5f, (float) blockZ + 0.5f, copperBlock, EnumBlockSoundEffectType.MINE);
+            if (!world.isClientSide) {
+                world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, copperBlock.id, world.getBlockMetadata(blockX, blockY, blockZ));
+                itemstack.damageItem(1, entityplayer);
+                entityplayer.swingItem();
+            }
+        }
+        if (i1 == BonusBlocks.trapdoorCopperTarnished.id) {
+            Block copperBlock = BonusBlocks.trapdoorCopper;
+            world.playBlockSoundEffect((float) blockX + 0.5f, (float) blockY + 0.5f, (float) blockZ + 0.5f, copperBlock, EnumBlockSoundEffectType.MINE);
+            if (!world.isClientSide) {
+                world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, copperBlock.id, world.getBlockMetadata(blockX, blockY, blockZ));
+                itemstack.damageItem(1, entityplayer);
+                entityplayer.swingItem();
+            }
+        }
+        if (i1 == BonusBlocks.doorCopperCorrodedTop.id) {
+            Block copperBlock = BonusBlocks.doorCopperTarnishedTop;
+            Block copperBlock2 = BonusBlocks.doorCopperTarnishedBottom;
+            world.playBlockSoundEffect((float) blockX + 0.5f, (float) blockY + 0.5f, (float) blockZ + 0.5f, copperBlock, EnumBlockSoundEffectType.MINE);
+            if (!world.isClientSide) {
+                world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, copperBlock.id, world.getBlockMetadata(blockX, blockY, blockZ));
+                world.setBlockAndMetadataWithNotify(blockX, blockY-1, blockZ, copperBlock2.id, world.getBlockMetadata(blockX, blockY-1, blockZ));
+                itemstack.damageItem(2, entityplayer);
+                entityplayer.swingItem();
+            }
+        }
+        if (i1 == BonusBlocks.doorCopperCorrodedBottom.id) {
+            Block copperBlock = BonusBlocks.doorCopperTarnishedBottom;
+            Block copperBlock2 = BonusBlocks.doorCopperTarnishedTop;
+            world.playBlockSoundEffect((float) blockX + 0.5f, (float) blockY + 0.5f, (float) blockZ + 0.5f, copperBlock, EnumBlockSoundEffectType.MINE);
+            if (!world.isClientSide) {
+                world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, copperBlock.id, world.getBlockMetadata(blockX, blockY, blockZ));
+                world.setBlockAndMetadataWithNotify(blockX, blockY+1, blockZ, copperBlock2.id, world.getBlockMetadata(blockX, blockY+1, blockZ));
+                itemstack.damageItem(2, entityplayer);
+                entityplayer.swingItem();
+            }
+        }
+        if (i1 == BonusBlocks.doorCopperTarnishedTop.id) {
+            Block copperBlock = BonusBlocks.doorCopperTop;
+            Block copperBlock2 = BonusBlocks.doorCopperBottom;
+            world.playBlockSoundEffect((float) blockX + 0.5f, (float) blockY + 0.5f, (float) blockZ + 0.5f, copperBlock, EnumBlockSoundEffectType.MINE);
+            if (!world.isClientSide) {
+                world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, copperBlock.id, world.getBlockMetadata(blockX, blockY, blockZ));
+                world.setBlockAndMetadataWithNotify(blockX, blockY-1, blockZ, copperBlock2.id, world.getBlockMetadata(blockX, blockY-1, blockZ));
+                itemstack.damageItem(2, entityplayer);
+                entityplayer.swingItem();
+            }
+        }
+        if (i1 == BonusBlocks.doorCopperTarnishedBottom.id) {
+            Block copperBlock = BonusBlocks.doorCopperBottom;
+            Block copperBlock2 = BonusBlocks.doorCopperTop;
+            world.playBlockSoundEffect((float) blockX + 0.5f, (float) blockY + 0.5f, (float) blockZ + 0.5f, copperBlock, EnumBlockSoundEffectType.MINE);
+            if (!world.isClientSide) {
+                world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, copperBlock.id, world.getBlockMetadata(blockX, blockY, blockZ));
+                world.setBlockAndMetadataWithNotify(blockX, blockY+1, blockZ, copperBlock2.id, world.getBlockMetadata(blockX, blockY+1, blockZ));
+                itemstack.damageItem(2, entityplayer);
                 entityplayer.swingItem();
             }
         }

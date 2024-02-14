@@ -182,6 +182,10 @@ tile.bonusblocks.block.copper.corroded.desc=A solid block of corroded copper. Co
 
 tile.bonusblocks.pipe.copper.name=Copper Pipe
 tile.bonusblocks.pipe.copper.desc=A long tube of copper, purely for decoration.
+tile.bonusblocks.pipe.copper.tarnished.name=Tarnished Copper Pipe
+tile.bonusblocks.pipe.copper.tarnished.desc=A long tube of tarnished copper, purely for decoration.
+tile.bonusblocks.pipe.copper.corroded.name=Corroded Copper Pipe
+tile.bonusblocks.pipe.copper.corroded.desc=A long tube of corroded copper, purely for decoration.
 
 tile.netherrack.name=Mossy Cobbled Netherrack
 tile.netherrack.desc=Cobbled Netherrack with added red greenery.
@@ -192,6 +196,11 @@ tile.bonusblocks.cobble.netherrack.desc=Netherrack, smashed apart and reconstitu
 
 tile.bonusblocks.trapdoor.copper.name=Copper Trapdoor
 tile.bonusblocks.trapdoor.copper.desc=Like a door but flat and made of copper.
+tile.bonusblocks.trapdoor.copper.tarnished.name=Tarnished Copper Trapdoor
+tile.bonusblocks.trapdoor.copper.tarnished.desc=Like a door but flat and made of tarnished copper.
+tile.bonusblocks.trapdoor.copper.corroded.name=Corroded Copper Trapdoor
+tile.bonusblocks.trapdoor.copper.corroded.desc=Like a door but flat and made of corroded copper.
+
 tile.bonusblocks.door.copper.top.name=Top Copper Door
 tile.bonusblocks.door.copper.top.desc=I hope you enjoy this mod.
 tile.bonusblocks.door.copper.bottom.name=Bottom Copper Door
@@ -223,6 +232,13 @@ item.bonusblocks.door.copper.name=Copper Door
 item.bonusblocks.door.copper.desc=Every factory needs one.
 item.bonusblocks.door.steel.name=Steel Door
 item.bonusblocks.door.steel.desc=A blast resistant door that unlocks when powered.
+
+tile.bonusblocks.overlay.gold.name=Gold Nuggets
+tile.bonusblocks.overlay.gold.desc=A cluster of raw gold.
+tile.bonusblocks.overlay.iron.name=Iron Nuggets
+tile.bonusblocks.overlay.iron.desc=A cluster of raw iron.
+tile.bonusblocks.overlay.copper.name=Copper Nuggets
+tile.bonusblocks.overlay.copper.desc=A cluster of raw copper.
 
 tile.bonusblocks.block.slime.name=Block of Slime
 tile.bonusblocks.block.slime.desc=Sticky and slimy mass of slime.

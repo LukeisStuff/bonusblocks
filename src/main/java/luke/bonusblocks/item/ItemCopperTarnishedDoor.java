@@ -11,9 +11,9 @@ import net.minecraft.core.util.helper.Direction;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 
-public class ItemCopperDoor extends Item {
+public class ItemCopperTarnishedDoor extends Item {
 
-    public ItemCopperDoor(String name, int id) {
+    public ItemCopperTarnishedDoor(String name, int id) {
         super(name, id);
         this.maxStackSize = 64;
     }
@@ -27,8 +27,8 @@ public class ItemCopperDoor extends Item {
 
         Block doorBlockBottom;
         Block doorBlockTop;
-        doorBlockBottom = BonusBlocks.doorCopperBottom;
-        doorBlockTop = BonusBlocks.doorCopperTop;
+        doorBlockBottom = BonusBlocks.doorCopperTarnishedBottom;
+        doorBlockTop = BonusBlocks.doorCopperTarnishedTop;
 
         if (!doorBlockBottom.canPlaceBlockAt(world, blockX, blockY, blockZ)) {
             return false;
