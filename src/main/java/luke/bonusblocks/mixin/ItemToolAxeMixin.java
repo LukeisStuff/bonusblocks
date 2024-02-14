@@ -82,16 +82,16 @@ public class ItemToolAxeMixin extends ItemTool {
             Block copperBlock = BonusBlocks.pipeCopperTarnished;
             world.playBlockSoundEffect((float) blockX + 0.5f, (float) blockY + 0.5f, (float) blockZ + 0.5f, copperBlock, EnumBlockSoundEffectType.MINE);
             if (!world.isClientSide) {
-                world.setBlockWithNotify(blockX, blockY, blockZ, copperBlock.id);
+                world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, copperBlock.id, world.getBlockMetadata(blockX, blockY, blockZ));
                 itemstack.damageItem(1, entityplayer);
                 entityplayer.swingItem();
             }
         }
         if (i1 == BonusBlocks.pipeCopperTarnished.id) {
-            Block copperBlock2 = BonusBlocks.pipeCopper;
-            world.playBlockSoundEffect((float) blockX + 0.5f, (float) blockY + 0.5f, (float) blockZ + 0.5f, copperBlock2, EnumBlockSoundEffectType.MINE);
+            Block copperBlock = BonusBlocks.pipeCopper;
+            world.playBlockSoundEffect((float) blockX + 0.5f, (float) blockY + 0.5f, (float) blockZ + 0.5f, copperBlock, EnumBlockSoundEffectType.MINE);
             if (!world.isClientSide) {
-                world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, copperBlock2.id, world.getBlockMetadata(blockX, blockY, blockZ));
+                world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, copperBlock.id, world.getBlockMetadata(blockX, blockY, blockZ));
                 itemstack.damageItem(1, entityplayer);
                 entityplayer.swingItem();
             }

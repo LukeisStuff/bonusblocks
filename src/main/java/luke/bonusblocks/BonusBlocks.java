@@ -649,16 +649,19 @@ public static final Block permafrostCarved = stone
 
     public static final Block pipeCopper = raw
             .setTextures("copperpipe.png")
+            .setVisualUpdateOnMetadata()
             .setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(MOD_ID, "pipe.json"), ModelHelper.getOrCreateBlockState(MOD_ID, "pipe_states.json"), new PipeMetaStateInterpreter(), false, 0.25f))
             .build(new BlockCopperPipe("pipe.copper", blockID++, Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "pipe.json"), false));
 
     public static final Block pipeCopperTarnished = raw
             .setTextures("tarnishedcopperpipe.png")
+            .setVisualUpdateOnMetadata()
             .setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(MOD_ID, "tarnishedpipe.json"), ModelHelper.getOrCreateBlockState(MOD_ID, "tarnished_pipe_states.json"), new PipeMetaStateInterpreter(), false, 0.25f))
             .build(new BlockCopperTarnishedPipe("pipe.copper.tarnished", blockID++, Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "tarnishedpipe.json"), false));
 
     public static final Block pipeCopperCorroded = raw
             .setTextures("corrodedcopperpipe.png")
+            .setVisualUpdateOnMetadata()
             .setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(MOD_ID, "corrodedpipe.json"), ModelHelper.getOrCreateBlockState(MOD_ID, "corroded_pipe_states.json"), new PipeMetaStateInterpreter(), false, 0.25f))
             .build(new BlockCopperPipeCorroded("pipe.copper.corroded", blockID++, Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "corrodedpipe.json"), false));
 
