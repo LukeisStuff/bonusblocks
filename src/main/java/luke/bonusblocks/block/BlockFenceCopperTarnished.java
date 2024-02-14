@@ -14,26 +14,26 @@ import java.util.Random;
 
 import static luke.bonusblocks.BonusBlocks.MOD_ID;
 
-public class BlockFenceCopper extends BlockFenceThin {
+public class BlockFenceCopperTarnished extends BlockFenceThin {
     protected int ticks;
-    public BlockFenceCopper(String key, int id, Material material) {
+    public BlockFenceCopperTarnished(String key, int id, Material material) {
         super(key, id, material);
         this.setTicking(true);
     }
 
     public int getTextureIndex() {
-        return TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "copperframe.png");
+        return TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "tarnishedcopperframe.png");
     }
 
     public int getTextureIndexAtBottom() {
         return -1;
     }
     public int getTextureIndexAtTop() {
-        return TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "copperfence.png");
+        return TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "tarnishedcopperfence.png");
     }
 
     public int getColumnTextureIndex() {
-        return TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "copperrod.png");
+        return TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "tarnishedcopperrod.png");
     }
 
     public boolean canConnectTo(WorldSource iblockaccess, int x, int y, int z) {
@@ -45,7 +45,7 @@ public class BlockFenceCopper extends BlockFenceThin {
         if (world.getBlockMetadata(x, y, z) >= 0) {
             ++this.ticks;
             if (this.ticks == 200) {
-                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.fenceCopperTarnished.id, world.getBlockMetadata(x, y, z));
+                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.fenceCopperCorroded.id, world.getBlockMetadata(x, y, z));
                 this.ticks = 0;
             }
         }

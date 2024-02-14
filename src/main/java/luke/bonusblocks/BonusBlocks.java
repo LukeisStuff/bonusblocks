@@ -689,7 +689,6 @@ public static final Block permafrostCarved = stone
             .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
             .setVisualUpdateOnMetadata()
             .build(new BlockCopperDoor("door.copper.bottom", blockID++, Material.stone, false));
-
     public static final Block doorCopperTop = raw
             .setBlockModel(new BlockModelRenderBlocks(7))
             .setTextures("copperdoortop.png")
@@ -703,7 +702,6 @@ public static final Block permafrostCarved = stone
             .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
             .setVisualUpdateOnMetadata()
             .build(new BlockCopperTarnishedDoor("door.copper.tarnished.bottom", blockID++, Material.stone, false));
-
     public static final Block doorCopperTarnishedTop = raw
             .setBlockModel(new BlockModelRenderBlocks(7))
             .setTextures("tarnishedcopperdoortop.png")
@@ -717,7 +715,6 @@ public static final Block permafrostCarved = stone
             .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
             .setVisualUpdateOnMetadata()
             .build(new BlockCopperTarnishedDoor("door.copper.corroded.bottom", blockID++, Material.stone, false));
-
     public static final Block doorCopperCorrodedTop = raw
             .setBlockModel(new BlockModelRenderBlocks(7))
             .setTextures("corrodedcopperdoortop.png")
@@ -732,6 +729,20 @@ public static final Block permafrostCarved = stone
             .setTextures("copperrod.png")
             .setVisualUpdateOnMetadata()
             .build(new BlockFenceCopper("fence.copper", blockID++, Material.metal));
+    public static final Block fenceCopperTarnished = raw
+            .setBlockModel(new BlockModelRenderBlocks(31))
+            .setTextures("tarnishedcopperfence.png")
+            .setTextures("tarnishedcopperframe.png")
+            .setTextures("tarnishedcopperrod.png")
+            .setVisualUpdateOnMetadata()
+            .build(new BlockFenceCopperTarnished("fence.copper.tarnished", blockID++, Material.metal));
+    public static final Block fenceCopperCorroded = raw
+            .setBlockModel(new BlockModelRenderBlocks(31))
+            .setTextures("corrodedcopperfence.png")
+            .setTextures("corrodedcopperframe.png")
+            .setTextures("corrodedcopperrod.png")
+            .setVisualUpdateOnMetadata()
+            .build(new BlockFenceCopperCorroded("fence.copper.corroded", blockID++, Material.metal));
 
     public static final Block trapdoorSteel = raw
             .setBlockModel(new BlockModelRenderBlocks(30))
@@ -1513,6 +1524,8 @@ public static final Block slabPermafrostPolished = slab
 //                BonusBlocks.barkScorched,
 //                BonusBlocks.barkShrub));
 
+
+        Registries.ITEM_GROUPS.register("bonusblocks:copper_ores", Registries.stackListOf(oreCopperStone, oreCopperBasalt, oreCopperGranite, oreCopperLimestone));
 
                 Registries.ITEM_GROUPS.register("bonusblocks:box", Registries.stackListOf(BonusBlocks.box, new ItemStack(BonusBlocks.boxPainted, 1, 0),
                 new ItemStack(BonusBlocks.boxPainted, 1, 1),

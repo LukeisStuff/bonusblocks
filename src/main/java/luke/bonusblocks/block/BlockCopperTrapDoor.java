@@ -23,5 +23,4 @@ public class BlockCopperTrapDoor extends BlockTrapDoor {
             }
         }
     }
-
 }

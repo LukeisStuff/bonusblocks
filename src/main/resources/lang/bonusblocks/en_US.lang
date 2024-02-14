@@ -205,8 +205,21 @@ tile.bonusblocks.door.copper.top.name=Top Copper Door
 tile.bonusblocks.door.copper.top.desc=I hope you enjoy this mod.
 tile.bonusblocks.door.copper.bottom.name=Bottom Copper Door
 tile.bonusblocks.door.copper.bottom.desc=It has been a lot of fun working on it!
+tile.bonusblocks.door.copper.tarnished.top.name=Top Tarnished Copper Door
+tile.bonusblocks.door.copper.tarnished.top.desc=Scratch and sniff.
+tile.bonusblocks.door.copper.tarnished.bottom.name=Bottom Tarnished Copper Door
+tile.bonusblocks.door.copper.tarnished.bottom.desc=Meefy777 vs Phow
+tile.bonusblocks.door.copper.top.name=Top Corroded Copper Door
+tile.bonusblocks.door.copper.top.desc=Brap.
+tile.bonusblocks.door.copper.bottom.name=Bottom Corroded Copper Door
+tile.bonusblocks.door.copper.bottom.desc=Shart.
+
 tile.bonusblocks.fence.copper.name=Copper Fence
 tile.bonusblocks.fence.copper.desc=A fence made of lattice locked copper. Can be climbed!
+tile.bonusblocks.fence.copper.tarnished.name=Tarnished Copper Fence
+tile.bonusblocks.fence.copper.tarnished.desc=A fence made of lattice locked tarnished copper. Can be climbed!
+tile.bonusblocks.fence.copper.corroded.name=CorrodedCopper Fence
+tile.bonusblocks.fence.copper.corroded.desc=A fence made of lattice locked corroded copper. Can be climbed!
 
 tile.bonusblocks.trapdoor.steel.name=Steel Trapdoor
 tile.bonusblocks.trapdoor.steel.desc=Like a door but flat and made of steel.
@@ -230,6 +243,10 @@ item.bonusblocks.ingot.copper.name=Copper Ingot
 item.bonusblocks.ingot.copper.desc=A metal bar of copper used to make decorative blocks.
 item.bonusblocks.door.copper.name=Copper Door
 item.bonusblocks.door.copper.desc=Every factory needs one.
+item.bonusblocks.door.copper.tarnished.name=Tarnished Copper Door
+item.bonusblocks.door.copper.tarnished.desc=A factory needs one.
+item.bonusblocks.door.copper.corroded.name=Corroded Copper Door
+item.bonusblocks.door.copper.corroded.desc=No factory needs one.
 item.bonusblocks.door.steel.name=Steel Door
 item.bonusblocks.door.steel.desc=A blast resistant door that unlocks when powered.
 
