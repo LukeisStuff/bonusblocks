@@ -20,6 +20,8 @@
     "ItemDyeMixin",
     "ItemToolAxeMixin",
     "ItemToolShovelMixin",
+    "NetClientHandlerMixin",
+    "PaintingPacketMixin",
     "PaintingRendererMixin",
     "RenderBlocksMixin",
     "SurfaceGeneratorOverworldMixin",
