@@ -277,6 +277,30 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
 */
 
 
+    // Overgrown Grass
+    public static final BlockBuilder grass = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
+            .setHardness(0.6f)
+            .setResistance(1.0f)
+            .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.GROWS_FLOWERS, BlockTags.GROWS_SUGAR_CANE, BlockTags.GROWS_TREES, BlockTags.PASSIVE_MOBS_SPAWN, BlockTags.FIREFLIES_CAN_SPAWN, BlockTags.CAVE_GEN_REPLACES_SURFACE, BlockTags.CAVES_CUT_THROUGH);
+
+    public static final Block grassOvergrown = grass
+            .setTextures(0, 0)
+            .setBlockColor(new BlockColorGrass())
+            .build(new Block("grass.overgrown", blockID++, Material.grass));
+    public static final Block grassRetroOvergrown = grass
+            .setTextures(8, 1)
+            .build(new Block("grass.retro.overgrown", blockID++, Material.grass));
+    public static final Block grassScorchedOvergrown = grass
+            .setTextures(16, 11)
+            .build(new Block("grass.scorched.overgrown", blockID++, Material.grass));
+    public static final Block pathOvergrown = grass
+            .setTextures(4, 6)
+            .setTags(BlockTags.MINEABLE_BY_SHOVEL)
+            .setBlockDrop(BonusBlocks.pathOvergrown)
+            .build(new BlockDirtPath("path.overgrown", blockID++));
+
+
     // Flowers
     public static final BlockBuilder flower = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
@@ -389,133 +413,53 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTextures("shroom.png")
             .build(new BlockMushroom("mushroom.gray", blockID++));
 
-
-    // Reinforced
-    public static final BlockBuilder reinforced = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 0.8f))
-            .setHardness(2.5f)
-            .setResistance(15.0f)
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE);
-
-    public static final Block cobbleStoneReinforced = reinforced
-            .setTextures(14, 3)
-            .build(new Block("cobble.stone.reinforced", blockID++, Material.stone));
-    public static final Block cobbleStoneMossyReinforced = reinforced
-            .setTextures(10, 12)
-            .build(new Block("cobble.stone.mossy.reinforced", blockID++, Material.stone));
-    public static final Block cobbleBasaltReinforced = reinforced
-            .setTextures("compressedbasalt.png")
-            .build(new Block("cobble.basalt.reinforced", blockID++, Material.stone));
-    public static final Block cobbleGraniteReinforced = reinforced
-            .setTextures("compressedgranite.png")
-            .build(new Block("cobble.granite.reinforced", blockID++, Material.stone));
-    public static final Block cobbleLimestoneReinforced = reinforced
-            .setTextures("compressedlimestone.png")
-            .build(new Block("cobble.limestone.reinforced", blockID++, Material.stone));
-    public static final Block cobblePermafrostReinforced = reinforced
-            .setTextures("compressedpermafrost.png")
-            .build(new Block("cobble.permafrost.reinforced", blockID++, Material.stone));
+    // Mushroom Blocks
+    public static final Block blockMushroomBrown = grass
+            .setLuminance(2)
+            .setTextures("brownmushroom.png")
+            .setFlammability(30, 60)
+            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SHEARS)
+            .build(new Block("block.mushroom.brown", blockID++, Material.dirt));
+    public static final Block blockMushroomRed = grass
+            .setTextures("redmushroom.png")
+            .setFlammability(30, 60)
+            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SHEARS)
+            .build(new Block("block.mushroom.red", blockID++, Material.dirt));
+    public static final Block blockMushroomGray = grass
+            .setTextures("graymushroom.png")
+            .setFlammability(30, 60)
+            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SHEARS)
+            .build(new Block("block.mushroom.gray", blockID++, Material.dirt));
 
 
-    // Ores
-    private static final BlockBuilder ore = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
-            .setHardness(3.0f)
-            .setResistance(5.0f)
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE);
-
-    public static final Block oreCopperStone = ore
-            .setTextures("copperstone.png")
-            .build(new BlockOreCopper("ore.copper.stone", blockID++));
-    public static final Block oreCopperBasalt = ore
-            .setTextures("copperbasalt.png")
-            .build(new BlockOreCopper("ore.copper.basalt", blockID++));
-    public static final Block oreCopperLimestone = ore
-            .setTextures("copperlimestone.png")
-            .build(new BlockOreCopper("ore.copper.limestone", blockID++));
-    public static final Block oreCopperGranite = ore
-            .setTextures("coppergranite.png")
-            .build(new BlockOreCopper("ore.copper.granite", blockID++));
-
-
-    // Scorched Stone
-    public static final Block scorchedstone = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
-            .setHardness(0.8f)
-            .setSideTextures("redsandstoneside.png")
-            .setBottomTexture("redsandstonebottom.png")
-            .setTopTexture("redsandstonetop.png")
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.GROWS_TREES, BlockTags.GROWS_SPINIFEX, BlockTags.GROWS_FLOWERS, BlockTags.FIREFLIES_CAN_SPAWN, BlockTags.CAVE_GEN_REPLACES_SURFACE, BlockTags.CAVES_CUT_THROUGH)
-            .build(new Block("scorchedstone", blockID++, Material.stone));
+//    // Reinforced
+//    public static final BlockBuilder reinforced = new BlockBuilder(MOD_ID)
+//            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 0.8f))
+//            .setHardness(2.5f)
+//            .setResistance(15.0f)
+//            .setTags(BlockTags.MINEABLE_BY_PICKAXE);
+//
+//    public static final Block cobbleStoneReinforced = reinforced
+//            .setTextures(14, 3)
+//            .build(new Block("cobble.stone.reinforced", blockID++, Material.stone));
+//    public static final Block cobbleStoneMossyReinforced = reinforced
+//            .setTextures(10, 12)
+//            .build(new Block("cobble.stone.mossy.reinforced", blockID++, Material.stone));
+//    public static final Block cobbleBasaltReinforced = reinforced
+//            .setTextures("compressedbasalt.png")
+//            .build(new Block("cobble.basalt.reinforced", blockID++, Material.stone));
+//    public static final Block cobbleGraniteReinforced = reinforced
+//            .setTextures("compressedgranite.png")
+//            .build(new Block("cobble.granite.reinforced", blockID++, Material.stone));
+//    public static final Block cobbleLimestoneReinforced = reinforced
+//            .setTextures("compressedlimestone.png")
+//            .build(new Block("cobble.limestone.reinforced", blockID++, Material.stone));
+//    public static final Block cobblePermafrostReinforced = reinforced
+//            .setTextures("compressedpermafrost.png")
+//            .build(new Block("cobble.permafrost.reinforced", blockID++, Material.stone));
 
 
-    // Stones
-    public static final BlockBuilder stone = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
-            .setHardness(1.0f)
-            .setResistance(10.0f)
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE);
-
-    // Slate Pillar
-    public static final Block pillarSlate = stone
-            .setSideTextures("slatepillarside.png")
-            .setTopBottomTexture("slatepillartop.png")
-            .setBlockModel(new BlockModelRenderBlocks(27))
-            .build(new BlockAxisAligned("pillar.slate", blockID++, Material.stone));
-
-    // Polished Stones
-    public static final Block marblePolished = stone
-            .setSideTextures("polishedmarbleside.png")
-            .setTopBottomTexture("polishedmarbletop.png")
-            .build(new Block("marble.polished", blockID++, Material.stone));
-/*
-    public static final Block sandstonePolished = stone
-            .setSideTextures("polishedsandstoneside.png")
-            .setTopBottomTexture("polishedsandstonetop.png")
-            .build(new Block("sandstone.polished", blockID++, Material.stone));
-*/
-public static final Block permafrostPolished = stone
-            .setSideTextures("polishedpermafrostside.png")
-            .setTopBottomTexture("polishedpermafrostop.png")
-            .build(new Block("permafrost.polished", blockID++, Material.stone));
-//    public static final Block scorchedstonePolished = stone
-//            .setHardness(0.8f)
-//            .setSideTextures("polishedredsandstoneside.png")
-//            .setTopBottomTexture("polishedredsandstonetop.png")
-//            .build(new Block("scorchedstone.polished", blockID++, Material.stone));
-
-    /*
- Carved Stones
-    public static final Block capstoneMarbleCarved = stone
-            .setSideTextures(10, 14)
-            .setTopBottomTexture(9, 14)
-            .build(new Block("capstone.marble.carved", blockID++, Material.stone));
-*/
-    public static final Block slateCarved = stone
-            .setSideTextures(6, 14)
-            .setTopBottomTexture(8, 14)
-            .build(new Block("slate.carved", blockID++, Material.stone));
-    public static final Block marbleCarved = stone
-            .setSideTextures(6, 14)
-            .setTopBottomTexture(8, 14)
-            .build(new Block("marble.carved", blockID++, Material.stone));
-/*
-    public static final Block sandstoneCarved = stone
-            .setSideTextures("carvedsandstone.png")
-            .setTopBottomTexture("polishedsandstonetop.png")
-            .build(new Block("sandstone.carved", blockID++, Material.stone));
-*/
-public static final Block permafrostCarved = stone
-            .setSideTextures("carvedpermafrost.png")
-            .setTopBottomTexture("polishedpermafrostop.png")
-            .build(new Block("permafrost.carved", blockID++, Material.stone));
-//    public static final Block scorchedstoneCarved = stone
-//            .setHardness(0.8f)
-//            .setSideTextures("carvedscorchedstone.png")
-//            .setTopBottomTexture("polishedredsandstonetop.png")
-//            .build(new Block("scorchedstone.carved", blockID++, Material.stone));
-
-
+    // Bone Block
     public static final Block blockBone = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.8f))
             .setHardness(0.8f)
@@ -526,6 +470,7 @@ public static final Block permafrostCarved = stone
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockAxisAligned("block.bone", blockID++, Material.stone));
 
+    // Thatch
     public static final Block thatch = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.grass", "step.grass", 0.6f, 1.2f))
             .setHardness(0.6f)
@@ -536,6 +481,7 @@ public static final Block permafrostCarved = stone
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS)
             .build(new BlockThatch("thatch", blockID++, Material.grass));
 
+    // Cloth Block
     public static final Block blockCloth = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 0.8f))
             .setHardness(0.8f)
@@ -545,6 +491,7 @@ public static final Block permafrostCarved = stone
             .setTags(BlockTags.MINEABLE_BY_SHEARS)
             .build(new BlockCloth("block.cloth", blockID++, Material.cloth));
 
+    // Slime Block
     public static final Block blockSlime = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.5f))
             .setHardness(0.2f)
@@ -554,6 +501,7 @@ public static final Block permafrostCarved = stone
             .setTags(BlockTags.MINEABLE_BY_AXE)
             .build(new BlockSlime("block.slime", blockID++, false));
 
+    // Sulphur Block
     public static final Block blockSulphur = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.sand", "step.sand", 1.0f, 0.8f))
             .setHardness(0.5f)
@@ -562,6 +510,7 @@ public static final Block permafrostCarved = stone
             .setTags(BlockTags.MINEABLE_BY_SHOVEL)
             .build(new BlockSulphur("block.sulphur", blockID++, Material.explosive));
 
+    // Sugar Block
     public static final Block blockSugar = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.sand", "step.sand", 1.0f, 0.8f))
             .setHardness(0.3f)
@@ -570,14 +519,7 @@ public static final Block permafrostCarved = stone
             .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.BROKEN_BY_FLUIDS)
             .build(new BlockSand("block.sugar", blockID++));
 
-    public static final Block blockCrudeSteel = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
-            .setHardness(4.0f)
-            .setResistance(1000.0f)
-            .setTextures(15, 8)
-            .setTags(BlockTags.MINEABLE_BY_AXE)
-            .build(new Block("block.steel.crude", blockID++, Material.metal));
-
+    // Leather Block
     public static final Block blockLeather = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 0.6f))
             .setHardness(0.8f)
@@ -587,6 +529,16 @@ public static final Block permafrostCarved = stone
             .setTags(BlockTags.MINEABLE_BY_AXE)
             .build(new Block("block.leather", blockID++, Material.cloth));
 
+    // Wicker Block
+    public static final Block blockWicker = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
+            .setHardness(0.5f)
+            .setResistance(0.5f)
+            .setTextures(4, 9)
+            .setFlammability(60, 120)
+            .setTags(BlockTags.MINEABLE_BY_AXE)
+            .build(new Block("block.wicker", blockID++, Material.cloth));
+
     // Raw Blocks
     public static final BlockBuilder raw = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
@@ -594,12 +546,17 @@ public static final Block permafrostCarved = stone
             .setResistance(10.0f)
             .setTags(BlockTags.MINEABLE_BY_PICKAXE);
 
+    //Raw Iron Block
     public static final Block blockRawIron = raw
             .setTextures("rawiron.png")
             .build(new Block("block.raw.iron", blockID++, Material.metal));
+
+    //Raw Gold Block
     public static final Block blockRawGold = raw
             .setTextures("rawgold.png")
             .build(new Block("block.raw.gold", blockID++, Material.metal));
+
+    //Raw Copper Block
     public static final Block blockRawCopper = raw
             .setTextures("rawcopper.png")
             .build(new BlockCopper("block.raw.copper", blockID++, Material.metal) {
@@ -633,10 +590,21 @@ public static final Block permafrostCarved = stone
     public static final Block blockRawCopperCorroded = raw
             .setTextures("rawcorrodedcopper.png")
             .build(new Block("block.raw.copper.corroded", blockID++, Material.metal));
+
+    //Flint Block
     public static final Block blockFlint = raw
             .setTextures("flintblock.png")
             .setInfiniburn()
             .build(new Block("block.flint", blockID++, Material.stone));
+
+    //Crude Steel Block
+    public static final Block blockCrudeSteel = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+            .setHardness(4.0f)
+            .setResistance(1000.0f)
+            .setTextures(15, 8)
+            .setTags(BlockTags.MINEABLE_BY_AXE)
+            .build(new Block("block.steel.crude", blockID++, Material.metal));
 
 
     public static final BlockBuilder pebble = new BlockBuilder(MOD_ID)
@@ -663,6 +631,26 @@ public static final Block permafrostCarved = stone
             .setTextures("copperpebble3.png")
             .build(new BlockOverlayRawCopper("overlay.copper", blockID++, Material.metal));
 
+
+    // Ores
+    private static final BlockBuilder ore = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
+            .setHardness(3.0f)
+            .setResistance(5.0f)
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE);
+
+    public static final Block oreCopperStone = ore
+            .setTextures("copperstone.png")
+            .build(new BlockOreCopper("ore.copper.stone", blockID++));
+    public static final Block oreCopperBasalt = ore
+            .setTextures("copperbasalt.png")
+            .build(new BlockOreCopper("ore.copper.basalt", blockID++));
+    public static final Block oreCopperLimestone = ore
+            .setTextures("copperlimestone.png")
+            .build(new BlockOreCopper("ore.copper.limestone", blockID++));
+    public static final Block oreCopperGranite = ore
+            .setTextures("coppergranite.png")
+            .build(new BlockOreCopper("ore.copper.granite", blockID++));
 
 
     // Copper Blocks
@@ -823,6 +811,87 @@ public static final Block permafrostCarved = stone
                 }
             });
 
+
+    // Scorched Stone
+    public static final Block scorchedstone = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
+            .setHardness(0.8f)
+            .setSideTextures("redsandstoneside.png")
+            .setBottomTexture("redsandstonebottom.png")
+            .setTopTexture("redsandstonetop.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.GROWS_TREES, BlockTags.GROWS_SPINIFEX, BlockTags.GROWS_FLOWERS, BlockTags.FIREFLIES_CAN_SPAWN, BlockTags.CAVE_GEN_REPLACES_SURFACE, BlockTags.CAVES_CUT_THROUGH)
+            .build(new Block("scorchedstone", blockID++, Material.stone));
+
+
+    // Stones
+    public static final BlockBuilder stone = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
+            .setHardness(1.0f)
+            .setResistance(10.0f)
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE);
+
+    // Slate Pillar
+    public static final Block pillarSlate = stone
+            .setSideTextures("slatepillarside.png")
+            .setTopBottomTexture("slatepillartop.png")
+            .setBlockModel(new BlockModelRenderBlocks(27))
+            .build(new BlockAxisAligned("pillar.slate", blockID++, Material.stone));
+
+    // Polished Stones
+    public static final Block marblePolished = stone
+            .setSideTextures("polishedmarbleside.png")
+            .setTopBottomTexture("polishedmarbletop.png")
+            .build(new Block("marble.polished", blockID++, Material.stone));
+    /*
+        public static final Block sandstonePolished = stone
+                .setSideTextures("polishedsandstoneside.png")
+                .setTopBottomTexture("polishedsandstonetop.png")
+                .build(new Block("sandstone.polished", blockID++, Material.stone));
+    */
+    public static final Block permafrostPolished = stone
+            .setSideTextures("polishedpermafrostside.png")
+            .setTopBottomTexture("polishedpermafrostop.png")
+            .build(new Block("permafrost.polished", blockID++, Material.stone));
+//    public static final Block scorchedstonePolished = stone
+//            .setHardness(0.8f)
+//            .setSideTextures("polishedredsandstoneside.png")
+//            .setTopBottomTexture("polishedredsandstonetop.png")
+//            .build(new Block("scorchedstone.polished", blockID++, Material.stone));
+
+    /*
+ Carved Stones
+    public static final Block capstoneMarbleCarved = stone
+            .setSideTextures(10, 14)
+            .setTopBottomTexture(9, 14)
+            .build(new Block("capstone.marble.carved", blockID++, Material.stone));
+*/
+    public static final Block slateCarved = stone
+            .setSideTextures(6, 14)
+            .setTopBottomTexture(8, 14)
+            .build(new Block("slate.carved", blockID++, Material.stone));
+    public static final Block marbleCarved = stone
+            .setSideTextures(6, 14)
+            .setTopBottomTexture(8, 14)
+            .build(new Block("marble.carved", blockID++, Material.stone));
+    /*
+    public static final Block sandstoneCarved = stone
+            .setSideTextures("carvedsandstone.png")
+            .setTopBottomTexture("polishedsandstonetop.png")
+            .build(new Block("sandstone.carved", blockID++, Material.stone));
+*/
+    public static final Block permafrostCarved = stone
+            .setSideTextures("carvedpermafrost.png")
+            .setTopBottomTexture("polishedpermafrostop.png")
+            .build(new Block("permafrost.carved", blockID++, Material.stone));
+/*
+    public static final Block scorchedstoneCarved = stone
+            .setHardness(0.8f)
+            .setSideTextures("carvedscorchedstone.png")
+            .setTopBottomTexture("polishedredsandstonetop.png")
+            .build(new Block("scorchedstone.carved", blockID++, Material.stone));
+*/
+
+
     // Bricks
     public static final BlockBuilder brick = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
@@ -902,89 +971,7 @@ public static final Block permafrostCarved = stone
             .setInfiniburn()
             .build(new BlockBrimstone("brimstone", blockID++, Material.piston));
 
-    // Baked Clay
-    public static final Block clayBaked = stone
-            .setHardness(3.0f)
-            .setTextures("bakedclay.png")
-            .build(new Block("clay.baked", blockID++, Material.stone));
-
-    // Wicker
-    public static final Block blockWicker = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
-            .setHardness(0.5f)
-            .setResistance(0.5f)
-            .setTextures(4, 9)
-            .setFlammability(60, 120)
-            .setTags(BlockTags.MINEABLE_BY_AXE)
-            .build(new Block("block.wicker", blockID++, Material.cloth));
-
-    // Pumpkin Pie
-    public static final Block pie = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
-            .setHardness(0.5f)
-            .setResistance(0.5f)
-            .setTopTexture("pietop.png")
-            .setBottomTexture("piebottom.png")
-            .setSideTextures("pieside.png")
-            .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.NOT_IN_CREATIVE_MENU)
-            .build(new BlockPie("pie", blockID++));
-
-    // Overgrown Grass
-    public static final BlockBuilder grass = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
-            .setHardness(0.6f)
-            .setResistance(1.0f)
-            .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.GROWS_FLOWERS, BlockTags.GROWS_SUGAR_CANE, BlockTags.GROWS_TREES, BlockTags.PASSIVE_MOBS_SPAWN, BlockTags.FIREFLIES_CAN_SPAWN, BlockTags.CAVE_GEN_REPLACES_SURFACE, BlockTags.CAVES_CUT_THROUGH);
-
-    public static final Block grassOvergrown = grass
-            .setTextures(0, 0)
-            .setBlockColor(new BlockColorGrass())
-            .build(new Block("grass.overgrown", blockID++, Material.grass));
-    public static final Block grassRetroOvergrown = grass
-            .setTextures(8, 1)
-            .build(new Block("grass.retro.overgrown", blockID++, Material.grass));
-    public static final Block grassScorchedOvergrown = grass
-            .setTextures(16, 11)
-            .build(new Block("grass.scorched.overgrown", blockID++, Material.grass));
-    public static final Block pathOvergrown = grass
-            .setTextures(4, 6)
-            .setTags(BlockTags.MINEABLE_BY_SHOVEL)
-            .setBlockDrop(BonusBlocks.pathOvergrown)
-            .build(new BlockDirtPath("path.overgrown", blockID++));
-
-
-    // Mushroom Blocks
-    public static final Block blockMushroomBrown = grass
-            .setLuminance(2)
-            .setTextures("brownmushroom.png")
-            .setFlammability(30, 60)
-            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SHEARS)
-            .build(new Block("block.mushroom.brown", blockID++, Material.dirt));
-    public static final Block blockMushroomRed = grass
-            .setTextures("redmushroom.png")
-            .setFlammability(30, 60)
-            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SHEARS)
-            .build(new Block("block.mushroom.red", blockID++, Material.dirt));
-    public static final Block blockMushroomGray = grass
-            .setTextures("graymushroom.png")
-            .setFlammability(30, 60)
-            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SHEARS)
-            .build(new Block("block.mushroom.gray", blockID++, Material.dirt));
-
-
-    // Soul Candle
-    public static final Block candleSoulwax = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.sand", "step.sand", 1.0f, 1.2f))
-            .setHardness(0.0f)
-            .setResistance(0.0f)
-            .setLuminance(10)
-            .setTextures(5, 7)
-            .setVisualUpdateOnMetadata()
-            .setBlockModel(new BlockModelRenderBlocks(25))
-            .setTags(BlockTags.MINEABLE_BY_SWORD, BlockTags.BROKEN_BY_FLUIDS, BlockTags.NOT_IN_CREATIVE_MENU)
-            .build(new BlockSoulCandle("candle.soulwax", blockID++));
-
-
+    // Pumice
     public static final Block pumiceDry = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
             .setHardness(1.0f)
@@ -1001,6 +988,38 @@ public static final Block permafrostCarved = stone
             .setTextures("pumicewet.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockPumice("pumice.wet", blockID++, true));
+
+
+    // Baked Clay
+    public static final Block clayBaked = stone
+            .setHardness(3.0f)
+            .setTextures("bakedclay.png")
+            .build(new Block("clay.baked", blockID++, Material.stone));
+
+
+    // Pumpkin Pie
+    public static final Block pie = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
+            .setHardness(0.5f)
+            .setResistance(0.5f)
+            .setTopTexture("pietop.png")
+            .setBottomTexture("piebottom.png")
+            .setSideTextures("pieside.png")
+            .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.NOT_IN_CREATIVE_MENU)
+            .build(new BlockPie("pie", blockID++));
+
+
+    // Soul Candle
+    public static final Block candleSoulwax = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.sand", "step.sand", 1.0f, 1.2f))
+            .setHardness(0.0f)
+            .setResistance(0.0f)
+            .setLuminance(10)
+            .setTextures(5, 7)
+            .setVisualUpdateOnMetadata()
+            .setBlockModel(new BlockModelRenderBlocks(25))
+            .setTags(BlockTags.MINEABLE_BY_SWORD, BlockTags.BROKEN_BY_FLUIDS, BlockTags.NOT_IN_CREATIVE_MENU)
+            .build(new BlockSoulCandle("candle.soulwax", blockID++));
 
 
     public static final Block bedroll = new BlockBuilder(MOD_ID)
@@ -1368,13 +1387,13 @@ public static final Block slabPermafrostPolished = slab
     }
 
     public void onRecipesReady() {
-        RecipeBuilderShaped templateReinforced = new RecipeBuilderShaped(MOD_ID, "XXX", "XOX", "XXX");
-        templateReinforced.addInput('X', Block.cobbleStone).addInput('O', Block.obsidian).create("reinforcedCobbledStone", new ItemStack(BonusBlocks.cobbleStoneReinforced, 8));
-        templateReinforced.addInput('X', Block.cobbleStoneMossy).addInput('O', Block.obsidian).create("reinforcedCobbledStoneMossy", new ItemStack(BonusBlocks.cobbleStoneMossyReinforced, 8));
-        templateReinforced.addInput('X', Block.cobbleBasalt).addInput('O', Block.obsidian).create("reinforcedCobbledBasalt", new ItemStack(BonusBlocks.cobbleBasaltReinforced, 8));
-        templateReinforced.addInput('X', Block.cobbleGranite).addInput('O', Block.obsidian).create("reinforcedCobbledGranite", new ItemStack(BonusBlocks.cobbleGraniteReinforced, 8));
-        templateReinforced.addInput('X', Block.cobbleLimestone).addInput('O', Block.obsidian).create("reinforcedCobbledLimestone", new ItemStack(BonusBlocks.cobbleLimestoneReinforced, 8));
-        templateReinforced.addInput('X', Block.cobblePermafrost).addInput('O', Block.obsidian).create("reinforcedCobbledPermafrost", new ItemStack(BonusBlocks.cobblePermafrostReinforced, 8));
+//        RecipeBuilderShaped templateReinforced = new RecipeBuilderShaped(MOD_ID, "XXX", "XOX", "XXX");
+//        templateReinforced.addInput('X', Block.cobbleStone).addInput('O', Block.obsidian).create("reinforcedCobbledStone", new ItemStack(BonusBlocks.cobbleStoneReinforced, 8));
+//        templateReinforced.addInput('X', Block.cobbleStoneMossy).addInput('O', Block.obsidian).create("reinforcedCobbledStoneMossy", new ItemStack(BonusBlocks.cobbleStoneMossyReinforced, 8));
+//        templateReinforced.addInput('X', Block.cobbleBasalt).addInput('O', Block.obsidian).create("reinforcedCobbledBasalt", new ItemStack(BonusBlocks.cobbleBasaltReinforced, 8));
+//        templateReinforced.addInput('X', Block.cobbleGranite).addInput('O', Block.obsidian).create("reinforcedCobbledGranite", new ItemStack(BonusBlocks.cobbleGraniteReinforced, 8));
+//        templateReinforced.addInput('X', Block.cobbleLimestone).addInput('O', Block.obsidian).create("reinforcedCobbledLimestone", new ItemStack(BonusBlocks.cobbleLimestoneReinforced, 8));
+//        templateReinforced.addInput('X', Block.cobblePermafrost).addInput('O', Block.obsidian).create("reinforcedCobbledPermafrost", new ItemStack(BonusBlocks.cobblePermafrostReinforced, 8));
 
 /*
         RecipeBuilderShaped templateLogtoBark = new RecipeBuilderShaped(MOD_ID, "XX", "XX");

@@ -1,7 +1,64 @@
 # Bonus Blocks
 
-## Additions
+### Additions
 
+## Blocks
+* Crate
+  + Crafted with 9 planks
+* Box and Painted Box
+  + Crafted with 4 chests or painted chests, gives 8 boxes
+* Empty Bookshelf
+  + Crafted like a bookshelf but without the books
+* Obsidian Glass
+  + Explosion proof, trapdoor variant 
+* Quartz Glass
+  + Reflects light that goes through
+* Branches
+  + Crafted with 4 sticks
+  + Crunchy
+* 3 Leaves
+  + Maple Leaves
+  + Jacaranda Leaves
+  + Mossy Oak Leaves
+* 3 Saplings
+  + Maple Sapling
+  + Jacaranda Sapling
+  + Mossy Oak Sapling
+* 5 Logs
+  + Shrub Log
+  + Cacao Log
+  + Maple Log
+  + Jacaranda Log
+  + Scorched Log
+* 6 New Flowers and 1 New Mushroom
+  + Bluebell, Crafts into cyan dye
+  + Heather, Crafts with purple dye
+  + Orchid, Crafts into pink dye
+  + White Dandelion, Crafts into silver dye
+  + Gladiola, Crafts into orange dye
+  + Pansy, Crafts into light blue dye
+  + Hyacinth, Crafts into magenta dye
+  + Clovers, Crafts into lime dye
+  + Each flower generates in different biomes, have fun exploring!
+  + Gray Mushroom, Crafts into gray dye
+* Petals
+  + Petal block variant for every flower
+  + includes a flower bed layer version
+* Reinforced Cobblestones
+  + Crafted with 8 of respective cobble type around 1 obsidian
+
+
+
+
+
+
+
+
+## Items
+
+## Biomes
+
+## Changes
 * Slate Pillar
    + Crafted with 3 slate
 * Reinforced Cobblestones
@@ -13,10 +70,6 @@
   + Maple Tree, found in the maple biome, red leaves and logs
   + Shrub Tree, now has a shrub log
   + Scorched Tree, found in the Mesa biome, black logs
-* Bark Blocks
-   + Crafted with 4 logs
-   + Rotatable
-   + 10 Variants
 * Slime Blocks
   + Functions like modern honey block
 * Sulphur Blocks
@@ -30,13 +83,6 @@
 * Thatch
   + Reduces fall damage
   + Crafted with 2 sticks and 2 wheat
-* Crate and Sticky Crate
-  + Crafted with 9 planks
-  + Sticky is crafted with 1 crate and 1 slimeball
-* Box and Painted Box
-  + Crafted with 4 chests or painted chests, gives 8 boxes
-* Empty Bookshelf
-  + Crafted like a bookshelf but without the books
 * 6 New Flowers and 1 New Mushroom
   + Bluebell
   + Crafts into cyan dye
@@ -56,14 +102,6 @@
 * Bone Block
   + Crafted with 9 bones
   + Rotatable
-* Reed
-  + Crafted with 9 sugarcane
-  + Rotatable
-* Baked Reed
-  + Crafted by smelting Reed block
-  + Rotatable
-* Paper Shoji
-  + Crafted with 2 sticks and 2 paper
 * Wicker
   + Crafted with 2 leather and 2 wheat
   + Resembles the Basket block
@@ -77,7 +115,7 @@
 * Block of Flint
   + Crafted with 9 flint
   + Fire burns forever on it
-* Block of Raw Iron and Raw Gold
+* Block of Raw Iron, Raw Gold and Raw Copper
   + Crafted with 9 raw iron or raw gold
 * Mud Bricks
   + Crafted from 4 baked mud
@@ -97,8 +135,6 @@
 * Obsidian Glass
   + Crafted by blast furnace smelting obsidian
   + Explosive proof window
-* Empty Jar
-  + Place down empty jars finally
 * Soul Wax Candle and Soul Wax
   + Crafted with soul wax and string
   + Soul wax is made from smelting soul sand
@@ -116,11 +152,7 @@
 * Maple Forest Biome
   + Maple trees are found here, they give red wood
   + Found near rainforests
-* 3 Peak Biomes
-  + Stony, Icy and Snowy
-  + Generate only at the highest parts of the world
 
-## Changes
 * Pillars now use a new recipe with 3 of the respective stone type instead of 2
   + this affects marble and slate pillars
 * Carved stones now have recipes and appear in the creative inventory
@@ -128,10 +160,11 @@
 
 ## Requirements
 
-+ BTA 1.7.7.0_02
++ BTA 7.1
 + Babric
 + Halplibe
 + TerrainAPI
++ Dragonfly
 
 ## Instructions
 
@@ -142,5 +175,5 @@ LukeisStuff - Creator
 
 Tocinin, AFK, Spicyfiction, Mak, mzov, perry26, jonkadelic, beat_your_rice, PedroThePanda64, denatidum, txar, senatorslunky, lemonmeringuepie, Zaraz7 - Textures
 
-Useless, azurelmao, Grease, MartinSVK12, Killi - Mod Help
+Useless, azurelmao, Grease, MartinSVK12, Killi, CantComplain - Mod Help
 
