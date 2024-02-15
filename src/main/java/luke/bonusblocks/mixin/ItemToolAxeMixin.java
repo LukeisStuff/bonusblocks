@@ -95,6 +95,24 @@ public class ItemToolAxeMixin extends ItemTool {
                 entityplayer.swingItem();
             }
         }
+        if (i1 == BonusBlocks.pressureplateCopperCorroded.id) {
+            Block copperBlock2 = BonusBlocks.pressureplateCopperTarnished;
+            world.playBlockSoundEffect((float) blockX + 0.5f, (float) blockY + 0.5f, (float) blockZ + 0.5f, copperBlock2, EnumBlockSoundEffectType.MINE);
+            if (!world.isClientSide) {
+                world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, copperBlock2.id, world.getBlockMetadata(blockX, blockY, blockZ));
+                itemstack.damageItem(1, entityplayer);
+                entityplayer.swingItem();
+            }
+        }
+        if (i1 == BonusBlocks.pressureplateCopperTarnished.id) {
+            Block copperBlock2 = BonusBlocks.pressureplateCopper;
+            world.playBlockSoundEffect((float) blockX + 0.5f, (float) blockY + 0.5f, (float) blockZ + 0.5f, copperBlock2, EnumBlockSoundEffectType.MINE);
+            if (!world.isClientSide) {
+                world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, copperBlock2.id, world.getBlockMetadata(blockX, blockY, blockZ));
+                itemstack.damageItem(1, entityplayer);
+                entityplayer.swingItem();
+            }
+        }
         if (i1 == BonusBlocks.stairsCopperCorroded.id) {
             Block copperBlock2 = BonusBlocks.stairsCopperTarnished;
             world.playBlockSoundEffect((float) blockX + 0.5f, (float) blockY + 0.5f, (float) blockZ + 0.5f, copperBlock2, EnumBlockSoundEffectType.MINE);
