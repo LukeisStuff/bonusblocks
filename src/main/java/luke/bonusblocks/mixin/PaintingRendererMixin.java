@@ -61,29 +61,31 @@ public abstract class PaintingRendererMixin extends EntityRenderer<EntityPaintin
 
                 this.setupPaintingBrightness(entity, (maxX + minX) / 2.0f, (maxY + minY) / 2.0f);
 
-                int index = getIndex(x, y, width, height);
+                int index = getIndex(width - x - 1, height - y - 1, width, height);
 
                 float u = (index%4)/4f;
-                float v = (index/4)/5f;
+                float v = (index/4)/4f;
 
-                float minU = u;
-                float maxU = u + 0.25f;
-                float minV = v;
-                float maxV = v + 0.20f;
+                float minU = u + 0.25f;
+                float maxU = u;
+                float minV = v + 0.25f;
+                float maxV = v;
 
                 Tessellator tessellator = Tessellator.instance;
                 tessellator.startDrawingQuads();
-                tessellator.setNormal(0.0f, 0.0f, -1.0f);
+                tessellator.setNormal(0.0f, 0.0f, 1.0f);
                 tessellator.addVertexWithUV(maxX, minY, minZ, maxU, minV);
                 tessellator.addVertexWithUV(minX, minY, minZ, minU, minV);
                 tessellator.addVertexWithUV(minX, maxY, minZ, minU, maxV);
                 tessellator.addVertexWithUV(maxX, maxY, minZ, maxU, maxV);
 
+                float f = 1/64f;
+
                 if (y == 0){
-                    minU = 48/64f;
-                    maxU = 64/64f;
-                    minV = 79/80f;
-                    maxV = 80/80f;
+                    minU = u;
+                    maxU = u + 0.25f;
+                    minV = v + 0.25f - f;
+                    maxV = v + 0.25f;
 
                     tessellator.setNormal(0.0f, -1.0f, 0.0f);
                     tessellator.addVertexWithUV(maxX, minY, maxZ, minU, minV);
@@ -93,10 +95,10 @@ public abstract class PaintingRendererMixin extends EntityRenderer<EntityPaintin
 
                 }
                 if (y == height-1){
-                    minU = 16/64f;
-                    maxU = 32/64f;
-                    minV = 64/80f;
-                    maxV = 65/80f;
+                    minU = u;
+                    maxU = u + 0.25f;
+                    minV = v + f;
+                    maxV = v;
 
                     tessellator.setNormal(0.0f, 1.0f, 0.0f);
                     tessellator.addVertexWithUV(maxX, maxY, minZ, minU, minV);
@@ -105,10 +107,10 @@ public abstract class PaintingRendererMixin extends EntityRenderer<EntityPaintin
                     tessellator.addVertexWithUV(maxX, maxY, maxZ, minU, maxV);
                 }
                 if (x == 0){
-                    minU = 33/64f;
-                    maxU = 34/64f;
-                    minV = 64/80f;
-                    maxV = 80/80f;
+                    minU = u + 0.25f - f;
+                    maxU = u + 0.25f;
+                    minV = v;
+                    maxV = v + 0.25f;
 
                     tessellator.setNormal(1.0f, 0.0f, 0.0f);
                     tessellator.addVertexWithUV(minX, maxY, minZ, maxU, minV);
@@ -117,10 +119,10 @@ public abstract class PaintingRendererMixin extends EntityRenderer<EntityPaintin
                     tessellator.addVertexWithUV(minX, maxY, maxZ, minU, minV);
                 }
                 if (x == width-1){
-                    minU = 0/64f;
-                    maxU = 1/64f;
-                    minV = 64/80f;
-                    maxV = 80/80f;
+                    minU = u + f;
+                    maxU = u;
+                    minV = v;
+                    maxV = v + 0.25f;
 
                     tessellator.setNormal(-1.0f, 0.0f, 0.0f);
                     tessellator.addVertexWithUV(maxX, maxY, maxZ, maxU, minV);
