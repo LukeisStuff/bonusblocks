@@ -108,7 +108,7 @@ public class BlockBedroll extends Block {
             } else if (l == 3) {
                 return TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "bedrollback.png");
             } else {
-                return l != 5 && l != 4 ? TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "bedrolltop1.png") : TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "bedrollside2.png");
+                return l != 5 && l != 4 ? TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "bedrolltop2.png") : TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "bedrollside2.png");
             }
         }
     }

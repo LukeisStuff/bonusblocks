@@ -165,6 +165,9 @@ tile.bonusblocks.glass.quartz.desc=Brightened glass that reflects light.
 tile.bonusblocks.trapdoor.glass.tinted.name=Tinted Glass Trapdoor
 tile.bonusblocks.trapdoor.glass.tinted.desc=Slightly less useless at its job.
 
+tile.mesh.name=Iron Mesh Block
+tile.workbench.name=Crafting Table
+
 tile.bonusblocks.pumice.dry.name=Pumice
 tile.bonusblocks.pumice.dry.desc=Dried pumice, good for absorbing up lava.
 tile.bonusblocks.pumice.wet.name=Molten Pumice
@@ -175,7 +178,11 @@ tile.bonusblocks.block.raw.iron.desc=A solid block of raw iron. Heavy!
 tile.bonusblocks.block.raw.gold.name=Block of Raw Gold
 tile.bonusblocks.block.raw.gold.desc=A solid block of raw gold, for flaunting your bling.
 tile.bonusblocks.block.raw.copper.name=Block of Raw Copper
-tile.bonusblocks.block.raw.copper.desc=A solid block of raw copper. Corrosive!
+tile.bonusblocks.block.raw.copper.desc=A solid block of raw copper.
+tile.bonusblocks.block.raw.copper.tarnished.name=Block of Raw Tarnished Copper
+tile.bonusblocks.block.raw.copper.tarnished.desc=A solid block of raw tarnished copper.
+tile.bonusblocks.block.raw.copper.corroded.name=Block of Raw Corroded Copper
+tile.bonusblocks.block.raw.copper.corroded.desc=A solid block of raw corroded copper.
 
 tile.bonusblocks.block.copper.name=Block of Copper
 tile.bonusblocks.block.copper.desc=A solid block of copper. Corrosive!
@@ -183,6 +190,13 @@ tile.bonusblocks.block.copper.tarnished.name=Block of Tarnished Copper
 tile.bonusblocks.block.copper.tarnished.desc=A solid block of tarnished copper. Corrosive!
 tile.bonusblocks.block.copper.corroded.name=Block of Corroded Copper
 tile.bonusblocks.block.copper.corroded.desc=A solid block of corroded copper. Corrosive!
+
+tile.bonusblocks.mesh.copper.name=Copper Mesh Block
+tile.bonusblocks.mesh.copper.desc=A wireframe block of copper.
+tile.bonusblocks.mesh.copper.tarnished.name=Tarnished Copper Mesh Block
+tile.bonusblocks.mesh.copper.tarnished.desc=A wireframe block of tarnished copper.
+tile.bonusblocks.mesh.copper.corroded.name=Corroded Copper Mesh Block
+tile.bonusblocks.mesh.copper.corroded.desc=A wireframe block of corroded copper.
 
 tile.bonusblocks.pipe.copper.name=Copper Pipe
 tile.bonusblocks.pipe.copper.desc=A long tube of copper, purely for decoration.
@@ -213,10 +227,10 @@ tile.bonusblocks.door.copper.tarnished.top.name=Top Tarnished Copper Door
 tile.bonusblocks.door.copper.tarnished.top.desc=Scratch and sniff.
 tile.bonusblocks.door.copper.tarnished.bottom.name=Bottom Tarnished Copper Door
 tile.bonusblocks.door.copper.tarnished.bottom.desc=Meefy777 vs Phow
-tile.bonusblocks.door.copper.top.name=Top Corroded Copper Door
-tile.bonusblocks.door.copper.top.desc=Brap.
-tile.bonusblocks.door.copper.bottom.name=Bottom Corroded Copper Door
-tile.bonusblocks.door.copper.bottom.desc=Shart.
+tile.bonusblocks.door.copper.corroded.top.name=Top Corroded Copper Door
+tile.bonusblocks.door.copper.corroded.top.desc=Brap.
+tile.bonusblocks.door.copper.corroded.bottom.name=Bottom Corroded Copper Door
+tile.bonusblocks.door.copper.corroded.bottom.desc=Shart.
 
 tile.bonusblocks.fence.copper.name=Copper Fence
 tile.bonusblocks.fence.copper.desc=A fence made of lattice locked copper. Can be climbed!
@@ -291,9 +305,7 @@ tile.bonusblocks.block.wicker.desc=A decorative block of wicker.
 
 
 tile.flower.red.name=Rose Flower
-tile.flower.red.desc=A beautiful red flower.
 tile.flower.yellow.name=Dandelion Flower
-tile.flower.yellow.desc=A beautiful yellow flower.
 tile.bonusblocks.flower.lime.name=Clovers
 tile.bonusblocks.flower.lime.desc=A lucky plant found commonly.
 tile.bonusblocks.flower.purple.name=Heather Flower
@@ -478,6 +490,11 @@ item.bonusblocks.candle.soulwax.name=Soul Wax Candle
 item.bonusblocks.candle.soulwax.desc=A waxy brown candle that glows with an unnatural light.
 item.bonusblocks.soulwax.name=Soul Wax
 item.bonusblocks.soulwax.desc=A sticky substance secreted from squishy brown sand.
+
+item.bonusblocks.bedroll.name=Sleeping Bag
+item.bonusblocks.bedroll.desc=Take a quick nap overnight that wont change your spawn-point.
+tile.bonusblocks.bedroll.name=Sleeping Bag
+tile.bonusblocks.bedroll.desc=Sleeping bag!
 
 tile.bonusblocks.slab.wool.black.name=Black Wool Slab
 tile.bonusblocks.slab.wool.black.desc=A slab of black wool.

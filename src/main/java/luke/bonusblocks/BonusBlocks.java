@@ -35,6 +35,7 @@ import useless.dragonfly.helper.ModelHelper;
 import useless.dragonfly.model.block.BlockModelDragonFly;
 
 import java.util.Properties;
+import java.util.Random;
 
 import static net.minecraft.core.block.BlockMoss.stoneToMossMap;
 
@@ -601,7 +602,37 @@ public static final Block permafrostCarved = stone
             .build(new Block("block.raw.gold", blockID++, Material.metal));
     public static final Block blockRawCopper = raw
             .setTextures("rawcopper.png")
-            .build(new Block("block.raw.copper", blockID++, Material.metal));
+            .build(new BlockCopper("block.raw.copper", blockID++, Material.metal) {
+                private int ticks;
+                @Override
+                public void updateTick(World world, int x, int y, int z, Random rand) {
+                    if (world.getBlockMetadata(x, y, z) == 0) {
+                        ++this.ticks;
+                        if (this.ticks == 200) {
+                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockRawCopperTarnished.id, 0);
+                            this.ticks = 0;
+                        }
+                    }
+                }
+            });
+    public static final Block blockRawCopperTarnished = raw
+            .setTextures("rawtarnishedcopper.png")
+            .build(new BlockCopperTarnished("block.raw.copper.tarnished", blockID++, Material.metal) {
+                private int ticks;
+                @Override
+                public void updateTick(World world, int x, int y, int z, Random rand) {
+                    if (world.getBlockMetadata(x, y, z) == 0) {
+                        ++this.ticks;
+                        if (this.ticks == 200) {
+                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockRawCopperCorroded.id, 0);
+                            this.ticks = 0;
+                        }
+                    }
+                }
+            });
+    public static final Block blockRawCopperCorroded = raw
+            .setTextures("rawcorrodedcopper.png")
+            .build(new Block("block.raw.copper.corroded", blockID++, Material.metal));
     public static final Block blockFlint = raw
             .setTextures("flintblock.png")
             .setInfiniburn()
@@ -644,6 +675,17 @@ public static final Block permafrostCarved = stone
     public static final Block blockCopperCorroded = raw
             .setTextures("corrodedcopperblock.png")
             .build(new Block("block.copper.corroded", blockID++, Material.metal));
+
+    public static final Block meshCopper = raw
+            .setTextures("coppergrate.png")
+            .build(new BlockCopperMesh("mesh.copper", blockID++, Material.metal, true));
+    public static final Block meshCopperTarnished = raw
+            .setTextures("tarnishedcoppergrate.png")
+            .build(new BlockCopperMeshTarnished("mesh.copper.tarnished", blockID++, Material.metal, true));
+    public static final Block meshCopperCorroded = raw
+            .setTextures("corrodedcoppergrate.png")
+            .build(new BlockTransparent("mesh.copper.corroded", blockID++, Material.metal, true) {
+            });
 
     public static final Block pipeCopper = raw
             .setTextures("copperpipe.png")
@@ -963,14 +1005,15 @@ public static final Block permafrostCarved = stone
 
     public static final Block bedroll = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
+            .setBlockModel(new BlockModelRenderBlocks(14))
             .setHardness(0.2f)
             .setResistance(0.2f)
-            .setNorthTexture("bedrollfront")
-            .setTopBottomTexture("bedrolltop2")
-            .setTopTexture("bedrolltop1")
-            .setSideTextures("bedrollside1")
-            .setSideTextures("bedrollside2")
-            .setSouthTexture("bedrollback")
+            .setTextures("bedrollfront.png")
+            .setTextures("bedrolltop2.png")
+            .setTextures("bedrolltop1.png")
+            .setTextures("bedrollside1.png")
+            .setTextures("bedrollside2.png")
+            .setTextures("bedrollback.png")
             .setVisualUpdateOnMetadata()
             .setTags(BlockTags.NOT_IN_CREATIVE_MENU, BlockTags.MINEABLE_BY_AXE)
             .build(new BlockBedroll("bedroll", blockID++));
@@ -1003,7 +1046,7 @@ public static final Block permafrostCarved = stone
             new ItemSteelDoor("door.steel", itemID++, Material.metal), "steeldoor.png");
 
     public static Item bedrollItem = ItemHelper.createItem(BonusBlocks.MOD_ID,
-            new ItemBedroll("bedroll", itemID++), "bedroll.png");
+            new ItemBedroll("bedroll", itemID++), "bedroll.png").setMaxStackSize(1);
 
     public static Item foodPie = ItemHelper.createItem(BonusBlocks.MOD_ID,
             new ItemPlaceable("food.pie", itemID++, pie), "pie.png").setMaxStackSize(1);
@@ -1260,9 +1303,17 @@ public static final Block slabPermafrostPolished = slab
         ItemToolPickaxe.miningLevels.put(pipeCopperTarnished, 1);
         ItemToolPickaxe.miningLevels.put(pipeCopperCorroded, 1);
         ItemToolPickaxe.miningLevels.put(trapdoorCopper, 1);
-        ItemToolPickaxe.miningLevels.put(doorCopperBottom, 1);
+        ItemToolPickaxe.miningLevels.put(trapdoorCopperTarnished, 1);
+        ItemToolPickaxe.miningLevels.put(trapdoorCopperCorroded, 1);
         ItemToolPickaxe.miningLevels.put(doorCopperTop, 1);
+        ItemToolPickaxe.miningLevels.put(doorCopperBottom, 1);
+        ItemToolPickaxe.miningLevels.put(doorCopperTarnishedTop, 1);
+        ItemToolPickaxe.miningLevels.put(doorCopperTarnishedBottom, 1);
+        ItemToolPickaxe.miningLevels.put(doorCopperCorrodedBottom, 1);
+        ItemToolPickaxe.miningLevels.put(doorCopperCorrodedTop, 1);
         ItemToolPickaxe.miningLevels.put(fenceCopper, 1);
+        ItemToolPickaxe.miningLevels.put(fenceCopperTarnished, 1);
+        ItemToolPickaxe.miningLevels.put(fenceCopperCorroded, 1);
         ItemToolPickaxe.miningLevels.put(slabCopper, 1);
         ItemToolPickaxe.miningLevels.put(slabCopperTarnished, 1);
         ItemToolPickaxe.miningLevels.put(slabCopperCorroded, 1);
@@ -1382,6 +1433,7 @@ public static final Block slabPermafrostPolished = slab
         templateBlocktoItem.addInput('X', BonusBlocks.blockFlint).create("block_of_flint_to_flint", new ItemStack(Item.flint, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockRawGold).create("block_of_raw_gold_to_raw_gold", new ItemStack(Item.oreRawGold, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockRawIron).create("block_of_raw_iron_to_raw_iron", new ItemStack(Item.oreRawIron, 9));
+        templateBlocktoItem.addInput('X', BonusBlocks.blockRawCopper).create("block_of_raw_copper_to_raw_copper", new ItemStack(BonusBlocks.oreRawCopper, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockLeather).create("block_of_leather_to_leather", new ItemStack(Item.leather, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockCopper).create("block_of_copper_to_copper", new ItemStack(BonusBlocks.ingotCopper, 4));
 
@@ -1389,6 +1441,10 @@ public static final Block slabPermafrostPolished = slab
                 .addInput('W', Item.wheat)
                 .addInput('S', Item.stick)
                 .create("block_of_thatch", new ItemStack(BonusBlocks.thatch, 4));
+
+        RecipeBuilder.Shaped(MOD_ID, "CCC", "C C", "CCC")
+                .addInput('C', BonusBlocks.ingotCopper)
+                .create("copper_mesh", new ItemStack(BonusBlocks.meshCopper, 8));
 
         RecipeBuilder.Shaped(MOD_ID, "WS", "SW")
                 .addInput('W', Item.wheat)
@@ -1475,6 +1531,7 @@ public static final Block slabPermafrostPolished = slab
         RecipeBuilder.ModifyWorkbench("minecraft").removeRecipe("marble_pillar");
         RecipeBuilder.ModifyWorkbench("minecraft").removeRecipe("green_dye_white_dye_to_lime_dye");
         RecipeBuilder.ModifyWorkbench("minecraft").removeRecipe("pebbles_to_granite");
+        RecipeBuilder.ModifyWorkbench("minecraft").removeRecipe("bed");
 
         RecipeBuilder.ModifyBlastFurnace("minecraft").removeRecipe("cobble_basalt_to_olivine");
         RecipeBuilder.ModifyBlastFurnace("minecraft").removeRecipe("cobble_stone_to_slate");
@@ -1490,10 +1547,24 @@ public static final Block slabPermafrostPolished = slab
                 .addInput(Item.bucketLava)
                 .create("molten_pumice", new ItemStack(BonusBlocks.pumiceWet, 1));
 
+        RecipeBuilder.Shapeless(MOD_ID)
+                .addInput(BonusBlocks.pumiceWet)
+                .addInput(Item.bucketWater)
+                .create("pumice", new ItemStack(BonusBlocks.pumiceDry, 1));
+
         RecipeBuilder.Shaped(MOD_ID, "PX", "XP")
                 .addInput('P', (Item.ammoPebble))
                 .addInput('X', (Item.quartz))
                 .create("pebbles_to_granite", new ItemStack(Block.granite, 2));
+
+        RecipeBuilder.Shaped(MOD_ID, "WWW", "PPP")
+                .addInput('P',("minecraft:planks"))
+                .addInput('W', ("minecraft:wools"))
+                .create("bed", new ItemStack(Item.bed, 1));
+
+        RecipeBuilder.Shaped(MOD_ID, "WWW")
+                .addInput('W', (Item.cloth))
+                .create("sleepingbag", new ItemStack(BonusBlocks.bedrollItem, 1));
 
         RecipeBuilderShaped templatePillar = new RecipeBuilderShaped(MOD_ID, "X", "X", "X");
         templatePillar.addInput('X', Block.marble).create("marble_pillar", new ItemStack(Block.pillarMarble, 3));
