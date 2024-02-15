@@ -774,6 +774,46 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setVisualUpdateOnMetadata()
             .build(new BlockFenceCopperCorroded("fence.copper.corroded", blockID++, Material.metal));
 
+    public static final Block pressureplateCopper = raw
+            .setTextures("copper.png")
+            .setVisualUpdateOnMetadata()
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.PREVENT_MOB_SPAWNS)
+            .build(new BlockPressurePlate("pressureplate.copper", blockID++, BlockPressurePlate.MobType.EVERYTHING, Material.metal) {
+                private int ticks;
+
+                public void updateTick(World world, int x, int y, int z, Random rand) {
+                    if (world.getBlockMetadata(x, y, z) == 0) {
+                        ++this.ticks;
+                        if (this.ticks == 200) {
+                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.pressureplateCopperTarnished.id, 0);
+                            this.ticks = 0;
+                        }
+                    }
+                }
+            });
+    public static final Block pressureplateCopperTarnished = raw
+            .setTextures("tarnishedcopper.png")
+            .setVisualUpdateOnMetadata()
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.PREVENT_MOB_SPAWNS)
+            .build(new BlockPressurePlate("pressureplate.copper.tarnished", blockID++, BlockPressurePlate.MobType.EVERYTHING, Material.metal) {
+                private int ticks;
+
+                public void updateTick(World world, int x, int y, int z, Random rand) {
+                    if (world.getBlockMetadata(x, y, z) == 0) {
+                        ++this.ticks;
+                        if (this.ticks == 200) {
+                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.pressureplateCopperCorroded.id, 0);
+                            this.ticks = 0;
+                        }
+                    }
+                }
+            });
+    public static final Block pressureplateCopperCorroded = raw
+            .setTextures("corrodedcopper.png")
+            .setVisualUpdateOnMetadata()
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.PREVENT_MOB_SPAWNS)
+            .build(new BlockPressurePlate("pressureplate.copper.corroded", blockID++, BlockPressurePlate.MobType.EVERYTHING, Material.metal));
+
     public static final Block trapdoorSteel = raw
             .setBlockModel(new BlockModelRenderBlocks(30))
             .setResistance(2000.0f)
