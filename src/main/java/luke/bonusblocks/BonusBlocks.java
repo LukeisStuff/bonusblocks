@@ -778,7 +778,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTextures("copper.png")
             .setVisualUpdateOnMetadata()
             .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.PREVENT_MOB_SPAWNS)
-            .build(new BlockPressurePlate("pressureplate.copper", blockID++, BlockPressurePlate.MobType.EVERYTHING, Material.metal) {
+            .build(new BlockCopperPressurePlate("pressureplate.copper", blockID++, Material.metal) {
                 private int ticks;
 
                 public void updateTick(World world, int x, int y, int z, Random rand) {
@@ -795,7 +795,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTextures("tarnishedcopper.png")
             .setVisualUpdateOnMetadata()
             .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.PREVENT_MOB_SPAWNS)
-            .build(new BlockPressurePlate("pressureplate.copper.tarnished", blockID++, BlockPressurePlate.MobType.EVERYTHING, Material.metal) {
+            .build(new BlockCopperPressurePlate("pressureplate.copper.tarnished", blockID++, Material.metal) {
                 private int ticks;
 
                 public void updateTick(World world, int x, int y, int z, Random rand) {
@@ -812,7 +812,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTextures("corrodedcopper.png")
             .setVisualUpdateOnMetadata()
             .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.PREVENT_MOB_SPAWNS)
-            .build(new BlockPressurePlate("pressureplate.copper.corroded", blockID++, BlockPressurePlate.MobType.EVERYTHING, Material.metal));
+            .build(new BlockCopperPressurePlate("pressureplate.copper.corroded", blockID++, Material.metal));
 
     public static final Block trapdoorSteel = raw
             .setBlockModel(new BlockModelRenderBlocks(30))
