@@ -2115,6 +2115,10 @@ public static final Block slabPermafrostPolished = slab
         addBorder(Item.ingotGold.getDefaultStack(), "/assets/bonusblocks/art/border_gold.png");
         addBorder(Item.ingotSteel.getDefaultStack(), "/assets/bonusblocks/art/border_steel.png");
         addBorder(new ItemStack(Item.dye, 1, 4), "/assets/bonusblocks/art/border_lapis.png");
+        addBorder(Item.diamond.getDefaultStack(), "/assets/bonusblocks/art/border_diamond.png");
+        addBorder(Item.dustRedstone.getDefaultStack(), "/assets/bonusblocks/art/border_redstone.png");
+        addBorder(Item.olivine.getDefaultStack(), "/assets/bonusblocks/art/border_olivine.png");
+        addBorder(Item.quartz.getDefaultStack(), "/assets/bonusblocks/art/border_quartz.png");
         addBorder(ingotCopper.getDefaultStack(), "/assets/bonusblocks/art/border_copper.png");
     }
 }
