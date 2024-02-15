@@ -2010,6 +2010,10 @@ public static final Block slabPermafrostPolished = slab
 */
 
         RecipeBuilder.Furnace(MOD_ID)
+                .setInput("bonusblocks:copper_ores")
+                .create("copper_ores_to_copper", BonusBlocks.ingotCopper.getDefaultStack());
+
+        RecipeBuilder.Furnace(MOD_ID)
                 .setInput(Block.blockClay)
                 .create("baked_clay_furnace", BonusBlocks.clayBaked.getDefaultStack());
 
@@ -2028,6 +2032,10 @@ public static final Block slabPermafrostPolished = slab
         RecipeBuilder.Furnace(MOD_ID)
                 .setInput(Block.soulsand)
                 .create("soulwax", BonusBlocks.soulwax.getDefaultStack());
+
+        RecipeBuilder.BlastFurnace(MOD_ID)
+                .setInput("bonusblocks:copper_ores")
+                .create("copper_ores_to_copper_blast", BonusBlocks.ingotCopper.getDefaultStack());
 
         RecipeBuilder.BlastFurnace(MOD_ID)
                 .setInput(Block.blockClay)

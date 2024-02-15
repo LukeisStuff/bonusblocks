@@ -167,6 +167,7 @@
 * Bed recipe has been changed to use only wool now (Will make more sense when sleeping bags are fully added)
 * Pebbles now generate all over the world
 * Some recipes missing have been fixed
+* Cobbled Stone recipes in the blast furnace now use the stone instead of cobble
 * You can bonemeal flowers to spread more of them around (Fix by useless)
 * Paintings can now be given a trim using certain resources (Iron, gold, copper etc)
 * Multiple Old blocks from previous bonus block versions have been removed in order to streamline the mod
