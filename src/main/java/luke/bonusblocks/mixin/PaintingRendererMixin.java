@@ -7,6 +7,7 @@ import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.render.entity.PaintingRenderer;
 import net.minecraft.core.entity.EntityPainting;
 import net.minecraft.core.item.ItemStack;
+import org.lwjgl.opengl.GL11;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -22,8 +23,12 @@ public abstract class PaintingRendererMixin extends EntityRenderer<EntityPaintin
     private void inject(EntityPainting entity, double x, double y, double z, float yaw, float partialTick, CallbackInfo ci){
         ItemStack borderStack = ((IPaintingExtras)entity).bonusblocks$getStack();
         if (borderStack != null){
+            GL11.glEnable(GL11.GL_BLEND);
+            GL11.glBlendFunc(770, 771);
+            GL11.glColor4f(1f, 1f, 1f, 1f);
             loadTexture(BonusBlocks.getBorder(borderStack));
             renderBorder(entity, entity.art.sizeX, entity.art.sizeY);
+            GL11.glDisable(GL11.GL_BLEND);
         }
     }
     @Unique
@@ -41,10 +46,18 @@ public abstract class PaintingRendererMixin extends EntityRenderer<EntityPaintin
                 float maxY = negCenterY + (float)((y + 1) * 16);
                 float minY = negCenterY + (float)(y * 16);
 
-                maxX += 0.1f;
-                minX -= 0.1f;
-                maxY += 0.1f;
-                minY -= 0.1f;
+                if (x == width-1){
+                    maxX += 0.1f;
+                }
+                if (x == 0){
+                    minX -= 0.1f;
+                }
+                if (y == height-1){
+                    maxY += 0.1f;
+                }
+                if (y == 0){
+                    minY -= 0.1f;
+                }
 
                 this.setupPaintingBrightness(entity, (maxX + minX) / 2.0f, (maxY + minY) / 2.0f);
 
