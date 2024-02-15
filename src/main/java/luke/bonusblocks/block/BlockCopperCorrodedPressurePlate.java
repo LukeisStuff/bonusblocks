@@ -12,20 +12,12 @@ import net.minecraft.core.world.World;
 import java.util.List;
 import java.util.Random;
 
-public class BlockCopperPressurePlate extends BlockPressurePlate {
-    protected int ticks;
-    public BlockCopperPressurePlate(String key, int id, Material material) {
+public class BlockCopperCorrodedPressurePlate extends BlockPressurePlate {
+    public BlockCopperCorrodedPressurePlate(String key, int id, Material material) {
         super(key, id, null, material);
     }
     @Override
     public void updateTick(World world, int x, int y, int z, Random rand) {
-        if (world.getBlockMetadata(x, y, z) == 0) {
-            ++this.ticks;
-            if (this.ticks == 200) {
-                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.pressureplateCopperTarnished.id, world.getBlockMetadata(x, y, z));
-                this.ticks = 0;
-            }
-        }
         if (world.isClientSide) {
             return;
         }

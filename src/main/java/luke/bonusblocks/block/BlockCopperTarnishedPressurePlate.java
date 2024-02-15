@@ -12,9 +12,9 @@ import net.minecraft.core.world.World;
 import java.util.List;
 import java.util.Random;
 
-public class BlockCopperPressurePlate extends BlockPressurePlate {
+public class BlockCopperTarnishedPressurePlate extends BlockPressurePlate {
     protected int ticks;
-    public BlockCopperPressurePlate(String key, int id, Material material) {
+    public BlockCopperTarnishedPressurePlate(String key, int id, Material material) {
         super(key, id, null, material);
     }
     @Override
@@ -22,7 +22,7 @@ public class BlockCopperPressurePlate extends BlockPressurePlate {
         if (world.getBlockMetadata(x, y, z) == 0) {
             ++this.ticks;
             if (this.ticks == 200) {
-                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.pressureplateCopperTarnished.id, world.getBlockMetadata(x, y, z));
+                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.pressureplateCopperCorroded.id, world.getBlockMetadata(x, y, z));
                 this.ticks = 0;
             }
         }

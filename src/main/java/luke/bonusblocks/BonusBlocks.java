@@ -100,33 +100,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
             .build(new Block("bookshelf.empty.planks.oak", blockID++, Material.wood));
 
-    // Obsidian Glass
-    public static final BlockBuilder obsidian = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
-            .setHardness(5.0f)
-            .setResistance(1000.0f)
-            .setTextures("obsidianglass.png")
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE);
-
-    public static final Block glassObsidian = obsidian
-            .build(new BlockGlassObsidian("glass.obsidian", blockID++, Material.glass, true));
-    public static final Block trapdoorGlassObsidian = obsidian
-            .setBlockModel(new BlockModelRenderBlocks(30))
-            .setVisualUpdateOnMetadata()
-            .build(new BlockTrapDoorObsidian("trapdoor.glass.obsidian", blockID++));
-
-    // Quartz Glass
-    public static final Block glassQuartz = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
-            .setHardness(0.3F)
-            .setResistance(0.3F)
-            .setLightOpacity(-1)
-            .setVisualUpdateOnMetadata()
-            .setUseInternalLight()
-            .setTextures("quartzglass.png")
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-            .build(new BlockGlassQuartz("glass.quartz", blockID++, Material.glass, false));
-
     // Leaves and Branch
     public static final BlockBuilder leaves = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
@@ -894,17 +867,17 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTextures("copper.png")
             .setVisualUpdateOnMetadata()
             .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.PREVENT_MOB_SPAWNS)
-            .build(new BlockCopperPressurePlate("pressureplate.copper", blockID++, Material.metal, blockID));
+            .build(new BlockCopperPressurePlate("pressureplate.copper", blockID++, Material.metal));
     public static final Block pressureplateCopperTarnished = raw
             .setTextures("tarnishedcopper.png")
             .setVisualUpdateOnMetadata()
             .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.PREVENT_MOB_SPAWNS)
-            .build(new BlockCopperPressurePlate("pressureplate.copper.tarnished", blockID++, Material.metal, blockID));
+            .build(new BlockCopperTarnishedPressurePlate("pressureplate.copper.tarnished", blockID++, Material.metal));
     public static final Block pressureplateCopperCorroded = raw
             .setTextures("corrodedcopper.png")
             .setVisualUpdateOnMetadata()
             .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.PREVENT_MOB_SPAWNS)
-            .build(new BlockCopperPressurePlate("pressureplate.copper.corroded", blockID++, Material.metal, -1));
+            .build(new BlockCopperCorrodedPressurePlate("pressureplate.copper.corroded", blockID++, Material.metal));
 
     public static final Block trapdoorSteel = raw
             .setBlockModel(new BlockModelRenderBlocks(30))
@@ -1024,6 +997,39 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .build(new Block("scorchedstone.carved", blockID++, Material.stone));
 */
 
+    // Baked Clay
+    public static final Block clayBaked = stone
+            .setHardness(3.0f)
+            .setTextures("bakedclay.png")
+            .build(new Block("clay.baked", blockID++, Material.stone));
+
+    // Obsidian Glass
+    public static final BlockBuilder obsidian = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
+            .setHardness(5.0f)
+            .setResistance(1000.0f)
+            .setTextures("obsidianglass.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE);
+
+    public static final Block glassObsidian = obsidian
+            .build(new BlockGlassObsidian("glass.obsidian", blockID++, Material.glass, true));
+    public static final Block trapdoorGlassObsidian = obsidian
+            .setBlockModel(new BlockModelRenderBlocks(30))
+            .setVisualUpdateOnMetadata()
+            .build(new BlockTrapDoorObsidian("trapdoor.glass.obsidian", blockID++));
+
+    // Quartz Glass
+    public static final Block glassQuartz = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
+            .setHardness(0.3F)
+            .setResistance(0.3F)
+            .setLightOpacity(-1)
+            .setVisualUpdateOnMetadata()
+            .setUseInternalLight()
+            .setTextures("quartzglass.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new BlockGlassQuartz("glass.quartz", blockID++, Material.glass, false));
+
 
     // Bricks
     public static final BlockBuilder brick = new BlockBuilder(MOD_ID)
@@ -1123,13 +1129,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .build(new BlockPumice("pumice.wet", blockID++, true));
 
 
-    // Baked Clay
-    public static final Block clayBaked = stone
-            .setHardness(3.0f)
-            .setTextures("bakedclay.png")
-            .build(new Block("clay.baked", blockID++, Material.stone));
-
-
     // Pumpkin Pie
     public static final Block pie = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
@@ -1155,6 +1154,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .build(new BlockSoulCandle("candle.soulwax", blockID++));
 
 
+/*
     public static final Block bedroll = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
             .setBlockModel(new BlockModelRenderBlocks(14))
@@ -1169,10 +1169,9 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setVisualUpdateOnMetadata()
             .setTags(BlockTags.NOT_IN_CREATIVE_MENU, BlockTags.MINEABLE_BY_AXE)
             .build(new BlockBedroll("bedroll", blockID++));
-
+*/
 
     // Items
-
     public static Item candleSoulwaxItem = ItemHelper.createItem(BonusBlocks.MOD_ID,
             new ItemPlaceable("candle.soulwax", itemID++, candleSoulwax), "soulwaxcandle.png");
 
@@ -1197,8 +1196,8 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
     public static Item doorSteel = ItemHelper.createItem(BonusBlocks.MOD_ID,
             new ItemSteelDoor("door.steel", itemID++, Material.metal), "steeldoor.png");
 
-    public static Item bedrollItem = ItemHelper.createItem(BonusBlocks.MOD_ID,
-            new ItemBedroll("bedroll", itemID++), "bedroll.png").setMaxStackSize(1);
+//    public static Item bedrollItem = ItemHelper.createItem(BonusBlocks.MOD_ID,
+//            new ItemBedroll("bedroll", itemID++), "bedroll.png").setMaxStackSize(1);
 
     public static Item foodPie = ItemHelper.createItem(BonusBlocks.MOD_ID,
             new ItemPlaceable("food.pie", itemID++, pie), "pie.png").setMaxStackSize(1);
@@ -1762,9 +1761,9 @@ public static final Block slabPermafrostPolished = slab
                 .addInput('W', ("minecraft:wools"))
                 .create("bed", new ItemStack(Item.bed, 1));
 
-        RecipeBuilder.Shaped(MOD_ID, "WWW")
-                .addInput('W', (Item.cloth))
-                .create("sleepingbag", new ItemStack(BonusBlocks.bedrollItem, 1));
+//        RecipeBuilder.Shaped(MOD_ID, "WWW")
+//                .addInput('W', (Item.cloth))
+//                .create("sleepingbag", new ItemStack(BonusBlocks.bedrollItem, 1));
 
         RecipeBuilderShaped templatePillar = new RecipeBuilderShaped(MOD_ID, "X", "X", "X");
         templatePillar.addInput('X', Block.marble).create("marble_pillar", new ItemStack(Block.pillarMarble, 3));

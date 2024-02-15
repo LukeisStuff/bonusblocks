@@ -156,9 +156,9 @@ public class BlockBedroll extends Block {
         world.setBlockMetadataWithNotify(i, j, k, l);
     }
 
-    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-        return new ItemStack[]{new ItemStack(BonusBlocks.bedrollItem)};
-    }
+//    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+//        return new ItemStack[]{new ItemStack(BonusBlocks.bedrollItem)};
+//    }
 
     public int getPistonPushReaction() {
         return 1;
