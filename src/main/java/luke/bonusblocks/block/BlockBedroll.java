@@ -5,7 +5,6 @@ import net.minecraft.core.block.Block;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.logic.BedDirections;
 import net.minecraft.core.block.material.Material;
-import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.enums.EnumSleepStatus;
@@ -44,29 +43,21 @@ public class BlockBedroll extends Block {
             }
 
             if (!world.worldType.mayRespawn()) {
-                double d = (double)x + 0.5;
-                double d1 = (double)y + 0.5;
-                double d2 = (double)z + 0.5;
                 world.setBlockWithNotify(x, y, z, 0);
                 int dir = getDirectionFromMetadata(meta);
                 x += headBlockToFootBlockMap[dir][0];
                 z += headBlockToFootBlockMap[dir][1];
                 if (world.getBlockId(x, y, z) == this.id) {
                     world.setBlockWithNotify(x, y, z, 0);
-                    d = (d + (double)x + 0.5) / 2.0;
-                    d1 = (d1 + (double)y + 0.5) / 2.0;
-                    d2 = (d2 + (double)z + 0.5) / 2.0;
                 }
 
-                world.newExplosion((Entity)null, (double)((float)x + 0.5F), (double)((float)y + 0.5F), (double)((float)z + 0.5F), 5.0F, true, false);
+                world.newExplosion(null, (float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F, 5.0F, true, false);
                 return true;
             } else {
                 if (isBedOccupied(meta)) {
                     EntityPlayer player1 = null;
-                    Iterator var8 = world.players.iterator();
 
-                    while(var8.hasNext()) {
-                        EntityPlayer p = (EntityPlayer)var8.next();
+                    for (EntityPlayer p : world.players) {
                         if (p.isPlayerSleeping()) {
                             ChunkCoordinates pos = p.bedChunkCoordinates;
                             if (pos.x == x && pos.y == y && pos.z == z) {
@@ -163,32 +154,6 @@ public class BlockBedroll extends Block {
         }
 
         world.setBlockMetadataWithNotify(i, j, k, l);
-    }
-
-    public static ChunkCoordinates getNearestEmptyChunkCoordinates(World world, int i, int j, int k, int l) {
-        int i1 = world.getBlockMetadata(i, j, k);
-        int j1 = getDirectionFromMetadata(i1);
-
-        for(int k1 = 0; k1 <= 1; ++k1) {
-            int l1 = i - headBlockToFootBlockMap[j1][0] * k1 - 1;
-            int i2 = k - headBlockToFootBlockMap[j1][1] * k1 - 1;
-            int j2 = l1 + 2;
-            int k2 = i2 + 2;
-
-            for(int l2 = l1; l2 <= j2; ++l2) {
-                for(int i3 = i2; i3 <= k2; ++i3) {
-                    if (world.isBlockNormalCube(l2, j - 1, i3) && world.isAirBlock(l2, j, i3) && world.isAirBlock(l2, j + 1, i3)) {
-                        if (l <= 0) {
-                            return new ChunkCoordinates(l2, j, i3);
-                        }
-
-                        --l;
-                    }
-                }
-            }
-        }
-
-        return null;
     }
 
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {

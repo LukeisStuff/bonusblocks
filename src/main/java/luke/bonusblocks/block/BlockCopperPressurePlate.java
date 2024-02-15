@@ -23,7 +23,7 @@ public class BlockCopperPressurePlate extends BlockPressurePlate {
         if (transformID != -1 && world.getBlockMetadata(x, y, z) == 0) {
             ++this.ticks;
             if (this.ticks == 200) {
-                world.setBlockAndMetadataWithNotify(x, y, z, transformID, 0);
+                world.setBlockAndMetadataWithNotify(x, y, z, transformID, world.getBlockMetadata(x, y, z));
                 this.ticks = 0;
             }
         }
