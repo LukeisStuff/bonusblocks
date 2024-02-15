@@ -17,6 +17,7 @@
     "ContainerPlayerCreativeMixin",
     "EntityMixin",
     "EntityPaintingMixin",
+    "EntityTrackerAccessor",
     "ItemDyeMixin",
     "ItemToolAxeMixin",
     "ItemToolShovelMixin",

@@ -3,16 +3,20 @@ package luke.bonusblocks.mixin;
 import com.mojang.nbt.CompoundTag;
 import luke.bonusblocks.BonusBlocks;
 import luke.bonusblocks.IPaintingExtras;
+import luke.bonusblocks.ServerManager;
 import net.minecraft.core.entity.Entity;
+import net.minecraft.core.entity.EntityItem;
 import net.minecraft.core.entity.EntityPainting;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.ItemStack;
+import net.minecraft.core.util.helper.DamageType;
 import net.minecraft.core.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value = EntityPainting.class, remap = false)
 public abstract class EntityPaintingMixin extends Entity implements IPaintingExtras {
@@ -24,19 +28,29 @@ public abstract class EntityPaintingMixin extends Entity implements IPaintingExt
         entityData.define(1, -1);
         entityData.define(2, -1);
     }
+    @Inject(method = "hurt(Lnet/minecraft/core/entity/Entity;ILnet/minecraft/core/util/helper/DamageType;)Z", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/world/World;entityJoinedWorld(Lnet/minecraft/core/entity/Entity;)Z", shift = At.Shift.AFTER))
+    private void dropFrameMaterial(Entity entity, int i, DamageType type, CallbackInfoReturnable<Boolean> cir){
+        this.world.entityJoinedWorld(new EntityItem(this.world, this.x, this.y, this.z, bonusblocks$getStack()));
+    }
     @Override
     public boolean interact(EntityPlayer entityplayer) {
         if (entityplayer.getHeldItem() != null){
             ItemStack stack = entityplayer.getHeldItem();
+            ItemStack paintingStack = bonusblocks$getStack();
             if (BonusBlocks.getBorder(stack) == null) return false;
             setStack(new ItemStack(stack.getItem(), 1, stack.getMetadata()));
             stack.consumeItem(entityplayer);
             if (stack.stackSize <= 0) {
                 entityplayer.inventory.setInventorySlotContents(entityplayer.inventory.currentItem, null);
             }
+            if (paintingStack != null && entityplayer.getGamemode().consumeBlocks()){
+                entityplayer.inventory.insertItem(paintingStack, true);
+            }
             return true;
         } else if (bonusblocks$getStack() != null){
-            entityplayer.inventory.insertItem(bonusblocks$getStack(), true);
+            if (entityplayer.getGamemode().consumeBlocks()){
+                entityplayer.inventory.insertItem(bonusblocks$getStack(), true);
+            }
             setStack(null);
             return true;
         }
@@ -59,6 +73,7 @@ public abstract class EntityPaintingMixin extends Entity implements IPaintingExt
             entityData.set(1, -1);
             entityData.set(2, -1);
         }
+        ServerManager.forceSyncEntity(this);
     }
     @Inject(method = "addAdditionalSaveData(Lcom/mojang/nbt/CompoundTag;)V", at = @At("TAIL"))
     private void saveExtras(CompoundTag tag, CallbackInfo ci){
