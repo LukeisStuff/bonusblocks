@@ -12,11 +12,21 @@ import java.util.List;
 import java.util.Random;
 
 public class BlockCopperPressurePlate extends BlockPressurePlate {
-    public BlockCopperPressurePlate(String key, int id, Material material) {
+    protected int ticks;
+    protected int transformID;
+    public BlockCopperPressurePlate(String key, int id, Material material, int transformID) {
         super(key, id, null, material);
+        this.transformID = transformID;
     }
     @Override
     public void updateTick(World world, int x, int y, int z, Random rand) {
+        if (transformID != -1 && world.getBlockMetadata(x, y, z) == 0) {
+            ++this.ticks;
+            if (this.ticks == 200) {
+                world.setBlockAndMetadataWithNotify(x, y, z, transformID, 0);
+                this.ticks = 0;
+            }
+        }
         if (world.isClientSide) {
             return;
         }
