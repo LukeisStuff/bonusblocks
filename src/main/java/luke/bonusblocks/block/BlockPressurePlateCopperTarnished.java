@@ -5,8 +5,6 @@ import net.minecraft.core.block.BlockPressurePlate;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.EntityItem;
-import net.minecraft.core.entity.EntityLiving;
-import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.sound.SoundType;
 import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
@@ -14,10 +12,10 @@ import net.minecraft.core.world.World;
 import java.util.List;
 import java.util.Random;
 
-public class BlockPressurePlateCopper extends BlockPressurePlate {
+public class BlockPressurePlateCopperTarnished extends BlockPressurePlate {
     private final MobType triggerMobType;
     protected int ticks;
-    public BlockPressurePlateCopper(String key, int id, MobType mobType, Material material) {
+    public BlockPressurePlateCopperTarnished(String key, int id, MobType mobType, Material material) {
         super(key, id, mobType, material);
         this.triggerMobType = mobType;
         this.setTicking(true);
@@ -32,7 +30,7 @@ public class BlockPressurePlateCopper extends BlockPressurePlate {
         if (world.getBlockMetadata(x, y, z) == 0) {
             ++this.ticks;
             if (this.ticks == 200) {
-                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.pressureplateCopperTarnished.id, 0);
+                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.pressureplateCopperCorroded.id, 0);
                 this.ticks = 0;
             }
         }
