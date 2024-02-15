@@ -34,6 +34,7 @@ import turniplabs.halplibe.util.RecipeEntrypoint;
 import useless.dragonfly.helper.ModelHelper;
 import useless.dragonfly.model.block.BlockModelDragonFly;
 
+import java.util.HashMap;
 import java.util.Properties;
 
 import static net.minecraft.core.block.BlockMoss.stoneToMossMap;
@@ -1823,5 +1824,19 @@ public static final Block slabPermafrostPolished = slab
 
     @Override
     public void afterClientStart() {
+    }
+    private static HashMap<String, String> borderMaterialMap = new HashMap<>();
+    public static void addBorder(ItemStack stack, String imagePath){
+        borderMaterialMap.put(stack.getItemName(), imagePath);
+    }
+    public static String getBorder(ItemStack stack){
+        return borderMaterialMap.get(stack.getItemName());
+    }
+    static {
+        addBorder(Item.ingotIron.getDefaultStack(), "/assets/bonusblocks/art/border_iron.png");
+        addBorder(Item.ingotGold.getDefaultStack(), "/assets/bonusblocks/art/border_gold.png");
+        addBorder(Item.ingotSteel.getDefaultStack(), "/assets/bonusblocks/art/border_steel.png");
+        addBorder(new ItemStack(Item.dye, 1, 4), "/assets/bonusblocks/art/border_lapis.png");
+        addBorder(ingotCopper.getDefaultStack(), "/assets/bonusblocks/art/border_copper.png");
     }
 }
