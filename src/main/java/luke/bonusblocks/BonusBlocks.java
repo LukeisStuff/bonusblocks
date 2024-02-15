@@ -1627,6 +1627,7 @@ public static final Block slabPermafrostPolished = slab
         templateBlocktoItem.addInput('X', BonusBlocks.blockBone).create("block_of_bone_to_bone", new ItemStack(Item.bone, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockSlime).create("block_of_slime_to_slime", new ItemStack(Item.slimeball, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockSulphur).create("block_of_sulphur_to_sulphur", new ItemStack(Item.sulphur, 9));
+        templateBlocktoItem.addInput('X', BonusBlocks.blockSugar).create("block_of_sugar_to_sugar", new ItemStack(Item.dustSugar, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockCloth).create("block_of_cloth_to_cloth", new ItemStack(Item.cloth, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockCrudeSteel).create("block_of_crude_steel_to_crude_steel", new ItemStack(Item.ingotSteelCrude, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockFlint).create("block_of_flint_to_flint", new ItemStack(Item.flint, 9));
@@ -1684,7 +1685,7 @@ public static final Block slabPermafrostPolished = slab
         templateMushroomToBlock.addInput('X', Block.mushroomBrown).create("brown_mushroom_block", new ItemStack(BonusBlocks.blockMushroomBrown, 4));
         templateMushroomToBlock.addInput('X', BonusBlocks.mushroomGray).create("gray_mushroom_block", new ItemStack(BonusBlocks.blockMushroomGray, 4));
 
-        templateMushroomToBlock.addInput('X', BonusBlocks.ingotCopper).create("block_of_raw_copper", new ItemStack(BonusBlocks.blockCopper, 1));
+        templateMushroomToBlock.addInput('X', BonusBlocks.ingotCopper).create("block_of_copper", new ItemStack(BonusBlocks.blockCopper, 1));
 
         templateMushroomToBlock.addInput('X', Block.flowerRed).create("petal_red", new ItemStack(BonusBlocks.petalRed, 4));
         templateMushroomToBlock.addInput('X', Block.flowerYellow).create("petal_yellow", new ItemStack(BonusBlocks.petalYellow, 4));
