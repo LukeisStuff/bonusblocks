@@ -25,7 +25,7 @@ public class WorldFeaturePumice extends WorldFeature {
                 if ((world.getBlockId(i1, y - 1, k1) == Block.netherrack.id
                         || world.getBlockId(i1, y - 1, k1) == Block.soulsand.id
                         || world.getBlockId(i1, y - 1, k1) == BonusBlocks.netherrack.id
-                        || world.getBlockId(i1, y - 1, k1) == BonusBlocks.cobblednetherrack.id
+                        || world.getBlockId(i1, y - 1, k1) == BonusBlocks.cobbleNetherrack.id
                         || world.getBlockId(i1, y - 1, k1) == BonusBlocks.soulslate.id) && world.getBlockId(i1, y + 1, k1) != 0) {
                     world.setBlockRaw(i1, y, k1, BonusBlocks.pumiceWet.id);
                 }

@@ -13,7 +13,7 @@ import java.util.Random;
 
 public class BiomeOvergrown extends Biome {
     public BiomeOvergrown() {
-        this.topBlock = (short) BonusBlocks.grassOvergrown.id;
+        this.topBlock = (short) BonusBlocks.overgrownGrass.id;
         this.fillerBlock = (short) Block.stone.id;
     }
 

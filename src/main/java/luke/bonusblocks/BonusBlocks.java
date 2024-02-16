@@ -26,6 +26,7 @@ import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.*;
 import turniplabs.halplibe.helper.recipeBuilders.RecipeBuilderShaped;
 import turniplabs.halplibe.util.ClientStartEntrypoint;
+import turniplabs.halplibe.util.ConfigHandler;
 import turniplabs.halplibe.util.RecipeEntrypoint;
 import turniplabs.halplibe.util.TomlConfigHandler;
 import turniplabs.halplibe.util.toml.Toml;
@@ -33,6 +34,7 @@ import useless.dragonfly.helper.ModelHelper;
 import useless.dragonfly.model.block.BlockModelDragonFly;
 
 import java.util.HashMap;
+import java.util.Properties;
 import java.util.Random;
 
 import static net.minecraft.core.block.BlockMoss.stoneToMossMap;
@@ -41,6 +43,8 @@ import static net.minecraft.core.block.BlockMoss.stoneToMossMap;
 public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStartEntrypoint {
     public static final String MOD_ID = "bonusblocks";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+    public static ConfigHandler config;
+    private static int itemID;
 
     public static Block crate;
     public static Block box;
@@ -367,6 +371,10 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
 
     static {
 
+        Properties properties = new Properties();
+        properties.put("itemID", "16750");
+        config = new ConfigHandler(MOD_ID, properties);
+        itemID = config.getInt("itemID");
         Toml registry = cfg.addCategory("registry");
         registry.addCategory("block");
         registry.addCategory("item");
@@ -1660,6 +1668,16 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
                     .build(new BlockStairs(blockCopperCorroded, ids.next()));
 
 
+            addBorder(Item.ingotIron.getDefaultStack(), "/assets/bonusblocks/art/border_iron.png");
+            addBorder(Item.ingotGold.getDefaultStack(), "/assets/bonusblocks/art/border_gold.png");
+            addBorder(Item.ingotSteel.getDefaultStack(), "/assets/bonusblocks/art/border_steel.png");
+            addBorder(new ItemStack(Item.dye, 1, 4), "/assets/bonusblocks/art/border_lapis.png");
+            addBorder(Item.diamond.getDefaultStack(), "/assets/bonusblocks/art/border_diamond.png");
+            addBorder(Item.dustRedstone.getDefaultStack(), "/assets/bonusblocks/art/border_redstone.png");
+            addBorder(Item.olivine.getDefaultStack(), "/assets/bonusblocks/art/border_olivine.png");
+            addBorder(Item.quartz.getDefaultStack(), "/assets/bonusblocks/art/border_quartz.png");
+            addBorder(BonusBlocks.ingotCopper.getDefaultStack(), "/assets/bonusblocks/art/border_copper.png");
+
 
             write();
         });
@@ -1697,6 +1715,9 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
     public static Item doorSteel = ItemHelper.createItem(BonusBlocks.MOD_ID,
             new ItemSteelDoor("door.steel", itemID++, Material.metal), "steeldoor.png");
 
+    public static Item doorSilver = ItemHelper.createItem(BonusBlocks.MOD_ID,
+            new ItemSilverDoor("door.silver", itemID++, Material.metal), "silverdoor.png");
+
     public static Item silverBed = ItemHelper.createItem(BonusBlocks.MOD_ID,
             new ItemSilverBed("bed.silver", itemID++), "silverbed.png");
 
@@ -1710,9 +1731,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             new ItemPlaceable("food.pie", itemID++, pie), "pie.png").setMaxStackSize(1);
 
 
-
-}
-
     @Override
     public void onInitialize() {
         LOGGER.info("BonusBlocks initialized.");
@@ -1722,7 +1740,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
 
 
         stoneToMossMap.put(Block.saplingOak, BonusBlocks.saplingOakMossy);
-        stoneToMossMap.put(BonusBlocks.cobblednetherrack, Block.netherrack);
+        stoneToMossMap.put(BonusBlocks.cobbleNetherrack, Block.netherrack);
 
         ItemToolPickaxe.miningLevels.put(blockRawIron, 1);
         ItemToolPickaxe.miningLevels.put(blockRawCopper, 1);
@@ -2278,18 +2296,5 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
     }
     public static String getBorder(ItemStack stack){
         return borderMaterialMap.get(stack.getItemName());
-    }
-}
-
-    static {
-        addBorder(Item.ingotIron.getDefaultStack(), "/assets/bonusblocks/art/border_iron.png");
-        addBorder(Item.ingotGold.getDefaultStack(), "/assets/bonusblocks/art/border_gold.png");
-        addBorder(Item.ingotSteel.getDefaultStack(), "/assets/bonusblocks/art/border_steel.png");
-        addBorder(new ItemStack(Item.dye, 1, 4), "/assets/bonusblocks/art/border_lapis.png");
-        addBorder(Item.diamond.getDefaultStack(), "/assets/bonusblocks/art/border_diamond.png");
-        addBorder(Item.dustRedstone.getDefaultStack(), "/assets/bonusblocks/art/border_redstone.png");
-        addBorder(Item.olivine.getDefaultStack(), "/assets/bonusblocks/art/border_olivine.png");
-        addBorder(Item.quartz.getDefaultStack(), "/assets/bonusblocks/art/border_quartz.png");
-        addBorder(ingotCopper.getDefaultStack(), "/assets/bonusblocks/art/border_copper.png");
     }
 }
