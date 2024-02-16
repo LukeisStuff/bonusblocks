@@ -1666,21 +1666,19 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
                     .setResistance(10.0f)
                     .setTextures("corrodedcopperblock.png")
                     .build(new BlockStairs(blockCopperCorroded, ids.next()));
-
-
-            addBorder(Item.ingotIron.getDefaultStack(), "/assets/bonusblocks/art/border_iron.png");
-            addBorder(Item.ingotGold.getDefaultStack(), "/assets/bonusblocks/art/border_gold.png");
-            addBorder(Item.ingotSteel.getDefaultStack(), "/assets/bonusblocks/art/border_steel.png");
-            addBorder(new ItemStack(Item.dye, 1, 4), "/assets/bonusblocks/art/border_lapis.png");
-            addBorder(Item.diamond.getDefaultStack(), "/assets/bonusblocks/art/border_diamond.png");
-            addBorder(Item.dustRedstone.getDefaultStack(), "/assets/bonusblocks/art/border_redstone.png");
-            addBorder(Item.olivine.getDefaultStack(), "/assets/bonusblocks/art/border_olivine.png");
-            addBorder(Item.quartz.getDefaultStack(), "/assets/bonusblocks/art/border_quartz.png");
-            addBorder(BonusBlocks.ingotCopper.getDefaultStack(), "/assets/bonusblocks/art/border_copper.png");
-
-
             write();
         });
+
+        addBorder(Item.ingotIron.getDefaultStack(), "/assets/bonusblocks/art/border_iron.png");
+        addBorder(Item.ingotGold.getDefaultStack(), "/assets/bonusblocks/art/border_gold.png");
+        addBorder(Item.ingotSteel.getDefaultStack(), "/assets/bonusblocks/art/border_steel.png");
+        addBorder(new ItemStack(Item.dye, 1, 4), "/assets/bonusblocks/art/border_lapis.png");
+        addBorder(Item.diamond.getDefaultStack(), "/assets/bonusblocks/art/border_diamond.png");
+        addBorder(Item.dustRedstone.getDefaultStack(), "/assets/bonusblocks/art/border_redstone.png");
+        addBorder(Item.olivine.getDefaultStack(), "/assets/bonusblocks/art/border_olivine.png");
+        addBorder(Item.quartz.getDefaultStack(), "/assets/bonusblocks/art/border_quartz.png");
+        addBorder(BonusBlocks.ingotCopper.getDefaultStack(), "/assets/bonusblocks/art/border_copper.png");
+
     }
 
 
@@ -1738,85 +1736,6 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
         Item.oreRawGold = new ItemRawGold("ore.raw.gold", 16510).setIconCoord(10, 8);
         Item.oreRawIron = new ItemRawIron("ore.raw.iron", 16511).setIconCoord(9, 8);
 
-
-        stoneToMossMap.put(Block.saplingOak, BonusBlocks.saplingOakMossy);
-        stoneToMossMap.put(BonusBlocks.cobbleNetherrack, Block.netherrack);
-
-        ItemToolPickaxe.miningLevels.put(blockRawIron, 1);
-        ItemToolPickaxe.miningLevels.put(blockRawCopper, 1);
-        ItemToolPickaxe.miningLevels.put(oreCopperStone, 1);
-        ItemToolPickaxe.miningLevels.put(oreCopperBasalt, 1);
-        ItemToolPickaxe.miningLevels.put(oreCopperLimestone, 1);
-        ItemToolPickaxe.miningLevels.put(oreCopperGranite, 1);
-        ItemToolPickaxe.miningLevels.put(blockCopper, 1);
-        ItemToolPickaxe.miningLevels.put(blockCopperTarnished, 1);
-        ItemToolPickaxe.miningLevels.put(blockCopperCorroded, 1);
-        ItemToolPickaxe.miningLevels.put(pipeCopper, 1);
-        ItemToolPickaxe.miningLevels.put(pipeCopperTarnished, 1);
-        ItemToolPickaxe.miningLevels.put(pipeCopperCorroded, 1);
-        ItemToolPickaxe.miningLevels.put(trapdoorCopper, 1);
-        ItemToolPickaxe.miningLevels.put(trapdoorCopperTarnished, 1);
-        ItemToolPickaxe.miningLevels.put(trapdoorCopperCorroded, 1);
-        ItemToolPickaxe.miningLevels.put(doorCopperTop, 1);
-        ItemToolPickaxe.miningLevels.put(doorCopperBottom, 1);
-        ItemToolPickaxe.miningLevels.put(doorCopperTarnishedTop, 1);
-        ItemToolPickaxe.miningLevels.put(doorCopperTarnishedBottom, 1);
-        ItemToolPickaxe.miningLevels.put(doorCopperCorrodedBottom, 1);
-        ItemToolPickaxe.miningLevels.put(doorCopperCorrodedTop, 1);
-        ItemToolPickaxe.miningLevels.put(fenceCopper, 1);
-        ItemToolPickaxe.miningLevels.put(fenceCopperTarnished, 1);
-        ItemToolPickaxe.miningLevels.put(fenceCopperCorroded, 1);
-        ItemToolPickaxe.miningLevels.put(slabCopper, 1);
-        ItemToolPickaxe.miningLevels.put(slabCopperTarnished, 1);
-        ItemToolPickaxe.miningLevels.put(slabCopperCorroded, 1);
-        ItemToolPickaxe.miningLevels.put(stairsCopper, 1);
-        ItemToolPickaxe.miningLevels.put(stairsCopperTarnished, 1);
-        ItemToolPickaxe.miningLevels.put(stairsCopperCorroded, 1);
-        ItemToolPickaxe.miningLevels.put(slabBrickLapis, 1);
-        ItemToolPickaxe.miningLevels.put(stairsBrickLapis, 1);
-
-
-        ItemToolPickaxe.miningLevels.put(blockRawGold, 2);
-        ItemToolPickaxe.miningLevels.put(slabBrickGold, 2);
-        ItemToolPickaxe.miningLevels.put(stairsBrickGold, 2);
-        ItemToolPickaxe.miningLevels.put(brickSteel, 2);
-        ItemToolPickaxe.miningLevels.put(slabBrickSteel, 2);
-        ItemToolPickaxe.miningLevels.put(stairsBrickSteel, 2);
-        ItemToolPickaxe.miningLevels.put(trapdoorSteel, 2);
-        ItemToolPickaxe.miningLevels.put(doorSteelTop, 2);
-        ItemToolPickaxe.miningLevels.put(doorSteelBottom, 2);
-        ItemToolPickaxe.miningLevels.put(blockCrudeSteel, 2);
-
-
-        Item.itemsList[boxPainted.id] = new ItemBlockPainted(boxPainted, false);
-
-
-        LookupFuelFurnace.instance.addFuelEntry(logMaple.id, 300);
-        LookupFuelFurnace.instance.addFuelEntry(logJacaranda.id, 300);
-        LookupFuelFurnace.instance.addFuelEntry(logScorched.id, 300);
-        LookupFuelFurnace.instance.addFuelEntry(logShrub.id, 300);
-/*
-        LookupFuelFurnace.instance.addFuelEntry(barkOak.id, 300);
-        LookupFuelFurnace.instance.addFuelEntry(barkOakMossy.id, 300);
-        LookupFuelFurnace.instance.addFuelEntry(barkPine.id, 300);
-        LookupFuelFurnace.instance.addFuelEntry(barkBirch.id, 300);
-        LookupFuelFurnace.instance.addFuelEntry(barkCherry.id, 300);
-        LookupFuelFurnace.instance.addFuelEntry(barkEucalyptus.id, 300);
-        LookupFuelFurnace.instance.addFuelEntry(barkMaple.id, 300);
-        LookupFuelFurnace.instance.addFuelEntry(barkJacaranda.id, 300);
-        LookupFuelFurnace.instance.addFuelEntry(barkScorched.id, 300);
-        LookupFuelFurnace.instance.addFuelEntry(barkShrub.id, 300);
-*/
-        LookupFuelFurnace.instance.addFuelEntry(box.id, 300);
-        LookupFuelFurnace.instance.addFuelEntry(boxPainted.id, 300);
-        LookupFuelFurnace.instance.addFuelEntry(crate.id, 300);
-//        LookupFuelFurnace.instance.addFuelEntry(crateSticky.id, 300);
-        LookupFuelFurnace.instance.addFuelEntry(bookshelfEmptyPlanksOak.id, 300);
-        LookupFuelFurnace.instance.addFuelEntry(thatch.id, 400);
-        LookupFuelFurnace.instance.addFuelEntry(branch.id, 300);
-        LookupFuelFurnace.instance.addFuelEntry(saplingJacaranda.id, 10);
-        LookupFuelFurnace.instance.addFuelEntry(saplingMaple.id, 10);
-        LookupFuelFurnace.instance.addFuelEntry(saplingOakMossy.id, 10);
     }
 
     public void onRecipesReady() {
@@ -2289,6 +2208,71 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
 
     @Override
     public void afterClientStart() {
+        Item.itemsList[boxPainted.id] = new ItemBlockPainted(boxPainted, false);
+
+        stoneToMossMap.put(Block.saplingOak, BonusBlocks.saplingOakMossy);
+        stoneToMossMap.put(BonusBlocks.cobbleNetherrack, Block.netherrack);
+
+        ItemToolPickaxe.miningLevels.put(blockRawIron, 1);
+        ItemToolPickaxe.miningLevels.put(blockRawCopper, 1);
+        ItemToolPickaxe.miningLevels.put(oreCopperStone, 1);
+        ItemToolPickaxe.miningLevels.put(oreCopperBasalt, 1);
+        ItemToolPickaxe.miningLevels.put(oreCopperLimestone, 1);
+        ItemToolPickaxe.miningLevels.put(oreCopperGranite, 1);
+        ItemToolPickaxe.miningLevels.put(blockCopper, 1);
+        ItemToolPickaxe.miningLevels.put(blockCopperTarnished, 1);
+        ItemToolPickaxe.miningLevels.put(blockCopperCorroded, 1);
+        ItemToolPickaxe.miningLevels.put(pipeCopper, 1);
+        ItemToolPickaxe.miningLevels.put(pipeCopperTarnished, 1);
+        ItemToolPickaxe.miningLevels.put(pipeCopperCorroded, 1);
+        ItemToolPickaxe.miningLevels.put(trapdoorCopper, 1);
+        ItemToolPickaxe.miningLevels.put(trapdoorCopperTarnished, 1);
+        ItemToolPickaxe.miningLevels.put(trapdoorCopperCorroded, 1);
+        ItemToolPickaxe.miningLevels.put(doorCopperTop, 1);
+        ItemToolPickaxe.miningLevels.put(doorCopperBottom, 1);
+        ItemToolPickaxe.miningLevels.put(doorCopperTarnishedTop, 1);
+        ItemToolPickaxe.miningLevels.put(doorCopperTarnishedBottom, 1);
+        ItemToolPickaxe.miningLevels.put(doorCopperCorrodedBottom, 1);
+        ItemToolPickaxe.miningLevels.put(doorCopperCorrodedTop, 1);
+        ItemToolPickaxe.miningLevels.put(fenceCopper, 1);
+        ItemToolPickaxe.miningLevels.put(fenceCopperTarnished, 1);
+        ItemToolPickaxe.miningLevels.put(fenceCopperCorroded, 1);
+        ItemToolPickaxe.miningLevels.put(slabCopper, 1);
+        ItemToolPickaxe.miningLevels.put(slabCopperTarnished, 1);
+        ItemToolPickaxe.miningLevels.put(slabCopperCorroded, 1);
+        ItemToolPickaxe.miningLevels.put(stairsCopper, 1);
+        ItemToolPickaxe.miningLevels.put(stairsCopperTarnished, 1);
+        ItemToolPickaxe.miningLevels.put(stairsCopperCorroded, 1);
+        ItemToolPickaxe.miningLevels.put(slabBrickLapis, 1);
+        ItemToolPickaxe.miningLevels.put(stairsBrickLapis, 1);
+
+
+        ItemToolPickaxe.miningLevels.put(blockRawGold, 2);
+        ItemToolPickaxe.miningLevels.put(slabBrickGold, 2);
+        ItemToolPickaxe.miningLevels.put(stairsBrickGold, 2);
+        ItemToolPickaxe.miningLevels.put(brickSteel, 2);
+        ItemToolPickaxe.miningLevels.put(slabBrickSteel, 2);
+        ItemToolPickaxe.miningLevels.put(stairsBrickSteel, 2);
+        ItemToolPickaxe.miningLevels.put(trapdoorSteel, 2);
+        ItemToolPickaxe.miningLevels.put(doorSteelTop, 2);
+        ItemToolPickaxe.miningLevels.put(doorSteelBottom, 2);
+        ItemToolPickaxe.miningLevels.put(blockCrudeSteel, 2);
+
+
+        LookupFuelFurnace.instance.addFuelEntry(logMaple.id, 300);
+        LookupFuelFurnace.instance.addFuelEntry(logJacaranda.id, 300);
+        LookupFuelFurnace.instance.addFuelEntry(logScorched.id, 300);
+        LookupFuelFurnace.instance.addFuelEntry(logShrub.id, 300);
+
+        LookupFuelFurnace.instance.addFuelEntry(box.id, 300);
+        LookupFuelFurnace.instance.addFuelEntry(boxPainted.id, 300);
+        LookupFuelFurnace.instance.addFuelEntry(crate.id, 300);
+        LookupFuelFurnace.instance.addFuelEntry(bookshelfEmptyPlanksOak.id, 300);
+        LookupFuelFurnace.instance.addFuelEntry(thatch.id, 400);
+        LookupFuelFurnace.instance.addFuelEntry(branch.id, 300);
+        LookupFuelFurnace.instance.addFuelEntry(saplingJacaranda.id, 10);
+        LookupFuelFurnace.instance.addFuelEntry(saplingMaple.id, 10);
+        LookupFuelFurnace.instance.addFuelEntry(saplingOakMossy.id, 10);
     }
     private static final HashMap<String, String> borderMaterialMap = new HashMap<>();
     public static void addBorder(ItemStack stack, String imagePath){
