@@ -43,6 +43,39 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
     public static Block crate;
+    public static Block box;
+    public static Block boxPainted;
+    public static Block bookshelfEmptyPlanksOak;
+    public static Block branch;
+    public static Block leavesOakMossy;
+    public static Block leavesMaple;
+    public static Block leavesJacaranda;
+    public static Block saplingOakMossy;
+    public static Block saplingMaple;
+    public static Block saplingJacaranda;
+    public static Block logShrub;
+    public static Block logCacao;
+    public static Block logMaple;
+    public static Block logJacaranda;
+    public static Block logScorched;
+    public static Block overgrownGrass;
+    public static Block overgrownGrassRetro;
+    public static Block overgrownGrassScorched;
+    public static Block overgrownPath;
+    public static Block flowerCyan;
+    public static Block flowerPurple;
+    public static Block flowerPink;
+    public static Block flowerSilver;
+    public static Block flowerOrange;
+    public static Block flowerLightBlue;
+    public static Block flowerMagenta;
+    public static Block flowerLime;
+    public static Block petalYellow;
+    public static Block petalYellow;
+    public static Block crate;
+    public static Block crate;
+    public static Block crate;
+
 
     protected static final Toml cfg = new Toml();
     protected static Toml registry;
@@ -59,13 +92,125 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setFlammability(5, 20)
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT);
 
-    // Boxes
     public static BlockBuilder boxes = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.0f))
             .setHardness(2.5f)
             .setResistance(5.0f)
             .setFlammability(5, 20)
             .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT);
+
+    public static final BlockBuilder leaves = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
+            .setHardness(0.2F)
+            .setResistance(0.2F)
+            .setFlammability(30, 60)
+            .setTickOnLoad()
+            .setVisualUpdateOnMetadata()
+            .setItemBlock(ItemBlockLeaves::new)
+            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_HOE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS, BlockTags.SHEARS_DO_SILK_TOUCH);
+
+    public static final BlockBuilder sapling = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
+            .setHardness(0.0f)
+            .setResistance(0.0f)
+            .setBlockModel(new BlockModelRenderBlocks(1))
+            .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR);
+
+    public static final BlockBuilder log = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.0f))
+            .setHardness(2.0F)
+            .setResistance(1.0f)
+            .setFlammability(5, 5)
+            .setBlockModel(new BlockModelRenderBlocks(27))
+            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT);
+
+    public static final BlockBuilder grass = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
+            .setHardness(0.6f)
+            .setResistance(1.0f)
+            .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.GROWS_FLOWERS, BlockTags.GROWS_SUGAR_CANE, BlockTags.GROWS_TREES, BlockTags.PASSIVE_MOBS_SPAWN, BlockTags.FIREFLIES_CAN_SPAWN, BlockTags.CAVE_GEN_REPLACES_SURFACE, BlockTags.CAVES_CUT_THROUGH);
+
+    public static final BlockBuilder flower = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
+            .setHardness(0.0f)
+            .setResistance(0.0f)
+            .setBlockModel(new BlockModelRenderBlocks(1))
+            .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR);
+
+    public static final BlockBuilder petal = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
+            .setHardness(0.6f)
+            .setResistance(0.6f)
+            .setFlammability(30, 60)
+            .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.GROWS_FLOWERS, BlockTags.MINEABLE_BY_AXE);
+
+    public static final BlockBuilder petalLayer = petal
+            .setHardness(0.0f)
+            .setResistance(0.0f)
+            .setUseInternalLight()
+            .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.BROKEN_BY_FLUIDS, BlockTags.MINEABLE_BY_AXE);
+
+    public static final BlockBuilder raw = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+            .setHardness(5.0f)
+            .setResistance(10.0f)
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE);
+
+    public static final BlockBuilder pebble = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+            .setHardness(0.0f)
+            .setResistance(0.0f)
+            .setBlockModel(new BlockModelRenderBlocks(29))
+            .setVisualUpdateOnMetadata()
+            .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.NOT_IN_CREATIVE_MENU);
+
+    private static final BlockBuilder ore = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
+            .setHardness(3.0f)
+            .setResistance(5.0f)
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE);
+
+    private static final BlockBuilder silver = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 2.0f))
+            .setHardness(0.8f)
+            .setResistance(2.0f)
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE);
+
+    public static final BlockBuilder stone = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
+            .setHardness(1.0f)
+            .setResistance(10.0f)
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE);
+
+    public static final BlockBuilder obsidian = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
+            .setHardness(5.0f)
+            .setResistance(1000.0f)
+            .setTextures("obsidianglass.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE);
+
+    public static final BlockBuilder brick = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
+            .setResistance(10.0f)
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE);
+
+    public static final BlockBuilder slab = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
+            .setHardness(1.0f)
+            .setResistance(10.0f)
+            .setUseInternalLight()
+            .setVisualUpdateOnMetadata()
+            .setItemBlock(ItemBlockSlab::new)
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE);
+
+    public static final BlockBuilder stairs = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
+            .setHardness(1.0f)
+            .setResistance(10.0f)
+            .setUseInternalLight()
+            .setVisualUpdateOnMetadata()
+            .setBlockModel(new BlockModelRenderBlocks(10))
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE);
 
     static {
 
@@ -77,291 +222,245 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
         Toml block = registry.get(".block", Toml.class);
         BlockHelper.reserveRuns("bonusblocks", block, 182, ids -> {
 
-            public Block crate = crates
+            /// Blocks
+
+            // Crates
+            crate = crates
                     .setTextures("crate.png")
                     .build(new Block("crate", ids.next(), Material.wood));
-            Block box = boxes
+
+            // Boxes
+            box = boxes
                     .setTextures(9, 1)
                     .build(new Block("box", ids.next(), Material.wood));
-            Block boxPainted = boxes
+            boxPainted = boxes
                     .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT, BlockTags.NOT_IN_CREATIVE_MENU)
                     .build(new BlockPaintedBox("box.painted", ids.next()));
 
+
+            // Bookshelf
+            bookshelfEmptyPlanksOak = new BlockBuilder(MOD_ID)
+                    .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 0.8f))
+                    .setHardness(1.5f)
+                    .setResistance(1.0f)
+                    .setTopBottomTexture(4, 0)
+                    .setSideTextures("emptybookshelf.png")
+                    .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
+                    .build(new Block("bookshelf.empty.planks.oak", ids.next(), Material.wood));
+
+            // Leaves and Branch
+            branch = leaves
+                    .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 0.5f))
+                    .setTextures("branch.png")
+                    .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
+                    .build(new BlockBranch("branch", ids.next(), Material.leaves));
+
+            leavesOakMossy = leaves
+                    .setBlockColor(new BlockColorLeavesOak())
+                    .setSideTextures("mossyleaves.png")
+                    .setBottomTexture("mossyleavesfast.png")
+                    .setTopBottomTexture("mossyleaves.png")
+                    .build(new BlockLeavesBase("leaves.oak.mossy", ids.next(), Material.leaves, true) {
+                        @Override
+                        protected Block getSapling() {
+                            return BonusBlocks.saplingOakMossy;
+                        }
+                    });
+            leavesMaple = leaves
+                    .setSideTextures("mapleleaves.png")
+                    .setBottomTexture("mapleleavesfast.png")
+                    .setTopBottomTexture("mapleleaves.png")
+                    .build(new BlockLeavesBase("leaves.maple", ids.next(), Material.leaves, true) {
+                        @Override
+                        protected Block getSapling() {
+                            return BonusBlocks.saplingMaple;
+                        }
+                    });
+            leavesJacaranda = leaves
+                    .setSideTextures("jacaleaves.png")
+                    .setBottomTexture("jacaleavesfast.png")
+                    .setTopBottomTexture("jacaleaves.png")
+                    .build(new BlockLeavesBase("leaves.jacaranda", ids.next(), Material.leaves, true) {
+                        @Override
+                        protected Block getSapling() {
+                            return BonusBlocks.saplingJacaranda;
+                        }
+                    });
+
+
+            // Saplings
+            saplingMaple = sapling
+                    .setTextures("maplesapling.png")
+                    .build(new BlockSaplingMaple("sapling.maple", ids.next()));
+            saplingJacaranda = sapling
+                    .setTextures("jacasapling.png")
+                    .build(new BlockSaplingJacaranda("sapling.jacaranda", ids.next()));
+            saplingOakMossy = sapling
+                    .setTextures("mossyoaksapling.png")
+                    .build(new BlockSaplingMossyOak("sapling.oak.mossy", ids.next()));
+
+
+            // Logs
+            logShrub = log
+                    .setTopBottomTexture("shrublogtop.png")
+                    .setSideTextures("shrublogside.png")
+                    .build(new BlockLog("log.shrub", ids.next()));
+            logCacao = log
+                    .setTopBottomTexture("cacaologtop.png")
+                    .setSideTextures("cacaologside.png")
+                    .build(new BlockLog("log.cacao", ids.next()));
+            logMaple = log
+                    .setTopBottomTexture("maplelogtop.png")
+                    .setSideTextures("maplelogside.png")
+                    .build(new BlockLog("log.maple", ids.next()));
+            logJacaranda = log
+                    .setTopBottomTexture("jacalogtop.png")
+                    .setSideTextures("jacalogside.png")
+                    .build(new BlockLog("log.jacaranda", ids.next()));
+            logScorched = log
+                    .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.2f))
+                    .setHardness(1.8f)
+                    .setTopBottomTexture("charredlogtop.png")
+                    .setSideTextures("charredlogside.png")
+                    .build(new BlockLog("log.scorched", ids.next()));
+
+
+            // Overgrown Grass
+            overgrownGrass = grass
+                    .setTextures(0, 0)
+                    .setBlockColor(new BlockColorGrass())
+                    .build(new Block("grass.overgrown", ids.next(), Material.grass));
+            overgrownGrassRetro = grass
+                    .setTextures(8, 1)
+                    .build(new Block("grass.retro.overgrown", ids.next(), Material.grass));
+            overgrownGrassScorched = grass
+                    .setTextures(16, 11)
+                    .build(new Block("grass.scorched.overgrown", ids.next(), Material.grass));
+            overgrownPath = grass
+                    .setTextures(4, 6)
+                    .setTags(BlockTags.MINEABLE_BY_SHOVEL)
+                    .setBlockDrop(BonusBlocks.overgrownPath)
+                    .build(new BlockDirtPath("path.overgrown", ids.next()));
+
+            // Flowers
+            flowerCyan = flower
+                    .setTextures("bluebell.png")
+                    .build(new BlockFlower("flower.cyan", ids.next()));
+            flowerPurple = flower
+                    .setTextures("heather.png")
+                    .build(new BlockFlower("flower.purple", ids.next()));
+            flowerPink = flower
+                    .setTextures("orchid.png")
+                    .build(new BlockFlower("flower.pink", ids.next()));
+            flowerSilver = flower
+                    .setTextures("whitedandelion.png")
+                    .build(new BlockFlower("flower.silver", ids.next()));
+            flowerOrange = flower
+                    .setTextures("gladiola.png")
+                    .build(new BlockFlower("flower.orange", ids.next()));
+            flowerLightBlue = flower
+                    .setTextures("pansy.png")
+                    .build(new BlockFlower("flower.lightblue", ids.next()));
+            flowerMagenta = flower
+                    .setTextures("hyacinth.png")
+                    .build(new BlockFlower("flower.magenta", ids.next()));
+            flowerLime = flower
+                    .setTextures("clovers.png")
+                    .build(new BlockFlower("flower.lime", ids.next()));
+
+            // Petals
+            petalYellow = petal
+                    .setTextures("yellowpetal.png")
+                    .build(new BlockPetal("petal.yellow", ids.next(), Material.grass));
+            petalRed = petal
+                    .setTextures("redpetal.png")
+                    .build(new BlockPetal("petal.red", ids.next(), Material.grass));
+            petalCyan = petal
+                    .setTextures("cyanpetal.png")
+                    .build(new BlockPetal("petal.cyan", ids.next(), Material.grass));
+            petalPurple = petal
+                    .setTextures("purplepetal.png")
+                    .build(new BlockPetal("petal.purple", ids.next(), Material.grass));
+            petalPink = petal
+                    .setTextures("pinkpetal.png")
+                    .build(new BlockPetal("petal.pink", ids.next(), Material.grass));
+            petalSilver = petal
+                    .setTextures("silverpetal.png")
+                    .build(new BlockPetal("petal.silver", ids.next(), Material.grass));
+            petalOrange = petal
+                    .setTextures("orangepetal.png")
+                    .build(new BlockPetal("petal.orange", ids.next(), Material.grass));
+            petalLightBlue = petal
+                    .setTextures("lightbluepetal.png")
+                    .build(new BlockPetal("petal.lightblue", ids.next(), Material.grass));
+            petalMagenta = petal
+                    .setTextures("magentapetal.png")
+                    .build(new BlockPetal("petal.magenta", ids.next(), Material.grass));
+            petalLime = petal
+                    .setTextures("limepetal.png")
+                    .build(new BlockPetal("petal.lime", ids.next(), Material.grass));
+
+            // Petal Layers
+            layerPetalYellow = petalLayer
+                    .setTextures("yellowpetallayer.png")
+                    .build(new BlockLayerPetal("layer.petal.yellow", ids.next(), Material.grass));
+            layerPetalRed = petalLayer
+                    .setTextures("redpetallayer.png")
+                    .build(new BlockLayerPetal("layer.petal.red", ids.next(), Material.grass));
+            layerPetalCyan = petalLayer
+                    .setTextures("cyanpetallayer.png")
+                    .build(new BlockLayerPetal("layer.petal.cyan", ids.next(), Material.grass));
+            layerPetalPurple = petalLayer
+                    .setTextures("purplepetallayer.png")
+                    .build(new BlockLayerPetal("layer.petal.purple", ids.next(), Material.grass));
+            layerPetalPink = petalLayer
+                    .setTextures("pinkpetallayer.png")
+                    .build(new BlockLayerPetal("layer.petal.pink", ids.next(), Material.grass));
+            layerPetalSilver = petalLayer
+                    .setTextures("silverpetallayer.png")
+                    .build(new BlockLayerPetal("layer.petal.silver", ids.next(), Material.grass));
+            layerPetalOrange = petalLayer
+                    .setTextures("orangepetallayer.png")
+                    .build(new BlockLayerPetal("layer.petal.orange", ids.next(), Material.grass));
+            layerPetalLightBlue = petalLayer
+                    .setTextures("lightbluepetallayer.png")
+                    .build(new BlockLayerPetal("layer.petal.lightblue", ids.next(), Material.grass));
+            layerPetalMagenta = petalLayer
+                    .setTextures("magentapetallayer.png")
+                    .build(new BlockLayerPetal("layer.petal.magenta", ids.next(), Material.grass));
+            layerPetalLime = petalLayer
+                    .setTextures("limepetallayer.png")
+                    .build(new BlockLayerPetal("layer.petal.lime", ids.next(), Material.grass));
+
+            // Mushroom
+            mushroomGray = flower
+                    .setTextures("shroom.png")
+                    .build(new BlockMushroom("mushroom.gray", ids.next()));
+
+            // Mushroom Blocks
+            blockMushroomBrown = grass
+                    .setLuminance(2)
+                    .setTextures("brownmushroom.png")
+                    .setFlammability(30, 60)
+                    .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SHEARS)
+                    .build(new Block("block.mushroom.brown", ids.next(), Material.dirt));
+            blockMushroomRed = grass
+                    .setTextures("redmushroom.png")
+                    .setFlammability(30, 60)
+                    .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SHEARS)
+                    .build(new Block("block.mushroom.red", ids.next(), Material.dirt));
+            blockMushroomGray = grass
+                    .setTextures("graymushroom.png")
+                    .setFlammability(30, 60)
+                    .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SHEARS)
+                    .build(new Block("block.mushroom.gray", ids.next(), Material.dirt));
 
             write();
         });
     }
 
-    /// Blocks
-
-    // Bookshelf
-    public static Block bookshelfEmptyPlanksOak = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 0.8f))
-            .setHardness(1.5f)
-            .setResistance(1.0f)
-            .setTopBottomTexture(4, 0)
-            .setFlammability(30, 20)
-            .setSideTextures("emptybookshelf.png")
-            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
-            .build(new Block("bookshelf.empty.planks.oak", ids.next(), Material.wood));
-
-    // Leaves and Branch
-    public static final BlockBuilder leaves = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
-            .setHardness(0.2F)
-            .setResistance(0.2F)
-            .setFlammability(30, 60)
-            .setTickOnLoad()
-            .setVisualUpdateOnMetadata()
-            .setItemBlock(ItemBlockLeaves::new)
-            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_HOE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS, BlockTags.SHEARS_DO_SILK_TOUCH);
-
-    public static final Block branch = leaves
-            .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 0.5f))
-            .setTextures("branch.png")
-            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
-            .build(new BlockBranch("branch", ids.next(), Material.leaves));
-
-    public static final Block leavesOakMossy = leaves
-            .setBlockColor(new BlockColorLeavesOak())
-            .setSideTextures("mossyleaves.png")
-            .setBottomTexture("mossyleavesfast.png")
-            .setTopBottomTexture("mossyleaves.png")
-            .build(new BlockLeavesBase("leaves.oak.mossy", ids.next(), Material.leaves, true) {
-                @Override
-                protected Block getSapling() {
-                    return BonusBlocks.saplingOakMossy;
-                }
-            });
-    public static final Block leavesMaple = leaves
-            .setSideTextures("mapleleaves.png")
-            .setBottomTexture("mapleleavesfast.png")
-            .setTopBottomTexture("mapleleaves.png")
-            .build(new BlockLeavesBase("leaves.maple", ids.next(), Material.leaves, true) {
-                @Override
-                protected Block getSapling() {
-                    return BonusBlocks.saplingMaple;
-                }
-            });
-    public static final Block leavesJacaranda = leaves
-            .setSideTextures("jacaleaves.png")
-            .setBottomTexture("jacaleavesfast.png")
-            .setTopBottomTexture("jacaleaves.png")
-            .build(new BlockLeavesBase("leaves.jacaranda", ids.next(), Material.leaves, true) {
-                @Override
-                protected Block getSapling() {
-                    return BonusBlocks.saplingJacaranda;
-                }
-            });
-
-    // Saplings
-    public static final BlockBuilder sapling = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
-            .setHardness(0.0f)
-            .setResistance(0.0f)
-            .setBlockModel(new BlockModelRenderBlocks(1))
-            .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR);
-
-    public static final Block saplingMaple = sapling
-            .setTextures("maplesapling.png")
-            .build(new BlockSaplingMaple("sapling.maple", ids.next()));
-    public static final Block saplingJacaranda = sapling
-            .setTextures("jacasapling.png")
-            .build(new BlockSaplingJacaranda("sapling.jacaranda", ids.next()));
-    public static final Block saplingOakMossy = sapling
-            .setTextures("mossyoaksapling.png")
-            .build(new BlockSaplingMossyOak("sapling.oak.mossy", ids.next()));
-
-    // Logs
-    public static final BlockBuilder log = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.0f))
-            .setHardness(2.0F)
-            .setResistance(1.0f)
-            .setFlammability(5, 5)
-            .setBlockModel(new BlockModelRenderBlocks(27))
-            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT);
-
-    public static final Block logShrub = log
-            .setTopBottomTexture("shrublogtop.png")
-            .setSideTextures("shrublogside.png")
-            .build(new BlockLog("log.shrub", ids.next()));
-    public static final Block logCacao = log
-            .setTopBottomTexture("cacaologtop.png")
-            .setSideTextures("cacaologside.png")
-            .build(new BlockLog("log.cacao", ids.next()));
-    public static final Block logMaple = log
-            .setTopBottomTexture("maplelogtop.png")
-            .setSideTextures("maplelogside.png")
-            .build(new BlockLog("log.maple", ids.next()));
-    public static final Block logJacaranda = log
-            .setTopBottomTexture("jacalogtop.png")
-            .setSideTextures("jacalogside.png")
-            .build(new BlockLog("log.jacaranda", ids.next()));
-    public static final Block logScorched = log
-            .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.2f))
-            .setHardness(1.8f)
-            .setTopBottomTexture("charredlogtop.png")
-            .setSideTextures("charredlogside.png")
-            .build(new BlockLog("log.scorched", ids.next()));
-
-
-
-    // Overgrown Grass
-    public static final BlockBuilder grass = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
-            .setHardness(0.6f)
-            .setResistance(1.0f)
-            .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.GROWS_FLOWERS, BlockTags.GROWS_SUGAR_CANE, BlockTags.GROWS_TREES, BlockTags.PASSIVE_MOBS_SPAWN, BlockTags.FIREFLIES_CAN_SPAWN, BlockTags.CAVE_GEN_REPLACES_SURFACE, BlockTags.CAVES_CUT_THROUGH);
-
-    public static final Block grassOvergrown = grass
-            .setTextures(0, 0)
-            .setBlockColor(new BlockColorGrass())
-            .build(new Block("grass.overgrown", ids.next(), Material.grass));
-    public static final Block grassRetroOvergrown = grass
-            .setTextures(8, 1)
-            .build(new Block("grass.retro.overgrown", ids.next(), Material.grass));
-    public static final Block grassScorchedOvergrown = grass
-            .setTextures(16, 11)
-            .build(new Block("grass.scorched.overgrown", ids.next(), Material.grass));
-    public static final Block pathOvergrown = grass
-            .setTextures(4, 6)
-            .setTags(BlockTags.MINEABLE_BY_SHOVEL)
-            .setBlockDrop(BonusBlocks.pathOvergrown)
-            .build(new BlockDirtPath("path.overgrown", ids.next()));
-
-
-    // Flowers
-    public static final BlockBuilder flower = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
-            .setHardness(0.0f)
-            .setResistance(0.0f)
-            .setBlockModel(new BlockModelRenderBlocks(1))
-            .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLANTABLE_IN_JAR);
-    public static final Block flowerCyan = flower
-            .setTextures("bluebell.png")
-            .build(new BlockFlower("flower.cyan", ids.next()));
-    public static final Block flowerPurple = flower
-            .setTextures("heather.png")
-            .build(new BlockFlower("flower.purple", ids.next()));
-    public static final Block flowerPink = flower
-            .setTextures("orchid.png")
-            .build(new BlockFlower("flower.pink", ids.next()));
-    public static final Block flowerSilver = flower
-            .setTextures("whitedandelion.png")
-            .build(new BlockFlower("flower.silver", ids.next()));
-    public static final Block flowerOrange = flower
-            .setTextures("gladiola.png")
-            .build(new BlockFlower("flower.orange", ids.next()));
-    public static final Block flowerLightBlue = flower
-            .setTextures("pansy.png")
-            .build(new BlockFlower("flower.lightblue", ids.next()));
-    public static final Block flowerMagenta = flower
-            .setTextures("hyacinth.png")
-            .build(new BlockFlower("flower.magenta", ids.next()));
-    public static final Block flowerLime = flower
-            .setTextures("clovers.png")
-            .build(new BlockFlower("flower.lime", ids.next()));
-
-
-    public static final BlockBuilder petal = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
-            .setHardness(0.6f)
-            .setResistance(0.6f)
-            .setFlammability(30, 60)
-            .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.GROWS_FLOWERS, BlockTags.MINEABLE_BY_AXE);
-    public static final Block petalYellow = petal
-            .setTextures("yellowpetal.png")
-            .build(new BlockPetal("petal.yellow", ids.next(), Material.grass));
-    public static final Block petalRed = petal
-            .setTextures("redpetal.png")
-            .build(new BlockPetal("petal.red", ids.next(), Material.grass));
-    public static final Block petalCyan = petal
-            .setTextures("cyanpetal.png")
-            .build(new BlockPetal("petal.cyan", ids.next(), Material.grass));
-    public static final Block petalPurple = petal
-            .setTextures("purplepetal.png")
-            .build(new BlockPetal("petal.purple", ids.next(), Material.grass));
-    public static final Block petalPink = petal
-            .setTextures("pinkpetal.png")
-            .build(new BlockPetal("petal.pink", ids.next(), Material.grass));
-    public static final Block petalSilver = petal
-            .setTextures("silverpetal.png")
-            .build(new BlockPetal("petal.silver", ids.next(), Material.grass));
-    public static final Block petalOrange = petal
-            .setTextures("orangepetal.png")
-            .build(new BlockPetal("petal.orange", ids.next(), Material.grass));
-    public static final Block petalLightBlue = petal
-            .setTextures("lightbluepetal.png")
-            .build(new BlockPetal("petal.lightblue", ids.next(), Material.grass));
-    public static final Block petalMagenta = petal
-            .setTextures("magentapetal.png")
-            .build(new BlockPetal("petal.magenta", ids.next(), Material.grass));
-    public static final Block petalLime = petal
-            .setTextures("limepetal.png")
-            .build(new BlockPetal("petal.lime", ids.next(), Material.grass));
-
-
-    public static final BlockBuilder petalLayer = petal
-            .setHardness(0.0f)
-            .setResistance(0.0f)
-            .setUseInternalLight()
-            .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.BROKEN_BY_FLUIDS, BlockTags.MINEABLE_BY_AXE);
-    public static final Block layerPetalYellow = petalLayer
-            .setTextures("yellowpetallayer.png")
-            .build(new BlockLayerPetal("layer.petal.yellow", ids.next(), Material.grass));
-    public static final Block layerPetalRed = petalLayer
-            .setTextures("redpetallayer.png")
-            .build(new BlockLayerPetal("layer.petal.red", ids.next(), Material.grass));
-    public static final Block layerPetalCyan = petalLayer
-            .setTextures("cyanpetallayer.png")
-            .build(new BlockLayerPetal("layer.petal.cyan", ids.next(), Material.grass));
-    public static final Block layerPetalPurple = petalLayer
-            .setTextures("purplepetallayer.png")
-            .build(new BlockLayerPetal("layer.petal.purple", ids.next(), Material.grass));
-    public static final Block layerPetalPink = petalLayer
-            .setTextures("pinkpetallayer.png")
-            .build(new BlockLayerPetal("layer.petal.pink", ids.next(), Material.grass));
-    public static final Block layerPetalSilver = petalLayer
-            .setTextures("silverpetallayer.png")
-            .build(new BlockLayerPetal("layer.petal.silver", ids.next(), Material.grass));
-    public static final Block layerPetalOrange = petalLayer
-            .setTextures("orangepetallayer.png")
-            .build(new BlockLayerPetal("layer.petal.orange", ids.next(), Material.grass));
-    public static final Block layerPetalLightBlue = petalLayer
-            .setTextures("lightbluepetallayer.png")
-            .build(new BlockLayerPetal("layer.petal.lightblue", ids.next(), Material.grass));
-    public static final Block layerPetalMagenta = petalLayer
-            .setTextures("magentapetallayer.png")
-            .build(new BlockLayerPetal("layer.petal.magenta", ids.next(), Material.grass));
-    public static final Block layerPetalLime = petalLayer
-            .setTextures("limepetallayer.png")
-            .build(new BlockLayerPetal("layer.petal.lime", ids.next(), Material.grass));
-
-    // Mushroom
-    public static final Block mushroomGray = flower
-            .setTextures("shroom.png")
-            .build(new BlockMushroom("mushroom.gray", ids.next()));
-
-    // Mushroom Blocks
-    public static final Block blockMushroomBrown = grass
-            .setLuminance(2)
-            .setTextures("brownmushroom.png")
-            .setFlammability(30, 60)
-            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SHEARS)
-            .build(new Block("block.mushroom.brown", ids.next(), Material.dirt));
-    public static final Block blockMushroomRed = grass
-            .setTextures("redmushroom.png")
-            .setFlammability(30, 60)
-            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SHEARS)
-            .build(new Block("block.mushroom.red", ids.next(), Material.dirt));
-    public static final Block blockMushroomGray = grass
-            .setTextures("graymushroom.png")
-            .setFlammability(30, 60)
-            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SHEARS)
-            .build(new Block("block.mushroom.gray", ids.next(), Material.dirt));
-
     // Bone Block
-    public static final Block blockBone = new BlockBuilder(MOD_ID)
+    blockBone = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.8f))
             .setHardness(0.8f)
             .setResistance(5.0f)
@@ -372,7 +471,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .build(new BlockAxisAligned("block.bone", ids.next(), Material.stone));
 
     // Thatch
-    public static final Block thatch = new BlockBuilder(MOD_ID)
+    thatch = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.grass", "step.grass", 0.6f, 1.2f))
             .setHardness(0.6f)
             .setResistance(0.6f)
@@ -383,7 +482,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .build(new BlockThatch("thatch", ids.next(), Material.grass));
 
     // Cloth Block
-    public static final Block blockCloth = new BlockBuilder(MOD_ID)
+    blockCloth = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 0.8f))
             .setHardness(0.8f)
             .setResistance(0.8f)
@@ -393,7 +492,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .build(new BlockCloth("block.cloth", ids.next(), Material.cloth));
 
     // Slime Block
-    public static final Block blockSlime = new BlockBuilder(MOD_ID)
+    blockSlime = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.5f))
             .setHardness(0.2f)
             .setResistance(0.2f)
@@ -403,7 +502,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .build(new BlockSlime("block.slime", ids.next(), false));
 
     // Sulphur Block
-    public static final Block blockSulphur = new BlockBuilder(MOD_ID)
+    blockSulphur = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.sand", "step.sand", 1.0f, 0.8f))
             .setHardness(0.5f)
             .setResistance(0.5f)
@@ -412,7 +511,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .build(new BlockSulphur("block.sulphur", ids.next(), Material.explosive));
 
     // Sugar Block
-    public static final Block blockSugar = new BlockBuilder(MOD_ID)
+    blockSugar = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.sand", "step.sand", 1.0f, 0.8f))
             .setHardness(0.3f)
             .setResistance(0.3f)
@@ -421,7 +520,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .build(new BlockSand("block.sugar", ids.next()));
 
     // Leather Block
-    public static final Block blockLeather = new BlockBuilder(MOD_ID)
+    blockLeather = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 0.6f))
             .setHardness(0.8f)
             .setResistance(0.8f)
@@ -431,7 +530,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .build(new Block("block.leather", ids.next(), Material.cloth));
 
     // Wicker Block
-    public static final Block blockWicker = new BlockBuilder(MOD_ID)
+    blockWicker = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
             .setHardness(0.5f)
             .setResistance(0.5f)
@@ -441,69 +540,61 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .build(new Block("block.wicker", ids.next(), Material.cloth));
 
     // Raw Blocks
-    public static final BlockBuilder raw = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
-            .setHardness(5.0f)
-            .setResistance(10.0f)
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE);
 
-    //Raw Iron Block
-    public static final Block blockRawIron = raw
+    blockRawIron = raw
             .setTextures("rawiron.png")
             .build(new Block("block.raw.iron", ids.next(), Material.metal));
 
-    //Raw Gold Block
-    public static final Block blockRawGold = raw
+    blockRawGold = raw
             .setTextures("rawgold.png")
             .build(new Block("block.raw.gold", ids.next(), Material.metal));
 
-    //Raw Copper Block
-    public static final Block blockRawCopper = raw
+    blockRawCopper = raw
             .setTextures("rawcopper.png")
             .setTicking(true)
             .build(new Block("block.raw.copper", ids.next(), Material.metal) {
-                private int ticks;
+        private int ticks;
 
-                @Override
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                    if (world.getBlockMetadata(x, y, z) == 0) {
-                        ++this.ticks;
-                        if (this.ticks == 200) {
-                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockRawCopperTarnished.id, world.getBlockMetadata(x, y, z));
-                            this.ticks = 0;
-                        }
-                    }
+        @Override
+        public void updateTick(World world, int x, int y, int z, Random rand) {
+            if (world.getBlockMetadata(x, y, z) == 0) {
+                ++this.ticks;
+                if (this.ticks == 200) {
+                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockRawCopperTarnished.id, world.getBlockMetadata(x, y, z));
+                    this.ticks = 0;
                 }
-            });
-    public static final Block blockRawCopperTarnished = raw
+            }
+        }
+    });
+    blockRawCopperTarnished = raw
             .setTextures("rawtarnishedcopper.png")
             .setTicking(true)
             .build(new Block("block.raw.copper.tarnished", ids.next(), Material.metal) {
-                private int ticks;
+        private int ticks;
 
-                @Override
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                    if (world.getBlockMetadata(x, y, z) == 0) {
-                        ++this.ticks;
-                        if (this.ticks == 200) {
-                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockRawCopperCorroded.id, world.getBlockMetadata(x, y, z));
-                            this.ticks = 0;
-                        }
-                    }
+        @Override
+        public void updateTick(World world, int x, int y, int z, Random rand) {
+            if (world.getBlockMetadata(x, y, z) == 0) {
+                ++this.ticks;
+                if (this.ticks == 200) {
+                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockRawCopperCorroded.id, world.getBlockMetadata(x, y, z));
+                    this.ticks = 0;
                 }
-            });
-    public static final Block blockRawCopperCorroded = raw
+            }
+        }
+    });
+    blockRawCopperCorroded = raw
             .setTextures("rawcorrodedcopper.png")
             .build(new Block("block.raw.copper.corroded", ids.next(), Material.metal));
 
     //Flint Block
-    public static final Block blockFlint = raw
+    blockFlint = raw
             .setTextures("flintblock.png")
             .setInfiniburn()
             .build(new Block("block.flint", ids.next(), Material.stone));
 
     //Crude Steel Block
-    public static final Block blockCrudeSteel = new BlockBuilder(MOD_ID)
+    blockCrudeSteel = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
             .setHardness(4.0f)
             .setResistance(1000.0f)
@@ -511,31 +602,22 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTags(BlockTags.MINEABLE_BY_AXE)
             .build(new Block("block.steel.crude", ids.next(), Material.metal));
 
-
-    public static final BlockBuilder pebble = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
-            .setHardness(0.0f)
-            .setResistance(0.0f)
-            .setBlockModel(new BlockModelRenderBlocks(29))
-            .setVisualUpdateOnMetadata()
-            .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.NOT_IN_CREATIVE_MENU);
-
-    public static final Block overlayRawIron = pebble
+    overlayRawIron = pebble
             .setTextures("ironpebble1.png")
             .setTextures("ironpebble2.png")
             .setTextures("ironpebble3.png")
             .build(new BlockOverlayRawIron("overlay.iron", ids.next(), Material.metal));
-    public static final Block overlayRawGold = pebble
+    overlayRawGold = pebble
             .setTextures("goldpebble1.png")
             .setTextures("goldpebble2.png")
             .setTextures("goldpebble3.png")
             .build(new BlockOverlayRawGold("overlay.gold", ids.next(), Material.metal));
-    public static final Block overlayRawCopper = pebble
+    overlayRawCopper = pebble
             .setTextures("copperpebble1.png")
             .setTextures("copperpebble2.png")
             .setTextures("copperpebble3.png")
             .build(new BlockOverlayRawCopper("overlay.copper", ids.next(), Material.metal));
-    public static final Block overlayRawSilver = pebble
+    overlayRawSilver = pebble
             .setTextures("silverpebble1.png")
             .setTextures("silverpebble2.png")
             .setTextures("silverpebble3.png")
@@ -543,180 +625,174 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
 
 
     // Ores
-    private static final BlockBuilder ore = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
-            .setHardness(3.0f)
-            .setResistance(5.0f)
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE);
-
-    public static final Block oreCopperStone = ore
+    oreCopperStone = ore
             .setTextures("copperstone.png")
             .build(new BlockOreCopper("ore.copper.stone", ids.next()));
-    public static final Block oreCopperBasalt = ore
+    oreCopperBasalt = ore
             .setTextures("copperbasalt.png")
             .build(new BlockOreCopper("ore.copper.basalt", ids.next()));
-    public static final Block oreCopperLimestone = ore
+    oreCopperLimestone = ore
             .setTextures("copperlimestone.png")
             .build(new BlockOreCopper("ore.copper.limestone", ids.next()));
-    public static final Block oreCopperGranite = ore
+    oreCopperGranite = ore
             .setTextures("coppergranite.png")
             .build(new BlockOreCopper("ore.copper.granite", ids.next()));
 
 
     // Copper Blocks
-    public static final Block blockCopper = raw
+    blockCopper = raw
             .setTextures("copperblock.png")
             .setTicking(true)
             .build(new Block("block.copper", ids.next(), Material.metal) {
-                private int ticks;
+        private int ticks;
 
-                @Override
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                    if (world.getBlockMetadata(x, y, z) == 0) {
-                        ++this.ticks;
-                        if (this.ticks == 200) {
-                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockCopperTarnished.id, world.getBlockMetadata(x, y, z));
-                            this.ticks = 0;
-                        }
-                    }
+        @Override
+        public void updateTick(World world, int x, int y, int z, Random rand) {
+            if (world.getBlockMetadata(x, y, z) == 0) {
+                ++this.ticks;
+                if (this.ticks == 200) {
+                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockCopperTarnished.id, world.getBlockMetadata(x, y, z));
+                    this.ticks = 0;
                 }
-            });
-    public static final Block blockCopperTarnished = raw
+            }
+        }
+    });
+    blockCopperTarnished = raw
             .setTextures("tarnishedcopperblock.png")
             .setTicking(true)
             .build(new Block("block.copper.tarnished", ids.next(), Material.metal) {
-                private int ticks;
+        private int ticks;
 
-                @Override
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                    if (world.getBlockMetadata(x, y, z) == 0) {
-                        ++this.ticks;
-                        if (this.ticks == 200) {
-                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockCopperCorroded.id, world.getBlockMetadata(x, y, z));
-                            this.ticks = 0;
-                        }
-                    }
+        @Override
+        public void updateTick(World world, int x, int y, int z, Random rand) {
+            if (world.getBlockMetadata(x, y, z) == 0) {
+                ++this.ticks;
+                if (this.ticks == 200) {
+                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockCopperCorroded.id, world.getBlockMetadata(x, y, z));
+                    this.ticks = 0;
                 }
-            });
-    public static final Block blockCopperCorroded = raw
+            }
+        }
+    });
+    blockCopperCorroded = raw
             .setTextures("corrodedcopperblock.png")
             .build(new Block("block.copper.corroded", ids.next(), Material.metal));
 
-    public static final Block meshCopper = raw
+    meshCopper = raw
             .setTextures("coppergrate.png")
             .setTicking(true)
             .build(new BlockTransparent("mesh.copper", ids.next(), Material.metal, true) {
-                private int ticks;
+        private int ticks;
 
-                @Override
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                    if (world.getBlockMetadata(x, y, z) == 0) {
-                        ++this.ticks;
-                        if (this.ticks == 200) {
-                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.meshCopperTarnished.id, world.getBlockMetadata(x, y, z));
-                            this.ticks = 0;
-                        }
-                    }
+        @Override
+        public void updateTick(World world, int x, int y, int z, Random rand) {
+            if (world.getBlockMetadata(x, y, z) == 0) {
+                ++this.ticks;
+                if (this.ticks == 200) {
+                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.meshCopperTarnished.id, world.getBlockMetadata(x, y, z));
+                    this.ticks = 0;
                 }
-            });
-    public static final Block meshCopperTarnished = raw
+            }
+        }
+    });
+    meshCopperTarnished = raw
             .setTextures("tarnishedcoppergrate.png")
             .setTicking(true)
             .build(new BlockTransparent("mesh.copper.tarnished", ids.next(), Material.metal, true) {
-                private int ticks;
+        private int ticks;
 
-                @Override
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                    if (world.getBlockMetadata(x, y, z) == 0) {
-                        ++this.ticks;
-                        if (this.ticks == 200) {
-                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.meshCopperCorroded.id, world.getBlockMetadata(x, y, z));
-                            this.ticks = 0;
-                        }
-                    }
+        @Override
+        public void updateTick(World world, int x, int y, int z, Random rand) {
+            if (world.getBlockMetadata(x, y, z) == 0) {
+                ++this.ticks;
+                if (this.ticks == 200) {
+                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.meshCopperCorroded.id, world.getBlockMetadata(x, y, z));
+                    this.ticks = 0;
                 }
-            });
-    public static final Block meshCopperCorroded = raw
+            }
+        }
+    });
+    meshCopperCorroded = raw
             .setTextures("corrodedcoppergrate.png")
             .build(new BlockTransparent("mesh.copper.corroded", ids.next(), Material.metal, true) {
-            });
+    });
 
-    public static final Block pipeCopper = raw
+    pipeCopper = raw
             .setTextures("copperpipe.png")
             .setVisualUpdateOnMetadata()
             .setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(MOD_ID, "pipe.json"), ModelHelper.getOrCreateBlockState(MOD_ID, "pipe_states.json"), new PipeMetaStateInterpreter(), false, 0.25f))
             .build(new BlockCopperPipe("pipe.copper", ids.next(), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "pipe.json"), false));
 
-    public static final Block pipeCopperTarnished = raw
+    pipeCopperTarnished = raw
             .setTextures("tarnishedcopperpipe.png")
             .setVisualUpdateOnMetadata()
             .setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(MOD_ID, "tarnishedpipe.json"), ModelHelper.getOrCreateBlockState(MOD_ID, "tarnished_pipe_states.json"), new PipeMetaStateInterpreter(), false, 0.25f))
             .build(new BlockCopperPipe("pipe.copper.tarnished", ids.next(), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "tarnishedpipe.json"), false) {
-                private int ticks;
+        private int ticks;
 
-                @Override
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                    if (world.getBlockMetadata(x, y, z) == 0) {
-                        ++this.ticks;
-                        if (this.ticks == 200) {
-                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.pipeCopperCorroded.id, world.getBlockMetadata(x, y, z));
-                            this.ticks = 0;
-                        }
-                    }
+        @Override
+        public void updateTick(World world, int x, int y, int z, Random rand) {
+            if (world.getBlockMetadata(x, y, z) == 0) {
+                ++this.ticks;
+                if (this.ticks == 200) {
+                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.pipeCopperCorroded.id, world.getBlockMetadata(x, y, z));
+                    this.ticks = 0;
                 }
-            });
+            }
+        }
+    });
 
-    public static final Block pipeCopperCorroded = raw
+    pipeCopperCorroded = raw
             .setTextures("corrodedcopperpipe.png")
             .setVisualUpdateOnMetadata()
             .setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(MOD_ID, "corrodedpipe.json"), ModelHelper.getOrCreateBlockState(MOD_ID, "corroded_pipe_states.json"), new PipeMetaStateInterpreter(), false, 0.25f))
             .build(new BlockCopperPipe("pipe.copper.corroded", ids.next(), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "corrodedpipe.json"), false) {
-                @Override
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                }
-            });
+        @Override
+        public void updateTick(World world, int x, int y, int z, Random rand) {
+        }
+    });
 
-    public static final Block trapdoorCopper = raw
+    trapdoorCopper = raw
             .setBlockModel(new BlockModelRenderBlocks(30))
             .setTopBottomTexture("coppertrapdoortop.png")
             .setSideTextures("coppertrapdoorside.png")
             .setVisualUpdateOnMetadata()
             .setTicking(true)
             .build(new BlockTrapDoor("trapdoor.copper", ids.next(), Material.stone, false) {
-                private int ticks;
+        private int ticks;
 
-                @Override
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                    if (world.getBlockMetadata(x, y, z) == 0) {
-                        ++this.ticks;
-                        if (this.ticks == 200) {
-                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.trapdoorCopperTarnished.id, world.getBlockMetadata(x, y, z));
-                            this.ticks = 0;
-                        }
-                    }
+        @Override
+        public void updateTick(World world, int x, int y, int z, Random rand) {
+            if (world.getBlockMetadata(x, y, z) == 0) {
+                ++this.ticks;
+                if (this.ticks == 200) {
+                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.trapdoorCopperTarnished.id, world.getBlockMetadata(x, y, z));
+                    this.ticks = 0;
                 }
-            });
-    public static final Block trapdoorCopperTarnished = raw
+            }
+        }
+    });
+    trapdoorCopperTarnished = raw
             .setBlockModel(new BlockModelRenderBlocks(30))
             .setTopBottomTexture("tarnishedcoppertrapdoortop.png")
             .setSideTextures("tarnishedcoppertrapdoorside.png")
             .setVisualUpdateOnMetadata()
             .setTicking(true)
             .build(new BlockTrapDoor("trapdoor.copper.tarnished", ids.next(), Material.stone, false) {
-                private int ticks;
+        private int ticks;
 
-                @Override
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                    if (world.getBlockMetadata(x, y, z) == 0) {
-                        ++this.ticks;
-                        if (this.ticks == 200) {
-                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.trapdoorCopperCorroded.id, world.getBlockMetadata(x, y, z));
-                            this.ticks = 0;
-                        }
-                    }
+        @Override
+        public void updateTick(World world, int x, int y, int z, Random rand) {
+            if (world.getBlockMetadata(x, y, z) == 0) {
+                ++this.ticks;
+                if (this.ticks == 200) {
+                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.trapdoorCopperCorroded.id, world.getBlockMetadata(x, y, z));
+                    this.ticks = 0;
                 }
-            });
-    public static final Block trapdoorCopperCorroded = raw
+            }
+        }
+    });
+    trapdoorCopperCorroded = raw
             .setBlockModel(new BlockModelRenderBlocks(30))
             .setTopBottomTexture("corrodedcoppertrapdoortop.png")
             .setSideTextures("corrodedcoppertrapdoorside.png")
@@ -724,103 +800,103 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .build(new BlockTrapDoor("trapdoor.copper.corroded", ids.next(), Material.stone, false));
 
 
-    public static final Block doorCopperBottom = raw
+    doorCopperBottom = raw
             .setBlockModel(new BlockModelRenderBlocks(7))
             .setTextures("copperdoorbottom.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
             .setVisualUpdateOnMetadata()
             .build(new BlockCopperDoor("door.copper.bottom", ids.next(), Material.stone, false));
-    public static final Block doorCopperTop = raw
+    doorCopperTop = raw
             .setBlockModel(new BlockModelRenderBlocks(7))
             .setTextures("copperdoortop.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
             .setVisualUpdateOnMetadata()
             .build(new BlockCopperDoor("door.copper.top", ids.next(), Material.stone, true));
 
-    public static final Block doorCopperTarnishedBottom = raw
+    doorCopperTarnishedBottom = raw
             .setBlockModel(new BlockModelRenderBlocks(7))
             .setTextures("tarnishedcopperdoorbottom.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
             .setVisualUpdateOnMetadata()
             .build(new BlockCopperTarnishedDoor("door.copper.tarnished.bottom", ids.next(), Material.stone, false));
-    public static final Block doorCopperTarnishedTop = raw
+    doorCopperTarnishedTop = raw
             .setBlockModel(new BlockModelRenderBlocks(7))
             .setTextures("tarnishedcopperdoortop.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
             .setVisualUpdateOnMetadata()
             .build(new BlockCopperTarnishedDoor("door.copper.tarnished.top", ids.next(), Material.stone, true));
 
-    public static final Block doorCopperCorrodedBottom = raw
+    doorCopperCorrodedBottom = raw
             .setBlockModel(new BlockModelRenderBlocks(7))
             .setTextures("corrodedcopperdoorbottom.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
             .setVisualUpdateOnMetadata()
             .build(new BlockCopperDoor("door.copper.corroded.bottom", ids.next(), Material.stone, false) {
-                public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                    if (this.blockMaterial == Material.stone && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                        return new ItemStack[]{new ItemStack(doorCopperCorroded)};
-                    }
-                    return null;
-                }
-            });
-    public static final Block doorCopperCorrodedTop = raw
+        public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+            if (this.blockMaterial == Material.stone && dropCause != EnumDropCause.IMPROPER_TOOL) {
+                return new ItemStack[]{new ItemStack(doorCopperCorroded)};
+            }
+            return null;
+        }
+    });
+    doorCopperCorrodedTop = raw
             .setBlockModel(new BlockModelRenderBlocks(7))
             .setTextures("corrodedcopperdoortop.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
             .setVisualUpdateOnMetadata()
             .build(new BlockCopperDoor("door.copper.corroded.top", ids.next(), Material.stone, true) {
-                public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                    if (this.blockMaterial == Material.stone && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                        return new ItemStack[]{new ItemStack(doorCopperCorroded)};
-                    }
-                    return null;
-                }
-            });
+        public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+            if (this.blockMaterial == Material.stone && dropCause != EnumDropCause.IMPROPER_TOOL) {
+                return new ItemStack[]{new ItemStack(doorCopperCorroded)};
+            }
+            return null;
+        }
+    });
 
 
-    public static final Block fenceCopper = raw
+    fenceCopper = raw
             .setBlockModel(new BlockModelRenderBlocks(31))
             .setTextures("copperfence.png")
             .setTextures("copperframe.png")
             .setTextures("copperrod.png")
             .setVisualUpdateOnMetadata()
             .build(new BlockFenceCopper("fence.copper", ids.next(), Material.metal));
-    public static final Block fenceCopperTarnished = raw
+    fenceCopperTarnished = raw
             .setBlockModel(new BlockModelRenderBlocks(31))
             .setTextures("tarnishedcopperfence.png")
             .setTextures("tarnishedcopperframe.png")
             .setTextures("tarnishedcopperrod.png")
             .setVisualUpdateOnMetadata()
             .build(new BlockFenceCopperTarnished("fence.copper.tarnished", ids.next(), Material.metal));
-    public static final Block fenceCopperCorroded = raw
+    fenceCopperCorroded = raw
             .setBlockModel(new BlockModelRenderBlocks(31))
             .setTextures("corrodedcopperfence.png")
             .setTextures("corrodedcopperframe.png")
             .setTextures("corrodedcopperrod.png")
             .setVisualUpdateOnMetadata()
             .build(new BlockFenceCopperCorroded("fence.copper.corroded", ids.next(), Material.metal) {
-                @Override
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                }
-            });
+        @Override
+        public void updateTick(World world, int x, int y, int z, Random rand) {
+        }
+    });
 
-    public static final Block pressureplateCopper = raw
+    pressureplateCopper = raw
             .setTextures("copper.png")
             .setVisualUpdateOnMetadata()
             .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.PREVENT_MOB_SPAWNS)
             .build(new BlockCopperPressurePlate("pressureplate.copper", ids.next(), Material.metal));
-    public static final Block pressureplateCopperTarnished = raw
+    pressureplateCopperTarnished = raw
             .setTextures("tarnishedcopper.png")
             .setVisualUpdateOnMetadata()
             .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.PREVENT_MOB_SPAWNS)
             .build(new BlockCopperTarnishedPressurePlate("pressureplate.copper.tarnished", ids.next(), Material.metal));
-    public static final Block pressureplateCopperCorroded = raw
+    pressureplateCopperCorroded = raw
             .setTextures("corrodedcopper.png")
             .setVisualUpdateOnMetadata()
             .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.PREVENT_MOB_SPAWNS)
             .build(new BlockCopperCorrodedPressurePlate("pressureplate.copper.corroded", ids.next(), Material.metal));
 
-    public static final Block trapdoorSteel = raw
+    trapdoorSteel = raw
             .setBlockModel(new BlockModelRenderBlocks(30))
             .setResistance(2000.0f)
             .setTopBottomTexture("steeltrapdoortop.png")
@@ -828,87 +904,80 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setVisualUpdateOnMetadata()
             .build(new BlockTrapDoor("trapdoor.steel", ids.next(), Material.metal, false));
 
-    public static final Block doorSteelBottom = raw
+    doorSteelBottom = raw
             .setBlockModel(new BlockModelRenderBlocks(7))
             .setResistance(2000.0f)
             .setTextures("steeldoorbottom.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
             .setVisualUpdateOnMetadata()
             .build(new BlockDoor("door.steel.bottom", ids.next(), Material.metal, false) {
-                public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                    if (this.blockMaterial == Material.metal && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                        return new ItemStack[]{new ItemStack(doorSteel)};
-                    }
-                    return null;
-                }
-            });
+        public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+            if (this.blockMaterial == Material.metal && dropCause != EnumDropCause.IMPROPER_TOOL) {
+                return new ItemStack[]{new ItemStack(doorSteel)};
+            }
+            return null;
+        }
+    });
 
-    public static final Block doorSteelTop = raw
+    doorSteelTop = raw
             .setBlockModel(new BlockModelRenderBlocks(7))
             .setResistance(2000.0f)
             .setTextures("steeldoortop.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
             .setVisualUpdateOnMetadata()
             .build(new BlockDoor("door.steel.top", ids.next(), Material.metal, true) {
-                public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                    if (this.blockMaterial == Material.metal && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                        return new ItemStack[]{new ItemStack(doorSteel)};
-                    }
-                    return null;
-                }
-            });
+        public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+            if (this.blockMaterial == Material.metal && dropCause != EnumDropCause.IMPROPER_TOOL) {
+                return new ItemStack[]{new ItemStack(doorSteel)};
+            }
+            return null;
+        }
+    });
 
 
     //SILVER
-
-    private static final BlockBuilder silver = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 2.0f))
-            .setHardness(0.8f)
-            .setResistance(2.0f)
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE);
-
-    public static final Block blockRawSilver = silver
+    blockRawSilver = silver
             .setTextures("rawsilver.png")
             .build(new Block("block.raw.silver", ids.next(), Material.metal));
 
-    public static final Block blockSilver = silver
+    blockSilver = silver
             .setTextures("silverblock.png")
             .build(new Block("block.silver", ids.next(), Material.metal));
 
-    public static final Block oreSilverStone = ore
+    oreSilverStone = ore
             .setTextures("silverstone.png")
             .build(new BlockOreSilver("ore.silver.stone", ids.next()));
-    public static final Block oreSilveBasalt = ore
+    oreSilveBasalt = ore
             .setTextures("silverbasalt.png")
             .build(new BlockOreSilver("ore.silver.basalt", ids.next()));
-    public static final Block oreSilveLimestone = ore
+    oreSilveLimestone = ore
             .setTextures("silverlimestone.png")
             .build(new BlockOreSilver("ore.silver.limestone", ids.next()));
-    public static final Block oreSilveGranite = ore
+    oreSilveGranite = ore
             .setTextures("silvergranite.png")
             .build(new BlockOreSilver("ore.silver.granite", ids.next()));
 
-    public static final Block fenceSilver = silver
+    fenceSilver = silver
             .setBlockModel(new BlockModelRenderBlocks(31))
             .setTextures("silverfence.png")
             .setTextures("silverrod.png")
             .setVisualUpdateOnMetadata()
             .build(new BlockFenceSilver("fence.silver", ids.next(), Material.metal));
 
-    public static final Block chandolierSilver = silver
+    chandolierSilver = silver
             .setBlockModel(new BlockModelRenderBlocks(1))
             .setTextures("silverchandolier.png")
             .setVisualUpdateOnMetadata()
             .setLuminance(15)
             .build(new BlockChandolier("fence.silver", ids.next()));
 
-    public static final Block vaseSilver = silver
+    vaseSilver = silver
             .setBlockModel(new BlockModelRenderBlocks(1))
             .setTextures("silvervase.png")
             .setVisualUpdateOnMetadata()
             .build(new BlockVase("fence.silver", ids.next()));
 
-    public static final Block bedSilver = silver
+    bedSilver = silver
             .setBlockModel(new BlockModelRenderBlocks(14))
             .setTextures("silverbedfront.png")
             .setTextures("silverbedback.png")
@@ -919,7 +988,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setVisualUpdateOnMetadata()
             .build(new BlockSilverBed("bed.silver", ids.next()));
 
-    public static final Block seatSilver = silver
+    seatSilver = silver
             .setBlockModel(new BlockModelRenderBlocks(35))
             .setTopTexture("silverseat.png")
             .setBottomTexture("silverblock.png")
@@ -929,7 +998,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
 
 
     // Scorched Stone
-    public static final Block scorchedstone = new BlockBuilder(MOD_ID)
+    scorchedstone = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
             .setHardness(0.8f)
             .setSideTextures("redsandstoneside.png")
@@ -940,50 +1009,39 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
 
 
     // Stones
-    public static final BlockBuilder stone = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
-            .setHardness(1.0f)
-            .setResistance(10.0f)
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE);
-
     // Slate Pillar
-    public static final Block pillarSlate = stone
+    pillarSlate = stone
             .setSideTextures("slatepillarside.png")
             .setTopBottomTexture("slatepillartop.png")
             .setBlockModel(new BlockModelRenderBlocks(27))
             .build(new BlockAxisAligned("pillar.slate", ids.next(), Material.stone));
 
     // Polished Stones
-    public static final Block marblePolished = stone
+    marblePolished = stone
             .setSideTextures("polishedmarbleside.png")
             .setTopBottomTexture("polishedmarbletop.png")
             .build(new Block("marble.polished", ids.next(), Material.stone));
-    public static final Block permafrostPolished = stone
+    permafrostPolished = stone
             .setSideTextures("polishedpermafrostside.png")
             .setTopBottomTexture("polishedpermafrostop.png")
             .build(new Block("permafrost.polished", ids.next(), Material.stone));
     // Carved Stones
-    public static final Block slateCarved = stone
+    slateCarved = stone
             .setSideTextures(6, 14)
             .setTopBottomTexture(8, 14)
             .build(new Block("slate.carved", ids.next(), Material.stone));
-    public static final Block marbleCarved = stone
+    marbleCarved = stone
             .setSideTextures(6, 14)
             .setTopBottomTexture(8, 14)
             .build(new Block("marble.carved", ids.next(), Material.stone));
-    /*
-    public static final Block sandstoneCarved = stone
-            .setSideTextures("carvedsandstone.png")
-            .setTopBottomTexture("polishedsandstonetop.png")
-            .build(new Block("sandstone.carved", ids.next(), Material.stone));
-*/
-    public static final Block permafrostCarved = stone
+
+    permafrostCarved = stone
             .setSideTextures("carvedpermafrost.png")
             .setTopBottomTexture("polishedpermafrostop.png")
             .build(new Block("permafrost.carved", ids.next(), Material.stone));
 
     // Baked Clay
-    public static final Block clayBaked = stone
+    clayBaked = stone
             .setHardness(3.0f)
             .setTextures("bakedclay.png")
             .build(new Block("clay.baked", ids.next(), Material.stone));
@@ -996,15 +1054,15 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTextures("obsidianglass.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE);
 
-    public static final Block glassObsidian = obsidian
+    glassObsidian = obsidian
             .build(new BlockGlassObsidian("glass.obsidian", ids.next(), Material.glass, true));
-    public static final Block trapdoorGlassObsidian = obsidian
+    trapdoorGlassObsidian = obsidian
             .setBlockModel(new BlockModelRenderBlocks(30))
             .setVisualUpdateOnMetadata()
             .build(new BlockTrapDoorObsidian("trapdoor.glass.obsidian", ids.next()));
 
     // Quartz Glass
-    public static final Block glassQuartz = new BlockBuilder(MOD_ID)
+    glassQuartz = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
             .setHardness(0.3F)
             .setResistance(0.3F)
@@ -1017,69 +1075,64 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
 
 
     // Bricks
-    public static final BlockBuilder brick = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
-            .setResistance(10.0f)
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE);
-
-    public static final Block cobblednetherrack = brick
+    cobblednetherrack = brick
             .setHardness(0.4F)
             .setResistance(0.4F)
             .setTextures("cobblednetherrack.png")
             .setInfiniburn()
             .build(new Block("cobble.netherrack", ids.next(), Material.stone));
 
-    public static final Block netherrack = brick
+    netherrack = brick
             .setHardness(0.9F)
             .setResistance(0.9F)
             .setTextures("netherrack.png")
             .setInfiniburn()
             .build(new Block("netherrack", ids.next(), Material.stone) {
-                public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                    switch (dropCause) {
-                        case WORLD:
-                        case EXPLOSION:
-                        case PROPER_TOOL:
-                            return new ItemStack[]{new ItemStack(cobblednetherrack)};
-                        case PICK_BLOCK:
-                        case SILK_TOUCH:
-                            return new ItemStack[]{new ItemStack(this)};
-                        default:
-                            return null;
-                    }
-                }
-            });
+        public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+            switch (dropCause) {
+                case WORLD:
+                case EXPLOSION:
+                case PROPER_TOOL:
+                    return new ItemStack[]{new ItemStack(cobblednetherrack)};
+                case PICK_BLOCK:
+                case SILK_TOUCH:
+                    return new ItemStack[]{new ItemStack(this)};
+                default:
+                    return null;
+            }
+        }
+    });
 
-    public static final Block brickNetherrack = brick
+    brickNetherrack = brick
             .setHardness(0.9f)
             .setTextures("netherbrick.png")
             .setInfiniburn()
             .build(new Block("brick.netherrack", ids.next(), Material.stone));
-    public static final Block brickScorchedstone = brick
+    brickScorchedstone = brick
             .setHardness(0.8f)
             .setTextures("redsandstonebrick.png")
             .build(new Block("brick.scorchedstone", ids.next(), Material.stone));
-    public static final Block brickMud = brick
+    brickMud = brick
             .setHardness(1.5f)
             .setTextures("mudbrick.png")
             .build(new Block("brick.mud", ids.next(), Material.stone));
-    public static final Block brickSteel = brick
+    brickSteel = brick
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
             .setHardness(5.0F)
             .setResistance(4000.0f)
             .setTextures("steelbrick.png")
             .build(new Block("brick.steel", ids.next(), Material.metal));
-    public static final Block brickQuartz = brick
+    brickQuartz = brick
             .setHardness(3.0f)
             .setTextures("quartzbrick.png")
             .build(new Block("brick.quartz", ids.next(), Material.stone));
-    public static final Block brickOlivine = brick
+    brickOlivine = brick
             .setHardness(3.0f)
             .setTextures("olivinebrick.png")
             .build(new Block("brick.olivine", ids.next(), Material.stone));
 
     // Soulslate
-    public static final Block soulslate = stone
+    soulslate = stone
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 0.6f))
             .setHardness(2.0f)
             .setResistance(20.0f)
@@ -1087,7 +1140,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .build(new Block("soulslate", ids.next(), Material.stone));
 
     // Brimstone
-    public static final Block brimstone = stone
+    brimstone = stone
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 0.4f))
             .setHardness(200.0f)
             .setResistance(20000.0f)
@@ -1096,7 +1149,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .build(new BlockBrimstone("brimstone", ids.next(), Material.piston));
 
     // Pumice
-    public static final Block pumiceDry = new BlockBuilder(MOD_ID)
+    pumiceDry = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
             .setHardness(1.0f)
             .setResistance(1.0f)
@@ -1104,7 +1157,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockPumice("pumice.dry", ids.next(), false));
 
-    public static final Block pumiceWet = new BlockBuilder(MOD_ID)
+    pumiceWet = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
             .setHardness(1.0f)
             .setResistance(1.0f)
@@ -1115,7 +1168,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
 
 
     // Pumpkin Pie
-    public static final Block pie = new BlockBuilder(MOD_ID)
+    pie = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
             .setHardness(0.5f)
             .setResistance(0.5f)
@@ -1127,7 +1180,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
 
 
     // Soul Candle
-    public static final Block candleSoulwax = new BlockBuilder(MOD_ID)
+    candleSoulwax = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.sand", "step.sand", 1.0f, 1.2f))
             .setHardness(0.0f)
             .setResistance(0.0f)
@@ -1140,7 +1193,7 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
 
 
 /*
-    public static final Block bedroll = new BlockBuilder(MOD_ID)
+    bedroll = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
             .setBlockModel(new BlockModelRenderBlocks(14))
             .setHardness(0.2f)
@@ -1200,143 +1253,134 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
             new ItemPlaceable("food.pie", itemID++, pie), "pie.png").setMaxStackSize(1);
 
     //Slabs
-    public static final BlockBuilder slab = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
-            .setHardness(1.0f)
-            .setResistance(10.0f)
-            .setUseInternalLight()
-            .setVisualUpdateOnMetadata()
-            .setItemBlock(ItemBlockSlab::new)
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE);
-
-    public static final Block slabWool = slab
+    slabWool = slab
             .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
             .setHardness(0.8F)
             .setResistance(0.8F)
             .setItemBlock(ItemBlockSlabPainted::new)
             .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.NOT_IN_CREATIVE_MENU)
             .build(new BlockWoolSlab(Block.wool, ids.next()));
-    public static final Block slabCobblestoneMossy = slab
+    slabCobblestoneMossy = slab
             .setHardness(2.0F)
             .setTextures(4, 2)
             .build(new BlockSlab(Block.cobbleStoneMossy, ids.next()));
-    public static final Block slabSlatePolished = slab
+    slabSlatePolished = slab
             .setSideTextures(6, 14)
             .setTopBottomTexture(8, 14)
             .build(new BlockSlab(slateCarved, ids.next()));
-    public static final Block slabMarblePolished = slab
+    slabMarblePolished = slab
             .setSideTextures("carvedmarble.png")
             .setTopBottomTexture("polishedmarbletop.png")
             .build(new BlockSlab(marbleCarved, ids.next()));
-    public static final Block slabPermafrostPolished = slab
+    slabPermafrostPolished = slab
             .setSideTextures("carvedpermafrost.png")
             .setTopBottomTexture("polishedpermafrostop.png")
             .build(new BlockSlab(permafrostCarved, ids.next()));
-    public static final Block slabBrickStonePolishedMossy = slab
+    slabBrickStonePolishedMossy = slab
             .setHardness(2.0F)
             .setTextures(11, 8)
             .build(new BlockSlab(Block.brickStonePolishedMossy, ids.next()));
-    public static final Block slabBrickSandstone = slab
+    slabBrickSandstone = slab
             .setHardness(0.8F)
             .setTextures(0, 14)
             .build(new BlockSlab(Block.brickSandstone, ids.next()));
-    public static final Block slabBrickGold = slab
+    slabBrickGold = slab
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
             .setHardness(3.0F)
             .setTextures(9, 9)
             .build(new BlockSlab(Block.brickGold, ids.next()));
-    public static final Block slabBrickLapis = slab
+    slabBrickLapis = slab
             .setHardness(3.0F)
             .setTextures(9, 8)
             .build(new BlockSlab(Block.brickLapis, ids.next()));
-    public static final Block slabBrickPermafrost = slab
+    slabBrickPermafrost = slab
             .setTextures(13, 15)
             .build(new BlockSlab(Block.brickPermafrost, ids.next()));
-    public static final Block slabBrickIron = slab
+    slabBrickIron = slab
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
             .setHardness(5.0F)
             .setTextures(8, 8)
             .build(new BlockSlab(Block.brickIron, ids.next()));
-    public static final Block slabCobbledNetherrack = slab
+    slabCobbledNetherrack = slab
             .setTextures("cobblednetherrack.png")
             .build(new BlockSlab(cobblednetherrack, ids.next()));
-    public static final Block slabMossyCobbledNetherrack = slab
+    slabMossyCobbledNetherrack = slab
             .setTextures(7, 6)
             .build(new BlockSlab(Block.netherrack, ids.next()));
-    public static final Block slabBrickNetherrack = slab
+    slabBrickNetherrack = slab
             .setTextures("netherbrick.png")
             .build(new BlockSlab(brickNetherrack, ids.next()));
-    public static final Block slabBrickScorchedstone = slab
+    slabBrickScorchedstone = slab
             .setHardness(0.8f)
             .setTextures("redsandstonebrick.png")
             .build(new BlockSlab(brickScorchedstone, ids.next()));
-    public static final Block slabBrickMud = slab
+    slabBrickMud = slab
             .setHardness(1.0f)
             .setTextures("mudbrick.png")
             .build(new BlockSlab(brickMud, ids.next()));
-    public static final Block slabCobblePermafrost = slab
+    slabCobblePermafrost = slab
             .setHardness(1.0f)
             .setTextures(12, 15)
             .build(new BlockSlab(Block.cobblePermafrost, ids.next()));
-    public static final Block slabScorchedstone = slab
+    slabScorchedstone = slab
             .setHardness(0.8F)
             .setSideTextures("redsandstoneside.png")
             .setBottomTexture("redsandstonebottom.png")
             .setTopTexture("redsandstonetop.png")
             .build(new BlockSlab(scorchedstone, ids.next()));
-    public static final Block slabBrickSteel = slab
+    slabBrickSteel = slab
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
             .setHardness(5.0f)
             .setResistance(4000.0f)
             .setTextures("steelbrick.png")
             .build(new BlockSlab(brickSteel, ids.next()));
-    public static final Block slabBrickQuartz = slab
+    slabBrickQuartz = slab
             .setHardness(3.0f)
             .setTextures("quartzbrick.png")
             .build(new BlockSlab(brickQuartz, ids.next()));
-    public static final Block slabBrickOlivine = slab
+    slabBrickOlivine = slab
             .setHardness(3.0f)
             .setTextures("olivinebrick.png")
             .build(new BlockSlab(brickOlivine, ids.next()));
-    public static final Block slabCopper = slab
+    slabCopper = slab
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
             .setHardness(5.0f)
             .setResistance(10.0f)
             .setTextures("copperblock.png")
             .setTicking(true)
             .build(new BlockSlab(blockCopper, ids.next()) {
-                private int ticks;
+        private int ticks;
 
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                    if (world.getBlockMetadata(x, y, z) >= 0) {
-                        ++this.ticks;
-                        if (this.ticks == 200) {
-                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.slabCopperTarnished.id, world.getBlockMetadata(x, y, z));
-                            this.ticks = 0;
-                        }
-                    }
+        public void updateTick(World world, int x, int y, int z, Random rand) {
+            if (world.getBlockMetadata(x, y, z) >= 0) {
+                ++this.ticks;
+                if (this.ticks == 200) {
+                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.slabCopperTarnished.id, world.getBlockMetadata(x, y, z));
+                    this.ticks = 0;
                 }
-            });
-    public static final Block slabCopperTarnished = slab
+            }
+        }
+    });
+    slabCopperTarnished = slab
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
             .setHardness(5.0f)
             .setResistance(10.0f)
             .setTicking(true)
             .setTextures("tarnishedcopperblock.png")
             .build(new BlockSlab(blockCopperTarnished, ids.next()) {
-                private int ticks;
+        private int ticks;
 
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                    if (world.getBlockMetadata(x, y, z) >= 0) {
-                        ++this.ticks;
-                        if (this.ticks == 200) {
-                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.slabCopperCorroded.id, world.getBlockMetadata(x, y, z));
-                            this.ticks = 0;
-                        }
-                    }
+        public void updateTick(World world, int x, int y, int z, Random rand) {
+            if (world.getBlockMetadata(x, y, z) >= 0) {
+                ++this.ticks;
+                if (this.ticks == 200) {
+                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.slabCopperCorroded.id, world.getBlockMetadata(x, y, z));
+                    this.ticks = 0;
                 }
-            });
-    public static final Block slabCopperCorroded = slab
+            }
+        }
+    });
+    slabCopperCorroded = slab
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
             .setHardness(5.0f)
             .setResistance(10.0f)
@@ -1345,122 +1389,113 @@ public class BonusBlocks implements ModInitializer, RecipeEntrypoint, ClientStar
 
 
     // Stairs
-    public static final BlockBuilder stairs = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
-            .setHardness(1.0f)
-            .setResistance(10.0f)
-            .setUseInternalLight()
-            .setVisualUpdateOnMetadata()
-            .setBlockModel(new BlockModelRenderBlocks(10))
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE);
-
-    public static final Block stairsWool = stairs
+    stairsWool = stairs
             .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
             .setHardness(0.8F)
             .setResistance(0.8F)
             .setItemBlock(ItemBlockStairsPainted::new)
             .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.NOT_IN_CREATIVE_MENU)
             .build(new BlockWoolStairs(Block.wool, ids.next()));
-    public static final Block stairsCobblestoneMossy = stairs
+    stairsCobblestoneMossy = stairs
             .setHardness(2.0F)
             .setTextures(4, 2)
             .build(new BlockStairs(Block.cobbleStoneMossy, ids.next()));
-    public static final Block stairsBrickStonePolishedMossy = stairs
+    stairsBrickStonePolishedMossy = stairs
             .setHardness(2.0F)
             .setTextures(11, 8)
             .build(new BlockStairs(Block.brickStonePolishedMossy, ids.next()));
-    public static final Block stairsBrickSandstone = stairs
+    stairsBrickSandstone = stairs
             .setHardness(0.8F)
             .setTextures(0, 14)
             .build(new BlockStairs(Block.brickSandstone, ids.next()));
-    public static final Block stairsBrickGold = stairs
+    stairsBrickGold = stairs
             .setHardness(3.0F)
             .setTextures(9, 9)
             .build(new BlockStairs(Block.brickGold, ids.next()));
-    public static final Block stairsBrickLapis = stairs
+    stairsBrickLapis = stairs
             .setHardness(3.0F)
             .setTextures(9, 8)
             .build(new BlockStairs(Block.brickLapis, ids.next()));
-    public static final Block stairsBrickPermafrost = stairs
+    stairsBrickPermafrost = stairs
             .setTextures(13, 15)
             .build(new BlockStairs(Block.brickPermafrost, ids.next()));
-    public static final Block stairsBrickIron = stairs
+    stairsBrickIron = stairs
             .setHardness(5.0F)
             .setTextures(8, 8)
             .build(new BlockStairs(Block.brickIron, ids.next()));
-    public static final Block stairsCobbledNetherrack = stairs
+    stairsCobbledNetherrack = stairs
             .setTextures("cobblednetherrack.png")
             .build(new BlockStairs(cobblednetherrack, ids.next()));
-    public static final Block stairsMossyCobbledNetherrack = stairs
+    stairsMossyCobbledNetherrack = stairs
             .setTextures(7, 6)
             .build(new BlockStairs(Block.netherrack, ids.next()));
-    public static final Block stairsBrickNetherrack = stairs
+    stairsBrickNetherrack = stairs
             .setTextures("netherbrick.png")
             .build(new BlockStairs(brickNetherrack, ids.next()));
-    public static final Block stairsBrickScorchedstone = stairs
+    stairsBrickScorchedstone = stairs
             .setHardness(0.8f)
             .setTextures("redsandstonebrick.png")
             .build(new BlockStairs(brickScorchedstone, ids.next()));
-    public static final Block stairsBrickMud = stairs
+    stairsBrickMud = stairs
             .setHardness(1.5f)
             .setTextures("mudbrick.png")
             .build(new BlockStairs(brickMud, ids.next()));
-    public static final Block stairsCobblePermafrost = stairs
+    stairsCobblePermafrost = stairs
             .setHardness(0.8F)
             .setTextures(12, 15)
             .build(new BlockStairs(Block.cobblePermafrost, ids.next()));
-    public static final Block stairsBrickSteel = stairs
+    stairsBrickSteel = stairs
             .setHardness(5.0f)
             .setResistance(4000.0f)
             .setTextures("steelbrick.png")
             .build(new BlockStairs(brickSteel, ids.next()));
-    public static final Block stairsBrickQuartz = stairs
+    stairsBrickQuartz = stairs
             .setHardness(3.0f)
             .setTextures("quartzbrick.png")
             .build(new BlockStairs(brickQuartz, ids.next()));
-    public static final Block stairsBrickOlivine = stairs
+    stairsBrickOlivine = stairs
             .setHardness(3.0f)
             .setTextures("olivinebrick.png")
             .build(new BlockStairs(brickOlivine, ids.next()));
-    public static final Block stairsCopper = stairs
+    stairsCopper = stairs
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
             .setHardness(5.0f)
             .setResistance(10.0f)
             .setTextures("copperblock.png")
             .setTicking(true)
             .build(new BlockStairs(blockCopper, ids.next()) {
-                private int ticks;
+        private int ticks;
 
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                    if (world.getBlockMetadata(x, y, z) >= 0) {
-                        ++this.ticks;
-                        if (this.ticks == 200) {
-                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.stairsCopperTarnished.id, world.getBlockMetadata(x, y, z));
-                            this.ticks = 0;
-                        }
-                    }
+        public void updateTick(World world, int x, int y, int z, Random rand) {
+            if (world.getBlockMetadata(x, y, z) >= 0) {
+                ++this.ticks;
+                if (this.ticks == 200) {
+                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.stairsCopperTarnished.id, world.getBlockMetadata(x, y, z));
+                    this.ticks = 0;
                 }
-            });
-    public static final Block stairsCopperTarnished = stairs
+            }
+        }
+    });
+    stairsCopperTarnished = stairs
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
             .setHardness(5.0f)
             .setResistance(10.0f)
             .setTextures("tarnishedcopperblock.png")
             .setTicking(true)
             .build(new BlockStairs(blockCopperTarnished, ids.next()) {
-                private int ticks;
+        private int ticks;
 
-                public void updateTick(World world, int x, int y, int z, Random rand) {
-                    if (world.getBlockMetadata(x, y, z) >= 0) {
-                        ++this.ticks;
-                        if (this.ticks == 200) {
-                            world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.stairsCopperCorroded.id, world.getBlockMetadata(x, y, z));
-                            this.ticks = 0;
-                        }
-                    }
+        public void updateTick(World world, int x, int y, int z, Random rand) {
+            if (world.getBlockMetadata(x, y, z) >= 0) {
+                ++this.ticks;
+                if (this.ticks == 200) {
+                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.stairsCopperCorroded.id, world.getBlockMetadata(x, y, z));
+                    this.ticks = 0;
                 }
-            });
-    public static final Block stairsCopperCorroded = stairs
+            }
+        }
+    });
+    stairsCopperCorroded = stairs
             .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
             .setHardness(5.0f)
             .setResistance(10.0f)
