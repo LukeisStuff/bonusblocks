@@ -18,6 +18,10 @@ public class BonusBlocksConfig {
     private static final Toml properties = new Toml("Bonus Blocks TOML Config");
     public static TomlConfigHandler cfg;
 
+    private static int blockIDs = 1500;
+
+    private static int itemIDs = 16550;
+
     static {
         properties.addCategory("BonusBlocks")
                 .addEntry("cfgVersion", 5);
@@ -26,11 +30,6 @@ public class BonusBlocksConfig {
         properties.addEntry("Block IDs.startingID", 1500);
         properties.addCategory("Item IDs");
         properties.addEntry("Item IDs.startingID", 16550);
-
-        cfg = new TomlConfigHandler(updater, BonusBlocksMod.MOD_ID, properties);
-
-        int blockIDs = cfg.getInt("Block IDs.startingID");
-        int itemIDs = cfg.getInt("Item IDs.startingID");
 
 
         List<Field> blockFields = Arrays.stream(BonusBlocks.class.getDeclaredFields()).filter((F)-> Block.class.isAssignableFrom(F.getType())).collect(Collectors.toList());

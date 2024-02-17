@@ -1,6 +1,7 @@
 package luke.bonusblocks.block;
 
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.world.World;
@@ -29,9 +30,11 @@ public class BlockVase extends Block {
     }
 
     public void onNeighborBlockChange(World world, int x, int y, int z, int blockId) {
-        if (!world.isBlockOpaqueCube(x, y - 1, z)) {
-            this.dropBlockWithCause(world, EnumDropCause.WORLD, x, y, z, world.getBlockMetadata(x, y, z), null);
-            world.setBlock(x, y, z, 0);
+        boolean flag = !world.canPlaceOnSurfaceOfBlock(x, y - 1, z);
+        if (flag) {
+            this.dropBlockWithCause(world, EnumDropCause.WORLD, x, y, z, world.getBlockMetadata(x, y, z), (TileEntity)null);
+            world.setBlockWithNotify(x, y, z, 0);
         }
+
     }
 }
