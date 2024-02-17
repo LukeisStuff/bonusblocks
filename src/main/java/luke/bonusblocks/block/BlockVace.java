@@ -7,8 +7,8 @@ import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.world.World;
 
-public class BlockVase extends Block {
-    public BlockVase(String key, int id) {
+public class BlockVace extends Block {
+    public BlockVace(String key, int id) {
         super(key, id, Material.metal);
         this.setTicking(true);
     }

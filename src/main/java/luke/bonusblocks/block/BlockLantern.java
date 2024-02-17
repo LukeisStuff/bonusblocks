@@ -1,14 +1,12 @@
 package luke.bonusblocks.block;
 
 import net.minecraft.core.block.Block;
-import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
-import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.world.World;
 
-public class BlockVase extends Block {
-    public BlockVase(String key, int id) {
+public class BlockLantern extends Block {
+    public BlockLantern(String key, int id) {
         super(key, id, Material.metal);
         this.setTicking(true);
     }
@@ -22,7 +20,8 @@ public class BlockVase extends Block {
     }
 
     public boolean canPlaceBlockAt(World world, int x, int y, int z) {
-        return world.canPlaceOnSurfaceOfBlock(x, y - 1, z);
+        Block block = world.getBlock(x, y - 1, z);
+        return block != null && block.blockMaterial.isSolid();
     }
 
     public boolean canBlockStay(World world, int x, int y, int z) {
@@ -30,11 +29,9 @@ public class BlockVase extends Block {
     }
 
     public void onNeighborBlockChange(World world, int x, int y, int z, int blockId) {
-        boolean flag = !world.canPlaceOnSurfaceOfBlock(x, y - 1, z);
-        if (flag) {
-            this.dropBlockWithCause(world, EnumDropCause.WORLD, x, y, z, world.getBlockMetadata(x, y, z), (TileEntity)null);
-            world.setBlockWithNotify(x, y, z, 0);
+        if (!world.isBlockOpaqueCube(x, y + 1, z)) {
+            this.dropBlockWithCause(world, EnumDropCause.WORLD, x, y, z, world.getBlockMetadata(x, y, z), null);
+            world.setBlock(x, y, z, 0);
         }
-
     }
 }

@@ -1163,7 +1163,7 @@ public class BonusBlocks {
                 });
 
 
-        //SILVER
+        // Silver
         blockSilver = silver
                 .setTextures("silverblock.png")
                 .build(new Block("block.silver", blockID("blockSilver"), Material.metal));
@@ -1204,7 +1204,6 @@ public class BonusBlocks {
                     }
                 });
 
-
         // Silver Fence
         fenceSilver = silver
                 .setBlockModel(new BlockModelRenderBlocks(31))
@@ -1221,6 +1220,13 @@ public class BonusBlocks {
                 .setLuminance(15)
                 .build(new BlockChandolier("fence.silver", blockID("chandolierSilver")));
 
+        // Silver Lantern
+        lanternSilver = silver
+                .setBlockModel(new BlockModelRenderBlocks(1))
+                .setTextures("silverlantern.png")
+                .setVisualUpdateOnMetadata()
+                .setLuminance(13)
+                .build(new BlockLantern("fence.silver", blockID("lanternSilver")));
 
         // Silver Vase
         vaseSilver = silver
@@ -1228,6 +1234,13 @@ public class BonusBlocks {
                 .setTextures("silvervase.png")
                 .setVisualUpdateOnMetadata()
                 .build(new BlockVase("fence.silver", blockID("vaseSilver")));
+
+        // Silver Vane
+        vaneSilver = silver
+                .setBlockModel(new BlockModelRenderBlocks(1))
+                .setTextures("silvervane.png")
+                .setVisualUpdateOnMetadata()
+                .build(new BlockVace("vane.silver", blockID("vaneSilver")));
 
 
         // Silver Bed
