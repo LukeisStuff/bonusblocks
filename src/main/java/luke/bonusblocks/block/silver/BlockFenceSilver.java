@@ -1,4 +1,4 @@
-package luke.bonusblocks.block;
+package luke.bonusblocks.block.silver;
 
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockFenceThin;
@@ -9,7 +9,7 @@ import net.minecraft.core.world.World;
 import net.minecraft.core.world.WorldSource;
 import turniplabs.halplibe.helper.TextureHelper;
 
-import static luke.bonusblocks.BonusBlocks.MOD_ID;
+import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
 
 public class BlockFenceSilver extends BlockFenceThin {
     public BlockFenceSilver(String key, int id, Material material) {

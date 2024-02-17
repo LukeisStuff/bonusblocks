@@ -1,11 +1,11 @@
-package luke.bonusblocks.block;
+package luke.bonusblocks.block.copper;
 
-import luke.bonusblocks.BonusBlocks;
+import luke.bonusblocks.BonusBlocksMod;
+import luke.bonusblocks.item.BonusItems;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.enums.EnumDropCause;
-import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.world.World;
 
@@ -22,7 +22,7 @@ public class BlockOreCopper extends Block {
                 return new ItemStack[]{new ItemStack(this)};
             case EXPLOSION:
             case PROPER_TOOL:
-                return new ItemStack[]{new ItemStack(BonusBlocks.oreRawCopper, 1 + world.rand.nextInt(5))};
+                return new ItemStack[]{new ItemStack(BonusItems.oreRawCopper, 1 + world.rand.nextInt(5))};
             default:
                 return null;
         }

@@ -1,7 +1,7 @@
 package luke.bonusblocks.item;
 
-import luke.bonusblocks.BonusBlocks;
-import luke.bonusblocks.block.BlockSilverBed;
+import luke.bonusblocks.block.BonusBlocks;
+import luke.bonusblocks.block.silver.BlockSilverBed;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.enums.EnumBlockSoundEffectType;
 import net.minecraft.core.item.Item;

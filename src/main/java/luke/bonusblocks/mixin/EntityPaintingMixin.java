@@ -1,7 +1,7 @@
 package luke.bonusblocks.mixin;
 
 import com.mojang.nbt.CompoundTag;
-import luke.bonusblocks.BonusBlocks;
+import luke.bonusblocks.BonusBlocksMod;
 import luke.bonusblocks.IPaintingExtras;
 import luke.bonusblocks.ServerManager;
 import net.minecraft.core.entity.Entity;
@@ -37,7 +37,7 @@ public abstract class EntityPaintingMixin extends Entity implements IPaintingExt
         if (entityplayer.getHeldItem() != null){
             ItemStack stack = entityplayer.getHeldItem();
             ItemStack paintingStack = bonusblocks$getStack();
-            if (BonusBlocks.getBorder(stack) == null) return false;
+            if (BonusBlocksMod.getBorder(stack) == null) return false;
             setStack(new ItemStack(stack.getItem(), 1, stack.getMetadata()));
             stack.consumeItem(entityplayer);
             if (stack.stackSize <= 0) {

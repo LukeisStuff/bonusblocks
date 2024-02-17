@@ -1,6 +1,6 @@
 package luke.bonusblocks.mixin;
 
-import luke.bonusblocks.BonusBlocks;
+import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.entity.player.EntityPlayer;

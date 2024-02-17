@@ -1,6 +1,7 @@
-package luke.bonusblocks.block;
+package luke.bonusblocks.block.copper;
 
-import luke.bonusblocks.BonusBlocks;
+import luke.bonusblocks.BonusBlocksMod;
+import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.core.block.BlockAxisAligned;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.util.helper.Side;

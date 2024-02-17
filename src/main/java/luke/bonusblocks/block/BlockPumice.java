@@ -5,12 +5,11 @@
 
 package luke.bonusblocks.block;
 
-import luke.bonusblocks.BonusBlocks;
+import luke.bonusblocks.BonusBlocksMod;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.sound.SoundType;
-import net.minecraft.core.world.Dimension;
 import net.minecraft.core.world.World;
 
 public class BlockPumice extends Block {

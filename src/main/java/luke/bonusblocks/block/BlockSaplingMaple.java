@@ -1,6 +1,6 @@
 package luke.bonusblocks.block;
 
-import luke.bonusblocks.BonusBlocks;
+import luke.bonusblocks.BonusBlocksMod;
 import net.minecraft.core.block.BlockSaplingBase;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.generate.feature.WorldFeature;

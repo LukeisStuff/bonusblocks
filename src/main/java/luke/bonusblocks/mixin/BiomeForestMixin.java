@@ -1,9 +1,9 @@
 package luke.bonusblocks.mixin;
 
-import luke.bonusblocks.BonusBlocks;
+import luke.bonusblocks.BonusBlocksMod;
+import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.world.biome.BiomeForest;
-import net.minecraft.core.world.biome.BiomeRainforest;
 import net.minecraft.core.world.generate.feature.WorldFeature;
 import net.minecraft.core.world.generate.feature.tree.*;
 import org.spongepowered.asm.mixin.Mixin;

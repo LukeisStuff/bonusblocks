@@ -1,5 +1,7 @@
-package luke.bonusblocks.block;
+package luke.bonusblocks.block.copper;
 
+import luke.bonusblocks.BonusBlocksMod;
+import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockFenceThin;
 import net.minecraft.core.block.material.Material;
@@ -9,31 +11,45 @@ import net.minecraft.core.world.World;
 import net.minecraft.core.world.WorldSource;
 import turniplabs.halplibe.helper.TextureHelper;
 
-import static luke.bonusblocks.BonusBlocks.MOD_ID;
+import java.util.Random;
 
-public class BlockFenceCopperCorroded extends BlockFenceThin {
-    public BlockFenceCopperCorroded(String key, int id, Material material) {
+import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
+
+public class BlockFenceCopper extends BlockFenceThin {
+    protected int ticks;
+    public BlockFenceCopper(String key, int id, Material material) {
         super(key, id, material);
+        this.setTicking(true);
     }
 
     public int getTextureIndex() {
-        return TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "corrodedcopperframe.png");
+        return TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "copperframe.png");
     }
 
     public int getTextureIndexAtBottom() {
         return -1;
     }
     public int getTextureIndexAtTop() {
-        return TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "corrodedcopperfence.png");
+        return TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "copperfence.png");
     }
 
     public int getColumnTextureIndex() {
-        return TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "corrodedcopperrod.png");
+        return TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "copperrod.png");
     }
 
     public boolean canConnectTo(WorldSource iblockaccess, int x, int y, int z) {
         int l = iblockaccess.getBlockId(x, y, z);
         return Block.hasTag(l, BlockTags.CHAINLINK_FENCES_CONNECT) || Block.blocksList[l] != null && (Block.blocksList[l].blockMaterial == Material.stone || Block.blocksList[l].blockMaterial == Material.metal);
+    }
+
+    public void updateTick(World world, int x, int y, int z, Random rand) {
+        if (world.getBlockMetadata(x, y, z) >= 0) {
+            ++this.ticks;
+            if (this.ticks == 200) {
+                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.fenceCopperTarnished.id, world.getBlockMetadata(x, y, z));
+                this.ticks = 0;
+            }
+        }
     }
 
     public boolean isClimbable(World world, int x, int y, int z) {

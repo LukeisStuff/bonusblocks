@@ -1,5 +1,6 @@
 package luke.bonusblocks.item;
 
+import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.entity.player.EntityPlayer;
@@ -9,8 +10,6 @@ import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
-
-import static luke.bonusblocks.BonusBlocks.overlayRawCopper;
 
 public class ItemRawCopper extends Item {
 
@@ -25,24 +24,24 @@ public class ItemRawCopper extends Item {
         int id = world.getBlockId(blockX, blockY, blockZ);
         int meta = world.getBlockMetadata(blockX, blockY, blockZ);
 
-        if (id != overlayRawCopper.id && Block.blocksList[id] != null && Block.blocksList[id].hasTag(BlockTags.PLACE_OVERWRITES)) {
+        if (id != BonusBlocks.overlayRawCopper.id && Block.blocksList[id] != null && Block.blocksList[id].hasTag(BlockTags.PLACE_OVERWRITES)) {
             id = 0;
             meta = 0;
         }
         if (itemstack.stackSize <= 0) {
             return false;
         }
-        if (blockY == world.getHeightBlocks() - 1 && overlayRawCopper.blockMaterial.isSolid()) {
+        if (blockY == world.getHeightBlocks() - 1 && BonusBlocks.overlayRawCopper.blockMaterial.isSolid()) {
             return false;
         }
-        if (id == overlayRawCopper.id && side == Side.TOP) {
+        if (id == BonusBlocks.overlayRawCopper.id && side == Side.TOP) {
             newMeta = meta + 1;
             if (!world.isBlockOpaqueCube(blockX, blockY - 1, blockZ)) {
                 return false;
             }
             if (newMeta < 3) {
-                world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, overlayRawCopper.id, newMeta);
-                world.playBlockSoundEffect((float)blockX + 0.5f, (float)blockY + 0.5f, (float)blockZ + 0.5f, overlayRawCopper, EnumBlockSoundEffectType.PLACE);
+                world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, BonusBlocks.overlayRawCopper.id, newMeta);
+                world.playBlockSoundEffect((float)blockX + 0.5f, (float)blockY + 0.5f, (float)blockZ + 0.5f, BonusBlocks.overlayRawCopper, EnumBlockSoundEffectType.PLACE);
                 itemstack.consumeItem(entityplayer);
                 return true;
             }
@@ -51,24 +50,24 @@ public class ItemRawCopper extends Item {
             id = world.getBlockId(blockX += side.getOffsetX(), blockY += side.getOffsetY(), blockZ += side.getOffsetZ());
             meta = world.getBlockMetadata(blockX, blockY, blockZ);
         }
-        if (id == overlayRawCopper.id) {
+        if (id == BonusBlocks.overlayRawCopper.id) {
             newMeta = meta + 1;
             AABB bbBox = AABB.getBoundingBoxFromPool(blockX, blockY, blockZ, (float)blockX + 1.0f, (float)blockY + (float)(2 * (newMeta + 1)) / 16.0f, (float)blockZ + 1.0f);
             if (!world.checkIfAABBIsClear(bbBox) || !world.isBlockOpaqueCube(blockX, blockY - 1, blockZ)) {
                 return false;
             }
             if (newMeta < 3) {
-                world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, overlayRawCopper.id, newMeta);
-                world.playBlockSoundEffect((float)blockX + 0.5f, (float)blockY + 0.5f, (float)blockZ + 0.5f, overlayRawCopper, EnumBlockSoundEffectType.PLACE);
+                world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, BonusBlocks.overlayRawCopper.id, newMeta);
+                world.playBlockSoundEffect((float)blockX + 0.5f, (float)blockY + 0.5f, (float)blockZ + 0.5f, BonusBlocks.overlayRawCopper, EnumBlockSoundEffectType.PLACE);
                 itemstack.consumeItem(entityplayer);
                 return true;
             }
         }
-        if (world.canBlockBePlacedAt(overlayRawCopper.id, blockX, blockY, blockZ, false, side) && world.isBlockOpaqueCube(blockX, blockY - 1, blockZ)) {
-            Block block = overlayRawCopper;
-            if (world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, overlayRawCopper.id, this.getPlacedBlockMetadata(itemstack.getMetadata()))) {
-                overlayRawCopper.onBlockPlaced(world, blockX, blockY, blockZ, side, entityplayer, yPlaced);
-                world.playBlockSoundEffect((float)blockX + 0.5f, (float)blockY + 0.5f, (float)blockZ + 0.5f, overlayRawCopper, EnumBlockSoundEffectType.PLACE);
+        if (world.canBlockBePlacedAt(BonusBlocks.overlayRawCopper.id, blockX, blockY, blockZ, false, side) && world.isBlockOpaqueCube(blockX, blockY - 1, blockZ)) {
+            Block block = BonusBlocks.overlayRawCopper;
+            if (world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, BonusBlocks.overlayRawCopper.id, this.getPlacedBlockMetadata(itemstack.getMetadata()))) {
+                BonusBlocks.overlayRawCopper.onBlockPlaced(world, blockX, blockY, blockZ, side, entityplayer, yPlaced);
+                world.playBlockSoundEffect((float)blockX + 0.5f, (float)blockY + 0.5f, (float)blockZ + 0.5f, BonusBlocks.overlayRawCopper, EnumBlockSoundEffectType.PLACE);
                 itemstack.consumeItem(entityplayer);
             }
             return true;

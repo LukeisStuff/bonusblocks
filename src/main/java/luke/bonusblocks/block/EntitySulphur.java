@@ -1,9 +1,8 @@
 package luke.bonusblocks.block;
 
 import com.mojang.nbt.CompoundTag;
-import luke.bonusblocks.BonusBlocks;
+import luke.bonusblocks.BonusBlocksMod;
 import net.minecraft.core.entity.Entity;
-import net.minecraft.core.entity.EntityFallingSand;
 import net.minecraft.core.util.helper.MathHelper;
 import net.minecraft.core.world.World;
 

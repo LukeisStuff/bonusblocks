@@ -1,13 +1,13 @@
 package luke.bonusblocks.block;
 
-import luke.bonusblocks.BonusBlocks;
+import luke.bonusblocks.BonusBlocksMod;
+import luke.bonusblocks.item.BonusItems;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockCandle;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.ItemStack;
-import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
 
 import java.util.Random;
@@ -57,6 +57,6 @@ public class BlockSoulCandle extends BlockCandle {
     }
 
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-        return new ItemStack[]{new ItemStack(BonusBlocks.candleSoulwaxItem)};
+        return new ItemStack[]{new ItemStack(BonusItems.candleSoulwax)};
     }
 }

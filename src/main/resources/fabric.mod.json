@@ -18,12 +18,14 @@
 
   "environment": "*",
   "entrypoints": {
-    "recipesReady": [
-      "luke.bonusblocks.BonusRecipesRegister",
-      "luke.bonusblocks.BonusBlocks"
-    ],
     "main": [
-      "luke.bonusblocks.BonusBlocks"
+      "luke.bonusblocks.BonusBlocksMod"
+    ],
+    "beforeGameStart" : [
+      "luke.bonusblocks.BonusBlocksMod"
+    ],
+    "afterGameStart" : [
+      "luke.bonusblocks.BonusBlocksMod"
     ],
     "terrain-api": [
       "luke.bonusblocks.ModContainer.TerrainApi.TerrainApiPlugin"
@@ -34,7 +36,9 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.13.3"
+    "fabricloader": ">=0.13.3",
+    "terrain-api": ">=1.4.2-7.1",
+    "dragonfly": ">=1.4.4-7.1"
   },
   "suggests": {
   }

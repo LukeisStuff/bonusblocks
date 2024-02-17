@@ -1,6 +1,7 @@
-package luke.bonusblocks.block;
+package luke.bonusblocks.block.silver;
 
-import luke.bonusblocks.BonusBlocks;
+import luke.bonusblocks.BonusBlocksMod;
+import luke.bonusblocks.item.BonusItems;
 import net.minecraft.core.block.BlockBed;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.logic.BedDirections;
@@ -10,7 +11,7 @@ import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 import turniplabs.halplibe.helper.TextureHelper;
 
-import static luke.bonusblocks.BonusBlocks.MOD_ID;
+import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
 
 public class BlockSilverBed extends BlockBed {
     public BlockSilverBed(String key, int id) {
@@ -37,7 +38,7 @@ public class BlockSilverBed extends BlockBed {
         }
     }
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-        return new ItemStack[]{new ItemStack(BonusBlocks.silverBed)};
+        return new ItemStack[]{new ItemStack(BonusItems.bedSilver)};
     }
 
 }

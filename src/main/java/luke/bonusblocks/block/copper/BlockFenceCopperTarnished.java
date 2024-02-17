@@ -1,6 +1,7 @@
-package luke.bonusblocks.block;
+package luke.bonusblocks.block.copper;
 
-import luke.bonusblocks.BonusBlocks;
+import luke.bonusblocks.BonusBlocksMod;
+import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockFenceThin;
 import net.minecraft.core.block.material.Material;
@@ -12,7 +13,7 @@ import turniplabs.halplibe.helper.TextureHelper;
 
 import java.util.Random;
 
-import static luke.bonusblocks.BonusBlocks.MOD_ID;
+import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
 
 public class BlockFenceCopperTarnished extends BlockFenceThin {
     protected int ticks;

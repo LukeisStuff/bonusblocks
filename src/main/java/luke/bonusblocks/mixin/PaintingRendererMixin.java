@@ -1,6 +1,6 @@
 package luke.bonusblocks.mixin;
 
-import luke.bonusblocks.BonusBlocks;
+import luke.bonusblocks.BonusBlocksMod;
 import luke.bonusblocks.IPaintingExtras;
 import net.minecraft.client.render.Tessellator;
 import net.minecraft.client.render.entity.EntityRenderer;
@@ -26,7 +26,7 @@ public abstract class PaintingRendererMixin extends EntityRenderer<EntityPaintin
             GL11.glEnable(GL11.GL_BLEND);
             GL11.glBlendFunc(770, 771);
             GL11.glColor4f(1f, 1f, 1f, 1f);
-            loadTexture(BonusBlocks.getBorder(borderStack));
+            loadTexture(BonusBlocksMod.getBorder(borderStack));
             renderBorder(entity, entity.art.sizeX, entity.art.sizeY);
             GL11.glDisable(GL11.GL_BLEND);
         }

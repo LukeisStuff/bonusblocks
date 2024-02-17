@@ -1,6 +1,7 @@
 package luke.bonusblocks.mixin;
 
-import luke.bonusblocks.BonusBlocks;
+import luke.bonusblocks.BonusBlocksMod;
+import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.enums.EnumBlockSoundEffectType;

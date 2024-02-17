@@ -9,7 +9,7 @@ import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 import turniplabs.halplibe.helper.TextureHelper;
 
-import static luke.bonusblocks.BonusBlocks.MOD_ID;
+import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
 import static net.minecraft.core.item.Item.oreRawIron;
 
 public class BlockOverlayRawIron extends BlockOverlayPebbles {

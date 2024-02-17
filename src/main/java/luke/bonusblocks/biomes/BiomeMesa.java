@@ -1,6 +1,7 @@
 package luke.bonusblocks.biomes;
 
-import luke.bonusblocks.BonusBlocks;
+import luke.bonusblocks.BonusBlocksMod;
+import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.entity.SpawnListEntry;
 import net.minecraft.core.entity.monster.EntitySpider;

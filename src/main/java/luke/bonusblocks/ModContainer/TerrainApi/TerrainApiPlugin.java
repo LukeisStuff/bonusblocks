@@ -1,9 +1,10 @@
 package luke.bonusblocks.ModContainer.TerrainApi;
 
-import luke.bonusblocks.BonusBlocks;
+import luke.bonusblocks.BonusBlocksMod;
 import luke.bonusblocks.biomes.ModBiomes;
 import luke.bonusblocks.biomes.WorldFeaturePebbles;
 import luke.bonusblocks.biomes.WorldFeaturePumice;
+import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.Biomes;
@@ -17,7 +18,7 @@ import useless.terrainapi.generation.overworld.api.ChunkDecoratorOverworldAPI;
 public class TerrainApiPlugin implements TerrainAPI {
     @Override
     public String getModID() {
-        return BonusBlocks.MOD_ID;
+        return BonusBlocksMod.MOD_ID;
     }
     public static final OverworldConfig overworldConfig = ChunkDecoratorOverworldAPI.overworldConfig;
     @Override

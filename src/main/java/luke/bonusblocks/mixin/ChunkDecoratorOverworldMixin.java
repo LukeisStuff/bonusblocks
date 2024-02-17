@@ -1,7 +1,8 @@
 package luke.bonusblocks.mixin;
 
-import luke.bonusblocks.BonusBlocks;
+import luke.bonusblocks.BonusBlocksMod;
 import luke.bonusblocks.biomes.ModBiomes;
+import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockSand;
 import net.minecraft.core.world.World;

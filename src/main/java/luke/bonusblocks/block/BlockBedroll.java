@@ -1,22 +1,16 @@
 package luke.bonusblocks.block;
 
-import luke.bonusblocks.BonusBlocks;
 import net.minecraft.core.block.Block;
-import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.logic.BedDirections;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.player.EntityPlayer;
-import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.enums.EnumSleepStatus;
-import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.chunk.ChunkCoordinates;
 import turniplabs.halplibe.helper.TextureHelper;
 
-import java.util.Iterator;
-
-import static luke.bonusblocks.BonusBlocks.MOD_ID;
+import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
 
 public class BlockBedroll extends Block {
     public static final int[][] headBlockToFootBlockMap = new int[][]{{0, 1}, {-1, 0}, {0, -1}, {1, 0}};

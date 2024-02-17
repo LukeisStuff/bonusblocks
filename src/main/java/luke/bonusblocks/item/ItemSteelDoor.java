@@ -1,6 +1,7 @@
 package luke.bonusblocks.item;
 
-import luke.bonusblocks.BonusBlocks;
+import luke.bonusblocks.BonusBlocksMod;
+import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.player.EntityPlayer;
@@ -29,13 +30,8 @@ public class ItemSteelDoor extends Item {
 
         Block doorBlockBottom;
         Block doorBlockTop;
-        if (this.doorMaterial == Material.metal) {
-            doorBlockBottom = BonusBlocks.doorSteelBottom;
-            doorBlockTop = BonusBlocks.doorSteelTop;
-        } else {
-            doorBlockBottom = BonusBlocks.doorSteelBottom;
-            doorBlockTop = BonusBlocks.doorSteelTop;
-        }
+        doorBlockBottom = BonusBlocks.doorSteelBottom;
+        doorBlockTop = BonusBlocks.doorSteelTop;
 
         if (!doorBlockBottom.canPlaceBlockAt(world, blockX, blockY, blockZ)) {
             return false;
@@ -67,7 +63,7 @@ public class ItemSteelDoor extends Item {
             world.editingBlocks = false;
             world.notifyBlocksOfNeighborChange(blockX, blockY, blockZ, doorBlockBottom.id);
             world.notifyBlocksOfNeighborChange(blockX, blockY + 1, blockZ, doorBlockTop.id);
-            world.playBlockSoundEffect((double) ((float) blockX + 0.5F), (double) ((float) blockY + 0.5F), (double) ((float) blockZ + 0.5F), doorBlockBottom, EnumBlockSoundEffectType.PLACE);
+            world.playBlockSoundEffect((float) blockX + 0.5F, (float) blockY + 0.5F, (float) blockZ + 0.5F, doorBlockBottom, EnumBlockSoundEffectType.PLACE);
             itemstack.consumeItem(entityplayer);
             return true;
         }

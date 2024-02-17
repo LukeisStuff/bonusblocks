@@ -1,5 +1,6 @@
 package luke.bonusblocks.block;
 
+import luke.bonusblocks.item.BonusItems;
 import net.minecraft.core.block.BlockOverlayPebbles;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
@@ -9,7 +10,7 @@ import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 import turniplabs.halplibe.helper.TextureHelper;
 
-import static luke.bonusblocks.BonusBlocks.*;
+import static luke.bonusblocks.BonusBlocksMod.*;
 
 public class BlockOverlayRawSilver extends BlockOverlayPebbles {
 
@@ -32,8 +33,8 @@ public class BlockOverlayRawSilver extends BlockOverlayPebbles {
     @Override
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
         if (dropCause == EnumDropCause.PICK_BLOCK) {
-            return new ItemStack[]{new ItemStack(oreRawSilver, 1)};
+            return new ItemStack[]{new ItemStack(BonusItems.oreRawSilver, 1)};
         }
-        return new ItemStack[]{new ItemStack(oreRawSilver, meta + 1)};
+        return new ItemStack[]{new ItemStack(BonusItems.oreRawSilver, meta + 1)};
     }
 }

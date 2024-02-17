@@ -1,6 +1,5 @@
 package luke.bonusblocks.block;
 
-import luke.bonusblocks.BonusBlocks;
 import net.minecraft.core.block.BlockTransparent;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.Entity;
@@ -25,9 +24,6 @@ public class BlockSlime extends BlockTransparent {
 
     public int getRenderBlockPass() {
         return 1;
-    }
-    public int getMobilityFlag() {
-        return 0;
     }
 
     public AABB getCollisionBoundingBoxFromPool(World world, int x, int y, int z) {

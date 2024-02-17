@@ -1,6 +1,7 @@
-package luke.bonusblocks.block;
+package luke.bonusblocks.block.silver;
 
-import luke.bonusblocks.BonusBlocks;
+import luke.bonusblocks.BonusBlocksMod;
+import luke.bonusblocks.item.BonusItems;
 import net.minecraft.core.block.BlockSeat;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
@@ -14,7 +15,7 @@ public class BlockSilverSeat extends BlockSeat {
     }
 
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-        return dropCause != EnumDropCause.IMPROPER_TOOL ? new ItemStack[]{new ItemStack(BonusBlocks.seatSilver)} : null;
+        return dropCause != EnumDropCause.IMPROPER_TOOL ? new ItemStack[]{new ItemStack(BonusItems.seatSilver)} : null;
     }
 
 }

@@ -1,9 +1,6 @@
 package luke.bonusblocks.item;
 
-import luke.bonusblocks.BonusBlocks;
-import luke.bonusblocks.block.BlockBedroll;
 import net.minecraft.core.entity.player.EntityPlayer;
-import net.minecraft.core.enums.EnumBlockSoundEffectType;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Side;
