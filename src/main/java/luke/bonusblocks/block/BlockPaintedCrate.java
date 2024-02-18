@@ -1,6 +1,5 @@
 package luke.bonusblocks.block;
 
-import net.minecraft.core.Global;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
@@ -13,7 +12,6 @@ import turniplabs.halplibe.helper.TextureHelper;
 import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
 
 public class BlockPaintedCrate extends Block {
-    public static final int[] texCoords = new int[16];
 
     public BlockPaintedCrate(String key, int id) {
         super(key, id, Material.wood);

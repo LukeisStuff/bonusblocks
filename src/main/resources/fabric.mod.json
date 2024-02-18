@@ -24,6 +24,9 @@
     "beforeGameStart" : [
       "luke.bonusblocks.BonusBlocksMod"
     ],
+    "beforeClientStart" : [
+      "luke.bonusblocks.BonusBlocksMod"
+    ],
     "afterGameStart" : [
       "luke.bonusblocks.BonusBlocksMod"
     ],

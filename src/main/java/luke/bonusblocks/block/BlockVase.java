@@ -22,21 +22,24 @@ public class BlockVase extends Block {
         return false;
     }
 
-    public boolean canPlaceBlockAt(World world, int x, int y, int z) {
-        Block block = world.getBlock(x, y + 1, z);
-        return block != null && block.blockMaterial.isSolid();
+    public void onBlockAdded(World world, int x, int y, int z) {
+        world.isBlockNormalCube(x, y - 1, z);
     }
 
-    public boolean canBlockStay(World world, int x, int y, int z) {
-        return this.canPlaceBlockAt(world, x, y, z);
+    public boolean canPlaceBlockAt(World world, int x, int y, int z) {
+        return world.isBlockNormalCube(x, y - 1, z) || world.canPlaceOnSurfaceOfBlock(x, y - 1, z);
     }
 
     public void onNeighborBlockChange(World world, int x, int y, int z, int blockId) {
-        boolean flag = !world.canPlaceOnSurfaceOfBlock(x, y - 1, z);
-        if (flag) {
-            this.dropBlockWithCause(world, EnumDropCause.WORLD, x, y, z, world.getBlockMetadata(x, y, z), (TileEntity)null);
+        if (!this.canBlockStay(world, x, y, z)) {
+            this.dropBlockWithCause(world, EnumDropCause.WORLD, x, y, z, world.getBlockMetadata(x, y, z), null);
             world.setBlockWithNotify(x, y, z, 0);
         }
 
     }
+
+    public boolean canBlockStay(World world, int x, int y, int z) {
+        return world.canPlaceOnSurfaceOfBlock(x, y - 1, z);
+    }
+
 }

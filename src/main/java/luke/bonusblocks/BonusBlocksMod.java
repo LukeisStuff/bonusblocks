@@ -12,6 +12,7 @@ import net.minecraft.core.item.ItemStack;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.EntityHelper;
+import turniplabs.halplibe.helper.SoundHelper;
 import turniplabs.halplibe.util.ClientStartEntrypoint;
 import turniplabs.halplibe.util.GameStartEntrypoint;
 
@@ -40,9 +41,10 @@ public class BonusBlocksMod implements ModInitializer, ClientStartEntrypoint, Ga
     @Override
     public void beforeClientStart() {
         EntityHelper.Client.assignEntityRenderer(EntitySulphur.class, new FallingSandRenderer());
-        LOGGER.info("BonusBlocks initialized.");
+        SoundHelper.Client.addSound("bonusblocks", "chimes.ogg");
         Item.oreRawGold = new ItemRawGold("ore.raw.gold", 16510).setIconCoord(10, 8);
         Item.oreRawIron = new ItemRawIron("ore.raw.iron", 16511).setIconCoord(9, 8);
+        LOGGER.info("BonusBlocks initialized.");
     }
 
     @Override

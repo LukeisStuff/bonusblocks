@@ -86,9 +86,9 @@ public class BonusBlocks {
     public static Block petalLayerMagenta;
     public static Block petalLayerLime;
     public static Block mushroomGray;
-    public static Block fungusRed;
-    public static Block fungusBrown;
-    public static Block fungusGray;
+    public static Block fungiRed;
+    public static Block fungiBrown;
+    public static Block fungiGray;
     public static Block blockBone;
     public static Block thatch;
     public static Block blockCloth;
@@ -149,10 +149,12 @@ public class BonusBlocks {
     public static Block doorSilverTop;
     public static Block doorSilverBottom;
     public static Block fenceSilver;
-    public static Block chandolierSilver;
+    public static Block chandelierSilver;
+    public static Block candelabraSilver;
     public static Block lanternSilver;
     public static Block vaseSilver;
     public static Block vaneSilver;
+    public static Block chimesSilver;
     public static Block bedSilver;
     public static Block seatSilver;
     public static Block scorchedstone;
@@ -433,12 +435,12 @@ public class BonusBlocks {
 
         /// Blocks
 
-        // Crates
+        // Box
         box = boxes
                 .setTextures("box.png")
                 .build(new Block("box", blockID("box"), Material.wood));
 
-        // Boxes
+        // Crates
         crate = crates
                 .setTextures("crate.png")
                 .build(new Block("crate", blockID("crate"), Material.wood));
@@ -649,22 +651,22 @@ public class BonusBlocks {
                 .build(new BlockMushroom("mushroom.gray", blockID("mushroomGray")));
 
         // Mushroom Blocks
-        fungusBrown = grass
+        fungiBrown = grass
                 .setLuminance(2)
                 .setTextures("brownmushroom.png")
                 .setFlammability(30, 60)
                 .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SHEARS)
-                .build(new Block("block.mushroom.brown", blockID("fungusBrown"), Material.dirt));
-        fungusRed = grass
+                .build(new Block("block.mushroom.brown", blockID("fungiBrown"), Material.dirt));
+        fungiRed = grass
                 .setTextures("redmushroom.png")
                 .setFlammability(30, 60)
                 .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SHEARS)
-                .build(new Block("block.mushroom.red", blockID("fungusRed"), Material.dirt));
-        fungusGray = grass
+                .build(new Block("block.mushroom.red", blockID("fungiRed"), Material.dirt));
+        fungiGray = grass
                 .setTextures("graymushroom.png")
                 .setFlammability(30, 60)
                 .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SHEARS)
-                .build(new Block("block.mushroom.gray", blockID("fungusGray"), Material.dirt));
+                .build(new Block("block.mushroom.gray", blockID("fungiGray"), Material.dirt));
 
         // Bone Block
         blockBone = new BlockBuilder(MOD_ID)
@@ -1225,20 +1227,31 @@ public class BonusBlocks {
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.CAN_HANG_OFF)
                 .build(new BlockFenceSilver("fence.silver", blockID("fenceSilver"), Material.metal));
 
-        // Silver Chandolier
-        chandolierSilver = silver
+        // Silver Chandelier
+        chandelierSilver = silver
                 .setBlockModel(new BlockModelRenderBlocks(1))
-                .setTextures("silverchandolier.png")
+                .setTextures("silverchandelier.png")
                 .setVisualUpdateOnMetadata()
                 .setLuminance(15)
-                .build(new BlockChandolier("chandolier.silver", blockID("chandolierSilver")));
+                .setUseInternalLight()
+                .build(new BlockChandolier("chandelier.silver", blockID("chandelierSilver")));
+
+        // Silver Candelabra
+        candelabraSilver = silver
+                .setBlockModel(new BlockModelRenderBlocks(1))
+                .setTextures("silvercandelabra.png")
+                .setVisualUpdateOnMetadata()
+                .setLuminance(15)
+                .setUseInternalLight()
+                .build(new BlockVase("candelabra.silver", blockID("candelabraSilver")));
 
         // Silver Lantern
         lanternSilver = silver
                 .setBlockModel(new BlockModelRenderBlocks(1))
                 .setTextures("silverlantern.png")
                 .setVisualUpdateOnMetadata()
-                .setLuminance(13)
+                .setLuminance(15)
+                .setUseInternalLight()
                 .build(new BlockLantern("lantern.silver", blockID("lanternSilver")));
 
         // Silver Vase
@@ -1254,6 +1267,13 @@ public class BonusBlocks {
                 .setTextures("silvervane.png")
                 .setVisualUpdateOnMetadata()
                 .build(new BlockVace("vane.silver", blockID("vaneSilver")));
+
+        // Silver Chimes
+        chimesSilver = silver
+                .setBlockModel(new BlockModelRenderBlocks(1))
+                .setTextures("silverchimes.png")
+                .setVisualUpdateOnMetadata()
+                .build(new BlockChimes("chimes.silver", blockID("chimesSilver")));
 
         // Silver Bed
         bedSilver = silver
