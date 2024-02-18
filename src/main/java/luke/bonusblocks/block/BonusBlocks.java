@@ -174,6 +174,7 @@ public class BonusBlocks {
     public static Block brickSteel;
     public static Block brickQuartz;
     public static Block brickOlivine;
+    public static Block brickSilver;
     public static Block soulslate;
     public static Block brimstone;
     public static Block pumiceDry;
@@ -201,6 +202,7 @@ public class BonusBlocks {
     public static Block slabBrickSteel;
     public static Block slabBrickQuartz;
     public static Block slabBrickOlivine;
+    public static Block slabBrickSilver;
     public static Block slabCopper;
     public static Block slabCopperTarnished;
     public static Block slabCopperCorroded;
@@ -221,6 +223,7 @@ public class BonusBlocks {
     public static Block stairsBrickSteel;
     public static Block stairsBrickQuartz;
     public static Block stairsBrickOlivine;
+    public static Block stairsBrickSilver;
     public static Block stairsCopper;
     public static Block stairsCopperTarnished;
     public static Block stairsCopperCorroded;
@@ -1083,6 +1086,7 @@ public class BonusBlocks {
                 .setTextures("copperframe.png")
                 .setTextures("copperrod.png")
                 .setVisualUpdateOnMetadata()
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.CAN_HANG_OFF)
                 .build(new BlockFenceCopper("fence.copper", blockID("fenceCopper"), Material.metal));
         fenceCopperTarnished = raw
                 .setBlockModel(new BlockModelRenderBlocks(31))
@@ -1090,6 +1094,7 @@ public class BonusBlocks {
                 .setTextures("tarnishedcopperframe.png")
                 .setTextures("tarnishedcopperrod.png")
                 .setVisualUpdateOnMetadata()
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.CAN_HANG_OFF)
                 .build(new BlockFenceCopperTarnished("fence.copper.tarnished", blockID("fenceCopperTarnished"), Material.metal));
         fenceCopperCorroded = raw
                 .setBlockModel(new BlockModelRenderBlocks(31))
@@ -1097,6 +1102,7 @@ public class BonusBlocks {
                 .setTextures("corrodedcopperframe.png")
                 .setTextures("corrodedcopperrod.png")
                 .setVisualUpdateOnMetadata()
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.CAN_HANG_OFF)
                 .build(new BlockFenceCopperCorroded("fence.copper.corroded", blockID("fenceCopperCorroded"), Material.metal) {
                     @Override
                     public void updateTick(World world, int x, int y, int z, Random rand) {
@@ -1168,6 +1174,10 @@ public class BonusBlocks {
                 .setTextures("silverblock.png")
                 .build(new Block("block.silver", blockID("blockSilver"), Material.metal));
 
+        brickSilver = silver
+                .setTextures("silverbrick.png")
+                .build(new Block("brick.silver", blockID("brickSilver"), Material.metal));
+
         // Silver Trapdoor
         trapdoorSilver = silver
                 .setBlockModel(new BlockModelRenderBlocks(30))
@@ -1210,6 +1220,7 @@ public class BonusBlocks {
                 .setTextures("silverfence.png")
                 .setTextures("silverrod.png")
                 .setVisualUpdateOnMetadata()
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.CAN_HANG_OFF)
                 .build(new BlockFenceSilver("fence.silver", blockID("fenceSilver"), Material.metal));
 
         // Silver Chandolier
@@ -1218,7 +1229,7 @@ public class BonusBlocks {
                 .setTextures("silverchandolier.png")
                 .setVisualUpdateOnMetadata()
                 .setLuminance(15)
-                .build(new BlockChandolier("fence.silver", blockID("chandolierSilver")));
+                .build(new BlockChandolier("chandolier.silver", blockID("chandolierSilver")));
 
         // Silver Lantern
         lanternSilver = silver
@@ -1226,14 +1237,14 @@ public class BonusBlocks {
                 .setTextures("silverlantern.png")
                 .setVisualUpdateOnMetadata()
                 .setLuminance(13)
-                .build(new BlockLantern("fence.silver", blockID("lanternSilver")));
+                .build(new BlockLantern("lantern.silver", blockID("lanternSilver")));
 
         // Silver Vase
         vaseSilver = silver
                 .setBlockModel(new BlockModelRenderBlocks(1))
                 .setTextures("silvervase.png")
                 .setVisualUpdateOnMetadata()
-                .build(new BlockVase("fence.silver", blockID("vaseSilver")));
+                .build(new BlockVase("vase.silver", blockID("vaseSilver")));
 
         // Silver Vane
         vaneSilver = silver
@@ -1241,7 +1252,6 @@ public class BonusBlocks {
                 .setTextures("silvervane.png")
                 .setVisualUpdateOnMetadata()
                 .build(new BlockVace("vane.silver", blockID("vaneSilver")));
-
 
         // Silver Bed
         bedSilver = silver
@@ -1255,7 +1265,6 @@ public class BonusBlocks {
                 .setVisualUpdateOnMetadata()
                 .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
                 .build(new BlockSilverBed("bed.silver", blockID("bedSilver")));
-
 
         // Silver Seat
         seatSilver = silver
@@ -1571,6 +1580,11 @@ public class BonusBlocks {
                 .setHardness(3.0f)
                 .setTextures("olivinebrick.png")
                 .build(new BlockSlab(brickOlivine, blockID("slabBrickOlivine")));
+        slabBrickSilver = slab
+                .setHardness(0.8f)
+                .setResistance(2.0f)
+                .setTextures("silverbrick.png")
+                .build(new BlockSlab(brickSilver, blockID("slabBrickSilver")));
         slabCopper = slab
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
                 .setHardness(5.0f)
@@ -1686,6 +1700,11 @@ public class BonusBlocks {
                 .setHardness(3.0f)
                 .setTextures("olivinebrick.png")
                 .build(new BlockStairs(brickOlivine, blockID("stairsBrickOlivine")));
+        stairsBrickSilver = stairs
+                .setHardness(0.8f)
+                .setResistance(2.0f)
+                .setTextures("silverbrick.png")
+                .build(new BlockStairs(brickSilver, blockID("stairsBrickSilver")));
         stairsCopper = stairs
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
                 .setHardness(5.0f)

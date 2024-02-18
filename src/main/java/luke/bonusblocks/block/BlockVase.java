@@ -11,6 +11,7 @@ public class BlockVase extends Block {
     public BlockVase(String key, int id) {
         super(key, id, Material.metal);
         this.setTicking(true);
+        this.setBlockBounds(0.1875f, 0.0F, 0.1875f, 0.8125f, 1.0f, 0.8125f);
     }
 
     public boolean isSolidRender() {
@@ -22,7 +23,8 @@ public class BlockVase extends Block {
     }
 
     public boolean canPlaceBlockAt(World world, int x, int y, int z) {
-        return world.canPlaceOnSurfaceOfBlock(x, y - 1, z);
+        Block block = world.getBlock(x, y + 1, z);
+        return block != null && block.blockMaterial.isSolid();
     }
 
     public boolean canBlockStay(World world, int x, int y, int z) {

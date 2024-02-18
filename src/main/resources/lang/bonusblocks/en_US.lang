@@ -183,6 +183,8 @@ tile.bonusblocks.block.raw.copper.tarnished.name=Block of Raw Tarnished Copper
 tile.bonusblocks.block.raw.copper.tarnished.desc=A solid block of raw tarnished copper.
 tile.bonusblocks.block.raw.copper.corroded.name=Block of Raw Corroded Copper
 tile.bonusblocks.block.raw.copper.corroded.desc=A solid block of raw corroded copper.
+tile.bonusblocks.block.raw.silver.name=Block of Raw Silver
+tile.bonusblocks.block.raw.silver.desc=A solid block of raw silver.
 
 tile.bonusblocks.block.copper.name=Block of Copper
 tile.bonusblocks.block.copper.desc=A solid block of copper. Corrosive!
@@ -261,6 +263,28 @@ tile.bonusblocks.ore.copper.limestone.name=Limestone Copper Ore
 tile.bonusblocks.ore.copper.limestone.desc=Raw copper embedded in limestone.
 tile.bonusblocks.ore.copper.granite.name=Granite Copper Ore
 tile.bonusblocks.ore.copper.granite.desc=Raw copper embedded in granite.
+
+tile.bonusblocks.ore.silver.stone.name=Stone Silver Ore
+tile.bonusblocks.ore.silver.stone.desc=Raw silver embedded in stone.
+tile.bonusblocks.ore.silver.basalt.name=Basalt Silver Ore
+tile.bonusblocks.ore.silver.basalt.desc=Raw silver embedded in basalt.
+tile.bonusblocks.ore.silver.limestone.name=Limestone Silver Ore
+tile.bonusblocks.ore.silver.limestone.desc=Raw silver embedded in limestone.
+tile.bonusblocks.ore.silver.granite.name=Granite Silver Ore
+tile.bonusblocks.ore.silver.granite.desc=Raw silver embedded in granite.
+
+tile.bonusblocks.block.silver.name=Block of Silver
+tile.bonusblocks.block.silver.desc=A solid block of silver. Elegant!
+
+tile.bonusblocks.trapdoor.silver.name=Silver Trapdoor
+tile.bonusblocks.trapdoor.silver.desc=Like a door but flat and made of silver.
+tile.bonusblocks.door.silver.top.name=Top Silver Door
+tile.bonusblocks.door.silver.top.desc=AG on top!
+tile.bonusblocks.door.silver.bottom.name=Bottom Silver Door
+tile.bonusblocks.door.silver.bottom.desc=Ag ag ag ag ag ag.
+
+tile.bonusblocks.fence.silver.name=Silver Fence
+tile.bonusblocks.fence.silver.desc=A fence made of silver bars.
 
 item.bonusblocks.ore.raw.copper.name=Raw Copper Ore
 item.bonusblocks.ore.raw.copper.desc=A chunk of unprocessed copper. Can be smelted into a copper ingot.
