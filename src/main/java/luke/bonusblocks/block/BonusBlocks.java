@@ -37,9 +37,9 @@ public class BonusBlocks {
         return BonusBlocksConfig.cfg.getInt("Block IDs." + blockName);
     }
 
-    public static Block crate;
     public static Block box;
-    public static Block boxPainted;
+    public static Block crate;
+    public static Block cratePainted;
     public static Block bookshelfEmptyPlanksOak;
     public static Block branch;
     public static Block leavesOakMossy;
@@ -275,7 +275,7 @@ public class BonusBlocks {
         ItemToolPickaxe.miningLevels.put(doorSteelBottom, 2);
         ItemToolPickaxe.miningLevels.put(blockCrudeSteel, 2);
 
-        Item.itemsList[boxPainted.id] = new ItemBlockPainted(boxPainted, false);
+        Item.itemsList[cratePainted.id] = new ItemBlockPainted(cratePainted, false);
 
         stoneToMossMap.put(Block.saplingOak, BonusBlocks.saplingOakMossy);
         stoneToMossMap.put(BonusBlocks.cobbleNetherrack, Block.netherrack);
@@ -287,8 +287,8 @@ public class BonusBlocks {
         LookupFuelFurnace.instance.addFuelEntry(logShrub.id, 300);
 
         LookupFuelFurnace.instance.addFuelEntry(box.id, 300);
-        LookupFuelFurnace.instance.addFuelEntry(boxPainted.id, 300);
         LookupFuelFurnace.instance.addFuelEntry(crate.id, 300);
+        LookupFuelFurnace.instance.addFuelEntry(cratePainted.id, 300);
         LookupFuelFurnace.instance.addFuelEntry(bookshelfEmptyPlanksOak.id, 300);
         LookupFuelFurnace.instance.addFuelEntry(thatch.id, 400);
         LookupFuelFurnace.instance.addFuelEntry(branch.id, 300);
@@ -302,14 +302,14 @@ public class BonusBlocks {
 
     public void initializeBlocks() {
 
-        BlockBuilder crates = new BlockBuilder(MOD_ID)
+        BlockBuilder boxes = new BlockBuilder(MOD_ID)
                 .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.0f))
                 .setHardness(1.0f)
                 .setResistance(1.0f)
                 .setFlammability(5, 20)
                 .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT);
 
-        BlockBuilder boxes = new BlockBuilder(MOD_ID)
+        BlockBuilder crates = new BlockBuilder(MOD_ID)
                 .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.0f))
                 .setHardness(2.5f)
                 .setResistance(5.0f)
@@ -434,17 +434,19 @@ public class BonusBlocks {
         /// Blocks
 
         // Crates
+        box = boxes
+                .setTextures("box.png")
+                .build(new Block("box", blockID("box"), Material.wood));
+
+        // Boxes
         crate = crates
                 .setTextures("crate.png")
                 .build(new Block("crate", blockID("crate"), Material.wood));
-
-        // Boxes
-        box = boxes
-                .setTextures(9, 1)
-                .build(new Block("box", blockID("box"), Material.wood));
-        boxPainted = boxes
+        cratePainted = crates
+                .setTextures("whitecrate.png").setTextures("silvercrate.png").setTextures("graycrate.png").setTextures("blackcrate.png").setTextures("redcrate.png").setTextures("orangecrate.png").setTextures("yellowcrate.png").setTextures("limecrate.png")
+                .setTextures("greencrate.png").setTextures("cyancrate.png").setTextures("lightbluecrate.png").setTextures("bluecrate.png").setTextures("purplecrate.png").setTextures("magentacrate.png").setTextures("pinkcrate.png").setTextures("browncrate.png")
                 .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT, BlockTags.NOT_IN_CREATIVE_MENU)
-                .build(new BlockPaintedBox("box.painted", blockID("boxPainted")));
+                .build(new BlockPaintedCrate("crate.painted", blockID("cratePainted")));
 
 
         // Bookshelf

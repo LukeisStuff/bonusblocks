@@ -35,7 +35,7 @@ public abstract class ContainerPlayerCreativeMixin {
         creativeItemsCount++;
 
         for (int metadata = 0b0000; metadata < 0b10000; metadata += 0b0001) {
-            creativeItems.add(new ItemStack(Block.blocksList[BonusBlocks.boxPainted.id], 1, metadata));
+            creativeItems.add(new ItemStack(Block.blocksList[BonusBlocks.cratePainted.id], 1, metadata));
             creativeItemsCount++;
         }
 

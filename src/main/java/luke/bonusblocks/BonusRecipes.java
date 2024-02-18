@@ -188,11 +188,11 @@ public class BonusRecipes {
 
         RecipeBuilder.Shaped(MOD_ID, "PPP", "PPP", "PPP")
                 .addInput('P', Block.planksOak)
-                .create("crate", new ItemStack(BonusBlocks.crate, 9));
+                .create("box", new ItemStack(BonusBlocks.box, 9));
 
         RecipeBuilder.Shaped(MOD_ID, "CC", "CC")
                 .addInput('C', Block.chestPlanksOak)
-                .create("box", new ItemStack(BonusBlocks.box, 8));
+                .create("crate", new ItemStack(BonusBlocks.crate, 8));
 
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.logMaple.getDefaultStack());
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.logScorched.getDefaultStack());
@@ -217,22 +217,22 @@ public class BonusRecipes {
 
         Registries.ITEM_GROUPS.register("bonusblocks:silver_ores", Registries.stackListOf(BonusBlocks.oreSilverStone, BonusBlocks.oreSilverBasalt, BonusBlocks.oreSilverGranite, BonusBlocks.oreSilverLimestone));
 
-        Registries.ITEM_GROUPS.register("bonusblocks:box", Registries.stackListOf(BonusBlocks.box, new ItemStack(BonusBlocks.boxPainted, 1, 0),
-                new ItemStack(BonusBlocks.boxPainted, 1, 1),
-                new ItemStack(BonusBlocks.boxPainted, 1, 2),
-                new ItemStack(BonusBlocks.boxPainted, 1, 3),
-                new ItemStack(BonusBlocks.boxPainted, 1, 4),
-                new ItemStack(BonusBlocks.boxPainted, 1, 5),
-                new ItemStack(BonusBlocks.boxPainted, 1, 6),
-                new ItemStack(BonusBlocks.boxPainted, 1, 7),
-                new ItemStack(BonusBlocks.boxPainted, 1, 8),
-                new ItemStack(BonusBlocks.boxPainted, 1, 9),
-                new ItemStack(BonusBlocks.boxPainted, 1, 10),
-                new ItemStack(BonusBlocks.boxPainted, 1, 11),
-                new ItemStack(BonusBlocks.boxPainted, 1, 12),
-                new ItemStack(BonusBlocks.boxPainted, 1, 13),
-                new ItemStack(BonusBlocks.boxPainted, 1, 14),
-                new ItemStack(BonusBlocks.boxPainted, 1, 15)));
+        Registries.ITEM_GROUPS.register("bonusblocks:crates", Registries.stackListOf(BonusBlocks.box, new ItemStack(BonusBlocks.cratePainted, 1, 0),
+                new ItemStack(BonusBlocks.cratePainted, 1, 1),
+                new ItemStack(BonusBlocks.cratePainted, 1, 2),
+                new ItemStack(BonusBlocks.cratePainted, 1, 3),
+                new ItemStack(BonusBlocks.cratePainted, 1, 4),
+                new ItemStack(BonusBlocks.cratePainted, 1, 5),
+                new ItemStack(BonusBlocks.cratePainted, 1, 6),
+                new ItemStack(BonusBlocks.cratePainted, 1, 7),
+                new ItemStack(BonusBlocks.cratePainted, 1, 8),
+                new ItemStack(BonusBlocks.cratePainted, 1, 9),
+                new ItemStack(BonusBlocks.cratePainted, 1, 10),
+                new ItemStack(BonusBlocks.cratePainted, 1, 11),
+                new ItemStack(BonusBlocks.cratePainted, 1, 12),
+                new ItemStack(BonusBlocks.cratePainted, 1, 13),
+                new ItemStack(BonusBlocks.cratePainted, 1, 14),
+                new ItemStack(BonusBlocks.cratePainted, 1, 15)));
 
         Registries.ITEM_GROUPS.register("bonusblocks:wool_slab", Registries.stackListOf(new ItemStack(BonusBlocks.slabWool, 1, 0),
                 new ItemStack(BonusBlocks.slabWool, 1, 16),
@@ -270,13 +270,13 @@ public class BonusRecipes {
 
         for (int color = 0; color < 16; color++) {
             RecipeBuilder.Shapeless(MOD_ID)
-                    .addInput("bonusblocks:box")
+                    .addInput("bonusblocks:crates")
                     .addInput(new ItemStack(Item.dye, 1, 15 - color))
-                    .create("painted_box_dye", new ItemStack(BonusBlocks.boxPainted, 1, color));
+                    .create("painted_crate_dye", new ItemStack(BonusBlocks.cratePainted, 1, color));
 
             RecipeBuilder.Shaped(MOD_ID, "CC", "CC")
                     .addInput('C', new ItemStack(Block.chestPlanksOakPainted, 1, color << 4))
-                    .create("painted_box", new ItemStack(BonusBlocks.boxPainted, 8, color));
+                    .create("painted_crate", new ItemStack(BonusBlocks.cratePainted, 8, color));
         }
 
         for (int color = 0; color < 16; color++) {
@@ -381,16 +381,16 @@ public class BonusRecipes {
 
         RecipeBuilder.Shaped(MOD_ID, "PP", "PP", "PP")
                 .addInput('P', BonusItems.ingotCopper)
-                .create("crate", new ItemStack(BonusItems.doorCopper, 2));
+                .create("door_copper", new ItemStack(BonusItems.doorCopper, 2));
 
         RecipeBuilder.Shaped(MOD_ID, "CPC", "CPC")
                 .addInput('P', BonusItems.ingotCopper)
                 .addInput('C', BonusBlocks.blockCopper)
-                .create("crate", new ItemStack(BonusBlocks.fenceCopper, 8));
+                .create("fence_copper", new ItemStack(BonusBlocks.fenceCopper, 8));
 
         RecipeBuilder.Shaped(MOD_ID, "PPP", "PPP")
                 .addInput('P', BonusItems.ingotCopper)
-                .create("crate", new ItemStack(BonusBlocks.trapdoorCopper, 6));
+                .create("trapdoor_copper", new ItemStack(BonusBlocks.trapdoorCopper, 6));
 
         RecipeBuilder.Furnace(MOD_ID)
                 .setInput("bonusblocks:copper_ores")
