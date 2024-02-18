@@ -60,6 +60,8 @@ public class BonusBlocksMod implements ModInitializer, ClientStartEntrypoint, Ga
         addBorder(Item.olivine.getDefaultStack(), "/assets/bonusblocks/art/border_olivine.png");
         addBorder(Item.quartz.getDefaultStack(), "/assets/bonusblocks/art/border_quartz.png");
         addBorder(BonusItems.ingotCopper.getDefaultStack(), "/assets/bonusblocks/art/border_copper.png");
+        addBorder(BonusItems.ingotSilver.getDefaultStack(), "/assets/bonusblocks/art/border_silver.png");
+
     }
 
     @Override
