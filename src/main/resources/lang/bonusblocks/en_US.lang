@@ -286,10 +286,33 @@ tile.bonusblocks.door.silver.bottom.desc=Ag ag ag ag ag ag.
 tile.bonusblocks.fence.silver.name=Silver Fence
 tile.bonusblocks.fence.silver.desc=A fence made of silver bars.
 
+tile.bonusblocks.chandolier.silver.name=Silver Chandolier
+tile.bonusblocks.chandolier.silver.desc=A silver decoration piece that hangs and adds some light.
+
+tile.bonusblocks.lantern.silver.name=Silver Lantern
+tile.bonusblocks.lantern.silver.desc=A silver decoration piece that adds some light.
+
+tile.bonusblocks.vase.silver.name=Silver Vase
+tile.bonusblocks.vase.silver.desc=A silver decoration piece that adds some decor.
+
+tile.bonusblocks.vane.silver.name=Silver Vane
+tile.bonusblocks.vane.silver.desc=A silver decoration piece that points with the wind.
+
+tile.bonusblocks.brick.silver.name=Silver Bricks
+tile.bonusblocks.brick.silver.desc=Stacked bricks of silver.
+tile.bonusblocks.slab.brick.silver.name=Silver Brick Slab
+tile.bonusblocks.slab.brick.silver.desc=A slab of silver bricks.
+tile.bonusblocks.stairs.brick.silver.name=Silver Brick Stairs
+tile.bonusblocks.stairs.brick.silver.desc=Silver brick block used for rapid vertical movement.
+
 item.bonusblocks.ore.raw.copper.name=Raw Copper Ore
 item.bonusblocks.ore.raw.copper.desc=A chunk of unprocessed copper. Can be smelted into a copper ingot.
 item.bonusblocks.ingot.copper.name=Copper Ingot
 item.bonusblocks.ingot.copper.desc=A metal bar of copper used to make decorative blocks.
+item.bonusblocks.ore.raw.silver.name=Raw Silver Ore
+item.bonusblocks.ore.raw.silver.desc=A chunk of unprocessed silver. Can be smelted into a silver ingot.
+item.bonusblocks.ingot.silver.name=Silver Ingot
+item.bonusblocks.ingot.silver.desc=A metal bar of silver used to make decorative blocks.
 item.bonusblocks.door.copper.name=Copper Door
 item.bonusblocks.door.copper.desc=Every factory needs one.
 item.bonusblocks.door.copper.tarnished.name=Tarnished Copper Door
@@ -298,6 +321,12 @@ item.bonusblocks.door.copper.corroded.name=Corroded Copper Door
 item.bonusblocks.door.copper.corroded.desc=No factory needs one.
 item.bonusblocks.door.steel.name=Steel Door
 item.bonusblocks.door.steel.desc=A blast resistant door that unlocks when powered.
+item.bonusblocks.door.silver.name=Silver Door
+item.bonusblocks.door.silver.desc=Every mansion needs one.
+item.bonusblocks.bed.silver.name=Silver Bed
+item.bonusblocks.bed.silver.desc=Take a nap in luxury.
+item.bonusblocks.seat.silver.name=Silver Seat
+item.bonusblocks.seat.silver.desc=Sit down in luxury.
 
 tile.bonusblocks.overlay.gold.name=Gold Nuggets
 tile.bonusblocks.overlay.gold.desc=A cluster of raw gold.
