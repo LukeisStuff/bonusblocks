@@ -157,6 +157,8 @@ public class BonusBlocks {
     public static Block chimesSilver;
     public static Block bedSilver;
     public static Block seatSilver;
+    public static Block doorPlanksOakPaintedBottom;
+    public static Block doorPlanksOakPaintedTop;
     public static Block scorchedstone;
     public static Block pillarSlate;
     public static Block marblePolished;
@@ -317,6 +319,14 @@ public class BonusBlocks {
                 .setResistance(5.0f)
                 .setFlammability(5, 20)
                 .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT);
+
+        BlockBuilder doors = new BlockBuilder(MOD_ID)
+                .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.0f))
+                .setBlockModel(new BlockModelRenderBlocks(7))
+                .setHardness(3.0f)
+                .setResistance(5.0f)
+                .setVisualUpdateOnMetadata()
+                .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU);
 
         BlockBuilder leaves = new BlockBuilder(MOD_ID)
                 .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
@@ -1297,6 +1307,13 @@ public class BonusBlocks {
                 .setVisualUpdateOnMetadata()
                 .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
                 .build(new BlockSilverSeat("seat.silver", blockID("seatSilver"), Material.metal));
+
+
+        // Dyed Doors
+        doorPlanksOakPaintedBottom = doors
+                .build(new BlockPaintedDoor("door.planks.oak.painted.bottom", blockID("doorPlanksOakPaintedBottom"), Material.wood, false));
+        doorPlanksOakPaintedTop = doors
+                .build(new BlockPaintedDoor("door.planks.oak.painted.top", blockID("doorPlanksOakPaintedTop"), Material.wood, true));
 
 
         // Scorched Stone

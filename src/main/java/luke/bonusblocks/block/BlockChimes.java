@@ -3,8 +3,6 @@ package luke.bonusblocks.block;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
-import net.minecraft.core.entity.Entity;
-import net.minecraft.core.enums.EnumBlockSoundEffectType;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.sound.SoundType;
 import net.minecraft.core.util.phys.AABB;
@@ -24,11 +22,6 @@ public class BlockChimes extends Block {
             world.playSoundEffect(SoundType.MUSIC, x, y, z, "bonusblocks.chimes", 0.5F, rand.nextFloat() * 0.4F + 0.8F);
         }
     }
-
-    @Override
-    public void onEntityCollidedWithBlock(World world, int x, int y, int z, Entity entity) {
-        world.playSoundEffect(SoundType.MUSIC, x, y, z, "bonusblocks.chimes", 0.5F, 1.0f);
-        }
 
     public AABB getCollisionBoundingBoxFromPool(World world, int x, int y, int z) {
         return null;
