@@ -13,11 +13,9 @@ import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 
 public class ItemSilverDoor extends Item {
-    private final Material doorMaterial;
 
-    public ItemSilverDoor(String name, int id, Material material) {
+    public ItemSilverDoor(String name, int id) {
         super(name, id);
-        this.doorMaterial = material;
         this.maxStackSize = 64;
     }
 

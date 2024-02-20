@@ -1,9 +1,8 @@
 package luke.bonusblocks.item;
 
-import luke.bonusblocks.BonusBlocksMod;
 import luke.bonusblocks.block.BonusBlocks;
+import net.minecraft.core.Global;
 import net.minecraft.core.block.Block;
-import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.enums.EnumBlockSoundEffectType;
 import net.minecraft.core.item.Item;
@@ -11,12 +10,76 @@ import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Direction;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
+import turniplabs.halplibe.helper.TextureHelper;
 
-public class ItemSteelDoor extends Item {
+import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
 
-    public ItemSteelDoor(String name, int id) {
+
+public class ItemPaintedDoor extends Item {
+    public static final String[] dyeColors = new String[]{"white", "orange", "magenta", "lightblue", "yellow", "lime", "pink", "gray", "silver", "cyan", "purple", "blue", "brown", "green", "red", "black"};
+    public static final int[] field_31002_bk = new int[]{1973019, 11743532, 3887386, 5320730, 2437522, 8073150, 2651799, 2651799, 4408131, 14188952, 4312372, 14602026, 6719955, 12801229, 15435844, 15790320};
+
+    public ItemPaintedDoor(String name, int id) {
         super(name, id);
         this.maxStackSize = 64;
+        this.setHasSubtypes(true);
+        this.setMaxDamage(0);
+    }
+
+    public int getIconFromDamage(int id) {
+        if (id == 0) {
+            return TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "whitedoor.png");
+        }
+        if (id == 1) {
+            return TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "orangedoor.png");
+        }
+        if (id == 2) {
+            return TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "magentadoor.png");
+        }
+        if (id == 3) {
+            return TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "lightbluedoor.png");
+        }
+        if (id == 4) {
+            return TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "yellowdoor.png");
+        }
+        if (id == 5) {
+            return TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "limedoor.png");
+        }
+        if (id == 6) {
+            return TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "pinkdoor.png");
+        }
+        if (id == 7) {
+            return TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "graydoor.png");
+        }
+        if (id == 8) {
+            return TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "lightgraydoor.png");
+        }
+        if (id == 9) {
+            return TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "cyandoor.png");
+        }
+        if (id == 10) {
+            return TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "purpledoor.png");
+        }
+        if (id == 11) {
+            return TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "bluedoor.png");
+        }
+        if (id == 12) {
+            return TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "browndoor.png");
+        }
+        if (id == 13) {
+            return TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "greendoor.png");
+        }
+        if (id == 14) {
+            return TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "reddoor.png");
+        }
+        if (id == 15) {
+            return TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "blackdoor.png");
+        }
+        return id;
+    }
+
+    public String getLanguageKey(ItemStack itemstack) {
+        return super.getKey() + "." + dyeColors[itemstack.getMetadata()];
     }
 
     public boolean onItemUse(ItemStack itemstack, EntityPlayer entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
@@ -28,8 +91,8 @@ public class ItemSteelDoor extends Item {
 
         Block doorBlockBottom;
         Block doorBlockTop;
-        doorBlockBottom = BonusBlocks.doorSteelBottom;
-        doorBlockTop = BonusBlocks.doorSteelTop;
+        doorBlockBottom = BonusBlocks.doorPlanksOakPaintedBottom;
+        doorBlockTop = BonusBlocks.doorPlanksOakPaintedTop;
 
         if (!doorBlockBottom.canPlaceBlockAt(world, blockX, blockY, blockZ)) {
             return false;
@@ -66,5 +129,5 @@ public class ItemSteelDoor extends Item {
             return true;
         }
     }
-}
 
+}
