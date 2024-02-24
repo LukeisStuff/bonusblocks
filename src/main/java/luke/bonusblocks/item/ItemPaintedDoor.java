@@ -1,7 +1,6 @@
 package luke.bonusblocks.item;
 
 import luke.bonusblocks.block.BonusBlocks;
-import net.minecraft.core.Global;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.enums.EnumBlockSoundEffectType;
@@ -17,7 +16,6 @@ import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
 
 public class ItemPaintedDoor extends Item {
     public static final String[] dyeColors = new String[]{"white", "orange", "magenta", "lightblue", "yellow", "lime", "pink", "gray", "silver", "cyan", "purple", "blue", "brown", "green", "red", "black"};
-    public static final int[] field_31002_bk = new int[]{1973019, 11743532, 3887386, 5320730, 2437522, 8073150, 2651799, 2651799, 4408131, 14188952, 4312372, 14602026, 6719955, 12801229, 15435844, 15790320};
 
     public ItemPaintedDoor(String name, int id) {
         super(name, id);

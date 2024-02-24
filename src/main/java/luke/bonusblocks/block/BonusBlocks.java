@@ -23,6 +23,7 @@ import net.minecraft.core.item.block.*;
 import net.minecraft.core.item.tool.ItemToolPickaxe;
 import net.minecraft.core.world.World;
 import turniplabs.halplibe.helper.BlockBuilder;
+import turniplabs.halplibe.helper.CreativeHelper;
 import useless.dragonfly.helper.ModelHelper;
 import useless.dragonfly.model.block.BlockModelDragonFly;
 
@@ -288,6 +289,7 @@ public class BonusBlocks {
         LookupFuelFurnace.instance.addFuelEntry(logMaple.id, 300);
         LookupFuelFurnace.instance.addFuelEntry(logJacaranda.id, 300);
         LookupFuelFurnace.instance.addFuelEntry(logScorched.id, 300);
+        LookupFuelFurnace.instance.addFuelEntry(logCacao.id, 300);
         LookupFuelFurnace.instance.addFuelEntry(logShrub.id, 300);
 
         LookupFuelFurnace.instance.addFuelEntry(box.id, 300);
@@ -300,6 +302,77 @@ public class BonusBlocks {
         LookupFuelFurnace.instance.addFuelEntry(saplingMaple.id, 10);
         LookupFuelFurnace.instance.addFuelEntry(saplingOakMossy.id, 10);
 
+        CreativeHelper.setParent(netherrack, Block.permafrost);
+
+        CreativeHelper.setParent(cobbleNetherrack, Block.cobblePermafrost);
+        CreativeHelper.setParent(Block.netherrack, Block.cobblePermafrost);
+
+        CreativeHelper.setParent(pillarSlate, Block.pillarMarble);
+
+        CreativeHelper.setParent(scorchedstone, Block.sandstone);
+
+        CreativeHelper.setParent(glassObsidian, Block.glass);
+        CreativeHelper.setParent(glassQuartz, Block.glassTinted);
+
+        CreativeHelper.setParent(trapdoorGlassObsidian, Block.trapdoorGlass);
+        CreativeHelper.setParent(trapdoorSteel, Block.trapdoorGlass);
+        CreativeHelper.setParent(trapdoorCopper, Block.trapdoorGlass);
+        CreativeHelper.setParent(trapdoorCopperTarnished, Block.trapdoorGlass);
+        CreativeHelper.setParent(trapdoorCopperCorroded, Block.trapdoorGlass);
+        CreativeHelper.setParent(trapdoorSilver, Block.trapdoorGlass);
+
+        CreativeHelper.setParent(flowerCyan, Block.flowerRed);
+        CreativeHelper.setParent(flowerPurple, Block.flowerRed);
+        CreativeHelper.setParent(flowerPink, Block.flowerRed);
+        CreativeHelper.setParent(flowerSilver, Block.flowerRed);
+        CreativeHelper.setParent(flowerOrange, Block.flowerRed);
+        CreativeHelper.setParent(flowerLightBlue, Block.flowerRed);
+        CreativeHelper.setParent(flowerMagenta, Block.flowerRed);
+        CreativeHelper.setParent(flowerLime, Block.flowerRed);
+
+        CreativeHelper.setParent(mushroomGray, Block.mushroomRed);
+
+        CreativeHelper.setParent(logShrub, Block.logOakMossy);
+        CreativeHelper.setParent(logCacao, Block.logOakMossy);
+        CreativeHelper.setParent(logMaple, Block.logOakMossy);
+        CreativeHelper.setParent(logJacaranda, Block.logOakMossy);
+        CreativeHelper.setParent(logScorched, Block.logOakMossy);
+
+        CreativeHelper.setParent(leavesOakMossy, Block.leavesCacao);
+        CreativeHelper.setParent(leavesMaple, Block.leavesCacao);
+        CreativeHelper.setParent(leavesJacaranda, Block.leavesCacao);
+        CreativeHelper.setParent(branch, Block.leavesCacao);
+
+        CreativeHelper.setParent(saplingOakMossy, Block.saplingCacao);
+        CreativeHelper.setParent(saplingMaple, Block.saplingCacao);
+        CreativeHelper.setParent(saplingJacaranda, Block.saplingCacao);
+
+        CreativeHelper.setParent(oreCopperStone, Block.oreIronGranite);
+        CreativeHelper.setParent(oreCopperBasalt, Block.oreIronGranite);
+        CreativeHelper.setParent(oreCopperLimestone, Block.oreIronGranite);
+        CreativeHelper.setParent(oreCopperGranite, Block.oreIronGranite);
+
+        CreativeHelper.setParent(oreSilverStone, Block.oreGoldGranite);
+        CreativeHelper.setParent(oreSilverBasalt, Block.oreGoldGranite);
+        CreativeHelper.setParent(oreSilverLimestone, Block.oreGoldGranite);
+        CreativeHelper.setParent(oreSilverGranite, Block.oreGoldGranite);
+
+        CreativeHelper.setParent(pumiceDry, Block.spongeWet);
+        CreativeHelper.setParent(pumiceWet, Block.spongeWet);
+
+        CreativeHelper.setParent(brimstone, Block.bedrock);
+
+        CreativeHelper.setParent(blockSulphur, Block.gravel);
+        CreativeHelper.setParent(blockSugar, Block.gravel);
+
+        CreativeHelper.setParent(fenceCopper, Block.fenceChainlink);
+        CreativeHelper.setParent(fenceCopperTarnished, Block.fenceChainlink);
+        CreativeHelper.setParent(fenceCopperCorroded, Block.fenceChainlink);
+        CreativeHelper.setParent(fenceSilver, Block.fenceChainlink);
+
+        CreativeHelper.setParent(meshCopper, Block.mesh);
+        CreativeHelper.setParent(meshCopperTarnished, Block.mesh);
+        CreativeHelper.setParent(meshCopperCorroded, Block.mesh);
     }
 
 
