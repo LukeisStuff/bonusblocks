@@ -29,7 +29,7 @@ public class BonusItems {
     public static Item bedSilver;
     public static Item seatSilver;
     public static Item foodPie;
-
+    public static Item mossball;
     public void initilizeItems() {
         // Items
         candleSoulwax = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
@@ -79,6 +79,9 @@ public class BonusItems {
 
         foodPie = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
                 new ItemPlaceable("food.pie", itemID("foodPie"), BonusBlocks.pie), "pie.png").setMaxStackSize(1);
+
+        mossball = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
+                new Item("mossball", itemID("mossball")), "mossball.png");
 
     }
 }

@@ -244,13 +244,19 @@ tile.bonusblocks.chandelier.silver.name=Silver Chandelier
 tile.bonusblocks.chandelier.silver.desc=A silver decoration piece that hangs and adds some light.
 
 tile.bonusblocks.lantern.silver.name=Silver Lantern
-tile.bonusblocks.lantern.silver.desc=A silver decoration piece that adds some light.
+tile.bonusblocks.lantern.silver.desc=A silver decoration piece that adds some light and can be hanged.
+
+tile.bonusblocks.candelabra.silver.name=Silver Candelabra
+tile.bonusblocks.candelabra.silver.desc=A silver decoration piece that adds some light.
 
 tile.bonusblocks.vase.silver.name=Silver Vase
 tile.bonusblocks.vase.silver.desc=A silver decoration piece that adds some decor.
 
 tile.bonusblocks.vane.silver.name=Silver Vane
 tile.bonusblocks.vane.silver.desc=A silver decoration piece that points with the wind.
+
+tile.bonusblocks.chimes.silver.name=Silver Chimes
+tile.bonusblocks.chimes.silver.desc=A silver decoration piece that makes noise with the wind.
 
 tile.bonusblocks.brick.silver.name=Silver Bricks
 tile.bonusblocks.brick.silver.desc=Stacked bricks of silver.
@@ -281,6 +287,8 @@ item.bonusblocks.bed.silver.name=Silver Bed
 item.bonusblocks.bed.silver.desc=Take a nap in luxury.
 item.bonusblocks.seat.silver.name=Silver Seat
 item.bonusblocks.seat.silver.desc=Sit down in luxury.
+item.bonusblocks.mossball.name=Moss Clump
+item.bonusblocks.mossball.desc=Slick and fuzzy, can be applied onto blocks.
 
 tile.bonusblocks.overlay.gold.name=Gold Nuggets
 tile.bonusblocks.overlay.gold.desc=A cluster of raw gold.

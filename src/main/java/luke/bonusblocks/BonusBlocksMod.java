@@ -11,7 +11,6 @@ import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import turniplabs.halplibe.helper.CreativeHelper;
 import turniplabs.halplibe.helper.EntityHelper;
 import turniplabs.halplibe.helper.SoundHelper;
 import turniplabs.halplibe.helper.TextureHelper;

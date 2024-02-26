@@ -32,6 +32,7 @@ public class BonusRecipes {
         templateItemtoBlock.addInput('X', Item.oreRawGold).create("block_of_raw_gold", new ItemStack(BonusBlocks.blockRawGold, 1));
         templateItemtoBlock.addInput('X', Item.oreRawIron).create("block_of_raw_iron", new ItemStack(BonusBlocks.blockRawIron, 1));
         templateItemtoBlock.addInput('X', BonusItems.oreRawCopper).create("block_of_raw_copper", new ItemStack(BonusBlocks.blockRawCopper, 1));
+        templateItemtoBlock.addInput('X', BonusItems.oreRawSilver).create("block_of_raw_silver", new ItemStack(BonusBlocks.blockRawSilver, 1));
         templateItemtoBlock.addInput('X', Item.leather).create("block_of_leather", new ItemStack(BonusBlocks.blockLeather, 1));
 
         RecipeBuilderShaped templateBlocktoItem = new RecipeBuilderShaped(MOD_ID, "X");
@@ -45,8 +46,11 @@ public class BonusRecipes {
         templateBlocktoItem.addInput('X', BonusBlocks.blockRawGold).create("block_of_raw_gold_to_raw_gold", new ItemStack(Item.oreRawGold, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockRawIron).create("block_of_raw_iron_to_raw_iron", new ItemStack(Item.oreRawIron, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockRawCopper).create("block_of_raw_copper_to_raw_copper", new ItemStack(BonusItems.oreRawCopper, 9));
+        templateBlocktoItem.addInput('X', BonusBlocks.blockRawSilver).create("block_of_raw_silver_to_raw_silver", new ItemStack(BonusItems.oreRawSilver, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockLeather).create("block_of_leather_to_leather", new ItemStack(Item.leather, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockCopper).create("block_of_copper_to_copper", new ItemStack(BonusItems.ingotCopper, 4));
+        templateBlocktoItem.addInput('X', BonusBlocks.blockSilver).create("block_of_silver_to_silver", new ItemStack(BonusItems.ingotSilver, 4));
+
 
         RecipeBuilder.Shaped(MOD_ID, "WS", "SW")
                 .addInput('W', Item.wheat)
@@ -90,6 +94,7 @@ public class BonusRecipes {
         templateFlowertoDye.addInput('X', BonusBlocks.flowerMagenta).create("flower_magenta_to_dye", new ItemStack(Item.dye, 2, 13));
         templateFlowertoDye.addInput('X', BonusBlocks.flowerLime).create("flower_lime_to_dye", new ItemStack(Item.dye, 2, 10));
         templateFlowertoDye.addInput('X', BonusBlocks.mushroomGray).create("mushroom_gray_to_dye", new ItemStack(Item.dye, 2, 8));
+        templateFlowertoDye.addInput('X', Block.algae).create("algae_to_slime", new ItemStack(Item.slimeball, 2));
 
         RecipeBuilderShaped templateMushroomToBlock = new RecipeBuilderShaped(MOD_ID, "XX", "XX");
         templateMushroomToBlock.addInput('X', Block.mushroomRed).create("red_mushroom_block", new ItemStack(BonusBlocks.fungiRed, 4));
@@ -97,6 +102,8 @@ public class BonusRecipes {
         templateMushroomToBlock.addInput('X', BonusBlocks.mushroomGray).create("gray_mushroom_block", new ItemStack(BonusBlocks.fungiGray, 4));
 
         templateMushroomToBlock.addInput('X', BonusItems.ingotCopper).create("block_of_copper", new ItemStack(BonusBlocks.blockCopper, 1));
+        templateMushroomToBlock.addInput('X', BonusItems.ingotSilver).create("block_of_silver", new ItemStack(BonusBlocks.blockSilver, 1));
+
 
         templateMushroomToBlock.addInput('X', Block.flowerRed).create("petal_red", new ItemStack(BonusBlocks.petalRed, 4));
         templateMushroomToBlock.addInput('X', Block.flowerYellow).create("petal_yellow", new ItemStack(BonusBlocks.petalYellow, 4));
@@ -163,10 +170,17 @@ public class BonusRecipes {
                 .addInput(Item.bucketWater)
                 .create("pumice", new ItemStack(BonusBlocks.pumiceDry, 1));
 
-        RecipeBuilder.Shaped(MOD_ID, "PX", "XP")
-                .addInput('P', (Item.ammoPebble))
-                .addInput('X', (Item.quartz))
-                .create("pebbles_to_granite", new ItemStack(Block.granite, 2));
+        RecipeBuilderShaped templatePebbles = new RecipeBuilderShaped(MOD_ID, "PX", "XP");
+        templatePebbles.addInput('X', Item.quartz).addInput('P', Item.ammoPebble).create("pebbles_to_granite", new ItemStack(Block.granite, 2));
+        templatePebbles.addInput('X', Block.ice).addInput('P', Item.ammoPebble).create("pebbles_to_permafrost", new ItemStack(Block.cobblePermafrost, 2));
+
+        templatePebbles.addInput('X', Block.stone).addInput('P', BonusItems.mossball).create("stone_to_moss_stone", new ItemStack(Block.mossStone, 2));
+        templatePebbles.addInput('X', Block.basalt).addInput('P', BonusItems.mossball).create("basalt_to_moss_stone", new ItemStack(Block.mossBasalt, 2));
+        templatePebbles.addInput('X', Block.limestone).addInput('P', BonusItems.mossball).create("limestone_to_moss_stone", new ItemStack(Block.mossLimestone, 2));
+        templatePebbles.addInput('X', Block.granite).addInput('P', BonusItems.mossball).create("granite_to_moss_stone", new ItemStack(Block.mossGranite, 2));
+
+        templatePebbles.addInput('X', BonusItems.mossball).addInput('P', BonusItems.mossball).create("moss_balls_to_moss", new ItemStack(BonusBlocks.moss, 1));
+
 
         RecipeBuilder.Shaped(MOD_ID, "WWW", "PPP")
                 .addInput('P',("minecraft:planks"))
@@ -181,10 +195,6 @@ public class BonusRecipes {
         templatePillar.addInput('X', Block.marble).create("marble_pillar", new ItemStack(Block.pillarMarble, 3));
         templatePillar.addInput('X', Block.slate).create("slate_pillar", new ItemStack(BonusBlocks.pillarSlate, 3));
 
-        RecipeBuilder.Shaped(MOD_ID, "PI", "IP")
-                .addInput('P', Item.ammoPebble)
-                .addInput('I', Block.ice)
-                .create("pebbles_to_permafrost", new ItemStack(Block.cobblePermafrost, 2));
 
         RecipeBuilder.Shaped(MOD_ID, "PPP", "PPP", "PPP")
                 .addInput('P', Block.planksOak)
@@ -405,6 +415,10 @@ public class BonusRecipes {
                 .create("copper_ingot", BonusItems.ingotCopper.getDefaultStack());
 
         RecipeBuilder.Furnace(MOD_ID)
+                .setInput(BonusItems.oreRawSilver)
+                .create("silver_ingot", BonusItems.ingotSilver.getDefaultStack());
+
+        RecipeBuilder.Furnace(MOD_ID)
                 .setInput(BonusBlocks.cobbleNetherrack)
                 .create("cobble_netherrack_to_netherrack", BonusBlocks.netherrack.getDefaultStack());
 
@@ -427,6 +441,10 @@ public class BonusRecipes {
         RecipeBuilder.BlastFurnace(MOD_ID)
                 .setInput(BonusItems.oreRawCopper)
                 .create("copper_ingot_blast", BonusItems.ingotCopper.getDefaultStack());
+
+        RecipeBuilder.BlastFurnace(MOD_ID)
+                .setInput(BonusItems.oreRawSilver)
+                .create("silver_ingot", BonusItems.ingotSilver.getDefaultStack());
 
         RecipeBuilder.BlastFurnace(MOD_ID)
                 .setInput(BonusBlocks.cobbleNetherrack)

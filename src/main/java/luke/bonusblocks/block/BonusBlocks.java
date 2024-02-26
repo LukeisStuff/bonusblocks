@@ -54,6 +54,7 @@ public class BonusBlocks {
     public static Block logMaple;
     public static Block logJacaranda;
     public static Block logScorched;
+    public static Block moss;
     public static Block overgrownGrass;
     public static Block overgrownGrassRetro;
     public static Block overgrownGrassScorched;
@@ -284,7 +285,10 @@ public class BonusBlocks {
 
         stoneToMossMap.put(Block.saplingOak, BonusBlocks.saplingOakMossy);
         stoneToMossMap.put(BonusBlocks.cobbleNetherrack, Block.netherrack);
-
+        stoneToMossMap.put(Block.mossStone, BonusBlocks.moss);
+        stoneToMossMap.put(Block.mossBasalt, BonusBlocks.moss);
+        stoneToMossMap.put(Block.mossLimestone, BonusBlocks.moss);
+        stoneToMossMap.put(Block.mossGranite, BonusBlocks.moss);
 
         LookupFuelFurnace.instance.addFuelEntry(logMaple.id, 300);
         LookupFuelFurnace.instance.addFuelEntry(logJacaranda.id, 300);
@@ -365,6 +369,14 @@ public class BonusBlocks {
         CreativeHelper.setParent(blockSulphur, Block.gravel);
         CreativeHelper.setParent(blockSugar, Block.gravel);
 
+        CreativeHelper.setParent(brickNetherrack, Block.brickIron);
+        CreativeHelper.setParent(brickScorchedstone, Block.brickIron);
+        CreativeHelper.setParent(brickMud, Block.brickIron);
+        CreativeHelper.setParent(brickSteel, Block.brickIron);
+        CreativeHelper.setParent(brickQuartz, Block.brickIron);
+        CreativeHelper.setParent(brickOlivine, Block.brickIron);
+        CreativeHelper.setParent(brickSilver, Block.brickIron);
+
         CreativeHelper.setParent(fenceCopper, Block.fenceChainlink);
         CreativeHelper.setParent(fenceCopperTarnished, Block.fenceChainlink);
         CreativeHelper.setParent(fenceCopperCorroded, Block.fenceChainlink);
@@ -373,6 +385,33 @@ public class BonusBlocks {
         CreativeHelper.setParent(meshCopper, Block.mesh);
         CreativeHelper.setParent(meshCopperTarnished, Block.mesh);
         CreativeHelper.setParent(meshCopperCorroded, Block.mesh);
+
+        CreativeHelper.setParent(slabCobbleStoneMossy, Block.slabBasaltPolished);
+        CreativeHelper.setParent(slabSlatePolished, Block.slabBasaltPolished);
+        CreativeHelper.setParent(slabMarblePolished, Block.slabBasaltPolished);
+        CreativeHelper.setParent(slabPermafrostPolished, Block.slabBasaltPolished);
+        CreativeHelper.setParent(slabBrickStonePolishedMossy, Block.slabBasaltPolished);
+        CreativeHelper.setParent(slabBrickSandstone, Block.slabBasaltPolished);
+        CreativeHelper.setParent(slabBrickGold, Block.slabBasaltPolished);
+        CreativeHelper.setParent(slabBrickIron, Block.slabBasaltPolished);
+        CreativeHelper.setParent(slabBrickLapis, Block.slabBasaltPolished);
+        CreativeHelper.setParent(slabBrickPermafrost, Block.slabBasaltPolished);
+        CreativeHelper.setParent(slabCobbleNetherrack, Block.slabBasaltPolished);
+        CreativeHelper.setParent(slabCobbleNetherrackMossy, Block.slabBasaltPolished);
+        CreativeHelper.setParent(slabBrickNetherrack, Block.slabBasaltPolished);
+        CreativeHelper.setParent(slabBrickScorchedstone, Block.slabBasaltPolished);
+        CreativeHelper.setParent(slabBrickMud, Block.slabBasaltPolished);
+        CreativeHelper.setParent(slabBrickSteel, Block.slabBasaltPolished);
+        CreativeHelper.setParent(slabBrickQuartz, Block.slabBasaltPolished);
+        CreativeHelper.setParent(slabBrickOlivine, Block.slabBasaltPolished);
+        CreativeHelper.setParent(slabBrickSilver, Block.slabBasaltPolished);
+        CreativeHelper.setParent(slabCopper, Block.slabBasaltPolished);
+        CreativeHelper.setParent(slabCopperTarnished, Block.slabBasaltPolished);
+        CreativeHelper.setParent(slabCopperCorroded, Block.slabBasaltPolished);
+        for (int color = 0; color < 16; color++) {
+            CreativeHelper.setParent(slabWool, color << 4, Block.slabBasaltPolished, 0);
+        }
+
     }
 
 
@@ -620,6 +659,13 @@ public class BonusBlocks {
                 .setSideTextures("charredlogside.png")
                 .build(new BlockLog("log.scorched", blockID("logScorched")));
 
+
+        // Moss
+        moss = grass
+                .setFlammability(100, 30)
+                .setTextures("moss.png")
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SHOVEL, BlockTags.GROWS_FLOWERS, BlockTags.GROWS_SUGAR_CANE, BlockTags.GROWS_TREES, BlockTags.PASSIVE_MOBS_SPAWN, BlockTags.FIREFLIES_CAN_SPAWN, BlockTags.CAVE_GEN_REPLACES_SURFACE, BlockTags.CAVES_CUT_THROUGH)
+                .build(new BlockMossy("moss", blockID("moss"), Material.grass));
 
         // Overgrown Grass
         overgrownGrass = grass
