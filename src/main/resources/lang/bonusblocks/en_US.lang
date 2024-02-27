@@ -403,9 +403,6 @@ tile.bonusblocks.log.jacaranda.desc=A log from a jacaranda tree.
 tile.bonusblocks.leaves.jacaranda.name=Jacaranda Leaves
 tile.bonusblocks.leaves.jacaranda.desc=Leaves from a jacaranda tree.
 
-tile.bonusblocks.bark.jacaranda.name=Jacaranda Bark
-tile.bonusblocks.bark.jacaranda.desc=The bark of a jacaranda tree.
-
 tile.bonusblocks.sapling.jacaranda.name=Jacaranda Sapling
 tile.bonusblocks.sapling.jacaranda.desc=A plant to grow a jacaranda tree.
 
@@ -413,12 +410,8 @@ tile.bonusblocks.slab.slate.carved.name=Polished Slate Slab
 tile.bonusblocks.slab.slate.carved.desc=A slab of polished slate.
 tile.bonusblocks.slab.marble.carved.name=Polished Marble Slab
 tile.bonusblocks.slab.marble.carved.desc=A slab of polished marble.
-tile.bonusblocks.slab.sandstone.carved.name=Polished Sandstone Slab
-tile.bonusblocks.slab.sandstone.carved.desc=A slab of polished sandstone.
 tile.bonusblocks.slab.permafrost.carved.name=Polished Permafrost Slab
 tile.bonusblocks.slab.permafrost.carved.desc=A slab of polished permafrost.
-tile.bonusblocks.slab.scorchedstone.carved.name=Polished Scorchedstone Slab
-tile.bonusblocks.slab.scorchedstone.carved.desc=A slab of polished scorchedstone.
 tile.bonusblocks.slab.brick.stone.polished.mossy.name=Mossy Polished Stone Brick Slab
 tile.bonusblocks.slab.brick.stone.polished.mossy.desc=A slab of mossy polished stone bricks.
 tile.bonusblocks.slab.brick.sandstone.name=Sandstone Brick Slab

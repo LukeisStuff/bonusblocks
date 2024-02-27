@@ -82,50 +82,678 @@ public class ItemPaintedDoor extends Item {
 
     public boolean onItemUse(ItemStack itemstack, EntityPlayer entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
         if (!world.canPlaceInsideBlock(blockX, blockY, blockZ)) {
-            blockX += side.getOffsetX();
-            blockY += side.getOffsetY();
-            blockZ += side.getOffsetZ();
-        }
-
-        Block doorBlockBottom;
-        Block doorBlockTop;
-        doorBlockBottom = BonusBlocks.doorPlanksOakPaintedBottom;
-        doorBlockTop = BonusBlocks.doorPlanksOakPaintedTop;
-
-        if (!doorBlockBottom.canPlaceBlockAt(world, blockX, blockY, blockZ)) {
-            return false;
-        } else {
-            Direction dir = entityplayer.getHorizontalPlacementDirection(side).rotate(3);
-            int meta = dir.getHorizontalIndex();
-            int xOffset = -dir.getOffsetX();
-            int zOffset = -dir.getOffsetZ();
-            int isSolidBlockLeft = (world.isBlockNormalCube(blockX - xOffset, blockY, blockZ - zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX - xOffset, blockY + 1, blockZ - zOffset) ? 1 : 0);
-            int isSolidBlockRight = (world.isBlockNormalCube(blockX + xOffset, blockY, blockZ + zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX + xOffset, blockY + 1, blockZ + zOffset) ? 1 : 0);
-            boolean isDoorLeft = world.getBlockId(blockX - xOffset, blockY, blockZ - zOffset) == doorBlockBottom.id || world.getBlockId(blockX - xOffset, blockY + 1, blockZ - zOffset) == doorBlockTop.id;
-            boolean isDoorRight = world.getBlockId(blockX + xOffset, blockY, blockZ + zOffset) == doorBlockBottom.id || world.getBlockId(blockX + xOffset, blockY + 1, blockZ + zOffset) == doorBlockTop.id;
-            boolean isMirrored = false;
-            if (isDoorLeft && !isDoorRight) {
-                isMirrored = true;
-            } else if (isSolidBlockRight > isSolidBlockLeft) {
-                isMirrored = true;
+            if (itemstack.getMetadata() == 0) {
+                blockX += side.getOffsetX();
+                blockY += side.getOffsetY();
+                blockZ += side.getOffsetZ();
+                Block doorBlockBottom;
+                Block doorBlockTop;
+                doorBlockBottom = BonusBlocks.doorPlanksOakWhiteBottom;
+                doorBlockTop = BonusBlocks.doorPlanksOakWhiteTop;
+                if (!doorBlockBottom.canPlaceBlockAt(world, blockX, blockY, blockZ)) {
+                    return false;
+                } else {
+                    Direction dir = entityplayer.getHorizontalPlacementDirection(side).rotate(3);
+                    int meta = dir.getHorizontalIndex();
+                    int xOffset = -dir.getOffsetX();
+                    int zOffset = -dir.getOffsetZ();
+                    int isSolidBlockLeft = (world.isBlockNormalCube(blockX - xOffset, blockY, blockZ - zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX - xOffset, blockY + 1, blockZ - zOffset) ? 1 : 0);
+                    int isSolidBlockRight = (world.isBlockNormalCube(blockX + xOffset, blockY, blockZ + zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX + xOffset, blockY + 1, blockZ + zOffset) ? 1 : 0);
+                    boolean isDoorLeft = world.getBlockId(blockX - xOffset, blockY, blockZ - zOffset) == doorBlockBottom.id || world.getBlockId(blockX - xOffset, blockY + 1, blockZ - zOffset) == doorBlockTop.id;
+                    boolean isDoorRight = world.getBlockId(blockX + xOffset, blockY, blockZ + zOffset) == doorBlockBottom.id || world.getBlockId(blockX + xOffset, blockY + 1, blockZ + zOffset) == doorBlockTop.id;
+                    boolean isMirrored = false;
+                    if (isDoorLeft && !isDoorRight) {
+                        isMirrored = true;
+                    } else if (isSolidBlockRight > isSolidBlockLeft) {
+                        isMirrored = true;
+                    }
+                    if (isMirrored) {
+                        meta = meta - 1 & 3;
+                        meta += 4;
+                        meta |= 8;
+                    }
+                    world.editingBlocks = true;
+                    world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, doorBlockBottom.id, meta);
+                    world.setBlockAndMetadataWithNotify(blockX, blockY + 1, blockZ, doorBlockTop.id, meta);
+                    world.editingBlocks = false;
+                    world.notifyBlocksOfNeighborChange(blockX, blockY, blockZ, doorBlockBottom.id);
+                    world.notifyBlocksOfNeighborChange(blockX, blockY + 1, blockZ, doorBlockTop.id);
+                    world.playBlockSoundEffect((float) blockX + 0.5F, (float) blockY + 0.5F, (float) blockZ + 0.5F, doorBlockBottom, EnumBlockSoundEffectType.PLACE);
+                    itemstack.consumeItem(entityplayer);
+                    return true;
+                }
             }
+            if (itemstack.getMetadata() == 1) {
+                blockX += side.getOffsetX();
+                blockY += side.getOffsetY();
+                blockZ += side.getOffsetZ();
+                Block doorBlockBottom;
+                Block doorBlockTop;
+                doorBlockBottom = BonusBlocks.doorPlanksOakOrangeBottom;
+                doorBlockTop = BonusBlocks.doorPlanksOakOrangeTop;
+                if (!doorBlockBottom.canPlaceBlockAt(world, blockX, blockY, blockZ)) {
+                    return false;
+                } else {
+                    Direction dir = entityplayer.getHorizontalPlacementDirection(side).rotate(3);
+                    int meta = dir.getHorizontalIndex();
+                    int xOffset = -dir.getOffsetX();
+                    int zOffset = -dir.getOffsetZ();
+                    int isSolidBlockLeft = (world.isBlockNormalCube(blockX - xOffset, blockY, blockZ - zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX - xOffset, blockY + 1, blockZ - zOffset) ? 1 : 0);
+                    int isSolidBlockRight = (world.isBlockNormalCube(blockX + xOffset, blockY, blockZ + zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX + xOffset, blockY + 1, blockZ + zOffset) ? 1 : 0);
+                    boolean isDoorLeft = world.getBlockId(blockX - xOffset, blockY, blockZ - zOffset) == doorBlockBottom.id || world.getBlockId(blockX - xOffset, blockY + 1, blockZ - zOffset) == doorBlockTop.id;
+                    boolean isDoorRight = world.getBlockId(blockX + xOffset, blockY, blockZ + zOffset) == doorBlockBottom.id || world.getBlockId(blockX + xOffset, blockY + 1, blockZ + zOffset) == doorBlockTop.id;
+                    boolean isMirrored = false;
+                    if (isDoorLeft && !isDoorRight) {
+                        isMirrored = true;
+                    } else if (isSolidBlockRight > isSolidBlockLeft) {
+                        isMirrored = true;
+                    }
 
-            if (isMirrored) {
-                meta = meta - 1 & 3;
-                meta += 4;
-                meta |= 8;
+                    if (isMirrored) {
+                        meta = meta - 1 & 3;
+                        meta += 4;
+                        meta |= 8;
+                    }
+                    world.editingBlocks = true;
+                    world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, doorBlockBottom.id, meta);
+                    world.setBlockAndMetadataWithNotify(blockX, blockY + 1, blockZ, doorBlockTop.id, meta);
+                    world.editingBlocks = false;
+                    world.notifyBlocksOfNeighborChange(blockX, blockY, blockZ, doorBlockBottom.id);
+                    world.notifyBlocksOfNeighborChange(blockX, blockY + 1, blockZ, doorBlockTop.id);
+                    world.playBlockSoundEffect((float) blockX + 0.5F, (float) blockY + 0.5F, (float) blockZ + 0.5F, doorBlockBottom, EnumBlockSoundEffectType.PLACE);
+                    itemstack.consumeItem(entityplayer);
+                    return true;
+                }
             }
+            if (itemstack.getMetadata() == 2) {
+                blockX += side.getOffsetX();
+                blockY += side.getOffsetY();
+                blockZ += side.getOffsetZ();
+                Block doorBlockBottom;
+                Block doorBlockTop;
+                doorBlockBottom = BonusBlocks.doorPlanksOakMagentaBottom;
+                doorBlockTop = BonusBlocks.doorPlanksOakMagentaTop;
+                if (!doorBlockBottom.canPlaceBlockAt(world, blockX, blockY, blockZ)) {
+                    return false;
+                } else {
+                    Direction dir = entityplayer.getHorizontalPlacementDirection(side).rotate(3);
+                    int meta = dir.getHorizontalIndex();
+                    int xOffset = -dir.getOffsetX();
+                    int zOffset = -dir.getOffsetZ();
+                    int isSolidBlockLeft = (world.isBlockNormalCube(blockX - xOffset, blockY, blockZ - zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX - xOffset, blockY + 1, blockZ - zOffset) ? 1 : 0);
+                    int isSolidBlockRight = (world.isBlockNormalCube(blockX + xOffset, blockY, blockZ + zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX + xOffset, blockY + 1, blockZ + zOffset) ? 1 : 0);
+                    boolean isDoorLeft = world.getBlockId(blockX - xOffset, blockY, blockZ - zOffset) == doorBlockBottom.id || world.getBlockId(blockX - xOffset, blockY + 1, blockZ - zOffset) == doorBlockTop.id;
+                    boolean isDoorRight = world.getBlockId(blockX + xOffset, blockY, blockZ + zOffset) == doorBlockBottom.id || world.getBlockId(blockX + xOffset, blockY + 1, blockZ + zOffset) == doorBlockTop.id;
+                    boolean isMirrored = false;
+                    if (isDoorLeft && !isDoorRight) {
+                        isMirrored = true;
+                    } else if (isSolidBlockRight > isSolidBlockLeft) {
+                        isMirrored = true;
+                    }
 
-            world.editingBlocks = true;
-            world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, doorBlockBottom.id, meta);
-            world.setBlockAndMetadataWithNotify(blockX, blockY + 1, blockZ, doorBlockTop.id, meta);
-            world.editingBlocks = false;
-            world.notifyBlocksOfNeighborChange(blockX, blockY, blockZ, doorBlockBottom.id);
-            world.notifyBlocksOfNeighborChange(blockX, blockY + 1, blockZ, doorBlockTop.id);
-            world.playBlockSoundEffect((float) blockX + 0.5F, (float) blockY + 0.5F, (float) blockZ + 0.5F, doorBlockBottom, EnumBlockSoundEffectType.PLACE);
-            itemstack.consumeItem(entityplayer);
-            return true;
+                    if (isMirrored) {
+                        meta = meta - 1 & 3;
+                        meta += 4;
+                        meta |= 8;
+                    }
+                    world.editingBlocks = true;
+                    world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, doorBlockBottom.id, meta);
+                    world.setBlockAndMetadataWithNotify(blockX, blockY + 1, blockZ, doorBlockTop.id, meta);
+                    world.editingBlocks = false;
+                    world.notifyBlocksOfNeighborChange(blockX, blockY, blockZ, doorBlockBottom.id);
+                    world.notifyBlocksOfNeighborChange(blockX, blockY + 1, blockZ, doorBlockTop.id);
+                    world.playBlockSoundEffect((float) blockX + 0.5F, (float) blockY + 0.5F, (float) blockZ + 0.5F, doorBlockBottom, EnumBlockSoundEffectType.PLACE);
+                    itemstack.consumeItem(entityplayer);
+                    return true;
+                }
+            }
+            if (itemstack.getMetadata() == 3) {
+                blockX += side.getOffsetX();
+                blockY += side.getOffsetY();
+                blockZ += side.getOffsetZ();
+                Block doorBlockBottom;
+                Block doorBlockTop;
+                doorBlockBottom = BonusBlocks.doorPlanksOakLightBlueBottom;
+                doorBlockTop = BonusBlocks.doorPlanksOakLightBlueTop;
+                if (!doorBlockBottom.canPlaceBlockAt(world, blockX, blockY, blockZ)) {
+                    return false;
+                } else {
+                    Direction dir = entityplayer.getHorizontalPlacementDirection(side).rotate(3);
+                    int meta = dir.getHorizontalIndex();
+                    int xOffset = -dir.getOffsetX();
+                    int zOffset = -dir.getOffsetZ();
+                    int isSolidBlockLeft = (world.isBlockNormalCube(blockX - xOffset, blockY, blockZ - zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX - xOffset, blockY + 1, blockZ - zOffset) ? 1 : 0);
+                    int isSolidBlockRight = (world.isBlockNormalCube(blockX + xOffset, blockY, blockZ + zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX + xOffset, blockY + 1, blockZ + zOffset) ? 1 : 0);
+                    boolean isDoorLeft = world.getBlockId(blockX - xOffset, blockY, blockZ - zOffset) == doorBlockBottom.id || world.getBlockId(blockX - xOffset, blockY + 1, blockZ - zOffset) == doorBlockTop.id;
+                    boolean isDoorRight = world.getBlockId(blockX + xOffset, blockY, blockZ + zOffset) == doorBlockBottom.id || world.getBlockId(blockX + xOffset, blockY + 1, blockZ + zOffset) == doorBlockTop.id;
+                    boolean isMirrored = false;
+                    if (isDoorLeft && !isDoorRight) {
+                        isMirrored = true;
+                    } else if (isSolidBlockRight > isSolidBlockLeft) {
+                        isMirrored = true;
+                    }
+
+                    if (isMirrored) {
+                        meta = meta - 1 & 3;
+                        meta += 4;
+                        meta |= 8;
+                    }
+                    world.editingBlocks = true;
+                    world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, doorBlockBottom.id, meta);
+                    world.setBlockAndMetadataWithNotify(blockX, blockY + 1, blockZ, doorBlockTop.id, meta);
+                    world.editingBlocks = false;
+                    world.notifyBlocksOfNeighborChange(blockX, blockY, blockZ, doorBlockBottom.id);
+                    world.notifyBlocksOfNeighborChange(blockX, blockY + 1, blockZ, doorBlockTop.id);
+                    world.playBlockSoundEffect((float) blockX + 0.5F, (float) blockY + 0.5F, (float) blockZ + 0.5F, doorBlockBottom, EnumBlockSoundEffectType.PLACE);
+                    itemstack.consumeItem(entityplayer);
+                    return true;
+                }
+            }
+            if (itemstack.getMetadata() == 4) {
+                blockX += side.getOffsetX();
+                blockY += side.getOffsetY();
+                blockZ += side.getOffsetZ();
+                Block doorBlockBottom;
+                Block doorBlockTop;
+                doorBlockBottom = BonusBlocks.doorPlanksOakYellowBottom;
+                doorBlockTop = BonusBlocks.doorPlanksOakYellowTop;
+                if (!doorBlockBottom.canPlaceBlockAt(world, blockX, blockY, blockZ)) {
+                    return false;
+                } else {
+                    Direction dir = entityplayer.getHorizontalPlacementDirection(side).rotate(3);
+                    int meta = dir.getHorizontalIndex();
+                    int xOffset = -dir.getOffsetX();
+                    int zOffset = -dir.getOffsetZ();
+                    int isSolidBlockLeft = (world.isBlockNormalCube(blockX - xOffset, blockY, blockZ - zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX - xOffset, blockY + 1, blockZ - zOffset) ? 1 : 0);
+                    int isSolidBlockRight = (world.isBlockNormalCube(blockX + xOffset, blockY, blockZ + zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX + xOffset, blockY + 1, blockZ + zOffset) ? 1 : 0);
+                    boolean isDoorLeft = world.getBlockId(blockX - xOffset, blockY, blockZ - zOffset) == doorBlockBottom.id || world.getBlockId(blockX - xOffset, blockY + 1, blockZ - zOffset) == doorBlockTop.id;
+                    boolean isDoorRight = world.getBlockId(blockX + xOffset, blockY, blockZ + zOffset) == doorBlockBottom.id || world.getBlockId(blockX + xOffset, blockY + 1, blockZ + zOffset) == doorBlockTop.id;
+                    boolean isMirrored = false;
+                    if (isDoorLeft && !isDoorRight) {
+                        isMirrored = true;
+                    } else if (isSolidBlockRight > isSolidBlockLeft) {
+                        isMirrored = true;
+                    }
+
+                    if (isMirrored) {
+                        meta = meta - 1 & 3;
+                        meta += 4;
+                        meta |= 8;
+                    }
+                    world.editingBlocks = true;
+                    world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, doorBlockBottom.id, meta);
+                    world.setBlockAndMetadataWithNotify(blockX, blockY + 1, blockZ, doorBlockTop.id, meta);
+                    world.editingBlocks = false;
+                    world.notifyBlocksOfNeighborChange(blockX, blockY, blockZ, doorBlockBottom.id);
+                    world.notifyBlocksOfNeighborChange(blockX, blockY + 1, blockZ, doorBlockTop.id);
+                    world.playBlockSoundEffect((float) blockX + 0.5F, (float) blockY + 0.5F, (float) blockZ + 0.5F, doorBlockBottom, EnumBlockSoundEffectType.PLACE);
+                    itemstack.consumeItem(entityplayer);
+                    return true;
+                }
+            }
+            if (itemstack.getMetadata() == 5) {
+                blockX += side.getOffsetX();
+                blockY += side.getOffsetY();
+                blockZ += side.getOffsetZ();
+                Block doorBlockBottom;
+                Block doorBlockTop;
+                doorBlockBottom = BonusBlocks.doorPlanksOakLimeBottom;
+                doorBlockTop = BonusBlocks.doorPlanksOakLimeTop;
+                if (!doorBlockBottom.canPlaceBlockAt(world, blockX, blockY, blockZ)) {
+                    return false;
+                } else {
+                    Direction dir = entityplayer.getHorizontalPlacementDirection(side).rotate(3);
+                    int meta = dir.getHorizontalIndex();
+                    int xOffset = -dir.getOffsetX();
+                    int zOffset = -dir.getOffsetZ();
+                    int isSolidBlockLeft = (world.isBlockNormalCube(blockX - xOffset, blockY, blockZ - zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX - xOffset, blockY + 1, blockZ - zOffset) ? 1 : 0);
+                    int isSolidBlockRight = (world.isBlockNormalCube(blockX + xOffset, blockY, blockZ + zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX + xOffset, blockY + 1, blockZ + zOffset) ? 1 : 0);
+                    boolean isDoorLeft = world.getBlockId(blockX - xOffset, blockY, blockZ - zOffset) == doorBlockBottom.id || world.getBlockId(blockX - xOffset, blockY + 1, blockZ - zOffset) == doorBlockTop.id;
+                    boolean isDoorRight = world.getBlockId(blockX + xOffset, blockY, blockZ + zOffset) == doorBlockBottom.id || world.getBlockId(blockX + xOffset, blockY + 1, blockZ + zOffset) == doorBlockTop.id;
+                    boolean isMirrored = false;
+                    if (isDoorLeft && !isDoorRight) {
+                        isMirrored = true;
+                    } else if (isSolidBlockRight > isSolidBlockLeft) {
+                        isMirrored = true;
+                    }
+
+                    if (isMirrored) {
+                        meta = meta - 1 & 3;
+                        meta += 4;
+                        meta |= 8;
+                    }
+                    world.editingBlocks = true;
+                    world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, doorBlockBottom.id, meta);
+                    world.setBlockAndMetadataWithNotify(blockX, blockY + 1, blockZ, doorBlockTop.id, meta);
+                    world.editingBlocks = false;
+                    world.notifyBlocksOfNeighborChange(blockX, blockY, blockZ, doorBlockBottom.id);
+                    world.notifyBlocksOfNeighborChange(blockX, blockY + 1, blockZ, doorBlockTop.id);
+                    world.playBlockSoundEffect((float) blockX + 0.5F, (float) blockY + 0.5F, (float) blockZ + 0.5F, doorBlockBottom, EnumBlockSoundEffectType.PLACE);
+                    itemstack.consumeItem(entityplayer);
+                    return true;
+                }
+            }
+            if (itemstack.getMetadata() == 6) {
+                blockX += side.getOffsetX();
+                blockY += side.getOffsetY();
+                blockZ += side.getOffsetZ();
+                Block doorBlockBottom;
+                Block doorBlockTop;
+                doorBlockBottom = BonusBlocks.doorPlanksOakPinkBottom;
+                doorBlockTop = BonusBlocks.doorPlanksOakPinkTop;
+                if (!doorBlockBottom.canPlaceBlockAt(world, blockX, blockY, blockZ)) {
+                    return false;
+                } else {
+                    Direction dir = entityplayer.getHorizontalPlacementDirection(side).rotate(3);
+                    int meta = dir.getHorizontalIndex();
+                    int xOffset = -dir.getOffsetX();
+                    int zOffset = -dir.getOffsetZ();
+                    int isSolidBlockLeft = (world.isBlockNormalCube(blockX - xOffset, blockY, blockZ - zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX - xOffset, blockY + 1, blockZ - zOffset) ? 1 : 0);
+                    int isSolidBlockRight = (world.isBlockNormalCube(blockX + xOffset, blockY, blockZ + zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX + xOffset, blockY + 1, blockZ + zOffset) ? 1 : 0);
+                    boolean isDoorLeft = world.getBlockId(blockX - xOffset, blockY, blockZ - zOffset) == doorBlockBottom.id || world.getBlockId(blockX - xOffset, blockY + 1, blockZ - zOffset) == doorBlockTop.id;
+                    boolean isDoorRight = world.getBlockId(blockX + xOffset, blockY, blockZ + zOffset) == doorBlockBottom.id || world.getBlockId(blockX + xOffset, blockY + 1, blockZ + zOffset) == doorBlockTop.id;
+                    boolean isMirrored = false;
+                    if (isDoorLeft && !isDoorRight) {
+                        isMirrored = true;
+                    } else if (isSolidBlockRight > isSolidBlockLeft) {
+                        isMirrored = true;
+                    }
+
+                    if (isMirrored) {
+                        meta = meta - 1 & 3;
+                        meta += 4;
+                        meta |= 8;
+                    }
+                    world.editingBlocks = true;
+                    world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, doorBlockBottom.id, meta);
+                    world.setBlockAndMetadataWithNotify(blockX, blockY + 1, blockZ, doorBlockTop.id, meta);
+                    world.editingBlocks = false;
+                    world.notifyBlocksOfNeighborChange(blockX, blockY, blockZ, doorBlockBottom.id);
+                    world.notifyBlocksOfNeighborChange(blockX, blockY + 1, blockZ, doorBlockTop.id);
+                    world.playBlockSoundEffect((float) blockX + 0.5F, (float) blockY + 0.5F, (float) blockZ + 0.5F, doorBlockBottom, EnumBlockSoundEffectType.PLACE);
+                    itemstack.consumeItem(entityplayer);
+                    return true;
+                }
+            }
+            if (itemstack.getMetadata() == 7) {
+                blockX += side.getOffsetX();
+                blockY += side.getOffsetY();
+                blockZ += side.getOffsetZ();
+                Block doorBlockBottom;
+                Block doorBlockTop;
+                doorBlockBottom = BonusBlocks.doorPlanksOakGrayBottom;
+                doorBlockTop = BonusBlocks.doorPlanksOakGrayTop;
+                if (!doorBlockBottom.canPlaceBlockAt(world, blockX, blockY, blockZ)) {
+                    return false;
+                } else {
+                    Direction dir = entityplayer.getHorizontalPlacementDirection(side).rotate(3);
+                    int meta = dir.getHorizontalIndex();
+                    int xOffset = -dir.getOffsetX();
+                    int zOffset = -dir.getOffsetZ();
+                    int isSolidBlockLeft = (world.isBlockNormalCube(blockX - xOffset, blockY, blockZ - zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX - xOffset, blockY + 1, blockZ - zOffset) ? 1 : 0);
+                    int isSolidBlockRight = (world.isBlockNormalCube(blockX + xOffset, blockY, blockZ + zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX + xOffset, blockY + 1, blockZ + zOffset) ? 1 : 0);
+                    boolean isDoorLeft = world.getBlockId(blockX - xOffset, blockY, blockZ - zOffset) == doorBlockBottom.id || world.getBlockId(blockX - xOffset, blockY + 1, blockZ - zOffset) == doorBlockTop.id;
+                    boolean isDoorRight = world.getBlockId(blockX + xOffset, blockY, blockZ + zOffset) == doorBlockBottom.id || world.getBlockId(blockX + xOffset, blockY + 1, blockZ + zOffset) == doorBlockTop.id;
+                    boolean isMirrored = false;
+                    if (isDoorLeft && !isDoorRight) {
+                        isMirrored = true;
+                    } else if (isSolidBlockRight > isSolidBlockLeft) {
+                        isMirrored = true;
+                    }
+
+                    if (isMirrored) {
+                        meta = meta - 1 & 3;
+                        meta += 4;
+                        meta |= 8;
+                    }
+                    world.editingBlocks = true;
+                    world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, doorBlockBottom.id, meta);
+                    world.setBlockAndMetadataWithNotify(blockX, blockY + 1, blockZ, doorBlockTop.id, meta);
+                    world.editingBlocks = false;
+                    world.notifyBlocksOfNeighborChange(blockX, blockY, blockZ, doorBlockBottom.id);
+                    world.notifyBlocksOfNeighborChange(blockX, blockY + 1, blockZ, doorBlockTop.id);
+                    world.playBlockSoundEffect((float) blockX + 0.5F, (float) blockY + 0.5F, (float) blockZ + 0.5F, doorBlockBottom, EnumBlockSoundEffectType.PLACE);
+                    itemstack.consumeItem(entityplayer);
+                    return true;
+                }
+            }
+            if (itemstack.getMetadata() == 8) {
+                blockX += side.getOffsetX();
+                blockY += side.getOffsetY();
+                blockZ += side.getOffsetZ();
+                Block doorBlockBottom;
+                Block doorBlockTop;
+                doorBlockBottom = BonusBlocks.doorPlanksOakSilverBottom;
+                doorBlockTop = BonusBlocks.doorPlanksOakSilverTop;
+                if (!doorBlockBottom.canPlaceBlockAt(world, blockX, blockY, blockZ)) {
+                    return false;
+                } else {
+                    Direction dir = entityplayer.getHorizontalPlacementDirection(side).rotate(3);
+                    int meta = dir.getHorizontalIndex();
+                    int xOffset = -dir.getOffsetX();
+                    int zOffset = -dir.getOffsetZ();
+                    int isSolidBlockLeft = (world.isBlockNormalCube(blockX - xOffset, blockY, blockZ - zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX - xOffset, blockY + 1, blockZ - zOffset) ? 1 : 0);
+                    int isSolidBlockRight = (world.isBlockNormalCube(blockX + xOffset, blockY, blockZ + zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX + xOffset, blockY + 1, blockZ + zOffset) ? 1 : 0);
+                    boolean isDoorLeft = world.getBlockId(blockX - xOffset, blockY, blockZ - zOffset) == doorBlockBottom.id || world.getBlockId(blockX - xOffset, blockY + 1, blockZ - zOffset) == doorBlockTop.id;
+                    boolean isDoorRight = world.getBlockId(blockX + xOffset, blockY, blockZ + zOffset) == doorBlockBottom.id || world.getBlockId(blockX + xOffset, blockY + 1, blockZ + zOffset) == doorBlockTop.id;
+                    boolean isMirrored = false;
+                    if (isDoorLeft && !isDoorRight) {
+                        isMirrored = true;
+                    } else if (isSolidBlockRight > isSolidBlockLeft) {
+                        isMirrored = true;
+                    }
+
+                    if (isMirrored) {
+                        meta = meta - 1 & 3;
+                        meta += 4;
+                        meta |= 8;
+                    }
+                    world.editingBlocks = true;
+                    world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, doorBlockBottom.id, meta);
+                    world.setBlockAndMetadataWithNotify(blockX, blockY + 1, blockZ, doorBlockTop.id, meta);
+                    world.editingBlocks = false;
+                    world.notifyBlocksOfNeighborChange(blockX, blockY, blockZ, doorBlockBottom.id);
+                    world.notifyBlocksOfNeighborChange(blockX, blockY + 1, blockZ, doorBlockTop.id);
+                    world.playBlockSoundEffect((float) blockX + 0.5F, (float) blockY + 0.5F, (float) blockZ + 0.5F, doorBlockBottom, EnumBlockSoundEffectType.PLACE);
+                    itemstack.consumeItem(entityplayer);
+                    return true;
+                }
+            }
+            if (itemstack.getMetadata() == 9) {
+                blockX += side.getOffsetX();
+                blockY += side.getOffsetY();
+                blockZ += side.getOffsetZ();
+                Block doorBlockBottom;
+                Block doorBlockTop;
+                doorBlockBottom = BonusBlocks.doorPlanksOakCyanBottom;
+                doorBlockTop = BonusBlocks.doorPlanksOakCyanTop;
+                if (!doorBlockBottom.canPlaceBlockAt(world, blockX, blockY, blockZ)) {
+                    return false;
+                } else {
+                    Direction dir = entityplayer.getHorizontalPlacementDirection(side).rotate(3);
+                    int meta = dir.getHorizontalIndex();
+                    int xOffset = -dir.getOffsetX();
+                    int zOffset = -dir.getOffsetZ();
+                    int isSolidBlockLeft = (world.isBlockNormalCube(blockX - xOffset, blockY, blockZ - zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX - xOffset, blockY + 1, blockZ - zOffset) ? 1 : 0);
+                    int isSolidBlockRight = (world.isBlockNormalCube(blockX + xOffset, blockY, blockZ + zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX + xOffset, blockY + 1, blockZ + zOffset) ? 1 : 0);
+                    boolean isDoorLeft = world.getBlockId(blockX - xOffset, blockY, blockZ - zOffset) == doorBlockBottom.id || world.getBlockId(blockX - xOffset, blockY + 1, blockZ - zOffset) == doorBlockTop.id;
+                    boolean isDoorRight = world.getBlockId(blockX + xOffset, blockY, blockZ + zOffset) == doorBlockBottom.id || world.getBlockId(blockX + xOffset, blockY + 1, blockZ + zOffset) == doorBlockTop.id;
+                    boolean isMirrored = false;
+                    if (isDoorLeft && !isDoorRight) {
+                        isMirrored = true;
+                    } else if (isSolidBlockRight > isSolidBlockLeft) {
+                        isMirrored = true;
+                    }
+
+                    if (isMirrored) {
+                        meta = meta - 1 & 3;
+                        meta += 4;
+                        meta |= 8;
+                    }
+                    world.editingBlocks = true;
+                    world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, doorBlockBottom.id, meta);
+                    world.setBlockAndMetadataWithNotify(blockX, blockY + 1, blockZ, doorBlockTop.id, meta);
+                    world.editingBlocks = false;
+                    world.notifyBlocksOfNeighborChange(blockX, blockY, blockZ, doorBlockBottom.id);
+                    world.notifyBlocksOfNeighborChange(blockX, blockY + 1, blockZ, doorBlockTop.id);
+                    world.playBlockSoundEffect((float) blockX + 0.5F, (float) blockY + 0.5F, (float) blockZ + 0.5F, doorBlockBottom, EnumBlockSoundEffectType.PLACE);
+                    itemstack.consumeItem(entityplayer);
+                    return true;
+                }
+            }
+            if (itemstack.getMetadata() == 10) {
+                blockX += side.getOffsetX();
+                blockY += side.getOffsetY();
+                blockZ += side.getOffsetZ();
+                Block doorBlockBottom;
+                Block doorBlockTop;
+                doorBlockBottom = BonusBlocks.doorPlanksOakPurpleBottom;
+                doorBlockTop = BonusBlocks.doorPlanksOakPurpleTop;
+                if (!doorBlockBottom.canPlaceBlockAt(world, blockX, blockY, blockZ)) {
+                    return false;
+                } else {
+                    Direction dir = entityplayer.getHorizontalPlacementDirection(side).rotate(3);
+                    int meta = dir.getHorizontalIndex();
+                    int xOffset = -dir.getOffsetX();
+                    int zOffset = -dir.getOffsetZ();
+                    int isSolidBlockLeft = (world.isBlockNormalCube(blockX - xOffset, blockY, blockZ - zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX - xOffset, blockY + 1, blockZ - zOffset) ? 1 : 0);
+                    int isSolidBlockRight = (world.isBlockNormalCube(blockX + xOffset, blockY, blockZ + zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX + xOffset, blockY + 1, blockZ + zOffset) ? 1 : 0);
+                    boolean isDoorLeft = world.getBlockId(blockX - xOffset, blockY, blockZ - zOffset) == doorBlockBottom.id || world.getBlockId(blockX - xOffset, blockY + 1, blockZ - zOffset) == doorBlockTop.id;
+                    boolean isDoorRight = world.getBlockId(blockX + xOffset, blockY, blockZ + zOffset) == doorBlockBottom.id || world.getBlockId(blockX + xOffset, blockY + 1, blockZ + zOffset) == doorBlockTop.id;
+                    boolean isMirrored = false;
+                    if (isDoorLeft && !isDoorRight) {
+                        isMirrored = true;
+                    } else if (isSolidBlockRight > isSolidBlockLeft) {
+                        isMirrored = true;
+                    }
+
+                    if (isMirrored) {
+                        meta = meta - 1 & 3;
+                        meta += 4;
+                        meta |= 8;
+                    }
+                    world.editingBlocks = true;
+                    world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, doorBlockBottom.id, meta);
+                    world.setBlockAndMetadataWithNotify(blockX, blockY + 1, blockZ, doorBlockTop.id, meta);
+                    world.editingBlocks = false;
+                    world.notifyBlocksOfNeighborChange(blockX, blockY, blockZ, doorBlockBottom.id);
+                    world.notifyBlocksOfNeighborChange(blockX, blockY + 1, blockZ, doorBlockTop.id);
+                    world.playBlockSoundEffect((float) blockX + 0.5F, (float) blockY + 0.5F, (float) blockZ + 0.5F, doorBlockBottom, EnumBlockSoundEffectType.PLACE);
+                    itemstack.consumeItem(entityplayer);
+                    return true;
+                }
+            }
+            if (itemstack.getMetadata() == 11) {
+                blockX += side.getOffsetX();
+                blockY += side.getOffsetY();
+                blockZ += side.getOffsetZ();
+                Block doorBlockBottom;
+                Block doorBlockTop;
+                doorBlockBottom = BonusBlocks.doorPlanksOakBlueBottom;
+                doorBlockTop = BonusBlocks.doorPlanksOakBlueTop;
+                if (!doorBlockBottom.canPlaceBlockAt(world, blockX, blockY, blockZ)) {
+                    return false;
+                } else {
+                    Direction dir = entityplayer.getHorizontalPlacementDirection(side).rotate(3);
+                    int meta = dir.getHorizontalIndex();
+                    int xOffset = -dir.getOffsetX();
+                    int zOffset = -dir.getOffsetZ();
+                    int isSolidBlockLeft = (world.isBlockNormalCube(blockX - xOffset, blockY, blockZ - zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX - xOffset, blockY + 1, blockZ - zOffset) ? 1 : 0);
+                    int isSolidBlockRight = (world.isBlockNormalCube(blockX + xOffset, blockY, blockZ + zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX + xOffset, blockY + 1, blockZ + zOffset) ? 1 : 0);
+                    boolean isDoorLeft = world.getBlockId(blockX - xOffset, blockY, blockZ - zOffset) == doorBlockBottom.id || world.getBlockId(blockX - xOffset, blockY + 1, blockZ - zOffset) == doorBlockTop.id;
+                    boolean isDoorRight = world.getBlockId(blockX + xOffset, blockY, blockZ + zOffset) == doorBlockBottom.id || world.getBlockId(blockX + xOffset, blockY + 1, blockZ + zOffset) == doorBlockTop.id;
+                    boolean isMirrored = false;
+                    if (isDoorLeft && !isDoorRight) {
+                        isMirrored = true;
+                    } else if (isSolidBlockRight > isSolidBlockLeft) {
+                        isMirrored = true;
+                    }
+
+                    if (isMirrored) {
+                        meta = meta - 1 & 3;
+                        meta += 4;
+                        meta |= 8;
+                    }
+                    world.editingBlocks = true;
+                    world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, doorBlockBottom.id, meta);
+                    world.setBlockAndMetadataWithNotify(blockX, blockY + 1, blockZ, doorBlockTop.id, meta);
+                    world.editingBlocks = false;
+                    world.notifyBlocksOfNeighborChange(blockX, blockY, blockZ, doorBlockBottom.id);
+                    world.notifyBlocksOfNeighborChange(blockX, blockY + 1, blockZ, doorBlockTop.id);
+                    world.playBlockSoundEffect((float) blockX + 0.5F, (float) blockY + 0.5F, (float) blockZ + 0.5F, doorBlockBottom, EnumBlockSoundEffectType.PLACE);
+                    itemstack.consumeItem(entityplayer);
+                    return true;
+                }
+            }
+            if (itemstack.getMetadata() == 12) {
+                blockX += side.getOffsetX();
+                blockY += side.getOffsetY();
+                blockZ += side.getOffsetZ();
+                Block doorBlockBottom;
+                Block doorBlockTop;
+                doorBlockBottom = BonusBlocks.doorPlanksOakBrownBottom;
+                doorBlockTop = BonusBlocks.doorPlanksOakBrownTop;
+                if (!doorBlockBottom.canPlaceBlockAt(world, blockX, blockY, blockZ)) {
+                    return false;
+                } else {
+                    Direction dir = entityplayer.getHorizontalPlacementDirection(side).rotate(3);
+                    int meta = dir.getHorizontalIndex();
+                    int xOffset = -dir.getOffsetX();
+                    int zOffset = -dir.getOffsetZ();
+                    int isSolidBlockLeft = (world.isBlockNormalCube(blockX - xOffset, blockY, blockZ - zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX - xOffset, blockY + 1, blockZ - zOffset) ? 1 : 0);
+                    int isSolidBlockRight = (world.isBlockNormalCube(blockX + xOffset, blockY, blockZ + zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX + xOffset, blockY + 1, blockZ + zOffset) ? 1 : 0);
+                    boolean isDoorLeft = world.getBlockId(blockX - xOffset, blockY, blockZ - zOffset) == doorBlockBottom.id || world.getBlockId(blockX - xOffset, blockY + 1, blockZ - zOffset) == doorBlockTop.id;
+                    boolean isDoorRight = world.getBlockId(blockX + xOffset, blockY, blockZ + zOffset) == doorBlockBottom.id || world.getBlockId(blockX + xOffset, blockY + 1, blockZ + zOffset) == doorBlockTop.id;
+                    boolean isMirrored = false;
+                    if (isDoorLeft && !isDoorRight) {
+                        isMirrored = true;
+                    } else if (isSolidBlockRight > isSolidBlockLeft) {
+                        isMirrored = true;
+                    }
+
+                    if (isMirrored) {
+                        meta = meta - 1 & 3;
+                        meta += 4;
+                        meta |= 8;
+                    }
+                    world.editingBlocks = true;
+                    world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, doorBlockBottom.id, meta);
+                    world.setBlockAndMetadataWithNotify(blockX, blockY + 1, blockZ, doorBlockTop.id, meta);
+                    world.editingBlocks = false;
+                    world.notifyBlocksOfNeighborChange(blockX, blockY, blockZ, doorBlockBottom.id);
+                    world.notifyBlocksOfNeighborChange(blockX, blockY + 1, blockZ, doorBlockTop.id);
+                    world.playBlockSoundEffect((float) blockX + 0.5F, (float) blockY + 0.5F, (float) blockZ + 0.5F, doorBlockBottom, EnumBlockSoundEffectType.PLACE);
+                    itemstack.consumeItem(entityplayer);
+                    return true;
+                }
+            }
+            if (itemstack.getMetadata() == 13) {
+                blockX += side.getOffsetX();
+                blockY += side.getOffsetY();
+                blockZ += side.getOffsetZ();
+                Block doorBlockBottom;
+                Block doorBlockTop;
+                doorBlockBottom = BonusBlocks.doorPlanksOakGreenBottom;
+                doorBlockTop = BonusBlocks.doorPlanksOakGreenTop;
+                if (!doorBlockBottom.canPlaceBlockAt(world, blockX, blockY, blockZ)) {
+                    return false;
+                } else {
+                    Direction dir = entityplayer.getHorizontalPlacementDirection(side).rotate(3);
+                    int meta = dir.getHorizontalIndex();
+                    int xOffset = -dir.getOffsetX();
+                    int zOffset = -dir.getOffsetZ();
+                    int isSolidBlockLeft = (world.isBlockNormalCube(blockX - xOffset, blockY, blockZ - zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX - xOffset, blockY + 1, blockZ - zOffset) ? 1 : 0);
+                    int isSolidBlockRight = (world.isBlockNormalCube(blockX + xOffset, blockY, blockZ + zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX + xOffset, blockY + 1, blockZ + zOffset) ? 1 : 0);
+                    boolean isDoorLeft = world.getBlockId(blockX - xOffset, blockY, blockZ - zOffset) == doorBlockBottom.id || world.getBlockId(blockX - xOffset, blockY + 1, blockZ - zOffset) == doorBlockTop.id;
+                    boolean isDoorRight = world.getBlockId(blockX + xOffset, blockY, blockZ + zOffset) == doorBlockBottom.id || world.getBlockId(blockX + xOffset, blockY + 1, blockZ + zOffset) == doorBlockTop.id;
+                    boolean isMirrored = false;
+                    if (isDoorLeft && !isDoorRight) {
+                        isMirrored = true;
+                    } else if (isSolidBlockRight > isSolidBlockLeft) {
+                        isMirrored = true;
+                    }
+
+                    if (isMirrored) {
+                        meta = meta - 1 & 3;
+                        meta += 4;
+                        meta |= 8;
+                    }
+                    world.editingBlocks = true;
+                    world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, doorBlockBottom.id, meta);
+                    world.setBlockAndMetadataWithNotify(blockX, blockY + 1, blockZ, doorBlockTop.id, meta);
+                    world.editingBlocks = false;
+                    world.notifyBlocksOfNeighborChange(blockX, blockY, blockZ, doorBlockBottom.id);
+                    world.notifyBlocksOfNeighborChange(blockX, blockY + 1, blockZ, doorBlockTop.id);
+                    world.playBlockSoundEffect((float) blockX + 0.5F, (float) blockY + 0.5F, (float) blockZ + 0.5F, doorBlockBottom, EnumBlockSoundEffectType.PLACE);
+                    itemstack.consumeItem(entityplayer);
+                    return true;
+                }
+            }
+            if (itemstack.getMetadata() == 14) {
+                blockX += side.getOffsetX();
+                blockY += side.getOffsetY();
+                blockZ += side.getOffsetZ();
+                Block doorBlockBottom;
+                Block doorBlockTop;
+                doorBlockBottom = BonusBlocks.doorPlanksOakRedBottom;
+                doorBlockTop = BonusBlocks.doorPlanksOakRedTop;
+                if (!doorBlockBottom.canPlaceBlockAt(world, blockX, blockY, blockZ)) {
+                    return false;
+                } else {
+                    Direction dir = entityplayer.getHorizontalPlacementDirection(side).rotate(3);
+                    int meta = dir.getHorizontalIndex();
+                    int xOffset = -dir.getOffsetX();
+                    int zOffset = -dir.getOffsetZ();
+                    int isSolidBlockLeft = (world.isBlockNormalCube(blockX - xOffset, blockY, blockZ - zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX - xOffset, blockY + 1, blockZ - zOffset) ? 1 : 0);
+                    int isSolidBlockRight = (world.isBlockNormalCube(blockX + xOffset, blockY, blockZ + zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX + xOffset, blockY + 1, blockZ + zOffset) ? 1 : 0);
+                    boolean isDoorLeft = world.getBlockId(blockX - xOffset, blockY, blockZ - zOffset) == doorBlockBottom.id || world.getBlockId(blockX - xOffset, blockY + 1, blockZ - zOffset) == doorBlockTop.id;
+                    boolean isDoorRight = world.getBlockId(blockX + xOffset, blockY, blockZ + zOffset) == doorBlockBottom.id || world.getBlockId(blockX + xOffset, blockY + 1, blockZ + zOffset) == doorBlockTop.id;
+                    boolean isMirrored = false;
+                    if (isDoorLeft && !isDoorRight) {
+                        isMirrored = true;
+                    } else if (isSolidBlockRight > isSolidBlockLeft) {
+                        isMirrored = true;
+                    }
+
+                    if (isMirrored) {
+                        meta = meta - 1 & 3;
+                        meta += 4;
+                        meta |= 8;
+                    }
+                    world.editingBlocks = true;
+                    world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, doorBlockBottom.id, meta);
+                    world.setBlockAndMetadataWithNotify(blockX, blockY + 1, blockZ, doorBlockTop.id, meta);
+                    world.editingBlocks = false;
+                    world.notifyBlocksOfNeighborChange(blockX, blockY, blockZ, doorBlockBottom.id);
+                    world.notifyBlocksOfNeighborChange(blockX, blockY + 1, blockZ, doorBlockTop.id);
+                    world.playBlockSoundEffect((float) blockX + 0.5F, (float) blockY + 0.5F, (float) blockZ + 0.5F, doorBlockBottom, EnumBlockSoundEffectType.PLACE);
+                    itemstack.consumeItem(entityplayer);
+                    return true;
+                }
+            }
+            if (itemstack.getMetadata() == 15) {
+                blockX += side.getOffsetX();
+                blockY += side.getOffsetY();
+                blockZ += side.getOffsetZ();
+                Block doorBlockBottom;
+                Block doorBlockTop;
+                doorBlockBottom = BonusBlocks.doorPlanksOakBlackBottom;
+                doorBlockTop = BonusBlocks.doorPlanksOakBlackTop;
+                if (!doorBlockBottom.canPlaceBlockAt(world, blockX, blockY, blockZ)) {
+                    return false;
+                } else {
+                    Direction dir = entityplayer.getHorizontalPlacementDirection(side).rotate(3);
+                    int meta = dir.getHorizontalIndex();
+                    int xOffset = -dir.getOffsetX();
+                    int zOffset = -dir.getOffsetZ();
+                    int isSolidBlockLeft = (world.isBlockNormalCube(blockX - xOffset, blockY, blockZ - zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX - xOffset, blockY + 1, blockZ - zOffset) ? 1 : 0);
+                    int isSolidBlockRight = (world.isBlockNormalCube(blockX + xOffset, blockY, blockZ + zOffset) ? 1 : 0) + (world.isBlockNormalCube(blockX + xOffset, blockY + 1, blockZ + zOffset) ? 1 : 0);
+                    boolean isDoorLeft = world.getBlockId(blockX - xOffset, blockY, blockZ - zOffset) == doorBlockBottom.id || world.getBlockId(blockX - xOffset, blockY + 1, blockZ - zOffset) == doorBlockTop.id;
+                    boolean isDoorRight = world.getBlockId(blockX + xOffset, blockY, blockZ + zOffset) == doorBlockBottom.id || world.getBlockId(blockX + xOffset, blockY + 1, blockZ + zOffset) == doorBlockTop.id;
+                    boolean isMirrored = false;
+                    if (isDoorLeft && !isDoorRight) {
+                        isMirrored = true;
+                    } else if (isSolidBlockRight > isSolidBlockLeft) {
+                        isMirrored = true;
+                    }
+
+                    if (isMirrored) {
+                        meta = meta - 1 & 3;
+                        meta += 4;
+                        meta |= 8;
+                    }
+                    world.editingBlocks = true;
+                    world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, doorBlockBottom.id, meta);
+                    world.setBlockAndMetadataWithNotify(blockX, blockY + 1, blockZ, doorBlockTop.id, meta);
+                    world.editingBlocks = false;
+                    world.notifyBlocksOfNeighborChange(blockX, blockY, blockZ, doorBlockBottom.id);
+                    world.notifyBlocksOfNeighborChange(blockX, blockY + 1, blockZ, doorBlockTop.id);
+                    world.playBlockSoundEffect((float) blockX + 0.5F, (float) blockY + 0.5F, (float) blockZ + 0.5F, doorBlockBottom, EnumBlockSoundEffectType.PLACE);
+                    itemstack.consumeItem(entityplayer);
+                    return true;
+                }
+            }
         }
+        return false;
     }
-
 }

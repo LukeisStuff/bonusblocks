@@ -27,26 +27,25 @@ public abstract class ContainerPlayerCreativeMixin {
         creativeItemsCount++;
         creativeItems.add(new ItemStack(Block.blocksList[Block.stoneCarved.id]));
         creativeItemsCount++;
-        creativeItems.add(new ItemStack(Block.blocksList[Block.graniteCarved.id]));
+        creativeItems.add(new ItemStack(Block.blocksList[Block.basaltCarved.id]));
         creativeItemsCount++;
         creativeItems.add(new ItemStack(Block.blocksList[Block.limestoneCarved.id]));
         creativeItemsCount++;
-        creativeItems.add(new ItemStack(Block.blocksList[Block.basaltCarved.id]));
+        creativeItems.add(new ItemStack(Block.blocksList[Block.graniteCarved.id]));
         creativeItemsCount++;
 
-        for (int metadata = 0b0000; metadata < 0b10000; metadata += 0b0001) {
-            creativeItems.add(new ItemStack(Block.blocksList[BonusBlocks.cratePainted.id], 1, metadata));
-            creativeItemsCount++;
+//        for (int metadata = 0b0000; metadata < 0b10000; metadata += 0b0001) {
+//            creativeItems.add(new ItemStack(Block.blocksList[BonusBlocks.cratePainted.id], 1, metadata));
+//            creativeItemsCount++;
+//        }
+//
+//        for (int metadata2 = 0b0000; metadata2 < 0b100000000; metadata2 += 0b00010000) {
+//            creativeItems.add(new ItemStack(Block.blocksList[BonusBlocks.slabWool.id], 1, metadata2));
+//            creativeItemsCount++;
+//        }
+//
+//        for (int metadata3 = 0b0000; metadata3 < 0b100000000; metadata3 += 0b00010000) {
+//            creativeItems.add(new ItemStack(Block.blocksList[BonusBlocks.stairsWool.id], 1, metadata3));
+//            creativeItemsCount++;
         }
-
-        for (int metadata2 = 0b0000; metadata2 < 0b100000000; metadata2 += 0b00010000) {
-            creativeItems.add(new ItemStack(Block.blocksList[BonusBlocks.slabWool.id], 1, metadata2));
-            creativeItemsCount++;
-        }
-
-        for (int metadata3 = 0b0000; metadata3 < 0b100000000; metadata3 += 0b00010000) {
-            creativeItems.add(new ItemStack(Block.blocksList[BonusBlocks.stairsWool.id], 1, metadata3));
-            creativeItemsCount++;
-        }
-    }
 }
