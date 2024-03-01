@@ -27,7 +27,6 @@ public class BonusItems {
     public static Item doorCopperCorroded;
     public static Item doorSteel;
     public static Item doorSilver;
-    public static Item doorOakPainted;
     public static Item bedSilver;
     public static Item seatSilver;
     public static Item foodPie;
@@ -67,9 +66,6 @@ public class BonusItems {
         doorSilver = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
                 new ItemSilverDoor("door.silver", itemID("doorSilver")), "silverdoor.png");
 
-        doorOakPainted = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new ItemPaintedDoor("door.oak.painted", itemID("doorOakPainted")), "whitedoor.png");
-
         bedSilver = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
                 new ItemSilverBed("bed.silver", itemID("bedSilver")), "silverbed.png");
 
@@ -103,9 +99,6 @@ public class BonusItems {
 //
 //        CreativeHelper.setParent(BonusItems.bedSilver, Item.bed);
 //
-//        for (int color = 0; color < 15; color++) {
-//            CreativeHelper.setParent(doorOakPainted, color - 1, Item.doorOak, 0);
-//        }
 //
 //        CreativeHelper.setParent(BonusItems.doorCopper, Item.doorIron);
 //        CreativeHelper.setParent(BonusItems.doorCopperTarnished, Item.doorIron);

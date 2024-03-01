@@ -30,7 +30,6 @@ import useless.dragonfly.model.block.BlockModelDragonFly;
 import java.util.Random;
 
 import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
-import static net.minecraft.core.block.Block.pathDirt;
 import static net.minecraft.core.block.BlockMoss.stoneToMossMap;
 
 public class BonusBlocks {
@@ -160,40 +159,6 @@ public class BonusBlocks {
     public static Block chimesSilver;
     public static Block bedSilver;
     public static Block seatSilver;
-
-    public static Block doorPlanksOakWhiteBottom;
-    public static Block doorPlanksOakWhiteTop;
-    public static Block doorPlanksOakOrangeBottom;
-    public static Block doorPlanksOakOrangeTop;
-    public static Block doorPlanksOakMagentaBottom;
-    public static Block doorPlanksOakMagentaTop;
-    public static Block doorPlanksOakLightBlueBottom;
-    public static Block doorPlanksOakLightBlueTop;
-    public static Block doorPlanksOakYellowBottom;
-    public static Block doorPlanksOakYellowTop;
-    public static Block doorPlanksOakLimeBottom;
-    public static Block doorPlanksOakLimeTop;
-    public static Block doorPlanksOakPinkBottom;
-    public static Block doorPlanksOakPinkTop;
-    public static Block doorPlanksOakGrayBottom;
-    public static Block doorPlanksOakGrayTop;
-    public static Block doorPlanksOakSilverBottom;
-    public static Block doorPlanksOakSilverTop;
-    public static Block doorPlanksOakCyanBottom;
-    public static Block doorPlanksOakCyanTop;
-    public static Block doorPlanksOakPurpleBottom;
-    public static Block doorPlanksOakPurpleTop;
-    public static Block doorPlanksOakBlueBottom;
-    public static Block doorPlanksOakBlueTop;
-    public static Block doorPlanksOakBrownBottom;
-    public static Block doorPlanksOakBrownTop;
-    public static Block doorPlanksOakGreenBottom;
-    public static Block doorPlanksOakGreenTop;
-    public static Block doorPlanksOakRedBottom;
-    public static Block doorPlanksOakRedTop;
-    public static Block doorPlanksOakBlackBottom;
-    public static Block doorPlanksOakBlackTop;
-
     public static Block scorchedstone;
     public static Block pillarSlate;
     public static Block marblePolished;
@@ -296,6 +261,9 @@ public class BonusBlocks {
         ItemToolPickaxe.miningLevels.put(slabCopper, 1);
         ItemToolPickaxe.miningLevels.put(slabCopperTarnished, 1);
         ItemToolPickaxe.miningLevels.put(slabCopperCorroded, 1);
+        ItemToolPickaxe.miningLevels.put(pressureplateCopper, 1);
+        ItemToolPickaxe.miningLevels.put(pressureplateCopperTarnished, 1);
+        ItemToolPickaxe.miningLevels.put(pressureplateCopperCorroded, 1);
         ItemToolPickaxe.miningLevels.put(stairsCopper, 1);
         ItemToolPickaxe.miningLevels.put(stairsCopperTarnished, 1);
         ItemToolPickaxe.miningLevels.put(stairsCopperCorroded, 1);
@@ -313,6 +281,24 @@ public class BonusBlocks {
         ItemToolPickaxe.miningLevels.put(doorSteelTop, 2);
         ItemToolPickaxe.miningLevels.put(doorSteelBottom, 2);
         ItemToolPickaxe.miningLevels.put(blockCrudeSteel, 2);
+        ItemToolPickaxe.miningLevels.put(blockSilver, 2);
+        ItemToolPickaxe.miningLevels.put(blockRawSilver, 2);
+        ItemToolPickaxe.miningLevels.put(brickSilver, 2);
+        ItemToolPickaxe.miningLevels.put(oreSilverStone, 2);
+        ItemToolPickaxe.miningLevels.put(oreSilverBasalt, 2);
+        ItemToolPickaxe.miningLevels.put(oreSilverLimestone, 2);
+        ItemToolPickaxe.miningLevels.put(oreSilverGranite, 2);
+        ItemToolPickaxe.miningLevels.put(seatSilver, 2);
+        ItemToolPickaxe.miningLevels.put(bedSilver, 2);
+        ItemToolPickaxe.miningLevels.put(chandelierSilver, 2);
+        ItemToolPickaxe.miningLevels.put(candelabraSilver, 2);
+        ItemToolPickaxe.miningLevels.put(chimesSilver, 2);
+        ItemToolPickaxe.miningLevels.put(vaneSilver, 2);
+        ItemToolPickaxe.miningLevels.put(vaseSilver, 2);
+        ItemToolPickaxe.miningLevels.put(fenceSilver, 2);
+        ItemToolPickaxe.miningLevels.put(lanternSilver, 2);
+
+
 
         Item.itemsList[cratePainted.id] = new ItemBlockPainted(cratePainted, false);
 
@@ -350,15 +336,24 @@ public class BonusBlocks {
 
         CreativeHelper.setParent(box, Block.planksOak);
 
-        CreativeHelper.setParent(crate, Block.chestPlanksOak);
+        CreativeHelper.setParent(crate, Block.trommelIdle);
 
-        for (int color = 0; color < 16; color++) {
-            CreativeHelper.setParent(cratePainted, color - 1, Block.chestPlanksOakPainted, 240);
+        for (int color = 1; color < 17; color++) {
+            CreativeHelper.setParent(cratePainted, color - 1, Block.trommelIdle, 0);
         }
 
         CreativeHelper.setParent(bookshelfEmptyPlanksOak, Block.bookshelfPlanksOak);
 
         CreativeHelper.setParent(moss, Block.mossGranite);
+
+        CreativeHelper.setParent(Block.stoneCarved, Block.pillarMarble);
+        CreativeHelper.setParent(Block.basaltCarved, Block.pillarMarble);
+        CreativeHelper.setParent(Block.limestoneCarved, Block.pillarMarble);
+        CreativeHelper.setParent(Block.graniteCarved, Block.pillarMarble);
+        CreativeHelper.setParent(Block.capstoneMarble, Block.pillarMarble);
+        CreativeHelper.setParent(marbleCarved, Block.pillarMarble);
+        CreativeHelper.setParent(slateCarved, Block.pillarMarble);
+        CreativeHelper.setParent(permafrostCarved, Block.pillarMarble);
 
         CreativeHelper.setParent(overgrownGrass, Block.grassScorched);
         CreativeHelper.setParent(overgrownGrassRetro, Block.grassScorched);
@@ -781,6 +776,7 @@ public class BonusBlocks {
                 .setTextures("moss.png")
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SHOVEL, BlockTags.GROWS_FLOWERS, BlockTags.GROWS_SUGAR_CANE, BlockTags.GROWS_TREES, BlockTags.PASSIVE_MOBS_SPAWN, BlockTags.FIREFLIES_CAN_SPAWN, BlockTags.CAVE_GEN_REPLACES_SURFACE, BlockTags.CAVES_CUT_THROUGH)
                 .build(new BlockMossy("moss", blockID("moss"), Material.grass));
+
 
         // Overgrown Grass
         overgrownGrass = grass
@@ -1541,329 +1537,6 @@ public class BonusBlocks {
                 .setVisualUpdateOnMetadata()
                 .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
                 .build(new BlockSilverSeat("seat.silver", blockID("seatSilver"), Material.metal));
-
-
-        // Dyed Doors
-        doorPlanksOakWhiteBottom = doors
-                .setTextures("whitedoorbottom.png")
-                .build(new BlockDoor("door.planks.oak.white.bottom", blockID("doorPlanksOakWhiteBottom"), Material.wood, false) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 0)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakWhiteTop = doors
-                .setTextures("whitedoortop.png")
-                .build(new BlockDoor("door.planks.oak.white.top", blockID("doorPlanksOakWhiteTop"), Material.wood, true) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 0)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakOrangeBottom = doors
-                .setTextures("orangedoorbottom.png")
-                .build(new BlockDoor("door.planks.oak.orange.bottom", blockID("doorPlanksOakOrangeBottom"), Material.wood, false) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 1)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakOrangeTop = doors
-                .setTextures("orangedoortop.png")
-                .build(new BlockDoor("door.planks.oak.orange.top", blockID("doorPlanksOakOrangeTop"), Material.wood, true) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 1)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakMagentaBottom = doors
-                .setTextures("magentadoorbottom.png")
-                .build(new BlockDoor("door.planks.oak.magenta.bottom", blockID("doorPlanksOakMagentaBottom"), Material.wood, false) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 2)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakMagentaTop = doors
-                .setTextures("magentadoortop.png")
-                .build(new BlockDoor("door.planks.oak.magenta.top", blockID("doorPlanksOakMagentaTop"), Material.wood, true) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 2)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakLightBlueBottom = doors
-                .setTextures("lightbluedoorbottom.png")
-                .build(new BlockDoor("door.planks.oak.lightblue.bottom", blockID("doorPlanksOakLightBlueBottom"), Material.wood, false) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 3)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakLightBlueTop = doors
-                .setTextures("lightbluedoortop.png")
-                .build(new BlockDoor("door.planks.oak.lightblue.top", blockID("doorPlanksOakLightBlueTop"), Material.wood, true) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 3)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakYellowBottom = doors
-                .setTextures("yellowdoorbottom.png")
-                .build(new BlockDoor("door.planks.oak.yellow.bottom", blockID("doorPlanksOakYellowBottom"), Material.wood, false) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 4)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakYellowTop = doors
-                .setTextures("yellowdoortop.png")
-                .build(new BlockDoor("door.planks.oak.yellow.top", blockID("doorPlanksOakYellowTop"), Material.wood, true) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 4)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakLimeBottom = doors
-                .setTextures("limedoorbottom.png")
-                .build(new BlockDoor("door.planks.oak.lime.bottom", blockID("doorPlanksOakLimeBottom"), Material.wood, false) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 5)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakLimeTop = doors
-                .setTextures("limedoortop.png")
-                .build(new BlockDoor("door.planks.oak.lime.top", blockID("doorPlanksOakLimeTop"), Material.wood, true) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 5)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakPinkBottom = doors
-                .setTextures("pinkdoorbottom.png")
-                .build(new BlockDoor("door.planks.oak.pink.bottom", blockID("doorPlanksOakPinkBottom"), Material.wood, false) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 6)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakPinkTop = doors
-                .setTextures("pinkdoortop.png")
-                .build(new BlockDoor("door.planks.oak.pink.top", blockID("doorPlanksOakPinkTop"), Material.wood, true) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 6)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakGrayBottom = doors
-                .setTextures("graydoorbottom.png")
-                .build(new BlockDoor("door.planks.oak.gray.bottom", blockID("doorPlanksOakGrayBottom"), Material.wood, false) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 7)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakGrayTop = doors
-                .setTextures("graydoortop.png")
-                .build(new BlockDoor("door.planks.oak.gray.top", blockID("doorPlanksOakGrayTop"), Material.wood, true) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 7)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakSilverBottom = doors
-                .setTextures("lightgraydoorbottom.png")
-                .build(new BlockDoor("door.planks.oak.silver.bottom", blockID("doorPlanksOakSilverBottom"), Material.wood, false) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 8)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakSilverTop = doors
-                .setTextures("lightgraydoortop.png")
-                .build(new BlockDoor("door.planks.oak.silver.top", blockID("doorPlanksOakSilverTop"), Material.wood, true) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 8)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakCyanBottom = doors
-                .setTextures("cyandoorbottom.png")
-                .build(new BlockDoor("door.planks.oak.cyan.bottom", blockID("doorPlanksOakCyanBottom"), Material.wood, false) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 9)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakCyanTop = doors
-                .setTextures("cyandoortop.png")
-                .build(new BlockDoor("door.planks.oak.cyan.top", blockID("doorPlanksOakCyanTop"), Material.wood, true) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 9)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakPurpleBottom = doors
-                .setTextures("purpledoorbottom.png")
-                .build(new BlockDoor("door.planks.oak.purple.bottom", blockID("doorPlanksOakPurpleBottom"), Material.wood, false) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 10)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakPurpleTop = doors
-                .setTextures("purpledoortop.png")
-                .build(new BlockDoor("door.planks.oak.purple.top", blockID("doorPlanksOakPurpleTop"), Material.wood, true) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 10)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakBlueBottom = doors
-                .setTextures("bluedoorbottom.png")
-                .build(new BlockDoor("door.planks.oak.blue.bottom", blockID("doorPlanksOakBlueBottom"), Material.wood, false) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 11)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakBlueTop = doors
-                .setTextures("bluedoortop.png")
-                .build(new BlockDoor("door.planks.oak.blue.top", blockID("doorPlanksOakBlueTop"), Material.wood, true) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 11)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakBrownBottom = doors
-                .setTextures("browndoorbottom.png")
-                .build(new BlockDoor("door.planks.oak.brown.bottom", blockID("doorPlanksOakBrownBottom"), Material.wood, false) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 12)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakBrownTop = doors
-                .setTextures("browndoortop.png")
-                .build(new BlockDoor("door.planks.oak.brown.top", blockID("doorPlanksOakBrownTop"), Material.wood, true) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 12)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakGreenBottom = doors
-                .setTextures("greendoorbottom.png")
-                .build(new BlockDoor("door.planks.oak.green.bottom", blockID("doorPlanksOakGreenBottom"), Material.wood, false) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 13)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakGreenTop = doors
-                .setTextures("greendoortop.png")
-                .build(new BlockDoor("door.planks.oak.green.top", blockID("doorPlanksOakGreenTop"), Material.wood, true) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 13)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakRedBottom = doors
-                .setTextures("reddoorbottom.png")
-                .build(new BlockDoor("door.planks.oak.red.bottom", blockID("doorPlanksOakRedBottom"), Material.wood, false) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 14)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakRedTop = doors
-                .setTextures("reddoortop.png")
-                .build(new BlockDoor("door.planks.oak.red.top", blockID("doorPlanksOakRedTop"), Material.wood, true) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 14)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakBlackBottom = doors
-                .setTextures("blackdoorbottom.png")
-                .build(new BlockDoor("door.planks.oak.black.bottom", blockID("doorPlanksOakBlackBottom"), Material.wood, false) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 15)};
-                        }
-                        return null;
-                    }
-                });
-        doorPlanksOakBlackTop = doors
-                .setTextures("blackdoortop.png")
-                .build(new BlockDoor("door.planks.oak.black.top", blockID("doorPlanksOakBlackTop"), Material.wood, true) {
-                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-                        if (this.blockMaterial == Material.wood && dropCause != EnumDropCause.IMPROPER_TOOL) {
-                            return new ItemStack[]{new ItemStack(BonusItems.doorOakPainted, 1, 15)};
-                        }
-                        return null;
-                    }
-                });
 
 
         // Scorched Stone
