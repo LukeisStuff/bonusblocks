@@ -45,7 +45,7 @@ public class BlockFenceCopper extends BlockFenceThin {
     public void updateTick(World world, int x, int y, int z, Random rand) {
         if (world.getBlockMetadata(x, y, z) >= 0) {
             ++this.ticks;
-            if (this.ticks == 200) {
+            if (this.ticks == 400) {
                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.fenceCopperTarnished.id, world.getBlockMetadata(x, y, z));
                 this.ticks = 0;
             }

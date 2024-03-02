@@ -22,7 +22,7 @@ public class BlockCopperPressurePlate extends BlockPressurePlate {
     public void updateTick(World world, int x, int y, int z, Random rand) {
         if (world.getBlockMetadata(x, y, z) == 0) {
             ++this.ticks;
-            if (this.ticks == 200) {
+            if (this.ticks == 400) {
                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.pressureplateCopperTarnished.id, world.getBlockMetadata(x, y, z));
                 this.ticks = 0;
             }

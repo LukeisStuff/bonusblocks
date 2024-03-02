@@ -51,8 +51,9 @@ public class BonusRecipes {
         templateBlocktoItem.addInput('X', BonusBlocks.blockCopper).create("block_of_copper_to_copper", new ItemStack(BonusItems.ingotCopper, 4));
         templateBlocktoItem.addInput('X', BonusBlocks.blockSilver).create("block_of_silver_to_silver", new ItemStack(BonusItems.ingotSilver, 4));
 
-        RecipeBuilder.Shaped(MOD_ID, " S ", "SSS", "SSS")
+        RecipeBuilder.Shaped(MOD_ID, " S ", "SGS", "SSS")
                 .addInput('S', BonusItems.ingotSilver)
+                .addInput('G', Block.glowstone)
                 .create("silver_chandelier", new ItemStack(BonusBlocks.chandelierSilver, 1));
 
         RecipeBuilder.Shaped(MOD_ID, "T T", "SSS", " S ")

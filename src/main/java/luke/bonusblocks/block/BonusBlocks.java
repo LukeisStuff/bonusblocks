@@ -470,6 +470,27 @@ public class BonusBlocks {
 
         CreativeHelper.setParent(soulslate, Block.soulsand);
 
+        CreativeHelper.setParent(blockBone, Block.blockCharcoal);
+        CreativeHelper.setParent(thatch, Block.blockCharcoal);
+        CreativeHelper.setParent(blockCloth, Block.blockCharcoal);
+        CreativeHelper.setParent(blockSlime, Block.blockCharcoal);
+        CreativeHelper.setParent(blockLeather, Block.blockCharcoal);
+        CreativeHelper.setParent(blockWicker, Block.blockCharcoal);
+        CreativeHelper.setParent(blockRawGold, Block.blockCharcoal);
+        CreativeHelper.setParent(blockRawIron, Block.blockCharcoal);
+        CreativeHelper.setParent(blockRawCopper, Block.blockCharcoal);
+        CreativeHelper.setParent(blockRawCopperTarnished, Block.blockCharcoal);
+        CreativeHelper.setParent(blockRawCopperCorroded, Block.blockCharcoal);
+        CreativeHelper.setParent(blockRawSilver, Block.blockCharcoal);
+        CreativeHelper.setParent(blockFlint, Block.blockCharcoal);
+        CreativeHelper.setParent(blockCrudeSteel, Block.blockCharcoal);
+        CreativeHelper.setParent(blockCopper, Block.blockCharcoal);
+        CreativeHelper.setParent(blockCopperTarnished, Block.blockCharcoal);
+        CreativeHelper.setParent(blockCopperCorroded, Block.blockCharcoal);
+        CreativeHelper.setParent(blockSilver, Block.blockCharcoal);
+        CreativeHelper.setParent(blockBone, Block.blockCharcoal);
+        CreativeHelper.setParent(blockBone, Block.blockCharcoal);
+
         CreativeHelper.setParent(slabCobbleStoneMossy, Block.slabBasaltPolished);
         CreativeHelper.setParent(slabSlatePolished, Block.slabBasaltPolished);
         CreativeHelper.setParent(slabMarblePolished, Block.slabBasaltPolished);
@@ -541,14 +562,6 @@ public class BonusBlocks {
                 .setResistance(5.0f)
                 .setFlammability(5, 20)
                 .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT);
-
-        BlockBuilder doors = new BlockBuilder(MOD_ID)
-                .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.0f))
-                .setBlockModel(new BlockModelRenderBlocks(7))
-                .setHardness(3.0f)
-                .setResistance(5.0f)
-                .setVisualUpdateOnMetadata()
-                .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU);
 
         BlockBuilder leaves = new BlockBuilder(MOD_ID)
                 .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
@@ -1020,7 +1033,7 @@ public class BonusBlocks {
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
                             ++this.ticks;
-                            if (this.ticks == 200) {
+                            if (this.ticks == 400) {
                                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockRawCopperTarnished.id, world.getBlockMetadata(x, y, z));
                                 this.ticks = 0;
                             }
@@ -1037,7 +1050,7 @@ public class BonusBlocks {
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
                             ++this.ticks;
-                            if (this.ticks == 200) {
+                            if (this.ticks == 400) {
                                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockRawCopperCorroded.id, world.getBlockMetadata(x, y, z));
                                 this.ticks = 0;
                             }
@@ -1112,7 +1125,7 @@ public class BonusBlocks {
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
                             ++this.ticks;
-                            if (this.ticks == 200) {
+                            if (this.ticks == 400) {
                                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockCopperTarnished.id, world.getBlockMetadata(x, y, z));
                                 this.ticks = 0;
                             }
@@ -1129,7 +1142,7 @@ public class BonusBlocks {
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
                             ++this.ticks;
-                            if (this.ticks == 200) {
+                            if (this.ticks == 400) {
                                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockCopperCorroded.id, world.getBlockMetadata(x, y, z));
                                 this.ticks = 0;
                             }
@@ -1152,7 +1165,7 @@ public class BonusBlocks {
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
                             ++this.ticks;
-                            if (this.ticks == 200) {
+                            if (this.ticks == 400) {
                                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.meshCopperTarnished.id, world.getBlockMetadata(x, y, z));
                                 this.ticks = 0;
                             }
@@ -1169,7 +1182,7 @@ public class BonusBlocks {
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
                             ++this.ticks;
-                            if (this.ticks == 200) {
+                            if (this.ticks == 400) {
                                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.meshCopperCorroded.id, world.getBlockMetadata(x, y, z));
                                 this.ticks = 0;
                             }
@@ -1200,7 +1213,7 @@ public class BonusBlocks {
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
                             ++this.ticks;
-                            if (this.ticks == 200) {
+                            if (this.ticks == 400) {
                                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.pipeCopperCorroded.id, world.getBlockMetadata(x, y, z));
                                 this.ticks = 0;
                             }
@@ -1233,7 +1246,7 @@ public class BonusBlocks {
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
                             ++this.ticks;
-                            if (this.ticks == 200) {
+                            if (this.ticks == 400) {
                                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.trapdoorCopperTarnished.id, world.getBlockMetadata(x, y, z));
                                 this.ticks = 0;
                             }
@@ -1253,7 +1266,7 @@ public class BonusBlocks {
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
                             ++this.ticks;
-                            if (this.ticks == 200) {
+                            if (this.ticks == 400) {
                                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.trapdoorCopperCorroded.id, world.getBlockMetadata(x, y, z));
                                 this.ticks = 0;
                             }
@@ -1859,7 +1872,7 @@ public class BonusBlocks {
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) >= 0) {
                             ++this.ticks;
-                            if (this.ticks == 200) {
+                            if (this.ticks == 400) {
                                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.slabCopperTarnished.id, world.getBlockMetadata(x, y, z));
                                 this.ticks = 0;
                             }
@@ -1878,7 +1891,7 @@ public class BonusBlocks {
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) >= 0) {
                             ++this.ticks;
-                            if (this.ticks == 200) {
+                            if (this.ticks == 400) {
                                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.slabCopperCorroded.id, world.getBlockMetadata(x, y, z));
                                 this.ticks = 0;
                             }
@@ -1979,7 +1992,7 @@ public class BonusBlocks {
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) >= 0) {
                             ++this.ticks;
-                            if (this.ticks == 200) {
+                            if (this.ticks == 400) {
                                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.stairsCopperTarnished.id, world.getBlockMetadata(x, y, z));
                                 this.ticks = 0;
                             }
@@ -1998,7 +2011,7 @@ public class BonusBlocks {
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) >= 0) {
                             ++this.ticks;
-                            if (this.ticks == 200) {
+                            if (this.ticks == 400) {
                                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.stairsCopperCorroded.id, world.getBlockMetadata(x, y, z));
                                 this.ticks = 0;
                             }

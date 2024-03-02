@@ -30,7 +30,7 @@ public class BlockCopperDoor extends BlockDoor {
     public void updateTick(World world, int x, int y, int z, Random rand) {
         if (world.getBlockMetadata(x, y, z) >= 0) {
             ++this.ticks;
-            if (this.ticks == 200) {
+            if (this.ticks == 400) {
                 if (isTop) {
                     world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.doorCopperTarnishedTop.id, world.getBlockMetadata(x, y, z));
                     world.setBlockAndMetadataWithNotify(x, y-1, z, BonusBlocks.doorCopperTarnishedBottom.id, world.getBlockMetadata(x, y-1, z));
