@@ -156,9 +156,9 @@ tile.bonusblocks.mesh.copper.corroded.desc=A wireframe block of corroded copper.
 
 tile.bonusblocks.pressureplate.copper.name=Copper Pressure Plate
 tile.bonusblocks.pressureplate.copper.desc=Emits a redstone signal when items step on it.
-tile.bonusblocks.pressureplate.copper.tarnished.name=Tarnished Copper  Pressure Plate
+tile.bonusblocks.pressureplate.copper.tarnished.name=Tarnished Copper Pressure Plate
 tile.bonusblocks.pressureplate.copper.tarnished.desc=Emits a redstone signal when items step on it. Slighty Tarnished.
-tile.bonusblocks.pressureplate.copper.corroded.name=Corroded Copper  Pressure Plate
+tile.bonusblocks.pressureplate.copper.corroded.name=Corroded Copper Pressure Plate
 tile.bonusblocks.pressureplate.copper.corroded.desc=Emits a redstone signal when items step on it. Completely Corroded.
 
 tile.bonusblocks.pipe.copper.name=Copper Pipe

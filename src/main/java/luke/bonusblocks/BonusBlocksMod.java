@@ -85,6 +85,6 @@ public class BonusBlocksMod implements ModInitializer, ClientStartEntrypoint, Ga
 
     @Override
     public void afterGameStart() {
-        new BonusRecipes().initilizeRecipes();
+        new BonusRecipes().initializeRecipes();
     }
 }

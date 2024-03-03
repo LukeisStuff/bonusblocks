@@ -41,24 +41,31 @@ public class BonusBlocks {
     public static Block box;
     public static Block crate;
     public static Block cratePainted;
+
     public static Block bookshelfEmptyPlanksOak;
+
     public static Block branch;
     public static Block leavesOakMossy;
     public static Block leavesMaple;
     public static Block leavesJacaranda;
+
     public static Block saplingOakMossy;
     public static Block saplingMaple;
     public static Block saplingJacaranda;
+
     public static Block logShrub;
     public static Block logCacao;
     public static Block logMaple;
     public static Block logJacaranda;
     public static Block logScorched;
+
     public static Block moss;
+
     public static Block overgrownGrass;
     public static Block overgrownGrassRetro;
     public static Block overgrownGrassScorched;
     public static Block overgrownPath;
+
     public static Block flowerCyan;
     public static Block flowerPurple;
     public static Block flowerPink;
@@ -67,6 +74,7 @@ public class BonusBlocks {
     public static Block flowerLightBlue;
     public static Block flowerMagenta;
     public static Block flowerLime;
+
     public static Block petalYellow;
     public static Block petalRed;
     public static Block petalCyan;
@@ -77,6 +85,7 @@ public class BonusBlocks {
     public static Block petalLightBlue;
     public static Block petalMagenta;
     public static Block petalLime;
+
     public static Block petalLayerYellow;
     public static Block petalLayerRed;
     public static Block petalLayerCyan;
@@ -87,11 +96,15 @@ public class BonusBlocks {
     public static Block petalLayerLightBlue;
     public static Block petalLayerMagenta;
     public static Block petalLayerLime;
+
     public static Block mushroomGray;
+
     public static Block fungiRed;
     public static Block fungiBrown;
     public static Block fungiGray;
+
     public static Block blockBone;
+
     public static Block thatch;
     public static Block blockCloth;
     public static Block blockSlime;
@@ -99,79 +112,105 @@ public class BonusBlocks {
     public static Block blockSugar;
     public static Block blockLeather;
     public static Block blockWicker;
+    public static Block blockFlint;
+    public static Block blockCrudeSteel;
+    public static Block blockCopper;
+    public static Block blockCopperTarnished;
+    public static Block blockCopperCorroded;
+    public static Block blockSilver;
+
     public static Block blockRawGold;
     public static Block blockRawIron;
     public static Block blockRawCopper;
     public static Block blockRawCopperTarnished;
     public static Block blockRawCopperCorroded;
     public static Block blockRawSilver;
-    public static Block blockFlint;
-    public static Block blockCrudeSteel;
+
     public static Block overlayRawGold;
     public static Block overlayRawIron;
     public static Block overlayRawCopper;
     public static Block overlayRawSilver;
+
     public static Block oreCopperStone;
     public static Block oreCopperBasalt;
     public static Block oreCopperLimestone;
     public static Block oreCopperGranite;
+
     public static Block oreSilverStone;
     public static Block oreSilverBasalt;
     public static Block oreSilverLimestone;
     public static Block oreSilverGranite;
-    public static Block blockCopper;
-    public static Block blockCopperTarnished;
-    public static Block blockCopperCorroded;
+
     public static Block meshCopper;
     public static Block meshCopperTarnished;
     public static Block meshCopperCorroded;
+
     public static Block pipeCopper;
     public static Block pipeCopperTarnished;
     public static Block pipeCopperCorroded;
+
     public static Block trapdoorCopper;
     public static Block trapdoorCopperTarnished;
     public static Block trapdoorCopperCorroded;
+    public static Block trapdoorSteel;
+    public static Block trapdoorSilver;
+
     public static Block doorCopperTop;
     public static Block doorCopperBottom;
     public static Block doorCopperTarnishedTop;
     public static Block doorCopperTarnishedBottom;
     public static Block doorCopperCorrodedTop;
     public static Block doorCopperCorrodedBottom;
+    public static Block doorSteelTop;
+    public static Block doorSteelBottom;
+    public static Block doorSilverTop;
+    public static Block doorSilverBottom;
+
     public static Block fenceCopper;
     public static Block fenceCopperTarnished;
     public static Block fenceCopperCorroded;
+    public static Block fenceSilver;
+
     public static Block pressureplateCopper;
     public static Block pressureplateCopperTarnished;
     public static Block pressureplateCopperCorroded;
-    public static Block trapdoorSteel;
-    public static Block doorSteelTop;
-    public static Block doorSteelBottom;
-    public static Block blockSilver;
-    public static Block trapdoorSilver;
-    public static Block doorSilverTop;
-    public static Block doorSilverBottom;
-    public static Block fenceSilver;
+
     public static Block chandelierSilver;
+
     public static Block candelabraSilver;
+
     public static Block lanternSilver;
+
     public static Block vaseSilver;
+
     public static Block vaneSilver;
+
     public static Block chimesSilver;
+
     public static Block bedSilver;
+
     public static Block seatSilver;
+
     public static Block scorchedstone;
+
     public static Block pillarSlate;
+
     public static Block marblePolished;
     public static Block permafrostPolished;
+
     public static Block slateCarved;
     public static Block marbleCarved;
     public static Block permafrostCarved;
+
     public static Block clayBaked;
+
     public static Block glassObsidian;
     public static Block trapdoorGlassObsidian;
     public static Block glassQuartz;
+
     public static Block cobbleNetherrack;
     public static Block netherrack;
+
     public static Block brickNetherrack;
     public static Block brickScorchedstone;
     public static Block brickMud;
@@ -179,12 +218,17 @@ public class BonusBlocks {
     public static Block brickQuartz;
     public static Block brickOlivine;
     public static Block brickSilver;
+
     public static Block soulslate;
     public static Block brimstone;
+
     public static Block pumiceDry;
     public static Block pumiceWet;
+
     public static Block candleSoulwax;
+
     public static Block pie;
+
     public static Block slabWool;
     public static Block slabCobbleStoneMossy;
     public static Block slabSlatePolished;
@@ -210,6 +254,7 @@ public class BonusBlocks {
     public static Block slabCopper;
     public static Block slabCopperTarnished;
     public static Block slabCopperCorroded;
+
     public static Block stairsWool;
     public static Block stairsCobbleStoneMossy;
     public static Block stairsBrickStonePolishedMossy;
@@ -281,6 +326,7 @@ public class BonusBlocks {
         ItemToolPickaxe.miningLevels.put(doorSteelTop, 2);
         ItemToolPickaxe.miningLevels.put(doorSteelBottom, 2);
         ItemToolPickaxe.miningLevels.put(blockCrudeSteel, 2);
+
         ItemToolPickaxe.miningLevels.put(blockSilver, 2);
         ItemToolPickaxe.miningLevels.put(blockRawSilver, 2);
         ItemToolPickaxe.miningLevels.put(brickSilver, 2);
@@ -297,7 +343,11 @@ public class BonusBlocks {
         ItemToolPickaxe.miningLevels.put(vaseSilver, 2);
         ItemToolPickaxe.miningLevels.put(fenceSilver, 2);
         ItemToolPickaxe.miningLevels.put(lanternSilver, 2);
-
+        ItemToolPickaxe.miningLevels.put(doorSilverBottom, 2);
+        ItemToolPickaxe.miningLevels.put(doorSilverTop, 2);
+        ItemToolPickaxe.miningLevels.put(trapdoorSilver, 2);
+        ItemToolPickaxe.miningLevels.put(stairsBrickSilver, 2);
+        ItemToolPickaxe.miningLevels.put(slabBrickSilver, 2);
 
 
         Item.itemsList[cratePainted.id] = new ItemBlockPainted(cratePainted, false);
@@ -359,8 +409,6 @@ public class BonusBlocks {
         CreativeHelper.setParent(overgrownGrassRetro, Block.grassScorched);
         CreativeHelper.setParent(overgrownGrassScorched, Block.grassScorched);
         CreativeHelper.setParent(overgrownPath, Block.pathDirt);
-
-        CreativeHelper.setParent(netherrack, Block.permafrost);
 
         CreativeHelper.setParent(glassObsidian, Block.glass);
         CreativeHelper.setParent(glassQuartz, Block.glassTinted);

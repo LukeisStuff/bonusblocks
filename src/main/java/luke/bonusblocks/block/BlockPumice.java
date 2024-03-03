@@ -5,11 +5,13 @@
 
 package luke.bonusblocks.block;
 
-import luke.bonusblocks.BonusBlocksMod;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
+import net.minecraft.core.entity.Entity;
+import net.minecraft.core.entity.EntityLiving;
 import net.minecraft.core.sound.SoundType;
+import net.minecraft.core.util.helper.DamageType;
 import net.minecraft.core.world.World;
 
 public class BlockPumice extends Block {
@@ -23,6 +25,22 @@ public class BlockPumice extends Block {
     public void onNeighborBlockChange(World world, int x, int y, int z, int blockId) {
         if (this.isMagma) {
             this.onBlockAdded(world, x, y, z);
+        }
+    }
+
+    public void onEntityCollidedWithBlock(World world, int x, int y, int z, Entity entity) {
+        if (this.isMagma) {
+            if (entity instanceof EntityLiving) {
+                entity.hurt(null, 2, DamageType.FIRE);
+            }
+        }
+    }
+
+    public void onEntityWalking(World world, int x, int y, int z, Entity entity) {
+        if (this.isMagma) {
+            if (entity instanceof EntityLiving) {
+                entity.hurt(null, 2, DamageType.FIRE);
+            }
         }
     }
 
