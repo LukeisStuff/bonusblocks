@@ -1,6 +1,5 @@
 package luke.bonusblocks.block.copper;
 
-import luke.bonusblocks.BonusBlocksMod;
 import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockFenceThin;
@@ -16,7 +15,6 @@ import java.util.Random;
 import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
 
 public class BlockFenceCopperTarnished extends BlockFenceThin {
-    protected int ticks;
     public BlockFenceCopperTarnished(String key, int id, Material material) {
         super(key, id, material);
         this.setTicking(true);
@@ -43,11 +41,9 @@ public class BlockFenceCopperTarnished extends BlockFenceThin {
     }
 
     public void updateTick(World world, int x, int y, int z, Random rand) {
-        if (world.getBlockMetadata(x, y, z) >= 0) {
-            ++this.ticks;
-            if (this.ticks == 400) {
+        if (world.getBlockMetadata(x, y, z) == 0) {
+            if(rand.nextInt(400) == 0) {
                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.fenceCopperCorroded.id, world.getBlockMetadata(x, y, z));
-                this.ticks = 0;
             }
         }
     }

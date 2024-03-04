@@ -1,6 +1,5 @@
 package luke.bonusblocks.block.copper;
 
-import luke.bonusblocks.BonusBlocksMod;
 import luke.bonusblocks.item.BonusItems;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.entity.TileEntity;

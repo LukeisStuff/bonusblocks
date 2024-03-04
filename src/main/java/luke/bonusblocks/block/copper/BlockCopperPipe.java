@@ -1,6 +1,5 @@
 package luke.bonusblocks.block.copper;
 
-import luke.bonusblocks.BonusBlocksMod;
 import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.core.block.BlockAxisAligned;
 import net.minecraft.core.block.material.Material;
@@ -12,7 +11,6 @@ import useless.dragonfly.model.block.processed.BlockModel;
 import java.util.Random;
 
 public class BlockCopperPipe extends BlockAxisAligned {
-    protected int ticks;
     public BlockCopperPipe(String key, int id, Material material, BlockModel orCreateBlockModel, boolean render3d) {
         super(key, id, material);
         this.setTicking(true);
@@ -27,11 +25,9 @@ public class BlockCopperPipe extends BlockAxisAligned {
     }
 
     public void updateTick(World world, int x, int y, int z, Random rand) {
-        if (world.getBlockMetadata(x, y, z) >= 0) {
-            ++this.ticks;
-            if (this.ticks == 400) {
+        if (world.getBlockMetadata(x, y, z) == 0) {
+            if(rand.nextInt(400) == 0) {
                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.pipeCopperTarnished.id, world.getBlockMetadata(x, y, z));
-                this.ticks = 0;
             }
         }
     }

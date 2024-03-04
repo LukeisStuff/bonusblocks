@@ -1075,15 +1075,12 @@ public class BonusBlocks {
                 .setTextures("rawcopper.png")
                 .setTicking(true)
                 .build(new Block("block.raw.copper", blockID("blockRawCopper"), Material.metal) {
-                    private int ticks;
 
                     @Override
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
-                            ++this.ticks;
-                            if (this.ticks == 400) {
+                            if(rand.nextInt(400) == 0) {
                                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockRawCopperTarnished.id, world.getBlockMetadata(x, y, z));
-                                this.ticks = 0;
                             }
                         }
                     }
@@ -1092,15 +1089,12 @@ public class BonusBlocks {
                 .setTextures("rawtarnishedcopper.png")
                 .setTicking(true)
                 .build(new Block("block.raw.copper.tarnished", blockID("blockRawCopperTarnished"), Material.metal) {
-                    private int ticks;
 
                     @Override
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
-                            ++this.ticks;
-                            if (this.ticks == 400) {
+                            if(rand.nextInt(400) == 0) {
                                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockRawCopperCorroded.id, world.getBlockMetadata(x, y, z));
-                                this.ticks = 0;
                             }
                         }
                     }
@@ -1167,15 +1161,12 @@ public class BonusBlocks {
                 .setTextures("copperblock.png")
                 .setTicking(true)
                 .build(new Block("block.copper", blockID("blockCopper"), Material.metal) {
-                    private int ticks;
 
                     @Override
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
-                            ++this.ticks;
-                            if (this.ticks == 400) {
+                            if(rand.nextInt(400) == 0) {
                                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockCopperTarnished.id, world.getBlockMetadata(x, y, z));
-                                this.ticks = 0;
                             }
                         }
                     }
@@ -1184,15 +1175,12 @@ public class BonusBlocks {
                 .setTextures("tarnishedcopperblock.png")
                 .setTicking(true)
                 .build(new Block("block.copper.tarnished", blockID("blockCopperTarnished"), Material.metal) {
-                    private int ticks;
 
                     @Override
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
-                            ++this.ticks;
-                            if (this.ticks == 400) {
+                            if(rand.nextInt(400) == 0) {
                                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockCopperCorroded.id, world.getBlockMetadata(x, y, z));
-                                this.ticks = 0;
                             }
                         }
                     }
@@ -1207,15 +1195,12 @@ public class BonusBlocks {
                 .setTextures("coppergrate.png")
                 .setTicking(true)
                 .build(new BlockTransparent("mesh.copper", blockID("meshCopper"), Material.metal, true) {
-                    private int ticks;
 
                     @Override
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
-                            ++this.ticks;
-                            if (this.ticks == 400) {
+                            if(rand.nextInt(400) == 0) {
                                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.meshCopperTarnished.id, world.getBlockMetadata(x, y, z));
-                                this.ticks = 0;
                             }
                         }
                     }
@@ -1224,15 +1209,12 @@ public class BonusBlocks {
                 .setTextures("tarnishedcoppergrate.png")
                 .setTicking(true)
                 .build(new BlockTransparent("mesh.copper.tarnished", blockID("meshCopperTarnished"), Material.metal, true) {
-                    private int ticks;
 
                     @Override
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
-                            ++this.ticks;
-                            if (this.ticks == 400) {
+                            if(rand.nextInt(400) == 0) {
                                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.meshCopperCorroded.id, world.getBlockMetadata(x, y, z));
-                                this.ticks = 0;
                             }
                         }
                     }
@@ -1255,15 +1237,12 @@ public class BonusBlocks {
                 .setVisualUpdateOnMetadata()
                 .setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(MOD_ID, "tarnishedpipe.json"), ModelHelper.getOrCreateBlockState(MOD_ID, "tarnished_pipe_states.json"), new PipeMetaStateInterpreter(), false, 0.25f))
                 .build(new BlockCopperPipe("pipe.copper.tarnished", blockID("pipeCopperTarnished"), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "tarnishedpipe.json"), false) {
-                    private int ticks;
 
                     @Override
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
-                            ++this.ticks;
-                            if (this.ticks == 400) {
+                            if(rand.nextInt(400) == 0) {
                                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.pipeCopperCorroded.id, world.getBlockMetadata(x, y, z));
-                                this.ticks = 0;
                             }
                         }
                     }
@@ -1288,15 +1267,12 @@ public class BonusBlocks {
                 .setVisualUpdateOnMetadata()
                 .setTicking(true)
                 .build(new BlockTrapDoor("trapdoor.copper", blockID("trapdoorCopper"), Material.stone, false) {
-                    private int ticks;
 
                     @Override
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
-                            ++this.ticks;
-                            if (this.ticks == 400) {
+                            if(rand.nextInt(400) == 0) {
                                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.trapdoorCopperTarnished.id, world.getBlockMetadata(x, y, z));
-                                this.ticks = 0;
                             }
                         }
                     }
@@ -1308,15 +1284,12 @@ public class BonusBlocks {
                 .setVisualUpdateOnMetadata()
                 .setTicking(true)
                 .build(new BlockTrapDoor("trapdoor.copper.tarnished", blockID("trapdoorCopperTarnished"), Material.stone, false) {
-                    private int ticks;
 
                     @Override
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
-                            ++this.ticks;
-                            if (this.ticks == 400) {
+                            if(rand.nextInt(400) == 0) {
                                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.trapdoorCopperCorroded.id, world.getBlockMetadata(x, y, z));
-                                this.ticks = 0;
                             }
                         }
                     }
@@ -1915,14 +1888,12 @@ public class BonusBlocks {
                 .setTextures("copperblock.png")
                 .setTicking(true)
                 .build(new BlockSlab(blockCopper, blockID("slabCopper")) {
-                    private int ticks;
 
+                    @Override
                     public void updateTick(World world, int x, int y, int z, Random rand) {
-                        if (world.getBlockMetadata(x, y, z) >= 0) {
-                            ++this.ticks;
-                            if (this.ticks == 400) {
+                        if (world.getBlockMetadata(x, y, z) == 0) {
+                            if(rand.nextInt(400) == 0) {
                                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.slabCopperTarnished.id, world.getBlockMetadata(x, y, z));
-                                this.ticks = 0;
                             }
                         }
                     }
@@ -1934,14 +1905,12 @@ public class BonusBlocks {
                 .setTicking(true)
                 .setTextures("tarnishedcopperblock.png")
                 .build(new BlockSlab(blockCopperTarnished, blockID("slabCopperTarnished")) {
-                    private int ticks;
 
+                    @Override
                     public void updateTick(World world, int x, int y, int z, Random rand) {
-                        if (world.getBlockMetadata(x, y, z) >= 0) {
-                            ++this.ticks;
-                            if (this.ticks == 400) {
+                        if (world.getBlockMetadata(x, y, z) == 0) {
+                            if(rand.nextInt(400) == 0) {
                                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.slabCopperCorroded.id, world.getBlockMetadata(x, y, z));
-                                this.ticks = 0;
                             }
                         }
                     }
@@ -2035,14 +2004,12 @@ public class BonusBlocks {
                 .setTextures("copperblock.png")
                 .setTicking(true)
                 .build(new BlockStairs(blockCopper, blockID("stairsCopper")) {
-                    private int ticks;
 
+                    @Override
                     public void updateTick(World world, int x, int y, int z, Random rand) {
-                        if (world.getBlockMetadata(x, y, z) >= 0) {
-                            ++this.ticks;
-                            if (this.ticks == 400) {
+                        if (world.getBlockMetadata(x, y, z) == 0) {
+                            if(rand.nextInt(400) == 0) {
                                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.stairsCopperTarnished.id, world.getBlockMetadata(x, y, z));
-                                this.ticks = 0;
                             }
                         }
                     }
@@ -2054,14 +2021,12 @@ public class BonusBlocks {
                 .setTextures("tarnishedcopperblock.png")
                 .setTicking(true)
                 .build(new BlockStairs(blockCopperTarnished, blockID("stairsCopperTarnished")) {
-                    private int ticks;
 
+                    @Override
                     public void updateTick(World world, int x, int y, int z, Random rand) {
-                        if (world.getBlockMetadata(x, y, z) >= 0) {
-                            ++this.ticks;
-                            if (this.ticks == 400) {
+                        if (world.getBlockMetadata(x, y, z) == 0) {
+                            if(rand.nextInt(400) == 0) {
                                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.stairsCopperCorroded.id, world.getBlockMetadata(x, y, z));
-                                this.ticks = 0;
                             }
                         }
                     }

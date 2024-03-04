@@ -1,6 +1,5 @@
 package luke.bonusblocks.block.copper;
 
-import luke.bonusblocks.BonusBlocksMod;
 import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.core.block.BlockPressurePlate;
 import net.minecraft.core.block.material.Material;
@@ -14,17 +13,14 @@ import java.util.List;
 import java.util.Random;
 
 public class BlockCopperTarnishedPressurePlate extends BlockPressurePlate {
-    protected int ticks;
     public BlockCopperTarnishedPressurePlate(String key, int id, Material material) {
         super(key, id, null, material);
     }
     @Override
     public void updateTick(World world, int x, int y, int z, Random rand) {
         if (world.getBlockMetadata(x, y, z) == 0) {
-            ++this.ticks;
-            if (this.ticks == 400) {
+            if(rand.nextInt(400) == 0) {
                 world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.pressureplateCopperCorroded.id, world.getBlockMetadata(x, y, z));
-                this.ticks = 0;
             }
         }
         if (world.isClientSide) {

@@ -12,7 +12,6 @@ import net.minecraft.core.world.World;
 import java.util.Random;
 
 public class BlockCopperTarnishedDoor extends BlockDoor {
-    protected int ticks;
     public BlockCopperTarnishedDoor(String key, int id, Material material, boolean isTop) {
         super(key, id, material, isTop);
         this.setTicking(true);
@@ -26,14 +25,12 @@ public class BlockCopperTarnishedDoor extends BlockDoor {
     }
 
     public void updateTick(World world, int x, int y, int z, Random rand) {
-        if (world.getBlockMetadata(x, y, z) >= 0) {
-            ++this.ticks;
-            if (this.ticks == 400) {
+        if (world.getBlockMetadata(x, y, z) == 0) {
+            if (rand.nextInt(400) == 0) {
                 if (isTop) {
                     world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.doorCopperCorrodedTop.id, world.getBlockMetadata(x, y, z));
                     world.setBlockAndMetadataWithNotify(x, y-1, z, BonusBlocks.doorCopperCorrodedBottom.id, world.getBlockMetadata(x, y-1, z));
                 }
-                this.ticks = 0;
             }
         }
     }
