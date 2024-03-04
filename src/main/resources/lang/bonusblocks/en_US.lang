@@ -102,6 +102,9 @@ tile.bonusblocks.brick.quartz.name=Quartz Bricks
 tile.bonusblocks.brick.quartz.desc=Stacked bricks of quartz.
 tile.bonusblocks.brick.olivine.name=Olivine Bricks
 tile.bonusblocks.brick.olivine.desc=Stacked bricks of olivine.
+tile.bonusblocks.brick.clay.baked.name=Baked Clay Bricks
+tile.bonusblocks.brick.clay.baked.desc=Stacked bricks of baked clay.
+
 tile.bonusblocks.soulslate.name=Soul Slate
 tile.bonusblocks.soulslate.desc=Highly compacted soul sand. Listen and you can almost hear it whisper.
 tile.bonusblocks.brimstone.name=Brimstone
@@ -452,6 +455,8 @@ tile.bonusblocks.slab.cobble.permafrost.name=Cobbled Permafrost Slab
 tile.bonusblocks.slab.cobble.permafrost.desc=A slab of cobbled permafrost.
 tile.bonusblocks.slab.scorchedstone.name=Scorchedstone Slab
 tile.bonusblocks.slab.scorchedstone.desc=A slab of scorchedstone.
+tile.bonusblocks.slab.brick.clay.baked.name=Baked Clay Brick Slab
+tile.bonusblocks.slab.brick.clay.baked.desc=A slab of baked Clay bricks.
 
 tile.bonusblocks.stairs.cobble.stone.mossy.name=Mossy Cobblestone Stairs
 tile.bonusblocks.stairs.cobble.stone.mossy.desc=Mossy cobblestone block used for rapid vertical movement.
@@ -491,6 +496,8 @@ tile.bonusblocks.stairs.block.copper.tarnished.name=Tarnished Copper Stairs
 tile.bonusblocks.stairs.block.copper.tarnished.desc=Tarnished copper block used for rapid vertical movement.
 tile.bonusblocks.stairs.block.copper.corroded.name=Corroded Copper Stairs
 tile.bonusblocks.stairs.block.copper.corroded.desc=Corroded copper block used for rapid vertical movement.
+tile.bonusblocks.stairs.brick.clay.baked.name=Baked Clay Brick Stairs
+tile.bonusblocks.stairs.brick.clay.baked.desc=Baked Clay brick block used for rapid vertical movement.
 
 tile.bonusblocks.pie.name=Pumpkin Pie
 tile.bonusblocks.pie.desc=I just want to pie already.

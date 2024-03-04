@@ -219,6 +219,7 @@ public class BonusBlocks {
     public static Block brickQuartz;
     public static Block brickOlivine;
     public static Block brickSilver;
+    public static Block brickClayBaked;
 
     public static Block soulslate;
     public static Block brimstone;
@@ -255,6 +256,7 @@ public class BonusBlocks {
     public static Block slabCopper;
     public static Block slabCopperTarnished;
     public static Block slabCopperCorroded;
+    public static Block slabbrickClayBaked;
 
     public static Block stairsWool;
     public static Block stairsCobbleStoneMossy;
@@ -277,7 +279,7 @@ public class BonusBlocks {
     public static Block stairsCopper;
     public static Block stairsCopperTarnished;
     public static Block stairsCopperCorroded;
-
+    public static Block stairsbrickClayBaked;
 
     private void initializeBlockDetails() {
         ItemToolPickaxe.miningLevels.put(blockRawIron, 1);
@@ -500,6 +502,7 @@ public class BonusBlocks {
         CreativeHelper.setParent(brickQuartz, Block.brickIron);
         CreativeHelper.setParent(brickOlivine, Block.brickIron);
         CreativeHelper.setParent(brickSilver, Block.brickIron);
+        CreativeHelper.setParent(brickClayBaked, Block.brickIron);
 
         CreativeHelper.setParent(fenceCopper, Block.fenceChainlink);
         CreativeHelper.setParent(fenceCopperTarnished, Block.fenceChainlink);
@@ -564,6 +567,7 @@ public class BonusBlocks {
         CreativeHelper.setParent(slabCopper, Block.slabBasaltPolished);
         CreativeHelper.setParent(slabCopperTarnished, Block.slabBasaltPolished);
         CreativeHelper.setParent(slabCopperCorroded, Block.slabBasaltPolished);
+        CreativeHelper.setParent(slabbrickClayBaked, Block.slabBasaltPolished);
         for (int color = 0; color < 16; color++) {
             CreativeHelper.setParent(slabWool, color << 4, Block.slabBasaltPolished, 0);
         }
@@ -588,6 +592,7 @@ public class BonusBlocks {
         CreativeHelper.setParent(stairsCopper, Block.stairsBrickStone);
         CreativeHelper.setParent(stairsCopperTarnished, Block.stairsBrickStone);
         CreativeHelper.setParent(stairsCopperCorroded, Block.stairsBrickStone);
+        CreativeHelper.setParent(stairsbrickClayBaked, Block.stairsBrickStone);
         for (int color = 0; color < 16; color++) {
             CreativeHelper.setParent(stairsWool, color << 4, Block.stairsBrickStone, 0);
         }
@@ -1859,11 +1864,9 @@ public class BonusBlocks {
                 .setTextures("redsandstonebrick.png")
                 .build(new BlockSlab(brickScorchedstone, blockID("slabBrickScorchedstone")));
         slabBrickMud = slab
-                .setHardness(1.0f)
                 .setTextures("mudbrick.png")
                 .build(new BlockSlab(brickMud, blockID("slabBrickMud")));
         slabCobblePermafrost = slab
-                .setHardness(1.0f)
                 .setTextures(12, 15)
                 .build(new BlockSlab(Block.cobblePermafrost, blockID("slabCobblePermafrost")));
         slabScorchedstone = slab
@@ -2051,6 +2054,21 @@ public class BonusBlocks {
                 .setResistance(10.0f)
                 .setTextures("corrodedcopperblock.png")
                 .build(new BlockStairs(blockCopperCorroded, blockID("stairsCopperCorroded")));
+
+
+
+        //2.2 New Stuff
+
+        brickClayBaked = stone
+                .setTextures("bakedclaybrick.png")
+                .build(new Block("brick.clay.baked", blockID("brickClayBaked"), Material.stone));
+
+        slabbrickClayBaked = slab
+                .build(new BlockSlab(brickClayBaked, blockID("slabbrickClayBaked")));
+
+        stairsbrickClayBaked = stairs
+                .setTextures("bakedclaybrick.png")
+                .build(new BlockStairs(brickClayBaked, blockID("stairsbrickClayBaked")));
 
         initializeBlockDetails();
     }
