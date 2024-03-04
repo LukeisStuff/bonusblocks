@@ -1,6 +1,5 @@
 package luke.bonusblocks.block.silver;
 
-import luke.bonusblocks.BonusBlocksMod;
 import luke.bonusblocks.item.BonusItems;
 import net.minecraft.core.block.BlockBed;
 import net.minecraft.core.block.entity.TileEntity;

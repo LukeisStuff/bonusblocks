@@ -39,6 +39,7 @@ public class BonusBlocks {
     }
 
     public static Block box;
+
     public static Block crate;
     public static Block cratePainted;
 
@@ -1076,11 +1077,12 @@ public class BonusBlocks {
                 .setTicking(true)
                 .build(new Block("block.raw.copper", blockID("blockRawCopper"), Material.metal) {
 
-                    @Override
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
-                            if(rand.nextInt(400) == 0) {
-                                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockRawCopperTarnished.id, world.getBlockMetadata(x, y, z));
+                            if (rand.nextInt(200) == 0) {
+                                if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
+                                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockRawCopperTarnished.id, world.getBlockMetadata(x, y, z));
+                                }
                             }
                         }
                     }
@@ -1090,11 +1092,12 @@ public class BonusBlocks {
                 .setTicking(true)
                 .build(new Block("block.raw.copper.tarnished", blockID("blockRawCopperTarnished"), Material.metal) {
 
-                    @Override
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
-                            if(rand.nextInt(400) == 0) {
-                                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockRawCopperCorroded.id, world.getBlockMetadata(x, y, z));
+                            if (rand.nextInt(200) == 0) {
+                                if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
+                                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockRawCopperCorroded.id, world.getBlockMetadata(x, y, z));
+                                }
                             }
                         }
                     }
@@ -1162,11 +1165,12 @@ public class BonusBlocks {
                 .setTicking(true)
                 .build(new Block("block.copper", blockID("blockCopper"), Material.metal) {
 
-                    @Override
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
-                            if(rand.nextInt(400) == 0) {
-                                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockCopperTarnished.id, world.getBlockMetadata(x, y, z));
+                            if (rand.nextInt(200) == 0) {
+                                if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
+                                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockCopperTarnished.id, world.getBlockMetadata(x, y, z));
+                                }
                             }
                         }
                     }
@@ -1176,11 +1180,12 @@ public class BonusBlocks {
                 .setTicking(true)
                 .build(new Block("block.copper.tarnished", blockID("blockCopperTarnished"), Material.metal) {
 
-                    @Override
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
-                            if(rand.nextInt(400) == 0) {
-                                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockCopperCorroded.id, world.getBlockMetadata(x, y, z));
+                            if (rand.nextInt(200) == 0) {
+                                if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
+                                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockCopperCorroded.id, world.getBlockMetadata(x, y, z));
+                                }
                             }
                         }
                     }
@@ -1196,11 +1201,12 @@ public class BonusBlocks {
                 .setTicking(true)
                 .build(new BlockTransparent("mesh.copper", blockID("meshCopper"), Material.metal, true) {
 
-                    @Override
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
-                            if(rand.nextInt(400) == 0) {
-                                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.meshCopperTarnished.id, world.getBlockMetadata(x, y, z));
+                            if (rand.nextInt(200) == 0) {
+                                if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
+                                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.meshCopperTarnished.id, world.getBlockMetadata(x, y, z));
+                                }
                             }
                         }
                     }
@@ -1210,11 +1216,12 @@ public class BonusBlocks {
                 .setTicking(true)
                 .build(new BlockTransparent("mesh.copper.tarnished", blockID("meshCopperTarnished"), Material.metal, true) {
 
-                    @Override
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
-                            if(rand.nextInt(400) == 0) {
-                                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.meshCopperCorroded.id, world.getBlockMetadata(x, y, z));
+                            if (rand.nextInt(200) == 0) {
+                                if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
+                                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.meshCopperCorroded.id, world.getBlockMetadata(x, y, z));
+                                }
                             }
                         }
                     }
@@ -1238,11 +1245,12 @@ public class BonusBlocks {
                 .setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(MOD_ID, "tarnishedpipe.json"), ModelHelper.getOrCreateBlockState(MOD_ID, "tarnished_pipe_states.json"), new PipeMetaStateInterpreter(), false, 0.25f))
                 .build(new BlockCopperPipe("pipe.copper.tarnished", blockID("pipeCopperTarnished"), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "tarnishedpipe.json"), false) {
 
-                    @Override
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
-                            if(rand.nextInt(400) == 0) {
-                                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.pipeCopperCorroded.id, world.getBlockMetadata(x, y, z));
+                            if (rand.nextInt(200) == 0) {
+                                if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
+                                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.pipeCopperCorroded.id, world.getBlockMetadata(x, y, z));
+                                }
                             }
                         }
                     }
@@ -1268,11 +1276,12 @@ public class BonusBlocks {
                 .setTicking(true)
                 .build(new BlockTrapDoor("trapdoor.copper", blockID("trapdoorCopper"), Material.stone, false) {
 
-                    @Override
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
-                            if(rand.nextInt(400) == 0) {
-                                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.trapdoorCopperTarnished.id, world.getBlockMetadata(x, y, z));
+                            if (rand.nextInt(200) == 0) {
+                                if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
+                                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.trapdoorCopperTarnished.id, world.getBlockMetadata(x, y, z));
+                                }
                             }
                         }
                     }
@@ -1285,11 +1294,12 @@ public class BonusBlocks {
                 .setTicking(true)
                 .build(new BlockTrapDoor("trapdoor.copper.tarnished", blockID("trapdoorCopperTarnished"), Material.stone, false) {
 
-                    @Override
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
-                            if(rand.nextInt(400) == 0) {
-                                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.trapdoorCopperCorroded.id, world.getBlockMetadata(x, y, z));
+                            if (rand.nextInt(200) == 0) {
+                                if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
+                                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.trapdoorCopperCorroded.id, world.getBlockMetadata(x, y, z));
+                                }
                             }
                         }
                     }
@@ -1889,11 +1899,12 @@ public class BonusBlocks {
                 .setTicking(true)
                 .build(new BlockSlab(blockCopper, blockID("slabCopper")) {
 
-                    @Override
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
-                            if(rand.nextInt(400) == 0) {
-                                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.slabCopperTarnished.id, world.getBlockMetadata(x, y, z));
+                            if (rand.nextInt(200) == 0) {
+                                if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
+                                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.slabCopperTarnished.id, world.getBlockMetadata(x, y, z));
+                                }
                             }
                         }
                     }
@@ -1906,11 +1917,12 @@ public class BonusBlocks {
                 .setTextures("tarnishedcopperblock.png")
                 .build(new BlockSlab(blockCopperTarnished, blockID("slabCopperTarnished")) {
 
-                    @Override
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
-                            if(rand.nextInt(400) == 0) {
-                                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.slabCopperCorroded.id, world.getBlockMetadata(x, y, z));
+                            if (rand.nextInt(200) == 0) {
+                                if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
+                                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.slabCopperCorroded.id, world.getBlockMetadata(x, y, z));
+                                }
                             }
                         }
                     }
@@ -2005,11 +2017,12 @@ public class BonusBlocks {
                 .setTicking(true)
                 .build(new BlockStairs(blockCopper, blockID("stairsCopper")) {
 
-                    @Override
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
-                            if(rand.nextInt(400) == 0) {
-                                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.stairsCopperTarnished.id, world.getBlockMetadata(x, y, z));
+                            if (rand.nextInt(200) == 0) {
+                                if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
+                                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.stairsCopperTarnished.id, world.getBlockMetadata(x, y, z));
+                                }
                             }
                         }
                     }
@@ -2022,11 +2035,12 @@ public class BonusBlocks {
                 .setTicking(true)
                 .build(new BlockStairs(blockCopperTarnished, blockID("stairsCopperTarnished")) {
 
-                    @Override
                     public void updateTick(World world, int x, int y, int z, Random rand) {
                         if (world.getBlockMetadata(x, y, z) == 0) {
-                            if(rand.nextInt(400) == 0) {
-                                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.stairsCopperCorroded.id, world.getBlockMetadata(x, y, z));
+                            if (rand.nextInt(200) == 0) {
+                                if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
+                                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.stairsCopperCorroded.id, world.getBlockMetadata(x, y, z));
+                                }
                             }
                         }
                     }

@@ -2,7 +2,6 @@ package luke.bonusblocks.block;
 
 import net.minecraft.core.Global;
 import net.minecraft.core.block.Block;
-import net.minecraft.core.block.BlockSlab;
 import net.minecraft.core.block.BlockSlabPainted;
 import net.minecraft.core.entity.EntityLiving;
 import net.minecraft.core.util.helper.Direction;

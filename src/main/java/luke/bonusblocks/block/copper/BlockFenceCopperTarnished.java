@@ -42,8 +42,10 @@ public class BlockFenceCopperTarnished extends BlockFenceThin {
 
     public void updateTick(World world, int x, int y, int z, Random rand) {
         if (world.getBlockMetadata(x, y, z) == 0) {
-            if(rand.nextInt(400) == 0) {
-                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.fenceCopperCorroded.id, world.getBlockMetadata(x, y, z));
+            if (rand.nextInt(200) == 0) {
+                if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
+                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.fenceCopperCorroded.id, world.getBlockMetadata(x, y, z));
+                }
             }
         }
     }
