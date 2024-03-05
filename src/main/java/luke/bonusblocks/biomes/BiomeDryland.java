@@ -12,8 +12,8 @@ import java.util.Random;
 
 public class BiomeDryland extends Biome {
     public BiomeDryland() {
-        this.topBlock = (short) Block.dirt.id;
-        this.fillerBlock = (short) Block.dirt.id;
+        this.topBlock = (short) BonusBlocks.dirtRough.id;
+        this.fillerBlock = (short) BonusBlocks.dirtRough.id;
     }
 
     public WorldFeature getRandomWorldGenForTrees(Random random) {

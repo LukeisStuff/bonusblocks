@@ -30,6 +30,7 @@ import useless.dragonfly.model.block.BlockModelDragonFly;
 import java.util.Random;
 
 import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
+import static net.minecraft.core.block.Block.dirt;
 import static net.minecraft.core.block.BlockMoss.stoneToMossMap;
 
 public class BonusBlocks {
@@ -219,7 +220,6 @@ public class BonusBlocks {
     public static Block brickQuartz;
     public static Block brickOlivine;
     public static Block brickSilver;
-    public static Block brickClayBaked;
 
     public static Block soulslate;
     public static Block brimstone;
@@ -256,7 +256,6 @@ public class BonusBlocks {
     public static Block slabCopper;
     public static Block slabCopperTarnished;
     public static Block slabCopperCorroded;
-    public static Block slabbrickClayBaked;
 
     public static Block stairsWool;
     public static Block stairsCobbleStoneMossy;
@@ -279,7 +278,13 @@ public class BonusBlocks {
     public static Block stairsCopper;
     public static Block stairsCopperTarnished;
     public static Block stairsCopperCorroded;
-    public static Block stairsbrickClayBaked;
+
+    public static Block brickClayBaked;
+    public static Block slabBrickClayBaked;
+    public static Block stairsBrickClayBaked;
+
+    public static Block dirtRough;
+
 
     private void initializeBlockDetails() {
         ItemToolPickaxe.miningLevels.put(blockRawIron, 1);
@@ -567,7 +572,7 @@ public class BonusBlocks {
         CreativeHelper.setParent(slabCopper, Block.slabBasaltPolished);
         CreativeHelper.setParent(slabCopperTarnished, Block.slabBasaltPolished);
         CreativeHelper.setParent(slabCopperCorroded, Block.slabBasaltPolished);
-        CreativeHelper.setParent(slabbrickClayBaked, Block.slabBasaltPolished);
+        CreativeHelper.setParent(slabBrickClayBaked, Block.slabBasaltPolished);
         for (int color = 0; color < 16; color++) {
             CreativeHelper.setParent(slabWool, color << 4, Block.slabBasaltPolished, 0);
         }
@@ -592,7 +597,7 @@ public class BonusBlocks {
         CreativeHelper.setParent(stairsCopper, Block.stairsBrickStone);
         CreativeHelper.setParent(stairsCopperTarnished, Block.stairsBrickStone);
         CreativeHelper.setParent(stairsCopperCorroded, Block.stairsBrickStone);
-        CreativeHelper.setParent(stairsbrickClayBaked, Block.stairsBrickStone);
+        CreativeHelper.setParent(stairsBrickClayBaked, Block.stairsBrickStone);
         for (int color = 0; color < 16; color++) {
             CreativeHelper.setParent(stairsWool, color << 4, Block.stairsBrickStone, 0);
         }
@@ -2072,12 +2077,20 @@ public class BonusBlocks {
                 .setTextures("bakedclaybrick.png")
                 .build(new Block("brick.clay.baked", blockID("brickClayBaked"), Material.stone));
 
-        slabbrickClayBaked = slab
-                .build(new BlockSlab(brickClayBaked, blockID("slabbrickClayBaked")));
+        slabBrickClayBaked = slab
+                .build(new BlockSlab(brickClayBaked, blockID("slabBrickClayBaked")));
 
-        stairsbrickClayBaked = stairs
+        stairsBrickClayBaked = stairs
                 .setTextures("bakedclaybrick.png")
-                .build(new BlockStairs(brickClayBaked, blockID("stairsbrickClayBaked")));
+                .build(new BlockStairs(brickClayBaked, blockID("stairsBrickClayBaked")));
+
+        dirtRough = new BlockBuilder(MOD_ID)
+                .setBlockSound(new BlockSound("step.gravel", "step.gravel", 1.0f, 0.8f))
+                .setHardness(0.6f)
+                .setResistance(0.6f)
+                .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.GROWS_FLOWERS, BlockTags.GROWS_SUGAR_CANE, BlockTags.GROWS_TREES, BlockTags.CAVES_CUT_THROUGH)
+                .setTextures("roughdirt.png")
+                .build(new Block("dirt.rough", blockID("dirtRough"), Material.dirt));
 
         initializeBlockDetails();
     }

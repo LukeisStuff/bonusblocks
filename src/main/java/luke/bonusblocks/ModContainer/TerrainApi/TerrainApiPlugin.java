@@ -138,7 +138,8 @@ public class TerrainApiPlugin implements TerrainAPI {
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeatureSurface(new WorldFeatureFlowers(BonusBlocks.flowerLime.id), 4);
 
-        ChunkDecoratorOverworldAPI.randomFeatures.addFeatureSurface(new WorldFeatureFlowers(BonusBlocks.mushroomGray.id), 6);
+        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.mushroomGray.id), 6, 1.0f);
+
 
     }
 }

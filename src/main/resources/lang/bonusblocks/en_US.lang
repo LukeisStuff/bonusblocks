@@ -64,6 +64,9 @@ tile.bonusblocks.grass.scorched.overgrown.desc=Scorched dirt completely overgrow
 tile.bonusblocks.moss.name=Moss
 tile.bonusblocks.moss.desc=Large lump of greenery.
 
+tile.bonusblocks.dirt.rough.name=Rough Dirt
+tile.bonusblocks.dirt.rough.desc=Dirt hardened with mud to prevent grass growing.
+
 tile.bonusblocks.branch.name=Branches
 tile.bonusblocks.branch.desc=Woody structure connecting leaves.
 

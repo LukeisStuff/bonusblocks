@@ -218,6 +218,8 @@ public class BonusRecipes {
 
         templatePebbles.addInput('X', BonusItems.mossball).addInput('P', BonusItems.mossball).create("moss_balls_to_moss", new ItemStack(BonusBlocks.moss, 1));
 
+        templatePebbles.addInput('X', Block.dirt).addInput('P', Block.mudBaked).create("rough_dirt", new ItemStack(BonusBlocks.dirtRough, 4));
+
 
         RecipeBuilder.Shaped(MOD_ID, "WWW", "PPP")
                 .addInput('P',("minecraft:planks"))
@@ -261,6 +263,8 @@ public class BonusRecipes {
         Registries.ITEM_GROUPS.getItem("minecraft:grasses").add(BonusBlocks.overgrownGrassRetro.getDefaultStack());
         Registries.ITEM_GROUPS.getItem("minecraft:grasses").add(BonusBlocks.overgrownGrassScorched.getDefaultStack());
         Registries.ITEM_GROUPS.getItem("minecraft:grasses").add(Block.grassScorched.getDefaultStack());
+
+        Registries.ITEM_GROUPS.getItem("minecraft:dirt").add(BonusBlocks.dirtRough.getDefaultStack());
 
         Registries.ITEM_GROUPS.register("bonusblocks:copper_ores", Registries.stackListOf(BonusBlocks.oreCopperStone, BonusBlocks.oreCopperBasalt, BonusBlocks.oreCopperGranite, BonusBlocks.oreCopperLimestone));
 
@@ -401,7 +405,7 @@ public class BonusRecipes {
         templateSlab.addInput('X', BonusBlocks.cobbleNetherrack).create("cobblestone_netherrack_slab", new ItemStack(BonusBlocks.slabCobbleNetherrack, 6));
         templateSlab.addInput('X', BonusItems.ingotCopper).create("copper_slab", new ItemStack(BonusBlocks.slabCopper, 6));
         templateSlab.addInput('X', BonusBlocks.brickSilver).create("silver_brick_slab", new ItemStack(BonusBlocks.slabBrickSilver, 6));
-        templateSlab.addInput('X', BonusBlocks.brickClayBaked).create("baked_clay_slab", new ItemStack(BonusBlocks.slabbrickClayBaked, 6));
+        templateSlab.addInput('X', BonusBlocks.brickClayBaked).create("baked_clay_slab", new ItemStack(BonusBlocks.slabBrickClayBaked, 6));
 
         RecipeBuilderShaped templateStairs = new RecipeBuilderShaped(MOD_ID, "X ", "XX ", "XXX");
         templateStairs.addInput('X', Block.brickGold).create("gold_brick_stairs", new ItemStack(BonusBlocks.stairsBrickGold, 6));
@@ -422,7 +426,7 @@ public class BonusRecipes {
         templateStairs.addInput('X', BonusBlocks.cobbleNetherrack).create("cobblestone_netherrack_stairs", new ItemStack(BonusBlocks.stairsCobbleNetherrack, 6));
         templateStairs.addInput('X', BonusItems.ingotCopper).create("copper_stairs", new ItemStack(BonusBlocks.stairsCopper, 6));
         templateStairs.addInput('X', BonusBlocks.brickSilver).create("silver_brick_stairs", new ItemStack(BonusBlocks.stairsBrickSilver, 6));
-        templateStairs.addInput('X', BonusBlocks.brickClayBaked).create("baked_clay_stairs", new ItemStack(BonusBlocks.stairsbrickClayBaked, 6));
+        templateStairs.addInput('X', BonusBlocks.brickClayBaked).create("baked_clay_stairs", new ItemStack(BonusBlocks.stairsBrickClayBaked, 6));
 
 
         RecipeBuilder.Shaped(MOD_ID, " M ", "SES", "WPW")

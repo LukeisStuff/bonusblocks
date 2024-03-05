@@ -23,14 +23,13 @@ public class BlockChandolier extends Block {
     }
 
     public void onBlockAdded(World world, int x, int y, int z) {
-        if (!world.isBlockNormalCube(x, y + 1, z)) {
-            Block.hasTag(world.getBlockId(x, y + 1, z), BlockTags.CAN_HANG_OFF);
+        if (!world.isBlockNormalCube(x, y + 1, z) && !Block.hasTag(world.getBlockId(x, y + 1, z), BlockTags.CAN_HANG_OFF)) {
+            world.setBlockMetadataWithNotify(x, y, z, 0);
         }
-
     }
 
     public boolean canPlaceBlockAt(World world, int x, int y, int z) {
-        return world.isBlockNormalCube(x, y + 1, z) || Block.hasTag(world.getBlockId(x, y + 1, z), BlockTags.CAN_HANG_OFF) || world.canPlaceOnSurfaceOfBlock(x, y + 1, z);
+        return world.isBlockNormalCube(x, y + 1, z) || Block.hasTag(world.getBlockId(x, y + 1, z), BlockTags.CAN_HANG_OFF);
     }
 
     public void onNeighborBlockChange(World world, int x, int y, int z, int blockId) {
@@ -38,15 +37,9 @@ public class BlockChandolier extends Block {
             this.dropBlockWithCause(world, EnumDropCause.WORLD, x, y, z, world.getBlockMetadata(x, y, z), null);
             world.setBlockWithNotify(x, y, z, 0);
         }
-
     }
 
     public boolean canBlockStay(World world, int x, int y, int z) {
-        int meta = world.getBlockMetadata(x, y, z);
-        if (meta != 1) {
-            return world.canPlaceOnSurfaceOfBlock(x, y + 1, z);
-        } else {
-            return world.isBlockNormalCube(x, y + 1, z) || Block.hasTag(world.getBlockId(x, y + 1, z), BlockTags.CAN_HANG_OFF);
-        }
+        return world.isBlockNormalCube(x, y + 1, z) || Block.hasTag(world.getBlockId(x, y + 1, z), BlockTags.CAN_HANG_OFF);
     }
 }

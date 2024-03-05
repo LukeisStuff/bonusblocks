@@ -24,10 +24,11 @@ public class BlockLantern extends Block {
     }
 
     public void onBlockAdded(World world, int x, int y, int z) {
-        if (!world.isBlockNormalCube(x, y + 1, z)) {
-            Block.hasTag(world.getBlockId(x, y + 1, z), BlockTags.CAN_HANG_OFF);
+        if (!world.isBlockNormalCube(x, y + 1, z) && !Block.hasTag(world.getBlockId(x, y + 1, z), BlockTags.CAN_HANG_OFF)) {
+            world.setBlockMetadataWithNotify(x, y, z, 0);
+        } else {
+            world.setBlockMetadataWithNotify(x, y, z, 1);
         }
-
     }
 
     public boolean canPlaceBlockAt(World world, int x, int y, int z) {
@@ -36,10 +37,9 @@ public class BlockLantern extends Block {
 
     public void onNeighborBlockChange(World world, int x, int y, int z, int blockId) {
         if (!this.canBlockStay(world, x, y, z)) {
-            this.dropBlockWithCause(world, EnumDropCause.WORLD, x, y, z, world.getBlockMetadata(x, y, z), (TileEntity)null);
+            this.dropBlockWithCause(world, EnumDropCause.WORLD, x, y, z, world.getBlockMetadata(x, y, z), null);
             world.setBlockWithNotify(x, y, z, 0);
         }
-
     }
 
     public boolean canBlockStay(World world, int x, int y, int z) {
