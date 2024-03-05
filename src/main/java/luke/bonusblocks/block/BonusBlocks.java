@@ -1321,12 +1321,14 @@ public class BonusBlocks {
         doorCopperBottom = raw
                 .setBlockModel(new BlockModelRenderBlocks(7))
                 .setTextures("copperdoorbottom.png")
+                .setTopBottomTexture("coppertrapdoortop.png")
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
                 .setVisualUpdateOnMetadata()
                 .build(new BlockCopperDoor("door.copper.bottom", blockID("doorCopperBottom"), Material.stone, false));
         doorCopperTop = raw
                 .setBlockModel(new BlockModelRenderBlocks(7))
                 .setTextures("copperdoortop.png")
+                .setTopBottomTexture("coppertrapdoortop.png")
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
                 .setVisualUpdateOnMetadata()
                 .build(new BlockCopperDoor("door.copper.top", blockID("doorCopperTop"), Material.stone, true));
@@ -1334,12 +1336,14 @@ public class BonusBlocks {
         doorCopperTarnishedBottom = raw
                 .setBlockModel(new BlockModelRenderBlocks(7))
                 .setTextures("tarnishedcopperdoorbottom.png")
+                .setTopBottomTexture("tarnishedcoppertrapdoortop.png")
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
                 .setVisualUpdateOnMetadata()
                 .build(new BlockCopperTarnishedDoor("door.copper.tarnished.bottom", blockID("doorCopperTarnishedBottom"), Material.stone, false));
         doorCopperTarnishedTop = raw
                 .setBlockModel(new BlockModelRenderBlocks(7))
                 .setTextures("tarnishedcopperdoortop.png")
+                .setTopBottomTexture("tarnishedcoppertrapdoortop.png")
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
                 .setVisualUpdateOnMetadata()
                 .build(new BlockCopperTarnishedDoor("door.copper.tarnished.top", blockID("doorCopperTarnishedTop"), Material.stone, true));
@@ -1347,6 +1351,7 @@ public class BonusBlocks {
         doorCopperCorrodedBottom = raw
                 .setBlockModel(new BlockModelRenderBlocks(7))
                 .setTextures("corrodedcopperdoorbottom.png")
+                .setTopBottomTexture("corrodedcoppertrapdoortop.png")
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
                 .setVisualUpdateOnMetadata()
                 .build(new BlockCopperDoor("door.copper.corroded.bottom", blockID("doorCopperCorrodedBottom"), Material.stone, false) {
@@ -1360,6 +1365,7 @@ public class BonusBlocks {
         doorCopperCorrodedTop = raw
                 .setBlockModel(new BlockModelRenderBlocks(7))
                 .setTextures("corrodedcopperdoortop.png")
+                .setTopBottomTexture("corrodedcoppertrapdoortop.png")
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
                 .setVisualUpdateOnMetadata()
                 .build(new BlockCopperDoor("door.copper.corroded.top", blockID("doorCopperCorrodedTop"), Material.stone, true) {
@@ -1436,6 +1442,7 @@ public class BonusBlocks {
                 .setBlockModel(new BlockModelRenderBlocks(7))
                 .setResistance(2000.0f)
                 .setTextures("steeldoorbottom.png")
+                .setTopBottomTexture("steeltrapdoortop.png")
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
                 .setVisualUpdateOnMetadata()
                 .build(new BlockDoor("door.steel.bottom", blockID("doorSteelBottom"), Material.metal, false) {
@@ -1450,6 +1457,7 @@ public class BonusBlocks {
                 .setBlockModel(new BlockModelRenderBlocks(7))
                 .setResistance(2000.0f)
                 .setTextures("steeldoortop.png")
+                .setTopBottomTexture("steeltrapdoortop.png")
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
                 .setVisualUpdateOnMetadata()
                 .build(new BlockDoor("door.steel.top", blockID("doorSteelTop"), Material.metal, true) {
@@ -1496,6 +1504,7 @@ public class BonusBlocks {
         doorSilverTop = silver
                 .setBlockModel(new BlockModelRenderBlocks(7))
                 .setTextures("silverdoorTop.png")
+                .setTopBottomTexture("silvertrapdoortop.png")
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
                 .setVisualUpdateOnMetadata()
                 .build(new BlockDoor("door.silver.top", blockID("doorSilverTop"), Material.stone, true) {
