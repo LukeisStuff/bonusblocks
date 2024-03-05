@@ -43,22 +43,6 @@ public class BonusBlocksMod implements ModInitializer, ClientStartEntrypoint, Ga
     public void beforeClientStart() {
         EntityHelper.Client.assignEntityRenderer(EntitySulphur.class, new FallingSandRenderer());
         SoundHelper.Client.addSound("bonusblocks", "chimes.ogg");
-        TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "whitedoor.png");
-        TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "orangedoor.png");
-        TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "magentadoor.png");
-        TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "lightbluedoor.png");
-        TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "yellowdoor.png");
-        TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "limedoor.png");
-        TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "pinkdoor.png");
-        TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "graydoor.png");
-        TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "lightgraydoor.png");
-        TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "cyandoor.png");
-        TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "purpledoor.png");
-        TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "bluedoor.png");
-        TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "browndoor.png");
-        TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "greendoor.png");
-        TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "reddoor.png");
-        TextureHelper.getOrCreateItemTextureIndex(MOD_ID, "blackdoor.png");
         Item.oreRawGold = new ItemRawGold("ore.raw.gold", 16510).setIconCoord(10, 8);
         Item.oreRawIron = new ItemRawIron("ore.raw.iron", 16511).setIconCoord(9, 8);
         LOGGER.info("BonusBlocks initialized.");
