@@ -190,7 +190,7 @@ Check the [BTA! wiki page about modding](https://bta.miraheze.org/wiki/Modding)
 ## Credits
 LukeisStuff - Creator
 
-Tocinin, AFK, Spicyfiction, Mak, mzov, perry26, jonkadelic, beat_your_rice, PedroThePanda64, denatidum, txar, senatorslunky, lemonmeringuepie, Zaraz7 - Textures
+Tocinin, AFK, Spicyfiction, Mak, mzov, perry26, jonkadelic, beat_your_rice, PedroThePanda64, denatidum, txar, senatorslunky, lemonmeringuepie, Zaraz7, TheRandomHat - Textures
 
 Useless, azurelmao, Grease, MartinSVK12, Killi, CantComplain - Mod Help
 

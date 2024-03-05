@@ -243,6 +243,11 @@ public class BonusRecipes {
                 .addInput('C', Block.chestPlanksOak)
                 .create("crate", new ItemStack(BonusBlocks.crate, 8));
 
+        RecipeBuilder.Shaped(MOD_ID, "S", "C")
+                .addInput('S', BonusBlocks.skull)
+                .addInput('C', BonusItems.candleSoulwax)
+                .create("skull_lantern", new ItemStack(BonusBlocks.skullActive, 1));
+
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.logMaple.getDefaultStack());
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.logScorched.getDefaultStack());
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.logShrub.getDefaultStack());

@@ -3,6 +3,7 @@ package luke.bonusblocks.ModContainer.TerrainApi;
 import luke.bonusblocks.biomes.ModBiomes;
 import luke.bonusblocks.biomes.WorldFeaturePebbles;
 import luke.bonusblocks.biomes.WorldFeaturePumice;
+import luke.bonusblocks.biomes.WorldFeatureSkull;
 import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.world.biome.Biome;
@@ -94,6 +95,9 @@ public class TerrainApiPlugin implements TerrainAPI {
         ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.brimstone, 32, 2, 0.0f, 0.25f, false);
         ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.soulslate, 32, 4, 0.0f, 0.50f, false);
         ChunkDecoratorNetherAPI.randomFeatures.addFeature(new WorldFeaturePumice(), 2, 1f,  4,
+                new Biome[]{Biomes.NETHER_NETHER});
+
+        ChunkDecoratorNetherAPI.randomFeatures.addFeature(new WorldFeatureSkull(), 3, 1f,  1,
                 new Biome[]{Biomes.NETHER_NETHER});
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(Block.spinifex.id), 4, -1f, 1,

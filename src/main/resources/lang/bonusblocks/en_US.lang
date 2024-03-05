@@ -502,6 +502,11 @@ tile.bonusblocks.stairs.block.copper.corroded.desc=Corroded copper block used fo
 tile.bonusblocks.stairs.brick.clay.baked.name=Baked Clay Brick Stairs
 tile.bonusblocks.stairs.brick.clay.baked.desc=Baked Clay brick block used for rapid vertical movement.
 
+tile.bonusblocks.skull.name=Skull
+tile.bonusblocks.skull.desc=A spooky skull found in the nether.
+tile.bonusblocks.skull.active.name=Skull Lantern
+tile.bonusblocks.skull.active.desc=A spooky skull found in the nether, lit by a soul wax candle.
+
 tile.bonusblocks.pie.name=Pumpkin Pie
 tile.bonusblocks.pie.desc=I just want to pie already.
 
