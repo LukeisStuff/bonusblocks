@@ -2,6 +2,7 @@ package luke.bonusblocks;
 
 import luke.bonusblocks.block.BonusBlocks;
 import luke.bonusblocks.item.BonusItems;
+import net.minecraft.core.WeightedRandomLootObject;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.item.Item;
@@ -559,6 +560,17 @@ public class BonusRecipes {
         RecipeBuilder.BlastFurnace(MOD_ID)
                 .setInput(BonusBlocks.netherrack)
                 .create("netherrack_to_brimstone", BonusBlocks.brimstone.getDefaultStack());
+
+        RecipeBuilder.Trommel(MOD_ID)
+                .setInput(BonusBlocks.dirtRough)
+                .addEntry(new WeightedRandomLootObject(Item.ammoPebble.getDefaultStack(), 1, 3), 60.24)
+                .addEntry(new WeightedRandomLootObject(Item.clay.getDefaultStack(), 1, 5), 24.10)
+                .addEntry(new WeightedRandomLootObject(Item.flint.getDefaultStack(), 1, 3), 12.05)
+                .addEntry(new WeightedRandomLootObject(Item.sulphur.getDefaultStack(), 1), 2.41)
+                .addEntry(new WeightedRandomLootObject(Item.oreRawIron.getDefaultStack(), 1), 0.60)
+                .addEntry(new WeightedRandomLootObject(Item.olivine.getDefaultStack(), 1), 0.30)
+                .addEntry(new WeightedRandomLootObject(Item.quartz.getDefaultStack(), 1), 0.30)
+                .create("trommel_rough_dirt");
 
     }
 

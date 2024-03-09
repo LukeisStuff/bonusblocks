@@ -3,10 +3,10 @@
 ### Additions
 
 ## Blocks
-* Crate
+* Box
   + Crafted with 9 planks
-* Box and Painted Box
-  + Crafted with 4 chests or painted chests, gives 8 boxes
+* Crate and Painted Crate
+  + Crafted with 4 chests or painted chests, gives 8 crates
 * Empty Bookshelf
   + Crafted like a bookshelf but without the books
 * Branches
@@ -152,7 +152,7 @@
   + Found between deserts and outbacks
 * Dryland 
   + Replaces grasslands near deserts
-  + Generates with dirt ontop
+  + Generates with rough dirt on top
   + Home to large shrub trees
 
 
@@ -161,15 +161,15 @@
   + this affects marble and slate pillars
 * Carved stones now have recipes and appear in the creative inventory
   + This affects Carved Stone, Carved Basalt, Carved Granite and Carved Limestone
-* Netherrack has been renamed to Mossy Cobbled Netherrack
-* Multiple items and blocks have been given new names to adress issues and fix bugs
+* *Netherrack has been renamed to Mossy Cobbled Netherrack
+* Multiple items and blocks have been given new names to address issues and fix bugs
 * All flowers spawn in specific biomes now, so no more red and yellow ones everywhere
 * Bed recipe has been changed to use only wool now (Will make more sense when sleeping bags are fully added)
 * Pebbles now generate all over the world
 * Some recipes missing have been fixed
 * Cobbled Stone recipes in the blast furnace now use the stone instead of cobble
 * You can bonemeal flowers to spread more of them around (Fix by useless)
-* Paintings can now be given a trim using certain resources (Iron, gold, copper etc)
+* Paintings can now be given a trim using certain resources (Iron, gold, copper etc.)
 * Multiple Old blocks from previous bonus block versions have been removed in order to streamline the mod
 * The entire id system of the mod has been changed which will cause issues with previous worlds
 * All Cacao, Shrub and Mossy Oak trees now generate with all of their own logs/leaves
