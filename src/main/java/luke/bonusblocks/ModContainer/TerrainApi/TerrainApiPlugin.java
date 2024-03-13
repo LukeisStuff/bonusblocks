@@ -45,7 +45,7 @@ public class TerrainApiPlugin implements TerrainAPI {
         overworldConfig.addLakeDensity(ModBiomes.OVERWORLD_MAPLE, 1);
         overworldConfig.addLakeDensity(ModBiomes.OVERWORLD_OVERGROWN_MEADOW, 1);
         overworldConfig.addLakeDensity(ModBiomes.OVERWORLD_DRYLAND, 1);
-
+        overworldConfig.addLakeDensity(ModBiomes.OVERWORLD_WETLAND, 4);
 
         overworldConfig.addFlowerDensity(Biomes.OVERWORLD_RAINFOREST, 0);
         overworldConfig.addFlowerDensity(Biomes.OVERWORLD_SWAMPLAND, 0);
@@ -86,6 +86,7 @@ public class TerrainApiPlugin implements TerrainAPI {
 
         overworldConfig.addRandomGrassBlock(ModBiomes.OVERWORLD_OVERGROWN_MEADOW, Block.tallgrassFern);
         overworldConfig.addRandomGrassBlock(ModBiomes.OVERWORLD_DRYLAND, Block.tallgrassFern);
+        overworldConfig.addRandomGrassBlock(ModBiomes.OVERWORLD_WETLAND, Block.tallgrassFern);
         overworldConfig.addRandomGrassBlock(ModBiomes.OVERWORLD_MAPLE, Block.overlayPebbles);
         overworldConfig.addRandomGrassBlock(ModBiomes.OVERWORLD_OUTBACK_MESA, Block.deadbush);
 
@@ -131,7 +132,7 @@ public class TerrainApiPlugin implements TerrainAPI {
                 new Biome[]{Biomes.OVERWORLD_OUTBACK, Biomes.OVERWORLD_OUTBACK_GRASSY, ModBiomes.OVERWORLD_OUTBACK_MESA, ModBiomes.OVERWORLD_OVERGROWN_MEADOW});
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.flowerMagenta.id), 4, -1f, 1,
-                new Biome[]{Biomes.OVERWORLD_TAIGA, ModBiomes.OVERWORLD_OVERGROWN_MEADOW});
+                new Biome[]{Biomes.OVERWORLD_TAIGA, ModBiomes.OVERWORLD_OVERGROWN_MEADOW, ModBiomes.OVERWORLD_WETLAND});
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.flowerLightBlue.id), 4, -1f, 1,
                 new Biome[]{Biomes.OVERWORLD_RAINFOREST, ModBiomes.OVERWORLD_DRYLAND, ModBiomes.OVERWORLD_OVERGROWN_MEADOW});

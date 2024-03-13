@@ -17,6 +17,10 @@ public abstract class ModBiomes {
             Biomes.register(BonusBlocksMod.MOD_ID+":overworld.dryland",
                     new BiomeDryland());
 
+    public static final Biome OVERWORLD_WETLAND =
+            Biomes.register(BonusBlocksMod.MOD_ID+":overworld.wetland",
+                    new BiomeWetland());
+
     public static final Biome OVERWORLD_MAPLE =
             Biomes.register(BonusBlocksMod.MOD_ID+":overworld.maple",
                     new BiomeMaple());

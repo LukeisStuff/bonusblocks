@@ -423,6 +423,9 @@ public class BonusBlocks {
 
         CreativeHelper.setParent(dirtRough, dirt);
 
+        CreativeHelper.setParent(skull, Block.pumpkinCarvedActive);
+        CreativeHelper.setParent(skullActive, Block.pumpkinCarvedActive);
+
         CreativeHelper.setParent(glassObsidian, Block.glass);
         CreativeHelper.setParent(glassQuartz, Block.glassTinted);
 
@@ -849,7 +852,7 @@ public class BonusBlocks {
         moss = grass
                 .setFlammability(100, 30)
                 .setTextures("moss.png")
-                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SHOVEL, BlockTags.GROWS_FLOWERS, BlockTags.GROWS_SUGAR_CANE, BlockTags.GROWS_TREES, BlockTags.PASSIVE_MOBS_SPAWN, BlockTags.FIREFLIES_CAN_SPAWN, BlockTags.CAVE_GEN_REPLACES_SURFACE, BlockTags.CAVES_CUT_THROUGH)
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SHOVEL, BlockTags.GROWS_FLOWERS, BlockTags.GROWS_SUGAR_CANE, BlockTags.GROWS_TREES, BlockTags.CAVE_GEN_REPLACES_SURFACE, BlockTags.CAVES_CUT_THROUGH)
                 .build(new BlockMossy("moss", blockID("moss"), Material.grass));
 
 
@@ -1498,7 +1501,7 @@ public class BonusBlocks {
         // Silver Doors
         doorSilverBottom = silver
                 .setBlockModel(new BlockModelRenderBlocks(7))
-                .setTextures("silverdoorBottom.png")
+                .setTextures("silverdoorbottom.png")
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
                 .setVisualUpdateOnMetadata()
                 .build(new BlockDoor("door.silver.bottom", blockID("doorSilverBottom"), Material.stone, false) {
@@ -1511,7 +1514,7 @@ public class BonusBlocks {
                 });
         doorSilverTop = silver
                 .setBlockModel(new BlockModelRenderBlocks(7))
-                .setTextures("silverdoorTop.png")
+                .setTextures("silverdoortop.png")
                 .setTopBottomTexture("silvertrapdoortop.png")
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
                 .setVisualUpdateOnMetadata()
