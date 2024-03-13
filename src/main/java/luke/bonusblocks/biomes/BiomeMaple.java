@@ -16,14 +16,14 @@ public class BiomeMaple extends BiomeForest {
     }
 
     public WorldFeature getRandomWorldGenForTrees(Random random) {
-        if (random.nextInt(5) == 0) {
-            return new WorldFeatureTreeFancy(BonusBlocks.leavesMaple.id, BonusBlocks.logMaple.id);
+        if (random.nextInt(10) == 0) {
+            return new WorldFeatureTreeFancy(BonusBlocks.leavesMaple.id, BonusBlocks.logMaple.id, 5);
         } else if (random.nextInt(20) == 0) {
-            return new WorldFeatureTreeFancy(BonusBlocks.leavesMaple.id, BonusBlocks.logMaple.id);
-        } else if (random.nextInt(3) == 0) {
-            return new WorldFeatureTreeFancy(BonusBlocks.leavesMaple.id, BonusBlocks.logMaple.id);
+            return new WorldFeatureTreeFancy(BonusBlocks.leavesMaple.id, BonusBlocks.logMaple.id, 5);
+        } else if (random.nextInt(5) == 0) {
+            return new WorldFeatureTreeFancy(BonusBlocks.leavesMaple.id, BonusBlocks.logMaple.id, 5);
         } else {
-            return new WorldFeatureTreeFancy(BonusBlocks.leavesMaple.id, BonusBlocks.logMaple.id);
+            return new WorldFeatureTreeFancy(BonusBlocks.leavesMaple.id, BonusBlocks.logMaple.id, 5);
         }
     }
 }
