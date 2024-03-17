@@ -1,6 +1,5 @@
 package luke.bonusblocks.block;
 
-import luke.bonusblocks.BonusBlocksMod;
 import net.minecraft.core.block.BlockSaplingBase;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.generate.feature.WorldFeature;
@@ -14,9 +13,9 @@ public class BlockSaplingJacaranda extends BlockSaplingBase {
     }
 
     public void growTree(World world, int i, int j, int k, Random random) {
-        Object treeBig = new WorldFeatureTreeFancy(BonusBlocks.leavesJacaranda.id, BonusBlocks.logJacaranda.id, 10000);
+        WorldFeature treeBig = new WorldFeatureTreeFancy(BonusBlocks.leavesJacaranda.id, BonusBlocks.logJacaranda.id, 10000);
         world.setBlock(i, j, k, 0);
-        if (!((WorldFeature)treeBig).generate(world, random, i, j, k)) {
+        if (!treeBig.generate(world, random, i, j, k)) {
             world.setBlock(i, j, k, this.id);
         }
 

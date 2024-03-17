@@ -987,14 +987,13 @@ public class BonusBlocks {
                 .build(new Block("block.mushroom.gray", blockID("fungiGray"), Material.dirt));
 
         // Bone Block
-        blockBone = new BlockBuilder(MOD_ID)
+        blockBone = stone
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.8f))
                 .setHardness(0.8f)
                 .setResistance(5.0f)
                 .setSideTextures("boneside.png")
                 .setTopBottomTexture("bonetop.png")
                 .setBlockModel(new BlockModelRenderBlocks(27))
-                .setTags(BlockTags.MINEABLE_BY_PICKAXE)
                 .build(new BlockAxisAligned("block.bone", blockID("blockBone"), Material.stone));
 
         // Thatch
@@ -1073,12 +1072,10 @@ public class BonusBlocks {
                 .build(new Block("block.flint", blockID("blockFlint"), Material.stone));
 
         // Crude Steel Block
-        blockCrudeSteel = new BlockBuilder(MOD_ID)
-                .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+        blockCrudeSteel = raw
                 .setHardness(4.0f)
                 .setResistance(1000.0f)
                 .setTextures("crudesteel.png")
-                .setTags(BlockTags.MINEABLE_BY_AXE)
                 .build(new Block("block.steel.crude", blockID("blockCrudeSteel"), Material.metal));
 
         // Raw Blocks
@@ -1609,8 +1606,7 @@ public class BonusBlocks {
 
 
         // Scorched Stone
-        scorchedstone = new BlockBuilder(MOD_ID)
-                .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
+        scorchedstone = stone
                 .setHardness(0.8f)
                 .setSideTextures("redsandstoneside.png")
                 .setBottomTexture("redsandstonebottom.png")
@@ -1762,20 +1758,14 @@ public class BonusBlocks {
 
 
         // Pumice
-        pumiceDry = new BlockBuilder(MOD_ID)
-                .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
-                .setHardness(1.0f)
-                .setResistance(1.0f)
+        pumiceDry = stone
                 .setTextures("pumicedry.png")
-                .setTags(BlockTags.MINEABLE_BY_PICKAXE)
                 .build(new BlockPumice("pumice.dry", blockID("pumiceDry"), false));
-        pumiceWet = new BlockBuilder(MOD_ID)
-                .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
-                .setHardness(1.0f)
-                .setResistance(1.0f)
+        pumiceWet = stone
                 .setLuminance(13)
+                .setUseInternalLight()
+                .setTextures("pumiceoverlay.png")
                 .setTextures("pumicewet.png")
-                .setTags(BlockTags.MINEABLE_BY_PICKAXE)
                 .build(new BlockPumice("pumice.wet", blockID("pumiceWet"), true));
 
 

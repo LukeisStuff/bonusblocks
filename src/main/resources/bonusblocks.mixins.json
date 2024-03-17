@@ -23,6 +23,7 @@
     "NetClientHandlerMixin",
     "PaintingPacketMixin",
     "PaintingRendererMixin",
+    "SurfaceGeneratorNetherMixin",
     "SurfaceGeneratorOverworldMixin",
     "WorldFeatureLabyrinthMixin"
   ],

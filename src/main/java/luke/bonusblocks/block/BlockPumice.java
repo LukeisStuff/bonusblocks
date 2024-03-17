@@ -13,6 +13,10 @@ import net.minecraft.core.entity.EntityLiving;
 import net.minecraft.core.sound.SoundType;
 import net.minecraft.core.util.helper.DamageType;
 import net.minecraft.core.world.World;
+import net.minecraft.core.world.WorldSource;
+import turniplabs.halplibe.helper.TextureHelper;
+
+import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
 
 public class BlockPumice extends Block {
     boolean isMagma;
@@ -20,12 +24,20 @@ public class BlockPumice extends Block {
     public BlockPumice(String key, int id, boolean isWet) {
         super(key, id, Material.stone);
         this.isMagma = isWet;
+        withOverbright();
     }
 
     public void onNeighborBlockChange(World world, int x, int y, int z, int blockId) {
         if (this.isMagma) {
             this.onBlockAdded(world, x, y, z);
         }
+    }
+
+    public int getBlockOverbrightTexture(WorldSource blockAccess, int x, int y, int z, int side) {
+        if (this.isMagma) {
+            return TextureHelper.getOrCreateBlockTextureIndex(MOD_ID,"pumiceoverlay.png");
+        }
+        return -1;
     }
 
     public void onEntityCollidedWithBlock(World world, int x, int y, int z, Entity entity) {
