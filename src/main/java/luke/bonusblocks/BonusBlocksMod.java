@@ -1,5 +1,6 @@
 package luke.bonusblocks;
 
+import luke.bonusblocks.biomes.BiomeProviderNether;
 import luke.bonusblocks.block.BonusBlocks;
 import luke.bonusblocks.block.EntitySulphur;
 import luke.bonusblocks.item.BonusItems;
@@ -45,6 +46,7 @@ public class BonusBlocksMod implements ModInitializer, ClientStartEntrypoint, Ga
         SoundHelper.Client.addSound("bonusblocks", "chimes.ogg");
         Item.oreRawGold = new ItemRawGold("ore.raw.gold", 16510).setIconCoord(10, 8);
         Item.oreRawIron = new ItemRawIron("ore.raw.iron", 16511).setIconCoord(9, 8);
+//        BiomeProviderNether.init();
         LOGGER.info("BonusBlocks initialized.");
     }
 

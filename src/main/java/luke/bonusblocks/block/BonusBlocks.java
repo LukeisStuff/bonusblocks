@@ -1014,7 +1014,7 @@ public class BonusBlocks {
                 .setResistance(0.8f)
                 .setTextures("clothblock.png")
                 .setFlammability(30, 60)
-                .setTags(BlockTags.MINEABLE_BY_SHEARS)
+                .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.MINEABLE_BY_AXE)
                 .build(new BlockCloth("block.cloth", blockID("blockCloth"), Material.cloth));
 
         // Slime Block
@@ -1816,6 +1816,7 @@ public class BonusBlocks {
                 .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
                 .setHardness(0.8F)
                 .setResistance(0.8F)
+                .setFlammability(30, 60)
                 .setItemBlock(ItemBlockSlabPainted::new)
                 .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.NOT_IN_CREATIVE_MENU)
                 .build(new BlockWoolSlab(Block.wool, blockID("slabWool")));
@@ -1953,6 +1954,7 @@ public class BonusBlocks {
                 .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
                 .setHardness(0.8F)
                 .setResistance(0.8F)
+                .setFlammability(30, 60)
                 .setItemBlock(ItemBlockStairsPainted::new)
                 .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.NOT_IN_CREATIVE_MENU)
                 .build(new BlockWoolStairs(Block.wool, blockID("stairsWool")));

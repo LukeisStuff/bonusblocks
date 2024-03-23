@@ -24,4 +24,14 @@ public abstract class ModBiomes {
     public static final Biome OVERWORLD_MAPLE =
             Biomes.register(BonusBlocksMod.MOD_ID+":overworld.maple",
                     new BiomeMaple());
+
+
+
+    public static final Biome NETHER_SOUL_DESERT =
+            Biomes.register(BonusBlocksMod.MOD_ID+":nether.soul.desert",
+                    new BiomeSoulDesert());
+
+    public static final Biome NETHER_SOUL_WASTELAND =
+            Biomes.register(BonusBlocksMod.MOD_ID+":nether.soul.wasteland",
+                    new BiomeSoulWasteland());
 }
