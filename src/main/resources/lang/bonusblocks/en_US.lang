@@ -644,7 +644,13 @@ item.dye.white.desc=A nourishing meal for plants. Can be used to color certain b
 tile.jar.glass.name=Glass Jar
 tile.jar.glass.desc=A small cup to hold your flowers and foliage.
 
-
+biome.bonusblocks.overgrown.meadow=Overgrown Meadow
+biome.bonusblocks.outback.mesa=Mesa Outback
+biome.bonusblocks.dryland=Dryland
+biome.bonusblocks.wetland=Wetland
+biome.bonusblocks.maple=Maple Forest
+biome.bonusblocks.soul.desert=Soul Desert
+biome.bonusblocks.soul.wasteland=Wasteland
 
 
 
