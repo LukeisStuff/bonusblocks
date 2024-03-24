@@ -11,7 +11,8 @@ import net.minecraft.core.world.generate.feature.tree.WorldFeatureTreeShrub;
 import java.util.Random;
 
 public class BiomeOvergrown extends Biome {
-    public BiomeOvergrown() {
+    public BiomeOvergrown(String key) {
+        super(key);
         this.topBlock = (short) BonusBlocks.overgrownGrass.id;
         this.fillerBlock = (short) Block.stone.id;
     }

@@ -5,7 +5,8 @@ import net.minecraft.core.world.biome.BiomeNether;
 
 public class BiomeSoulWasteland extends BiomeNether {
 
-    public BiomeSoulWasteland() {
+    public BiomeSoulWasteland(String key) {
+        super(key);
         this.spawnableMonsterList.clear();
         this.spawnableCreatureList.clear();
         this.spawnableWaterCreatureList.clear();

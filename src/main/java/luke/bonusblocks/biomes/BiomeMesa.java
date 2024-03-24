@@ -14,7 +14,8 @@ import net.minecraft.core.world.weather.Weather;
 import java.util.Random;
 
 public class BiomeMesa extends BiomeOutback {
-    public BiomeMesa() {
+    public BiomeMesa(String key) {
+        super(key);
         this.spawnableMonsterList.clear();
         this.spawnableCreatureList.clear();
         this.spawnableWaterCreatureList.clear();

@@ -11,7 +11,8 @@ import net.minecraft.core.world.generate.feature.tree.WorldFeatureTreeShrub;
 import java.util.Random;
 
 public class BiomeDryland extends Biome {
-    public BiomeDryland() {
+    public BiomeDryland(String key) {
+        super(key);
         this.topBlock = (short) BonusBlocks.dirtRough.id;
         this.fillerBlock = (short) BonusBlocks.dirtRough.id;
     }
