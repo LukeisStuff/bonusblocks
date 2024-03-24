@@ -30,8 +30,8 @@ tile.bonusblocks.crate.painted.lime.name=Lime Crate
 tile.bonusblocks.crate.painted.lime.desc=A colored wood crate, stained lime.
 tile.bonusblocks.crate.painted.yellow.name=Yellow Crate
 tile.bonusblocks.crate.painted.yellow.desc=A colored wood crate, stained yellow.
-tile.bonusblocks.crate.painted.lightblue.name=Light Blue Crate
-tile.bonusblocks.crate.painted.lightblue.desc=A colored wood crate, stained light blue.
+tile.bonusblocks.crate.painted.lightblue.name=Cerulean Crate
+tile.bonusblocks.crate.painted.lightblue.desc=A colored wood crate, stained cerulean.
 tile.bonusblocks.crate.painted.magenta.name=Magenta Crate
 tile.bonusblocks.crate.painted.magenta.desc=A colored wood crate, stained magenta.
 tile.bonusblocks.crate.painted.orange.name=Orange Crate
@@ -347,7 +347,7 @@ tile.bonusblocks.flower.silver.desc=A beautiful silver flower.
 tile.bonusblocks.flower.orange.name=Gladiola Flower
 tile.bonusblocks.flower.orange.desc=A beautiful orange flower.
 tile.bonusblocks.flower.lightblue.name=Pansy Flower
-tile.bonusblocks.flower.lightblue.desc=A beautiful light blue flower.
+tile.bonusblocks.flower.lightblue.desc=A beautiful cerulean flower.
 tile.bonusblocks.flower.magenta.name=Hyacinth Flower
 tile.bonusblocks.flower.magenta.desc=A beautiful magenta flower.
 
@@ -550,8 +550,8 @@ tile.bonusblocks.slab.wool.lime.name=Lime Wool Slab
 tile.bonusblocks.slab.wool.lime.desc=A slab of lime wool.
 tile.bonusblocks.slab.wool.yellow.name=Yellow Wool Slab
 tile.bonusblocks.slab.wool.yellow.desc=A slab of yellow wool.
-tile.bonusblocks.slab.wool.lightblue.name=Light Blue Wool Slab
-tile.bonusblocks.slab.wool.lightblue.desc=A slab of light blue wool.
+tile.bonusblocks.slab.wool.lightblue.name=Cerulean Wool Slab
+tile.bonusblocks.slab.wool.lightblue.desc=A slab of cerulean wool.
 tile.bonusblocks.slab.wool.magenta.name=Magenta Wool Slab
 tile.bonusblocks.slab.wool.magenta.desc=A slab of magenta wool.
 tile.bonusblocks.slab.wool.orange.name=Orange Wool Slab
@@ -583,8 +583,8 @@ tile.bonusblocks.stairs.wool.lime.name=Lime Wool Stairs
 tile.bonusblocks.stairs.wool.lime.desc=Lime wool block used for rapid vertical movement.
 tile.bonusblocks.stairs.wool.yellow.name=Yellow Wool Stairs
 tile.bonusblocks.stairs.wool.yellow.desc=Yellow wool block used for rapid vertical movement.
-tile.bonusblocks.stairs.wool.lightblue.name=Light Blue Wool Stairs
-tile.bonusblocks.stairs.wool.lightblue.desc=Light Blue wool block used for rapid vertical movement.
+tile.bonusblocks.stairs.wool.lightblue.name=Cerulean Wool Stairs
+tile.bonusblocks.stairs.wool.lightblue.desc=Cerulean wool block used for rapid vertical movement.
 tile.bonusblocks.stairs.wool.magenta.name=Magenta Wool Stairs
 tile.bonusblocks.stairs.wool.magenta.desc=Magenta wool block used for rapid vertical movement.
 tile.bonusblocks.stairs.wool.orange.name=Orange Wool Stairs
@@ -605,9 +605,26 @@ tile.slab.planks.oak.painted.silver.desc=A slab of wooden planks, stained silver
 tile.stairs.planks.oak.painted.silver.name=Silver Wooden Stairs
 tile.stairs.planks.oak.painted.silver.desc=Wooden steps, stained silver.
 tile.chest.planks.oak.painted.silver.name=Silver Wooden Chest
-tile.chest.planks.oak.painted.silver.desc=A place to store your items.
 tile.lamp.idle.silver.name=Silver Lamp
 tile.lamp.idle.silver.desc=A redstone lamp that can emit light. Tinted silver.
+
+tile.planks.oak.painted.lightblue.name=Cerulean Wooden Planks
+tile.planks.oak.painted.lightblue.desc=Wooden planks, stained cerulean.
+tile.fence.planks.oak.painted.lightblue.name=Cerulean Wooden Fence
+tile.fence.planks.oak.painted.lightblue.desc=A wooden fence, stained cerulean.
+tile.fencegate.planks.oak.painted.lightblue.name=Cerulean Wooden Fence Gate
+tile.fencegate.planks.oak.painted.lightblue.desc=A wooden fence gate, stained cerulean.
+tile.wool.lightblue.name=Cerulean Wool
+tile.wool.lightblue.desc=Sheep's wool, dyed cerulean.
+tile.slab.planks.oak.painted.lightblue.name=Cerulean Wooden Slab
+tile.slab.planks.oak.painted.lightblue.desc=A slab of wooden planks, stained cerulean.
+tile.stairs.planks.oak.painted.lightblue.name=Cerulean Wooden Stairs
+tile.stairs.planks.oak.painted.lightblue.desc=Wooden steps, stained cerulean.
+tile.chest.planks.oak.painted.lightblue.name=Cerulean Wooden Chest
+tile.lamp.idle.lightblue.name=Cerulean Lamp
+tile.lamp.idle.lightblue.desc=A redstone lamp that can emit light. Tinted cerulean.
+
+
 item.dye.silver.name=Silver Dye
 item.dye.silver.desc=Can be used to color certain blocks silver.
 item.dye.black.name=Ink Sac
@@ -634,8 +651,8 @@ item.dye.lime.name=Lime Dye
 item.dye.lime.desc=Can be used to color certain blocks lime.
 item.dye.yellow.name=Dandelion Yellow Dye
 item.dye.yellow.desc=Can be used to color certain blocks yellow.
-item.dye.lightblue.name=Light Blue Dye
-item.dye.lightblue.desc=Can be used to color certain blocks light blue.
+item.dye.lightblue.name=Cerulean Dye
+item.dye.lightblue.desc=Can be used to color certain blocks cerulean.
 item.dye.orange.name=Orange Dye
 item.dye.orange.desc=Can be used to color certain blocks orange.
 item.dye.white.name=Bonemeal
@@ -644,15 +661,14 @@ item.dye.white.desc=A nourishing meal for plants. Can be used to color certain b
 tile.jar.glass.name=Glass Jar
 tile.jar.glass.desc=A small cup to hold your flowers and foliage.
 
-biome.bonusblocks.overgrown.meadow=Overgrown Meadow
+biome.bonusblocks.overgrown.meadow=Meadow
 biome.bonusblocks.outback.mesa=Mesa Outback
 biome.bonusblocks.dryland=Dryland
 biome.bonusblocks.wetland=Wetland
 biome.bonusblocks.maple=Maple Forest
+
 biome.bonusblocks.soul.desert=Soul Desert
 biome.bonusblocks.soul.wasteland=Wasteland
-
-
 
 
 

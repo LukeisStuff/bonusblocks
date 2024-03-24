@@ -26,7 +26,7 @@ public class BiomeMesa extends BiomeOutback {
     }
 
     public WorldFeature getRandomWorldGenForTrees(Random random) {
-        if (random.nextInt(2) == 0) {
+        if (random.nextInt(10) == 0) {
             return new WorldFeatureTreeEucalyptus(0, BonusBlocks.logScorched.id);
         } else {
             return new WorldFeatureTreeShrub(Block.cobbleGranite.id, Block.cobbleGranite.id);

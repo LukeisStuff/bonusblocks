@@ -77,24 +77,56 @@
   + Copper Fence
   + Copper Pressure Plate, only lets items activate it
   + Copper Stairs/Slabs
+
+* Silver Ore
+  + Variants for stone types
+  + Drops 1-3 raw silver
+  + Generates below the halfway point in the underground
+
+* Silver Blocks
+  + Silver Block
+  + Raw Silver Block
+  + Silver Brick
+  + Silver Trapdoor
+  + Silver Door
+  + Silver Fence
+  + Silver Chandelier
+  + Silver Candelabra
+  + Silver Vase
+  + Silver Vane
+  + Silver Lantern
+  + Silver Chimes
+  + Silver Bed
+  + Silver Seat
+  + Silver Nuggets
+  + Silver Brick Stairs/Slabs
+
 * Scorched Stone
   + Has same variants as Sandstone
+
 * Slate Pillar
   + Crafted with 3 slate
+
 * Polished Marble and Polished Permafrost
   + Crafted in the same way as other polished stone blocks
+
 * Carved Marble, Carved Slate and Carved Permafrost
   + Crafted in the same way as other carved stone blocks
+
 * Baked Clay
   + Made from smelting a clay block
+
 * Obsidian Glass
   + Explosion proof, trapdoor variant
+
 * Quartz Glass
   + Reflects light that goes through
   + Crafted with 2 glass and 2 quartz
+
 * Netherrack and Cobbled Netherrack
   + Variants of Mossy Cobbled Netherrack *
   + Generate in the nether everywhere
+
 * 6 New bricks
   + Olivine
   + Quartz
@@ -102,24 +134,44 @@
   + Baked Mud
   + Scorchedstone
   + Netherrack
+  + Baked Clay
+
 * Soul Slate
   + Generates in the bottom half of the nether
   + Crafted from 4 soulsand
+
 * Brimstone
   + Generates at the very bottom of the nether
   + Extremely hard to mine, like old obsidian
   + Crafted by blast smelting netherrack
+
 * Pumice and Molten Pumice
   + Generates in the lava oceans in the nether
   + Absorbs lava like a sponge absorbs water
+  + Hurts to walk on when molten
   + Cools down when placed in water
+
+* Rough Dirt
+  + Generates in the dryland biome
+  + Crafted with dirt and baked mud
+  + Doesn't turn into grass
+
+* Moss Block
+  + Replaces mossy stones in generation
+  + Converts blocks to mossy forms
+  + Drops 4 moss clumps when mined
+
+* Skull and Skull Lantern
+  + Generates like pumpkins in the nether
+  + Can be lit with a soulwax candle
+
 * Soul Wax Candle and Soul Wax
   + Crafted with soul wax and string
   + Soul wax is made from smelting soul sand
 * More Slabs
-  + 24 blocks now have slabs to go along with them
+  + 25 blocks now have slabs to go along with them
 * More Stairs
-  + 20 blocks now have stairs to go along with them
+  + 21 blocks now have stairs to go along with them
 * Pumpkin Pie
   + Acts like a cake with only 4 slices
 * Steel Door and Steel Trapdoor
@@ -130,12 +182,16 @@
 
 ## Items
 * Soul Wax Candle and Soul Wax
-+ Soul wax is from smelting soulsand
-+ Soul wax and string crafts a candle
+  + Soul wax is from smelting soulsand
+  + Soul wax and string crafts a candle
 * Raw Copper and Copper Ingot
-* Copper Doors and Steel Door
+* Raw Silver and Silver Ingot
+* Copper Doors, Silver Door and Steel Door
+* Silver Bed and Silver Seat
 * Pumpkin Pie
-+ Crafted with 1 milk, 2 sugar, 1 egg, 2 wheat and 1 pumpkin
+  + Crafted with 1 milk, 2 sugar, 1 egg, 2 wheat and 1 pumpkin
+* Moss Clump
+  + Obtained from mining moss blocks, 4 crafts into 1 moss block
 
 
 ## Biomes

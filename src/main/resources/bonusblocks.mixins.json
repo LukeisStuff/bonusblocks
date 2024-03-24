@@ -17,6 +17,7 @@
     "EntityMixin",
     "EntityPaintingMixin",
     "EntityTrackerAccessor",
+    "GuiIngameMixin",
     "ItemDyeMixin",
     "ItemToolAxeMixin",
     "ItemToolShovelMixin",

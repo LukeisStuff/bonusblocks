@@ -213,9 +213,12 @@ public class BonusRecipes {
         templatePebbles.addInput('X', Block.ice).addInput('P', Item.ammoPebble).create("pebbles_to_permafrost", new ItemStack(Block.cobblePermafrost, 2));
 
         templatePebbles.addInput('X', Block.stone).addInput('P', BonusItems.mossball).create("stone_to_moss_stone", new ItemStack(Block.mossStone, 2));
+        templatePebbles.addInput('X', Block.cobbleStone).addInput('P', BonusItems.mossball).create("cobble_stone_to_moss_stone", new ItemStack(Block.cobbleStoneMossy, 2));
+        templatePebbles.addInput('X', Block.brickStonePolished).addInput('P', BonusItems.mossball).create("polished_stone_brick_to_mossy_polished_stone_brick", new ItemStack(Block.brickStonePolishedMossy, 2));
         templatePebbles.addInput('X', Block.basalt).addInput('P', BonusItems.mossball).create("basalt_to_moss_stone", new ItemStack(Block.mossBasalt, 2));
         templatePebbles.addInput('X', Block.limestone).addInput('P', BonusItems.mossball).create("limestone_to_moss_stone", new ItemStack(Block.mossLimestone, 2));
         templatePebbles.addInput('X', Block.granite).addInput('P', BonusItems.mossball).create("granite_to_moss_stone", new ItemStack(Block.mossGranite, 2));
+        templatePebbles.addInput('X', Block.logOak).addInput('P', BonusItems.mossball).create("oak_log_to_moss_oak_log", new ItemStack(Block.logOakMossy, 2));
 
         templatePebbles.addInput('X', BonusItems.mossball).addInput('P', BonusItems.mossball).create("moss_balls_to_moss", new ItemStack(BonusBlocks.moss, 1));
 
