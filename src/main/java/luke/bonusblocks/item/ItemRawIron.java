@@ -3,6 +3,7 @@ package luke.bonusblocks.item;
 import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.tag.BlockTags;
+import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.enums.EnumBlockSoundEffectType;
 import net.minecraft.core.item.Item;
@@ -41,7 +42,7 @@ public class ItemRawIron extends Item {
             }
             if (newMeta < 3) {
                 world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, BonusBlocks.overlayRawIron.id, newMeta);
-                world.playBlockSoundEffect((float)blockX + 0.5f, (float)blockY + 0.5f, (float)blockZ + 0.5f, BonusBlocks.overlayRawIron, EnumBlockSoundEffectType.PLACE);
+                world.playBlockSoundEffect((Entity)null, (float)blockX + 0.5f, (float)blockY + 0.5f, (float)blockZ + 0.5f, BonusBlocks.overlayRawIron, EnumBlockSoundEffectType.PLACE);
                 itemstack.consumeItem(entityplayer);
                 return true;
             }
@@ -58,7 +59,7 @@ public class ItemRawIron extends Item {
             }
             if (newMeta < 3) {
                 world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, BonusBlocks.overlayRawIron.id, newMeta);
-                world.playBlockSoundEffect((float)blockX + 0.5f, (float)blockY + 0.5f, (float)blockZ + 0.5f, BonusBlocks.overlayRawIron, EnumBlockSoundEffectType.PLACE);
+                world.playBlockSoundEffect((Entity)null, (float)blockX + 0.5f, (float)blockY + 0.5f, (float)blockZ + 0.5f, BonusBlocks.overlayRawIron, EnumBlockSoundEffectType.PLACE);
                 itemstack.consumeItem(entityplayer);
                 return true;
             }
@@ -66,7 +67,7 @@ public class ItemRawIron extends Item {
         if (world.canBlockBePlacedAt(BonusBlocks.overlayRawIron.id, blockX, blockY, blockZ, false, side) && world.isBlockOpaqueCube(blockX, blockY - 1, blockZ)) {
             if (world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, BonusBlocks.overlayRawIron.id, this.getPlacedBlockMetadata(itemstack.getMetadata()))) {
                 BonusBlocks.overlayRawIron.onBlockPlaced(world, blockX, blockY, blockZ, side, entityplayer, yPlaced);
-                world.playBlockSoundEffect((float)blockX + 0.5f, (float)blockY + 0.5f, (float)blockZ + 0.5f, BonusBlocks.overlayRawIron, EnumBlockSoundEffectType.PLACE);
+                world.playBlockSoundEffect((Entity)null, (float)blockX + 0.5f, (float)blockY + 0.5f, (float)blockZ + 0.5f, BonusBlocks.overlayRawIron, EnumBlockSoundEffectType.PLACE);
                 itemstack.consumeItem(entityplayer);
             }
             return true;

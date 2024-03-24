@@ -1,6 +1,5 @@
 package luke.bonusblocks.block;
 
-import luke.bonusblocks.BonusBlocksMod;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.Entity;
@@ -19,7 +18,7 @@ public class BlockCloth extends Block {
             entity.yd = 0.0;
         }
         else if (entity.yd < 0.0D) {
-            world.playBlockSoundEffect(x, y, z, BonusBlocks.blockCloth, EnumBlockSoundEffectType.ENTITY_LAND);
+            world.playBlockSoundEffect((Entity)null, x, y, z, BonusBlocks.blockCloth, EnumBlockSoundEffectType.ENTITY_LAND);
             entity.yd = -entity.yd;
             entity.fallDistance = 0;
         }

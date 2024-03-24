@@ -5,12 +5,13 @@ import net.minecraft.core.block.BlockSand;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
+import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.EntityFallingSand;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.ItemFirestriker;
 import net.minecraft.core.item.ItemStack;
-import net.minecraft.core.sound.SoundType;
+import net.minecraft.core.sound.SoundCategory;
 import net.minecraft.core.world.World;
 
 import java.util.Random;
@@ -37,7 +38,7 @@ public class BlockSulphur extends BlockSand {
 
     public void ignite(World world, int x, int y, int z, EntityPlayer player, boolean sound) {
         if (world.isClientSide) {
-            world.playSoundEffect(SoundType.WORLD_SOUNDS, (double)((float)x + 0.5F), (double)((float)y + 0.5F), (double)((float)z + 0.5F), "random.fuse", 1.0F, 1.0F);
+            world.playSoundEffect((Entity)null, SoundCategory.WORLD_SOUNDS, (double)((float)x + 0.5F), (double)((float)y + 0.5F), (double)((float)z + 0.5F), "random.fuse", 1.0F, 1.0F);
             if (player != null && player.inventory.getCurrentItem() != null && player.inventory.getCurrentItem().getItem() instanceof ItemFirestriker) {
                 player.inventory.getCurrentItem().damageItem(1, player);
             }
@@ -46,7 +47,7 @@ public class BlockSulphur extends BlockSand {
             world.setBlockWithNotify(x, y, z, 0);
             EntitySulphur e = new EntitySulphur(world, (double)((float)x + 0.5F), (double)((float)y + 0.5F), (double)((float)z + 0.5F));
             world.entityJoinedWorld(e);
-            world.playSoundAtEntity(e, "random.fuse", 1.0F, 1.0F);
+            world.playSoundAtEntity(e , e, "random.fuse", 1.0F, 1.0F);
             if (player != null && player.inventory.getCurrentItem() != null && player.inventory.getCurrentItem().getItem() instanceof ItemFirestriker) {
                 player.inventory.getCurrentItem().damageItem(1, player);
             }

@@ -5,7 +5,7 @@ import net.minecraft.core.block.BlockPressurePlate;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.EntityItem;
-import net.minecraft.core.sound.SoundType;
+import net.minecraft.core.sound.SoundCategory;
 import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
 
@@ -57,14 +57,14 @@ public class BlockCopperPressurePlate extends BlockPressurePlate {
             world.notifyBlocksOfNeighborChange(x, y, z, this.id);
             world.notifyBlocksOfNeighborChange(x, y - 1, z, this.id);
             world.markBlocksDirty(x, y, z, x, y, z);
-            world.playSoundEffect(SoundType.WORLD_SOUNDS, (double)x + 0.5, (double)y + 0.1, (double)z + 0.5, "random.click", 0.3f, 0.6f);
+            world.playSoundEffect((Entity)null, SoundCategory.WORLD_SOUNDS, (double)x + 0.5, (double)y + 0.1, (double)z + 0.5, "random.click", 0.3f, 0.6f);
         }
         if (!isSteppedOn && isPressed) {
             world.setBlockMetadataWithNotify(x, y, z, 0);
             world.notifyBlocksOfNeighborChange(x, y, z, this.id);
             world.notifyBlocksOfNeighborChange(x, y - 1, z, this.id);
             world.markBlocksDirty(x, y, z, x, y, z);
-            world.playSoundEffect(SoundType.WORLD_SOUNDS, (double)x + 0.5, (double)y + 0.1, (double)z + 0.5, "random.click", 0.3f, 0.5f);
+            world.playSoundEffect((Entity)null, SoundCategory.WORLD_SOUNDS, (double)x + 0.5, (double)y + 0.1, (double)z + 0.5, "random.click", 0.3f, 0.5f);
         }
         if (isSteppedOn) {
             world.scheduleBlockUpdate(x, y, z, this.id, this.tickRate());

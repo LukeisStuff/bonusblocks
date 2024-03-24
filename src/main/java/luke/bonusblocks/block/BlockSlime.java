@@ -37,7 +37,7 @@ public class BlockSlime extends BlockTransparent {
         entity.zd *= 0.4;
         if (entity.fallDistance > 1.5F) {
             entity.fallDistance = 0.0F;
-            world.playBlockSoundEffect(x, y, z, BonusBlocks.blockSlime, EnumBlockSoundEffectType.ENTITY_LAND);
+            world.playBlockSoundEffect((Entity)null, x, y, z, BonusBlocks.blockSlime, EnumBlockSoundEffectType.ENTITY_LAND);
         }
     }
 }

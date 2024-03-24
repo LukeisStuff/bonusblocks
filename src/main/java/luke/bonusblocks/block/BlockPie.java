@@ -76,7 +76,7 @@ public class BlockPie extends Block {
     }
 
     private void eatCakeSlice(World world, int i, int j, int k, EntityPlayer entityplayer) {
-        if (entityplayer.health < 20) {
+        if (entityplayer.getHealth() < 20) {
             entityplayer.heal(2);
             int l = world.getBlockMetadata(i, j, k) + 1;
             if (l >= 4) {
@@ -90,7 +90,7 @@ public class BlockPie extends Block {
     }
 
     public boolean canPlaceBlockAt(World world, int x, int y, int z) {
-        return !super.canPlaceBlockAt(world, x, y, z) ? false : this.canBlockStay(world, x, y, z);
+        return super.canPlaceBlockAt(world, x, y, z) && this.canBlockStay(world, x, y, z);
     }
 
     public void onNeighborBlockChange(World world, int x, int y, int z, int blockId) {

@@ -1,8 +1,8 @@
 package luke.bonusblocks.item;
 
-import luke.bonusblocks.BonusBlocksMod;
 import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.core.block.Block;
+import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.enums.EnumBlockSoundEffectType;
 import net.minecraft.core.item.Item;
@@ -60,7 +60,7 @@ public class ItemCopperDoor extends Item {
             world.editingBlocks = false;
             world.notifyBlocksOfNeighborChange(blockX, blockY, blockZ, doorBlockBottom.id);
             world.notifyBlocksOfNeighborChange(blockX, blockY + 1, blockZ, doorBlockTop.id);
-            world.playBlockSoundEffect((float) blockX + 0.5F, (float) blockY + 0.5F, (float) blockZ + 0.5F, doorBlockBottom, EnumBlockSoundEffectType.PLACE);
+            world.playBlockSoundEffect((Entity)null, (float) blockX + 0.5F, (float) blockY + 0.5F, (float) blockZ + 0.5F, doorBlockBottom, EnumBlockSoundEffectType.PLACE);
             itemstack.consumeItem(entityplayer);
             return true;
         }
