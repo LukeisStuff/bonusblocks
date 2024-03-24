@@ -1,7 +1,6 @@
 package luke.bonusblocks.biomes;
 
 import luke.bonusblocks.block.BonusBlocks;
-import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.BiomeNether;
 
 public class BiomeSoulWasteland extends BiomeNether {

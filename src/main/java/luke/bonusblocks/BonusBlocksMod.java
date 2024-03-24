@@ -1,6 +1,5 @@
 package luke.bonusblocks;
 
-import luke.bonusblocks.biomes.BiomeProviderNether;
 import luke.bonusblocks.block.BonusBlocks;
 import luke.bonusblocks.block.EntitySulphur;
 import luke.bonusblocks.item.BonusItems;
@@ -14,7 +13,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.EntityHelper;
 import turniplabs.halplibe.helper.SoundHelper;
-import turniplabs.halplibe.helper.TextureHelper;
 import turniplabs.halplibe.util.ClientStartEntrypoint;
 import turniplabs.halplibe.util.GameStartEntrypoint;
 
