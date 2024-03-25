@@ -2071,6 +2071,7 @@ public class BonusBlocks {
 
         //2.2 New Stuff
 
+        // Baked Clay Bricks
         brickClayBaked = stone
                 .setTextures("bakedclaybrick.png")
                 .build(new Block("brick.clay.baked", blockID("brickClayBaked"), Material.stone));
@@ -2082,6 +2083,7 @@ public class BonusBlocks {
                 .setTextures("bakedclaybrick.png")
                 .build(new BlockStairs(brickClayBaked, blockID("stairsBrickClayBaked")));
 
+        // Rough Dirt
         dirtRough = new BlockBuilder(MOD_ID)
                 .setBlockSound(new BlockSound("step.gravel", "step.gravel", 1.0f, 0.8f))
                 .setHardness(0.6f)
@@ -2090,6 +2092,7 @@ public class BonusBlocks {
                 .setTextures("roughdirt.png")
                 .build(new Block("dirt.rough", blockID("dirtRough"), Material.dirt));
 
+        // Skull
         skull = new BlockBuilder(MOD_ID)
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.8f))
                 .setHardness(0.8f)
