@@ -7,12 +7,14 @@ import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.generate.feature.WorldFeature;
 import net.minecraft.core.world.generate.feature.tree.WorldFeatureTreeFancy;
 import net.minecraft.core.world.generate.feature.tree.WorldFeatureTreeShrub;
+import net.minecraft.core.world.weather.Weather;
 
 import java.util.Random;
 
 public class BiomeDryland extends Biome {
     public BiomeDryland(String key) {
         super(key);
+        this.setBlockedWeathers(Weather.overworldSnow, Weather.overworldStorm);
         this.topBlock = (short) BonusBlocks.dirtRough.id;
         this.fillerBlock = (short) BonusBlocks.dirtRough.id;
     }

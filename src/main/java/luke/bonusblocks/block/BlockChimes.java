@@ -3,7 +3,6 @@ package luke.bonusblocks.block;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
-import net.minecraft.core.entity.Entity;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.sound.SoundCategory;
 import net.minecraft.core.util.phys.AABB;
@@ -20,7 +19,7 @@ public class BlockChimes extends Block {
 
     public void randomDisplayTick(World world, int x, int y, int z, Random rand) {
         if (rand.nextInt(100) == 0) {
-            world.playSoundEffect((Entity)null, SoundCategory.WORLD_SOUNDS, x, y, z, "bonusblocks.chimes", 0.5F, rand.nextFloat() * 0.4F + 0.8F);
+            world.playSoundEffect(null, SoundCategory.WORLD_SOUNDS, x, y, z, "bonusblocks.chimes", 0.5F, rand.nextFloat() * 0.4F + 0.8F);
         }
     }
 
