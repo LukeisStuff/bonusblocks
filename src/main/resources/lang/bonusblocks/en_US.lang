@@ -504,6 +504,8 @@ tile.bonusblocks.stairs.brick.clay.baked.desc=Baked Clay brick block used for ra
 
 tile.bonusblocks.skull.name=Skull
 tile.bonusblocks.skull.desc=A spooky skull found in the nether.
+tile.bonusblocks.skull.carved.name=Hollowed Skull
+tile.bonusblocks.skull.carved.desc=A spooky skull found in the nether.
 tile.bonusblocks.skull.active.name=Skull Lantern
 tile.bonusblocks.skull.active.desc=A spooky skull found in the nether, lit by a soul wax candle.
 

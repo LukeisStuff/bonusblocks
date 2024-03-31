@@ -62,10 +62,12 @@
 * Wicker and Thatch
   + Crafted with 2 sticks and 2 wheat/leather
   + Decoration
+
 * Copper Ore
- + Variants for stone types
- + Drops 2-6 raw copper
- + Generates at any Y level
+  + Variants for stone types
+  + Drops 2-6 raw copper
+  + Generates at any Y level
+
 * Copper Blocks
   + All copper blocks can corrode over time
   + Use an axe to scrape the corrosion off

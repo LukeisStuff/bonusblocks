@@ -285,8 +285,9 @@ public class BonusBlocks {
 
     public static Block dirtRough;
 
-    public static Block skull;
+    public static Block skullCarved;
     public static Block skullActive;
+    public static Block skull;
 
 
     private void initializeBlockDetails() {
@@ -424,6 +425,7 @@ public class BonusBlocks {
         CreativeHelper.setParent(dirtRough, dirt);
 
         CreativeHelper.setParent(skull, Block.pumpkinCarvedActive);
+        CreativeHelper.setParent(skullCarved, Block.pumpkinCarvedActive);
         CreativeHelper.setParent(skullActive, Block.pumpkinCarvedActive);
 
         CreativeHelper.setParent(glassObsidian, Block.glass);
@@ -2093,7 +2095,7 @@ public class BonusBlocks {
                 .build(new Block("dirt.rough", blockID("dirtRough"), Material.dirt));
 
         // Skull
-        skull = new BlockBuilder(MOD_ID)
+        skullCarved = new BlockBuilder(MOD_ID)
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.8f))
                 .setHardness(0.8f)
                 .setResistance(5.0f)
@@ -2101,7 +2103,7 @@ public class BonusBlocks {
                 .setSideTextures("skullside.png")
                 .setNorthTexture("skullfront.png")
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-                .build(new BlockRotatableHorizontal("skull", blockID("skull"), Material.stone) {
+                .build(new BlockRotatableHorizontal("skull.carved", blockID("skullCarved"), Material.stone) {
                 });
 
         skullActive = new BlockBuilder(MOD_ID)
@@ -2114,6 +2116,16 @@ public class BonusBlocks {
                 .setNorthTexture("skullfrontlit.png")
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE)
                 .build(new BlockRotatableHorizontal("skull.active", blockID("skullActive"), Material.stone) {
+                });
+
+        skull = new BlockBuilder(MOD_ID)
+                .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.8f))
+                .setHardness(0.8f)
+                .setResistance(5.0f)
+                .setTopBottomTexture("skulltop.png")
+                .setSideTextures("skullside.png")
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+                .build(new BlockRotatableHorizontal("skull", blockID("skull"), Material.stone) {
                 });
 
         initializeBlockDetails();
