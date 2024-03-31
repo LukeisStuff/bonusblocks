@@ -24,7 +24,7 @@ public class BonusRecipes {
 
         RecipeBuilderShaped templateItemtoBlock = new RecipeBuilderShaped(MOD_ID, "XXX", "XXX", "XXX");
         templateItemtoBlock.addInput('X', Item.bone).create("block_of_bone", new ItemStack(BonusBlocks.blockBone, 1));
-        templateItemtoBlock.addInput('X', new ItemStack(Item.dye, 1, 14)).create("skull", new ItemStack(BonusBlocks.skull, 1));
+        templateItemtoBlock.addInput('X', new ItemStack(Item.dye, 1, 15)).create("skull", new ItemStack(BonusBlocks.skull, 1));
         templateItemtoBlock.addInput('X', Item.slimeball).create("block_of_slime", new ItemStack(BonusBlocks.blockSlime, 1));
         templateItemtoBlock.addInput('X', Item.sulphur).create("block_of_sulphur", new ItemStack(BonusBlocks.blockSulphur, 1));
         templateItemtoBlock.addInput('X', Item.dustSugar).create("block_of_sugar", new ItemStack(BonusBlocks.blockSugar, 1));
