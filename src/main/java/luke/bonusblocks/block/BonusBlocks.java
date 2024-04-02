@@ -2226,7 +2226,6 @@ public class BonusBlocks {
                 .setTextures("bricklazurite.png")
                 .build(new BlockStairs(BonusBlocks.brickLazurite, blockID("stairsBrickLazurite")));
 
-
         lazuritePolished = stone
                 .setSideTextures("polishedlazuriteside.png")
                 .setTopBottomTexture("polishedlazuritetop.png")
@@ -2290,7 +2289,6 @@ public class BonusBlocks {
                 .setTextures("brickperidot.png")
                 .build(new BlockStairs(BonusBlocks.brickPeridot, blockID("stairsBrickPeridot")));
 
-
         peridotPolished = stone
                 .setSideTextures("polishedperidotside.png")
                 .setTopBottomTexture("polishedperidottop.png")
@@ -2305,6 +2303,14 @@ public class BonusBlocks {
                 .build(new BlockSlab(peridotCarved, blockID("slabPeridotPolished")));
 
         // Pot
+
+        pot = new BlockBuilder(MOD_ID)
+                .setHardness(0.5f)
+                .setResistance(1.0f)
+                .setTextures("bakedclay.png")
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+                .build(new BlockPot("pot", blockID("pot"), Material.stone) {
+                });
 
         initializeBlockDetails();
     }
