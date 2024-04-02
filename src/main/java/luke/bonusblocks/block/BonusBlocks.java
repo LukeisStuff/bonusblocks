@@ -288,6 +288,28 @@ public class BonusBlocks {
     public static Block skullActive;
     public static Block skull;
 
+    public static Block lazurite;
+    public static Block cobbleLazurite;
+    public static Block slabCobbleLazurite;
+    public static Block stairsCobbleLazurite;
+    public static Block brickLazurite;
+    public static Block slabBrickLazurite;
+    public static Block stairsBrickLazurite;
+    public static Block lazuritePolished;
+    public static Block lazuriteCarved;
+
+    public static Block peridot;
+    public static Block cobblePeridot;
+    public static Block slabCobblePeridot;
+    public static Block stairsCobblePeridot;
+    public static Block brickPeridot;
+    public static Block slabBrickPeridot;
+    public static Block stairsBrickPeridot;
+    public static Block peridotPolished;
+    public static Block peridotCarved;
+
+    public static Block pot;
+
 
     private void initializeBlockDetails() {
         ItemToolPickaxe.miningLevels.put(blockRawIron, 1);
@@ -325,6 +347,27 @@ public class BonusBlocks {
         ItemToolPickaxe.miningLevels.put(stairsCopperCorroded, 1);
         ItemToolPickaxe.miningLevels.put(slabBrickLapis, 1);
         ItemToolPickaxe.miningLevels.put(stairsBrickLapis, 1);
+
+        ItemToolPickaxe.miningLevels.put(lazurite, 1);
+        ItemToolPickaxe.miningLevels.put(cobbleLazurite, 1);
+        ItemToolPickaxe.miningLevels.put(brickLazurite, 1);
+        ItemToolPickaxe.miningLevels.put(lazuritePolished, 1);
+        ItemToolPickaxe.miningLevels.put(lazuriteCarved, 1);
+        ItemToolPickaxe.miningLevels.put(slabCobbleLazurite, 1);
+        ItemToolPickaxe.miningLevels.put(slabBrickLazurite, 1);
+        ItemToolPickaxe.miningLevels.put(stairsCobbleLazurite, 1);
+        ItemToolPickaxe.miningLevels.put(stairsBrickLazurite, 1);
+
+        ItemToolPickaxe.miningLevels.put(peridot, 1);
+        ItemToolPickaxe.miningLevels.put(cobblePeridot, 1);
+        ItemToolPickaxe.miningLevels.put(brickPeridot, 1);
+        ItemToolPickaxe.miningLevels.put(peridotPolished, 1);
+        ItemToolPickaxe.miningLevels.put(peridotCarved, 1);
+        ItemToolPickaxe.miningLevels.put(slabCobblePeridot, 1);
+        ItemToolPickaxe.miningLevels.put(slabBrickPeridot, 1);
+        ItemToolPickaxe.miningLevels.put(stairsCobblePeridot, 1);
+        ItemToolPickaxe.miningLevels.put(stairsBrickPeridot, 1);
+
 
 
         ItemToolPickaxe.miningLevels.put(blockRawGold, 2);
@@ -708,7 +751,7 @@ public class BonusBlocks {
 
         BlockBuilder stone = new BlockBuilder(MOD_ID)
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
-                .setHardness(1.0f)
+                .setHardness(1.5f)
                 .setResistance(10.0f)
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE);
 
@@ -1626,6 +1669,7 @@ public class BonusBlocks {
 
         // Polished Stones
         marblePolished = stone
+                .setHardness(1.0f)
                 .setSideTextures("polishedmarbleside.png")
                 .setTopBottomTexture("polishedmarbletop.png")
                 .build(new Block("marble.polished", blockID("marblePolished"), Material.stone));
@@ -1641,6 +1685,7 @@ public class BonusBlocks {
                 .setTopBottomTexture(8, 14)
                 .build(new Block("slate.carved", blockID("slateCarved"), Material.stone));
         marbleCarved = stone
+                .setHardness(1.0f)
                 .setSideTextures(6, 14)
                 .setTopBottomTexture(8, 14)
                 .build(new Block("marble.carved", blockID("marbleCarved"), Material.stone));
@@ -2126,6 +2171,140 @@ public class BonusBlocks {
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE)
                 .build(new BlockRotatableHorizontal("skull", blockID("skull"), Material.stone) {
                 });
+
+
+        // 2.3 New Stuff
+
+        // Lazurite
+
+        lazurite = stone
+                .setTextures("lazurite.png")
+                .setInfiniburn()
+                .build(new Block("lazurite", blockID("lazurite"), Material.stone));
+
+        cobbleLazurite = stone
+                .setHardness(2.0f)
+                .setTextures("cobblelazurite.png")
+                .setInfiniburn()
+                .build(new Block("cobble.lazurite", blockID("cobbleLazurite"), Material.stone) {
+                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+                        switch (dropCause) {
+                            case WORLD:
+                            case EXPLOSION:
+                            case PROPER_TOOL:
+                                return new ItemStack[]{new ItemStack(cobbleLazurite)};
+                            case PICK_BLOCK:
+                            case SILK_TOUCH:
+                                return new ItemStack[]{new ItemStack(this)};
+                            default:
+                                return null;
+                        }
+                    }
+                });
+
+        slabCobbleLazurite = slab
+                .setHardness(2.0F)
+                .setTextures("cobblelazurite.png")
+                .build(new BlockSlab(BonusBlocks.cobbleLazurite, blockID("slabCobbleLazurite")));
+
+        stairsCobbleLazurite = stairs
+                .setHardness(2.0F)
+                .setTextures("cobblelazurite.png")
+                .build(new BlockStairs(BonusBlocks.cobbleLazurite, blockID("stairsCobbleLazurite")));
+
+        brickLazurite = brick
+                .setHardness(0.9f)
+                .setTextures("netherbrick.png")
+                .setInfiniburn()
+                .build(new Block("brick.lazurite", blockID("brickLazurite"), Material.stone));
+
+        slabBrickLazurite = slab
+                .setHardness(2.0F)
+                .setTextures("bricklazurite.png")
+                .build(new BlockSlab(BonusBlocks.brickLazurite, blockID("slabBrickLazurite")));
+
+        stairsBrickLazurite = stairs
+                .setHardness(2.0F)
+                .setTextures("bricklazurite.png")
+                .build(new BlockStairs(BonusBlocks.brickLazurite, blockID("stairsBrickLazurite")));
+
+
+        lazuritePolished = stone
+                .setSideTextures("polishedlazuriteside.png")
+                .setTopBottomTexture("polishedlazuritetop.png")
+                .build(new Block("lazurite.polished", blockID("lazuritePolished"), Material.stone));
+
+        lazuriteCarved = stone
+                .setSideTextures("carvedlazurite.png")
+                .setTopBottomTexture("polishedlazuritetop.png")
+                .build(new Block("lazurite.carved", blockID("lazuriteCarved"), Material.stone));
+
+
+        // Peridot
+
+        peridot = stone
+                .setTextures("peridot.png")
+                .setInfiniburn()
+                .build(new Block("peridot", blockID("peridot"), Material.stone));
+
+        cobblePeridot = stone
+                .setHardness(2.0f)
+                .setTextures("cobbleperidot.png")
+                .setInfiniburn()
+                .build(new Block("cobble.peridot", blockID("cobblePeridot"), Material.stone) {
+                    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+                        switch (dropCause) {
+                            case WORLD:
+                            case EXPLOSION:
+                            case PROPER_TOOL:
+                                return new ItemStack[]{new ItemStack(cobblePeridot)};
+                            case PICK_BLOCK:
+                            case SILK_TOUCH:
+                                return new ItemStack[]{new ItemStack(this)};
+                            default:
+                                return null;
+                        }
+                    }
+                });
+
+        slabCobblePeridot = slab
+                .setHardness(2.0F)
+                .setTextures("cobbleperidot.png")
+                .build(new BlockSlab(BonusBlocks.cobblePeridot, blockID("slabCobblePeridot")));
+
+        stairsCobblePeridot = stairs
+                .setHardness(2.0F)
+                .setTextures("cobbleperidot.png")
+                .build(new BlockStairs(BonusBlocks.cobblePeridot, blockID("stairsCobblePeridot")));
+
+        brickPeridot = brick
+                .setHardness(0.9f)
+                .setTextures("netherbrick.png")
+                .setInfiniburn()
+                .build(new Block("brick.peridot", blockID("brickPeridot"), Material.stone));
+
+        slabBrickPeridot = slab
+                .setHardness(2.0F)
+                .setTextures("brickperidot.png")
+                .build(new BlockSlab(BonusBlocks.brickPeridot, blockID("slabBrickPeridot")));
+
+        stairsBrickPeridot = stairs
+                .setHardness(2.0F)
+                .setTextures("brickperidot.png")
+                .build(new BlockStairs(BonusBlocks.brickPeridot, blockID("stairsBrickPeridot")));
+
+
+        peridotPolished = stone
+                .setSideTextures("polishedperidotside.png")
+                .setTopBottomTexture("polishedperidottop.png")
+                .build(new Block("peridot.polished", blockID("peridotPolished"), Material.stone));
+
+        peridotCarved = stone
+                .setSideTextures("carvedperidot.png")
+                .setTopBottomTexture("polishedperidottop.png")
+                .build(new Block("peridot.carved", blockID("peridotCarved"), Material.stone));
+
+        // Pot
 
         initializeBlockDetails();
     }
