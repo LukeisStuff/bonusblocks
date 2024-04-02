@@ -312,6 +312,27 @@ public class BonusBlocks {
 
 
     private void initializeBlockDetails() {
+
+        ItemToolPickaxe.miningLevels.put(lazurite, 0);
+        ItemToolPickaxe.miningLevels.put(cobbleLazurite, 0);
+        ItemToolPickaxe.miningLevels.put(brickLazurite, 0);
+        ItemToolPickaxe.miningLevels.put(lazuritePolished, 0);
+        ItemToolPickaxe.miningLevels.put(lazuriteCarved, 0);
+        ItemToolPickaxe.miningLevels.put(slabCobbleLazurite, 0);
+        ItemToolPickaxe.miningLevels.put(slabBrickLazurite, 0);
+        ItemToolPickaxe.miningLevels.put(stairsCobbleLazurite, 0);
+        ItemToolPickaxe.miningLevels.put(stairsBrickLazurite, 0);
+        ItemToolPickaxe.miningLevels.put(peridot, 0);
+        ItemToolPickaxe.miningLevels.put(cobblePeridot, 0);
+        ItemToolPickaxe.miningLevels.put(brickPeridot, 0);
+        ItemToolPickaxe.miningLevels.put(peridotPolished, 0);
+        ItemToolPickaxe.miningLevels.put(peridotCarved, 0);
+        ItemToolPickaxe.miningLevels.put(slabCobblePeridot, 0);
+        ItemToolPickaxe.miningLevels.put(slabBrickPeridot, 0);
+        ItemToolPickaxe.miningLevels.put(stairsCobblePeridot, 0);
+        ItemToolPickaxe.miningLevels.put(stairsBrickPeridot, 0);
+
+
         ItemToolPickaxe.miningLevels.put(blockRawIron, 1);
         ItemToolPickaxe.miningLevels.put(blockRawCopper, 1);
         ItemToolPickaxe.miningLevels.put(oreCopperStone, 1);
@@ -347,27 +368,6 @@ public class BonusBlocks {
         ItemToolPickaxe.miningLevels.put(stairsCopperCorroded, 1);
         ItemToolPickaxe.miningLevels.put(slabBrickLapis, 1);
         ItemToolPickaxe.miningLevels.put(stairsBrickLapis, 1);
-
-        ItemToolPickaxe.miningLevels.put(lazurite, 1);
-        ItemToolPickaxe.miningLevels.put(cobbleLazurite, 1);
-        ItemToolPickaxe.miningLevels.put(brickLazurite, 1);
-        ItemToolPickaxe.miningLevels.put(lazuritePolished, 1);
-        ItemToolPickaxe.miningLevels.put(lazuriteCarved, 1);
-        ItemToolPickaxe.miningLevels.put(slabCobbleLazurite, 1);
-        ItemToolPickaxe.miningLevels.put(slabBrickLazurite, 1);
-        ItemToolPickaxe.miningLevels.put(stairsCobbleLazurite, 1);
-        ItemToolPickaxe.miningLevels.put(stairsBrickLazurite, 1);
-
-        ItemToolPickaxe.miningLevels.put(peridot, 1);
-        ItemToolPickaxe.miningLevels.put(cobblePeridot, 1);
-        ItemToolPickaxe.miningLevels.put(brickPeridot, 1);
-        ItemToolPickaxe.miningLevels.put(peridotPolished, 1);
-        ItemToolPickaxe.miningLevels.put(peridotCarved, 1);
-        ItemToolPickaxe.miningLevels.put(slabCobblePeridot, 1);
-        ItemToolPickaxe.miningLevels.put(slabBrickPeridot, 1);
-        ItemToolPickaxe.miningLevels.put(stairsCobblePeridot, 1);
-        ItemToolPickaxe.miningLevels.put(stairsBrickPeridot, 1);
-
 
 
         ItemToolPickaxe.miningLevels.put(blockRawGold, 2);
@@ -2180,13 +2180,7 @@ public class BonusBlocks {
         lazurite = stone
                 .setTextures("lazurite.png")
                 .setInfiniburn()
-                .build(new Block("lazurite", blockID("lazurite"), Material.stone));
-
-        cobbleLazurite = stone
-                .setHardness(2.0f)
-                .setTextures("cobblelazurite.png")
-                .setInfiniburn()
-                .build(new Block("cobble.lazurite", blockID("cobbleLazurite"), Material.stone) {
+                .build(new Block("lazurite", blockID("lazurite"), Material.stone) {
                     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
                         switch (dropCause) {
                             case WORLD:
@@ -2202,29 +2196,31 @@ public class BonusBlocks {
                     }
                 });
 
+        cobbleLazurite = stone
+                .setHardness(2.0f)
+                .setTextures("cobblelazurite.png")
+                .setInfiniburn()
+                .build(new Block("cobble.lazurite", blockID("cobbleLazurite"), Material.stone));
         slabCobbleLazurite = slab
                 .setHardness(2.0F)
                 .setTextures("cobblelazurite.png")
                 .build(new BlockSlab(BonusBlocks.cobbleLazurite, blockID("slabCobbleLazurite")));
-
         stairsCobbleLazurite = stairs
                 .setHardness(2.0F)
                 .setTextures("cobblelazurite.png")
                 .build(new BlockStairs(BonusBlocks.cobbleLazurite, blockID("stairsCobbleLazurite")));
 
         brickLazurite = brick
-                .setHardness(0.9f)
+                .setHardness(1.5f)
                 .setTextures("netherbrick.png")
                 .setInfiniburn()
                 .build(new Block("brick.lazurite", blockID("brickLazurite"), Material.stone));
-
         slabBrickLazurite = slab
-                .setHardness(2.0F)
+                .setHardness(1.5f)
                 .setTextures("bricklazurite.png")
                 .build(new BlockSlab(BonusBlocks.brickLazurite, blockID("slabBrickLazurite")));
-
         stairsBrickLazurite = stairs
-                .setHardness(2.0F)
+                .setHardness(1.5f)
                 .setTextures("bricklazurite.png")
                 .build(new BlockStairs(BonusBlocks.brickLazurite, blockID("stairsBrickLazurite")));
 
@@ -2233,7 +2229,6 @@ public class BonusBlocks {
                 .setSideTextures("polishedlazuriteside.png")
                 .setTopBottomTexture("polishedlazuritetop.png")
                 .build(new Block("lazurite.polished", blockID("lazuritePolished"), Material.stone));
-
         lazuriteCarved = stone
                 .setSideTextures("carvedlazurite.png")
                 .setTopBottomTexture("polishedlazuritetop.png")
@@ -2245,13 +2240,7 @@ public class BonusBlocks {
         peridot = stone
                 .setTextures("peridot.png")
                 .setInfiniburn()
-                .build(new Block("peridot", blockID("peridot"), Material.stone));
-
-        cobblePeridot = stone
-                .setHardness(2.0f)
-                .setTextures("cobbleperidot.png")
-                .setInfiniburn()
-                .build(new Block("cobble.peridot", blockID("cobblePeridot"), Material.stone) {
+                .build(new Block("peridot", blockID("peridot"), Material.stone) {
                     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
                         switch (dropCause) {
                             case WORLD:
@@ -2267,11 +2256,15 @@ public class BonusBlocks {
                     }
                 });
 
+        cobblePeridot = stone
+                .setHardness(2.0f)
+                .setTextures("cobbleperidot.png")
+                .setInfiniburn()
+                .build(new Block("cobble.peridot", blockID("cobblePeridot"), Material.stone));
         slabCobblePeridot = slab
                 .setHardness(2.0F)
                 .setTextures("cobbleperidot.png")
                 .build(new BlockSlab(BonusBlocks.cobblePeridot, blockID("slabCobblePeridot")));
-
         stairsCobblePeridot = stairs
                 .setHardness(2.0F)
                 .setTextures("cobbleperidot.png")
@@ -2282,12 +2275,10 @@ public class BonusBlocks {
                 .setTextures("netherbrick.png")
                 .setInfiniburn()
                 .build(new Block("brick.peridot", blockID("brickPeridot"), Material.stone));
-
         slabBrickPeridot = slab
                 .setHardness(2.0F)
                 .setTextures("brickperidot.png")
                 .build(new BlockSlab(BonusBlocks.brickPeridot, blockID("slabBrickPeridot")));
-
         stairsBrickPeridot = stairs
                 .setHardness(2.0F)
                 .setTextures("brickperidot.png")
@@ -2298,7 +2289,6 @@ public class BonusBlocks {
                 .setSideTextures("polishedperidotside.png")
                 .setTopBottomTexture("polishedperidottop.png")
                 .build(new Block("peridot.polished", blockID("peridotPolished"), Material.stone));
-
         peridotCarved = stone
                 .setSideTextures("carvedperidot.png")
                 .setTopBottomTexture("polishedperidottop.png")
