@@ -30,7 +30,6 @@ import useless.dragonfly.model.block.BlockModelDragonFly;
 import java.util.Random;
 
 import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
-import static net.minecraft.core.block.Block.dirt;
 import static net.minecraft.core.block.BlockMoss.stoneToMossMap;
 
 public class BonusBlocks {
@@ -422,7 +421,7 @@ public class BonusBlocks {
         CreativeHelper.setParent(overgrownGrassScorched, Block.grassScorched);
         CreativeHelper.setParent(overgrownPath, Block.pathDirt);
 
-        CreativeHelper.setParent(dirtRough, dirt);
+        CreativeHelper.setParent(dirtRough, Block.dirt);
 
         CreativeHelper.setParent(skull, Block.pumpkinCarvedActive);
         CreativeHelper.setParent(skullCarved, Block.pumpkinCarvedActive);

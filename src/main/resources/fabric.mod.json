@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "id": "bonusblocks",
-  "version": "2.2.0",
+  "version": "${version}",
 
   "name": "Bonus Blocks",
-  "description": "Adds in a plethora of new and useful blocks",
+  "description": "Adds in a plethora of new and useful blocks.",
   "authors": [
     "LukeisStuff"
   ],
