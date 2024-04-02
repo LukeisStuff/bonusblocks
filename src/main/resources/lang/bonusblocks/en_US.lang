@@ -674,5 +674,72 @@ biome.bonusblocks.soul.wasteland=Wasteland
 
 
 
+tile.bonusblocks.lazurite.name=Lazurite
+tile.bonusblocks.lazurite.desc=A block of solid lazurite.
+
+tile.bonusblocks.cobble.lazurite.name=Cobbled Lazurite
+tile.bonusblocks.cobble.lazurite.desc=Lazurite, smashed apart and reconstituted
+tile.bonusblocks.stairs.cobble.lazurite.name=Cobbled Lazurite Stairs
+tile.bonusblocks.stairs.cobble.lazurite.desc=Cobbled lazurite block used for rapid vertical movement.
+tile.bonusblocks.slab.cobble.lazurite.name=Cobbled Lazurite Slab
+tile.bonusblocks.slab.cobble.lazurite.desc=A slab of cobbled lazurite.
+
+tile.bonusblocks.brick.lazurite.name=Lazurite Brick
+tile.bonusblocks.brick.lazurite.desc=Stacked bricks of lazurite.
+tile.bonusblocks.stairs.brick.lazurite.name=Lazurite Brick Stairs
+tile.bonusblocks.stairs.brick.lazurite.desc=Lazurite brick block used for rapid vertical movement.
+tile.bonusblocks.slab.brick.lazurite.name=Lazurite Brick Slab
+tile.bonusblocks.slab.brick.lazurite.desc=A slab of lazurite bricks.
+
+tile.bonusblocks.lazurite.polished.name=Polished Lazurite
+tile.bonusblocks.lazurite.polished.desc=A polished block of lazurite.
+tile.bonusblocks.lazurite.carved.name=Carved Lazurite
+tile.bonusblocks.lazurite.carved.desc=Polished lazurite with lines hewn through the middle.
+tile.bonusblocks.slab.lazurite.carved.name=Polished Lazurite Slab
+tile.bonusblocks.slab.lazurite.carved.desc=A slab of polished lazurite.
+
+tile.bonusblocks.peridot.name=Peridot
+tile.bonusblocks.peridot.desc=A block of solid peridot.
+
+tile.bonusblocks.cobble.peridot.name=Cobbled Peridot
+tile.bonusblocks.cobble.peridot.desc=Peridot, smashed apart and reconstituted
+tile.bonusblocks.stairs.cobble.peridot.name=Cobbled Peridot Stairs
+tile.bonusblocks.stairs.cobble.peridot.desc=Cobbled peridot block used for rapid vertical movement.
+tile.bonusblocks.slab.cobble.peridot.name=Cobbled Peridot Slab
+tile.bonusblocks.slab.cobble.peridot.desc=A slab of cobbled peridot.
+
+tile.bonusblocks.brick.peridot.name=Peridot Brick
+tile.bonusblocks.brick.peridot.desc=Stacked bricks of peridot.
+tile.bonusblocks.stairs.brick.peridot.name=Peridot Brick Stairs
+tile.bonusblocks.stairs.brick.peridot.desc=Peridot brick block used for rapid vertical movement.
+tile.bonusblocks.slab.brick.peridot.name=Peridot Brick Slab
+tile.bonusblocks.slab.brick.peridot.desc=A slab of peridot bricks.
+
+tile.bonusblocks.peridot.polished.name=Polished Peridot
+tile.bonusblocks.peridot.polished.desc=A polished block of peridot.
+tile.bonusblocks.peridot.carved.name=Carved Peridot
+tile.bonusblocks.peridot.carved.desc=Polished peridot with lines hewn through the middle.
+tile.bonusblocks.slab.peridot.carved.name=Polished Peridot Slab
+tile.bonusblocks.slab.peridot.carved.desc=A slab of polished peridot.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

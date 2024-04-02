@@ -297,6 +297,7 @@ public class BonusBlocks {
     public static Block stairsBrickLazurite;
     public static Block lazuritePolished;
     public static Block lazuriteCarved;
+    public static Block slabLazuritePolished;
 
     public static Block peridot;
     public static Block cobblePeridot;
@@ -307,6 +308,7 @@ public class BonusBlocks {
     public static Block stairsBrickPeridot;
     public static Block peridotPolished;
     public static Block peridotCarved;
+    public static Block slabPeridotPolished;
 
     public static Block pot;
 
@@ -2233,6 +2235,10 @@ public class BonusBlocks {
                 .setSideTextures("carvedlazurite.png")
                 .setTopBottomTexture("polishedlazuritetop.png")
                 .build(new Block("lazurite.carved", blockID("lazuriteCarved"), Material.stone));
+        slabLazuritePolished = slab
+                .setSideTextures("carvedlazurite.png")
+                .setTopBottomTexture("polishedlazuritetop.png")
+                .build(new BlockSlab(lazuriteCarved, blockID("slabLazuritePolished")));
 
 
         // Peridot
@@ -2293,6 +2299,10 @@ public class BonusBlocks {
                 .setSideTextures("carvedperidot.png")
                 .setTopBottomTexture("polishedperidottop.png")
                 .build(new Block("peridot.carved", blockID("peridotCarved"), Material.stone));
+        slabPeridotPolished = slab
+                .setSideTextures("carvedperidot.png")
+                .setTopBottomTexture("polishedperidottop.png")
+                .build(new BlockSlab(peridotCarved, blockID("slabPeridotPolished")));
 
         // Pot
 

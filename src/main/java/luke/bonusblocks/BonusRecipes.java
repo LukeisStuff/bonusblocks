@@ -176,6 +176,8 @@ public class BonusRecipes {
         templateBricks.addInput('X', Item.quartz).create("quartz_bricks", new ItemStack(BonusBlocks.brickQuartz, 4));
         templateBricks.addInput('X', Item.olivine).create("olivine_bricks", new ItemStack(BonusBlocks.brickOlivine, 4));
         templateBricks.addInput('X', Block.soulsand).create("soulslate", new ItemStack(BonusBlocks.soulslate, 4));
+        templateBricks.addInput('X', BonusBlocks.lazurite).create("lazurite_bricks", new ItemStack(BonusBlocks.brickLazurite, 4));
+        templateBricks.addInput('X', BonusBlocks.peridot).create("peridot_bricks", new ItemStack(BonusBlocks.brickPeridot, 4));
 
         templateBricks.addInput('X', Block.dirtScorched).create("scorchedstone", new ItemStack(BonusBlocks.scorchedstone, 4));
 
@@ -212,6 +214,9 @@ public class BonusRecipes {
         RecipeBuilderShaped templatePebbles = new RecipeBuilderShaped(MOD_ID, "PX", "XP");
         templatePebbles.addInput('X', Item.quartz).addInput('P', Item.ammoPebble).create("pebbles_to_granite", new ItemStack(Block.granite, 2));
         templatePebbles.addInput('X', Block.ice).addInput('P', Item.ammoPebble).create("pebbles_to_permafrost", new ItemStack(Block.cobblePermafrost, 2));
+
+        templatePebbles.addInput('X', Item.olivine).addInput('P', Item.ammoPebble).create("pebbles_to_peridot", new ItemStack(BonusBlocks.cobblePeridot, 2));
+        templatePebbles.addInput('X', Item.dye, 4).addInput('P', Item.ammoPebble).create("pebbles_to_lazurite", new ItemStack(BonusBlocks.cobbleLazurite, 2));
 
         templatePebbles.addInput('X', Block.stone).addInput('P', BonusItems.mossball).create("stone_to_moss_stone", new ItemStack(Block.mossStone, 2));
         templatePebbles.addInput('X', Block.cobbleStone).addInput('P', BonusItems.mossball).create("cobble_stone_to_moss_stone", new ItemStack(Block.cobbleStoneMossy, 2));
@@ -386,6 +391,8 @@ public class BonusRecipes {
         templateCarvedSlab.addInput('X', BonusBlocks.slabMarblePolished).create("marble_carved", new ItemStack(BonusBlocks.marbleCarved, 1));
         templateCarvedSlab.addInput('X', BonusBlocks.slabSlatePolished).create("slate_carved", new ItemStack(BonusBlocks.slateCarved, 1));
         templateCarvedSlab.addInput('X', BonusBlocks.slabPermafrostPolished).create("permafrost_carved", new ItemStack(BonusBlocks.permafrostCarved, 1));
+        templateCarvedSlab.addInput('X', BonusBlocks.slabLazuritePolished).create("lazurite_carved", new ItemStack(BonusBlocks.lazuriteCarved, 1));
+        templateCarvedSlab.addInput('X', BonusBlocks.slabPeridotPolished).create("peridot_carved", new ItemStack(BonusBlocks.peridotCarved, 1));
 
         RecipeBuilder.Shaped(MOD_ID, "S", "W")
                 .addInput('S', (Item.string))
@@ -416,6 +423,12 @@ public class BonusRecipes {
         templateSlab.addInput('X', BonusItems.ingotCopper).create("copper_slab", new ItemStack(BonusBlocks.slabCopper, 6));
         templateSlab.addInput('X', BonusBlocks.brickSilver).create("silver_brick_slab", new ItemStack(BonusBlocks.slabBrickSilver, 6));
         templateSlab.addInput('X', BonusBlocks.brickClayBaked).create("baked_clay_slab", new ItemStack(BonusBlocks.slabBrickClayBaked, 6));
+        templateSlab.addInput('X', BonusBlocks.cobbleLazurite).create("cobbled_lazurite_slab", new ItemStack(BonusBlocks.slabCobbleLazurite, 6));
+        templateSlab.addInput('X', BonusBlocks.cobblePeridot).create("cobbled_peridot_slab", new ItemStack(BonusBlocks.slabCobblePeridot, 6));
+        templateSlab.addInput('X', BonusBlocks.brickLazurite).create("lazurite_brick_slab", new ItemStack(BonusBlocks.slabBrickLazurite, 6));
+        templateSlab.addInput('X', BonusBlocks.brickPeridot).create("peridot_brick_slab", new ItemStack(BonusBlocks.slabBrickPeridot, 6));
+        templateSlab.addInput('X', BonusBlocks.lazuritePolished).create("lazurite_polished_slab", new ItemStack(BonusBlocks.slabLazuritePolished, 6));
+        templateSlab.addInput('X', BonusBlocks.peridotPolished).create("peridot_polished_slab", new ItemStack(BonusBlocks.slabPeridotPolished, 6));
 
         RecipeBuilderShaped templateStairs = new RecipeBuilderShaped(MOD_ID, "X ", "XX ", "XXX");
         templateStairs.addInput('X', Block.brickGold).create("gold_brick_stairs", new ItemStack(BonusBlocks.stairsBrickGold, 6));
@@ -437,6 +450,10 @@ public class BonusRecipes {
         templateStairs.addInput('X', BonusItems.ingotCopper).create("copper_stairs", new ItemStack(BonusBlocks.stairsCopper, 6));
         templateStairs.addInput('X', BonusBlocks.brickSilver).create("silver_brick_stairs", new ItemStack(BonusBlocks.stairsBrickSilver, 6));
         templateStairs.addInput('X', BonusBlocks.brickClayBaked).create("baked_clay_stairs", new ItemStack(BonusBlocks.stairsBrickClayBaked, 6));
+        templateStairs.addInput('X', BonusBlocks.cobbleLazurite).create("cobbled_lazurite_stairs", new ItemStack(BonusBlocks.stairsCobbleLazurite, 6));
+        templateStairs.addInput('X', BonusBlocks.cobblePeridot).create("cobbled_peridot_stairs", new ItemStack(BonusBlocks.stairsCobblePeridot, 6));
+        templateStairs.addInput('X', BonusBlocks.brickLazurite).create("lazurite_brick_stairs", new ItemStack(BonusBlocks.stairsBrickLazurite, 6));
+        templateStairs.addInput('X', BonusBlocks.brickPeridot).create("peridot_brick_stairs", new ItemStack(BonusBlocks.stairsBrickPeridot, 6));
 
 
         RecipeBuilder.Shaped(MOD_ID, " M ", "SES", "WPW")
@@ -464,6 +481,14 @@ public class BonusRecipes {
         RecipeBuilder.Shaped(MOD_ID, "PPP", "PPP")
                 .addInput('P', BonusItems.ingotCopper)
                 .create("trapdoor_copper", new ItemStack(BonusBlocks.trapdoorCopper, 6));
+
+        RecipeBuilder.Furnace(MOD_ID)
+                .setInput(BonusBlocks.cobbleLazurite)
+                .create("cobble_lazurite_to_lazurite", BonusBlocks.lazurite.getDefaultStack());
+
+        RecipeBuilder.Furnace(MOD_ID)
+                .setInput(BonusBlocks.cobblePeridot)
+                .create("cobble_peridot_to_peridot", BonusBlocks.peridot.getDefaultStack());
 
         RecipeBuilder.Furnace(MOD_ID)
                 .setInput("bonusblocks:copper_ores")
@@ -496,6 +521,14 @@ public class BonusRecipes {
         RecipeBuilder.Furnace(MOD_ID)
                 .setInput(Block.soulsand)
                 .create("soulwax", BonusItems.soulwax.getDefaultStack());
+
+        RecipeBuilder.BlastFurnace(MOD_ID)
+                .setInput(BonusBlocks.cobbleLazurite)
+                .create("cobble_lazurite_to_lazurite_blast", BonusBlocks.lazurite.getDefaultStack());
+
+        RecipeBuilder.BlastFurnace(MOD_ID)
+                .setInput(BonusBlocks.cobblePeridot)
+                .create("cobble_peridot_to_peridot_blast", BonusBlocks.peridot.getDefaultStack());
 
         RecipeBuilder.BlastFurnace(MOD_ID)
                 .setInput("bonusblocks:copper_ores")
