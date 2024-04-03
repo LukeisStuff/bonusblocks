@@ -9,6 +9,7 @@ import luke.bonusblocks.block.silver.BlockSilverSeat;
 import luke.bonusblocks.item.BonusItems;
 import net.minecraft.client.render.block.color.BlockColorGrass;
 import net.minecraft.client.render.block.color.BlockColorLeavesOak;
+import net.minecraft.client.render.block.model.BlockModel;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.core.block.*;
 import net.minecraft.core.block.entity.TileEntity;
@@ -2309,8 +2310,8 @@ public class BonusBlocks {
                 .setResistance(1.0f)
                 .setTextures("bakedclay.png")
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-                .build(new BlockPot("pot", blockID("pot"), Material.stone) {
-                });
+                .setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(MOD_ID, "block/pot.json")))
+                .build(new BlockPot("pot", blockID("pot"), Material.stone));
 
         initializeBlockDetails();
     }

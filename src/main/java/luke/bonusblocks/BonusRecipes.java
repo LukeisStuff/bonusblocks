@@ -399,6 +399,10 @@ public class BonusRecipes {
                 .addInput('W', (BonusItems.soulwax))
                 .create("soulwax_candle", new ItemStack(BonusItems.candleSoulwax, 2));
 
+        RecipeBuilder.Shaped(MOD_ID, " B ", "B B", " B ")
+                .addInput('B', (Item.brickClay))
+                .create("clay_pot", new ItemStack(BonusBlocks.pot, 2));
+
         RecipeBuilderShaped templateSlab = new RecipeBuilderShaped(MOD_ID, "XXX");
         templateSlab.addInput('X', Block.slatePolished).create("slate_polished_slab", new ItemStack(BonusBlocks.slabSlatePolished, 6));
         templateSlab.addInput('X', BonusBlocks.marblePolished).create("marble_polished_slab", new ItemStack(BonusBlocks.slabMarblePolished, 6));
