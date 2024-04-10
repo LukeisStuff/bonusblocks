@@ -313,6 +313,8 @@ public class BonusBlocks {
 
     public static Block pot;
 
+    public static Block brickRedstone;
+
 
     private void initializeBlockDetails() {
 
@@ -2215,7 +2217,7 @@ public class BonusBlocks {
 
         brickLazurite = brick
                 .setHardness(1.5f)
-                .setTextures("netherbrick.png")
+                .setTextures("bricklazurite.png")
                 .setInfiniburn()
                 .build(new Block("brick.lazurite", blockID("brickLazurite"), Material.stone));
         slabBrickLazurite = slab
@@ -2278,7 +2280,7 @@ public class BonusBlocks {
 
         brickPeridot = brick
                 .setHardness(0.9f)
-                .setTextures("netherbrick.png")
+                .setTextures("brickperidot.png")
                 .setInfiniburn()
                 .build(new Block("brick.peridot", blockID("brickPeridot"), Material.stone));
         slabBrickPeridot = slab
@@ -2312,6 +2314,17 @@ public class BonusBlocks {
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE)
                 .setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(MOD_ID, "block/pot.json")))
                 .build(new BlockPot("pot", blockID("pot"), Material.stone));
+
+
+        //2.4 New Stuff
+
+        // Redstone Bricks
+        brickRedstone = brick
+                .setHardness(1.0f)
+                .setTextures("brickredstone.png")
+                .setInfiniburn()
+                .build(new BlockRedstoneBrick("brick.redstone", blockID("brickRedstone")));
+
 
         initializeBlockDetails();
     }
