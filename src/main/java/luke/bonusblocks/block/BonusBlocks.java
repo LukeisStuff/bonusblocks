@@ -2323,7 +2323,7 @@ public class BonusBlocks {
                 .setHardness(1.0f)
                 .setTextures("brickredstone.png")
                 .setInfiniburn()
-                .build(new BlockRedstoneBrick("brick.redstone", blockID("brickRedstone")));
+                .build(new BlockRedstoneBrick("brick.redstone", blockID("brickRedstone"), Material.stone));
 
 
         initializeBlockDetails();

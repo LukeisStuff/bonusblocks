@@ -1,5 +1,6 @@
 package luke.bonusblocks;
 
+import luke.bonusblocks.biomes.ModBiomes;
 import luke.bonusblocks.block.BonusBlocks;
 import luke.bonusblocks.block.EntitySulphur;
 import luke.bonusblocks.item.BonusItems;
@@ -54,6 +55,9 @@ public class BonusBlocksMod implements ModInitializer, ClientStartEntrypoint, Ga
 
     @Override
     public void beforeGameStart() {
+
+        new ModBiomes().initializeBiomes();
+
         addBorder(Item.ingotIron.getDefaultStack(), "/assets/bonusblocks/art/border_iron.png");
         addBorder(Item.ingotGold.getDefaultStack(), "/assets/bonusblocks/art/border_gold.png");
         addBorder(Item.ingotSteel.getDefaultStack(), "/assets/bonusblocks/art/border_steel.png");

@@ -1,16 +1,14 @@
 package luke.bonusblocks.block;
 
-import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockRedstoneWire;
 import net.minecraft.core.block.material.Material;
-import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
 
 public class BlockRedstoneBrick extends BlockRedstoneWire {
 
 
-    public BlockRedstoneBrick(String key, int id) {
+    public BlockRedstoneBrick(String key, int id, Material material) {
         super(key, id);
         this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
     }
