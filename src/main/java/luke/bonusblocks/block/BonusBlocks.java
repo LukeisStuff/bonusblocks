@@ -9,7 +9,6 @@ import luke.bonusblocks.block.silver.BlockSilverSeat;
 import luke.bonusblocks.item.BonusItems;
 import net.minecraft.client.render.block.color.BlockColorGrass;
 import net.minecraft.client.render.block.color.BlockColorLeavesOak;
-import net.minecraft.client.render.block.model.BlockModel;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.core.block.*;
 import net.minecraft.core.block.entity.TileEntity;
@@ -312,8 +311,6 @@ public class BonusBlocks {
     public static Block slabPeridotPolished;
 
     public static Block pot;
-
-    public static Block brickRedstone;
 
 
     private void initializeBlockDetails() {
@@ -2317,14 +2314,6 @@ public class BonusBlocks {
 
 
         //2.4 New Stuff
-
-        // Redstone Bricks
-        brickRedstone = brick
-                .setHardness(1.0f)
-                .setTextures("brickredstone.png")
-                .setInfiniburn()
-                .build(new BlockRedstoneBrick("brick.redstone", blockID("brickRedstone"), Material.stone));
-
 
         initializeBlockDetails();
     }
