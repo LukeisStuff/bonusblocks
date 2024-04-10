@@ -1,6 +1,6 @@
 package luke.bonusblocks.ModContainer.TerrainApi;
 
-import luke.bonusblocks.biomes.ModBiomes;
+import luke.bonusblocks.biomes.BonusBiomes;
 import luke.bonusblocks.biomes.WorldFeaturePebbles;
 import luke.bonusblocks.biomes.WorldFeaturePumice;
 import luke.bonusblocks.biomes.WorldFeatureSkull;
@@ -35,17 +35,17 @@ public class TerrainApiPlugin implements TerrainAPI {
 
         ChunkDecoratorOverworldAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.moss, 32, 1, 0.5F, false);
 
-        overworldConfig.addGrassDensity(ModBiomes.OVERWORLD_OVERGROWN_MEADOW, 2);
-        overworldConfig.addGrassDensity(ModBiomes.OVERWORLD_DRYLAND, 2);
-        overworldConfig.addGrassDensity(ModBiomes.OVERWORLD_MAPLE, 2);
+        overworldConfig.addGrassDensity(BonusBiomes.OVERWORLD_OVERGROWN_MEADOW, 2);
+        overworldConfig.addGrassDensity(BonusBiomes.OVERWORLD_DRYLAND, 2);
+        overworldConfig.addGrassDensity(BonusBiomes.OVERWORLD_MAPLE, 2);
 
-        overworldConfig.addTreeDensity(ModBiomes.OVERWORLD_MAPLE, 2);
-        overworldConfig.addTreeDensity(ModBiomes.OVERWORLD_DRYLAND, 1);
+        overworldConfig.addTreeDensity(BonusBiomes.OVERWORLD_MAPLE, 2);
+        overworldConfig.addTreeDensity(BonusBiomes.OVERWORLD_DRYLAND, 1);
 
-        overworldConfig.addLakeDensity(ModBiomes.OVERWORLD_MAPLE, 1);
-        overworldConfig.addLakeDensity(ModBiomes.OVERWORLD_OVERGROWN_MEADOW, 1);
-        overworldConfig.addLakeDensity(ModBiomes.OVERWORLD_DRYLAND, 1);
-        overworldConfig.addLakeDensity(ModBiomes.OVERWORLD_WETLAND, 4);
+        overworldConfig.addLakeDensity(BonusBiomes.OVERWORLD_MAPLE, 1);
+        overworldConfig.addLakeDensity(BonusBiomes.OVERWORLD_OVERGROWN_MEADOW, 1);
+        overworldConfig.addLakeDensity(BonusBiomes.OVERWORLD_DRYLAND, 1);
+//        overworldConfig.addLakeDensity(BonusBiomes.OVERWORLD_WETLAND, 4);
 
         overworldConfig.addFlowerDensity(Biomes.OVERWORLD_RAINFOREST, 0);
         overworldConfig.addFlowerDensity(Biomes.OVERWORLD_SWAMPLAND, 0);
@@ -84,67 +84,65 @@ public class TerrainApiPlugin implements TerrainAPI {
         overworldConfig.addYellowFlowerDensity(Biomes.OVERWORLD_OUTBACK_GRASSY, 0);
 
 
-        overworldConfig.addRandomGrassBlock(ModBiomes.OVERWORLD_OVERGROWN_MEADOW, Block.tallgrassFern);
-        overworldConfig.addRandomGrassBlock(ModBiomes.OVERWORLD_DRYLAND, Block.tallgrassFern);
-        overworldConfig.addRandomGrassBlock(ModBiomes.OVERWORLD_WETLAND, Block.tallgrassFern);
-        overworldConfig.addRandomGrassBlock(ModBiomes.OVERWORLD_MAPLE, Block.overlayPebbles);
-        overworldConfig.addRandomGrassBlock(ModBiomes.OVERWORLD_OUTBACK_MESA, Block.deadbush);
+        overworldConfig.addRandomGrassBlock(BonusBiomes.OVERWORLD_OVERGROWN_MEADOW, Block.tallgrassFern);
+        overworldConfig.addRandomGrassBlock(BonusBiomes.OVERWORLD_DRYLAND, Block.tallgrassFern);
+//        overworldConfig.addRandomGrassBlock(BonusBiomes.OVERWORLD_WETLAND, Block.tallgrassFern);
+        overworldConfig.addRandomGrassBlock(BonusBiomes.OVERWORLD_MAPLE, Block.overlayPebbles);
+        overworldConfig.addRandomGrassBlock(BonusBiomes.OVERWORLD_OUTBACK_MESA, Block.deadbush);
 
         ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.cobbleNetherrack, 24, 12, 0.0f, 1.0f, false);
         ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.netherrack, 48, 6, 0.0f, 1.0f, false);
         ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), Block.slate, 32, 4, 0.75f, 1.0f, false);
         ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.brimstone, 32, 2, 0.0f, 0.25f, false);
         ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.soulslate, 32, 4, 0.0f, 0.50f, false);
-        ChunkDecoratorNetherAPI.randomFeatures.addFeature(new WorldFeaturePumice(), 2, 1f,  4,
+        ChunkDecoratorNetherAPI.randomFeatures.addFeature(new WorldFeaturePumice(), 2, 1f, 4,
                 new Biome[]{Biomes.NETHER_NETHER});
 
-        ChunkDecoratorNetherAPI.randomFeatures.addFeature(new WorldFeatureSkull(), 3, 1f,  1,
+        ChunkDecoratorNetherAPI.randomFeatures.addFeature(new WorldFeatureSkull(), 3, 1f, 1,
                 new Biome[]{Biomes.NETHER_NETHER});
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(Block.spinifex.id), 4, -1f, 1,
-                new Biome[]{ModBiomes.OVERWORLD_OUTBACK_MESA});
+                new Biome[]{BonusBiomes.OVERWORLD_OUTBACK_MESA});
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureTreeShrub(Block.cobbleGranite.id, Block.dirtScorchedRich.id), 4, -1f, 1,
-                new Biome[]{ModBiomes.OVERWORLD_OUTBACK_MESA});
+                new Biome[]{BonusBiomes.OVERWORLD_OUTBACK_MESA});
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(Block.deadbush.id), 4, -1f, 1,
-                new Biome[]{ModBiomes.OVERWORLD_OUTBACK_MESA});
+                new Biome[]{BonusBiomes.OVERWORLD_OUTBACK_MESA});
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(Block.flowerRed.id), 4, -1f, 1,
-                new Biome[]{Biomes.OVERWORLD_FOREST, Biomes.OVERWORLD_TUNDRA, ModBiomes.OVERWORLD_OVERGROWN_MEADOW});
+                new Biome[]{Biomes.OVERWORLD_FOREST, Biomes.OVERWORLD_TUNDRA, BonusBiomes.OVERWORLD_OVERGROWN_MEADOW});
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(Block.flowerYellow.id), 4, -1f, 1,
-                new Biome[]{Biomes.OVERWORLD_BIRCH_FOREST, Biomes.OVERWORLD_PLAINS, ModBiomes.OVERWORLD_OVERGROWN_MEADOW});
+                new Biome[]{Biomes.OVERWORLD_BIRCH_FOREST, Biomes.OVERWORLD_PLAINS, BonusBiomes.OVERWORLD_OVERGROWN_MEADOW});
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.flowerCyan.id), 4, -1f, 1,
-                new Biome[]{Biomes.OVERWORLD_SWAMPLAND, Biomes.OVERWORLD_SWAMPLAND_MUDDY, ModBiomes.OVERWORLD_MAPLE, ModBiomes.OVERWORLD_OVERGROWN_MEADOW});
+                new Biome[]{Biomes.OVERWORLD_SWAMPLAND, Biomes.OVERWORLD_SWAMPLAND_MUDDY, BonusBiomes.OVERWORLD_MAPLE, BonusBiomes.OVERWORLD_OVERGROWN_MEADOW});
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.flowerPink.id), 4, -1f, 1,
-                new Biome[]{Biomes.OVERWORLD_SEASONAL_FOREST, Biomes.OVERWORLD_DESERT, ModBiomes.OVERWORLD_OVERGROWN_MEADOW});
+                new Biome[]{Biomes.OVERWORLD_SEASONAL_FOREST, Biomes.OVERWORLD_DESERT, BonusBiomes.OVERWORLD_OVERGROWN_MEADOW});
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.flowerPurple.id), 4, -1f, 1,
-                new Biome[]{Biomes.OVERWORLD_GRASSLANDS, Biomes.OVERWORLD_SHRUBLAND, ModBiomes.OVERWORLD_OVERGROWN_MEADOW});
+                new Biome[]{Biomes.OVERWORLD_GRASSLANDS, Biomes.OVERWORLD_SHRUBLAND, BonusBiomes.OVERWORLD_OVERGROWN_MEADOW});
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.flowerSilver.id), 4, -1f, 1,
-                new Biome[]{Biomes.OVERWORLD_BOREAL_FOREST, Biomes.OVERWORLD_GLACIER, ModBiomes.OVERWORLD_OVERGROWN_MEADOW});
+                new Biome[]{Biomes.OVERWORLD_BOREAL_FOREST, Biomes.OVERWORLD_GLACIER, BonusBiomes.OVERWORLD_OVERGROWN_MEADOW});
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.flowerOrange.id), 4, -1f, 1,
-                new Biome[]{Biomes.OVERWORLD_OUTBACK, Biomes.OVERWORLD_OUTBACK_GRASSY, ModBiomes.OVERWORLD_OUTBACK_MESA, ModBiomes.OVERWORLD_OVERGROWN_MEADOW});
+                new Biome[]{Biomes.OVERWORLD_OUTBACK, Biomes.OVERWORLD_OUTBACK_GRASSY, BonusBiomes.OVERWORLD_OUTBACK_MESA, BonusBiomes.OVERWORLD_OVERGROWN_MEADOW});
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.flowerMagenta.id), 4, -1f, 1,
-                new Biome[]{Biomes.OVERWORLD_TAIGA, ModBiomes.OVERWORLD_OVERGROWN_MEADOW, ModBiomes.OVERWORLD_WETLAND});
+                new Biome[]{Biomes.OVERWORLD_TAIGA, BonusBiomes.OVERWORLD_OVERGROWN_MEADOW});
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.flowerLightBlue.id), 4, -1f, 1,
-                new Biome[]{Biomes.OVERWORLD_RAINFOREST, ModBiomes.OVERWORLD_DRYLAND, ModBiomes.OVERWORLD_OVERGROWN_MEADOW});
+                new Biome[]{Biomes.OVERWORLD_RAINFOREST, BonusBiomes.OVERWORLD_DRYLAND, BonusBiomes.OVERWORLD_OVERGROWN_MEADOW});
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeaturePebbles(Block.overlayPebbles.id), 4, -1f, 1,
-                new Biome[]{Biomes.OVERWORLD_RAINFOREST, ModBiomes.OVERWORLD_DRYLAND, ModBiomes.OVERWORLD_OVERGROWN_MEADOW, Biomes.OVERWORLD_FOREST, Biomes.OVERWORLD_BOREAL_FOREST, Biomes.OVERWORLD_BIRCH_FOREST, Biomes.OVERWORLD_SHRUBLAND,
+                new Biome[]{Biomes.OVERWORLD_RAINFOREST, BonusBiomes.OVERWORLD_DRYLAND, BonusBiomes.OVERWORLD_OVERGROWN_MEADOW, Biomes.OVERWORLD_FOREST, Biomes.OVERWORLD_BOREAL_FOREST, Biomes.OVERWORLD_BIRCH_FOREST, Biomes.OVERWORLD_SHRUBLAND,
                         Biomes.OVERWORLD_OUTBACK_GRASSY, Biomes.OVERWORLD_OUTBACK, Biomes.OVERWORLD_SEASONAL_FOREST, Biomes.OVERWORLD_GRASSLANDS, Biomes.OVERWORLD_MEADOW});
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeatureSurface(new WorldFeatureFlowers(BonusBlocks.flowerLime.id), 4);
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.mushroomGray.id), 6, 1.0f);
-
-
     }
 }

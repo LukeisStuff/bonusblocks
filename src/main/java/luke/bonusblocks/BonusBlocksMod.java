@@ -1,6 +1,6 @@
 package luke.bonusblocks;
 
-import luke.bonusblocks.biomes.ModBiomes;
+import luke.bonusblocks.biomes.BonusBiomes;
 import luke.bonusblocks.block.BonusBlocks;
 import luke.bonusblocks.block.EntitySulphur;
 import luke.bonusblocks.item.BonusItems;
@@ -35,8 +35,7 @@ public class BonusBlocksMod implements ModInitializer, ClientStartEntrypoint, Ga
 
     @Override
     public void onInitialize() {
-        new BonusBlocks().initializeBlocks();
-        new BonusItems().initilizeItems();
+        LOGGER.info("BonusBlocks initialized.");
     }
 
     @Override
@@ -45,8 +44,6 @@ public class BonusBlocksMod implements ModInitializer, ClientStartEntrypoint, Ga
         SoundHelper.Client.addSound("bonusblocks", "chimes.ogg");
         Item.oreRawGold = new ItemRawGold("ore.raw.gold", 16510).setIconCoord(10, 8);
         Item.oreRawIron = new ItemRawIron("ore.raw.iron", 16511).setIconCoord(9, 8);
-//        BiomeProviderNether.init();
-        LOGGER.info("BonusBlocks initialized.");
     }
 
     @Override
@@ -56,7 +53,9 @@ public class BonusBlocksMod implements ModInitializer, ClientStartEntrypoint, Ga
     @Override
     public void beforeGameStart() {
 
-        new ModBiomes().initializeBiomes();
+        new BonusBlocks().initializeBlocks();
+        new BonusItems().initilizeItems();
+        new BonusBiomes().initializeBiomes();
 
         addBorder(Item.ingotIron.getDefaultStack(), "/assets/bonusblocks/art/border_iron.png");
         addBorder(Item.ingotGold.getDefaultStack(), "/assets/bonusblocks/art/border_gold.png");
