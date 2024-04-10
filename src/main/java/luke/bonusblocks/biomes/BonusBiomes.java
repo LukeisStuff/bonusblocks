@@ -18,7 +18,7 @@ public class BonusBiomes {
 //    public static final Biome NETHER_SOUL_WASTELAND = new BiomeSoulWasteland("bonusblocks.soul.wasteland");
 
     public void initializeBiomes() {
-        Biomes.register(BonusBlocksMod.MOD_ID+":overworld.overgrown.meadow", Biomes.OVERWORLD_MEADOW);
+        Biomes.register(BonusBlocksMod.MOD_ID+":overworld.overgrown.meadow", OVERWORLD_OVERGROWN_MEADOW);
         Biomes.register(BonusBlocksMod.MOD_ID+":overworld.outback.mesa", OVERWORLD_OUTBACK_MESA);
         Biomes.register(BonusBlocksMod.MOD_ID+":overworld.dryland", OVERWORLD_DRYLAND);
 //        Biomes.register(BonusBlocksMod.MOD_ID+":overworld.wetland", OVERWORLD_WETLAND);
