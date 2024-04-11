@@ -1842,23 +1842,6 @@ public class BonusBlocks {
                 .build(new BlockSoulCandle("candle.soulwax", blockID("candleSoulwax")));
 
 
-/*
-    bedroll = new BlockBuilder(MOD_ID)
-            .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
-            .setBlockModel(new BlockModelRenderBlocks(14))
-            .setHardness(0.2f)
-            .setResistance(0.2f)
-            .setTextures("bedrollfront.png")
-            .setTextures("bedrolltop2.png")
-            .setTextures("bedrolltop1.png")
-            .setTextures("bedrollside1.png")
-            .setTextures("bedrollside2.png")
-            .setTextures("bedrollback.png")
-            .setVisualUpdateOnMetadata()
-            .setTags(BlockTags.NOT_IN_CREATIVE_MENU, BlockTags.MINEABLE_BY_AXE)
-            .build(new BlockBedroll("bedroll", blockID("bedroll")));
-*/
-
         //Slabs
         slabWool = slab
                 .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
@@ -2314,6 +2297,23 @@ public class BonusBlocks {
 
 
         //2.4 New Stuff
+
+        /*
+    bedroll = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
+            .setBlockModel(new BlockModelRenderBlocks(14))
+            .setHardness(0.2f)
+            .setResistance(0.2f)
+            .setTextures("bedrollfront.png")
+            .setTextures("bedrolltop2.png")
+            .setTextures("bedrolltop1.png")
+            .setTextures("bedrollside1.png")
+            .setTextures("bedrollside2.png")
+            .setTextures("bedrollback.png")
+            .setVisualUpdateOnMetadata()
+            .setTags(BlockTags.NOT_IN_CREATIVE_MENU, BlockTags.MINEABLE_BY_AXE)
+            .build(new BlockBedroll("bedroll", blockID("bedroll")));
+*/
 
         initializeBlockDetails();
     }

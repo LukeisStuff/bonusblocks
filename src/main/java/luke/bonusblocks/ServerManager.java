@@ -3,11 +3,11 @@ package luke.bonusblocks;
 import luke.bonusblocks.mixin.EntityTrackerAccessor;
 import net.minecraft.core.Global;
 import net.minecraft.core.entity.Entity;
-import net.minecraft.core.entity.EntityTrackerEntry;
 import net.minecraft.core.net.packet.Packet40EntityMetadata;
 import net.minecraft.core.world.data.SynchedEntityData;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.entity.EntityTracker;
+import net.minecraft.server.entity.EntityTrackerEntry;
 
 public class ServerManager {
     public static void forceSyncEntity(Entity entity){
