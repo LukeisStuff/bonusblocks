@@ -40,8 +40,8 @@
 
   "depends": {
     "fabricloader": ">=0.13.3",
-    "terrain-api": ">=1.4.2-7.1",
-    "dragonfly": ">=1.4.4-7.1"
+    "terrain-api": ">=1.4.4-7.1",
+    "dragonfly": ">=1.4.7-7.1"
   },
   "suggests": {
   }
