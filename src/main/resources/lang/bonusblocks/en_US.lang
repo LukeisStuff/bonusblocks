@@ -293,6 +293,12 @@ item.bonusblocks.bed.silver.name=Silver Bed
 item.bonusblocks.bed.silver.desc=Take a nap in luxury.
 item.bonusblocks.seat.silver.name=Silver Seat
 item.bonusblocks.seat.silver.desc=Sit down in luxury.
+
+tile.bonusblocks.bed.silver.name=Silver Bed
+tile.bonusblocks.bed.silver.desc=Take a nap in luxury.
+tile.bonusblocks.seat.silver.name=Silver Seat
+tile.bonusblocks.seat.silver.desc=Sit down in luxury.
+
 item.bonusblocks.mossball.name=Moss Clump
 item.bonusblocks.mossball.desc=Slick and fuzzy, can be applied onto blocks.
 
