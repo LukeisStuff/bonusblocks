@@ -580,7 +580,7 @@ public class BonusRecipes implements RecipeEntrypoint {
 
         Registries.ITEM_GROUPS.register("bonusblocks:silver_ores", Registries.stackListOf(BonusBlocks.oreSilverStone, BonusBlocks.oreSilverBasalt, BonusBlocks.oreSilverGranite, BonusBlocks.oreSilverLimestone));
 
-        Registries.ITEM_GROUPS.register("bonusblocks:crates", Registries.stackListOf(BonusBlocks.box, new ItemStack(BonusBlocks.cratePainted, 1, 0),
+        Registries.ITEM_GROUPS.register("bonusblocks:crates", Registries.stackListOf(BonusBlocks.crate, new ItemStack(BonusBlocks.cratePainted, 1, 0),
                 new ItemStack(BonusBlocks.cratePainted, 1, 1),
                 new ItemStack(BonusBlocks.cratePainted, 1, 2),
                 new ItemStack(BonusBlocks.cratePainted, 1, 3),
