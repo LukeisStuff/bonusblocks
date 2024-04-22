@@ -17,7 +17,6 @@ import static net.minecraft.client.gui.guidebook.GuidebookSections.BLAST_FURNACE
 import static net.minecraft.client.gui.guidebook.GuidebookSections.FURNACE;
 
 public class BonusRecipes implements RecipeEntrypoint {
-    public static final RecipeNamespace RN = new RecipeNamespace();
 
     public void initializeRecipes() {
         RecipeBuilderShaped templateLogtoPlank = new RecipeBuilderShaped(MOD_ID, "X");
