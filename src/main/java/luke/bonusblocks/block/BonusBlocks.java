@@ -1718,7 +1718,6 @@ public class BonusBlocks {
                 .setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
                 .setHardness(0.3F)
                 .setResistance(0.3F)
-                .setLightOpacity(-1)
                 .setVisualUpdateOnMetadata()
                 .setUseInternalLight()
                 .setTextures("quartzglass.png")
