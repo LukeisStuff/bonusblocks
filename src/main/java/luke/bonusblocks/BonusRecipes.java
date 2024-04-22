@@ -551,7 +551,8 @@ public class BonusRecipes implements RecipeEntrypoint {
 
     @Override
     public void initNamespaces() {
-        Registries.RECIPES.register(BonusBlocksMod.MOD_ID, RN);
+        RecipeBuilder.initNameSpace(MOD_ID);
+        RecipeBuilder.getRecipeNamespace(MOD_ID);
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.logMaple.getDefaultStack());
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.logScorched.getDefaultStack());
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.logShrub.getDefaultStack());
