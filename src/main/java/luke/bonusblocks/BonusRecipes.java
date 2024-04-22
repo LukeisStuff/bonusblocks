@@ -613,6 +613,8 @@ public class BonusRecipes {
                 .addEntry(new WeightedRandomLootObject(Item.quartz.getDefaultStack(), 1), 0.30)
                 .create("trommel_rough_dirt");
 
+        RecipeBuilder.initNameSpace(MOD_ID);
+
     }
 
 }
