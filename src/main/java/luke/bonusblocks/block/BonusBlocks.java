@@ -312,6 +312,9 @@ public class BonusBlocks {
 
     public static Block pot;
 
+    public static Block girderIron;
+    public static Block fenceGold;
+
 
     private void initializeBlockDetails() {
 
@@ -336,6 +339,7 @@ public class BonusBlocks {
 
 
         ItemToolPickaxe.miningLevels.put(blockRawIron, 1);
+        ItemToolPickaxe.miningLevels.put(girderIron, 1);
         ItemToolPickaxe.miningLevels.put(blockRawCopper, 1);
         ItemToolPickaxe.miningLevels.put(oreCopperStone, 1);
         ItemToolPickaxe.miningLevels.put(oreCopperBasalt, 1);
@@ -373,6 +377,7 @@ public class BonusBlocks {
 
 
         ItemToolPickaxe.miningLevels.put(blockRawGold, 2);
+        ItemToolPickaxe.miningLevels.put(fenceGold, 2);
         ItemToolPickaxe.miningLevels.put(slabBrickGold, 2);
         ItemToolPickaxe.miningLevels.put(stairsBrickGold, 2);
         ItemToolPickaxe.miningLevels.put(brickSteel, 2);
@@ -567,6 +572,8 @@ public class BonusBlocks {
         CreativeHelper.setParent(fenceCopperTarnished, Block.fenceChainlink);
         CreativeHelper.setParent(fenceCopperCorroded, Block.fenceChainlink);
         CreativeHelper.setParent(fenceSilver, Block.fenceChainlink);
+        CreativeHelper.setParent(fenceGold, Block.fenceChainlink);
+
 
         CreativeHelper.setParent(pressureplateCopper, Block.pressureplateCobbleStone);
         CreativeHelper.setParent(pressureplateCopperTarnished, Block.pressureplateCobbleStone);
@@ -2296,6 +2303,21 @@ public class BonusBlocks {
 
 
         //2.4 New Stuff
+
+        girderIron = raw
+                .setTextures("irongirder.png")
+                .setVisualUpdateOnMetadata()
+                .setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(MOD_ID, "pipe.json"), ModelHelper.getOrCreateBlockState(MOD_ID, "girder_states.json"), new PipeMetaStateInterpreter(), false, 0.25f))
+                .build(new BlockGirder("girder.iron", blockID("girderIron"), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "girder.json"), false));
+
+        fenceGold = silver
+                .setBlockModel(new BlockModelRenderBlocks(31))
+                .setTextures("goldfence.png")
+                .setTextures("goldframe.png")
+                .setTextures("goldrod.png")
+                .setVisualUpdateOnMetadata()
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.CAN_HANG_OFF)
+                .build(new BlockFenceGold("fence.gold", blockID("fenceGold"), Material.metal));
 
         /*
     bedroll = new BlockBuilder(MOD_ID)
