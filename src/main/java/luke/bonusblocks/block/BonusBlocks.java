@@ -314,6 +314,7 @@ public class BonusBlocks {
 
     public static Block girderIron;
     public static Block fenceGold;
+    public static Block bedroll;
 
 
     private void initializeBlockDetails() {
@@ -2310,7 +2311,7 @@ public class BonusBlocks {
                 .setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(MOD_ID, "pipe.json"), ModelHelper.getOrCreateBlockState(MOD_ID, "girder_states.json"), new PipeMetaStateInterpreter(), false, 0.25f))
                 .build(new BlockGirder("girder.iron", blockID("girderIron"), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "girder.json"), false));
 
-        fenceGold = silver
+        fenceGold = raw
                 .setBlockModel(new BlockModelRenderBlocks(31))
                 .setTextures("goldfence.png")
                 .setTextures("goldframe.png")
@@ -2319,7 +2320,7 @@ public class BonusBlocks {
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.CAN_HANG_OFF)
                 .build(new BlockFenceGold("fence.gold", blockID("fenceGold"), Material.metal));
 
-        /*
+/*
     bedroll = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
             .setBlockModel(new BlockModelRenderBlocks(14))
@@ -2335,6 +2336,7 @@ public class BonusBlocks {
             .setTags(BlockTags.NOT_IN_CREATIVE_MENU, BlockTags.MINEABLE_BY_AXE)
             .build(new BlockBedroll("bedroll", blockID("bedroll")));
 */
+
 
         initializeBlockDetails();
     }

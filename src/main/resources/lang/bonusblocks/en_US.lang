@@ -733,9 +733,12 @@ tile.bonusblocks.pot.name=Clay Pot
 tile.bonusblocks.pot.desc=A small clay container used for decoration.
 
 
+tile.bonusblocks.fence.gold.name=Gold Fence
+tile.bonusblocks.fence.gold.desc=A fancy fence made of gold bars.
 
 
-
+tile.bonusblocks.girder.iron.name=Iron Girder
+tile.bonusblocks.girder.iron.desc=A long beam of iron, purely for decoration.
 
 
 

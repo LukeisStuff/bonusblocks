@@ -5,7 +5,6 @@ import luke.bonusblocks.item.BonusItems;
 import net.minecraft.core.WeightedRandomLootObject;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.data.registry.Registries;
-import net.minecraft.core.data.registry.recipe.RecipeNamespace;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import turniplabs.halplibe.helper.RecipeBuilder;
@@ -13,8 +12,6 @@ import turniplabs.halplibe.helper.recipeBuilders.RecipeBuilderShaped;
 import turniplabs.halplibe.util.RecipeEntrypoint;
 
 import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
-import static net.minecraft.client.gui.guidebook.GuidebookSections.BLAST_FURNACE;
-import static net.minecraft.client.gui.guidebook.GuidebookSections.FURNACE;
 
 public class BonusRecipes implements RecipeEntrypoint {
 
@@ -126,6 +123,15 @@ public class BonusRecipes implements RecipeEntrypoint {
                 .addInput('C', BonusBlocks.blockCopper)
                 .addInput('I', BonusItems.ingotCopper)
                 .create("copper_pipe", new ItemStack(BonusBlocks.pipeCopper, 8));
+
+        RecipeBuilder.Shaped(MOD_ID, "CIC")
+                .addInput('C', Block.blockIron)
+                .addInput('I', Item.ingotIron)
+                .create("iron_girder", new ItemStack(BonusBlocks.girderIron, 8));
+        RecipeBuilder.Shaped(MOD_ID, "C", "I", "C")
+                .addInput('C', Block.blockIron)
+                .addInput('I', Item.ingotIron)
+                .create("iron_girder", new ItemStack(BonusBlocks.girderIron, 8));
 
         RecipeBuilderShaped templateFlowertoDye = new RecipeBuilderShaped(MOD_ID, "X");
         templateFlowertoDye.addInput('X', BonusBlocks.flowerCyan).create("flower_cyan_to_dye", new ItemStack(Item.dye, 2, 6));
@@ -350,7 +356,7 @@ public class BonusRecipes implements RecipeEntrypoint {
         templateSlab.addInput('X', Block.cobbleStoneMossy).create("cobblestone_mossy_slab", new ItemStack(BonusBlocks.slabCobbleStoneMossy, 6));
         templateSlab.addInput('X', Block.netherrack).create("cobblestone_netherrack_mossy_slab", new ItemStack(BonusBlocks.slabCobbleNetherrackMossy, 6));
         templateSlab.addInput('X', BonusBlocks.cobbleNetherrack).create("cobblestone_netherrack_slab", new ItemStack(BonusBlocks.slabCobbleNetherrack, 6));
-        templateSlab.addInput('X', BonusItems.ingotCopper).create("copper_slab", new ItemStack(BonusBlocks.slabCopper, 6));
+        templateSlab.addInput('X', BonusItems.ingotCopper).create("copper_slab", new ItemStack(BonusBlocks.slabCopper, 3));
         templateSlab.addInput('X', BonusBlocks.brickSilver).create("silver_brick_slab", new ItemStack(BonusBlocks.slabBrickSilver, 6));
         templateSlab.addInput('X', BonusBlocks.brickClayBaked).create("baked_clay_slab", new ItemStack(BonusBlocks.slabBrickClayBaked, 6));
         templateSlab.addInput('X', BonusBlocks.cobbleLazurite).create("cobbled_lazurite_slab", new ItemStack(BonusBlocks.slabCobbleLazurite, 6));
@@ -377,7 +383,7 @@ public class BonusRecipes implements RecipeEntrypoint {
         templateStairs.addInput('X', Block.cobbleStoneMossy).create("cobblestone_mossy_stairs", new ItemStack(BonusBlocks.stairsCobbleStoneMossy, 6));
         templateStairs.addInput('X', Block.netherrack).create("cobblestone_netherrack_mossy_stairs", new ItemStack(BonusBlocks.stairsCobbleNetherrackMossy, 6));
         templateStairs.addInput('X', BonusBlocks.cobbleNetherrack).create("cobblestone_netherrack_stairs", new ItemStack(BonusBlocks.stairsCobbleNetherrack, 6));
-        templateStairs.addInput('X', BonusItems.ingotCopper).create("copper_stairs", new ItemStack(BonusBlocks.stairsCopper, 6));
+        templateStairs.addInput('X', BonusItems.ingotCopper).create("copper_stairs", new ItemStack(BonusBlocks.stairsCopper, 3));
         templateStairs.addInput('X', BonusBlocks.brickSilver).create("silver_brick_stairs", new ItemStack(BonusBlocks.stairsBrickSilver, 6));
         templateStairs.addInput('X', BonusBlocks.brickClayBaked).create("baked_clay_stairs", new ItemStack(BonusBlocks.stairsBrickClayBaked, 6));
         templateStairs.addInput('X', BonusBlocks.cobbleLazurite).create("cobbled_lazurite_stairs", new ItemStack(BonusBlocks.stairsCobbleLazurite, 6));
@@ -407,6 +413,11 @@ public class BonusRecipes implements RecipeEntrypoint {
                 .addInput('P', BonusItems.ingotSilver)
                 .addInput('C', BonusBlocks.blockSilver)
                 .create("fence_silver", new ItemStack(BonusBlocks.fenceSilver, 8));
+
+        RecipeBuilder.Shaped(MOD_ID, "CPC", "CPC")
+                .addInput('P', Item.ingotGold)
+                .addInput('C', Block.blockGold)
+                .create("fence_gold", new ItemStack(BonusBlocks.fenceGold, 8));
 
         RecipeBuilder.Shaped(MOD_ID, "PPP", "PPP")
                 .addInput('P', BonusItems.ingotCopper)

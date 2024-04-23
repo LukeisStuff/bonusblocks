@@ -31,6 +31,8 @@ public class BonusItems {
     public static Item seatSilver;
     public static Item foodPie;
     public static Item mossball;
+    public static Item bedroll;
+
     public void initilizeItems() {
         // Items
         candleSoulwax = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
@@ -72,14 +74,14 @@ public class BonusItems {
         seatSilver = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
                 new ItemPlaceable("seat.silver", itemID("seatSilver"), BonusBlocks.seatSilver), "silverseat.png");
 
-//         bedroll = ItemHelper.createItem(BonusBlocks.MOD_ID,
-//            new ItemBedroll("bedroll", itemID("bedroll")), "bedroll.png").setMaxStackSize(1);
-
         foodPie = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
                 new ItemPlaceable("food.pie", itemID("foodPie"), BonusBlocks.pie), "pie.png").setMaxStackSize(1);
 
         mossball = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
                 new Item("mossball", itemID("mossball")), "mossball.png");
+
+//        bedroll = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
+//                new ItemBedroll("bedroll", itemID("bedroll")), "bedroll.png").setMaxStackSize(1);
 
 
 

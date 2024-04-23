@@ -1,22 +1,19 @@
 package luke.bonusblocks.block;
 
-import net.minecraft.core.block.Block;
+import net.minecraft.core.block.BlockBed;
 import net.minecraft.core.block.logic.BedDirections;
-import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.player.EntityPlayer;
-import net.minecraft.core.enums.EnumSleepStatus;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
-import net.minecraft.core.world.chunk.ChunkCoordinates;
 import turniplabs.halplibe.helper.TextureHelper;
 
 import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
 
-public class BlockBedroll extends Block {
+public class BlockBedroll extends BlockBed {
     public static final int[][] headBlockToFootBlockMap = new int[][]{{0, 1}, {-1, 0}, {0, -1}, {1, 0}};
 
     public BlockBedroll(String key, int id) {
-        super(key, id, Material.cloth);
+        super(key, id);
         this.setBounds();
     }
 
@@ -52,12 +49,7 @@ public class BlockBedroll extends Block {
                     EntityPlayer player1 = null;
 
                     for (EntityPlayer p : world.players) {
-                        if (p.isPlayerSleeping()) {
-                            ChunkCoordinates pos = p.bedChunkCoordinates;
-                            if (pos.x == x && pos.y == y && pos.z == z) {
                                 player1 = p;
-                            }
-                        }
                     }
 
                     if (player1 != null) {
@@ -66,14 +58,9 @@ public class BlockBedroll extends Block {
                     }
 
                     setBedOccupied(world, x, y, z, false);
+                    world.setBlockWithNotify(x, y, z, 0);
                 }
-
-                if (player.sleepInBedAt(x, y, z) == EnumSleepStatus.OK) {
-                    setBedOccupied(world, x, y, z, true);
-                    return true;
-                } else {
-                    return true;
-                }
+                return true;
             }
         }
     }

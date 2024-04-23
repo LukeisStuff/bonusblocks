@@ -1,6 +1,9 @@
 package luke.bonusblocks.item;
 
+import luke.bonusblocks.block.BlockBedroll;
+import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.core.entity.player.EntityPlayer;
+import net.minecraft.core.enums.EnumBlockSoundEffectType;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Side;
@@ -18,7 +21,7 @@ public class ItemBedroll extends Item {
             blockZ += side.getOffsetZ();
         }
 
-//        BlockBedroll blockbedroll = (BlockBedroll) BonusBlocks.bedroll;
+        BlockBedroll blockbedroll = (BlockBedroll) BonusBlocks.bedroll;
         int i1 = entityplayer.getHorizontalPlacementDirection(null).getOpposite().getHorizontalIndex();
         byte byte0 = 0;
         byte byte1 = 0;
@@ -39,9 +42,9 @@ public class ItemBedroll extends Item {
         }
 
         if (world.isAirBlock(blockX, blockY, blockZ) && world.isAirBlock(blockX + byte0, blockY, blockZ + byte1) && world.canPlaceOnSurfaceOfBlock(blockX, blockY - 1, blockZ) && world.canPlaceOnSurfaceOfBlock(blockX + byte0, blockY - 1, blockZ + byte1) && itemstack.consumeItem(entityplayer)) {
-//            world.playBlockSoundEffect((float)blockX + 0.5F, (float)blockY + 0.5F, (float)blockZ + 0.5F, blockbedroll, EnumBlockSoundEffectType.PLACE);
-//            world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, blockbedroll.id, i1);
-//            world.setBlockAndMetadataWithNotify(blockX + byte0, blockY, blockZ + byte1, blockbedroll.id, i1 + 8);
+            world.playBlockSoundEffect(null, (float)blockX + 0.5F, (float)blockY + 0.5F, (float)blockZ + 0.5F, blockbedroll, EnumBlockSoundEffectType.PLACE);
+            world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, blockbedroll.id, i1);
+            world.setBlockAndMetadataWithNotify(blockX + byte0, blockY, blockZ + byte1, blockbedroll.id, i1 + 8);
             return true;
         } else {
             return false;
