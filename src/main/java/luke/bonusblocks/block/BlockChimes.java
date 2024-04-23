@@ -18,8 +18,8 @@ public class BlockChimes extends Block {
     }
 
     public void randomDisplayTick(World world, int x, int y, int z, Random rand) {
-        if (rand.nextInt(100) == 0) {
-            world.playSoundEffect(null, SoundCategory.WORLD_SOUNDS, x, y, z, "bonusblocks.chimes", 0.5F, rand.nextFloat() * 0.4F + 0.8F);
+        if (rand.nextInt(150) == 0) {
+            world.playSoundEffect(null, SoundCategory.WORLD_SOUNDS, x, y, z, "bonusblocks.chimes", 0.3F, rand.nextFloat() * 0.4F + 0.8F);
         }
     }
 
