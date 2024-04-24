@@ -51,8 +51,8 @@ public class BonusRecipes implements RecipeEntrypoint {
         templateBlocktoItem.addInput('X', BonusBlocks.blockRawCopper).create("block_of_raw_copper_to_raw_copper", new ItemStack(BonusItems.oreRawCopper, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockRawSilver).create("block_of_raw_silver_to_raw_silver", new ItemStack(BonusItems.oreRawSilver, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.blockLeather).create("block_of_leather_to_leather", new ItemStack(Item.leather, 9));
-        templateBlocktoItem.addInput('X', BonusBlocks.blockCopper).create("block_of_copper_to_copper", new ItemStack(BonusItems.ingotCopper, 8));
-        templateBlocktoItem.addInput('X', BonusBlocks.blockSilver).create("block_of_silver_to_silver", new ItemStack(BonusItems.ingotSilver, 8));
+        templateBlocktoItem.addInput('X', BonusBlocks.blockCopper).create("block_of_copper_to_copper", new ItemStack(BonusItems.ingotCopper, 4));
+        templateBlocktoItem.addInput('X', BonusBlocks.blockSilver).create("block_of_silver_to_silver", new ItemStack(BonusItems.ingotSilver, 4));
 
         RecipeBuilder.Shaped(MOD_ID, " S ", "SGS", "SSS")
                 .addInput('S', BonusItems.ingotSilver)
