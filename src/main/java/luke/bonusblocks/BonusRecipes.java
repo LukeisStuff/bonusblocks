@@ -404,6 +404,14 @@ public class BonusRecipes implements RecipeEntrypoint {
                 .addInput('P', BonusItems.ingotCopper)
                 .create("door_copper", new ItemStack(BonusItems.doorCopper, 2));
 
+        RecipeBuilder.Shaped(MOD_ID, "PP", "PP", "PP")
+                .addInput('P', BonusItems.ingotSilver)
+                .create("door_silver", new ItemStack(BonusItems.doorSilver, 2));
+
+        RecipeBuilder.Shaped(MOD_ID, "PP", "PP", "PP")
+                .addInput('P', Item.ingotSteel)
+                .create("door_steel", new ItemStack(BonusItems.doorSteel, 2));
+
         RecipeBuilder.Shaped(MOD_ID, "CPC", "CPC")
                 .addInput('P', BonusItems.ingotCopper)
                 .addInput('C', BonusBlocks.blockCopper)
@@ -422,6 +430,14 @@ public class BonusRecipes implements RecipeEntrypoint {
         RecipeBuilder.Shaped(MOD_ID, "PPP", "PPP")
                 .addInput('P', BonusItems.ingotCopper)
                 .create("trapdoor_copper", new ItemStack(BonusBlocks.trapdoorCopper, 6));
+
+        RecipeBuilder.Shaped(MOD_ID, "PPP", "PPP")
+                .addInput('P', BonusItems.ingotCopper)
+                .create("trapdoor_silver", new ItemStack(BonusBlocks.trapdoorSilver, 6));
+
+        RecipeBuilder.Shaped(MOD_ID, "PPP", "PPP")
+                .addInput('P', Item.ingotSteel)
+                .create("trapdoor_steel", new ItemStack(BonusBlocks.trapdoorSteel, 6));
 
         RecipeBuilder.Furnace(MOD_ID)
                 .setInput(BonusBlocks.cobbleLazurite)
