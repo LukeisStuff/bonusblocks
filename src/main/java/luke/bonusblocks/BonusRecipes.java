@@ -432,7 +432,7 @@ public class BonusRecipes implements RecipeEntrypoint {
                 .create("trapdoor_copper", new ItemStack(BonusBlocks.trapdoorCopper, 6));
 
         RecipeBuilder.Shaped(MOD_ID, "PPP", "PPP")
-                .addInput('P', BonusItems.ingotCopper)
+                .addInput('P', BonusItems.ingotSilver)
                 .create("trapdoor_silver", new ItemStack(BonusBlocks.trapdoorSilver, 6));
 
         RecipeBuilder.Shaped(MOD_ID, "PPP", "PPP")
