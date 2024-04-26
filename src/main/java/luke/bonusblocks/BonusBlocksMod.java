@@ -8,27 +8,22 @@ import luke.bonusblocks.item.ItemRawGold;
 import luke.bonusblocks.item.ItemRawIron;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.render.entity.FallingSandRenderer;
-import net.minecraft.core.block.Block;
-import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.EntityHelper;
-import turniplabs.halplibe.helper.RecipeBuilder;
 import turniplabs.halplibe.helper.SoundHelper;
 import turniplabs.halplibe.util.ClientStartEntrypoint;
 import turniplabs.halplibe.util.GameStartEntrypoint;
-import turniplabs.halplibe.util.RecipeEntrypoint;
 
 import java.util.HashMap;
-
-import static net.minecraft.client.gui.guidebook.GuidebookSections.FURNACE;
 
 
 public class BonusBlocksMod implements ModInitializer, ClientStartEntrypoint, GameStartEntrypoint {
     public static final String MOD_ID = "bonusblocks";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+    private static int entityID = 300;
 
 
     private static final HashMap<String, String> borderMaterialMap = new HashMap<>();
@@ -58,7 +53,7 @@ public class BonusBlocksMod implements ModInitializer, ClientStartEntrypoint, Ga
 
     @Override
     public void beforeGameStart() {
-
+        EntityHelper.Core.createEntity(EntitySulphur.class, entityID++, "FallingSulphur");
         new BonusBlocks().initializeBlocks();
         new BonusItems().initilizeItems();
         new BonusBiomes().initializeBiomes();
