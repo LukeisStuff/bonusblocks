@@ -1088,7 +1088,7 @@ public class BonusBlocks {
                 .setResistance(0.5f)
                 .setTextures("sulphurblock.png")
                 .setTags(BlockTags.MINEABLE_BY_SHOVEL)
-                .build(new Block("block.sulphur", blockID("blockSulphur"), Material.explosive));
+                .build(new BlockSulphur("block.sulphur", blockID("blockSulphur"), Material.explosive));
 
         // Sugar Block
         blockSugar = new BlockBuilder(MOD_ID)
@@ -1097,7 +1097,7 @@ public class BonusBlocks {
                 .setResistance(0.3f)
                 .setTextures("sugarblock.png")
                 .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.BROKEN_BY_FLUIDS)
-                .build(new Block("block.sugar", blockID("blockSugar"), Material.cake));
+                .build(new BlockSand("block.sugar", blockID("blockSugar")));
 
         // Leather Block
         blockLeather = new BlockBuilder(MOD_ID)
