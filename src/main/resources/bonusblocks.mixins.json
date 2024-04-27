@@ -24,7 +24,8 @@
     "PaintingPacketMixin",
     "PaintingRendererMixin",
     "SurfaceGeneratorOverworldMixin",
-    "WorldFeatureLabyrinthMixin"
+    "WorldFeatureLabyrinthMixin",
+    "EntityTrackerEntryMixin"
   ],
   "client": [
   ],
