@@ -4,11 +4,9 @@ import luke.bonusblocks.IPaintingSynced;
 import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.client.net.handler.NetClientHandler;
 import net.minecraft.client.world.WorldClient;
-import net.minecraft.core.block.Block;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.EntityFallingSand;
 import net.minecraft.core.entity.EntityPainting;
-import net.minecraft.core.entity.vehicle.EntityMinecart;
 import net.minecraft.core.net.packet.Packet23VehicleSpawn;
 import net.minecraft.core.net.packet.Packet25EntityPainting;
 import org.spongepowered.asm.mixin.Mixin;
@@ -36,10 +34,10 @@ public class NetClientHandlerMixin {
     @Inject(method = "Lnet/minecraft/client/net/handler/NetClientHandler;handleVehicleSpawn(Lnet/minecraft/core/net/packet/Packet23VehicleSpawn;)V", at = @At("TAIL"), locals = LocalCapture.CAPTURE_FAILHARD)
     private void handleVehicleSpawn(Packet23VehicleSpawn packet23vehiclespawn, CallbackInfo ci, double xPosition, double yPosition, double zPosition, Entity newEntity, Entity entity){
         if (packet23vehiclespawn.type == 85) {
-            newEntity = new EntityFallingSand(this.worldClient, xPosition, yPosition, zPosition, BonusBlocks.blockSulphur.id);
+            new EntityFallingSand(this.worldClient, xPosition, yPosition, zPosition, BonusBlocks.blockSulphur.id);
         }
         if (packet23vehiclespawn.type == 86) {
-            newEntity = new EntityFallingSand(this.worldClient, xPosition, yPosition, zPosition, BonusBlocks.blockSugar.id);
+            new EntityFallingSand(this.worldClient, xPosition, yPosition, zPosition, BonusBlocks.blockSugar.id);
         }
     }
 }
