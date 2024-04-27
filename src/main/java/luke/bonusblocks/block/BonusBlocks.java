@@ -1088,7 +1088,7 @@ public class BonusBlocks {
                 .setResistance(0.5f)
                 .setTextures("sulphurblock.png")
                 .setTags(BlockTags.MINEABLE_BY_SHOVEL)
-                .build(new BlockSulphur("block.sulphur", blockID("blockSulphur"), Material.explosive));
+                .build(new BlockSand("block.sulphur", blockID("blockSulphur")));
 
         // Sugar Block
         blockSugar = new BlockBuilder(MOD_ID)
