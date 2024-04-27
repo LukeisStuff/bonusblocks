@@ -425,7 +425,7 @@ public class BonusRecipes implements RecipeEntrypoint {
         RecipeBuilder.Shaped(MOD_ID, "CPC", "CPC")
                 .addInput('P', Item.ingotGold)
                 .addInput('C', Block.blockGold)
-                .create("fence_gold", new ItemStack(BonusBlocks.fenceGold, 8));
+                .create("fence_gold", new ItemStack(BonusBlocks.fenceGold, 16));
 
         RecipeBuilder.Shaped(MOD_ID, "PPP", "PPP")
                 .addInput('P', BonusItems.ingotCopper)
