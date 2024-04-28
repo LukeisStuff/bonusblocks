@@ -31,13 +31,27 @@ public class NetClientHandlerMixin {
     }
 
 
-    @Inject(method = "Lnet/minecraft/client/net/handler/NetClientHandler;handleVehicleSpawn(Lnet/minecraft/core/net/packet/Packet23VehicleSpawn;)V", at = @At("TAIL"), locals = LocalCapture.CAPTURE_FAILHARD)
-    private void handleVehicleSpawn(Packet23VehicleSpawn packet23vehiclespawn, CallbackInfo ci, double xPosition, double yPosition, double zPosition, Entity newEntity, Entity entity){
+    @Inject(method = "Lnet/minecraft/client/net/handler/NetClientHandler;handleVehicleSpawn(Lnet/minecraft/core/net/packet/Packet23VehicleSpawn;)V", at = @At("HEAD"), cancellable = true)
+    private void handleVehicleSpawn(Packet23VehicleSpawn packet23vehiclespawn, CallbackInfo ci) {
+        double xPosition = packet23vehiclespawn.xPosition / 32.0D;
+        double yPosition = packet23vehiclespawn.yPosition / 32.0D;
+        double zPosition = packet23vehiclespawn.zPosition / 32.0D;
+        Entity newEntity = null;
         if (packet23vehiclespawn.type == 85) {
-            new EntityFallingSand(this.worldClient, xPosition, yPosition, zPosition, BonusBlocks.blockSulphur.id);
+            newEntity = new EntityFallingSand(this.worldClient, xPosition, yPosition, zPosition, BonusBlocks.blockSulphur.id);
+        } else if (packet23vehiclespawn.type == 86) {
+            newEntity = new EntityFallingSand(this.worldClient, xPosition, yPosition, zPosition, BonusBlocks.blockSugar.id);
         }
-        if (packet23vehiclespawn.type == 86) {
-            new EntityFallingSand(this.worldClient, xPosition, yPosition, zPosition, BonusBlocks.blockSugar.id);
+        if (newEntity != null) {
+            newEntity.serverPosX = packet23vehiclespawn.xPosition;
+            newEntity.serverPosY = packet23vehiclespawn.yPosition;
+            newEntity.serverPosZ = packet23vehiclespawn.zPosition;
+            newEntity.yRot = packet23vehiclespawn.yaw;
+            newEntity.xRot = packet23vehiclespawn.pitch;
+            newEntity.id = packet23vehiclespawn.entityId;
+            worldClient.func_712_a(packet23vehiclespawn.entityId, newEntity);
+            newEntity.lerpMotion(packet23vehiclespawn.xVelocity / 8000.0D, packet23vehiclespawn.yVelocity / 8000.0D, packet23vehiclespawn.zVelocity / 8000.0D);
+            ci.cancel();
         }
     }
 }
