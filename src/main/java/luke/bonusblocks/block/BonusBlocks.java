@@ -433,9 +433,9 @@ public class BonusBlocks {
         LookupFuelFurnace.instance.addFuelEntry(bookshelfEmptyPlanksOak.id, 300);
         LookupFuelFurnace.instance.addFuelEntry(thatch.id, 400);
         LookupFuelFurnace.instance.addFuelEntry(branch.id, 300);
-        LookupFuelFurnace.instance.addFuelEntry(saplingJacaranda.id, 10);
-        LookupFuelFurnace.instance.addFuelEntry(saplingMaple.id, 10);
-        LookupFuelFurnace.instance.addFuelEntry(saplingOakMossy.id, 10);
+        LookupFuelFurnace.instance.addFuelEntry(saplingJacaranda.id, 100);
+        LookupFuelFurnace.instance.addFuelEntry(saplingMaple.id, 100);
+        LookupFuelFurnace.instance.addFuelEntry(saplingOakMossy.id, 100);
 
         CreativeHelper.setParent(netherrack, Block.permafrost);
 
