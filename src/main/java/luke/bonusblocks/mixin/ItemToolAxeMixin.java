@@ -31,6 +31,7 @@ public class ItemToolAxeMixin extends ItemTool {
                 itemstack.damageItem(1, entityplayer);
                 entityplayer.swingItem();
             }
+            entityplayer.swingItem();
         }
         if (i1 == BonusBlocks.blockCopperTarnished.id) {
             Block copperBlock = BonusBlocks.blockCopper;
@@ -40,6 +41,7 @@ public class ItemToolAxeMixin extends ItemTool {
                 itemstack.damageItem(1, entityplayer);
                 entityplayer.swingItem();
             }
+            entityplayer.swingItem();
         }
         if (i1 == BonusBlocks.meshCopperCorroded.id) {
             Block copperBlock2 = BonusBlocks.meshCopperTarnished;
@@ -49,6 +51,7 @@ public class ItemToolAxeMixin extends ItemTool {
                 itemstack.damageItem(1, entityplayer);
                 entityplayer.swingItem();
             }
+            entityplayer.swingItem();
         }
         if (i1 == BonusBlocks.meshCopperTarnished.id) {
             Block copperBlock2 = BonusBlocks.meshCopper;
@@ -58,6 +61,7 @@ public class ItemToolAxeMixin extends ItemTool {
                 itemstack.damageItem(1, entityplayer);
                 entityplayer.swingItem();
             }
+            entityplayer.swingItem();
         }
         if (i1 == BonusBlocks.blockRawCopperCorroded.id) {
             Block copperBlock2 = BonusBlocks.blockRawCopperTarnished;
@@ -67,6 +71,7 @@ public class ItemToolAxeMixin extends ItemTool {
                 itemstack.damageItem(1, entityplayer);
                 entityplayer.swingItem();
             }
+            entityplayer.swingItem();
         }
         if (i1 == BonusBlocks.blockRawCopperTarnished.id) {
             Block copperBlock2 = BonusBlocks.blockRawCopper;
@@ -76,6 +81,7 @@ public class ItemToolAxeMixin extends ItemTool {
                 itemstack.damageItem(1, entityplayer);
                 entityplayer.swingItem();
             }
+            entityplayer.swingItem();
         }
         if (i1 == BonusBlocks.slabCopperCorroded.id) {
             Block copperBlock2 = BonusBlocks.slabCopperTarnished;
@@ -85,6 +91,7 @@ public class ItemToolAxeMixin extends ItemTool {
                 itemstack.damageItem(1, entityplayer);
                 entityplayer.swingItem();
             }
+            entityplayer.swingItem();
         }
         if (i1 == BonusBlocks.slabCopperTarnished.id) {
             Block copperBlock2 = BonusBlocks.slabCopper;
@@ -94,6 +101,7 @@ public class ItemToolAxeMixin extends ItemTool {
                 itemstack.damageItem(1, entityplayer);
                 entityplayer.swingItem();
             }
+            entityplayer.swingItem();
         }
         if (i1 == BonusBlocks.pressureplateCopperCorroded.id) {
             Block copperBlock2 = BonusBlocks.pressureplateCopperTarnished;
@@ -103,6 +111,7 @@ public class ItemToolAxeMixin extends ItemTool {
                 itemstack.damageItem(1, entityplayer);
                 entityplayer.swingItem();
             }
+            entityplayer.swingItem();
         }
         if (i1 == BonusBlocks.pressureplateCopperTarnished.id) {
             Block copperBlock2 = BonusBlocks.pressureplateCopper;
@@ -112,6 +121,7 @@ public class ItemToolAxeMixin extends ItemTool {
                 itemstack.damageItem(1, entityplayer);
                 entityplayer.swingItem();
             }
+            entityplayer.swingItem();
         }
         if (i1 == BonusBlocks.stairsCopperCorroded.id) {
             Block copperBlock2 = BonusBlocks.stairsCopperTarnished;
@@ -121,6 +131,7 @@ public class ItemToolAxeMixin extends ItemTool {
                 itemstack.damageItem(1, entityplayer);
                 entityplayer.swingItem();
             }
+            entityplayer.swingItem();
         }
         if (i1 == BonusBlocks.stairsCopperTarnished.id) {
             Block copperBlock2 = BonusBlocks.stairsCopper;
@@ -130,6 +141,7 @@ public class ItemToolAxeMixin extends ItemTool {
                 itemstack.damageItem(1, entityplayer);
                 entityplayer.swingItem();
             }
+            entityplayer.swingItem();
         }
         if (i1 == BonusBlocks.pipeCopperCorroded.id) {
             Block copperBlock = BonusBlocks.pipeCopperTarnished;
@@ -139,6 +151,7 @@ public class ItemToolAxeMixin extends ItemTool {
                 itemstack.damageItem(1, entityplayer);
                 entityplayer.swingItem();
             }
+            entityplayer.swingItem();
         }
         if (i1 == BonusBlocks.pipeCopperTarnished.id) {
             Block copperBlock = BonusBlocks.pipeCopper;
@@ -148,6 +161,7 @@ public class ItemToolAxeMixin extends ItemTool {
                 itemstack.damageItem(1, entityplayer);
                 entityplayer.swingItem();
             }
+            entityplayer.swingItem();
         }
         if (i1 == BonusBlocks.trapdoorCopperCorroded.id) {
             Block copperBlock = BonusBlocks.trapdoorCopperTarnished;
@@ -157,6 +171,7 @@ public class ItemToolAxeMixin extends ItemTool {
                 itemstack.damageItem(1, entityplayer);
                 entityplayer.swingItem();
             }
+            entityplayer.swingItem();
         }
         if (i1 == BonusBlocks.trapdoorCopperTarnished.id) {
             Block copperBlock = BonusBlocks.trapdoorCopper;
@@ -166,6 +181,7 @@ public class ItemToolAxeMixin extends ItemTool {
                 itemstack.damageItem(1, entityplayer);
                 entityplayer.swingItem();
             }
+            entityplayer.swingItem();
         }
         if (i1 == BonusBlocks.fenceCopperCorroded.id) {
             Block copperBlock = BonusBlocks.fenceCopperTarnished;
@@ -175,6 +191,7 @@ public class ItemToolAxeMixin extends ItemTool {
                 itemstack.damageItem(1, entityplayer);
                 entityplayer.swingItem();
             }
+            entityplayer.swingItem();
         }
         if (i1 == BonusBlocks.fenceCopperTarnished.id) {
             Block copperBlock = BonusBlocks.fenceCopper;
@@ -184,6 +201,7 @@ public class ItemToolAxeMixin extends ItemTool {
                 itemstack.damageItem(1, entityplayer);
                 entityplayer.swingItem();
             }
+            entityplayer.swingItem();
         }
         if (i1 == BonusBlocks.doorCopperCorrodedTop.id) {
             Block copperBlock = BonusBlocks.doorCopperTarnishedTop;
@@ -195,6 +213,7 @@ public class ItemToolAxeMixin extends ItemTool {
                 itemstack.damageItem(2, entityplayer);
                 entityplayer.swingItem();
             }
+            entityplayer.swingItem();
         }
         if (i1 == BonusBlocks.doorCopperCorrodedBottom.id) {
             Block copperBlock = BonusBlocks.doorCopperTarnishedBottom;
@@ -206,6 +225,7 @@ public class ItemToolAxeMixin extends ItemTool {
                 itemstack.damageItem(2, entityplayer);
                 entityplayer.swingItem();
             }
+            entityplayer.swingItem();
         }
         if (i1 == BonusBlocks.doorCopperTarnishedTop.id) {
             Block copperBlock = BonusBlocks.doorCopperTop;
@@ -217,6 +237,7 @@ public class ItemToolAxeMixin extends ItemTool {
                 itemstack.damageItem(2, entityplayer);
                 entityplayer.swingItem();
             }
+            entityplayer.swingItem();
         }
         if (i1 == BonusBlocks.doorCopperTarnishedBottom.id) {
             Block copperBlock = BonusBlocks.doorCopperBottom;
@@ -228,6 +249,7 @@ public class ItemToolAxeMixin extends ItemTool {
                 itemstack.damageItem(2, entityplayer);
                 entityplayer.swingItem();
             }
+            entityplayer.swingItem();
         }
         return false;
     }
