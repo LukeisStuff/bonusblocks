@@ -392,14 +392,6 @@ public class BonusRecipes implements RecipeEntrypoint {
         templateStairs.addInput('X', BonusBlocks.brickPeridot).create("peridot_brick_stairs", new ItemStack(BonusBlocks.stairsBrickPeridot, 6));
 
 
-        RecipeBuilder.Shaped(MOD_ID, " M ", "SES", "WPW")
-                .addInput('M', (Item.bucketMilk))
-                .addInput('W', (Item.wheat))
-                .addInput('S', (Item.dustSugar))
-                .addInput('E', (Item.eggChicken))
-                .addInput('P', (Block.pumpkin))
-                .create("pumpkin_pie", new ItemStack(BonusItems.foodPie, 1));
-
         RecipeBuilder.Shaped(MOD_ID, "PP", "PP", "PP")
                 .addInput('P', BonusItems.ingotCopper)
                 .create("door_copper", new ItemStack(BonusItems.doorCopper, 2));
