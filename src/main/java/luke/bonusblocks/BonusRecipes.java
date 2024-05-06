@@ -134,11 +134,11 @@ public class BonusRecipes implements RecipeEntrypoint {
                 .create("iron_girder", new ItemStack(BonusBlocks.girderIron, 8));
 
         RecipeBuilderShaped templateFlowertoDye = new RecipeBuilderShaped(MOD_ID, "X");
-        templateFlowertoDye.addInput('X', BonusBlocks.flowerCyan).create("flower_cyan_to_dye", new ItemStack(Item.dye, 2, 6));
-        templateFlowertoDye.addInput('X', BonusBlocks.flowerPurple).create("flower_purple_to_dye", new ItemStack(Item.dye, 2, 5));
-        templateFlowertoDye.addInput('X', BonusBlocks.flowerPink).create("flower_pink_to_dye", new ItemStack(Item.dye, 2, 9));
+        templateFlowertoDye.addInput('X', Block.flowerLightBlue).create("flower_cyan_to_dye", new ItemStack(Item.dye, 2, 6));
+        templateFlowertoDye.addInput('X', Block.flowerPurple).create("flower_purple_to_dye", new ItemStack(Item.dye, 2, 5));
+        templateFlowertoDye.addInput('X', Block.flowerPink).create("flower_pink_to_dye", new ItemStack(Item.dye, 2, 9));
         templateFlowertoDye.addInput('X', BonusBlocks.flowerSilver).create("flower_silver_to_dye", new ItemStack(Item.dye, 2, 7));
-        templateFlowertoDye.addInput('X', BonusBlocks.flowerOrange).create("flower_orange_to_dye", new ItemStack(Item.dye, 2, 14));
+        templateFlowertoDye.addInput('X', Block.flowerOrange).create("flower_orange_to_dye", new ItemStack(Item.dye, 2, 14));
         templateFlowertoDye.addInput('X', BonusBlocks.flowerLightBlue).create("flower_lightblue_to_dye", new ItemStack(Item.dye, 2, 12));
         templateFlowertoDye.addInput('X', BonusBlocks.flowerMagenta).create("flower_magenta_to_dye", new ItemStack(Item.dye, 2, 13));
         templateFlowertoDye.addInput('X', BonusBlocks.flowerLime).create("flower_lime_to_dye", new ItemStack(Item.dye, 2, 10));
@@ -156,11 +156,11 @@ public class BonusRecipes implements RecipeEntrypoint {
 
         templateMushroomToBlock.addInput('X', Block.flowerRed).create("petal_red", new ItemStack(BonusBlocks.petalRed, 4));
         templateMushroomToBlock.addInput('X', Block.flowerYellow).create("petal_yellow", new ItemStack(BonusBlocks.petalYellow, 4));
-        templateMushroomToBlock.addInput('X', BonusBlocks.flowerCyan).create("petal_cyan", new ItemStack(BonusBlocks.petalCyan, 4));
-        templateMushroomToBlock.addInput('X', BonusBlocks.flowerPurple).create("petal_purple", new ItemStack(BonusBlocks.petalPurple, 4));
-        templateMushroomToBlock.addInput('X', BonusBlocks.flowerPink).create("petal_pink", new ItemStack(BonusBlocks.petalPink, 4));
+        templateMushroomToBlock.addInput('X', Block.flowerLightBlue).create("petal_cyan", new ItemStack(BonusBlocks.petalCyan, 4));
+        templateMushroomToBlock.addInput('X', Block.flowerPurple).create("petal_purple", new ItemStack(BonusBlocks.petalPurple, 4));
+        templateMushroomToBlock.addInput('X', Block.flowerPink).create("petal_pink", new ItemStack(BonusBlocks.petalPink, 4));
         templateMushroomToBlock.addInput('X', BonusBlocks.flowerSilver).create("petal_silver", new ItemStack(BonusBlocks.petalSilver, 4));
-        templateMushroomToBlock.addInput('X', BonusBlocks.flowerOrange).create("petal_orange", new ItemStack(BonusBlocks.petalOrange, 4));
+        templateMushroomToBlock.addInput('X', Block.flowerOrange).create("petal_orange", new ItemStack(BonusBlocks.petalOrange, 4));
         templateMushroomToBlock.addInput('X', BonusBlocks.flowerLightBlue).create("petal_lightblue", new ItemStack(BonusBlocks.petalLightBlue, 4));
         templateMushroomToBlock.addInput('X', BonusBlocks.flowerMagenta).create("petal_magenta", new ItemStack(BonusBlocks.petalMagenta, 4));
         templateMushroomToBlock.addInput('X', BonusBlocks.flowerLime).create("petal_lime", new ItemStack(BonusBlocks.petalLime, 4));

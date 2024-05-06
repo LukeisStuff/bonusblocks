@@ -29,6 +29,7 @@ import useless.dragonfly.helper.ModelHelper;
 import useless.dragonfly.model.block.BlockModelDragonFly;
 
 import java.util.Random;
+import java.util.function.Function;
 
 import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
 import static net.minecraft.core.block.BlockMoss.stoneToMossMap;
@@ -68,11 +69,7 @@ public class BonusBlocks {
     public static Block overgrownGrassScorched;
     public static Block overgrownPath;
 
-    public static Block flowerCyan;
-    public static Block flowerPurple;
-    public static Block flowerPink;
     public static Block flowerSilver;
-    public static Block flowerOrange;
     public static Block flowerLightBlue;
     public static Block flowerMagenta;
     public static Block flowerLime;
@@ -479,11 +476,7 @@ public class BonusBlocks {
         CreativeHelper.setParent(trapdoorCopperCorroded, Block.trapdoorGlass);
         CreativeHelper.setParent(trapdoorSilver, Block.trapdoorGlass);
 
-        CreativeHelper.setParent(flowerCyan, Block.flowerRed);
-        CreativeHelper.setParent(flowerPurple, Block.flowerRed);
-        CreativeHelper.setParent(flowerPink, Block.flowerRed);
         CreativeHelper.setParent(flowerSilver, Block.flowerRed);
-        CreativeHelper.setParent(flowerOrange, Block.flowerRed);
         CreativeHelper.setParent(flowerLightBlue, Block.flowerRed);
         CreativeHelper.setParent(flowerMagenta, Block.flowerRed);
         CreativeHelper.setParent(flowerLime, Block.flowerRed);
@@ -789,11 +782,8 @@ public class BonusBlocks {
 
         // Crates
         crate = crates
-                .setTextures("crate.png")
                 .build(new Block("crate", blockID("crate"), Material.wood));
         cratePainted = crates
-                .setTextures("whitecrate.png").setTextures("silvercrate.png").setTextures("graycrate.png").setTextures("blackcrate.png").setTextures("redcrate.png").setTextures("orangecrate.png").setTextures("yellowcrate.png").setTextures("limecrate.png")
-                .setTextures("greencrate.png").setTextures("cyancrate.png").setTextures("lightbluecrate.png").setTextures("bluecrate.png").setTextures("purplecrate.png").setTextures("magentacrate.png").setTextures("pinkcrate.png").setTextures("browncrate.png")
                 .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT, BlockTags.NOT_IN_CREATIVE_MENU)
                 .build(new BlockPaintedCrate("crate.painted", blockID("cratePainted")));
 
@@ -803,23 +793,17 @@ public class BonusBlocks {
                 .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 0.8f))
                 .setHardness(1.5f)
                 .setResistance(1.0f)
-                .setTopBottomTexture(4, 0)
-                .setSideTextures("emptybookshelf.png")
                 .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
                 .build(new Block("bookshelf.empty.planks.oak", blockID("bookshelfEmptyPlanksOak"), Material.wood));
 
         // Leaves and Branch
         branch = leaves
                 .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 0.5f))
-                .setTextures("branch.png")
                 .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
                 .build(new BlockBranch("branch", blockID("branch")));
 
         leavesOakMossy = leaves
                 .setBlockColor(new BlockColorLeavesOak(new Colorizer("default.png")))
-                .setSideTextures("mossyleaves.png")
-                .setBottomTexture("mossyleavesfast.png")
-                .setTopBottomTexture("mossyleaves.png")
                 .build(new BlockLeavesBase("leaves.oak.mossy", blockID("leavesOakMossy"), Material.leaves) {
                     @Override
                     protected Block getSapling() {
@@ -827,9 +811,6 @@ public class BonusBlocks {
                     }
                 });
         leavesMaple = leaves
-                .setSideTextures("mapleleaves.png")
-                .setBottomTexture("mapleleavesfast.png")
-                .setTopBottomTexture("mapleleaves.png")
                 .build(new BlockLeavesBase("leaves.maple", blockID("leavesMaple"), Material.leaves) {
                     @Override
                     protected Block getSapling() {
@@ -837,9 +818,6 @@ public class BonusBlocks {
                     }
                 });
         leavesJacaranda = leaves
-                .setSideTextures("jacaleaves.png")
-                .setBottomTexture("jacaleavesfast.png")
-                .setTopBottomTexture("jacaleaves.png")
                 .build(new BlockLeavesBase("leaves.jacaranda", blockID("leavesJacaranda"), Material.leaves) {
                     @Override
                     protected Block getSapling() {
@@ -850,82 +828,52 @@ public class BonusBlocks {
 
         // Saplings
         saplingMaple = sapling
-                .setTextures("maplesapling.png")
                 .build(new BlockSaplingMaple("sapling.maple", blockID("saplingMaple")));
         saplingJacaranda = sapling
-                .setTextures("jacasapling.png")
                 .build(new BlockSaplingJacaranda("sapling.jacaranda", blockID("saplingJacaranda")));
         saplingOakMossy = sapling
-                .setTextures("mossyoaksapling.png")
                 .build(new BlockSaplingMossyOak("sapling.oak.mossy", blockID("saplingOakMossy")));
 
 
         // Logs
         logShrub = log
-                .setTopBottomTexture("shrublogtop.png")
-                .setSideTextures("shrublogside.png")
                 .build(new BlockLog("log.shrub", blockID("logShrub")));
         logCacao = log
-                .setTopBottomTexture("cacaologtop.png")
-                .setSideTextures("cacaologside.png")
                 .build(new BlockLog("log.cacao", blockID("logCacao")));
         logMaple = log
-                .setTopBottomTexture("maplelogtop.png")
-                .setSideTextures("maplelogside.png")
                 .build(new BlockLog("log.maple", blockID("logMaple")));
         logJacaranda = log
-                .setTopBottomTexture("jacalogtop.png")
-                .setSideTextures("jacalogside.png")
                 .build(new BlockLog("log.jacaranda", blockID("logJacaranda")));
         logScorched = log
                 .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.2f))
                 .setHardness(1.8f)
-                .setTopBottomTexture("charredlogtop.png")
-                .setSideTextures("charredlogside.png")
                 .build(new BlockLog("log.scorched", blockID("logScorched")));
 
 
         // Moss
         moss = grass
                 .setFlammability(100, 30)
-                .setTextures("moss.png")
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SHOVEL, BlockTags.GROWS_FLOWERS, BlockTags.GROWS_SUGAR_CANE, BlockTags.GROWS_TREES, BlockTags.CAVE_GEN_REPLACES_SURFACE, BlockTags.CAVES_CUT_THROUGH)
                 .build(new BlockMossy("moss", blockID("moss")));
 
 
         // Overgrown Grass
         overgrownGrass = grass
-                .setTextures(0, 0)
                 .setBlockColor(new BlockColorTallGrass(new Colorizer("default.png")))
                 .build(new Block("grass.overgrown", blockID("overgrownGrass"), Material.grass));
         overgrownGrassRetro = grass
-                .setTextures(8, 1)
                 .build(new Block("grass.retro.overgrown", blockID("overgrownGrassRetro"), Material.grass));
         overgrownGrassScorched = grass
-                .setTextures(16, 11)
                 .build(new Block("grass.scorched.overgrown", blockID("overgrownGrassScorched"), Material.grass));
         overgrownPath = grass
-                .setTextures(4, 6)
                 .setTags(BlockTags.MINEABLE_BY_SHOVEL)
                 .setBlockDrop(BonusBlocks.overgrownPath)
                 .build(new BlockDirtPath("path.overgrown", blockID("overgrownPath")));
 
         // Flowers
-        flowerCyan = flower
-                .setTextures("bluebell.png")
-                .build(new BlockFlower("flower.cyan", blockID("flowerCyan")));
-        flowerPurple = flower
-                .setTextures("heather.png")
-                .build(new BlockFlower("flower.purple", blockID("flowerPurple")));
-        flowerPink = flower
-                .setTextures("orchid.png")
-                .build(new BlockFlower("flower.pink", blockID("flowerPink")));
         flowerSilver = flower
                 .setTextures("whitedandelion.png")
                 .build(new BlockFlower("flower.silver", blockID("flowerSilver")));
-        flowerOrange = flower
-                .setTextures("gladiola.png")
-                .build(new BlockFlower("flower.orange", blockID("flowerOrange")));
         flowerLightBlue = flower
                 .setTextures("pansy.png")
                 .build(new BlockFlower("flower.lightblue", blockID("flowerLightBlue")));
@@ -1274,7 +1222,7 @@ public class BonusBlocks {
         pipeCopper = raw
                 .setTextures("copperpipe.png")
                 .setVisualUpdateOnMetadata()
-                .setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(MOD_ID, "pipe.json"), ModelHelper.getOrCreateBlockState(MOD_ID, "pipe_states.json"), new PipeMetaStateInterpreter(), false, 0.25f))
+                .setBlockModel((Function<Block, BlockModel<?>>) new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(MOD_ID, "pipe.json"), ModelHelper.getOrCreateBlockState(MOD_ID, "pipe_states.json"), new PipeMetaStateInterpreter(), false, 0.25f))
                 .build(new BlockCopperPipe("pipe.copper", blockID("pipeCopper"), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "pipe.json"), false));
 
         pipeCopperTarnished = raw
@@ -2216,9 +2164,8 @@ public class BonusBlocks {
         pot = new BlockBuilder(MOD_ID)
                 .setHardness(0.5f)
                 .setResistance(1.0f)
-                .setTextures("bakedclay.png")
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-                .setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(MOD_ID, "block/pot.json")))
+                .setBlockModel((Function<Block, BlockModel<?>>) new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(MOD_ID, "block/pot.json")))
                 .build(new BlockPot("pot", blockID("pot"), Material.stone));
 
 
