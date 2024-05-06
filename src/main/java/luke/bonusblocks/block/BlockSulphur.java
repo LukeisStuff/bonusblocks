@@ -17,7 +17,7 @@ import net.minecraft.core.world.World;
 import java.util.Random;
 
 public class BlockSulphur extends BlockSand {
-    public BlockSulphur(String key, int id, Material material) {
+    public BlockSulphur(String key, int id) {
         super(key, id);
     }
 
@@ -31,27 +31,24 @@ public class BlockSulphur extends BlockSand {
     }
 
     public void onBlockDestroyedByExplosion(World world, int x, int y, int z) {
-        EntitySulphur entity = new EntitySulphur(world, (double)((float)x + 0.5F), (double)((float)y + 0.5F), (double)((float)z + 0.5F));
+        EntitySulphur entity = new EntitySulphur(world, (float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F);
         entity.fuse = world.rand.nextInt(entity.fuse / 2) + entity.fuse / 4;
         world.entityJoinedWorld(entity);
     }
 
     public void ignite(World world, int x, int y, int z, EntityPlayer player, boolean sound) {
         if (world.isClientSide) {
-            world.playSoundEffect((Entity)null, SoundCategory.WORLD_SOUNDS, (double)((float)x + 0.5F), (double)((float)y + 0.5F), (double)((float)z + 0.5F), "random.fuse", 1.0F, 1.0F);
-            if (player != null && player.inventory.getCurrentItem() != null && player.inventory.getCurrentItem().getItem() instanceof ItemFirestriker) {
-                player.inventory.getCurrentItem().damageItem(1, player);
-            }
+            world.playSoundEffect(null, SoundCategory.WORLD_SOUNDS, (float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F, "random.fuse", 1.0F, 1.0F);
 
         } else {
             world.setBlockWithNotify(x, y, z, 0);
-            EntitySulphur e = new EntitySulphur(world, (double)((float)x + 0.5F), (double)((float)y + 0.5F), (double)((float)z + 0.5F));
+            EntitySulphur e = new EntitySulphur(world, (float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F);
             world.entityJoinedWorld(e);
             world.playSoundAtEntity(e , e, "random.fuse", 1.0F, 1.0F);
-            if (player != null && player.inventory.getCurrentItem() != null && player.inventory.getCurrentItem().getItem() instanceof ItemFirestriker) {
-                player.inventory.getCurrentItem().damageItem(1, player);
-            }
 
+        }
+        if (player != null && player.inventory.getCurrentItem() != null && player.inventory.getCurrentItem().getItem() instanceof ItemFirestriker) {
+            player.inventory.getCurrentItem().damageItem(1, player);
         }
     }
 
@@ -80,7 +77,7 @@ public class BlockSulphur extends BlockSand {
         if (canFallBelow(world, i, j - 1, k) && j >= 0) {
             byte byte0 = 32;
             if (!fallInstantly && world.areBlocksLoaded(i - byte0, j - byte0, k - byte0, i + byte0, j + byte0, k + byte0)) {
-                EntityFallingSand entityfallingsand = new EntityFallingSand(world, (double)((float)i + 0.5F), (double)((float)j + 0.5F), (double)((float)k + 0.5F), this.id);
+                EntityFallingSand entityfallingsand = new EntityFallingSand(world, (float)i + 0.5F, (float)j + 0.5F, (float)k + 0.5F, this.id);
                 world.entityJoinedWorld(entityfallingsand);
             } else {
                 world.setBlockWithNotify(i, j, k, 0);

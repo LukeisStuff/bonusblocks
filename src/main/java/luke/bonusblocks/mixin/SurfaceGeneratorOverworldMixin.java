@@ -31,10 +31,10 @@ public abstract class SurfaceGeneratorOverworldMixin {
         Biome biome = new Biome("biome.");
 
         if (currentLayerDepth == 0) {
-            if (biome == (Biomes.OVERWORLD_OUTBACK) && fillerBlock == Block.dirtScorched.id) {
+            if (biome.equals(Biomes.OVERWORLD_OUTBACK) && fillerBlock == Block.dirtScorched.id) {
                 currentLayerDepth = rand.nextInt(8) + 2;
                 fillerBlock = (short) BonusBlocks.scorchedstone.id;
-            } else if (biome == (Biomes.OVERWORLD_OUTBACK_GRASSY) && fillerBlock == Block.dirtScorched.id) {
+            } else if (biome.equals(Biomes.OVERWORLD_OUTBACK_GRASSY) && fillerBlock == Block.dirtScorched.id) {
                 currentLayerDepth = rand.nextInt(8) + 2;
                 fillerBlock = (short) BonusBlocks.scorchedstone.id;
             }

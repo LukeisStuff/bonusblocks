@@ -8,6 +8,7 @@ import net.minecraft.core.world.generate.feature.WorldFeatureLabyrinth;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Mutable;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
@@ -16,12 +17,17 @@ import java.util.Random;
 
 @Mixin(value= WorldFeatureLabyrinth.class,remap=false)
 public abstract class WorldFeatureLabyrinthMixin {
+    @Unique
     @Mutable
     @Final
     int wallBlockA;
+    @Unique
     int wallBlockB;
+    @Unique
     int brickBlockA;
+    @Unique
     int brickBlockB;
+    @Unique
     int slabBlock;
 
     @Inject(method = "generate", at = @At(value = "HEAD", target = "Lnet/minecraft/core/world/generate/feature/WorldFeatureLabyrinth;generate(Lnet/minecraft/core/world/World;Ljava/util/Random;III)Z"))

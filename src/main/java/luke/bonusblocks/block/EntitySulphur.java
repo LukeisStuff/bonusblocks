@@ -72,7 +72,7 @@ public class EntitySulphur extends EntityFallingSand {
                 this.remove();
             }
         } else {
-            this.world.spawnParticle("smoke", this.x, this.y + 0.5, this.z, 0.0, 0.0, 0.0);
+            this.world.spawnParticle("smoke", this.x, this.y + 0.5, this.z, 0.0, 0.0, 0.0, 0);
         }
 
     }

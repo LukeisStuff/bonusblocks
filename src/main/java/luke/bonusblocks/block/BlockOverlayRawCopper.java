@@ -8,7 +8,6 @@ import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
-import turniplabs.halplibe.helper.TextureHelper;
 
 import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
 
@@ -30,11 +29,7 @@ public class BlockOverlayRawCopper extends BlockOverlayPebbles {
         return textures[data];
     }
 
-    @Override
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-        if (dropCause == EnumDropCause.PICK_BLOCK) {
-            return new ItemStack[]{new ItemStack(BonusItems.oreRawCopper, 1)};
-        }
-        return new ItemStack[]{new ItemStack(BonusItems.oreRawCopper, meta + 1)};
+        return dropCause == EnumDropCause.PICK_BLOCK ? new ItemStack[]{new ItemStack(BonusItems.oreRawCopper, 1)} : new ItemStack[]{new ItemStack(BonusItems.oreRawCopper, meta + 1)};
     }
 }

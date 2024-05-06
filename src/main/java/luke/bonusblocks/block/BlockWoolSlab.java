@@ -30,12 +30,4 @@ public class BlockWoolSlab extends BlockSlabPainted {
         world.setBlockMetadataWithNotify(x, y, z, meta | world.getBlockMetadata(x, y, z) & 240);
     }
 
-    static {
-        texCoords[0] = Block.texCoordToIndex(6, 24);
-
-        for(int i = 1; i < 16; ++i) {
-            texCoords[i] = texCoords[0] - i % 8 * Global.TEXTURE_ATLAS_WIDTH_TILES - i / 8;
-        }
-
-    }
 }

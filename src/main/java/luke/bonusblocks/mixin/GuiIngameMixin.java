@@ -1,10 +1,9 @@
 package luke.bonusblocks.mixin;
 
-import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiIngame;
-import net.minecraft.client.render.Tessellator;
+import net.minecraft.client.render.tessellator.Tessellator;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.item.ItemStack;
 import org.lwjgl.opengl.GL11;
@@ -18,13 +17,17 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class GuiIngameMixin extends Gui {
     @Unique
     protected Minecraft mc;
+    @Unique
+    int width = this.mc.resolution.scaledWidth;
+    @Unique
+    int height = this.mc.resolution.scaledHeight;
     @Inject(method = "renderGameOverlay(FZII)V",
             at = @At(value = "TAIL", shift = At.Shift.AFTER))
     private void renderGameOverlay(float partialTicks, boolean flag, int mouseX, int mouseY, CallbackInfo ci) {
+
         ItemStack headSlotItem = this.mc.thePlayer.inventory.armorItemInSlot(3);
-        if ((Integer)this.mc.gameSettings.thirdPersonView.value == 0 && headSlotItem != null && headSlotItem.itemID == Block.pumpkinCarvedIdle.id)
-        {
-            this.renderSkullBlur(this.mc.resolution.scaledWidth, this.mc.resolution.scaledHeight);
+        if (this.mc.gameSettings.thirdPersonView.value == 0 && headSlotItem != null && headSlotItem.itemID == Block.pumpkinCarvedIdle.id) {
+            this.renderSkullBlur(width, height);
         }
     }
     @Unique
@@ -34,12 +37,12 @@ public abstract class GuiIngameMixin extends Gui {
         GL11.glBlendFunc(770, 771);
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
         GL11.glDisable(3008);
-        GL11.glBindTexture(3553, this.mc.renderEngine.getTexture("%blur%/misc/pumpkinblur.png"));
+        GL11.glBindTexture(3553, this.mc.renderEngine.getTexture("assets/bonusblocks/skullblur.png"));
         Tessellator tessellator = Tessellator.instance;
         tessellator.startDrawingQuads();
-        tessellator.addVertexWithUV(0.0, (double)ySize, -90.0, 0.0, 1.0);
-        tessellator.addVertexWithUV((double)xSize, (double)ySize, -90.0, 1.0, 1.0);
-        tessellator.addVertexWithUV((double)xSize, 0.0, -90.0, 1.0, 0.0);
+        tessellator.addVertexWithUV(0.0, ySize, -90.0, 0.0, 1.0);
+        tessellator.addVertexWithUV(xSize, ySize, -90.0, 1.0, 1.0);
+        tessellator.addVertexWithUV(xSize, 0.0, -90.0, 1.0, 0.0);
         tessellator.addVertexWithUV(0.0, 0.0, -90.0, 0.0, 0.0);
         tessellator.draw();
         GL11.glDepthMask(true);

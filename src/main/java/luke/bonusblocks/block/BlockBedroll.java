@@ -1,13 +1,15 @@
 package luke.bonusblocks.block;
 
 import net.minecraft.core.block.BlockBed;
-import net.minecraft.core.block.logic.BedDirections;
+import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.entity.player.EntityPlayer;
-import net.minecraft.core.util.helper.Side;
+import net.minecraft.core.enums.EnumDropCause;
+import net.minecraft.core.enums.EnumSleepStatus;
+import net.minecraft.core.item.Item;
+import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.world.World;
-import turniplabs.halplibe.helper.TextureHelper;
-
-import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
+import net.minecraft.core.world.WorldSource;
+import net.minecraft.core.world.chunk.ChunkCoordinates;
 
 public class BlockBedroll extends BlockBed {
     public static final int[][] headBlockToFootBlockMap = new int[][]{{0, 1}, {-1, 0}, {0, -1}, {1, 0}};
@@ -49,38 +51,26 @@ public class BlockBedroll extends BlockBed {
                     EntityPlayer player1 = null;
 
                     for (EntityPlayer p : world.players) {
+                        if (p.isPlayerSleeping()) {
+                            ChunkCoordinates pos = p.bedChunkCoordinates;
+                            if (pos.x == x && pos.y == y && pos.z == z) {
                                 player1 = p;
+                            }
+                        }
                     }
 
                     if (player1 != null) {
-                        player.addChatMessage("bed.occupied");
+                        player.sendTranslatedChatMessage("bed.occupied");
                         return true;
                     }
 
                     setBedOccupied(world, x, y, z, false);
-                    world.setBlockWithNotify(x, y, z, 0);
+                }
+
+                if (player.sleepInBedAt(x, y, z) == EnumSleepStatus.OK) {
+                    setBedOccupied(world, x, y, z, true);
                 }
                 return true;
-            }
-        }
-    }
-
-    public int getBlockTextureFromSideAndMetadata(Side side, int data) {
-        if (side == Side.BOTTOM) {
-            return TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "bedrolltop2.png");
-        } else {
-            int k = getDirectionFromMetadata(data);
-            int l = BedDirections.bedDirection[k][side.getId()];
-            if (isBlockFootOfBed(data)) {
-                if (l == 2) {
-                    return TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "bedrollfront.png");
-                } else {
-                    return l != 5 && l != 4 ? TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "bedrolltop1.png") : TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "bedrollside1.png");
-                }
-            } else if (l == 3) {
-                return TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "bedrollback.png");
-            } else {
-                return l != 5 && l != 4 ? TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "bedrolltop2.png") : TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "bedrollside2.png");
             }
         }
     }
@@ -93,7 +83,7 @@ public class BlockBedroll extends BlockBed {
         return false;
     }
 
-    public void setBlockBoundsBasedOnState(World world, int x, int y, int z) {
+    public void setBlockBoundsBasedOnState(WorldSource world, int x, int y, int z) {
         this.setBounds();
     }
 
@@ -137,9 +127,9 @@ public class BlockBedroll extends BlockBed {
         world.setBlockMetadataWithNotify(i, j, k, l);
     }
 
-//    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-//        return new ItemStack[]{new ItemStack(BonusBlocks.bedrollItem)};
-//    }
+    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+        return new ItemStack[]{new ItemStack(Item.bed)};
+    }
 
     public int getPistonPushReaction() {
         return 1;

@@ -7,7 +7,6 @@ import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
-import turniplabs.halplibe.helper.TextureHelper;
 
 import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
 

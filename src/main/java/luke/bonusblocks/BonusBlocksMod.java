@@ -43,8 +43,8 @@ public class BonusBlocksMod implements ModInitializer, ClientStartEntrypoint, Ga
     public void beforeClientStart() {
         EntityHelper.Client.assignEntityRenderer(EntitySulphur.class, new FallingSandRenderer());
         SoundHelper.Client.addSound("bonusblocks", "chimes.ogg");
-        Item.oreRawGold = new ItemRawGold("ore.raw.gold", 16510).setIconCoord(10, 8);
-        Item.oreRawIron = new ItemRawIron("ore.raw.iron", 16511).setIconCoord(9, 8);
+        Item.oreRawGold = new ItemRawGold("ore.raw.gold", 16510);
+        Item.oreRawIron = new ItemRawIron("ore.raw.iron", 16511);
     }
 
     @Override

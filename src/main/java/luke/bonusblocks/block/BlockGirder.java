@@ -5,6 +5,7 @@ import net.minecraft.core.block.material.Material;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
+import net.minecraft.core.world.WorldSource;
 import useless.dragonfly.model.block.processed.BlockModel;
 
 import java.util.Random;
@@ -23,16 +24,16 @@ public class BlockGirder extends BlockAxisAligned {
         return false;
     }
 
-    public void setBlockBoundsBasedOnState(World world, int x, int y, int z) {
+    public void setBlockBoundsBasedOnState(WorldSource world, int x, int y, int z) {
         this.setBlockBounds(world.getBlockMetadata(x, y, z));
     }
 
-    public AABB getCollisionBoundingBoxFromPool(World world, int x, int y, int z) {
+    public AABB getCollisionBoundingBoxFromPool(WorldSource world, int x, int y, int z) {
         this.setBlockBounds(world.getBlockMetadata(x, y, z));
         return super.getCollisionBoundingBoxFromPool(world, x, y, z);
     }
 
-    public AABB getSelectedBoundingBoxFromPool(World world, int x, int y, int z) {
+    public AABB getSelectedBoundingBoxFromPool(WorldSource world, int x, int y, int z) {
         this.setBlockBounds(world.getBlockMetadata(x, y, z));
         return super.getSelectedBoundingBoxFromPool(world, x, y, z);
     }

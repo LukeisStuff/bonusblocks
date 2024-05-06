@@ -9,8 +9,8 @@ import net.minecraft.core.world.World;
 
 public class BlockGlassObsidian
         extends BlockGlass {
-    public BlockGlassObsidian(String key, int id, Material material, boolean renderInside) {
-        super(key, id, Material.glass, false);
+    public BlockGlassObsidian(String key, int id) {
+        super(key, id, Material.glass);
     }
 
     @Override

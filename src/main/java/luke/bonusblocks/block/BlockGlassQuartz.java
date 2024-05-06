@@ -9,8 +9,8 @@ import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.world.World;
 
 public class BlockGlassQuartz extends BlockGlass {
-    public BlockGlassQuartz(String key, int id, Material material, boolean renderInside) {
-        super(key, id, material, renderInside);
+    public BlockGlassQuartz(String key, int id, Material material) {
+        super(key, id, material);
     }
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
         switch (dropCause) {

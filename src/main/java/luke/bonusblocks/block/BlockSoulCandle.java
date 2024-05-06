@@ -1,6 +1,5 @@
 package luke.bonusblocks.block;
 
-import luke.bonusblocks.BonusBlocksMod;
 import luke.bonusblocks.item.BonusItems;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockCandle;
@@ -51,7 +50,7 @@ public class BlockSoulCandle extends BlockCandle {
 
     private void dropCandleIfCantStay(World world, int i, int j, int k) {
         if (!this.canPlaceBlockAt(world, i, j, k)) {
-            this.dropBlockWithCause(world, EnumDropCause.WORLD, i, j, k, world.getBlockMetadata(i, j, k), (TileEntity)null);
+            this.dropBlockWithCause(world, EnumDropCause.WORLD, i, j, k, world.getBlockMetadata(i, j, k), null);
             world.setBlockWithNotify(i, j, k, 0);
         }
     }

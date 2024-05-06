@@ -35,46 +35,46 @@ public class BonusItems {
     public void initilizeItems() {
         // Items
         candleSoulwax = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new ItemPlaceable("candle.soulwax", itemID("candleSoulwax"), BonusBlocks.candleSoulwax), "soulwaxcandle.png");
+                new ItemPlaceable("candle.soulwax", itemID("candleSoulwax"), BonusBlocks.candleSoulwax));
 
         soulwax = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new Item("soulwax", itemID("soulwax")), "soulwax.png");
+                new Item("soulwax", itemID("soulwax")));
 
         oreRawCopper = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new ItemRawCopper("ore.raw.copper", itemID("oreRawCopper")), "rawcopper.png");
+                new ItemRawCopper("ore.raw.copper", itemID("oreRawCopper")));
 
         ingotCopper = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new Item("ingot.copper", itemID("ingotCopper")), "copperingot.png");
+                new Item("ingot.copper", itemID("ingotCopper")));
 
         oreRawSilver = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new ItemRawSilver("ore.raw.silver", itemID("oreRawSilver")), "rawsilver.png");
+                new ItemRawSilver("ore.raw.silver", itemID("oreRawSilver")));
 
         ingotSilver = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new Item("ingot.silver", itemID("ingotSilver")), "silveringot.png");
+                new Item("ingot.silver", itemID("ingotSilver")));
 
         doorCopper = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new ItemCopperDoor("door.copper", itemID("doorCopper")), "copperdoor.png");
+                new ItemCopperDoor("door.copper", itemID("doorCopper")));
 
         doorCopperTarnished = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new ItemCopperTarnishedDoor("door.copper.tarnished", itemID("doorCopperTarnished")), "tarnishedcopperdoor.png");
+                new ItemCopperTarnishedDoor("door.copper.tarnished", itemID("doorCopperTarnished")));
 
         doorCopperCorroded = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new ItemCopperCorrodedDoor("door.copper.corroded", itemID("doorCopperCorroded")), "corrodedcopperdoor.png");
+                new ItemCopperCorrodedDoor("door.copper.corroded", itemID("doorCopperCorroded")));
 
         doorSteel = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new ItemSteelDoor("door.steel", itemID("doorSteel")), "steeldoor.png");
+                new ItemSteelDoor("door.steel", itemID("doorSteel")));
 
         doorSilver = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new ItemSilverDoor("door.silver", itemID("doorSilver")), "silverdoor.png");
+                new ItemSilverDoor("door.silver", itemID("doorSilver")));
 
         bedSilver = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new ItemSilverBed("bed.silver", itemID("bedSilver")), "silverbed.png");
+                new ItemSilverBed("bed.silver", itemID("bedSilver")));
 
         seatSilver = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new ItemPlaceable("seat.silver", itemID("seatSilver"), BonusBlocks.seatSilver), "silverseat.png");
+                new ItemPlaceable("seat.silver", itemID("seatSilver"), BonusBlocks.seatSilver));
 
         mossball = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new Item("mossball", itemID("mossball")), "mossball.png");
+                new Item("mossball", itemID("mossball")));
 
 //        bedroll = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
 //                new ItemBedroll("bedroll", itemID("bedroll")), "bedroll.png").setMaxStackSize(1);

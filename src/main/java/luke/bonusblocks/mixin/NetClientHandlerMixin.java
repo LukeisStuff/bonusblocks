@@ -1,6 +1,5 @@
 package luke.bonusblocks.mixin;
 
-import luke.bonusblocks.IPaintingSynced;
 import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.client.net.handler.NetClientHandler;
 import net.minecraft.client.world.WorldClient;
@@ -22,16 +21,7 @@ import java.util.List;
 public class NetClientHandlerMixin {
     @Shadow private WorldClient worldClient;
 
-    @Inject(method = "handleEntityPainting(Lnet/minecraft/core/net/packet/Packet25EntityPainting;)V", at = @At("TAIL"), locals = LocalCapture.CAPTURE_FAILHARD)
-    private void syncData(Packet25EntityPainting packet25entitypainting, CallbackInfo ci, EntityPainting painting){
-        List list = ((IPaintingSynced)packet25entitypainting).getData();
-        if (list != null) {
-            painting.getEntityData().assignValues(list);
-        }
-    }
-
-
-    @Inject(method = "Lnet/minecraft/client/net/handler/NetClientHandler;handleVehicleSpawn(Lnet/minecraft/core/net/packet/Packet23VehicleSpawn;)V", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "handleVehicleSpawn(Lnet/minecraft/core/net/packet/Packet23VehicleSpawn;)V", at = @At("HEAD"), cancellable = true)
     private void handleVehicleSpawn(Packet23VehicleSpawn packet23vehiclespawn, CallbackInfo ci) {
         double xPosition = packet23vehiclespawn.xPosition / 32.0D;
         double yPosition = packet23vehiclespawn.yPosition / 32.0D;
@@ -49,7 +39,7 @@ public class NetClientHandlerMixin {
             newEntity.yRot = packet23vehiclespawn.yaw;
             newEntity.xRot = packet23vehiclespawn.pitch;
             newEntity.id = packet23vehiclespawn.entityId;
-            worldClient.func_712_a(packet23vehiclespawn.entityId, newEntity);
+            worldClient.addEntityToWorld(packet23vehiclespawn.entityId, newEntity);
             newEntity.lerpMotion(packet23vehiclespawn.xVelocity / 8000.0D, packet23vehiclespawn.yVelocity / 8000.0D, packet23vehiclespawn.zVelocity / 8000.0D);
             ci.cancel();
         }

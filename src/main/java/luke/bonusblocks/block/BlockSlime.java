@@ -9,8 +9,8 @@ import net.minecraft.core.world.World;
 import net.minecraft.core.world.WorldSource;
 
 public class BlockSlime extends BlockTransparent {
-    public BlockSlime(String key, int id, boolean renderInside){
-        super(key, id, Material.leaves, renderInside);
+    public BlockSlime(String key, int id){
+        super(key, id, Material.leaves);
         setTicking(true);
     }
 
@@ -26,7 +26,7 @@ public class BlockSlime extends BlockTransparent {
         return 1;
     }
 
-    public AABB getCollisionBoundingBoxFromPool(World world, int x, int y, int z) {
+    public AABB getCollisionBoundingBoxFromPool(WorldSource world, int x, int y, int z) {
         float f = 0.125F;
         return AABB.getBoundingBoxFromPool(x + f, y + f, z + f, (float)(x + 1) - f, (float)(y + 1) - f, (float)(z + 1) - f);
     }

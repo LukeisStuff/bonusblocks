@@ -6,6 +6,7 @@ import net.minecraft.core.entity.Entity;
 import net.minecraft.core.enums.EnumBlockSoundEffectType;
 import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
+import net.minecraft.core.world.WorldSource;
 
 public class BlockCloth extends Block {
     public BlockCloth(String key, int id, Material material) {
@@ -18,13 +19,13 @@ public class BlockCloth extends Block {
             entity.yd = 0.0;
         }
         else if (entity.yd < 0.0D) {
-            world.playBlockSoundEffect((Entity)null, x, y, z, BonusBlocks.blockCloth, EnumBlockSoundEffectType.ENTITY_LAND);
+            world.playBlockSoundEffect(null, x, y, z, BonusBlocks.blockCloth, EnumBlockSoundEffectType.ENTITY_LAND);
             entity.yd = -entity.yd;
             entity.fallDistance = 0;
         }
     }
 
-    public AABB getCollisionBoundingBoxFromPool (World world,int x, int y, int z){
+    public AABB getCollisionBoundingBoxFromPool(WorldSource world, int x, int y, int z){
         return AABB.getBoundingBoxFromPool(x, y, z, (x + 1), y+.9f, (z + 1));
     }
 }

@@ -7,6 +7,7 @@ import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.sound.SoundCategory;
 import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
+import net.minecraft.core.world.WorldSource;
 
 import java.util.Random;
 
@@ -23,7 +24,7 @@ public class BlockChimes extends Block {
         }
     }
 
-    public AABB getCollisionBoundingBoxFromPool(World world, int x, int y, int z) {
+    public AABB getCollisionBoundingBoxFromPool(WorldSource world, int x, int y, int z) {
         return null;
     }
 
