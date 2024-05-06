@@ -515,12 +515,6 @@ tile.bonusblocks.skull.carved.desc=A spooky skull found in the nether, hollowed 
 tile.bonusblocks.skull.active.name=Skull Lantern
 tile.bonusblocks.skull.active.desc=A spooky skull found in the nether, lit by a soul wax candle.
 
-tile.bonusblocks.pie.name=Pumpkin Pie
-tile.bonusblocks.pie.desc=I just want to pie already.
-
-item.bonusblocks.food.pie.name=Pumpkin Pie
-item.bonusblocks.food.pie.desc=Pumpkin spiced custard filled dessert.
-
 tile.bonusblocks.candle.soulwax.name=Soul Wax Candle
 tile.bonusblocks.candle.soulwax.desc=Say the line souljak.
 

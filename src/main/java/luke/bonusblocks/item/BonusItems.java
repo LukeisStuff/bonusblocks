@@ -29,7 +29,6 @@ public class BonusItems {
     public static Item doorSilver;
     public static Item bedSilver;
     public static Item seatSilver;
-    public static Item foodPie;
     public static Item mossball;
     public static Item bedroll;
 
@@ -73,9 +72,6 @@ public class BonusItems {
 
         seatSilver = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
                 new ItemPlaceable("seat.silver", itemID("seatSilver"), BonusBlocks.seatSilver), "silverseat.png");
-
-        foodPie = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new ItemPlaceable("food.pie", itemID("foodPie"), BonusBlocks.pie), "pie.png").setMaxStackSize(1);
 
         mossball = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
                 new Item("mossball", itemID("mossball")), "mossball.png");

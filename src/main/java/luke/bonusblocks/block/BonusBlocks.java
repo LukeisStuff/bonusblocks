@@ -228,8 +228,6 @@ public class BonusBlocks {
 
     public static Block candleSoulwax;
 
-    public static Block pie;
-
     public static Block slabWool;
     public static Block slabCobbleStoneMossy;
     public static Block slabSlatePolished;
@@ -1804,18 +1802,6 @@ public class BonusBlocks {
                 .setTextures("pumiceoverlay.png")
                 .setTextures("pumicewet.png")
                 .build(new BlockPumice("pumice.wet", blockID("pumiceWet"), true));
-
-
-        // Pumpkin Pie
-        pie = new BlockBuilder(MOD_ID)
-                .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
-                .setHardness(0.5f)
-                .setResistance(0.5f)
-                .setTopTexture("pietop.png")
-                .setBottomTexture("piebottom.png")
-                .setSideTextures("pieside.png")
-                .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.NOT_IN_CREATIVE_MENU)
-                .build(new BlockPie("pie", blockID("pie")));
 
 
         // Soul Candle
