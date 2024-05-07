@@ -12,20 +12,8 @@ import net.minecraft.core.world.World;
 
 public class BlockOverlayRawCopper extends BlockOverlayPebbles {
 
-    static int[] textures = {};
-
     public BlockOverlayRawCopper(String key, int id, Material material) {
         super(key, id, material);
-        textures = new int[]{
-                TextureRegistry.getTexture("bonusblocks:block/pebbles_copper1.png").getArea(),
-                TextureRegistry.getTexture("bonusblocks:block/pebbles_copper2.png").getArea(),
-                TextureRegistry.getTexture("bonusblocks:block/pebbles_copper3.png").getArea()
-        };
-    }
-
-    @Override
-    public int getBlockTextureFromSideAndMetadata(Side side, int data) {
-        return textures[data];
     }
 
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {

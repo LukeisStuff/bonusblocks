@@ -14,20 +14,8 @@ import static net.minecraft.core.item.Item.oreRawIron;
 
 public class BlockOverlayRawIron extends BlockOverlayPebbles {
 
-    static int[] textures = {};
-
     public BlockOverlayRawIron(String key, int id, Material material) {
         super(key, id, material);
-        textures = new int[]{
-                TextureRegistry.getTexture("bonusblocks:block/pebbles_iron1.png").getArea(),
-                TextureRegistry.getTexture("bonusblocks:block/pebbles_iron2.png").getArea(),
-                TextureRegistry.getTexture("bonusblocks:block/pebbles_iron3.png").getArea()
-        };
-    }
-
-    @Override
-    public int getBlockTextureFromSideAndMetadata(Side side, int data) {
-        return textures[data];
     }
 
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {

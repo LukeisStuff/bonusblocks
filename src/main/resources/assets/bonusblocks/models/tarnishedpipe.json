@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "bonusblocks:block/corrodedcopperpipe",
-		"particle": "bonusblocks:block/corrodedcopperpipe"
+		"0": "bonusblocks:block/block/tarnishedcopperpipe",
+		"particle": "bonusblocks:block/block/tarnishedcopperpipe"
     },
     "elements": [
         {   "from": [ 0.8, 0, 8 ],

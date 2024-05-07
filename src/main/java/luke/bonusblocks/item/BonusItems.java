@@ -77,7 +77,7 @@ public class BonusItems {
                 new Item("mossball", itemID("mossball")));
 
 //        bedroll = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-//                new ItemBedroll("bedroll", itemID("bedroll")), "bedroll.png").setMaxStackSize(1);
+//                new ItemBedroll("bedroll", itemID("bedroll")), "bedroll").setMaxStackSize(1);
 
 
 

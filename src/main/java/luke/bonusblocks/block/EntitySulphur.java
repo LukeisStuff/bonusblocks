@@ -37,7 +37,7 @@ public class EntitySulphur extends EntityFallingSand {
 
     @Override
     public String getEntityTexture() {
-        return "/assets/bonusblocks/block/sulphurblock.png";
+        return "/assets/bonusblocks/block/sulphurblock";
     }
 
     protected boolean makeStepSound() {

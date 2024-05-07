@@ -14,20 +14,8 @@ import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
 
 public class BlockOverlayRawSilver extends BlockOverlayPebbles {
 
-    static int[] textures = {};
-
     public BlockOverlayRawSilver(String key, int id, Material material) {
         super(key, id, material);
-        textures = new int[]{
-                TextureRegistry.getTexture("bonusblocks:block/pebbles_silver1.png").getArea(),
-                TextureRegistry.getTexture("bonusblocks:block/pebbles_silver2.png").getArea(),
-                TextureRegistry.getTexture("bonusblocks:block/pebbles_silver3.png").getArea()
-        };
-    }
-
-    @Override
-    public int getBlockTextureFromSideAndMetadata(Side side, int data) {
-        return textures[data];
     }
 
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {

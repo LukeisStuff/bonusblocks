@@ -14,20 +14,9 @@ import static net.minecraft.core.item.Item.oreRawGold;
 
 public class BlockOverlayRawGold extends BlockOverlayPebbles {
 
-    static int[] textures = {};
 
     public BlockOverlayRawGold(String key, int id, Material material) {
         super(key, id, material);
-        textures = new int[]{
-                TextureRegistry.getTexture("bonusblocks:block/pebbles_gold1.png").getArea(),
-                TextureRegistry.getTexture("bonusblocks:block/pebbles_gold2.png").getArea(),
-                TextureRegistry.getTexture("bonusblocks:block/pebbles_gold3.png").getArea()
-        };
-    }
-
-    @Override
-    public int getBlockTextureFromSideAndMetadata(Side side, int data) {
-        return textures[data];
     }
 
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {

@@ -9,7 +9,7 @@ import org.useless.dragonfly.model.block.processed.ModernBlockModel;
 
 public class BlockGirder extends BlockAxisAligned {
 
-    public BlockGirder(String key, int id, Material material, ModernBlockModel orCreateBlockModel, boolean render3d) {
+    public BlockGirder(String key, int id, Material material) {
         super(key, id, material);
     }
 

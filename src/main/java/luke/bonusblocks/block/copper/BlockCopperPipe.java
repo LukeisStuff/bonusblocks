@@ -11,7 +11,7 @@ import org.useless.dragonfly.model.block.processed.ModernBlockModel;
 import java.util.Random;
 
 public class BlockCopperPipe extends BlockAxisAligned {
-    public BlockCopperPipe(String key, int id, Material material, ModernBlockModel orCreateBlockModel, boolean render3d) {
+    public BlockCopperPipe(String key, int id, Material material) {
         super(key, id, material);
         this.setTicking(true);
     }

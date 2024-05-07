@@ -1,15 +1,15 @@
 {
   "variants": {
     "axis=x": {
-      "model": "bonusblocks:block/pipe",
+      "model": "bonusblocks:block/block/pipe",
       "x": 90,
       "y": 90
     },
      "axis=y": {
-      "model": "bonusblocks:block/pipe"
+      "model": "bonusblocks:block/block/pipe"
     },
     "axis=z": {
-      "model": "bonusblocks:block/pipe",
+      "model": "bonusblocks:block/block/pipe",
       "x": 90
     }
   }

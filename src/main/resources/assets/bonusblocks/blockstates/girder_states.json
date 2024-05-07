@@ -1,15 +1,15 @@
 {
   "variants": {
     "axis=x": {
-      "model": "bonusblocks:block/girder",
+      "model": "bonusblocks:block/block/girder",
       "x": 90,
       "y": 90
     },
      "axis=y": {
-      "model": "bonusblocks:block/girder"
+      "model": "bonusblocks:block/block/girder"
     },
     "axis=z": {
-      "model": "bonusblocks:block/girder",
+      "model": "bonusblocks:block/block/girder",
       "x": 90
     }
   }

@@ -37,7 +37,7 @@ public abstract class GuiIngameMixin extends Gui {
         GL11.glBlendFunc(770, 771);
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
         GL11.glDisable(3008);
-        GL11.glBindTexture(3553, this.mc.renderEngine.getTexture("assets/bonusblocks/skullblur.png"));
+        GL11.glBindTexture(3553, this.mc.renderEngine.getTexture("assets/bonusblocks/skullblur"));
         Tessellator tessellator = Tessellator.instance;
         tessellator.startDrawingQuads();
         tessellator.addVertexWithUV(0.0, ySize, -90.0, 0.0, 1.0);

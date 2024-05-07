@@ -20,7 +20,7 @@ public class BlockModelCratePainted<T extends Block> extends BlockModelStandard<
 
     static {
         for(int i = 0; i < 16; ++i) {
-            texCoords[i] = TextureRegistry.getTexture("bonusblocks:block/crate_" + ItemDye.dyeColors[15 - i]);
+            texCoords[i] = TextureRegistry.getTexture("bonusblocks:block/block/crate_" + ItemDye.dyeColors[15 - i]);
         }
 
     }

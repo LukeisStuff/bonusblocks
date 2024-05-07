@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "bonusblocks:block/copperpipe",
-		"particle": "bonusblocks:block/copperpipe"
+		"0": "bonusblocks:block/block/copperpipe",
+		"particle": "bonusblocks:block/block/copperpipe"
     },
     "elements": [
         {   "from": [ 0.8, 0, 8 ],
