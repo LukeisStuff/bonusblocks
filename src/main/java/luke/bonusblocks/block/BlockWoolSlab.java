@@ -2,27 +2,34 @@ package luke.bonusblocks.block;
 
 import net.minecraft.core.Global;
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.BlockSlab;
 import net.minecraft.core.block.BlockSlabPainted;
+import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.entity.EntityLiving;
+import net.minecraft.core.enums.EnumDropCause;
+import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Direction;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.WorldSource;
 
-public class BlockWoolSlab extends BlockSlabPainted {
+public class BlockWoolSlab extends BlockSlab {
     public static final int[] texCoords = new int[16];
 
-    public BlockWoolSlab(Block modelBlock, int id) {
-        super(modelBlock, id);
+    public BlockWoolSlab(Block block, int id) {
+        super(block, id);
     }
 
-    public int getBlockTextureFromSideAndMetadata(Side side, int meta) {
-        meta >>= 4;
-        return texCoords[meta & 15];
+    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+        return new ItemStack[]{new ItemStack(this, 1, meta)};
     }
 
-    public int getBlockTexture(WorldSource blockAccess, int x, int y, int z, Side side) {
-        return this.getBlockTextureFromSideAndMetadata(side, blockAccess.getBlockMetadata(x, y, z));
+    public static int func_21034_c(int i) {
+        return ~i & 15;
+    }
+
+    public static int getMetadataForColour(int i) {
+        return ~i & 15;
     }
 
     public void onBlockPlaced(World world, int x, int y, int z, Side side, EntityLiving entity, double sideHeight) {
