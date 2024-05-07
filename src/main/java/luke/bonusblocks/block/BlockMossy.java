@@ -10,7 +10,7 @@ import net.minecraft.core.world.World;
 
 public class BlockMossy extends BlockMoss {
 
-    public BlockMossy(String key, int id) {
+    public BlockMossy(String key, int id, Material moss) {
         super(key, id);
         this.setTicking(true);
     }

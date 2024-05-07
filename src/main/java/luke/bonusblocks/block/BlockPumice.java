@@ -14,6 +14,7 @@ import net.minecraft.core.sound.SoundCategory;
 import net.minecraft.core.util.helper.DamageType;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.WorldSource;
+import turniplabs.halplibe.util.DirectoryManager;
 
 import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
 
@@ -30,13 +31,6 @@ public class BlockPumice extends Block {
         if (this.isMagma) {
             this.onBlockAdded(world, x, y, z);
         }
-    }
-
-    public int getBlockOverbrightTexture(WorldSource blockAccess, int x, int y, int z, int side) {
-        if (this.isMagma) {
-            return TextureHelper.getOrCreateBlockTextureIndex(MOD_ID,"pumiceoverlay.png");
-        }
-        return -1;
     }
 
     public void onEntityCollidedWithBlock(World world, int x, int y, int z, Entity entity) {

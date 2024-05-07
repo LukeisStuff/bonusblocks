@@ -1,5 +1,6 @@
 package luke.bonusblocks.block;
 
+import net.minecraft.client.render.stitcher.TextureRegistry;
 import net.minecraft.core.block.BlockOverlayPebbles;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
@@ -18,9 +19,9 @@ public class BlockOverlayRawGold extends BlockOverlayPebbles {
     public BlockOverlayRawGold(String key, int id, Material material) {
         super(key, id, material);
         textures = new int[]{
-                TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "goldpebble1.png"),
-                TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "goldpebble2.png"),
-                TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "goldpebble3.png")
+                TextureRegistry.getTexture("bonusblocks:block/pebbles_gold1.png").getArea(),
+                TextureRegistry.getTexture("bonusblocks:block/pebbles_gold2.png").getArea(),
+                TextureRegistry.getTexture("bonusblocks:block/pebbles_gold3.png").getArea()
         };
     }
 

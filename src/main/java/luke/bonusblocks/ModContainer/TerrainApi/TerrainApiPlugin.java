@@ -116,20 +116,8 @@ public class TerrainApiPlugin implements TerrainAPI {
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(Block.flowerYellow.id), 4, -1f, 1,
                 new Biome[]{Biomes.OVERWORLD_BIRCH_FOREST, Biomes.OVERWORLD_PLAINS, BonusBiomes.OVERWORLD_OVERGROWN_MEADOW});
 
-        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.flowerCyan.id), 4, -1f, 1,
-                new Biome[]{Biomes.OVERWORLD_SWAMPLAND, Biomes.OVERWORLD_SWAMPLAND_MUDDY, BonusBiomes.OVERWORLD_MAPLE, BonusBiomes.OVERWORLD_OVERGROWN_MEADOW});
-
-        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.flowerPink.id), 4, -1f, 1,
-                new Biome[]{Biomes.OVERWORLD_SEASONAL_FOREST, Biomes.OVERWORLD_DESERT, BonusBiomes.OVERWORLD_OVERGROWN_MEADOW});
-
-        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.flowerPurple.id), 4, -1f, 1,
-                new Biome[]{Biomes.OVERWORLD_GRASSLANDS, Biomes.OVERWORLD_SHRUBLAND, BonusBiomes.OVERWORLD_OVERGROWN_MEADOW});
-
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.flowerSilver.id), 4, -1f, 1,
                 new Biome[]{Biomes.OVERWORLD_BOREAL_FOREST, Biomes.OVERWORLD_GLACIER, BonusBiomes.OVERWORLD_OVERGROWN_MEADOW});
-
-        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.flowerOrange.id), 4, -1f, 1,
-                new Biome[]{Biomes.OVERWORLD_OUTBACK, Biomes.OVERWORLD_OUTBACK_GRASSY, BonusBiomes.OVERWORLD_OUTBACK_MESA, BonusBiomes.OVERWORLD_OVERGROWN_MEADOW});
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.flowerMagenta.id), 4, -1f, 1,
                 new Biome[]{Biomes.OVERWORLD_TAIGA, BonusBiomes.OVERWORLD_OVERGROWN_MEADOW});

@@ -48,14 +48,14 @@ public class BlockCopperCorrodedPressurePlate extends BlockPressurePlate {
             world.notifyBlocksOfNeighborChange(x, y, z, this.id);
             world.notifyBlocksOfNeighborChange(x, y - 1, z, this.id);
             world.markBlocksDirty(x, y, z, x, y, z);
-            world.playSoundEffect((Entity)null, SoundCategory.WORLD_SOUNDS, (double)x + 0.5, (double)y + 0.1, (double)z + 0.5, "random.click", 0.3f, 0.6f);
+            world.playSoundEffect(null, SoundCategory.WORLD_SOUNDS, (double)x + 0.5, (double)y + 0.1, (double)z + 0.5, "random.click", 0.3f, 0.6f);
         }
         if (!isSteppedOn && isPressed) {
             world.setBlockMetadataWithNotify(x, y, z, 0);
             world.notifyBlocksOfNeighborChange(x, y, z, this.id);
             world.notifyBlocksOfNeighborChange(x, y - 1, z, this.id);
             world.markBlocksDirty(x, y, z, x, y, z);
-            world.playSoundEffect((Entity)null, SoundCategory.WORLD_SOUNDS, (double)x + 0.5, (double)y + 0.1, (double)z + 0.5, "random.click", 0.3f, 0.5f);
+            world.playSoundEffect(null, SoundCategory.WORLD_SOUNDS, (double)x + 0.5, (double)y + 0.1, (double)z + 0.5, "random.click", 0.3f, 0.5f);
         }
         if (isSteppedOn) {
             world.scheduleBlockUpdate(x, y, z, this.id, this.tickRate());

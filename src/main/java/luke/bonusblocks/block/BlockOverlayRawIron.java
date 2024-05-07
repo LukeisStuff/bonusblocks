@@ -1,5 +1,6 @@
 package luke.bonusblocks.block;
 
+import net.minecraft.client.render.stitcher.TextureRegistry;
 import net.minecraft.core.block.BlockOverlayPebbles;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
@@ -18,9 +19,9 @@ public class BlockOverlayRawIron extends BlockOverlayPebbles {
     public BlockOverlayRawIron(String key, int id, Material material) {
         super(key, id, material);
         textures = new int[]{
-                TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "ironpebble1.png"),
-                TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "ironpebble2.png"),
-                TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "ironpebble3.png")
+                TextureRegistry.getTexture("bonusblocks:block/pebbles_iron1.png").getArea(),
+                TextureRegistry.getTexture("bonusblocks:block/pebbles_iron2.png").getArea(),
+                TextureRegistry.getTexture("bonusblocks:block/pebbles_iron3.png").getArea()
         };
     }
 

@@ -4,15 +4,12 @@ import net.minecraft.core.block.BlockAxisAligned;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.util.phys.AABB;
-import net.minecraft.core.world.World;
 import net.minecraft.core.world.WorldSource;
-import useless.dragonfly.model.block.processed.BlockModel;
-
-import java.util.Random;
+import org.useless.dragonfly.model.block.processed.ModernBlockModel;
 
 public class BlockGirder extends BlockAxisAligned {
 
-    public BlockGirder(String key, int id, Material material, BlockModel orCreateBlockModel, boolean render3d) {
+    public BlockGirder(String key, int id, Material material, ModernBlockModel orCreateBlockModel, boolean render3d) {
         super(key, id, material);
     }
 

@@ -6,12 +6,12 @@ import net.minecraft.core.block.material.Material;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
-import useless.dragonfly.model.block.processed.BlockModel;
+import org.useless.dragonfly.model.block.processed.ModernBlockModel;
 
 import java.util.Random;
 
 public class BlockCopperPipe extends BlockAxisAligned {
-    public BlockCopperPipe(String key, int id, Material material, BlockModel orCreateBlockModel, boolean render3d) {
+    public BlockCopperPipe(String key, int id, Material material, ModernBlockModel orCreateBlockModel, boolean render3d) {
         super(key, id, material);
         this.setTicking(true);
     }

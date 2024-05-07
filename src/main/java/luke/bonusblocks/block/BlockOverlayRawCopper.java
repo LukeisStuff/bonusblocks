@@ -1,6 +1,7 @@
 package luke.bonusblocks.block;
 
 import luke.bonusblocks.item.BonusItems;
+import net.minecraft.client.render.stitcher.TextureRegistry;
 import net.minecraft.core.block.BlockOverlayPebbles;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
@@ -9,8 +10,6 @@ import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 
-import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
-
 public class BlockOverlayRawCopper extends BlockOverlayPebbles {
 
     static int[] textures = {};
@@ -18,9 +17,9 @@ public class BlockOverlayRawCopper extends BlockOverlayPebbles {
     public BlockOverlayRawCopper(String key, int id, Material material) {
         super(key, id, material);
         textures = new int[]{
-                TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "copperpebble1.png"),
-                TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "copperpebble2.png"),
-                TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "copperpebble3.png")
+                TextureRegistry.getTexture("bonusblocks:block/pebbles_copper1.png").getArea(),
+                TextureRegistry.getTexture("bonusblocks:block/pebbles_copper2.png").getArea(),
+                TextureRegistry.getTexture("bonusblocks:block/pebbles_copper3.png").getArea()
         };
     }
 
