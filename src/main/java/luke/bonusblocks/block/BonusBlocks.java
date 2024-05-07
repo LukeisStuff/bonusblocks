@@ -7,10 +7,13 @@ import luke.bonusblocks.block.silver.BlockOreSilver;
 import luke.bonusblocks.block.silver.BlockSilverBed;
 import luke.bonusblocks.block.silver.BlockSilverSeat;
 import luke.bonusblocks.item.BonusItems;
+import net.minecraft.client.render.block.color.BlockColorCustom;
 import net.minecraft.client.render.block.color.BlockColorLeavesOak;
 import net.minecraft.client.render.block.color.BlockColorTallGrass;
 import net.minecraft.client.render.block.model.*;
 import net.minecraft.client.render.colorizer.Colorizer;
+import net.minecraft.client.render.colorizer.Colorizers;
+import net.minecraft.client.render.entity.FallingSandRenderer;
 import net.minecraft.client.render.stitcher.TextureRegistry;
 import net.minecraft.core.block.*;
 import net.minecraft.core.block.entity.TileEntity;
@@ -18,24 +21,22 @@ import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.crafting.LookupFuelFurnace;
 import net.minecraft.core.enums.EnumDropCause;
-import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.block.*;
-import net.minecraft.core.item.tool.ItemToolPickaxe;
 import net.minecraft.core.sound.BlockSound;
 import net.minecraft.core.world.World;
 import org.useless.dragonfly.helper.ModelHelper;
-import org.useless.dragonfly.model.block.BlockModelDragonFly;
 import org.useless.dragonfly.model.block.DFBlockModelBuilder;
 import turniplabs.halplibe.helper.BlockBuilder;
 import turniplabs.halplibe.helper.CreativeHelper;
 
 import java.util.Random;
-import java.util.function.Function;
 
 import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
 import static net.minecraft.core.block.Block.*;
 import static net.minecraft.core.block.BlockMoss.stoneToMossMap;
+import static net.minecraft.core.item.Item.itemsList;
+import static net.minecraft.core.item.tool.ItemToolPickaxe.miningLevels;
 
 public class BonusBlocks {
 
@@ -311,107 +312,107 @@ public class BonusBlocks {
 
     private void initializeBlockDetails() {
 
-        ItemToolPickaxe.miningLevels.put(lazurite, 0);
-        ItemToolPickaxe.miningLevels.put(cobbleLazurite, 0);
-        ItemToolPickaxe.miningLevels.put(brickLazurite, 0);
-        ItemToolPickaxe.miningLevels.put(lazuritePolished, 0);
-        ItemToolPickaxe.miningLevels.put(lazuriteCarved, 0);
-        ItemToolPickaxe.miningLevels.put(slabCobbleLazurite, 0);
-        ItemToolPickaxe.miningLevels.put(slabBrickLazurite, 0);
-        ItemToolPickaxe.miningLevels.put(stairsCobbleLazurite, 0);
-        ItemToolPickaxe.miningLevels.put(stairsBrickLazurite, 0);
-        ItemToolPickaxe.miningLevels.put(peridot, 0);
-        ItemToolPickaxe.miningLevels.put(cobblePeridot, 0);
-        ItemToolPickaxe.miningLevels.put(brickPeridot, 0);
-        ItemToolPickaxe.miningLevels.put(peridotPolished, 0);
-        ItemToolPickaxe.miningLevels.put(peridotCarved, 0);
-        ItemToolPickaxe.miningLevels.put(slabCobblePeridot, 0);
-        ItemToolPickaxe.miningLevels.put(slabBrickPeridot, 0);
-        ItemToolPickaxe.miningLevels.put(stairsCobblePeridot, 0);
-        ItemToolPickaxe.miningLevels.put(stairsBrickPeridot, 0);
+        miningLevels.put(lazurite, 0);
+        miningLevels.put(cobbleLazurite, 0);
+        miningLevels.put(brickLazurite, 0);
+        miningLevels.put(lazuritePolished, 0);
+        miningLevels.put(lazuriteCarved, 0);
+        miningLevels.put(slabCobbleLazurite, 0);
+        miningLevels.put(slabBrickLazurite, 0);
+        miningLevels.put(stairsCobbleLazurite, 0);
+        miningLevels.put(stairsBrickLazurite, 0);
+        miningLevels.put(peridot, 0);
+        miningLevels.put(cobblePeridot, 0);
+        miningLevels.put(brickPeridot, 0);
+        miningLevels.put(peridotPolished, 0);
+        miningLevels.put(peridotCarved, 0);
+        miningLevels.put(slabCobblePeridot, 0);
+        miningLevels.put(slabBrickPeridot, 0);
+        miningLevels.put(stairsCobblePeridot, 0);
+        miningLevels.put(stairsBrickPeridot, 0);
 
 
-        ItemToolPickaxe.miningLevels.put(blockRawIron, 1);
-        ItemToolPickaxe.miningLevels.put(girderIron, 1);
-        ItemToolPickaxe.miningLevels.put(blockRawCopper, 1);
-        ItemToolPickaxe.miningLevels.put(oreCopperStone, 1);
-        ItemToolPickaxe.miningLevels.put(oreCopperBasalt, 1);
-        ItemToolPickaxe.miningLevels.put(oreCopperLimestone, 1);
-        ItemToolPickaxe.miningLevels.put(oreCopperGranite, 1);
-        ItemToolPickaxe.miningLevels.put(blockCopper, 1);
-        ItemToolPickaxe.miningLevels.put(blockCopperTarnished, 1);
-        ItemToolPickaxe.miningLevels.put(blockCopperCorroded, 1);
-        ItemToolPickaxe.miningLevels.put(pipeCopper, 1);
-        ItemToolPickaxe.miningLevels.put(pipeCopperTarnished, 1);
-        ItemToolPickaxe.miningLevels.put(pipeCopperCorroded, 1);
-        ItemToolPickaxe.miningLevels.put(trapdoorCopper, 1);
-        ItemToolPickaxe.miningLevels.put(trapdoorCopperTarnished, 1);
-        ItemToolPickaxe.miningLevels.put(trapdoorCopperCorroded, 1);
-        ItemToolPickaxe.miningLevels.put(doorCopperTop, 1);
-        ItemToolPickaxe.miningLevels.put(doorCopperBottom, 1);
-        ItemToolPickaxe.miningLevels.put(doorCopperTarnishedTop, 1);
-        ItemToolPickaxe.miningLevels.put(doorCopperTarnishedBottom, 1);
-        ItemToolPickaxe.miningLevels.put(doorCopperCorrodedBottom, 1);
-        ItemToolPickaxe.miningLevels.put(doorCopperCorrodedTop, 1);
-        ItemToolPickaxe.miningLevels.put(fenceCopper, 1);
-        ItemToolPickaxe.miningLevels.put(fenceCopperTarnished, 1);
-        ItemToolPickaxe.miningLevels.put(fenceCopperCorroded, 1);
-        ItemToolPickaxe.miningLevels.put(slabCopper, 1);
-        ItemToolPickaxe.miningLevels.put(slabCopperTarnished, 1);
-        ItemToolPickaxe.miningLevels.put(slabCopperCorroded, 1);
-        ItemToolPickaxe.miningLevels.put(pressureplateCopper, 1);
-        ItemToolPickaxe.miningLevels.put(pressureplateCopperTarnished, 1);
-        ItemToolPickaxe.miningLevels.put(pressureplateCopperCorroded, 1);
-        ItemToolPickaxe.miningLevels.put(stairsCopper, 1);
-        ItemToolPickaxe.miningLevels.put(stairsCopperTarnished, 1);
-        ItemToolPickaxe.miningLevels.put(stairsCopperCorroded, 1);
-        ItemToolPickaxe.miningLevels.put(slabBrickLapis, 1);
-        ItemToolPickaxe.miningLevels.put(stairsBrickLapis, 1);
+        miningLevels.put(blockRawIron, 1);
+        miningLevels.put(girderIron, 1);
+        miningLevels.put(blockRawCopper, 1);
+        miningLevels.put(oreCopperStone, 1);
+        miningLevels.put(oreCopperBasalt, 1);
+        miningLevels.put(oreCopperLimestone, 1);
+        miningLevels.put(oreCopperGranite, 1);
+        miningLevels.put(blockCopper, 1);
+        miningLevels.put(blockCopperTarnished, 1);
+        miningLevels.put(blockCopperCorroded, 1);
+        miningLevels.put(pipeCopper, 1);
+        miningLevels.put(pipeCopperTarnished, 1);
+        miningLevels.put(pipeCopperCorroded, 1);
+        miningLevels.put(trapdoorCopper, 1);
+        miningLevels.put(trapdoorCopperTarnished, 1);
+        miningLevels.put(trapdoorCopperCorroded, 1);
+        miningLevels.put(doorCopperTop, 1);
+        miningLevels.put(doorCopperBottom, 1);
+        miningLevels.put(doorCopperTarnishedTop, 1);
+        miningLevels.put(doorCopperTarnishedBottom, 1);
+        miningLevels.put(doorCopperCorrodedBottom, 1);
+        miningLevels.put(doorCopperCorrodedTop, 1);
+        miningLevels.put(fenceCopper, 1);
+        miningLevels.put(fenceCopperTarnished, 1);
+        miningLevels.put(fenceCopperCorroded, 1);
+        miningLevels.put(slabCopper, 1);
+        miningLevels.put(slabCopperTarnished, 1);
+        miningLevels.put(slabCopperCorroded, 1);
+        miningLevels.put(pressureplateCopper, 1);
+        miningLevels.put(pressureplateCopperTarnished, 1);
+        miningLevels.put(pressureplateCopperCorroded, 1);
+        miningLevels.put(stairsCopper, 1);
+        miningLevels.put(stairsCopperTarnished, 1);
+        miningLevels.put(stairsCopperCorroded, 1);
+        miningLevels.put(slabBrickLapis, 1);
+        miningLevels.put(stairsBrickLapis, 1);
 
 
-        ItemToolPickaxe.miningLevels.put(blockRawGold, 2);
-        ItemToolPickaxe.miningLevels.put(fenceGold, 2);
-        ItemToolPickaxe.miningLevels.put(slabBrickGold, 2);
-        ItemToolPickaxe.miningLevels.put(stairsBrickGold, 2);
-        ItemToolPickaxe.miningLevels.put(brickSteel, 2);
-        ItemToolPickaxe.miningLevels.put(slabBrickSteel, 2);
-        ItemToolPickaxe.miningLevels.put(stairsBrickSteel, 2);
-        ItemToolPickaxe.miningLevels.put(trapdoorSteel, 2);
-        ItemToolPickaxe.miningLevels.put(doorSteelTop, 2);
-        ItemToolPickaxe.miningLevels.put(doorSteelBottom, 2);
-        ItemToolPickaxe.miningLevels.put(blockCrudeSteel, 2);
+        miningLevels.put(blockRawGold, 2);
+        miningLevels.put(fenceGold, 2);
+        miningLevels.put(slabBrickGold, 2);
+        miningLevels.put(stairsBrickGold, 2);
+        miningLevels.put(brickSteel, 2);
+        miningLevels.put(slabBrickSteel, 2);
+        miningLevels.put(stairsBrickSteel, 2);
+        miningLevels.put(trapdoorSteel, 2);
+        miningLevels.put(doorSteelTop, 2);
+        miningLevels.put(doorSteelBottom, 2);
+        miningLevels.put(blockCrudeSteel, 2);
 
-        ItemToolPickaxe.miningLevels.put(blockSilver, 2);
-        ItemToolPickaxe.miningLevels.put(blockRawSilver, 2);
-        ItemToolPickaxe.miningLevels.put(brickSilver, 2);
-        ItemToolPickaxe.miningLevels.put(oreSilverStone, 2);
-        ItemToolPickaxe.miningLevels.put(oreSilverBasalt, 2);
-        ItemToolPickaxe.miningLevels.put(oreSilverLimestone, 2);
-        ItemToolPickaxe.miningLevels.put(oreSilverGranite, 2);
-        ItemToolPickaxe.miningLevels.put(seatSilver, 2);
-        ItemToolPickaxe.miningLevels.put(bedSilver, 2);
-        ItemToolPickaxe.miningLevels.put(chandelierSilver, 2);
-        ItemToolPickaxe.miningLevels.put(candelabraSilver, 2);
-        ItemToolPickaxe.miningLevels.put(chimesSilver, 2);
-        ItemToolPickaxe.miningLevels.put(vaneSilver, 2);
-        ItemToolPickaxe.miningLevels.put(vaseSilver, 2);
-        ItemToolPickaxe.miningLevels.put(fenceSilver, 2);
-        ItemToolPickaxe.miningLevels.put(lanternSilver, 2);
-        ItemToolPickaxe.miningLevels.put(doorSilverBottom, 2);
-        ItemToolPickaxe.miningLevels.put(doorSilverTop, 2);
-        ItemToolPickaxe.miningLevels.put(trapdoorSilver, 2);
-        ItemToolPickaxe.miningLevels.put(stairsBrickSilver, 2);
-        ItemToolPickaxe.miningLevels.put(slabBrickSilver, 2);
+        miningLevels.put(blockSilver, 2);
+        miningLevels.put(blockRawSilver, 2);
+        miningLevels.put(brickSilver, 2);
+        miningLevels.put(oreSilverStone, 2);
+        miningLevels.put(oreSilverBasalt, 2);
+        miningLevels.put(oreSilverLimestone, 2);
+        miningLevels.put(oreSilverGranite, 2);
+        miningLevels.put(seatSilver, 2);
+        miningLevels.put(bedSilver, 2);
+        miningLevels.put(chandelierSilver, 2);
+        miningLevels.put(candelabraSilver, 2);
+        miningLevels.put(chimesSilver, 2);
+        miningLevels.put(vaneSilver, 2);
+        miningLevels.put(vaseSilver, 2);
+        miningLevels.put(fenceSilver, 2);
+        miningLevels.put(lanternSilver, 2);
+        miningLevels.put(doorSilverBottom, 2);
+        miningLevels.put(doorSilverTop, 2);
+        miningLevels.put(trapdoorSilver, 2);
+        miningLevels.put(stairsBrickSilver, 2);
+        miningLevels.put(slabBrickSilver, 2);
 
 
-        Item.itemsList[cratePainted.id] = new ItemBlockPainted(cratePainted, false);
+        itemsList[cratePainted.id] = new ItemBlockPainted(cratePainted, false);
 
-        stoneToMossMap.put(Block.saplingOak, BonusBlocks.saplingOakMossy);
-        stoneToMossMap.put(BonusBlocks.cobbleNetherrack, Block.netherrack);
-        stoneToMossMap.put(Block.mossStone, BonusBlocks.moss);
-        stoneToMossMap.put(Block.mossBasalt, BonusBlocks.moss);
-        stoneToMossMap.put(Block.mossLimestone, BonusBlocks.moss);
-        stoneToMossMap.put(Block.mossGranite, BonusBlocks.moss);
+        stoneToMossMap.put(saplingOak, BonusBlocks.saplingOakMossy);
+        stoneToMossMap.put(BonusBlocks.cobbleNetherrack, netherrack);
+        stoneToMossMap.put(mossStone, BonusBlocks.moss);
+        stoneToMossMap.put(mossBasalt, BonusBlocks.moss);
+        stoneToMossMap.put(mossLimestone, BonusBlocks.moss);
+        stoneToMossMap.put(mossGranite, BonusBlocks.moss);
 
         LookupFuelFurnace.instance.addFuelEntry(logMaple.id, 300);
         LookupFuelFurnace.instance.addFuelEntry(logJacaranda.id, 300);
@@ -429,218 +430,218 @@ public class BonusBlocks {
         LookupFuelFurnace.instance.addFuelEntry(saplingMaple.id, 100);
         LookupFuelFurnace.instance.addFuelEntry(saplingOakMossy.id, 100);
 
-        CreativeHelper.setParent(netherrack, Block.permafrost);
+        CreativeHelper.setParent(netherrack, permafrost);
 
-        CreativeHelper.setParent(cobbleNetherrack, Block.cobblePermafrost);
-        CreativeHelper.setParent(Block.netherrack, Block.cobblePermafrost);
+        CreativeHelper.setParent(cobbleNetherrack, cobblePermafrost);
+        CreativeHelper.setParent(netherrack, cobblePermafrost);
 
-        CreativeHelper.setParent(pillarSlate, Block.pillarMarble);
+        CreativeHelper.setParent(pillarSlate, pillarMarble);
 
-        CreativeHelper.setParent(scorchedstone, Block.sandstone);
+        CreativeHelper.setParent(scorchedstone, sandstone);
 
-        CreativeHelper.setParent(box, Block.planksOak);
+        CreativeHelper.setParent(box, planksOak);
 
-        CreativeHelper.setParent(crate, Block.trommelIdle);
+        CreativeHelper.setParent(crate, trommelIdle);
 
         for (int color = 1; color < 17; color++) {
-            CreativeHelper.setParent(cratePainted, color - 1, Block.trommelIdle, 0);
+            CreativeHelper.setParent(cratePainted, color - 1, trommelIdle, 0);
         }
 
-        CreativeHelper.setParent(bookshelfEmptyPlanksOak, Block.bookshelfPlanksOak);
+        CreativeHelper.setParent(bookshelfEmptyPlanksOak, bookshelfPlanksOak);
 
-        CreativeHelper.setParent(moss, Block.mossGranite);
+        CreativeHelper.setParent(moss, mossGranite);
 
-        CreativeHelper.setParent(Block.stoneCarved, Block.pillarMarble);
-        CreativeHelper.setParent(Block.basaltCarved, Block.pillarMarble);
-        CreativeHelper.setParent(Block.limestoneCarved, Block.pillarMarble);
-        CreativeHelper.setParent(Block.graniteCarved, Block.pillarMarble);
-        CreativeHelper.setParent(Block.capstoneMarble, Block.pillarMarble);
-        CreativeHelper.setParent(marbleCarved, Block.pillarMarble);
-        CreativeHelper.setParent(slateCarved, Block.pillarMarble);
+        CreativeHelper.setParent(stoneCarved, pillarMarble);
+        CreativeHelper.setParent(basaltCarved, pillarMarble);
+        CreativeHelper.setParent(limestoneCarved, pillarMarble);
+        CreativeHelper.setParent(graniteCarved, pillarMarble);
+        CreativeHelper.setParent(capstoneMarble, pillarMarble);
+        CreativeHelper.setParent(marbleCarved, pillarMarble);
+        CreativeHelper.setParent(slateCarved, pillarMarble);
 
-        CreativeHelper.setParent(overgrownGrass, Block.grassScorched);
-        CreativeHelper.setParent(overgrownGrassRetro, Block.grassScorched);
-        CreativeHelper.setParent(overgrownGrassScorched, Block.grassScorched);
-        CreativeHelper.setParent(overgrownPath, Block.pathDirt);
+        CreativeHelper.setParent(overgrownGrass, grassScorched);
+        CreativeHelper.setParent(overgrownGrassRetro, grassScorched);
+        CreativeHelper.setParent(overgrownGrassScorched, grassScorched);
+        CreativeHelper.setParent(overgrownPath, pathDirt);
 
-        CreativeHelper.setParent(dirtRough, Block.dirt);
+        CreativeHelper.setParent(dirtRough, dirt);
 
-        CreativeHelper.setParent(skull, Block.pumpkinCarvedActive);
-        CreativeHelper.setParent(skullCarved, Block.pumpkinCarvedActive);
-        CreativeHelper.setParent(skullActive, Block.pumpkinCarvedActive);
+        CreativeHelper.setParent(skull, pumpkinCarvedActive);
+        CreativeHelper.setParent(skullCarved, pumpkinCarvedActive);
+        CreativeHelper.setParent(skullActive, pumpkinCarvedActive);
 
-        CreativeHelper.setParent(glassObsidian, Block.glass);
-        CreativeHelper.setParent(glassQuartz, Block.glassTinted);
+        CreativeHelper.setParent(glassObsidian, glass);
+        CreativeHelper.setParent(glassQuartz, glassTinted);
 
-        CreativeHelper.setParent(trapdoorGlassObsidian, Block.trapdoorGlass);
-        CreativeHelper.setParent(trapdoorSteel, Block.trapdoorGlass);
-        CreativeHelper.setParent(trapdoorCopper, Block.trapdoorGlass);
-        CreativeHelper.setParent(trapdoorCopperTarnished, Block.trapdoorGlass);
-        CreativeHelper.setParent(trapdoorCopperCorroded, Block.trapdoorGlass);
-        CreativeHelper.setParent(trapdoorSilver, Block.trapdoorGlass);
+        CreativeHelper.setParent(trapdoorGlassObsidian, trapdoorGlass);
+        CreativeHelper.setParent(trapdoorSteel, trapdoorGlass);
+        CreativeHelper.setParent(trapdoorCopper, trapdoorGlass);
+        CreativeHelper.setParent(trapdoorCopperTarnished, trapdoorGlass);
+        CreativeHelper.setParent(trapdoorCopperCorroded, trapdoorGlass);
+        CreativeHelper.setParent(trapdoorSilver, trapdoorGlass);
 
-        CreativeHelper.setParent(flowerSilver, Block.flowerRed);
-        CreativeHelper.setParent(flowerLightBlue, Block.flowerRed);
-        CreativeHelper.setParent(flowerMagenta, Block.flowerRed);
-        CreativeHelper.setParent(flowerLime, Block.flowerRed);
+        CreativeHelper.setParent(flowerSilver, flowerRed);
+        CreativeHelper.setParent(flowerLightBlue, flowerRed);
+        CreativeHelper.setParent(flowerMagenta, flowerRed);
+        CreativeHelper.setParent(flowerLime, flowerRed);
 
-        CreativeHelper.setParent(petalYellow, Block.flowerRed);
-        CreativeHelper.setParent(petalRed, Block.flowerRed);
-        CreativeHelper.setParent(petalCyan, Block.flowerRed);
-        CreativeHelper.setParent(petalPurple, Block.flowerRed);
-        CreativeHelper.setParent(petalPink, Block.flowerRed);
-        CreativeHelper.setParent(petalLightGray, Block.flowerRed);
-        CreativeHelper.setParent(petalOrange, Block.flowerRed);
-        CreativeHelper.setParent(petalLightBlue, Block.flowerRed);
-        CreativeHelper.setParent(petalMagenta, Block.flowerRed);
-        CreativeHelper.setParent(petalLime, Block.flowerRed);
+        CreativeHelper.setParent(petalYellow, flowerRed);
+        CreativeHelper.setParent(petalRed, flowerRed);
+        CreativeHelper.setParent(petalCyan, flowerRed);
+        CreativeHelper.setParent(petalPurple, flowerRed);
+        CreativeHelper.setParent(petalPink, flowerRed);
+        CreativeHelper.setParent(petalLightGray, flowerRed);
+        CreativeHelper.setParent(petalOrange, flowerRed);
+        CreativeHelper.setParent(petalLightBlue, flowerRed);
+        CreativeHelper.setParent(petalMagenta, flowerRed);
+        CreativeHelper.setParent(petalLime, flowerRed);
 
-        CreativeHelper.setParent(petalLayerYellow, Block.flowerRed);
-        CreativeHelper.setParent(petalLayerRed, Block.flowerRed);
-        CreativeHelper.setParent(petalLayerCyan, Block.flowerRed);
-        CreativeHelper.setParent(petalLayerPurple, Block.flowerRed);
-        CreativeHelper.setParent(petalLayerPink, Block.flowerRed);
-        CreativeHelper.setParent(petalLayerLightGray, Block.flowerRed);
-        CreativeHelper.setParent(petalLayerOrange, Block.flowerRed);
-        CreativeHelper.setParent(petalLayerLightBlue, Block.flowerRed);
-        CreativeHelper.setParent(petalLayerMagenta, Block.flowerRed);
-        CreativeHelper.setParent(petalLayerLime, Block.flowerRed);
+        CreativeHelper.setParent(petalLayerYellow, flowerRed);
+        CreativeHelper.setParent(petalLayerRed, flowerRed);
+        CreativeHelper.setParent(petalLayerCyan, flowerRed);
+        CreativeHelper.setParent(petalLayerPurple, flowerRed);
+        CreativeHelper.setParent(petalLayerPink, flowerRed);
+        CreativeHelper.setParent(petalLayerLightGray, flowerRed);
+        CreativeHelper.setParent(petalLayerOrange, flowerRed);
+        CreativeHelper.setParent(petalLayerLightBlue, flowerRed);
+        CreativeHelper.setParent(petalLayerMagenta, flowerRed);
+        CreativeHelper.setParent(petalLayerLime, flowerRed);
 
-        CreativeHelper.setParent(mushroomGray, Block.mushroomRed);
+        CreativeHelper.setParent(mushroomGray, mushroomRed);
 
-        CreativeHelper.setParent(fungiBrown, Block.mushroomRed);
-        CreativeHelper.setParent(fungiRed, Block.mushroomRed);
-        CreativeHelper.setParent(fungiGray, Block.mushroomRed);
+        CreativeHelper.setParent(fungiBrown, mushroomRed);
+        CreativeHelper.setParent(fungiRed, mushroomRed);
+        CreativeHelper.setParent(fungiGray, mushroomRed);
 
-        CreativeHelper.setParent(logShrub, Block.logOakMossy);
-        CreativeHelper.setParent(logCacao, Block.logOakMossy);
-        CreativeHelper.setParent(logMaple, Block.logOakMossy);
-        CreativeHelper.setParent(logJacaranda, Block.logOakMossy);
-        CreativeHelper.setParent(logScorched, Block.logOakMossy);
+        CreativeHelper.setParent(logShrub, logOakMossy);
+        CreativeHelper.setParent(logCacao, logOakMossy);
+        CreativeHelper.setParent(logMaple, logOakMossy);
+        CreativeHelper.setParent(logJacaranda, logOakMossy);
+        CreativeHelper.setParent(logScorched, logOakMossy);
 
-        CreativeHelper.setParent(leavesOakMossy, Block.leavesCacao);
-        CreativeHelper.setParent(leavesMaple, Block.leavesCacao);
-        CreativeHelper.setParent(leavesJacaranda, Block.leavesCacao);
-        CreativeHelper.setParent(branch, Block.leavesCacao);
+        CreativeHelper.setParent(leavesOakMossy, leavesCacao);
+        CreativeHelper.setParent(leavesMaple, leavesCacao);
+        CreativeHelper.setParent(leavesJacaranda, leavesCacao);
+        CreativeHelper.setParent(branch, leavesCacao);
 
-        CreativeHelper.setParent(saplingOakMossy, Block.saplingCacao);
-        CreativeHelper.setParent(saplingMaple, Block.saplingCacao);
-        CreativeHelper.setParent(saplingJacaranda, Block.saplingCacao);
+        CreativeHelper.setParent(saplingOakMossy, saplingCacao);
+        CreativeHelper.setParent(saplingMaple, saplingCacao);
+        CreativeHelper.setParent(saplingJacaranda, saplingCacao);
 
-        CreativeHelper.setParent(oreCopperStone, Block.oreIronGranite);
-        CreativeHelper.setParent(oreCopperBasalt, Block.oreIronGranite);
-        CreativeHelper.setParent(oreCopperLimestone, Block.oreIronGranite);
-        CreativeHelper.setParent(oreCopperGranite, Block.oreIronGranite);
+        CreativeHelper.setParent(oreCopperStone, oreIronGranite);
+        CreativeHelper.setParent(oreCopperBasalt, oreIronGranite);
+        CreativeHelper.setParent(oreCopperLimestone, oreIronGranite);
+        CreativeHelper.setParent(oreCopperGranite, oreIronGranite);
 
-        CreativeHelper.setParent(oreSilverStone, Block.oreGoldGranite);
-        CreativeHelper.setParent(oreSilverBasalt, Block.oreGoldGranite);
-        CreativeHelper.setParent(oreSilverLimestone, Block.oreGoldGranite);
-        CreativeHelper.setParent(oreSilverGranite, Block.oreGoldGranite);
+        CreativeHelper.setParent(oreSilverStone, oreGoldGranite);
+        CreativeHelper.setParent(oreSilverBasalt, oreGoldGranite);
+        CreativeHelper.setParent(oreSilverLimestone, oreGoldGranite);
+        CreativeHelper.setParent(oreSilverGranite, oreGoldGranite);
 
-        CreativeHelper.setParent(pumiceDry, Block.spongeWet);
-        CreativeHelper.setParent(pumiceWet, Block.spongeWet);
+        CreativeHelper.setParent(pumiceDry, spongeWet);
+        CreativeHelper.setParent(pumiceWet, spongeWet);
 
-        CreativeHelper.setParent(brimstone, Block.bedrock);
+        CreativeHelper.setParent(brimstone, bedrock);
 
-        CreativeHelper.setParent(clayBaked, Block.blockClay);
+        CreativeHelper.setParent(clayBaked, blockClay);
 
-        CreativeHelper.setParent(blockSulphur, Block.gravel);
-        CreativeHelper.setParent(blockSugar, Block.gravel);
+        CreativeHelper.setParent(blockSulphur, gravel);
+        CreativeHelper.setParent(blockSugar, gravel);
 
-        CreativeHelper.setParent(brickNetherrack, Block.brickIron);
-        CreativeHelper.setParent(brickScorchedstone, Block.brickIron);
-        CreativeHelper.setParent(brickMud, Block.brickIron);
-        CreativeHelper.setParent(brickSteel, Block.brickIron);
-        CreativeHelper.setParent(brickQuartz, Block.brickIron);
-        CreativeHelper.setParent(brickOlivine, Block.brickIron);
-        CreativeHelper.setParent(brickSilver, Block.brickIron);
-        CreativeHelper.setParent(brickClayBaked, Block.brickIron);
+        CreativeHelper.setParent(brickNetherrack, brickIron);
+        CreativeHelper.setParent(brickScorchedstone, brickIron);
+        CreativeHelper.setParent(brickMud, brickIron);
+        CreativeHelper.setParent(brickSteel, brickIron);
+        CreativeHelper.setParent(brickQuartz, brickIron);
+        CreativeHelper.setParent(brickOlivine, brickIron);
+        CreativeHelper.setParent(brickSilver, brickIron);
+        CreativeHelper.setParent(brickClayBaked, brickIron);
 
-        CreativeHelper.setParent(fenceCopper, Block.fenceChainlink);
-        CreativeHelper.setParent(fenceCopperTarnished, Block.fenceChainlink);
-        CreativeHelper.setParent(fenceCopperCorroded, Block.fenceChainlink);
-        CreativeHelper.setParent(fenceSilver, Block.fenceChainlink);
-        CreativeHelper.setParent(fenceGold, Block.fenceChainlink);
+        CreativeHelper.setParent(fenceCopper, fenceChainlink);
+        CreativeHelper.setParent(fenceCopperTarnished, fenceChainlink);
+        CreativeHelper.setParent(fenceCopperCorroded, fenceChainlink);
+        CreativeHelper.setParent(fenceSilver, fenceChainlink);
+        CreativeHelper.setParent(fenceGold, fenceChainlink);
 
 
-        CreativeHelper.setParent(pressureplateCopper, Block.pressureplateCobbleStone);
-        CreativeHelper.setParent(pressureplateCopperTarnished, Block.pressureplateCobbleStone);
-        CreativeHelper.setParent(pressureplateCopperCorroded, Block.pressureplateCobbleStone);
+        CreativeHelper.setParent(pressureplateCopper, pressureplateCobbleStone);
+        CreativeHelper.setParent(pressureplateCopperTarnished, pressureplateCobbleStone);
+        CreativeHelper.setParent(pressureplateCopperCorroded, pressureplateCobbleStone);
 
-        CreativeHelper.setParent(meshCopper, Block.mesh);
-        CreativeHelper.setParent(meshCopperTarnished, Block.mesh);
-        CreativeHelper.setParent(meshCopperCorroded, Block.mesh);
+        CreativeHelper.setParent(meshCopper, mesh);
+        CreativeHelper.setParent(meshCopperTarnished, mesh);
+        CreativeHelper.setParent(meshCopperCorroded, mesh);
 
-        CreativeHelper.setParent(marblePolished, Block.slatePolished);
+        CreativeHelper.setParent(marblePolished, slatePolished);
 
-        CreativeHelper.setParent(soulslate, Block.soulsand);
+        CreativeHelper.setParent(soulslate, soulsand);
 
-        CreativeHelper.setParent(blockBone, Block.blockCharcoal);
-        CreativeHelper.setParent(thatch, Block.blockCharcoal);
-        CreativeHelper.setParent(blockCloth, Block.blockCharcoal);
-        CreativeHelper.setParent(blockSlime, Block.blockCharcoal);
-        CreativeHelper.setParent(blockLeather, Block.blockCharcoal);
-        CreativeHelper.setParent(blockWicker, Block.blockCharcoal);
-        CreativeHelper.setParent(blockRawGold, Block.blockCharcoal);
-        CreativeHelper.setParent(blockRawIron, Block.blockCharcoal);
-        CreativeHelper.setParent(blockRawCopper, Block.blockCharcoal);
-        CreativeHelper.setParent(blockRawCopperTarnished, Block.blockCharcoal);
-        CreativeHelper.setParent(blockRawCopperCorroded, Block.blockCharcoal);
-        CreativeHelper.setParent(blockRawSilver, Block.blockCharcoal);
-        CreativeHelper.setParent(blockFlint, Block.blockCharcoal);
-        CreativeHelper.setParent(blockCrudeSteel, Block.blockCharcoal);
-        CreativeHelper.setParent(blockCopper, Block.blockCharcoal);
-        CreativeHelper.setParent(blockCopperTarnished, Block.blockCharcoal);
-        CreativeHelper.setParent(blockCopperCorroded, Block.blockCharcoal);
-        CreativeHelper.setParent(blockSilver, Block.blockCharcoal);
+        CreativeHelper.setParent(blockBone, blockCharcoal);
+        CreativeHelper.setParent(thatch, blockCharcoal);
+        CreativeHelper.setParent(blockCloth, blockCharcoal);
+        CreativeHelper.setParent(blockSlime, blockCharcoal);
+        CreativeHelper.setParent(blockLeather, blockCharcoal);
+        CreativeHelper.setParent(blockWicker, blockCharcoal);
+        CreativeHelper.setParent(blockRawGold, blockCharcoal);
+        CreativeHelper.setParent(blockRawIron, blockCharcoal);
+        CreativeHelper.setParent(blockRawCopper, blockCharcoal);
+        CreativeHelper.setParent(blockRawCopperTarnished, blockCharcoal);
+        CreativeHelper.setParent(blockRawCopperCorroded, blockCharcoal);
+        CreativeHelper.setParent(blockRawSilver, blockCharcoal);
+        CreativeHelper.setParent(blockFlint, blockCharcoal);
+        CreativeHelper.setParent(blockCrudeSteel, blockCharcoal);
+        CreativeHelper.setParent(blockCopper, blockCharcoal);
+        CreativeHelper.setParent(blockCopperTarnished, blockCharcoal);
+        CreativeHelper.setParent(blockCopperCorroded, blockCharcoal);
+        CreativeHelper.setParent(blockSilver, blockCharcoal);
 
-        CreativeHelper.setParent(slabCobbleStoneMossy, Block.slabBasaltPolished);
-        CreativeHelper.setParent(slabSlatePolished, Block.slabBasaltPolished);
-        CreativeHelper.setParent(slabMarblePolished, Block.slabBasaltPolished);
-        CreativeHelper.setParent(slabBrickStonePolishedMossy, Block.slabBasaltPolished);
-        CreativeHelper.setParent(slabBrickSandstone, Block.slabBasaltPolished);
-        CreativeHelper.setParent(slabBrickGold, Block.slabBasaltPolished);
-        CreativeHelper.setParent(slabBrickIron, Block.slabBasaltPolished);
-        CreativeHelper.setParent(slabBrickLapis, Block.slabBasaltPolished);
-        CreativeHelper.setParent(slabCobbleNetherrack, Block.slabBasaltPolished);
-        CreativeHelper.setParent(slabCobbleNetherrackMossy, Block.slabBasaltPolished);
-        CreativeHelper.setParent(slabScorchedstone, Block.slabBasaltPolished);
-        CreativeHelper.setParent(slabBrickNetherrack, Block.slabBasaltPolished);
-        CreativeHelper.setParent(slabBrickScorchedstone, Block.slabBasaltPolished);
-        CreativeHelper.setParent(slabBrickMud, Block.slabBasaltPolished);
-        CreativeHelper.setParent(slabBrickSteel, Block.slabBasaltPolished);
-        CreativeHelper.setParent(slabBrickQuartz, Block.slabBasaltPolished);
-        CreativeHelper.setParent(slabBrickOlivine, Block.slabBasaltPolished);
-        CreativeHelper.setParent(slabBrickSilver, Block.slabBasaltPolished);
-        CreativeHelper.setParent(slabCopper, Block.slabBasaltPolished);
-        CreativeHelper.setParent(slabCopperTarnished, Block.slabBasaltPolished);
-        CreativeHelper.setParent(slabCopperCorroded, Block.slabBasaltPolished);
-        CreativeHelper.setParent(slabBrickClayBaked, Block.slabBasaltPolished);
+        CreativeHelper.setParent(slabCobbleStoneMossy, slabBasaltPolished);
+        CreativeHelper.setParent(slabSlatePolished, slabBasaltPolished);
+        CreativeHelper.setParent(slabMarblePolished, slabBasaltPolished);
+        CreativeHelper.setParent(slabBrickStonePolishedMossy, slabBasaltPolished);
+        CreativeHelper.setParent(slabBrickSandstone, slabBasaltPolished);
+        CreativeHelper.setParent(slabBrickGold, slabBasaltPolished);
+        CreativeHelper.setParent(slabBrickIron, slabBasaltPolished);
+        CreativeHelper.setParent(slabBrickLapis, slabBasaltPolished);
+        CreativeHelper.setParent(slabCobbleNetherrack, slabBasaltPolished);
+        CreativeHelper.setParent(slabCobbleNetherrackMossy, slabBasaltPolished);
+        CreativeHelper.setParent(slabScorchedstone, slabBasaltPolished);
+        CreativeHelper.setParent(slabBrickNetherrack, slabBasaltPolished);
+        CreativeHelper.setParent(slabBrickScorchedstone, slabBasaltPolished);
+        CreativeHelper.setParent(slabBrickMud, slabBasaltPolished);
+        CreativeHelper.setParent(slabBrickSteel, slabBasaltPolished);
+        CreativeHelper.setParent(slabBrickQuartz, slabBasaltPolished);
+        CreativeHelper.setParent(slabBrickOlivine, slabBasaltPolished);
+        CreativeHelper.setParent(slabBrickSilver, slabBasaltPolished);
+        CreativeHelper.setParent(slabCopper, slabBasaltPolished);
+        CreativeHelper.setParent(slabCopperTarnished, slabBasaltPolished);
+        CreativeHelper.setParent(slabCopperCorroded, slabBasaltPolished);
+        CreativeHelper.setParent(slabBrickClayBaked, slabBasaltPolished);
         for (int color = 0; color < 16; color++) {
-            CreativeHelper.setParent(slabWool, color << 4, Block.slabBasaltPolished, 0);
+            CreativeHelper.setParent(slabWool, color << 4, slabBasaltPolished, 0);
         }
 
-        CreativeHelper.setParent(stairsCobbleStoneMossy, Block.stairsBrickStone);
-        CreativeHelper.setParent(stairsBrickStonePolishedMossy, Block.stairsBrickStone);
-        CreativeHelper.setParent(stairsScorchedstone, Block.stairsBrickStone);
-        CreativeHelper.setParent(stairsBrickGold, Block.stairsBrickStone);
-        CreativeHelper.setParent(stairsBrickIron, Block.stairsBrickStone);
-        CreativeHelper.setParent(stairsBrickLapis, Block.stairsBrickStone);
-        CreativeHelper.setParent(stairsCobbleNetherrack, Block.stairsBrickStone);
-        CreativeHelper.setParent(stairsCobbleNetherrackMossy, Block.stairsBrickStone);
-        CreativeHelper.setParent(stairsBrickNetherrack, Block.stairsBrickStone);
-        CreativeHelper.setParent(stairsBrickScorchedstone, Block.stairsBrickStone);
-        CreativeHelper.setParent(stairsBrickMud, Block.stairsBrickStone);
-        CreativeHelper.setParent(stairsBrickSteel, Block.stairsBrickStone);
-        CreativeHelper.setParent(stairsBrickQuartz, Block.stairsBrickStone);
-        CreativeHelper.setParent(stairsBrickOlivine, Block.stairsBrickStone);
-        CreativeHelper.setParent(stairsBrickSilver, Block.stairsBrickStone);
-        CreativeHelper.setParent(stairsCopper, Block.stairsBrickStone);
-        CreativeHelper.setParent(stairsCopperTarnished, Block.stairsBrickStone);
-        CreativeHelper.setParent(stairsCopperCorroded, Block.stairsBrickStone);
-        CreativeHelper.setParent(stairsBrickClayBaked, Block.stairsBrickStone);
+        CreativeHelper.setParent(stairsCobbleStoneMossy, stairsBrickStone);
+        CreativeHelper.setParent(stairsBrickStonePolishedMossy, stairsBrickStone);
+        CreativeHelper.setParent(stairsScorchedstone, stairsBrickStone);
+        CreativeHelper.setParent(stairsBrickGold, stairsBrickStone);
+        CreativeHelper.setParent(stairsBrickIron, stairsBrickStone);
+        CreativeHelper.setParent(stairsBrickLapis, stairsBrickStone);
+        CreativeHelper.setParent(stairsCobbleNetherrack, stairsBrickStone);
+        CreativeHelper.setParent(stairsCobbleNetherrackMossy, stairsBrickStone);
+        CreativeHelper.setParent(stairsBrickNetherrack, stairsBrickStone);
+        CreativeHelper.setParent(stairsBrickScorchedstone, stairsBrickStone);
+        CreativeHelper.setParent(stairsBrickMud, stairsBrickStone);
+        CreativeHelper.setParent(stairsBrickSteel, stairsBrickStone);
+        CreativeHelper.setParent(stairsBrickQuartz, stairsBrickStone);
+        CreativeHelper.setParent(stairsBrickOlivine, stairsBrickStone);
+        CreativeHelper.setParent(stairsBrickSilver, stairsBrickStone);
+        CreativeHelper.setParent(stairsCopper, stairsBrickStone);
+        CreativeHelper.setParent(stairsCopperTarnished, stairsBrickStone);
+        CreativeHelper.setParent(stairsCopperCorroded, stairsBrickStone);
+        CreativeHelper.setParent(stairsBrickClayBaked, stairsBrickStone);
         for (int color = 0; color < 16; color++) {
-            CreativeHelper.setParent(stairsWool, color << 4, Block.stairsBrickStone, 0);
+            CreativeHelper.setParent(stairsWool, color << 4, stairsBrickStone, 0);
         }
 
     }
@@ -812,7 +813,7 @@ public class BonusBlocks {
 
         leavesOakMossy = leaves
                 .setBlockModel(block -> new BlockModelLeaves<>(leavesOakMossy, "leaves_oak_mossy.png"))
-                .setBlockColor(new BlockColorLeavesOak(new Colorizer("default.png")))
+                .setBlockColor(block -> (new BlockColorCustom(Colorizers.oak)))
                 .build(new BlockLeavesBase("leaves.oak.mossy", blockID("leavesOakMossy"), Material.leaves) {
                     @Override
                     protected Block getSapling() {
@@ -880,7 +881,7 @@ public class BonusBlocks {
         // Overgrown Grass
         overgrownGrass = grass
                 .setBlockModel(block -> new BlockModelGrass<>(overgrownGrass).withTextures("minecraft:block/grass_top.png"))
-                .setBlockColor(new BlockColorTallGrass(new Colorizer("default.png")))
+                .setBlockColor(block -> (new BlockColorCustom(Colorizers.grass)))
                 .build(new Block("grass.overgrown", blockID("overgrownGrass"), Material.grass));
         overgrownGrassRetro = grass
                 .setBlockModel(block -> new BlockModelStandard<>(overgrownGrassRetro).withTextures("minecraft:block/grass_retro_top.png"))
@@ -1097,12 +1098,12 @@ public class BonusBlocks {
                 .build(new Block("block.raw.copper", blockID("blockRawCopper"), Material.metal) {
 
                     public void updateTick(World world, int x, int y, int z, Random rand) {
-                            if (rand.nextInt(200) == 0) {
-                                if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
-                                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockRawCopperTarnished.id, world.getBlockMetadata(x, y, z));
-                                }
+                        if (rand.nextInt(200) == 0) {
+                            if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
+                                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockRawCopperTarnished.id, world.getBlockMetadata(x, y, z));
                             }
                         }
+                    }
                 });
         blockRawCopperTarnished = raw
                 .setBlockModel(block -> new BlockModelStandard<>(blockRawCopperTarnished).withTextures("block_copper_tarnished_raw.png"))
@@ -1110,12 +1111,12 @@ public class BonusBlocks {
                 .build(new Block("block.raw.copper.tarnished", blockID("blockRawCopperTarnished"), Material.metal) {
 
                     public void updateTick(World world, int x, int y, int z, Random rand) {
-                            if (rand.nextInt(200) == 0) {
-                                if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
-                                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockRawCopperCorroded.id, world.getBlockMetadata(x, y, z));
-                                }
+                        if (rand.nextInt(200) == 0) {
+                            if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
+                                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockRawCopperCorroded.id, world.getBlockMetadata(x, y, z));
                             }
                         }
+                    }
                 });
         blockRawCopperCorroded = raw
                 .setBlockModel(block -> new BlockModelStandard<>(blockRawCopperCorroded).withTextures("block_copper_corroded_raw.png"))
@@ -1175,12 +1176,12 @@ public class BonusBlocks {
                 .build(new Block("block.copper", blockID("blockCopper"), Material.metal) {
 
                     public void updateTick(World world, int x, int y, int z, Random rand) {
-                            if (rand.nextInt(200) == 0) {
-                                if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
-                                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockCopperTarnished.id, world.getBlockMetadata(x, y, z));
-                                }
+                        if (rand.nextInt(200) == 0) {
+                            if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
+                                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.blockCopperTarnished.id, world.getBlockMetadata(x, y, z));
                             }
                         }
+                    }
                 });
         blockCopperTarnished = raw
                 .setBlockModel(block -> new BlockModelStandard<>(blockCopperTarnished).withTextures("block_copper_tarnished.png"))
@@ -1697,11 +1698,11 @@ public class BonusBlocks {
                 .setFlammability(30, 60)
                 .setItemBlock(ItemBlockSlabPainted::new)
                 .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.NOT_IN_CREATIVE_MENU)
-                .build(new BlockWoolSlab(Block.wool, blockID("slabWool")));
+                .build(new BlockWoolSlab(wool, blockID("slabWool")));
         slabCobbleStoneMossy = slab
                 .setHardness(2.0F)
                 .setBlockModel(block -> new BlockModelSlab<>(cobbleStoneMossy))
-                .build(new BlockSlab(Block.cobbleStoneMossy, blockID("slabCobbleStoneMossy")));
+                .build(new BlockSlab(cobbleStoneMossy, blockID("slabCobbleStoneMossy")));
         slabSlatePolished = slab
                 .setBlockModel(block -> new BlockModelSlab<>(slatePolished))
                 .build(new BlockSlab(slateCarved, blockID("slabSlatePolished")));
@@ -1711,27 +1712,27 @@ public class BonusBlocks {
         slabBrickStonePolishedMossy = slab
                 .setHardness(2.0F)
                 .setBlockModel(block -> new BlockModelSlab<>(brickStonePolishedMossy))
-                .build(new BlockSlab(Block.brickStonePolishedMossy, blockID("slabBrickStonePolishedMossy")));
+                .build(new BlockSlab(brickStonePolishedMossy, blockID("slabBrickStonePolishedMossy")));
         slabBrickGold = slab
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
                 .setHardness(3.0F)
                 .setBlockModel(block -> new BlockModelSlab<>(brickGold))
-                .build(new BlockSlab(Block.brickGold, blockID("slabBrickGold")));
+                .build(new BlockSlab(brickGold, blockID("slabBrickGold")));
         slabBrickLapis = slab
                 .setHardness(3.0F)
                 .setBlockModel(block -> new BlockModelSlab<>(brickLapis))
-                .build(new BlockSlab(Block.brickLapis, blockID("slabBrickLapis")));
+                .build(new BlockSlab(brickLapis, blockID("slabBrickLapis")));
         slabBrickIron = slab
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
                 .setHardness(5.0F)
                 .setBlockModel(block -> new BlockModelSlab<>(brickIron))
-                .build(new BlockSlab(Block.brickIron, blockID("slabBrickIron")));
+                .build(new BlockSlab(brickIron, blockID("slabBrickIron")));
         slabCobbleNetherrack = slab
                 .setBlockModel(block -> new BlockModelSlab<>(cobbleNetherrack))
                 .build(new BlockSlab(cobbleNetherrack, blockID("slabCobbleNetherrack")));
         slabCobbleNetherrackMossy = slab
                 .setBlockModel(block -> new BlockModelSlab<>(netherrack))
-                .build(new BlockSlab(Block.netherrack, blockID("slabCobbleNetherrackMossy")));
+                .build(new BlockSlab(netherrack, blockID("slabCobbleNetherrackMossy")));
         slabBrickNetherrack = slab
                 .setBlockModel(block -> new BlockModelSlab<>(brickNetherrack))
                 .build(new BlockSlab(brickNetherrack, blockID("slabBrickNetherrack")));
@@ -1774,12 +1775,12 @@ public class BonusBlocks {
                 .build(new BlockSlab(blockCopper, blockID("slabCopper")) {
 
                     public void updateTick(World world, int x, int y, int z, Random rand) {
-                            if (rand.nextInt(200) == 0) {
-                                if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
-                                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.slabCopperTarnished.id, world.getBlockMetadata(x, y, z));
-                                }
+                        if (rand.nextInt(200) == 0) {
+                            if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
+                                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.slabCopperTarnished.id, world.getBlockMetadata(x, y, z));
                             }
                         }
+                    }
                 });
         slabCopperTarnished = slab
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
@@ -1790,12 +1791,12 @@ public class BonusBlocks {
                 .build(new BlockSlab(blockCopperTarnished, blockID("slabCopperTarnished")) {
 
                     public void updateTick(World world, int x, int y, int z, Random rand) {
-                            if (rand.nextInt(200) == 0) {
-                                if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
-                                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.slabCopperCorroded.id, world.getBlockMetadata(x, y, z));
-                                }
+                        if (rand.nextInt(200) == 0) {
+                            if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
+                                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.slabCopperCorroded.id, world.getBlockMetadata(x, y, z));
                             }
                         }
+                    }
                 });
         slabCopperCorroded = slab
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
@@ -1813,37 +1814,37 @@ public class BonusBlocks {
                 .setFlammability(30, 60)
                 .setItemBlock(ItemBlockStairsPainted::new)
                 .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.NOT_IN_CREATIVE_MENU)
-                .build(new BlockWoolStairs(Block.wool, blockID("stairsWool")));
+                .build(new BlockWoolStairs(wool, blockID("stairsWool")));
         stairsCobbleStoneMossy = stairs
                 .setHardness(2.0F)
                 .setBlockModel(block -> new BlockModelStairs<>(cobbleStoneMossy))
-                .build(new BlockStairs(Block.cobbleStoneMossy, blockID("stairsCobbleStoneMossy")));
+                .build(new BlockStairs(cobbleStoneMossy, blockID("stairsCobbleStoneMossy")));
         stairsBrickStonePolishedMossy = stairs
                 .setHardness(2.0F)
                 .setBlockModel(block -> new BlockModelStairs<>(brickStonePolishedMossy))
-                .build(new BlockStairs(Block.brickStonePolishedMossy, blockID("stairsBrickStonePolishedMossy")));
+                .build(new BlockStairs(brickStonePolishedMossy, blockID("stairsBrickStonePolishedMossy")));
         stairsScorchedstone = stairs
                 .setHardness(0.8F)
                 .setBlockModel(block -> new BlockModelStairs<>(scorchedstone))
-                .build(new BlockStairs(Block.brickSandstone, blockID("stairsScorchedstone")));
+                .build(new BlockStairs(brickSandstone, blockID("stairsScorchedstone")));
         stairsBrickGold = stairs
                 .setHardness(3.0F)
                 .setBlockModel(block -> new BlockModelStairs<>(brickGold))
-                .build(new BlockStairs(Block.brickGold, blockID("stairsBrickGold")));
+                .build(new BlockStairs(brickGold, blockID("stairsBrickGold")));
         stairsBrickLapis = stairs
                 .setHardness(3.0F)
                 .setBlockModel(block -> new BlockModelStairs<>(brickLapis))
-                .build(new BlockStairs(Block.brickLapis, blockID("stairsBrickLapis")));
+                .build(new BlockStairs(brickLapis, blockID("stairsBrickLapis")));
         stairsBrickIron = stairs
                 .setHardness(5.0F)
                 .setBlockModel(block -> new BlockModelStairs<>(brickIron))
-                .build(new BlockStairs(Block.brickIron, blockID("stairsBrickIron")));
+                .build(new BlockStairs(brickIron, blockID("stairsBrickIron")));
         stairsCobbleNetherrack = stairs
                 .setBlockModel(block -> new BlockModelStairs<>(cobbleNetherrack))
                 .build(new BlockStairs(cobbleNetherrack, blockID("stairsCobbleNetherrack")));
         stairsCobbleNetherrackMossy = stairs
                 .setBlockModel(block -> new BlockModelStairs<>(netherrack))
-                .build(new BlockStairs(Block.netherrack, blockID("stairsCobbleNetherrackMossy")));
+                .build(new BlockStairs(netherrack, blockID("stairsCobbleNetherrackMossy")));
         stairsBrickNetherrack = stairs
                 .setBlockModel(block -> new BlockModelStairs<>(brickNetherrack))
                 .build(new BlockStairs(brickNetherrack, blockID("stairsBrickNetherrack")));
@@ -1882,12 +1883,12 @@ public class BonusBlocks {
                 .build(new BlockStairs(blockCopper, blockID("stairsCopper")) {
 
                     public void updateTick(World world, int x, int y, int z, Random rand) {
-                            if (rand.nextInt(200) == 0) {
-                                if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
-                                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.stairsCopperTarnished.id, world.getBlockMetadata(x, y, z));
-                                }
+                        if (rand.nextInt(200) == 0) {
+                            if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
+                                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.stairsCopperTarnished.id, world.getBlockMetadata(x, y, z));
                             }
                         }
+                    }
                 });
         stairsCopperTarnished = stairs
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
@@ -1898,12 +1899,12 @@ public class BonusBlocks {
                 .build(new BlockStairs(blockCopperTarnished, blockID("stairsCopperTarnished")) {
 
                     public void updateTick(World world, int x, int y, int z, Random rand) {
-                            if (rand.nextInt(200) == 0) {
-                                if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
-                                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.stairsCopperCorroded.id, world.getBlockMetadata(x, y, z));
-                                }
+                        if (rand.nextInt(200) == 0) {
+                            if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
+                                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.stairsCopperCorroded.id, world.getBlockMetadata(x, y, z));
                             }
                         }
+                    }
                 });
         stairsCopperCorroded = stairs
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
