@@ -19,6 +19,7 @@ import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.crafting.LookupFuelFurnace;
 import net.minecraft.core.enums.EnumDropCause;
+import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.block.*;
 import net.minecraft.core.sound.BlockSound;
@@ -319,6 +320,10 @@ public class BonusBlocks {
     public static Block fenceGold;
 
     public static Block stairsScorchedstone;
+    public static Block doorGlassObsidianBottom;
+    public static Block doorGlassObsidianTop;
+    public static Block tatami;
+
     public static Block bedroll;
 
 
@@ -660,7 +665,6 @@ public class BonusBlocks {
 
         CreativeHelper.setParent(stairsCobbleStoneMossy, stairsBrickStone);
         CreativeHelper.setParent(stairsBrickStonePolishedMossy, stairsBrickStone);
-        CreativeHelper.setParent(stairsBrickSandstone, Block.stairsBrickStone);
         CreativeHelper.setParent(stairsBrickGold, stairsBrickStone);
         CreativeHelper.setParent(stairsBrickIron, stairsBrickStone);
         CreativeHelper.setParent(stairsBrickLapis, stairsBrickStone);
@@ -2219,6 +2223,36 @@ public class BonusBlocks {
         stairsScorchedstone = stairs
                 .setHardness(0.8F)
                 .build(new BlockStairs(scorchedstone, blockID("stairsScorchedstone")));
+
+
+        doorGlassObsidianBottom = obsidian
+                .setBlockModel(block -> new BlockModelDoorGlass<>(block).withTextures("bonusblocks:block/door_glass_obsidian_bottom"))
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+                .setVisualUpdateOnMetadata()
+                .build(new BlockDoorGlassObsidian("door.glass.obsidian.bottom", blockID("doorGlassObsidianBottom"), Material.glass, false) {
+            public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+                return new ItemStack[]{new ItemStack(BonusItems.doorGlassObsidian)};
+            }
+        });
+        doorGlassObsidianTop = obsidian
+                .setBlockModel(block -> new BlockModelDoorGlass<>(block).withTextures("bonusblocks:block/door_glass_obsidian_top"))
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+                .setVisualUpdateOnMetadata()
+                .build(new BlockDoorGlassObsidian("door.glass.obsidian.top", blockID("doorGlassObsidianTop"), Material.glass, true) {
+            public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+                return new ItemStack[]{new ItemStack(BonusItems.doorGlassObsidian)};
+            }
+        });
+
+
+        tatami = new BlockBuilder(MOD_ID)
+                .setBlockSound(new BlockSound("step.cloth", "step.cloth", 0.8f, 1.2f))
+                .setHardness(0.6f)
+                .setResistance(0.6f)
+                .setBlockModel(block -> new BlockModelStandard<>(block).withTextures("bonusblocks:block/tatami"))
+                .setFlammability(20, 40)
+                .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS)
+                .build(new Block("tatami", blockID("tatami"), Material.grass));
 
 /*
     bedroll = new BlockBuilder(MOD_ID)

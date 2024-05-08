@@ -185,6 +185,8 @@ public class BonusRecipes implements RecipeEntrypoint {
         templateBricks.addInput('X', BonusBlocks.lazurite).create("lazurite_bricks", new ItemStack(BonusBlocks.brickLazurite, 4));
         templateBricks.addInput('X', BonusBlocks.peridot).create("peridot_bricks", new ItemStack(BonusBlocks.brickPeridot, 4));
 
+        templateBricks.addInput('X', Block.cactus).create("tatami", new ItemStack(BonusBlocks.tatami, 4));
+
         templateBricks.addInput('X', Block.dirtScorched).create("scorchedstone", new ItemStack(BonusBlocks.scorchedstone, 4));
 
         RecipeBuilderShaped templateOvergrown = new RecipeBuilderShaped(MOD_ID, "X", "X");
@@ -392,6 +394,10 @@ public class BonusRecipes implements RecipeEntrypoint {
         RecipeBuilder.Shaped(MOD_ID, "PP", "PP", "PP")
                 .addInput('P', Item.ingotSteel)
                 .create("door_steel", new ItemStack(BonusItems.doorSteel, 2));
+
+        RecipeBuilder.Shaped(MOD_ID, "PP", "PP", "PP")
+                .addInput('P', BonusBlocks.glassObsidian)
+                .create("door_glass_obsdian", new ItemStack(BonusItems.doorGlassObsidian, 2));
 
         RecipeBuilder.Shaped(MOD_ID, "CPC", "CPC")
                 .addInput('P', BonusItems.ingotCopper)

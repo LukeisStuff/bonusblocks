@@ -724,14 +724,17 @@ tile.bonusblocks.girder.iron.name=Iron Girder
 tile.bonusblocks.girder.iron.desc=A long beam of iron, purely for decoration.
 
 
+tile.bonusblocks.tatami.name=Tatami
+tile.bonusblocks.tatami.desc=A flooring made from the flesh of cactus.
 
 
 
+item.bonusblocks.door.glass.obsidian.name=Obsidian Glass Door
+item.bonusblocks.door.glass.obsidian.desc=Great for aesthetics, great for privacy!
 
+tile.bonusblocks.door.glass.obsidian.bottom.name=Obsidian Glass Bottom Door
+tile.bonusblocks.door.glass.obsidian.bottom.desc=You really shouldn't be seeing this.
 
-
-
-
-
-
+tile.bonusblocks.door.glass.obsidian.top.name=Obsidian Glass Top Door
+tile.bonusblocks.door.glass.obsidian.top.desc=How did you get this?
 

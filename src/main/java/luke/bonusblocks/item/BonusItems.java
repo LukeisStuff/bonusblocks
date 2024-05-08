@@ -6,6 +6,7 @@ import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.item.Item;
+import net.minecraft.core.item.ItemDoor;
 import net.minecraft.core.item.ItemPlaceable;
 import net.minecraft.core.item.tag.ItemTags;
 import turniplabs.halplibe.helper.BlockBuilder;
@@ -36,6 +37,7 @@ public class BonusItems {
     public static Item seatSilver;
     public static Item foodPie;
     public static Item mossball;
+    public static Item doorGlassObsidian;
     public static Item bedroll;
 
     public void initilizeItems() {
@@ -69,23 +71,23 @@ public class BonusItems {
 
         doorCopper = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/door_copper")
-                .build(new ItemCopperDoor("door.copper", itemID("doorCopper")));
+                .build(new ItemDoor("door.copper", itemID("doorCopper"), BonusBlocks.doorCopperBottom, BonusBlocks.doorCopperTop));
 
         doorCopperTarnished = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/door_copper_tarnished")
-                .build(new ItemCopperTarnishedDoor("door.copper.tarnished", itemID("doorCopperTarnished")));
+                .build(new ItemDoor("door.copper.tarnished", itemID("doorCopperTarnished"), BonusBlocks.doorCopperTarnishedBottom, BonusBlocks.doorCopperTarnishedTop));
 
         doorCopperCorroded = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/door_copper_corroded")
-                .build(new ItemCopperCorrodedDoor("door.copper.corroded", itemID("doorCopperCorroded")));
+                .build(new ItemDoor("door.copper.corroded", itemID("doorCopperCorroded"), BonusBlocks.doorCopperCorrodedBottom, BonusBlocks.doorCopperCorrodedTop));
 
         doorSteel = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/door_steel")
-                .build(new ItemSteelDoor("door.steel", itemID("doorSteel")));
+                .build(new ItemDoor("door.steel", itemID("doorSteel"), BonusBlocks.doorSteelBottom, BonusBlocks.doorSteelTop));
 
         doorSilver = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/door_silver")
-                .build(new ItemSilverDoor("door.silver", itemID("doorSilver")));
+                .build(new ItemDoor("door.silver", itemID("doorSilver"), BonusBlocks.doorSilverBottom, BonusBlocks.doorSilverTop));
 
         bedSilver = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/bed_silver")
@@ -102,6 +104,10 @@ public class BonusItems {
         mossball = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/moss")
                 .build(new Item("mossball", itemID("mossball")));
+
+        doorGlassObsidian = new ItemBuilder(MOD_ID)
+                .setIcon("bonusblocks:item/door_glass_obsidian")
+                .build(new ItemDoor("door.glass.obsidian", itemID("doorGlassObsidian"), BonusBlocks.doorGlassObsidianBottom, BonusBlocks.doorGlassObsidianTop));
 
 //        bedroll = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
 //                new ItemBedroll("bedroll", itemID("bedroll")), "bedroll").setMaxStackSize(1);
