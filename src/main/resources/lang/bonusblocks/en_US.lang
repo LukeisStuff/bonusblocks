@@ -336,20 +336,17 @@ tile.bonusblocks.block.wicker.desc=A decorative block of wicker.
 
 tile.flower.red.name=Rose Flower
 tile.flower.yellow.name=Dandelion Flower
+tile.flower.purple.name=Heather Flower
+tile.flower.pink.name=Orchid Flower
+tile.flower.orange.name=Marigold Flower
+tile.flower.lightblue.name=Bluebell Flower
+
 tile.bonusblocks.flower.lime.name=Clovers
 tile.bonusblocks.flower.lime.desc=A lucky plant found commonly.
-tile.bonusblocks.flower.purple.name=Heather Flower
-tile.bonusblocks.flower.purple.desc=A beautiful purple flower.
-tile.bonusblocks.flower.cyan.name=Bluebell Flower
-tile.bonusblocks.flower.cyan.desc=A beautiful cyan flower.
-tile.bonusblocks.flower.pink.name=Orchid Flower
-tile.bonusblocks.flower.pink.desc=A beautiful pink flower.
 tile.bonusblocks.flower.silver.name=White Dandelion Flower
 tile.bonusblocks.flower.silver.desc=A beautiful silver flower.
-tile.bonusblocks.flower.orange.name=Gladiola Flower
-tile.bonusblocks.flower.orange.desc=A beautiful orange flower.
-tile.bonusblocks.flower.lightblue.name=Pansy Flower
-tile.bonusblocks.flower.lightblue.desc=A beautiful cerulean flower.
+tile.bonusblocks.flower.cyan.name=Pansy Flower
+tile.bonusblocks.flower.cyan.desc=A beautiful cyan flower.
 tile.bonusblocks.flower.magenta.name=Hyacinth Flower
 tile.bonusblocks.flower.magenta.desc=A beautiful magenta flower.
 
@@ -362,16 +359,16 @@ tile.bonusblocks.petal.lime.name=Clover Petals
 tile.bonusblocks.petal.lime.desc=Petals from clovers.
 tile.bonusblocks.petal.purple.name=Heather Petals
 tile.bonusblocks.petal.purple.desc=Petals from heathers.
-tile.bonusblocks.petal.cyan.name=Bluebell Petals
-tile.bonusblocks.petal.cyan.desc=Petals from bluebells.
+tile.bonusblocks.petal.cyan.name=Pansy Petals
+tile.bonusblocks.petal.cyan.desc=Petals from pansies.
 tile.bonusblocks.petal.pink.name=Orchid Petals
 tile.bonusblocks.petal.pink.desc=Petals from orchids.
 tile.bonusblocks.petal.silver.name=White Dandelion Petals
 tile.bonusblocks.petal.silver.desc=Petals from white dandelions.
-tile.bonusblocks.petal.orange.name=Gladiola Petals
-tile.bonusblocks.petal.orange.desc=Petals from gladiolas.
-tile.bonusblocks.petal.lightblue.name=Pansy Petals
-tile.bonusblocks.petal.lightblue.desc=Petals from pansies.
+tile.bonusblocks.petal.orange.name=Marigolds Petals
+tile.bonusblocks.petal.orange.desc=Petals from marigolds.
+tile.bonusblocks.petal.lightblue.name=Bluebell Petals
+tile.bonusblocks.petal.lightblue.desc=Petals from bluebells.
 tile.bonusblocks.petal.magenta.name=Hyacinth Petals
 tile.bonusblocks.petal.magenta.desc=Petals from hyacinths.
 
@@ -383,16 +380,16 @@ tile.bonusblocks.layer.petal.lime.name=Clover Petal Bed
 tile.bonusblocks.layer.petal.lime.desc=A flower bed made from clovers.
 tile.bonusblocks.layer.petal.purple.name=Heather Petal Bed
 tile.bonusblocks.layer.petal.purple.desc=A flower bed made from heathers.
-tile.bonusblocks.layer.petal.cyan.name=Bluebell Petal Bed
-tile.bonusblocks.layer.petal.cyan.desc=A flower bed made from bluebells.
+tile.bonusblocks.layer.petal.cyan.name=Pansy Petal Bed
+tile.bonusblocks.layer.petal.cyan.desc=A flower bed made from pansies.
 tile.bonusblocks.layer.petal.pink.name=Orchid Petal Bed
 tile.bonusblocks.layer.petal.pink.desc=A flower bed made from orchids.
 tile.bonusblocks.layer.petal.silver.name=White Dandelion Petal Bed
 tile.bonusblocks.layer.petal.silver.desc=A flower bed made from white dandelions.
-tile.bonusblocks.layer.petal.orange.name=Gladiola Petal Bed
-tile.bonusblocks.layer.petal.orange.desc=A flower bed made from gladiolas.
-tile.bonusblocks.layer.petal.lightblue.name=Pansy Petal Bed
-tile.bonusblocks.layer.petal.lightblue.desc=A flower bed made from pansies.
+tile.bonusblocks.layer.petal.orange.name=Marigold Petal Bed
+tile.bonusblocks.layer.petal.orange.desc=A flower bed made from marigolds.
+tile.bonusblocks.layer.petal.lightblue.name=Bluebell Petal Bed
+tile.bonusblocks.layer.petal.lightblue.desc=A flower bed made from bluebells.
 tile.bonusblocks.layer.petal.magenta.name=Hyacinth Petal Bed
 tile.bonusblocks.layer.petal.magenta.desc=A flower bed made from hyacinths.
 
@@ -420,8 +417,6 @@ tile.bonusblocks.slab.marble.carved.name=Polished Marble Slab
 tile.bonusblocks.slab.marble.carved.desc=A slab of polished marble.
 tile.bonusblocks.slab.brick.stone.polished.mossy.name=Mossy Polished Stone Brick Slab
 tile.bonusblocks.slab.brick.stone.polished.mossy.desc=A slab of mossy polished stone bricks.
-tile.bonusblocks.slab.brick.sandstone.name=Sandstone Brick Slab
-tile.bonusblocks.slab.brick.sandstone.desc=A slab of sandstone bricks.
 tile.bonusblocks.slab.brick.gold.name=Gold Brick Slab
 tile.bonusblocks.slab.brick.gold.desc=A slab of gold bricks.
 tile.bonusblocks.slab.brick.lapis.name=Lapis Brick Slab
@@ -461,8 +456,6 @@ tile.bonusblocks.stairs.cobble.stone.mossy.name=Mossy Cobblestone Stairs
 tile.bonusblocks.stairs.cobble.stone.mossy.desc=Mossy cobblestone block used for rapid vertical movement.
 tile.bonusblocks.stairs.brick.stone.polished.mossy.name=Mossy Polished Stone Brick Stairs
 tile.bonusblocks.stairs.brick.stone.polished.mossy.desc=Mossy polished stone brick block used for rapid vertical movement.
-tile.bonusblocks.stairs.brick.sandstone.name=Sandstone Brick Stairs
-tile.bonusblocks.stairs.brick.sandstone.desc=Sandstone brick block used for rapid vertical movement.
 tile.bonusblocks.stairs.brick.gold.name=Gold Brick Stairs
 tile.bonusblocks.stairs.brick.gold.desc=Gold brick block used for rapid vertical movement.
 tile.bonusblocks.stairs.brick.lapis.name=Lapis Brick Stairs
@@ -473,6 +466,8 @@ tile.bonusblocks.stairs.brick.netherrack.name=Netherrack Brick Stairs
 tile.bonusblocks.stairs.brick.netherrack.desc=Netherrack brick block used for rapid vertical movement.
 tile.bonusblocks.stairs.brick.scorchedstone.name=Scorchedstone Brick Stairs
 tile.bonusblocks.stairs.brick.scorchedstone.desc=Scorchedstone brick block used for rapid vertical movement.
+tile.bonusblocks.stairs.scorchedstone.name=Scorchedstone Stairs
+tile.bonusblocks.stairs.scorchedstone.desc=Scorchedstone block used for rapid vertical movement.
 tile.bonusblocks.stairs.brick.mud.name=Mud Brick Stairs
 tile.bonusblocks.stairs.brick.mud.desc=Mud brick block used for rapid vertical movement.
 tile.bonusblocks.stairs.brick.steel.name=Steel Brick Stairs
@@ -502,10 +497,8 @@ tile.bonusblocks.skull.active.name=Skull Lantern
 tile.bonusblocks.skull.active.desc=A spooky skull found in the nether, lit by a soul wax candle.
 
 tile.bonusblocks.candle.soulwax.name=Soul Wax Candle
-tile.bonusblocks.candle.soulwax.desc=Say the line souljak.
+tile.bonusblocks.candle.soulwax.desc=A waxy brown candle that glows with an unnatural light.
 
-item.bonusblocks.candle.soulwax.name=Soul Wax Candle
-item.bonusblocks.candle.soulwax.desc=A waxy brown candle that glows with an unnatural light.
 item.bonusblocks.soulwax.name=Soul Wax
 item.bonusblocks.soulwax.desc=A sticky substance secreted from squishy brown sand.
 
@@ -596,6 +589,12 @@ tile.chest.planks.oak.painted.silver.name=Silver Wooden Chest
 tile.lamp.idle.silver.name=Silver Lamp
 tile.lamp.idle.silver.desc=A redstone lamp that can emit light. Tinted silver.
 
+tile.trapdoor.planks.oak.painted.silver.name=Silver Oak Trapdoor
+tile.trapdoor.planks.oak.painted.silver.name=Like a door, but flat and painted silver.
+
+item.door.oak.painted.silver.name=Silver Wooden Door
+
+
 tile.planks.oak.painted.lightblue.name=Cerulean Wooden Planks
 tile.planks.oak.painted.lightblue.desc=Wooden planks, stained cerulean.
 tile.fence.planks.oak.painted.lightblue.name=Cerulean Wooden Fence
@@ -612,6 +611,10 @@ tile.chest.planks.oak.painted.lightblue.name=Cerulean Wooden Chest
 tile.lamp.idle.lightblue.name=Cerulean Lamp
 tile.lamp.idle.lightblue.desc=A redstone lamp that can emit light. Tinted cerulean.
 
+tile.trapdoor.planks.oak.painted.lightblue.name=Cerulean Oak Trapdoor
+tile.trapdoor.planks.oak.painted.lightblue.name=Like a door, but flat and painted cerulean.
+
+item.door.oak.painted.lightblue.name=Cerulean Wooden Door
 
 item.dye.silver.name=Silver Dye
 item.dye.silver.desc=Can be used to color certain blocks silver.

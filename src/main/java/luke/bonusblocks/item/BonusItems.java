@@ -96,6 +96,7 @@ public class BonusItems {
                 .build( new ItemPlaceable("seat.silver", itemID("seatSilver"), BonusBlocks.seatSilver));
 
         foodPie = new ItemBuilder(MOD_ID)
+                .setTags(ItemTags.NOT_IN_CREATIVE_MENU)
                 .build(new ItemPlaceable("food.pie", itemID("foodPie"), Block.pumpkinPie)).setMaxStackSize(1);
 
         mossball = new ItemBuilder(MOD_ID)

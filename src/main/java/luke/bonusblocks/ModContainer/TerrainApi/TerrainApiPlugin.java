@@ -122,7 +122,7 @@ public class TerrainApiPlugin implements TerrainAPI {
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.flowerMagenta.id), 4, -1f, 1,
                 new Biome[]{Biomes.OVERWORLD_TAIGA, BonusBiomes.OVERWORLD_OVERGROWN_MEADOW});
 
-        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.flowerLightBlue.id), 4, -1f, 1,
+        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.flowerCyan.id), 4, -1f, 1,
                 new Biome[]{Biomes.OVERWORLD_RAINFOREST, BonusBiomes.OVERWORLD_DRYLAND, BonusBiomes.OVERWORLD_OVERGROWN_MEADOW});
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeaturePebbles(Block.overlayPebbles.id), 4, -1f, 1,
