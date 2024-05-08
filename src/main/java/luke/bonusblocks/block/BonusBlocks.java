@@ -421,6 +421,8 @@ public class BonusBlocks {
         miningLevels.put(stairsBrickSilver, 2);
         miningLevels.put(slabBrickSilver, 2);
 
+        miningLevels.put(brimstone, 3);
+
 
         itemsList[cratePainted.id] = new ItemBlockPainted(cratePainted, false);
 
