@@ -1,10 +1,10 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "bonusblocks:block/block/potside",
-		"1": "bonusblocks:block/block/pottop",
-		"2": "bonusblocks:block/block/potbottom",
-		"particle": "bonusblocks:block/block/potside"
+		"0": "bonusblocks:block/block/pot_side",
+		"1": "bonusblocks:block/block/pot_top",
+		"2": "bonusblocks:block/block/pot_bottom",
+		"particle": "bonusblocks:block/block/pot_side"
 	},
 	"elements": [
 		{

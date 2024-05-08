@@ -1385,7 +1385,7 @@ public class BonusBlocks {
 
         // Steel Trapdoor
         trapdoorSteel = raw
-                .setBlockModel(block -> new BlockModelTrapDoor<>(block).withTextures("bonusblocks:block/trapdoor_steel_top", "trapdoor_steel_side"))
+                .setBlockModel(block -> new BlockModelTrapDoor<>(block).withTextures("bonusblocks:block/trapdoor_steel_top", "bonusblocks:block/trapdoor_steel_side"))
                 .setResistance(2000.0f)
                 .setVisualUpdateOnMetadata()
                 .build(new BlockTrapDoor("trapdoor.steel", blockID("trapdoorSteel"), Material.metal, true));
@@ -1431,7 +1431,7 @@ public class BonusBlocks {
 
         // Silver Trapdoor
         trapdoorSilver = silver
-                .setBlockModel(block -> new BlockModelTrapDoor<>(block).withTextures("bonusblocks:block/trapdoor_silver_top", "trapdoor_silver_side"))
+                .setBlockModel(block -> new BlockModelTrapDoor<>(block).withTextures("bonusblocks:block/trapdoor_silver_top", "bonusblocks:block/trapdoor_silver_side"))
                 .setVisualUpdateOnMetadata()
                 .build(new BlockTrapDoor("trapdoor.silver", blockID("trapdoorSilver"), Material.stone, false));
 
@@ -1519,7 +1519,7 @@ public class BonusBlocks {
 
         // Silver Seat
         seatSilver = silver
-                .setBlockModel(block -> new BlockModelSeat<>(block).withTextures("bonusblocks:block/seat_silver_top", "block_silver", "seat_silver_side"))
+                .setBlockModel(block -> new BlockModelSeat<>(block).withTextures("bonusblocks:block/seat_silver_top", "bonusblocks:block/block_silver", "bonusblocks:block/seat_silver_side"))
                 .setVisualUpdateOnMetadata()
                 .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
                 .build(new BlockSilverSeat("seat.silver", blockID("seatSilver"), Material.metal));
@@ -1528,21 +1528,21 @@ public class BonusBlocks {
         // Scorched Stone
         scorchedstone = stone
                 .setHardness(0.8f)
-                .setBlockModel(block -> new BlockModelStandard<>(block).withTextures("bonusblocks:block/scorchedstone_top", "scorchedstone_bottom", "scorchedstone_sides"))
+                .setBlockModel(block -> new BlockModelStandard<>(block).withTextures("bonusblocks:block/scorchedstone_top", "bonusblocks:block/scorchedstone_bottom", "bonusblocks:block/scorchedstone_sides"))
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.GROWS_TREES, BlockTags.GROWS_SPINIFEX, BlockTags.GROWS_FLOWERS, BlockTags.FIREFLIES_CAN_SPAWN, BlockTags.CAVE_GEN_REPLACES_SURFACE, BlockTags.CAVES_CUT_THROUGH)
                 .build(new Block("scorchedstone", blockID("scorchedstone"), Material.stone));
 
 
         // Slate Pillar
         pillarSlate = stone
-                .setBlockModel(block -> new BlockModelAxisAligned<>(block).withTextures("bonusblocks:block/pillar_slate_top", "pillar_slate_side"))
+                .setBlockModel(block -> new BlockModelAxisAligned<>(block).withTextures("bonusblocks:block/pillar_slate_top", "bonusblocks:block/pillar_slate_side"))
                 .build(new BlockAxisAligned("pillar.slate", blockID("pillarSlate"), Material.stone));
 
 
         // Polished Stones
         marblePolished = stone
                 .setHardness(1.0f)
-                .setBlockModel(block -> new BlockModelStandard<>(block).withTextures("bonusblocks:block/polished_marble_top", "polished_marble_side"))
+                .setBlockModel(block -> new BlockModelStandard<>(block).withTextures("bonusblocks:block/polished_marble_top", "bonusblocks:block/polished_marble_side"))
                 .build(new Block("marble.polished", blockID("marblePolished"), Material.stone));
 
 
@@ -1552,7 +1552,7 @@ public class BonusBlocks {
                 .build(new Block("slate.carved", blockID("slateCarved"), Material.stone));
         marbleCarved = stone
                 .setHardness(1.0f)
-                .setBlockModel(block -> new BlockModelStandard<>(block).withTextures("bonusblocks:block/polished_marble_top", "carved_marble"))
+                .setBlockModel(block -> new BlockModelStandard<>(block).withTextures("bonusblocks:block/polished_marble_top", "bonusblocks:block/carved_marble"))
                 .build(new Block("marble.carved", blockID("marbleCarved"), Material.stone));
 
 
@@ -1568,7 +1568,7 @@ public class BonusBlocks {
                 .setBlockModel(block -> new BlockModelTransparent<>(block, false).withTextures("bonusblocks:block/glass_obsidian"))
                 .build(new BlockGlassObsidian("glass.obsidian", blockID("glassObsidian")));
         trapdoorGlassObsidian = obsidian
-                .setBlockModel(block -> new BlockModelTrapDoor<>(block).withTextures("bonusblocks:block/glass_obsidian", "trapdoor_glass_obsidian_side"))
+                .setBlockModel(block -> new BlockModelTrapDoor<>(block).withTextures("bonusblocks:block/glass_obsidian", "bonusblocks:block/trapdoor_glass_obsidian_side"))
                 .setVisualUpdateOnMetadata()
                 .build(new BlockTrapDoorObsidian("trapdoor.glass.obsidian", blockID("trapdoorGlassObsidian")));
 
@@ -1670,7 +1670,7 @@ public class BonusBlocks {
         pumiceWet = stone
                 .setLuminance(13)
                 .setUseInternalLight()
-                .setBlockModel(block -> new BlockModelStandard<>(block).withTextures("bonusblocks:block/pumice_molten").withOverbrightTexture("pumice_molten_overlay"))
+                .setBlockModel(block -> new BlockModelStandard<>(block).withTextures("bonusblocks:block/pumice_molten").withOverbrightTexture("bonusblocks:block/pumice_molten_overlay"))
                 .build(new BlockPumice("pumice.wet", blockID("pumiceWet"), true));
 
 
