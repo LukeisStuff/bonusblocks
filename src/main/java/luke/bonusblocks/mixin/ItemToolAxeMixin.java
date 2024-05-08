@@ -251,6 +251,36 @@ public class ItemToolAxeMixin extends ItemTool {
             }
             entityplayer.swingItem();
         }
+        if (i1 == Block.logOak.id) {
+            Block block = BonusBlocks.logStrippedOak;
+            world.playBlockSoundEffect(null, (float) blockX + 0.5f, (float) blockY + 0.5f, (float) blockZ + 0.5f, block, EnumBlockSoundEffectType.MINE);
+            if (!world.isClientSide) {
+                world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, block.id, world.getBlockMetadata(blockX, blockY, blockZ));
+                itemstack.damageItem(1, entityplayer);
+                entityplayer.swingItem();
+            }
+            entityplayer.swingItem();
+        }
+        if (i1 == Block.logOakMossy.id) {
+            Block block = BonusBlocks.logStrippedOakMossy;
+            world.playBlockSoundEffect(null, (float) blockX + 0.5f, (float) blockY + 0.5f, (float) blockZ + 0.5f, block, EnumBlockSoundEffectType.MINE);
+            if (!world.isClientSide) {
+                world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, block.id, world.getBlockMetadata(blockX, blockY, blockZ));
+                itemstack.damageItem(1, entityplayer);
+                entityplayer.swingItem();
+            }
+            entityplayer.swingItem();
+        }
+        if (i1 == Block.logPine.id) {
+            Block block = BonusBlocks.logStrippedPine;
+            world.playBlockSoundEffect(null, (float) blockX + 0.5f, (float) blockY + 0.5f, (float) blockZ + 0.5f, block, EnumBlockSoundEffectType.MINE);
+            if (!world.isClientSide) {
+                world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, block.id, world.getBlockMetadata(blockX, blockY, blockZ));
+                itemstack.damageItem(1, entityplayer);
+                entityplayer.swingItem();
+            }
+            entityplayer.swingItem();
+        }
         return false;
     }
 }

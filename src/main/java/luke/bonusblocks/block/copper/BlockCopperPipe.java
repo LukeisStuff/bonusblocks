@@ -6,6 +6,7 @@ import net.minecraft.core.block.material.Material;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
+import net.minecraft.core.world.WorldSource;
 
 import java.util.Random;
 
@@ -25,12 +26,12 @@ public class BlockCopperPipe extends BlockAxisAligned {
 
 
     public void updateTick(World world, int x, int y, int z, Random rand) {
-                if (rand.nextInt(200) == 0) {
-                    if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
-                        world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.pipeCopperTarnished.id, world.getBlockMetadata(x, y, z));
-                    }
+        if (rand.nextInt(200) == 0) {
+            if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
+                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.pipeCopperTarnished.id, world.getBlockMetadata(x, y, z));
             }
         }
+    }
 
     public void setBlockBoundsBasedOnState(World world, int x, int y, int z) {
         this.setBlockBounds(world.getBlockMetadata(x, y, z));
@@ -41,7 +42,7 @@ public class BlockCopperPipe extends BlockAxisAligned {
         return super.getCollisionBoundingBoxFromPool(world, x, y, z);
     }
 
-    public AABB getSelectedBoundingBoxFromPool(World world, int x, int y, int z) {
+    public AABB getSelectedBoundingBoxFromPool(WorldSource world, int x, int y, int z) {
         this.setBlockBounds(world.getBlockMetadata(x, y, z));
         return super.getSelectedBoundingBoxFromPool(world, x, y, z);
     }

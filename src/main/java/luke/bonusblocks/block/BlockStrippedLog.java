@@ -1,15 +1,17 @@
 package luke.bonusblocks.block;
 
-import net.minecraft.core.block.BlockAxisAligned;
+import net.minecraft.core.block.BlockLog;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.WorldSource;
 
-public class BlockGirder extends BlockAxisAligned {
+public class BlockStrippedLog extends BlockLog {
 
-    public BlockGirder(String key, int id, Material material) {
-        super(key, id, material);
+    public BlockStrippedLog(String key, int id, Material material) {
+        super(key, id);
+        float pixel = 0.125f;
+        this.setBlockBounds(pixel, 0.0, pixel, 1.0 - pixel, 1.0, 1.0 - pixel);
     }
 
     public boolean isSolidRender() {
@@ -35,15 +37,16 @@ public class BlockGirder extends BlockAxisAligned {
     }
 
     private void setBlockBounds(int meta) {
+        float pixel = 0.125f;
         Side side = this.getSideFromMeta(meta);
         if (side == Side.TOP) {
-            this.setBlockBounds(0.1875f, 0.0F, 0.1875f, 0.8125f, 1.0f, 0.8125f);
+            this.setBlockBounds(pixel, 0.0, pixel, 1.0 - pixel, 1.0, 1.0 - pixel);
         } else if (side == Side.NORTH) {
-            this.setBlockBounds(0.1875f, 0.1875f, 0.0f, 0.8125f, 0.8125f, 1.0f);
+            this.setBlockBounds(pixel, pixel, 0.0, 1.0 - pixel, 1.0 - pixel, 1.0);
         } else if (side == Side.EAST) {
-            this.setBlockBounds(0.0f, 0.1875f, 0.1875f, 1.0f, 0.8125f, 0.8125f);
+            this.setBlockBounds(0.0, pixel, pixel, 1.0, 1.0 - pixel, 1.0 - pixel);
         } else {
-            this.setBlockBounds(0.1875f, 0.0F, 0.1875f, 0.8125f, 1.0f, 0.8125f);
+            this.setBlockBounds(pixel, 0.0, pixel, 1.0 - pixel, 1.0, 1.0 - pixel);
         }
     }
 

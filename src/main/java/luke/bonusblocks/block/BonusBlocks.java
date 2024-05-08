@@ -324,6 +324,10 @@ public class BonusBlocks {
     public static Block doorGlassObsidianTop;
     public static Block tatami;
 
+    public static Block logStrippedOak;
+    public static Block logStrippedOakMossy;
+    public static Block logStrippedPine;
+
     public static Block bedroll;
 
 
@@ -2255,6 +2259,27 @@ public class BonusBlocks {
                 .setFlammability(20, 40)
                 .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS)
                 .build(new Block("tatami", blockID("tatami"), Material.grass));
+
+
+
+        float pixel = 0.125f;
+        logStrippedOak = log
+                .setHardness(1.5f)
+                .setBlockModel(block -> new BlockModelAxisAligned<>(block).withTextures("minecraft:block/log_oak_top", "bonusblocks:block/log_stripped_oak").withCustomItemBounds(pixel, 0.0, pixel, 1.0 - pixel, 1.0, 1.0 - pixel))
+                .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.CAN_HANG_OFF, BlockTags.FENCES_CONNECT)
+                .build(new BlockStrippedLog("log.stripped.oak", blockID("logStrippedOak"), Material.wood));
+
+        logStrippedOakMossy = log
+                .setHardness(1.5f)
+                .setBlockModel(block -> new BlockModelAxisAligned<>(block).withTextures("minecraft:block/log_oak_mossy_top", "bonusblocks:block/log_stripped_oak_mossy").withCustomItemBounds(pixel, 0.0, pixel, 1.0 - pixel, 1.0, 1.0 - pixel))
+                .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.CAN_HANG_OFF, BlockTags.FENCES_CONNECT)
+                .build(new BlockStrippedLog("log.stripped.oak.mossy", blockID("logStrippedOakMossy"), Material.wood));
+
+        logStrippedPine = log
+                .setHardness(1.5f)
+                .setBlockModel(block -> new BlockModelAxisAligned<>(block).withTextures("minecraft:block/log_pine_top", "bonusblocks:block/log_stripped_pine").withCustomItemBounds(pixel, 0.0, pixel, 1.0 - pixel, 1.0, 1.0 - pixel))
+                .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.CAN_HANG_OFF, BlockTags.FENCES_CONNECT)
+                .build(new BlockStrippedLog("log.stripped.pine", blockID("logStrippedPine"), Material.wood));
 
 /*
     bedroll = new BlockBuilder(MOD_ID)
