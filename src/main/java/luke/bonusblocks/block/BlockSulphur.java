@@ -17,7 +17,7 @@ import net.minecraft.core.world.World;
 import java.util.Random;
 
 public class BlockSulphur extends BlockSand {
-    public BlockSulphur(String key, int id) {
+    public BlockSulphur(String key, int id, Material material) {
         super(key, id);
     }
 

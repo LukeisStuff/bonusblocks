@@ -56,6 +56,6 @@ public class BlockSoulCandle extends BlockCandle {
     }
 
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-        return new ItemStack[]{new ItemStack(BonusItems.candleSoulwax)};
+        return new ItemStack[]{new ItemStack(BonusBlocks.candleSoulwax)};
     }
 }

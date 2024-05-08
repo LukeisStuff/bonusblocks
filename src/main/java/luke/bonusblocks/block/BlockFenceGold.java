@@ -1,7 +1,10 @@
 package luke.bonusblocks.block;
 
+import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockFenceThin;
 import net.minecraft.core.block.material.Material;
+import net.minecraft.core.block.tag.BlockTags;
+import net.minecraft.core.util.helper.Direction;
 import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.WorldSource;
 
@@ -44,11 +47,18 @@ public class BlockFenceGold extends BlockFenceThin {
         return false;
     }
 
-    public boolean canConnectTo(WorldSource worldSource, int i, int j, int k) {
-        return false;
+    public boolean canConnectTo(WorldSource iblockaccess, int x, int y, int z) {
+        int l = iblockaccess.getBlockId(x, y, z);
+        return Block.hasTag(l, BlockTags.CHAINLINK_FENCES_CONNECT) || Block.blocksList[l] != null && (Block.blocksList[l].blockMaterial == Material.stone || Block.blocksList[l].blockMaterial == Material.metal);
     }
 
-    public boolean shouldDrawColumn(WorldSource worldSource, int i, int j, int k) {
-        return false;
+    public boolean shouldDrawColumn(WorldSource worldSource, int x, int y, int z) {
+        boolean connectNorth = this.canConnectTo(worldSource, x + Direction.NORTH.getOffsetX(), y + Direction.NORTH.getOffsetY(), z + Direction.NORTH.getOffsetZ());
+        boolean connectSouth = this.canConnectTo(worldSource, x + Direction.SOUTH.getOffsetX(), y + Direction.SOUTH.getOffsetY(), z + Direction.SOUTH.getOffsetZ());
+        boolean connectEast = this.canConnectTo(worldSource, x + Direction.EAST.getOffsetX(), y + Direction.EAST.getOffsetY(), z + Direction.EAST.getOffsetZ());
+        boolean connectWest = this.canConnectTo(worldSource, x + Direction.WEST.getOffsetX(), y + Direction.WEST.getOffsetY(), z + Direction.WEST.getOffsetZ());
+        boolean lineNorthSouth = connectNorth && connectSouth;
+        boolean lineEastWest = connectEast && connectWest;
+        return !lineNorthSouth && !lineEastWest || lineNorthSouth && lineEastWest || lineNorthSouth && (connectEast || connectWest) || lineEastWest && (connectNorth || connectSouth);
     }
 }

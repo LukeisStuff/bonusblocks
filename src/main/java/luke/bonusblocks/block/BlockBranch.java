@@ -3,10 +3,11 @@ package luke.bonusblocks.block;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLeavesBase;
 import net.minecraft.core.block.BlockLog;
+import net.minecraft.core.block.material.Material;
 import net.minecraft.core.world.World;
 
 public class BlockBranch extends BlockLog {
-    public BlockBranch(String key, int id) {
+    public BlockBranch(String key, int id, Material material) {
         super(key, id);
         this.setTicking(true);
     }

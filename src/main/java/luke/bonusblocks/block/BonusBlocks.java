@@ -1,6 +1,8 @@
 package luke.bonusblocks.block;
 
 import luke.bonusblocks.BonusBlocksConfig;
+import luke.bonusblocks.block.blockmodel.*;
+import luke.bonusblocks.block.convert.*;
 import luke.bonusblocks.block.copper.*;
 import luke.bonusblocks.block.silver.BlockFenceSilver;
 import luke.bonusblocks.block.silver.BlockOreSilver;
@@ -70,7 +72,11 @@ public class BonusBlocks {
     public static Block overgrownGrassScorched;
     public static Block overgrownPath;
 
+    public static Block flowerCyan;
+    public static Block flowerPurple;
+    public static Block flowerPink;
     public static Block flowerSilver;
+    public static Block flowerOrange;
     public static Block flowerLightBlue;
     public static Block flowerMagenta;
     public static Block flowerLime;
@@ -80,7 +86,7 @@ public class BonusBlocks {
     public static Block petalCyan;
     public static Block petalPurple;
     public static Block petalPink;
-    public static Block petalLightGray;
+    public static Block petalSilver;
     public static Block petalOrange;
     public static Block petalLightBlue;
     public static Block petalMagenta;
@@ -91,7 +97,7 @@ public class BonusBlocks {
     public static Block petalLayerCyan;
     public static Block petalLayerPurple;
     public static Block petalLayerPink;
-    public static Block petalLayerLightGray;
+    public static Block petalLayerSilver;
     public static Block petalLayerOrange;
     public static Block petalLayerLightBlue;
     public static Block petalLayerMagenta;
@@ -196,9 +202,11 @@ public class BonusBlocks {
     public static Block pillarSlate;
 
     public static Block marblePolished;
+    public static Block permafrostPolished;
 
     public static Block slateCarved;
     public static Block marbleCarved;
+    public static Block permafrostCarved;
 
     public static Block clayBaked;
 
@@ -223,22 +231,27 @@ public class BonusBlocks {
     public static Block pumiceDry;
     public static Block pumiceWet;
 
+    public static Block pie;
+
     public static Block candleSoulwax;
 
     public static Block slabWool;
     public static Block slabCobbleStoneMossy;
     public static Block slabSlatePolished;
     public static Block slabMarblePolished;
+    public static Block slabPermafrostPolished;
     public static Block slabBrickStonePolishedMossy;
     public static Block slabBrickSandstone;
     public static Block slabBrickGold;
     public static Block slabBrickIron;
     public static Block slabBrickLapis;
+    public static Block slabBrickPermafrost;
     public static Block slabCobbleNetherrack;
     public static Block slabCobbleNetherrackMossy;
     public static Block slabBrickNetherrack;
     public static Block slabBrickScorchedstone;
     public static Block slabBrickMud;
+    public static Block slabCobblePermafrost;
     public static Block slabScorchedstone;
     public static Block slabBrickSteel;
     public static Block slabBrickQuartz;
@@ -251,15 +264,17 @@ public class BonusBlocks {
     public static Block stairsWool;
     public static Block stairsCobbleStoneMossy;
     public static Block stairsBrickStonePolishedMossy;
-    public static Block stairsScorchedstone;
+    public static Block stairsBrickSandstone;
     public static Block stairsBrickGold;
     public static Block stairsBrickIron;
     public static Block stairsBrickLapis;
+    public static Block stairsBrickPermafrost;
     public static Block stairsCobbleNetherrack;
     public static Block stairsCobbleNetherrackMossy;
     public static Block stairsBrickNetherrack;
     public static Block stairsBrickScorchedstone;
     public static Block stairsBrickMud;
+    public static Block stairsCobblePermafrost;
     public static Block stairsBrickSteel;
     public static Block stairsBrickQuartz;
     public static Block stairsBrickOlivine;
@@ -304,6 +319,8 @@ public class BonusBlocks {
 
     public static Block girderIron;
     public static Block fenceGold;
+
+    public static Block stairsScorchedstone;
     public static Block bedroll;
 
 
@@ -487,7 +504,7 @@ public class BonusBlocks {
         CreativeHelper.setParent(petalCyan, flowerRed);
         CreativeHelper.setParent(petalPurple, flowerRed);
         CreativeHelper.setParent(petalPink, flowerRed);
-        CreativeHelper.setParent(petalLightGray, flowerRed);
+        CreativeHelper.setParent(petalSilver, flowerRed);
         CreativeHelper.setParent(petalOrange, flowerRed);
         CreativeHelper.setParent(petalLightBlue, flowerRed);
         CreativeHelper.setParent(petalMagenta, flowerRed);
@@ -498,7 +515,7 @@ public class BonusBlocks {
         CreativeHelper.setParent(petalLayerCyan, flowerRed);
         CreativeHelper.setParent(petalLayerPurple, flowerRed);
         CreativeHelper.setParent(petalLayerPink, flowerRed);
-        CreativeHelper.setParent(petalLayerLightGray, flowerRed);
+        CreativeHelper.setParent(petalLayerSilver, flowerRed);
         CreativeHelper.setParent(petalLayerOrange, flowerRed);
         CreativeHelper.setParent(petalLayerLightBlue, flowerRed);
         CreativeHelper.setParent(petalLayerMagenta, flowerRed);
@@ -619,7 +636,7 @@ public class BonusBlocks {
 
         CreativeHelper.setParent(stairsCobbleStoneMossy, stairsBrickStone);
         CreativeHelper.setParent(stairsBrickStonePolishedMossy, stairsBrickStone);
-        CreativeHelper.setParent(stairsScorchedstone, stairsBrickStone);
+        CreativeHelper.setParent(stairsBrickSandstone, Block.stairsBrickStone);
         CreativeHelper.setParent(stairsBrickGold, stairsBrickStone);
         CreativeHelper.setParent(stairsBrickIron, stairsBrickStone);
         CreativeHelper.setParent(stairsBrickLapis, stairsBrickStone);
@@ -794,7 +811,7 @@ public class BonusBlocks {
 
         // Bookshelf
         bookshelfEmptyPlanksOak = new BlockBuilder(MOD_ID)
-                .setBlockModel(block -> new BlockModelStandard<>(block).withTextures("bonusblocks:block/bookshelf_empty_side"))
+                .setBlockModel(block -> new BlockModelStandard<>(block).withTextures("minecraft:block/planks_oak", "bonusblocks:block/bookshelf_empty_side"))
                 .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 0.8f))
                 .setHardness(1.5f)
                 .setResistance(1.0f)
@@ -806,7 +823,7 @@ public class BonusBlocks {
                 .setBlockModel(block -> new BlockModelStandard<>(block).withTextures("bonusblocks:block/branch"))
                 .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 0.5f))
                 .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
-                .build(new BlockBranch("branch", blockID("branch")));
+                .build(new BlockBranch("branch", blockID("branch"), Material.leaves));
 
         leavesOakMossy = leaves
                 .setBlockModel(block -> new BlockModelLeaves<>(block, "bonusblocks:block/leaves_oak_mossy"))
@@ -877,7 +894,7 @@ public class BonusBlocks {
 
         // Overgrown Grass
         overgrownGrass = grass
-                .setBlockModel(block -> new BlockModelGrass<>(block).withTextures("minecraft:block/grass_top"))
+                .setBlockModel(block -> new BlockModelStandard<>(block).withTextures("minecraft:block/grass_top"))
                 .setBlockColor(block -> (new BlockColorCustom(Colorizers.grass)))
                 .build(new Block("grass.overgrown", blockID("overgrownGrass"), Material.grass));
         overgrownGrassRetro = grass
@@ -893,9 +910,29 @@ public class BonusBlocks {
                 .build(new BlockDirtPath("path.overgrown", blockID("overgrownPath")));
 
         // Flowers
+
+        //CONVERT TO VANILLA CYAN FLOWER
+        flowerCyan = flower
+                .setBlockModel(block -> new BlockModelCrossedSquares<>(block).withTextures("bonusblocks:block/flower_cyan"))
+                .build(new BlockFlowerCyanConvert("flower.cyan", blockID("flowerCyan")));
+        //CONVERT TO VANILLA PURPLE FLOWER
+        flowerPurple = flower
+                .setBlockModel(block -> new BlockModelCrossedSquares<>(block).withTextures("bonusblocks:block/flower_purple"))
+                .build(new BlockFlowerPurpleConvert("flower.purple", blockID("flowerPurple")));
+        //CONVERT TO VANILLA PINK FLOWER
+        flowerPink = flower
+                .setBlockModel(block -> new BlockModelCrossedSquares<>(block).withTextures("bonusblocks:block/flower_pink"))
+                .build(new BlockFlowerPinkConvert("flower.pink", blockID("flowerPink")));
+
         flowerSilver = flower
                 .setBlockModel(block -> new BlockModelCrossedSquares<>(block).withTextures("bonusblocks:block/flower_lightgray"))
                 .build(new BlockFlower("flower.silver", blockID("flowerSilver")));
+
+        //CONVERT TO VANILLA ORANGE FLOWER
+        flowerOrange = flower
+                .setBlockModel(block -> new BlockModelCrossedSquares<>(block).withTextures("bonusblocks:block/flower_orange"))
+                .build(new BlockFlowerOrangeConvert("flower.orange", blockID("flowerOrange")));
+
         flowerLightBlue = flower
                 .setBlockModel(block -> new BlockModelCrossedSquares<>(block).withTextures("bonusblocks:block/flower_lightblue"))
                 .build(new BlockFlower("flower.lightblue", blockID("flowerLightBlue")));
@@ -922,9 +959,9 @@ public class BonusBlocks {
         petalPink = petal
                 .setBlockModel(block -> new BlockModelStandard<>(block).withTextures("bonusblocks:block/petal_pink"))
                 .build(new BlockPetal("petal.pink", blockID("petalPink"), Material.grass));
-        petalLightGray = petal
+        petalSilver = petal
                 .setBlockModel(block -> new BlockModelStandard<>(block).withTextures("bonusblocks:block/petal_lightgray"))
-                .build(new BlockPetal("petal.silver", blockID("petalLightGray"), Material.grass));
+                .build(new BlockPetal("petal.silver", blockID("petalSilver"), Material.grass));
         petalOrange = petal
                 .setBlockModel(block -> new BlockModelStandard<>(block).withTextures("bonusblocks:block/petal_orange"))
                 .build(new BlockPetal("petal.orange", blockID("petalOrange"), Material.grass));
@@ -954,9 +991,9 @@ public class BonusBlocks {
         petalLayerPink = petalLayer
                 .setBlockModel(block -> new BlockModelLayer<>(block).withTextures("bonusblocks:block/petal_layer_pink"))
                 .build(new BlockLayerPetal("layer.petal.pink", blockID("petalLayerPink"), Material.grass));
-        petalLayerLightGray = petalLayer
+        petalLayerSilver = petalLayer
                 .setBlockModel(block -> new BlockModelLayer<>(block).withTextures("bonusblocks:block/petal_layer_lightgray"))
-                .build(new BlockLayerPetal("layer.petal.lightgray", blockID("petalLayerLightGray"), Material.grass));
+                .build(new BlockLayerPetal("layer.petal.silver", blockID("petalLayerSilver"), Material.grass));
         petalLayerOrange = petalLayer
                 .setBlockModel(block -> new BlockModelLayer<>(block).withTextures("bonusblocks:block/petal_layer_orange"))
                 .build(new BlockLayerPetal("layer.petal.orange", blockID("petalLayerOrange"), Material.grass));
@@ -1038,7 +1075,7 @@ public class BonusBlocks {
                 .setResistance(0.5f)
                 .setBlockModel(block -> new BlockModelStandard<>(block).withTextures("bonusblocks:block/block_sulphur"))
                 .setTags(BlockTags.MINEABLE_BY_SHOVEL)
-                .build(new BlockSulphur("block.sulphur", blockID("blockSulphur")));
+                .build(new BlockSulphur("block.sulphur", blockID("blockSulphur"), Material.explosive));
 
         // Sugar Block
         blockSugar = new BlockBuilder(MOD_ID)
@@ -1126,16 +1163,16 @@ public class BonusBlocks {
 
         // Make Custom BlockMODEL for these fuckers
         overlayRawIron = pebble
-                .setBlockModel(block -> new BlockModelPebbles<>(block).withTextures("bonusblocks:block/pebbles_iron1", "bonusblocks:block/pebbles_iron2", "bonusblocks:block/pebbles_iron3"))
+                .setBlockModel(BlockModelNuggetsIron::new)
                 .build(new BlockOverlayRawIron("overlay.iron", blockID("overlayRawIron"), Material.metal));
         overlayRawGold = pebble
-                .setBlockModel(block -> new BlockModelPebbles<>(block).withTextures("bonusblocks:block/pebbles_gold1", "bonusblocks:block/pebbles_gold2", "bonusblocks:block/pebbles_gold3"))
+                .setBlockModel(BlockModelNuggetsGold::new)
                 .build(new BlockOverlayRawGold("overlay.gold", blockID("overlayRawGold"), Material.metal));
         overlayRawCopper = pebble
-                .setBlockModel(block -> new BlockModelPebbles<>(block).withTextures("bonusblocks:block/pebbles_copper1", "bonusblocks:block/pebbles_copper2", "bonusblocks:block/pebbles_copper3"))
+                .setBlockModel(BlockModelNuggetsCopper::new)
                 .build(new BlockOverlayRawCopper("overlay.copper", blockID("overlayRawCopper"), Material.metal));
         overlayRawSilver = pebble
-                .setBlockModel(block -> new BlockModelPebbles<>(block).withTextures("bonusblocks:block/pebbles_silver1", "bonusblocks:block/pebbles_silver2", "bonusblocks:block/pebbles_silver3"))
+                .setBlockModel(BlockModelNuggetsSilver::new)
                 .build(new BlockOverlayRawSilver("overlay.silver", blockID("overlayRawSilver"), Material.metal));
 
         // Copper Ores
@@ -1233,11 +1270,13 @@ public class BonusBlocks {
 
         // Copper Pipe
         pipeCopper = raw
-                .setBlockModel(block -> new DFBlockModelBuilder(MOD_ID).setBlockModel("pipe.json").setBlockState(MOD_ID, "pipe_states.json").setMetaStateInterpreter(new PipeMetaStateInterpreter()).build(pipeCopper))
+                .setIcon("bonusblocks:block/pipe_copper")
+                .setBlockModel(block -> new DFBlockModelBuilder(MOD_ID).setBlockModel("block/pipe.json").setBlockState(MOD_ID, "pipe_states.json").setMetaStateInterpreter(new PipeMetaStateInterpreter()).setRender3D(false).build(pipeCopper))
                 .build(new BlockCopperPipe("pipe.copper", blockID("pipeCopper"), Material.metal));
 
         pipeCopperTarnished = raw
-                .setBlockModel(block -> new DFBlockModelBuilder(MOD_ID).setBlockModel("tarnishedpipe.json").setBlockState(MOD_ID, "tarnished_pipe_states.json").setMetaStateInterpreter(new PipeMetaStateInterpreter()).build(pipeCopperTarnished))
+                .setIcon("bonusblocks:block/pipe_copper_tarnished")
+                .setBlockModel(block -> new DFBlockModelBuilder(MOD_ID).setBlockModel("block/tarnishedpipe.json").setBlockState(MOD_ID, "tarnished_pipe_states.json").setMetaStateInterpreter(new PipeMetaStateInterpreter()).setRender3D(false).build(pipeCopperTarnished))
                 .build(new BlockCopperPipe("pipe.copper.tarnished", blockID("pipeCopperTarnished"), Material.metal) {
 
                     public void updateTick(World world, int x, int y, int z, Random rand) {
@@ -1250,8 +1289,9 @@ public class BonusBlocks {
                 });
 
         pipeCopperCorroded = raw
+                .setIcon("bonusblocks:block/pipe_copper_corroded")
                 .setVisualUpdateOnMetadata()
-                .setBlockModel(block -> new DFBlockModelBuilder(MOD_ID).setBlockModel("corrodedpipe.json").setBlockState(MOD_ID, "corroded_pipe_states.json").setMetaStateInterpreter(new PipeMetaStateInterpreter()).build(pipeCopperCorroded))
+                .setBlockModel(block -> new DFBlockModelBuilder(MOD_ID).setBlockModel("block/corrodedpipe.json").setBlockState(MOD_ID, "corroded_pipe_states.json").setMetaStateInterpreter(new PipeMetaStateInterpreter()).setRender3D(false).build(pipeCopperCorroded))
                 .build(new BlockCopperPipe("pipe.copper.corroded", blockID("pipeCopperCorroded"), Material.metal) {
                     @Override
                     public void updateTick(World world, int x, int y, int z, Random rand) {
@@ -1528,7 +1568,7 @@ public class BonusBlocks {
         // Scorched Stone
         scorchedstone = stone
                 .setHardness(0.8f)
-                .setBlockModel(block -> new BlockModelStandard<>(block).withTextures("bonusblocks:block/scorchedstone_top", "bonusblocks:block/scorchedstone_bottom", "bonusblocks:block/scorchedstone_sides"))
+                .setBlockModel(block -> new BlockModelStandard<>(block).withTextures("bonusblocks:block/scorchedstone_top", "bonusblocks:block/scorchedstone_bottom", "bonusblocks:block/scorchedstone_side"))
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.GROWS_TREES, BlockTags.GROWS_SPINIFEX, BlockTags.GROWS_FLOWERS, BlockTags.FIREFLIES_CAN_SPAWN, BlockTags.CAVE_GEN_REPLACES_SURFACE, BlockTags.CAVES_CUT_THROUGH)
                 .build(new Block("scorchedstone", blockID("scorchedstone"), Material.stone));
 
@@ -1545,6 +1585,11 @@ public class BonusBlocks {
                 .setBlockModel(block -> new BlockModelStandard<>(block).withTextures("bonusblocks:block/polished_marble_top", "bonusblocks:block/polished_marble_side"))
                 .build(new Block("marble.polished", blockID("marblePolished"), Material.stone));
 
+        //Convert to vanilla POLISHED PERMAFROST
+        permafrostPolished = stone
+                .setBlockModel(block -> new BlockModelStandard<>(block).withTextures("bonusblocks:block/polished_permafrost_top", "bonusblocks:block/polished_permafrost_side"))
+                .build(new BlockPermafrostPolishedConvert("permafrost.polished", blockID("permafrostPolished"), Material.stone));
+
 
         // Carved Stones
         slateCarved = stone
@@ -1554,6 +1599,10 @@ public class BonusBlocks {
                 .setHardness(1.0f)
                 .setBlockModel(block -> new BlockModelStandard<>(block).withTextures("bonusblocks:block/polished_marble_top", "bonusblocks:block/carved_marble"))
                 .build(new Block("marble.carved", blockID("marbleCarved"), Material.stone));
+
+        permafrostCarved = stone
+                .setBlockModel(block -> new BlockModelStandard<>(block).withTextures("bonusblocks:block/polished_permafrost_top", "bonusblocks:block/carved_permafrost"))
+                .build(new BlockPermafrostCarvedConvert("permafrost.carved", blockID("permafrostCarved"), Material.stone));
 
 
         // Baked Clay
@@ -1674,16 +1723,25 @@ public class BonusBlocks {
                 .build(new BlockPumice("pumice.wet", blockID("pumiceWet"), true));
 
 
+        pie = new BlockBuilder(MOD_ID)
+                .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
+                .setHardness(0.5f)
+                .setResistance(0.5f)
+                .setBlockModel(block -> new BlockModelStandard<>(block).withTextures("bonusblocks:block/pie").withOverbrightTexture("bonusblocks:block/pie"))
+                .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.NOT_IN_CREATIVE_MENU)
+                .build(new BlockPieConvert("pie", blockID("pie"), Material.cake));
+
+
         // Soul Candle
         candleSoulwax = new BlockBuilder(MOD_ID)
                 .setBlockSound(new BlockSound("step.sand", "step.sand", 1.0f, 1.2f))
+                .setIcon("bonusblocks:item/candle_soulwax")
                 .setHardness(0.0f)
                 .setResistance(0.0f)
                 .setLuminance(10)
-                .setBlockModel(block -> new BlockModelCandle<>(block).withTextures("minecraft:block/candle_soulwax"))
+                .setBlockModel(block -> new BlockModelSoulwaxCandle<>(block).withTextures("minecraft:block/candle_soulwax"))
                 .setVisualUpdateOnMetadata()
-                .setBlockModel(BlockModelCandle::new)
-                .setTags(BlockTags.MINEABLE_BY_SWORD, BlockTags.BROKEN_BY_FLUIDS, BlockTags.NOT_IN_CREATIVE_MENU)
+                .setTags(BlockTags.MINEABLE_BY_SWORD, BlockTags.BROKEN_BY_FLUIDS)
                 .build(new BlockSoulCandle("candle.soulwax", blockID("candleSoulwax")));
 
 
@@ -1702,9 +1760,19 @@ public class BonusBlocks {
                 .build(new BlockSlab(slateCarved, blockID("slabSlatePolished")));
         slabMarblePolished = slab
                 .build(new BlockSlab(marbleCarved, blockID("slabMarblePolished")));
+//CONVERT CONVERT
+        slabPermafrostPolished = slab
+                .build(new BlockSlabPermafrostPolishedConvert(permafrostCarved, blockID("slabPermafrostPolished")));
+
         slabBrickStonePolishedMossy = slab
                 .setHardness(2.0F)
                 .build(new BlockSlab(brickStonePolishedMossy, blockID("slabBrickStonePolishedMossy")));
+
+// CONVERT CONVERT
+        slabBrickSandstone = slab
+                .setHardness(0.8F)
+                .build(new BlockSlabSandstoneBrickConvert(Block.brickSandstone, blockID("slabBrickSandstone")));
+
         slabBrickGold = slab
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
                 .setHardness(3.0F)
@@ -1712,6 +1780,11 @@ public class BonusBlocks {
         slabBrickLapis = slab
                 .setHardness(3.0F)
                 .build(new BlockSlab(brickLapis, blockID("slabBrickLapis")));
+
+        //CONVERT CONVERT
+        slabBrickPermafrost = slab
+                .build(new BlockSlabBrickPermafrostCONVERT(Block.brickPermafrost, blockID("slabBrickPermafrost")));
+
         slabBrickIron = slab
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
                 .setHardness(5.0F)
@@ -1727,6 +1800,11 @@ public class BonusBlocks {
                 .build(new BlockSlab(brickScorchedstone, blockID("slabBrickScorchedstone")));
         slabBrickMud = slab
                 .build(new BlockSlab(brickMud, blockID("slabBrickMud")));
+
+        //CONVERT CONVERT
+        slabCobblePermafrost = slab
+                .build(new BlockSlabCobblePermafrostConvert(Block.cobblePermafrost, blockID("slabCobblePermafrost")));
+
         slabScorchedstone = slab
                 .setHardness(0.8F)
                 .build(new BlockSlab(scorchedstone, blockID("slabScorchedstone")));
@@ -1796,15 +1874,24 @@ public class BonusBlocks {
         stairsBrickStonePolishedMossy = stairs
                 .setHardness(2.0F)
                 .build(new BlockStairs(brickStonePolishedMossy, blockID("stairsBrickStonePolishedMossy")));
-        stairsScorchedstone = stairs
+
+        //CONVERT CONVERT
+        stairsBrickSandstone = stairs
                 .setHardness(0.8F)
-                .build(new BlockStairs(brickSandstone, blockID("stairsScorchedstone")));
+                .build(new BlockStairsBrickSandstoneConvert(brickSandstone, blockID("stairsBrickSandstone")));
+
         stairsBrickGold = stairs
                 .setHardness(3.0F)
                 .build(new BlockStairs(brickGold, blockID("stairsBrickGold")));
         stairsBrickLapis = stairs
                 .setHardness(3.0F)
                 .build(new BlockStairs(brickLapis, blockID("stairsBrickLapis")));
+
+        //CONVERT CONVERT
+        stairsBrickPermafrost = stairs
+                .setHardness(0.8F)
+                .build(new BlockStairsBrickPermafrostConvert(brickPermafrost, blockID("stairsBrickPermafrost")));
+
         stairsBrickIron = stairs
                 .setHardness(5.0F)
                 .build(new BlockStairs(brickIron, blockID("stairsBrickIron")));
@@ -1820,6 +1907,12 @@ public class BonusBlocks {
         stairsBrickMud = stairs
                 .setHardness(1.5f)
                 .build(new BlockStairs(brickMud, blockID("stairsBrickMud")));
+
+        //CONVERT CONVERT
+        stairsCobblePermafrost = stairs
+                .setHardness(0.8F)
+                .build(new BlockStairsCobblePermafrostConvert(cobblePermafrost, blockID("stairsCobblePermafrost")));
+
         stairsBrickSteel = stairs
                 .setHardness(5.0f)
                 .setResistance(4000.0f)
@@ -2043,7 +2136,8 @@ public class BonusBlocks {
 
         girderIron = raw
                 .setVisualUpdateOnMetadata()
-                .setBlockModel(block -> new DFBlockModelBuilder(MOD_ID).setBlockModel("girder.json").setBlockState(MOD_ID, "girder_states.json").setMetaStateInterpreter(new PipeMetaStateInterpreter()).build(girderIron))
+                .setIcon("bonusblocks:block/girder_iron")
+                .setBlockModel(block -> new DFBlockModelBuilder(MOD_ID).setBlockModel("block/girder.json").setBlockState(MOD_ID, "girder_states.json").setMetaStateInterpreter(new PipeMetaStateInterpreter()).setRender3D(false).build(girderIron))
                 .build(new BlockGirder("girder.iron", blockID("girderIron"), Material.metal));
 
         fenceGold = raw
@@ -2051,6 +2145,17 @@ public class BonusBlocks {
                 .setVisualUpdateOnMetadata()
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.CAN_HANG_OFF)
                 .build(new BlockFenceGold("fence.gold", blockID("fenceGold"), Material.metal));
+
+
+
+
+
+        //3.0 New Stuff
+
+
+        stairsScorchedstone = stairs
+                .setHardness(0.8F)
+                .build(new BlockStairs(scorchedstone, blockID("stairsScorchedstone")));
 
 /*
     bedroll = new BlockBuilder(MOD_ID)

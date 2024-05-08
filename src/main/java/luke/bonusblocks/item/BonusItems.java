@@ -7,8 +7,13 @@ import net.minecraft.core.block.Block;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemPlaceable;
+import net.minecraft.core.item.tag.ItemTags;
+import turniplabs.halplibe.helper.BlockBuilder;
 import turniplabs.halplibe.helper.CreativeHelper;
+import turniplabs.halplibe.helper.ItemBuilder;
 import turniplabs.halplibe.helper.ItemHelper;
+
+import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
 
 public class BonusItems {
 
@@ -29,52 +34,73 @@ public class BonusItems {
     public static Item doorSilver;
     public static Item bedSilver;
     public static Item seatSilver;
+    public static Item foodPie;
     public static Item mossball;
     public static Item bedroll;
 
     public void initilizeItems() {
         // Items
-        candleSoulwax = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new ItemPlaceable("candle.soulwax", itemID("candleSoulwax"), BonusBlocks.candleSoulwax));
 
-        soulwax = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new Item("soulwax", itemID("soulwax")));
+        //REMOVE AFTER THIS UPDATE
+        candleSoulwax = new ItemBuilder(MOD_ID)
+                .setIcon("bonusblocks:item/candle_soulwax")
+                .setTags(ItemTags.NOT_IN_CREATIVE_MENU)
+                .build(new ItemPlaceable("candle.soulwax", itemID("candleSoulwax"), BonusBlocks.candleSoulwax));
 
-        oreRawCopper = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new ItemRawCopper("ore.raw.copper", itemID("oreRawCopper")));
+        soulwax = new ItemBuilder(MOD_ID)
+                .setIcon("bonusblocks:item/soulwax")
+                .build(new Item("soulwax", itemID("soulwax")));
 
-        ingotCopper = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new Item("ingot.copper", itemID("ingotCopper")));
+        oreRawCopper = new ItemBuilder(MOD_ID)
+                .setIcon("bonusblocks:item/ore_raw_copper")
+                .build(new ItemRawCopper("ore.raw.copper", itemID("oreRawCopper")));
 
-        oreRawSilver = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new ItemRawSilver("ore.raw.silver", itemID("oreRawSilver")));
+        ingotCopper = new ItemBuilder(MOD_ID)
+                .setIcon("bonusblocks:item/ingot_copper")
+                .build(new Item("ingot.copper", itemID("ingotCopper")));
 
-        ingotSilver = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new Item("ingot.silver", itemID("ingotSilver")));
+        oreRawSilver = new ItemBuilder(MOD_ID)
+                .setIcon("bonusblocks:item/ore_raw_silver")
+                .build(new ItemRawSilver("ore.raw.silver", itemID("oreRawSilver")));
 
-        doorCopper = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new ItemCopperDoor("door.copper", itemID("doorCopper")));
+        ingotSilver = new ItemBuilder(MOD_ID)
+                .setIcon("bonusblocks:item/ingot_silver")
+                .build(new Item("ingot.silver", itemID("ingotSilver")));
 
-        doorCopperTarnished = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new ItemCopperTarnishedDoor("door.copper.tarnished", itemID("doorCopperTarnished")));
+        doorCopper = new ItemBuilder(MOD_ID)
+                .setIcon("bonusblocks:item/door_copper")
+                .build(new ItemCopperDoor("door.copper", itemID("doorCopper")));
 
-        doorCopperCorroded = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new ItemCopperCorrodedDoor("door.copper.corroded", itemID("doorCopperCorroded")));
+        doorCopperTarnished = new ItemBuilder(MOD_ID)
+                .setIcon("bonusblocks:item/door_copper_tarnished")
+                .build(new ItemCopperTarnishedDoor("door.copper.tarnished", itemID("doorCopperTarnished")));
 
-        doorSteel = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new ItemSteelDoor("door.steel", itemID("doorSteel")));
+        doorCopperCorroded = new ItemBuilder(MOD_ID)
+                .setIcon("bonusblocks:item/door_copper_corroded")
+                .build(new ItemCopperCorrodedDoor("door.copper.corroded", itemID("doorCopperCorroded")));
 
-        doorSilver = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new ItemSilverDoor("door.silver", itemID("doorSilver")));
+        doorSteel = new ItemBuilder(MOD_ID)
+                .setIcon("bonusblocks:item/door_steel")
+                .build(new ItemSteelDoor("door.steel", itemID("doorSteel")));
 
-        bedSilver = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new ItemSilverBed("bed.silver", itemID("bedSilver")));
+        doorSilver = new ItemBuilder(MOD_ID)
+                .setIcon("bonusblocks:item/door_silver")
+                .build(new ItemSilverDoor("door.silver", itemID("doorSilver")));
 
-        seatSilver = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new ItemPlaceable("seat.silver", itemID("seatSilver"), BonusBlocks.seatSilver));
+        bedSilver = new ItemBuilder(MOD_ID)
+                .setIcon("bonusblocks:item/bed_silver")
+                .build(new ItemSilverBed("bed.silver", itemID("bedSilver")));
 
-        mossball = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-                new Item("mossball", itemID("mossball")));
+        seatSilver = new ItemBuilder(MOD_ID)
+                .setIcon("bonusblocks:item/seat_silver")
+                .build( new ItemPlaceable("seat.silver", itemID("seatSilver"), BonusBlocks.seatSilver));
+
+        foodPie = new ItemBuilder(MOD_ID)
+                .build(new ItemPlaceable("food.pie", itemID("foodPie"), Block.pumpkinPie)).setMaxStackSize(1);
+
+        mossball = new ItemBuilder(MOD_ID)
+                .setIcon("bonusblocks:item/moss")
+                .build(new Item("mossball", itemID("mossball")));
 
 //        bedroll = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
 //                new ItemBedroll("bedroll", itemID("bedroll")), "bedroll").setMaxStackSize(1);

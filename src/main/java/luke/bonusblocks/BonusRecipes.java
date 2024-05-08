@@ -159,7 +159,7 @@ public class BonusRecipes implements RecipeEntrypoint {
         templateMushroomToBlock.addInput('X', Block.flowerLightBlue).create("petal_cyan", new ItemStack(BonusBlocks.petalCyan, 4));
         templateMushroomToBlock.addInput('X', Block.flowerPurple).create("petal_purple", new ItemStack(BonusBlocks.petalPurple, 4));
         templateMushroomToBlock.addInput('X', Block.flowerPink).create("petal_pink", new ItemStack(BonusBlocks.petalPink, 4));
-        templateMushroomToBlock.addInput('X', BonusBlocks.flowerSilver).create("petal_silver", new ItemStack(BonusBlocks.petalLightGray, 4));
+        templateMushroomToBlock.addInput('X', BonusBlocks.flowerSilver).create("petal_silver", new ItemStack(BonusBlocks.petalSilver, 4));
         templateMushroomToBlock.addInput('X', Block.flowerOrange).create("petal_orange", new ItemStack(BonusBlocks.petalOrange, 4));
         templateMushroomToBlock.addInput('X', BonusBlocks.flowerLightBlue).create("petal_lightblue", new ItemStack(BonusBlocks.petalLightBlue, 4));
         templateMushroomToBlock.addInput('X', BonusBlocks.flowerMagenta).create("petal_magenta", new ItemStack(BonusBlocks.petalMagenta, 4));
@@ -171,7 +171,7 @@ public class BonusRecipes implements RecipeEntrypoint {
         templateFlowerBed.addInput('X', BonusBlocks.petalCyan).create("petal_cyan_to_layer", new ItemStack(BonusBlocks.petalLayerCyan, 8));
         templateFlowerBed.addInput('X', BonusBlocks.petalPurple).create("petal_purple_to_layer", new ItemStack(BonusBlocks.petalLayerPurple, 8));
         templateFlowerBed.addInput('X', BonusBlocks.petalPink).create("petal_pink_to_layer", new ItemStack(BonusBlocks.petalLayerPink, 8));
-        templateFlowerBed.addInput('X', BonusBlocks.petalLightGray).create("petal_silver_to_layer", new ItemStack(BonusBlocks.petalLayerLightGray, 8));
+        templateFlowerBed.addInput('X', BonusBlocks.petalSilver).create("petal_silver_to_layer", new ItemStack(BonusBlocks.petalLayerSilver, 8));
         templateFlowerBed.addInput('X', BonusBlocks.petalOrange).create("petal_orange_to_layer", new ItemStack(BonusBlocks.petalLayerOrange, 8));
         templateFlowerBed.addInput('X', BonusBlocks.petalLightBlue).create("petal_lightblue_to_layer", new ItemStack(BonusBlocks.petalLayerLightBlue, 8));
         templateFlowerBed.addInput('X', BonusBlocks.petalMagenta).create("petal_magenta_to_layer", new ItemStack(BonusBlocks.petalLayerMagenta, 8));
@@ -265,7 +265,7 @@ public class BonusRecipes implements RecipeEntrypoint {
 
         RecipeBuilder.Shaped(MOD_ID, "S", "C")
                 .addInput('S', BonusBlocks.skullCarved)
-                .addInput('C', BonusItems.candleSoulwax)
+                .addInput('C', BonusBlocks.candleSoulwax)
                 .create("skull_lantern", new ItemStack(BonusBlocks.skullActive, 1));
 
         for (int color = 0; color < 16; color++) {
@@ -327,7 +327,7 @@ public class BonusRecipes implements RecipeEntrypoint {
         RecipeBuilder.Shaped(MOD_ID, "S", "W")
                 .addInput('S', (Item.string))
                 .addInput('W', (BonusItems.soulwax))
-                .create("soulwax_candle", new ItemStack(BonusItems.candleSoulwax, 2));
+                .create("soulwax_candle", new ItemStack(BonusBlocks.candleSoulwax, 2));
 
         RecipeBuilder.Shaped(MOD_ID, " B ", "B B", " B ")
                 .addInput('B', (Item.brickClay))
@@ -341,7 +341,7 @@ public class BonusRecipes implements RecipeEntrypoint {
         templateSlab.addInput('X', Block.brickLapis).create("lapis_brick_slab", new ItemStack(BonusBlocks.slabBrickLapis, 6));
         templateSlab.addInput('X', BonusBlocks.brickMud).create("mud_brick_slab", new ItemStack(BonusBlocks.slabBrickMud, 6));
         templateSlab.addInput('X', BonusBlocks.brickNetherrack).create("netherrack_brick_slab", new ItemStack(BonusBlocks.slabBrickNetherrack, 6));
-        templateSlab.addInput('X', Block.brickSandstone).create("sandstone_brick_slab", new ItemStack(BonusBlocks.slabBrickSandstone, 6));
+//        templateSlab.addInput('X', Block.brickSandstone).create("sandstone_brick_slab", new ItemStack(BonusBlocks.slabBrickSandstone, 6));
         templateSlab.addInput('X', Block.brickStonePolishedMossy).create("stone_polished_mossy_brick_slab", new ItemStack(BonusBlocks.slabBrickStonePolishedMossy, 6));
         templateSlab.addInput('X', BonusBlocks.brickScorchedstone).create("scorchedstone_brick_slab", new ItemStack(BonusBlocks.slabBrickScorchedstone, 6));
         templateSlab.addInput('X', BonusBlocks.brickSteel).create("steel_brick_slab", new ItemStack(BonusBlocks.slabBrickSteel, 6));
