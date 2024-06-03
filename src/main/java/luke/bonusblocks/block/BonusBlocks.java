@@ -19,7 +19,6 @@ import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.crafting.LookupFuelFurnace;
 import net.minecraft.core.enums.EnumDropCause;
-import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.block.*;
 import net.minecraft.core.sound.BlockSound;
@@ -329,7 +328,6 @@ public class BonusBlocks {
     public static Block logStrippedPine;
 
     public static Block bedroll;
-
 
     private void initializeBlockDetails() {
 

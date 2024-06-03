@@ -42,7 +42,7 @@ public class ItemRawCopper extends Item {
             }
             if (newMeta < 3) {
                 world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, BonusBlocks.overlayRawCopper.id, newMeta);
-                world.playBlockSoundEffect((Entity)null, (float)blockX + 0.5f, (float)blockY + 0.5f, (float)blockZ + 0.5f, BonusBlocks.overlayRawCopper, EnumBlockSoundEffectType.PLACE);
+                world.playBlockSoundEffect(null, (float)blockX + 0.5f, (float)blockY + 0.5f, (float)blockZ + 0.5f, BonusBlocks.overlayRawCopper, EnumBlockSoundEffectType.PLACE);
                 itemstack.consumeItem(entityplayer);
                 return true;
             }
@@ -59,16 +59,15 @@ public class ItemRawCopper extends Item {
             }
             if (newMeta < 3) {
                 world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, BonusBlocks.overlayRawCopper.id, newMeta);
-                world.playBlockSoundEffect((Entity)null, (float)blockX + 0.5f, (float)blockY + 0.5f, (float)blockZ + 0.5f, BonusBlocks.overlayRawCopper, EnumBlockSoundEffectType.PLACE);
+                world.playBlockSoundEffect(null, (float)blockX + 0.5f, (float)blockY + 0.5f, (float)blockZ + 0.5f, BonusBlocks.overlayRawCopper, EnumBlockSoundEffectType.PLACE);
                 itemstack.consumeItem(entityplayer);
                 return true;
             }
         }
         if (world.canBlockBePlacedAt(BonusBlocks.overlayRawCopper.id, blockX, blockY, blockZ, false, side) && world.isBlockOpaqueCube(blockX, blockY - 1, blockZ)) {
-            Block block = BonusBlocks.overlayRawCopper;
             if (world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, BonusBlocks.overlayRawCopper.id, this.getPlacedBlockMetadata(itemstack.getMetadata()))) {
                 BonusBlocks.overlayRawCopper.onBlockPlaced(world, blockX, blockY, blockZ, side, entityplayer, yPlaced);
-                world.playBlockSoundEffect((Entity)null, (float)blockX + 0.5f, (float)blockY + 0.5f, (float)blockZ + 0.5f, BonusBlocks.overlayRawCopper, EnumBlockSoundEffectType.PLACE);
+                world.playBlockSoundEffect(null, (float)blockX + 0.5f, (float)blockY + 0.5f, (float)blockZ + 0.5f, BonusBlocks.overlayRawCopper, EnumBlockSoundEffectType.PLACE);
                 itemstack.consumeItem(entityplayer);
             }
             return true;

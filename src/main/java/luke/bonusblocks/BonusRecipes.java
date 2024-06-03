@@ -557,6 +557,7 @@ public class BonusRecipes implements RecipeEntrypoint {
         RecipeBuilder.getRecipeNamespace(MOD_ID);
 
         Registries.ITEM_GROUPS.getItem("minecraft:trommel_dirt").add(BonusBlocks.dirtRough.getDefaultStack());
+        Registries.ITEM_GROUPS.getItem("minecraft:trommel_dirt").add(Block.mud.getDefaultStack());
 
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.logMaple.getDefaultStack());
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.logScorched.getDefaultStack());
