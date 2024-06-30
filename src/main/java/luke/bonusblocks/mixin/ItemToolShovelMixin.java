@@ -16,11 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value = ItemToolShovel.class, remap = false)
 public class ItemToolShovelMixin {
-    @Inject(
-            method = "onItemUse(Lnet/minecraft/core/item/ItemStack;Lnet/minecraft/core/entity/player/EntityPlayer;Lnet/minecraft/core/world/World;IIILnet/minecraft/core/util/helper/Side;DD)Z",
-            at = @At(value = "HEAD"),
-            cancellable = true
-    )
+    @Inject(method = "onUseItemOnBlock", at = @At(value = "HEAD"), cancellable = true)
     public void addNewPathBlock(ItemStack itemstack, EntityPlayer entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced, CallbackInfoReturnable<Boolean> cir){
         int i1 = world.getBlockId(blockX,blockY,blockZ);
         int j1 = world.getBlockId(blockX,blockY + 1,blockZ);

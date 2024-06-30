@@ -21,7 +21,7 @@ public class ItemToolAxeMixin extends ItemTool {
     }
 
     @Override
-    public boolean onItemUse(ItemStack itemstack, EntityPlayer entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
+    public boolean onUseItemOnBlock(ItemStack itemstack, EntityPlayer entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
         int i1 = world.getBlockId(blockX, blockY, blockZ);
         if (i1 == BonusBlocks.blockCopperCorroded.id) {
             Block copperBlock = BonusBlocks.blockCopperTarnished;

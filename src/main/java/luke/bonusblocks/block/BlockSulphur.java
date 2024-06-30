@@ -13,6 +13,7 @@ import net.minecraft.core.item.ItemFirestriker;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.sound.SoundCategory;
 import net.minecraft.core.world.World;
+import net.minecraft.core.util.helper.Side;
 
 import java.util.Random;
 
@@ -52,23 +53,26 @@ public class BlockSulphur extends BlockSand {
         }
     }
 
-    public void onBlockClicked(World world, int x, int y, int z, EntityPlayer player) {
+    @Override
+    public void onBlockLeftClicked(World world, int x, int y, int z, EntityPlayer player, Side side, double xHit, double yHit) {
         if (player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() instanceof ItemFirestriker) {
             world.setBlockMetadata(x, y, z, 1);
         }
 
-        super.onBlockClicked(world, x, y, z, player);
+        super.onBlockLeftClicked(world, x, y, z, player, side, xHit, yHit);
     }
 
-    public boolean blockActivated(World world, int x, int y, int z, EntityPlayer player) {
+    @Override
+    public boolean onBlockRightClicked(World world, int x, int y, int z, EntityPlayer player, Side side, double xHit, double yHit) {
         if (player.inventory.getCurrentItem() != null && player.inventory.getCurrentItem().getItem() instanceof ItemFirestriker) {
             this.ignite(world, x, y, z, player, true);
             return true;
         } else {
-            return super.blockActivated(world, x, y, z, player);
+            return super.onBlockRightClicked(world, x, y, z, player, side, xHit, yHit);
         }
     }
 
+    @Override
     public void updateTick(World world, int x, int y, int z, Random rand) {
         this.tryToFall(world, x, y, z);
     }
