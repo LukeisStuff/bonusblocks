@@ -329,8 +329,7 @@ public class BonusBlocks {
 
     public static Block bedroll;
 
-    private void initializeBlockDetails() {
-
+    public void initializeBlockDetails() {
         miningLevels.put(lazurite, 0);
         miningLevels.put(cobbleLazurite, 0);
         miningLevels.put(brickLazurite, 0);
@@ -2295,8 +2294,5 @@ public class BonusBlocks {
             .setTags(BlockTags.NOT_IN_CREATIVE_MENU, BlockTags.MINEABLE_BY_AXE)
             .build(new BlockBedroll("bedroll", blockID("bedroll")));
 */
-
-
-        initializeBlockDetails();
     }
 }

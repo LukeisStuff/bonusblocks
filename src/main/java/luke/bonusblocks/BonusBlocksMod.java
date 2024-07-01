@@ -48,6 +48,6 @@ public class BonusBlocksMod implements ModInitializer, ClientStartEntrypoint, Ga
 
     @Override
     public void afterGameStart() {
+        new BonusBlocks().initializeBlockDetails();
     }
-
 }

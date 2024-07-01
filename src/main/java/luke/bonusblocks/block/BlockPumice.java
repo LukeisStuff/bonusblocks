@@ -24,7 +24,6 @@ public class BlockPumice extends Block {
     public BlockPumice(String key, int id, boolean isWet) {
         super(key, id, Material.stone);
         this.isMagma = isWet;
-        withOverbright();
     }
 
     public void onNeighborBlockChange(World world, int x, int y, int z, int blockId) {
