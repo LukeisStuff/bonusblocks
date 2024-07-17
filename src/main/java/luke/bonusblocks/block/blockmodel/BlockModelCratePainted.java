@@ -14,6 +14,12 @@ public class BlockModelCratePainted<T extends Block> extends BlockModelStandard<
         super(block);
     }
 
+    @Override
+    public IconCoordinate getBlockOverbrightTextureFromSideAndMeta(Side side, int data) {
+        return getBlockTextureFromSideAndMetadata(side, data);
+    }
+
+    @Override
     public IconCoordinate getBlockTextureFromSideAndMetadata(Side side, int data) {
         return texCoords[data & 15];
     }

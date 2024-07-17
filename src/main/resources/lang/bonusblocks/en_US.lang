@@ -738,3 +738,6 @@ tile.bonusblocks.door.glass.obsidian.bottom.desc=You really shouldn't be seeing 
 tile.bonusblocks.door.glass.obsidian.top.name=Obsidian Glass Top Door
 tile.bonusblocks.door.glass.obsidian.top.desc=How did you get this?
 
+tile.bonusblocks.log.stripped.oak.name=Stripped Oak
+tile.bonusblocks.log.stripped.oak.mossy.name=Mossy Stripped Oak
+tile.bonusblocks.log.stripped.pine.name=Stripped Pine

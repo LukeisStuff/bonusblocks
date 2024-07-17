@@ -425,7 +425,7 @@ public class BonusBlocks {
         miningLevels.put(brimstone, 3);
 
 
-        itemsList[cratePainted.id] = new ItemBlockPainted(cratePainted, false);
+        //itemsList[cratePainted.id] = new ItemBlockPainted(cratePainted, false);
 
         stoneToMossMap.put(saplingOak, BonusBlocks.saplingOakMossy);
         stoneToMossMap.put(BonusBlocks.cobbleNetherrack, netherrack);
@@ -844,7 +844,7 @@ public class BonusBlocks {
         cratePainted = crates
                 .setBlockModel(BlockModelCratePainted::new)
                 .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT, BlockTags.NOT_IN_CREATIVE_MENU)
-                .build(new BlockPaintedCrate("crate.painted", blockID("cratePainted")));
+                .build(new BlockPaintedCrate("crate.painted", blockID("cratePainted")).setBlockItem(block -> new ItemBlockPainted(block, false)));
 
 
         // Bookshelf
@@ -1599,7 +1599,7 @@ public class BonusBlocks {
 
         // Silver Bed
         bedSilver = silver
-                .setBlockModel(BlockModelBed::new)
+                .setBlockModel(BlockModelSilverBed::new)
                 .setVisualUpdateOnMetadata()
                 .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
                 .build(new BlockSilverBed("bed.silver", blockID("bedSilver")));
