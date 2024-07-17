@@ -14,7 +14,8 @@ public class ItemBedroll extends Item {
         super(name, id);
     }
 
-    public boolean onItemUse(ItemStack itemstack, EntityPlayer entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
+    @Override
+    public boolean onUseItemOnBlock(ItemStack itemstack, EntityPlayer entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
         if (!world.canPlaceInsideBlock(blockX, blockY, blockZ)) {
             blockX += side.getOffsetX();
             blockY += side.getOffsetY();
