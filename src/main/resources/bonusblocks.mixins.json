@@ -17,10 +17,8 @@
     "GuiIngameMixin",
     "ItemToolAxeMixin",
     "ItemToolShovelMixin",
-    "NetClientHandlerMixin",
     "SurfaceGeneratorOverworldMixin",
-    "WorldFeatureLabyrinthMixin",
-    "EntityTrackerEntryMixin"
+    "WorldFeatureLabyrinthMixin"
   ],
   "client": [
   ],
