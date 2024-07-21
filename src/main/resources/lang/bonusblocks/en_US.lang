@@ -741,3 +741,6 @@ tile.bonusblocks.door.glass.obsidian.top.desc=How did you get this?
 tile.bonusblocks.log.stripped.oak.name=Stripped Oak
 tile.bonusblocks.log.stripped.oak.mossy.name=Mossy Stripped Oak
 tile.bonusblocks.log.stripped.pine.name=Stripped Pine
+
+tile.bonusblocks.fence.steel.name=Steel Fence
+tile.bonusblocks.fence.steel.desc=A sturdy fence made of steel bars.

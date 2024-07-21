@@ -2,7 +2,6 @@ package luke.bonusblocks;
 
 import luke.bonusblocks.block.BonusBlocks;
 import luke.bonusblocks.item.BonusItems;
-import net.minecraft.core.WeightedRandomLootObject;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.item.Item;
@@ -413,6 +412,11 @@ public class BonusRecipes implements RecipeEntrypoint {
                 .addInput('P', Item.ingotGold)
                 .addInput('C', Block.blockGold)
                 .create("fence_gold", new ItemStack(BonusBlocks.fenceGold, 16));
+
+        RecipeBuilder.Shaped(MOD_ID, "CPC", "CPC")
+                .addInput('P', Item.ingotSteelCrude)
+                .addInput('C', Item.ingotSteel)
+                .create("fence_steel", new ItemStack(BonusBlocks.fenceSteel, 8));
 
         RecipeBuilder.Shaped(MOD_ID, "PPP", "PPP")
                 .addInput('P', BonusItems.ingotCopper)

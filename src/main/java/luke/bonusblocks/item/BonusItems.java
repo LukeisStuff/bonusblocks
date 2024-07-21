@@ -43,12 +43,6 @@ public class BonusItems {
     public void initilizeItems() {
         // Items
 
-        //REMOVE AFTER THIS UPDATE
-        candleSoulwax = new ItemBuilder(MOD_ID)
-                .setIcon("bonusblocks:item/candle_soulwax")
-                .setTags(ItemTags.NOT_IN_CREATIVE_MENU)
-                .build(new ItemPlaceable("candle.soulwax", itemID("candleSoulwax"), BonusBlocks.candleSoulwax));
-
         soulwax = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/soulwax")
                 .build(new Item("soulwax", itemID("soulwax")));
@@ -96,10 +90,6 @@ public class BonusItems {
         seatSilver = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/seat_silver")
                 .build( new ItemPlaceable("seat.silver", itemID("seatSilver"), BonusBlocks.seatSilver));
-
-        foodPie = new ItemBuilder(MOD_ID)
-                .setTags(ItemTags.NOT_IN_CREATIVE_MENU)
-                .build(new ItemPlaceable("food.pie", itemID("foodPie"), Block.pumpkinPie)).setMaxStackSize(1);
 
         mossball = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/moss")
