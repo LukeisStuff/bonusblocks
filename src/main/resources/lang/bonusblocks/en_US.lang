@@ -66,18 +66,18 @@ tile.bonusblocks.dirt.rough.desc=Dirt hardened with mud to prevent grass growing
 tile.bonusblocks.branch.name=Branches
 tile.bonusblocks.branch.desc=Woody structure connecting leaves.
 
-tile.bonusblocks.leaves.maple.name=Maple Leaves
-tile.bonusblocks.leaves.maple.desc=Leaves from a maple tree.
+tile.bonusblocks.leaves.maple.name=Ironwood Leaves
+tile.bonusblocks.leaves.maple.desc=Leaves from a ironwood tree.
 tile.bonusblocks.leaves.oak.mossy.name=Mossy Oak Leaves
 tile.bonusblocks.leaves.oak.mossy.desc=Leaves from a mossy oak tree.
 
-tile.bonusblocks.sapling.maple.name=Maple Sapling
-tile.bonusblocks.sapling.maple.desc=A plant to grow a maple tree.
+tile.bonusblocks.sapling.maple.name=Ironwood Sapling
+tile.bonusblocks.sapling.maple.desc=A plant to grow a ironwood tree.
 tile.bonusblocks.sapling.oak.mossy.name=Mossy Oak Sapling
 tile.bonusblocks.sapling.oak.mossy.desc=A plant to grow an oak tree covered in moss.
 
-tile.bonusblocks.log.maple.name=Maple Log
-tile.bonusblocks.log.maple.desc=A log from a maple tree.
+tile.bonusblocks.log.maple.name=Ironwood Log
+tile.bonusblocks.log.maple.desc=A log from a ironwood tree.
 tile.bonusblocks.log.shrub.name=Shrub Log
 tile.bonusblocks.log.shrub.desc=A log from a shrub tree.
 tile.bonusblocks.log.jacaranda.name=Jacaranda Log
@@ -656,7 +656,7 @@ biome.bonusblocks.overgrown.meadow=Meadow
 biome.bonusblocks.outback.mesa=Mesa Outback
 biome.bonusblocks.dryland=Dryland
 biome.bonusblocks.wetland=Wetland
-biome.bonusblocks.maple=Maple Forest
+biome.bonusblocks.maple=Ironwood Forest
 
 biome.bonusblocks.soul.desert=Soul Desert
 biome.bonusblocks.soul.wasteland=Wasteland

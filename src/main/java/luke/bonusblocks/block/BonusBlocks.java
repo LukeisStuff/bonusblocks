@@ -322,7 +322,6 @@ public class BonusBlocks {
     public static Block tatami;
 
     public static Block fenceSteel;
-    public static Block concrete;
 
     public static Block bedroll;
 
@@ -2170,14 +2169,6 @@ public class BonusBlocks {
                 .setResistance(4000.0f)
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.CAN_HANG_OFF)
                 .build(new BlockFenceSteel("fence.steel", blockID("fenceSteel"), Material.metal));
-
-        concrete = new BlockBuilder(MOD_ID)
-                .setHardness(10.0f)
-                .setResistance(10.0f)
-                .setBlockModel(block -> new BlockModelStandard<>(block).withTextures("bonusblocks:block/concrete"))
-                .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-                .build(new Block("concrete", blockID("concrete"), Material.stone));
-
 /*
     bedroll = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
