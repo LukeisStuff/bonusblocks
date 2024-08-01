@@ -1,12 +1,13 @@
 package luke.bonusblocks.block;
 
+import luke.bonusblocks.item.BonusItems;
 import net.minecraft.core.block.BlockBed;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.enums.EnumSleepStatus;
-import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
+import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.WorldSource;
 import net.minecraft.core.world.chunk.ChunkCoordinates;
@@ -19,7 +20,7 @@ public class BlockBedroll extends BlockBed {
         this.setBounds();
     }
 
-    public boolean blockActivated(World world, int x, int y, int z, EntityPlayer player) {
+    public boolean onBlockRightClicked(World world, int x, int y, int z, EntityPlayer player, Side side, double xPlaced, double yPlaced) {
         if (world.isClientSide) {
             return true;
         } else {
@@ -128,7 +129,7 @@ public class BlockBedroll extends BlockBed {
     }
 
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-        return new ItemStack[]{new ItemStack(Item.bed)};
+        return new ItemStack[]{new ItemStack(BonusItems.bedroll)};
     }
 
     public int getPistonPushReaction() {
