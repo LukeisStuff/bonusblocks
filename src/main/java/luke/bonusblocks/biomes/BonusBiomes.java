@@ -9,7 +9,7 @@ public class BonusBiomes {
     public static final Biome OVERWORLD_OUTBACK_MESA = new BiomeMesa("bonusblocks.outback.mesa");
     public static final Biome OVERWORLD_DRYLAND = new BiomeDryland("bonusblocks.dryland");
 //    public static final Biome OVERWORLD_WETLAND = new BiomeWetland("bonusblocks.wetland");
-    public static final Biome OVERWORLD_MAPLE = new BiomeMaple("bonusblocks.maple");
+    public static final Biome OVERWORLD_IRONWOOD = new BiomeIronwood("bonusblocks.maple");
 
 
 
@@ -22,7 +22,7 @@ public class BonusBiomes {
         Biomes.register(BonusBlocksMod.MOD_ID+":overworld.outback.mesa", OVERWORLD_OUTBACK_MESA);
         Biomes.register(BonusBlocksMod.MOD_ID+":overworld.dryland", OVERWORLD_DRYLAND);
 //        Biomes.register(BonusBlocksMod.MOD_ID+":overworld.wetland", OVERWORLD_WETLAND);
-        Biomes.register(BonusBlocksMod.MOD_ID+":overworld.maple", OVERWORLD_MAPLE);
+        Biomes.register(BonusBlocksMod.MOD_ID+":overworld.ironwood", OVERWORLD_IRONWOOD);
 
 //        Biomes.register(BonusBlocksMod.MOD_ID+":nether.soul.desert", NETHER_SOUL_DESERT);
 //        Biomes.register(BonusBlocksMod.MOD_ID+":nether.soul.wasteland", NETHER_SOUL_WASTELAND);

@@ -37,12 +37,12 @@ public class TerrainApiPlugin implements TerrainAPI {
 
         overworldConfig.addGrassDensity(BonusBiomes.OVERWORLD_OVERGROWN_MEADOW, 2);
         overworldConfig.addGrassDensity(BonusBiomes.OVERWORLD_DRYLAND, 2);
-        overworldConfig.addGrassDensity(BonusBiomes.OVERWORLD_MAPLE, 2);
+        overworldConfig.addGrassDensity(BonusBiomes.OVERWORLD_IRONWOOD, 2);
 
-        overworldConfig.addTreeDensity(BonusBiomes.OVERWORLD_MAPLE, 2);
+        overworldConfig.addTreeDensity(BonusBiomes.OVERWORLD_IRONWOOD, 2);
         overworldConfig.addTreeDensity(BonusBiomes.OVERWORLD_DRYLAND, 1);
 
-        overworldConfig.addLakeDensity(BonusBiomes.OVERWORLD_MAPLE, 1);
+        overworldConfig.addLakeDensity(BonusBiomes.OVERWORLD_IRONWOOD, 1);
         overworldConfig.addLakeDensity(BonusBiomes.OVERWORLD_OVERGROWN_MEADOW, 1);
         overworldConfig.addLakeDensity(BonusBiomes.OVERWORLD_DRYLAND, 1);
 //        overworldConfig.addLakeDensity(BonusBiomes.OVERWORLD_WETLAND, 4);
@@ -87,7 +87,7 @@ public class TerrainApiPlugin implements TerrainAPI {
         overworldConfig.addRandomGrassBlock(BonusBiomes.OVERWORLD_OVERGROWN_MEADOW, Block.tallgrassFern);
         overworldConfig.addRandomGrassBlock(BonusBiomes.OVERWORLD_DRYLAND, Block.tallgrassFern);
 //        overworldConfig.addRandomGrassBlock(BonusBiomes.OVERWORLD_WETLAND, Block.tallgrassFern);
-        overworldConfig.addRandomGrassBlock(BonusBiomes.OVERWORLD_MAPLE, Block.overlayPebbles);
+        overworldConfig.addRandomGrassBlock(BonusBiomes.OVERWORLD_IRONWOOD, Block.overlayPebbles);
         overworldConfig.addRandomGrassBlock(BonusBiomes.OVERWORLD_OUTBACK_MESA, Block.deadbush);
 
         ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.cobbleNetherrack, 24, 12, 0.0f, 1.0f, false);

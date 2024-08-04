@@ -891,7 +891,7 @@ public class BonusBlocks {
         // Saplings
         saplingMaple = sapling
                 .setBlockModel(block -> new BlockModelCrossedSquares<>(block).withTextures("bonusblocks:block/sapling_maple"))
-                .build(new BlockSaplingMaple("sapling.maple", blockID("saplingMaple")));
+                .build(new BlockSaplingIronwood("sapling.maple", blockID("saplingMaple")));
         saplingJacaranda = sapling
                 .setBlockModel(block -> new BlockModelCrossedSquares<>(block).withTextures("bonusblocks:block/sapling_jacaranda"))
                 .build(new BlockSaplingJacaranda("sapling.jacaranda", blockID("saplingJacaranda")));

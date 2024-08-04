@@ -2,7 +2,7 @@ package luke.bonusblocks.mixin;
 
 import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.core.block.Block;
-import net.minecraft.core.block.tag.BlockTags;
+import net.minecraft.core.data.tag.Tag;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.enums.EnumBlockSoundEffectType;
 import net.minecraft.core.item.ItemStack;
@@ -16,8 +16,8 @@ import org.spongepowered.asm.mixin.Mixin;
 @Mixin(value = ItemToolAxe.class, remap = false)
 public class ItemToolAxeMixin extends ItemTool {
 
-    public ItemToolAxeMixin() {
-        super("name", 1, 3, ToolMaterial.diamond, BlockTags.MINEABLE_BY_AXE);
+    public ItemToolAxeMixin(String name, int id, int damageDealt, ToolMaterial toolMaterial, Tag<Block> tagEffectiveAgainst) {
+        super(name, id, damageDealt, toolMaterial, tagEffectiveAgainst);
     }
 
     @Override

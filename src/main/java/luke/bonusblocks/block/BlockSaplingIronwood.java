@@ -7,8 +7,8 @@ import net.minecraft.core.world.generate.feature.tree.WorldFeatureTreeFancy;
 
 import java.util.Random;
 
-public class BlockSaplingMaple extends BlockSaplingBase {
-    public BlockSaplingMaple(String key, int id) {
+public class BlockSaplingIronwood extends BlockSaplingBase {
+    public BlockSaplingIronwood(String key, int id) {
         super(key, id);
     }
 

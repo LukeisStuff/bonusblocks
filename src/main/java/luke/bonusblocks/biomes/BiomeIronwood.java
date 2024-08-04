@@ -9,8 +9,8 @@ import net.minecraft.core.world.generate.feature.tree.WorldFeatureTreeFancy;
 
 import java.util.Random;
 
-public class BiomeMaple extends BiomeForest {
-    public BiomeMaple(String key) {
+public class BiomeIronwood extends BiomeForest {
+    public BiomeIronwood(String key) {
         super(key);
         this.topBlock = (short) Block.grass.id;
         this.fillerBlock = (short)Block.dirt.id;
