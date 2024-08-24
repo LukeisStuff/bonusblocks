@@ -1774,7 +1774,7 @@ public class BonusBlocks {
                 .setHardness(0.0f)
                 .setResistance(0.0f)
                 .setLuminance(10)
-                .setBlockModel(block -> new BlockModelSoulwaxCandle<>(block).withTextures("minecraft:block/candle_soulwax"))
+                .setBlockModel(block -> new BlockModelSoulwaxCandle<>(block).withTextures("bonusblocks:block/candle_soulwax"))
                 .setVisualUpdateOnMetadata()
                 .setTags(BlockTags.MINEABLE_BY_SWORD, BlockTags.BROKEN_BY_FLUIDS)
                 .build(new BlockSoulCandle("candle.soulwax", blockID("candleSoulwax")));
