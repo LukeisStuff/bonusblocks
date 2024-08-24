@@ -1,6 +1,5 @@
 package luke.bonusblocks.block;
 
-import luke.bonusblocks.item.BonusItems;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockCandle;
 import net.minecraft.core.block.entity.TileEntity;
