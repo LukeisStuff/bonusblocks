@@ -398,6 +398,46 @@ public class BonusRecipes implements RecipeEntrypoint {
                 .addInput('P', BonusBlocks.glassObsidian)
                 .create("door_glass_obsdian", new ItemStack(BonusItems.doorGlassObsidian, 2));
 
+        RecipeBuilder.Shaped(MOD_ID, "PP", "PP", "PP")
+                .addInput('P', Block.stone)
+                .create("door_stone", new ItemStack(BonusItems.doorStone, 2));
+
+        RecipeBuilder.Shaped(MOD_ID, "PP", "PP", "PP")
+                .addInput('P', Block.basalt)
+                .create("door_basalt", new ItemStack(BonusItems.doorBasalt, 2));
+
+        RecipeBuilder.Shaped(MOD_ID, "PP", "PP", "PP")
+                .addInput('P', Block.limestone)
+                .create("door_limestone", new ItemStack(BonusItems.doorLimestone, 2));
+
+        RecipeBuilder.Shaped(MOD_ID, "PP", "PP", "PP")
+                .addInput('P', Block.granite)
+                .create("door_granite", new ItemStack(BonusItems.doorGranite, 2));
+
+        RecipeBuilder.Shaped(MOD_ID, "PP", "PP", "PP")
+                .addInput('P', Block.permafrost)
+                .create("door_permafrost", new ItemStack(BonusItems.doorPermafrost, 2));
+
+        RecipeBuilder.Shaped(MOD_ID, "PP", "PP", "PP")
+                .addInput('P', Block.marble)
+                .create("door_marble", new ItemStack(BonusItems.doorMarble, 2));
+
+        RecipeBuilder.Shaped(MOD_ID, "PP", "PP", "PP")
+                .addInput('P', Block.slate)
+                .create("door_slate", new ItemStack(BonusItems.doorSlate, 2));
+
+        RecipeBuilder.Shaped(MOD_ID, "PP", "PP", "PP")
+                .addInput('P', BonusBlocks.netherrack)
+                .create("door_netherrack", new ItemStack(BonusItems.doorNetherrack, 2));
+
+        RecipeBuilder.Shaped(MOD_ID, "PP", "PP", "PP")
+                .addInput('P', BonusBlocks.lazurite)
+                .create("door_lazurite", new ItemStack(BonusItems.doorLazurite, 2));
+
+        RecipeBuilder.Shaped(MOD_ID, "PP", "PP", "PP")
+                .addInput('P', BonusBlocks.peridot)
+                .create("door_peridot", new ItemStack(BonusItems.doorPeridot, 2));
+
         RecipeBuilder.Shaped(MOD_ID, "CPC", "CPC")
                 .addInput('P', BonusItems.ingotCopper)
                 .addInput('C', BonusBlocks.blockCopper)
@@ -429,6 +469,46 @@ public class BonusRecipes implements RecipeEntrypoint {
         RecipeBuilder.Shaped(MOD_ID, "PPP", "PPP")
                 .addInput('P', Item.ingotSteel)
                 .create("trapdoor_steel", new ItemStack(BonusBlocks.trapdoorSteel, 6));
+
+        RecipeBuilder.Shaped(MOD_ID, "PPP", "PPP")
+                .addInput('P', Block.stone)
+                .create("trapdoor_stone", new ItemStack(BonusBlocks.trapdoorStone, 6));
+
+        RecipeBuilder.Shaped(MOD_ID, "PPP", "PPP")
+                .addInput('P', Block.basalt)
+                .create("trapdoor_basalt", new ItemStack(BonusBlocks.trapdoorBasalt, 6));
+
+        RecipeBuilder.Shaped(MOD_ID, "PPP", "PPP")
+                .addInput('P', Block.limestone)
+                .create("trapdoor_limestone", new ItemStack(BonusBlocks.trapdoorLimestone, 6));
+
+        RecipeBuilder.Shaped(MOD_ID, "PPP", "PPP")
+                .addInput('P', Block.granite)
+                .create("trapdoor_granite", new ItemStack(BonusBlocks.trapdoorGranite, 6));
+
+        RecipeBuilder.Shaped(MOD_ID, "PPP", "PPP")
+                .addInput('P', Block.permafrost)
+                .create("trapdoor_permafrost", new ItemStack(BonusBlocks.trapdoorPermafrost, 6));
+
+        RecipeBuilder.Shaped(MOD_ID, "PPP", "PPP")
+                .addInput('P', Block.marble)
+                .create("trapdoor_marble", new ItemStack(BonusBlocks.trapdoorMarble, 6));
+
+        RecipeBuilder.Shaped(MOD_ID, "PPP", "PPP")
+                .addInput('P', Block.slate)
+                .create("trapdoor_slate", new ItemStack(BonusBlocks.trapdoorSlate, 6));
+
+        RecipeBuilder.Shaped(MOD_ID, "PPP", "PPP")
+                .addInput('P', BonusBlocks.netherrack)
+                .create("trapdoor_netherrack", new ItemStack(BonusBlocks.trapdoorNetherrack, 6));
+
+        RecipeBuilder.Shaped(MOD_ID, "PPP", "PPP")
+                .addInput('P', BonusBlocks.lazurite)
+                .create("trapdoor_lazurite", new ItemStack(BonusBlocks.trapdoorLazurite, 6));
+
+        RecipeBuilder.Shaped(MOD_ID, "PPP", "PPP")
+                .addInput('P', BonusBlocks.peridot)
+                .create("trapdoor_peridot", new ItemStack(BonusBlocks.trapdoorPeridot, 6));
 
         RecipeBuilder.Furnace(MOD_ID)
                 .setInput(BonusBlocks.cobbleLazurite)

@@ -744,3 +744,97 @@ tile.bonusblocks.log.stripped.pine.name=Stripped Pine
 
 tile.bonusblocks.fence.steel.name=Steel Fence
 tile.bonusblocks.fence.steel.desc=A sturdy fence made of steel bars.
+
+
+tile.bonusblocks.door.stone.top.name=Top Stone Door
+tile.bonusblocks.door.stone.top.desc=Rock solid.
+tile.bonusblocks.door.stone.bottom.name=Bottom Stone Door
+tile.bonusblocks.door.stone.bottom.desc=Rock and Roll.
+
+tile.bonusblocks.door.basalt.top.name=Top Basalt Door
+tile.bonusblocks.door.basalt.top.desc=Rock solid.
+tile.bonusblocks.door.basalt.bottom.name=Bottom Basalt Door
+tile.bonusblocks.door.basalt.bottom.desc=Rock and Roll.
+
+tile.bonusblocks.door.granite.top.name=Top Granite Door
+tile.bonusblocks.door.granite.top.desc=Rock solid.
+tile.bonusblocks.door.granite.bottom.name=Bottom Granite Door
+tile.bonusblocks.door.granite.bottom.desc=Rock and Roll.
+
+tile.bonusblocks.door.limestone.top.name=Top Limestone Door
+tile.bonusblocks.door.limestone.top.desc=Rock solid.
+tile.bonusblocks.door.limestone.bottom.name=Bottom Limestone Door
+tile.bonusblocks.door.limestone.bottom.desc=Rock and Roll.
+
+tile.bonusblocks.door.permafrost.top.name=Top Permafrost Door
+tile.bonusblocks.door.permafrost.top.desc=Rock solid.
+tile.bonusblocks.door.permafrost.bottom.name=Bottom Permafrost Door
+tile.bonusblocks.door.permafrost.bottom.desc=Rock and Roll.
+
+tile.bonusblocks.door.marble.top.name=Top Marble Door
+tile.bonusblocks.door.marble.top.desc=Rock solid.
+tile.bonusblocks.door.marble.bottom.name=Bottom Marble Door
+tile.bonusblocks.door.marble.bottom.desc=Rock and Roll.
+
+tile.bonusblocks.door.slate.top.name=Top Slate Door
+tile.bonusblocks.door.slate.top.desc=Rock solid.
+tile.bonusblocks.door.slate.bottom.name=Bottom Slate Door
+tile.bonusblocks.door.slate.bottom.desc=Rock and Roll.
+
+tile.bonusblocks.door.netherrack.top.name=Top Netherrack Door
+tile.bonusblocks.door.netherrack.top.desc=Rock solid.
+tile.bonusblocks.door.netherrack.bottom.name=Bottom Netherrack Door
+tile.bonusblocks.door.netherrack.bottom.desc=Rock and Roll.
+
+tile.bonusblocks.door.peridot.top.name=Top Peridot Door
+tile.bonusblocks.door.peridot.top.desc=Rock solid.
+tile.bonusblocks.door.peridot.bottom.name=Bottom Peridot Door
+tile.bonusblocks.door.peridot.bottom.desc=Rock and Roll.
+
+tile.bonusblocks.door.lazurite.top.name=Top Lazurite Door
+tile.bonusblocks.door.lazurite.top.desc=Rock solid.
+tile.bonusblocks.door.lazurite.bottom.name=Bottom Lazurite Door
+tile.bonusblocks.door.lazurite.bottom.desc=Rock and Roll.
+
+
+tile.bonusblocks.trapdoor.stone.name=Stone Trapdoor
+tile.bonusblocks.trapdoor.stone.desc=Like a door but flat and made of stone.
+tile.bonusblocks.trapdoor.basalt.name=Basalt Trapdoor
+tile.bonusblocks.trapdoor.basalt.desc=Like a door but flat and made of basalt.
+tile.bonusblocks.trapdoor.granite.name=Granite Trapdoor
+tile.bonusblocks.trapdoor.granite.desc=Like a door but flat and made of granite.
+tile.bonusblocks.trapdoor.limestone.name=Limestone Trapdoor
+tile.bonusblocks.trapdoor.limestone.desc=Like a door but flat and made of limestone.
+tile.bonusblocks.trapdoor.marble.name=Marble Trapdoor
+tile.bonusblocks.trapdoor.marble.desc=Like a door but flat and made of marble.
+tile.bonusblocks.trapdoor.slate.name=Slate Trapdoor
+tile.bonusblocks.trapdoor.slate.desc=Like a door but flat and made of slate.
+tile.bonusblocks.trapdoor.permafrost.name=Permafrost Trapdoor
+tile.bonusblocks.trapdoor.permafrost.desc=Like a door but flat and made of permafrost.
+tile.bonusblocks.trapdoor.netherrack.name=Netherrack Trapdoor
+tile.bonusblocks.trapdoor.netherrack.desc=Like a door but flat and made of netherrack.
+tile.bonusblocks.trapdoor.peridot.name=Peridot Trapdoor
+tile.bonusblocks.trapdoor.peridot.desc=Like a door but flat and made of peridot.
+tile.bonusblocks.trapdoor.lazurite.name=Lazurite Trapdoor
+tile.bonusblocks.trapdoor.lazurite.desc=Like a door but flat and made of lazurite.
+
+item.bonusblocks.door.stone.name=Stone Door
+item.bonusblocks.door.stone.desc=Every bunker needs one.
+item.bonusblocks.door.basalt.name=Basalt Door
+item.bonusblocks.door.basalt.desc=Every bunker needs one.
+item.bonusblocks.door.limestone.name=Limestone Door
+item.bonusblocks.door.limestone.desc=Every bunker needs one.
+item.bonusblocks.door.granite.name=Granite Door
+item.bonusblocks.door.granite.desc=Every bunker needs one.
+item.bonusblocks.door.slate.name=Slate Door
+item.bonusblocks.door.slate.desc=Every bunker needs one.
+item.bonusblocks.door.marble.name=Marble Door
+item.bonusblocks.door.marble.desc=Every bunker needs one.
+item.bonusblocks.door.permafrost.name=Permafrost Door
+item.bonusblocks.door.permafrost.desc=Every bunker needs one.
+item.bonusblocks.door.netherrack.name=Netherrack Door
+item.bonusblocks.door.netherrack.desc=Every bunker needs one.
+item.bonusblocks.door.peridot.name=Peridot Door
+item.bonusblocks.door.peridot.desc=Every bunker needs one.
+item.bonusblocks.door.lazurite.name=Lazurite Door
+item.bonusblocks.door.lazurite.desc=Every bunker needs one.

@@ -1,18 +1,11 @@
 package luke.bonusblocks.item;
 
 import luke.bonusblocks.BonusBlocksConfig;
-import luke.bonusblocks.BonusBlocksMod;
 import luke.bonusblocks.block.BonusBlocks;
-import net.minecraft.core.block.Block;
-import net.minecraft.core.block.material.Material;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemDoor;
 import net.minecraft.core.item.ItemPlaceable;
-import net.minecraft.core.item.tag.ItemTags;
-import turniplabs.halplibe.helper.BlockBuilder;
-import turniplabs.halplibe.helper.CreativeHelper;
 import turniplabs.halplibe.helper.ItemBuilder;
-import turniplabs.halplibe.helper.ItemHelper;
 
 import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
 
@@ -38,6 +31,18 @@ public class BonusItems {
     public static Item foodPie;
     public static Item mossball;
     public static Item doorGlassObsidian;
+
+    public static Item doorStone;
+    public static Item doorBasalt;
+    public static Item doorLimestone;
+    public static Item doorGranite;
+    public static Item doorMarble;
+    public static Item doorSlate;
+    public static Item doorPermafrost;
+    public static Item doorNetherrack;
+    public static Item doorLazurite;
+    public static Item doorPeridot;
+
     public static Item bedroll;
 
     public void initilizeItems() {
@@ -98,6 +103,47 @@ public class BonusItems {
         doorGlassObsidian = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/door_glass_obsidian")
                 .build(new ItemDoor("door.glass.obsidian", itemID("doorGlassObsidian"), BonusBlocks.doorGlassObsidianBottom, BonusBlocks.doorGlassObsidianTop));
+
+        doorStone = new ItemBuilder(MOD_ID)
+                .setIcon("bonusblocks:item/door_stone")
+                .build(new ItemDoor("door.stone", itemID("doorStone"), BonusBlocks.doorStoneBottom, BonusBlocks.doorStoneTop));
+
+        doorBasalt = new ItemBuilder(MOD_ID)
+                .setIcon("bonusblocks:item/door_basalt")
+                .build(new ItemDoor("door.basalt", itemID("doorBasalt"), BonusBlocks.doorBasaltBottom, BonusBlocks.doorBasaltTop));
+
+        doorLimestone = new ItemBuilder(MOD_ID)
+                .setIcon("bonusblocks:item/door_limestone")
+                .build(new ItemDoor("door.limestone", itemID("doorLimestone"), BonusBlocks.doorLimestoneBottom, BonusBlocks.doorLimestoneTop));
+
+        doorGranite = new ItemBuilder(MOD_ID)
+                .setIcon("bonusblocks:item/door_granite")
+                .build(new ItemDoor("door.granite", itemID("doorGranite"), BonusBlocks.doorGraniteBottom, BonusBlocks.doorGraniteTop));
+
+        doorMarble = new ItemBuilder(MOD_ID)
+                .setIcon("bonusblocks:item/door_marble")
+                .build(new ItemDoor("door.marble", itemID("doorMarble"), BonusBlocks.doorMarbleBottom, BonusBlocks.doorMarbleTop));
+
+        doorSlate = new ItemBuilder(MOD_ID)
+                .setIcon("bonusblocks:item/door_slate")
+                .build(new ItemDoor("door.slate", itemID("doorSlate"), BonusBlocks.doorSlateBottom, BonusBlocks.doorSlateTop));
+
+        doorPermafrost = new ItemBuilder(MOD_ID)
+                .setIcon("bonusblocks:item/door_permafrost")
+                .build(new ItemDoor("door.permafrost", itemID("doorPermafrost"), BonusBlocks.doorPermafrostBottom, BonusBlocks.doorPermafrostTop));
+
+        doorNetherrack = new ItemBuilder(MOD_ID)
+                .setIcon("bonusblocks:item/door_netherrack")
+                .build(new ItemDoor("door.netherrack", itemID("doorNetherrack"), BonusBlocks.doorNetherrackBottom, BonusBlocks.doorNetherrackTop));
+
+        doorLazurite = new ItemBuilder(MOD_ID)
+                .setIcon("bonusblocks:item/door_lazurite")
+                .build(new ItemDoor("door.lazurite", itemID("doorLazurite"), BonusBlocks.doorLazuriteBottom, BonusBlocks.doorLazuriteTop));
+
+        doorPeridot = new ItemBuilder(MOD_ID)
+                .setIcon("bonusblocks:item/door_peridot")
+                .build(new ItemDoor("door.peridot", itemID("doorPeridot"), BonusBlocks.doorPeridotBottom, BonusBlocks.doorPeridotTop));
+
 
 //        bedroll = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
 //                new ItemBedroll("bedroll", itemID("bedroll")), "bedroll").setMaxStackSize(1);
