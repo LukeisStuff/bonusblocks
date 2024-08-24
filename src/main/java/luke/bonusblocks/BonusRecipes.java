@@ -655,9 +655,15 @@ public class BonusRecipes implements RecipeEntrypoint {
         Registries.ITEM_GROUPS.getItem("minecraft:leaves").add(BonusBlocks.leavesMaple.getDefaultStack());
         Registries.ITEM_GROUPS.getItem("minecraft:leaves").add(BonusBlocks.leavesJacaranda.getDefaultStack());
 
+        Registries.ITEM_GROUPS.getItem("minecraft:stones").add(Block.permafrost.getDefaultStack());
         Registries.ITEM_GROUPS.getItem("minecraft:stones").add(BonusBlocks.netherrack.getDefaultStack());
+        Registries.ITEM_GROUPS.getItem("minecraft:stones").add(BonusBlocks.lazurite.getDefaultStack());
+        Registries.ITEM_GROUPS.getItem("minecraft:stones").add(BonusBlocks.peridot.getDefaultStack());
+
 
         Registries.ITEM_GROUPS.getItem("minecraft:cobblestones").add(BonusBlocks.cobbleNetherrack.getDefaultStack());
+        Registries.ITEM_GROUPS.getItem("minecraft:cobblestones").add(BonusBlocks.cobbleLazurite.getDefaultStack());
+        Registries.ITEM_GROUPS.getItem("minecraft:cobblestones").add(BonusBlocks.cobblePeridot.getDefaultStack());
 
         Registries.ITEM_GROUPS.getItem("minecraft:grasses").add(BonusBlocks.overgrownGrass.getDefaultStack());
         Registries.ITEM_GROUPS.getItem("minecraft:grasses").add(BonusBlocks.overgrownGrassRetro.getDefaultStack());
