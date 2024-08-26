@@ -501,6 +501,10 @@ public class BonusBlocks {
             CreativeHelper.setParent(cratePainted, color - 1, trommelIdle, 0);
         }
 
+        for (int color = 0; color < 16; color++) {
+            CreativeHelper.setParent(cratePainted, color, trommelIdle, 0);
+        }
+
         CreativeHelper.setParent(bookshelfEmptyPlanksOak, bookshelfPlanksOak);
 
         CreativeHelper.setParent(candleSoulwax, torchCoal);
@@ -874,9 +878,10 @@ public class BonusBlocks {
                 .setBlockModel(block -> new BlockModelStandard<>(block).withTextures("bonusblocks:block/crate"))
                 .build(new Block("crate", blockID("crate"), Material.wood));
         cratePainted = crates
+                .setItemBlock(block -> new ItemBlockPainted(block, false))
                 .setBlockModel(BlockModelCratePainted::new)
                 .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT, BlockTags.NOT_IN_CREATIVE_MENU)
-                .build(new BlockPaintedCrate("crate.painted", blockID("cratePainted")).setBlockItem(block -> new ItemBlockPainted(block, false)));
+                .build(new BlockPaintedCrate("crate.painted", blockID("cratePainted")));
 
 
         // Bookshelf
