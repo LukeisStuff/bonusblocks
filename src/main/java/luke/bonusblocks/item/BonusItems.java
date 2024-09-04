@@ -145,8 +145,9 @@ public class BonusItems {
                 .build(new ItemDoor("door.peridot", itemID("doorPeridot"), BonusBlocks.doorPeridotBottom, BonusBlocks.doorPeridotTop));
 
 
-//        bedroll = ItemHelper.createItem(BonusBlocksMod.MOD_ID,
-//                new ItemBedroll("bedroll", itemID("bedroll")), "bedroll").setMaxStackSize(1);
+        bedroll = new ItemBuilder(MOD_ID)
+                .setIcon("bonusblocks:item/bedroll")
+                .build(new ItemBedroll("bedroll", itemID("bedroll"))).setMaxStackSize(1);
 
 
 

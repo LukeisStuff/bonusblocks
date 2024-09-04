@@ -10,7 +10,6 @@ import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.WorldSource;
-import net.minecraft.core.world.chunk.ChunkCoordinates;
 
 public class BlockBedroll extends BlockBed {
     public static final int[][] headBlockToFootBlockMap = new int[][]{{0, 1}, {-1, 0}, {0, -1}, {1, 0}};
@@ -20,88 +19,86 @@ public class BlockBedroll extends BlockBed {
         this.setBounds();
     }
 
+    @Override
     public boolean onBlockRightClicked(World world, int x, int y, int z, EntityPlayer player, Side side, double xPlaced, double yPlaced) {
         if (world.isClientSide) {
             return true;
-        } else {
-            int meta = world.getBlockMetadata(x, y, z);
-            if (!isBlockFootOfBed(meta)) {
-                int dir = getDirectionFromMetadata(meta);
-                x += headBlockToFootBlockMap[dir][0];
-                z += headBlockToFootBlockMap[dir][1];
-                if (world.getBlockId(x, y, z) != this.id) {
-                    return true;
-                }
-
-                meta = world.getBlockMetadata(x, y, z);
+        }
+        int meta = world.getBlockMetadata(x, y, z);
+        if (!BlockBedroll.isBlockFootOfBed(meta)) {
+            int dir = BlockBedroll.getDirectionFromMetadata(meta);
+            if (world.getBlockId(x += headBlockToFootBlockMap[dir][0], y, z += headBlockToFootBlockMap[dir][1]) != this.id) {
+                return true;
             }
-
-            if (!world.worldType.mayRespawn()) {
+            meta = world.getBlockMetadata(x, y, z);
+        }
+        if (!world.worldType.mayRespawn()) {
+            double d = (double)x + 0.5;
+            double d1 = (double)y + 0.5;
+            double d2 = (double)z + 0.5;
+            world.setBlockWithNotify(x, y, z, 0);
+            int dir = BlockBedroll.getDirectionFromMetadata(meta);
+            if (world.getBlockId(x += headBlockToFootBlockMap[dir][0], y, z += headBlockToFootBlockMap[dir][1]) == this.id) {
                 world.setBlockWithNotify(x, y, z, 0);
-                int dir = getDirectionFromMetadata(meta);
-                x += headBlockToFootBlockMap[dir][0];
-                z += headBlockToFootBlockMap[dir][1];
-                if (world.getBlockId(x, y, z) == this.id) {
-                    world.setBlockWithNotify(x, y, z, 0);
-                }
-
-                world.newExplosion(null, (float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F, 5.0F, true, false);
-                return true;
+                d = (d + (double)x + 0.5) / 2.0;
+                d1 = (d1 + (double)y + 0.5) / 2.0;
+                d2 = (d2 + (double)z + 0.5) / 2.0;
+            }
+            world.newExplosion(null, (float)x + 0.5f, (float)y + 0.5f, (float)z + 0.5f, 5.0f, true, false);
+            return true;
+        }
+        if (BlockBedroll.isBedOccupied(meta)) {
+            EntityPlayer player1 = null;
+            for (EntityPlayer p : world.players) {
+                if (!p.isPlayerSleeping()) continue;
+                player1 = p;
+            }
+            if (player1 == null) {
+                BlockBedroll.setBedOccupied(world, x, y, z, false);
             } else {
-                if (isBedOccupied(meta)) {
-                    EntityPlayer player1 = null;
-
-                    for (EntityPlayer p : world.players) {
-                        if (p.isPlayerSleeping()) {
-                            ChunkCoordinates pos = p.bedChunkCoordinates;
-                            if (pos.x == x && pos.y == y && pos.z == z) {
-                                player1 = p;
-                            }
-                        }
-                    }
-
-                    if (player1 != null) {
-                        player.sendTranslatedChatMessage("bed.occupied");
-                        return true;
-                    }
-
-                    setBedOccupied(world, x, y, z, false);
-                }
-
-                if (player.sleepInBedAt(x, y, z) == EnumSleepStatus.OK) {
-                    setBedOccupied(world, x, y, z, true);
-                }
-                return true;
+                player.sendTranslatedChatMessage("bed.occupied");
+                return false;
             }
         }
-    }
-
-    public boolean renderAsNormalBlock() {
+        if (world.worldType.mayRespawn()) {
+            if (player.sleepInBedAt(x, y, z) == EnumSleepStatus.NOT_POSSIBLE_HERE) {
+                BlockBedroll.setBedOccupied(world, x, y, z, true);
+                double b = (double)x + 0.5;
+                double b1 = (double)y + 0.5;
+                double b2 = (double)z + 0.5;
+                world.setBlockWithNotify(x, y, z, 0);
+                int dir = BlockBedroll.getDirectionFromMetadata(meta);
+                if (world.getBlockId(x += headBlockToFootBlockMap[dir][0], y, z += headBlockToFootBlockMap[dir][1]) == this.id) {
+                    world.setBlockWithNotify(x, y, z, 0);
+                    b = (b + (double) x + 0.5) / 2.0;
+                    b1 = (b1 + (double) y + 0.5) / 2.0;
+                    b2 = (b2 + (double) z + 0.5) / 2.0;
+                }
+                return false;
+            }
+        }
         return false;
     }
 
-    public boolean isSolidRender() {
-        return false;
-    }
-
+    @Override
     public void setBlockBoundsBasedOnState(WorldSource world, int x, int y, int z) {
         this.setBounds();
     }
 
+    @Override
     public void onNeighborBlockChange(World world, int x, int y, int z, int blockId) {
         int i1 = world.getBlockMetadata(x, y, z);
-        int j1 = getDirectionFromMetadata(i1);
-        if (isBlockFootOfBed(i1)) {
+        int j1 = BlockBedroll.getDirectionFromMetadata(i1);
+        if (BlockBedroll.isBlockFootOfBed(i1)) {
             if (world.getBlockId(x - headBlockToFootBlockMap[j1][0], y, z - headBlockToFootBlockMap[j1][1]) != this.id) {
                 world.setBlockWithNotify(x, y, z, 0);
             }
         } else if (world.getBlockId(x + headBlockToFootBlockMap[j1][0], y, z + headBlockToFootBlockMap[j1][1]) != this.id) {
             world.setBlockWithNotify(x, y, z, 0);
         }
-
     }
 
-    private void setBounds() {
+    public void setBounds() {
         this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.25f, 1.0F);
     }
 
@@ -122,17 +119,15 @@ public class BlockBedroll extends BlockBed {
         if (flag) {
             l |= 4;
         } else {
-            l &= -5;
+            l &= 0xFFFFFFFB;
         }
-
         world.setBlockMetadataWithNotify(i, j, k, l);
     }
 
+    @Override
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
         return new ItemStack[]{new ItemStack(BonusItems.bedroll)};
     }
 
-    public int getPistonPushReaction() {
-        return 1;
-    }
 }
+

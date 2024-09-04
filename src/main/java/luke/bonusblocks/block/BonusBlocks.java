@@ -2518,21 +2518,14 @@ public class BonusBlocks {
                 .build(new BlockTrapDoorStone("trapdoor.peridot", blockID("trapdoorPeridot"), Material.stone, false));
 
 
-/*
-    bedroll = new BlockBuilder(MOD_ID)
+        bedroll = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
-            .setBlockModel(BlockModelBed::new)
+            .setBlockModel(BlockModelBedroll::new)
             .setHardness(0.2f)
             .setResistance(0.2f)
-            .setTextures("bedrollfront")
-            .setTextures("bedrolltop2")
-            .setTextures("bedrolltop1")
-            .setTextures("bedrollside1")
-            .setTextures("bedrollside2")
-            .setTextures("bedrollback")
             .setVisualUpdateOnMetadata()
             .setTags(BlockTags.NOT_IN_CREATIVE_MENU, BlockTags.MINEABLE_BY_AXE)
             .build(new BlockBedroll("bedroll", blockID("bedroll")));
-*/
+
     }
 }
