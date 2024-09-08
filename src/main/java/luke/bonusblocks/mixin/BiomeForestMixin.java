@@ -1,11 +1,9 @@
 package luke.bonusblocks.mixin;
 
-import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.world.biome.BiomeForest;
 import net.minecraft.core.world.generate.feature.WorldFeature;
 import net.minecraft.core.world.generate.feature.tree.WorldFeatureTree;
-import net.minecraft.core.world.generate.feature.tree.WorldFeatureTreeCherry;
 import net.minecraft.core.world.generate.feature.tree.WorldFeatureTreeFancy;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -20,17 +18,15 @@ public class BiomeForestMixin {
     public void getRandomWorldGenForTrees(Random random, CallbackInfoReturnable<WorldFeature> cir) {
         if (random.nextInt(5) == 0) {
             cir.setReturnValue(new WorldFeatureTree(Block.leavesBirch.id, Block.logBirch.id, 5));
-        } else if (random.nextInt(20) == 0) {
-            cir.setReturnValue(new WorldFeatureTreeCherry(Block.leavesCherry.id, Block.logCherry.id, 4));
-        } else if (random.nextInt(3) == 0) {
-            cir.setReturnValue(new WorldFeatureTreeFancy(Block.leavesOak.id, Block.logOak.id));
-        } else {
-            if (random.nextInt(25) == 0) {
-                cir.setReturnValue(new WorldFeatureTree(BonusBlocks.leavesOakMossy.id, Block.logOakMossy.id, 4));
-            } else {
-                cir.setReturnValue(new WorldFeatureTree(Block.leavesOak.id, Block.logOak.id, 4));
-            }
-            cir.cancel();
         }
+        if (random.nextInt(3) == 0) {
+            cir.setReturnValue(new WorldFeatureTreeFancy(Block.leavesOak.id, Block.logOak.id));
+        }
+        if (random.nextInt(25) == 0) {
+            cir.setReturnValue(new WorldFeatureTree(Block.leavesOak.id, Block.logOakMossy.id, 4));
+        }
+        cir.setReturnValue(new WorldFeatureTree(Block.leavesOak.id, Block.logOak.id, 4));
+        cir.cancel();
     }
-}
+
+    }

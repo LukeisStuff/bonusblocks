@@ -14,6 +14,6 @@ public class BlockDeadBushMixin {
     @Inject(method = "canThisPlantGrowOnThisBlockID", at = @At(value = "TAIL", target = "Lnet/minecraft/core/block/BlockDeadBush;canThisPlantGrowOnThisBlockID(I)Z"), cancellable = true)
 
     public void generate(int i, CallbackInfoReturnable<Boolean> cir) {
-        cir.setReturnValue(i == Block.sand.id || i == Block.dirtScorched.id || i == Block.dirtScorchedRich.id || i == Block.dirt.id || i == Block.grass.id || i == Block.grassRetro.id || i == Block.sandstone.id || i == Block.dirtScorchedRich.id || i == Block.grassScorched.id || i == BonusBlocks.scorchedstone.id || i == BonusBlocks.overgrownGrassScorched.id || i == BonusBlocks.overgrownGrass.id || i == BonusBlocks.overgrownGrassRetro.id);
+        cir.setReturnValue(i == Block.sand.id || i == Block.dirtScorched.id || i == Block.dirt.id || i == Block.grass.id || i == Block.grassRetro.id || i == Block.sandstone.id || i == Block.dirtScorchedRich.id || i == Block.grassScorched.id || i == BonusBlocks.scorchedstone.id || i == BonusBlocks.overgrownGrassScorched.id || i == BonusBlocks.overgrownGrass.id || i == BonusBlocks.overgrownGrassRetro.id);
     }
 }
