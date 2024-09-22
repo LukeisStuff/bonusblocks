@@ -1,11 +1,12 @@
 package luke.bonusblocks.block;
 
 import com.mojang.nbt.CompoundTag;
+import net.minecraft.client.gui.modelviewer.categories.entries.entity.EntityFallingSandEntry;
 import net.minecraft.core.entity.EntityFallingSand;
 import net.minecraft.core.util.helper.MathHelper;
 import net.minecraft.core.world.World;
 
-public class EntitySulphur extends EntityFallingSand {
+public class EntitySulphur extends EntityFallingSandEntry {
     public int fuse;
     public int blockID;
 

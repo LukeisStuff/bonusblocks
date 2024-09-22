@@ -1,7 +1,7 @@
 package luke.bonusblocks.mixin;
 
 import luke.bonusblocks.block.BonusBlocks;
-import net.minecraft.core.block.Block;
+import net.minecraft.core.block.Blocks;
 import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.Biomes;
 import net.minecraft.core.world.chunk.Chunk;
@@ -31,10 +31,10 @@ public abstract class SurfaceGeneratorOverworldMixin {
         Biome biome = new Biome("biome.");
 
         if (currentLayerDepth == 0) {
-            if (biome.equals(Biomes.OVERWORLD_OUTBACK) && fillerBlock == Block.dirtScorched.id) {
+            if (biome.equals(Biomes.OVERWORLD_OUTBACK) && fillerBlock == Blocks.DIRT_SCORCHED.id) {
                 currentLayerDepth = rand.nextInt(8) + 2;
                 fillerBlock = (short) BonusBlocks.scorchedstone.id;
-            } else if (biome.equals(Biomes.OVERWORLD_OUTBACK_GRASSY) && fillerBlock == Block.dirtScorched.id) {
+            } else if (biome.equals(Biomes.OVERWORLD_OUTBACK_GRASSY) && fillerBlock == Blocks.DIRT_SCORCHED.id) {
                 currentLayerDepth = rand.nextInt(8) + 2;
                 fillerBlock = (short) BonusBlocks.scorchedstone.id;
             }

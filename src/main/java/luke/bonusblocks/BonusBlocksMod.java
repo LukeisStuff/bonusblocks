@@ -7,8 +7,10 @@ import luke.bonusblocks.item.BonusItems;
 import luke.bonusblocks.item.ItemRawGold;
 import luke.bonusblocks.item.ItemRawIron;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.client.render.entity.FallingBlockRenderer;
 import net.minecraft.client.render.entity.FallingSandRenderer;
 import net.minecraft.core.item.Item;
+import net.minecraft.core.item.Items;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.EntityHelper;
@@ -41,9 +43,9 @@ public class BonusBlocksMod implements ModInitializer, ClientStartEntrypoint, Ga
         new BonusBlocks().initializeBlocks();
         new BonusItems().initilizeItems();
         new BonusBiomes().initializeBiomes();
-        Item.oreRawGold = new ItemRawGold("ore.raw.gold", 16510);
-        Item.oreRawIron = new ItemRawIron("ore.raw.iron", 16511);
-        EntityHelper.createEntity(EntitySulphur.class, entityID++, "FallingSulphur", FallingSandRenderer::new);
+        Items.ORE_RAW_GOLD = new ItemRawGold("ore.raw.gold", 16510);
+        Items.ORE_RAW_IRON = new ItemRawIron("ore.raw.iron", 16511);
+        EntityHelper.createEntity(EntitySulphur.class, entityID++, "FallingSulphur", FallingBlockRenderer::new);
     }
 
     @Override

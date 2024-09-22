@@ -1,7 +1,7 @@
 package luke.bonusblocks.mixin;
 
 import luke.bonusblocks.biomes.BonusBiomes;
-import net.minecraft.core.block.Block;
+import net.minecraft.core.block.Blocks;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.generate.feature.WorldFeatureLabyrinth;
@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.Mutable;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Random;
 
@@ -30,15 +30,15 @@ public abstract class WorldFeatureLabyrinthMixin {
     @Unique
     int slabBlock;
 
-    @Inject(method = "generate", at = @At(value = "HEAD", target = "Lnet/minecraft/core/world/generate/feature/WorldFeatureLabyrinth;generate(Lnet/minecraft/core/world/World;Ljava/util/Random;III)Z"))
-    public void generate(World world, Random random, int x, int y, int z, CallbackInfoReturnable<Boolean> cir) {
-        Biome biome = world.getBlockBiome(x, y, z);
+    @Inject(method = "generateDungeon", at = @At(value = "HEAD", target = "Lnet/minecraft/core/world/generate/feature/WorldFeatureLabyrinth;generate(Lnet/minecraft/core/world/World;Ljava/util/Random;III)Z"))
+    public void generate(World world, Random random, int blockX, int blockY, int blockZ, boolean doSpawner, CallbackInfo ci) {
+        Biome biome = world.getBlockBiome(blockX, blockY, blockZ);
         if (biome == BonusBiomes.OVERWORLD_OUTBACK_MESA) {
-            this.wallBlockA = Block.sandstone.id;
-            this.wallBlockB = Block.sandstone.id;
-            this.brickBlockA = Block.brickSandstone.id;
-            this.brickBlockB = Block.brickSandstone.id;
-            this.slabBlock = Block.slabSandstone.id;
+            this.wallBlockA = Blocks.SANDSTONE.id;
+            this.wallBlockB = Blocks.SANDSTONE.id;
+            this.brickBlockA = Blocks.BRICK_SANDSTONE.id;
+            this.brickBlockB = Blocks.BRICK_SANDSTONE.id;
+            this.slabBlock = Blocks.SLAB_SANDSTONE.id;
         }
     }
 }
