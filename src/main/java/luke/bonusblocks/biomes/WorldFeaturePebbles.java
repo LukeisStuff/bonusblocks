@@ -1,8 +1,6 @@
 package luke.bonusblocks.biomes;
 
 import net.minecraft.core.block.Block;
-import net.minecraft.core.block.BlockFlower;
-import net.minecraft.core.block.BlockOverlayPebbles;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.generate.feature.WorldFeature;
 
@@ -10,7 +8,7 @@ import java.util.Random;
 
 public class WorldFeaturePebbles extends WorldFeature {
 
-    private final int plantBlockId;
+    public final int plantBlockId;
 
     public WorldFeaturePebbles(int i) {
         this.plantBlockId = i;

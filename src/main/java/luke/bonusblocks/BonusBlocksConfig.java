@@ -15,12 +15,12 @@ import java.util.stream.Collectors;
 
 public class BonusBlocksConfig {
     public static ConfigUpdater updater = ConfigUpdater.fromProperties();
-    private static final Toml properties = new Toml("Bonus Blocks TOML Config");
+    public static final Toml properties = new Toml("Bonus Blocks TOML Config");
     public static TomlConfigHandler cfg;
 
-    private static int blockIDs = 1500;
+    public static int blockIDs = 1500;
 
-    private static int itemIDs = 16550;
+    public static int itemIDs = 16550;
 
     static {
         properties.addCategory("BonusBlocks")

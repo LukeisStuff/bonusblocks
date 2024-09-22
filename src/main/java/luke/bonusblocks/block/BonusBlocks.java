@@ -35,7 +35,7 @@ import static net.minecraft.core.item.tool.ItemToolPickaxe.miningLevels;
 
 public class BonusBlocks {
 
-    private int blockID(String blockName) {
+    public int blockID(String blockName) {
         return BonusBlocksConfig.cfg.getInt("Block IDs." + blockName);
     }
 
@@ -905,7 +905,7 @@ public class BonusBlocks {
                 .setBlockColor(block -> (new BlockColorCustom(Colorizers.oak)))
                 .build(new BlockLeavesBase("leaves.oak.mossy", blockID("leavesOakMossy"), Material.leaves) {
                     @Override
-                    protected Block getSapling() {
+                    public Block getSapling() {
                         return BonusBlocks.saplingOakMossy;
                     }
                 });
@@ -913,7 +913,7 @@ public class BonusBlocks {
                 .setBlockModel(block -> new BlockModelLeaves<>(block, "bonusblocks:block/leaves_maple"))
                 .build(new BlockLeavesBase("leaves.maple", blockID("leavesMaple"), Material.leaves) {
                     @Override
-                    protected Block getSapling() {
+                    public Block getSapling() {
                         return BonusBlocks.saplingMaple;
                     }
                 });
@@ -921,7 +921,7 @@ public class BonusBlocks {
                 .setBlockModel(block -> new BlockModelLeaves<>(block, "bonusblocks:block/leaves_jacaranda"))
                 .build(new BlockLeavesBase("leaves.jacaranda", blockID("leavesJacaranda"), Material.leaves) {
                     @Override
-                    protected Block getSapling() {
+                    public Block getSapling() {
                         return BonusBlocks.saplingJacaranda;
                     }
                 });
@@ -1456,11 +1456,7 @@ public class BonusBlocks {
                 .setBlockModel(block -> new BlockModelFenceThin<>(block, TextureRegistry.getTexture("bonusblocks:block/fence_copper_corroded_center"), null, TextureRegistry.getTexture("bonusblocks:block/fence_copper_corroded_top"), TextureRegistry.getTexture("bonusblocks:block/fence_copper_corroded_column")).withTextures("bonusblocks:block/fence_copper_corroded_center"))
                 .setVisualUpdateOnMetadata()
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.CAN_HANG_OFF)
-                .build(new BlockFenceCopperCorroded("fence.copper.corroded", blockID("fenceCopperCorroded"), Material.metal) {
-                    @Override
-                    public void updateTick(World world, int x, int y, int z, Random rand) {
-                    }
-                });
+                .build(new BlockFenceCopperCorroded("fence.copper.corroded", blockID("fenceCopperCorroded"), Material.metal));
 
 
         //Copper Pressure Plate
