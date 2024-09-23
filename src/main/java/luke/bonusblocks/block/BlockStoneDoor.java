@@ -12,15 +12,9 @@ import java.util.Objects;
 import java.util.function.Supplier;
 
 public class BlockStoneDoor extends DoorBlock {
-    public final boolean isTop;
-    public final boolean requireTool;
-    public final @Nullable Supplier<Item> droppedItem;
 
-    public BlockStoneDoor(String key, String namespaceId, int id, Material material, boolean isTop, boolean requireTool, @Nullable Supplier<Item> droppedItem) {
-        super(key, namespaceId, id, material);
-        this.isTop = isTop;
-        this.requireTool = requireTool;
-        this.droppedItem = droppedItem;
+    public BlockStoneDoor(String key, String namespaceId, int id, boolean isTop, @Nullable Supplier<Item> droppedItem) {
+        super(key, namespaceId, id, Material.stone, isTop, true, droppedItem);
         float f = 0.5F;
         if (isTop) {
             this.setBlockBounds(0.5F - f, -1.0, 0.5F - f, 0.5F + f, 1.0, 0.5F + f);

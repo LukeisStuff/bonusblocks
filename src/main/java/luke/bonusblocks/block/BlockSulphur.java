@@ -6,6 +6,7 @@ import net.minecraft.core.block.entity.BlockEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.entity.FallingBlockEntity;
+import net.minecraft.core.entity.Mob;
 import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.FireStrikerItem;
@@ -21,9 +22,9 @@ public class BlockSulphur extends SandBlock {
         super(key, namespaceId, id);
     }
 
-    public void onBlockAdded(World world, int i, int j, int k) {
-        super.onBlockAdded(world, i, j, k);
-        world.scheduleBlockUpdate(i, j, k, this.id, this.tickRate());
+    public void onBlockPlacedByMob(World world, int x, int y, int z, Side side, Mob mob, double sideHeight) {
+        super.onBlockPlacedByMob(world, x, y, z, side, mob, sideHeight);
+        world.scheduleBlockUpdate(x, y, z, this.id, this.tickRate());
     }
 
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, BlockEntity BlockEntity) {

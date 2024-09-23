@@ -1,25 +1,25 @@
 package luke.bonusblocks.block;
 
 import net.minecraft.core.block.Block;
-import net.minecraft.core.block.BlockFenceThin;
+import net.minecraft.core.block.ThinFenceBlock;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.util.helper.Direction;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.WorldSource;
 
-public class BlockFENCE_STEEL extends BlockFenceThin {
-    public BlockFENCE_STEEL(String key, int id, Material material) {
-        super(key, id, material);
-    }
-
-    public boolean isClimbable(World world, int x, int y, int z) {
-        return false;
+public class BlockFenceNoClimb extends ThinFenceBlock {
+    public BlockFenceNoClimb(String key, String namespaceId, int id, Material material) {
+        super(key, namespaceId, id, material);
     }
 
     public boolean canConnectTo(WorldSource iblockaccess, int x, int y, int z) {
         int l = iblockaccess.getBlockId(x, y, z);
         return Block.hasTag(l, BlockTags.CHAINLINK_FENCES_CONNECT) || Block.blocksList[l] != null && (Block.blocksList[l].blockMaterial == Material.stone || Block.blocksList[l].blockMaterial == Material.metal);
+    }
+
+    public boolean isClimbable(World world, int x, int y, int z) {
+        return false;
     }
 
     public boolean shouldDrawColumn(WorldSource world, int x, int y, int z) {

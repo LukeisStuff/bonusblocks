@@ -7,10 +7,9 @@ import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.world.World;
 
-public class BlockGLASS_OBSIDIAN
-        extends GlassBlock {
-    public BlockGLASS_OBSIDIAN(String key, int id) {
-        super(key, id, Material.glass);
+public class ObsidianGlassBlock extends GlassBlock {
+    public ObsidianGlassBlock(String key, String namespaceId, int id) {
+        super(key, namespaceId, id, Material.glass);
     }
 
     public int getRenderLayer() {

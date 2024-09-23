@@ -1,9 +1,10 @@
 package luke.bonusblocks.block;
 
 import luke.bonusblocks.item.BonusItems;
-import net.minecraft.core.block.BlockBed;
+import net.minecraft.core.block.BedBlock;
 import net.minecraft.core.block.entity.BlockEntity;
-import net.minecraft.core.entity.player.EntityPlayer;
+import net.minecraft.core.block.material.Material;
+import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.enums.EnumSleepStatus;
 import net.minecraft.core.item.ItemStack;
@@ -11,16 +12,16 @@ import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.WorldSource;
 
-public class BlockBedroll extends BlockBed {
+public class BlockBedroll extends BedBlock {
     public static final int[][] headBlockToFootBlockMap = new int[][]{{0, 1}, {-1, 0}, {0, -1}, {1, 0}};
 
-    public BlockBedroll(String key, int id) {
-        super(key, id);
+    public BlockBedroll(String key, String namespaceId, int id, Material material) {
+        super(key, namespaceId, id);
         this.setBounds();
     }
 
     @Override
-    public boolean onBlockRightClicked(World world, int x, int y, int z, EntityPlayer player, Side side, double xPlaced, double yPlaced) {
+    public boolean onBlockRightClicked(World world, int x, int y, int z, Player player, Side side, double xPlaced, double yPlaced) {
         if (world.isClientSide) {
             return true;
         }
@@ -48,8 +49,8 @@ public class BlockBedroll extends BlockBed {
             return true;
         }
         if (BlockBedroll.isBedOccupied(meta)) {
-            EntityPlayer player1 = null;
-            for (EntityPlayer p : world.players) {
+            Player player1 = null;
+            for (Player p : world.players) {
                 if (!p.isPlayerSleeping()) continue;
                 player1 = p;
             }
@@ -63,16 +64,10 @@ public class BlockBedroll extends BlockBed {
         if (world.worldType.mayRespawn()) {
             if (player.sleepInBedAt(x, y, z) == EnumSleepStatus.NOT_POSSIBLE_HERE) {
                 BlockBedroll.setBedOccupied(world, x, y, z, true);
-                double b = (double)x + 0.5;
-                double b1 = (double)y + 0.5;
-                double b2 = (double)z + 0.5;
                 world.setBlockWithNotify(x, y, z, 0);
                 int dir = BlockBedroll.getDirectionFromMetadata(meta);
                 if (world.getBlockId(x += headBlockToFootBlockMap[dir][0], y, z += headBlockToFootBlockMap[dir][1]) == this.id) {
                     world.setBlockWithNotify(x, y, z, 0);
-                    b = (b + (double) x + 0.5) / 2.0;
-                    b1 = (b1 + (double) y + 0.5) / 2.0;
-                    b2 = (b2 + (double) z + 0.5) / 2.0;
                 }
                 return false;
             }
@@ -126,7 +121,7 @@ public class BlockBedroll extends BlockBed {
 
     @Override
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, BlockEntity BlockEntity) {
-        return new ItemStack[]{new ItemStack(BonusItems.bedroll)};
+        return new ItemStack[]{new ItemStack(BonusItems.BEDROLL)};
     }
 
 }

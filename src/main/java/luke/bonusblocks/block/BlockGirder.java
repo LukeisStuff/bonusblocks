@@ -1,15 +1,15 @@
 package luke.bonusblocks.block;
 
-import net.minecraft.core.block.BlockAxisAligned;
+import net.minecraft.core.block.AxisAlignedBlock;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.WorldSource;
 
-public class BlockGirder extends BlockAxisAligned {
+public class BlockGirder extends AxisAlignedBlock {
 
-    public BlockGirder(String key, int id, Material material) {
-        super(key, id, material);
+    public BlockGirder(String key, String namespaceId, int id, Material material) {
+        super(key, namespaceId, id, material);
     }
 
     public boolean isSolidRender() {
