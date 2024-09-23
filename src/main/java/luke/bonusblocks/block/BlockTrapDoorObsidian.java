@@ -1,9 +1,9 @@
 package luke.bonusblocks.block;
 
-import net.minecraft.core.block.BlockTrapDoor;
+import net.minecraft.core.block.TrapDoorBlock;
 import net.minecraft.core.block.material.Material;
 
-public class BlockTrapDoorObsidian extends BlockTrapDoor {
+public class BlockTrapDoorObsidian extends TrapDoorBlock {
     public BlockTrapDoorObsidian(String key, int id) {
         super(key, id, Material.glass, false);
     }
@@ -39,7 +39,7 @@ public class BlockTrapDoorObsidian extends BlockTrapDoor {
     }
 
     @Override
-    public int getRenderBlockPass() {
+    public int getRenderLayer() {
         return 1;
     }
 

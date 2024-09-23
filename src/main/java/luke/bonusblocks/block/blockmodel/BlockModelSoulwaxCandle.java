@@ -1,8 +1,8 @@
 package luke.bonusblocks.block.blockmodel;
 
 import net.minecraft.client.render.block.model.StandardBlockModel;
-import net.minecraft.client.render.stitcher.IconCoordinate;
 import net.minecraft.client.render.tessellator.Tessellator;
+import net.minecraft.client.render.texture.stitcher.IconCoordinate;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.util.helper.Side;
 

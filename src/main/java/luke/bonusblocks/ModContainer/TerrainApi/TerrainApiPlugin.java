@@ -86,8 +86,6 @@ public class TerrainApiPlugin implements TerrainAPI {
 
         ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), Blocks.NETHERRACK, 48, 6, 0.0f, 1.0f, false);
         ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), Blocks.SLATE, 32, 4, 0.75f, 1.0f, false);
-        ChunkDecoratorNetherAPI.randomFeatures.addFeature(new WorldFeaturePumice(), 2, 1f, 4,
-                new Biome[]{Biomes.NETHER_NETHER});
 
         ChunkDecoratorNetherAPI.randomFeatures.addFeature(new WorldFeatureSkull(), 3, 1f, 1,
                 new Biome[]{Biomes.NETHER_NETHER});

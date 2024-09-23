@@ -1,14 +1,14 @@
 package luke.bonusblocks.block;
 
 import net.minecraft.core.block.Block;
-import net.minecraft.core.block.BlockTrapDoor;
+import net.minecraft.core.block.TrapDoorBlock;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.world.World;
 
-public class BlockTrapDoorStone extends BlockTrapDoor {
+public class TrapDoorBlockStone extends TrapDoorBlock {
 
-    public BlockTrapDoorStone(String key, int id, Material material, boolean isIron) {
-        super(key, id, material, isIron);
+    public TrapDoorBlockStone(String key, String namespaceId, int id, Material material) {
+        super(key, namespaceId, id, material);
     }
 
     @Override
@@ -18,7 +18,7 @@ public class BlockTrapDoorStone extends BlockTrapDoor {
         if (world.isClientSide) {
             return;
         }
-        if ((blockId > 0 && Block.getBlock(blockId).canProvidePower()) && (isOpened = BlockTrapDoor.isTrapdoorOpen(meta = world.getBlockMetadata(x, y, z)))) {
+        if ((blockId > 0 && Block.getBlock(blockId).canProvidePower()) && (isOpened = TrapDoorBlock.isTrapdoorOpen(meta = world.getBlockMetadata(x, y, z)))) {
             world.setBlockMetadataWithNotify(x, y, z, meta ^ 4);
             world.playSoundEffect(null, 1003, x, y, z, 0);
         }

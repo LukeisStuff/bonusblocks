@@ -1,22 +1,23 @@
 package luke.bonusblocks.block;
 
-import net.minecraft.core.block.Block;
-import net.minecraft.core.block.BlockSaplingBase;
+import net.minecraft.core.block.Blocks;
+import net.minecraft.core.block.SaplingBaseBlock;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.generate.feature.WorldFeature;
 import net.minecraft.core.world.generate.feature.tree.WorldFeatureTreeShapeSwamp;
 
 import java.util.Random;
 
-public class BlockSaplingMossyOak extends BlockSaplingBase {
-    public BlockSaplingMossyOak(String key, int id) {
-        super(key, id);
+public class BlockSaplingMossyOak extends SaplingBaseBlock {
+    public BlockSaplingMossyOak(String key, String namespaceId, int id) {
+        super(key, namespaceId, id);
     }
 
     public void growTree(World world, int i, int j, int k, Random random) {
-        WorldFeature treeBig = new WorldFeatureTreeShapeSwamp(BonusBlocks.LEAVES_OAK_MOSSY.id, Block.logOakMossy.id, 6);
+        WorldFeature obj;
         world.setBlock(i, j, k, 0);
-        if (!treeBig.generate(world, random, i, j, k)) {
+        obj = new WorldFeatureTreeShapeSwamp(BonusBlocks.LEAVES_OAK_MOSSY.id, Blocks.LOG_OAK_MOSSY.id, 6);
+        if (!obj.place(world, random, i, j, k)) {
             world.setBlock(i, j, k, this.id);
         }
 

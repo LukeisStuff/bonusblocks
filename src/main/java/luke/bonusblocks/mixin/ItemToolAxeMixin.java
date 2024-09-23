@@ -123,8 +123,8 @@ public class ItemToolAxeMixin extends ToolItem {
             }
             entityplayer.swingItem();
         }
-        if (i1 == BonusBlocks.stairsCopperCorroded.id) {
-            Block copperBlock2 = BonusBlocks.stairsCopperTarnished;
+        if (i1 == BonusBlocks.STAIRS_COPPERCorroded.id) {
+            Block copperBlock2 = BonusBlocks.STAIRS_COPPERTarnished;
             world.playBlockSoundEffect(null, (float) blockX + 0.5f, (float) blockY + 0.5f, (float) blockZ + 0.5f, copperBlock2, EnumBlockSoundEffectType.MINE);
             if (!world.isClientSide) {
                 world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, copperBlock2.id, world.getBlockMetadata(blockX, blockY, blockZ));
@@ -133,8 +133,8 @@ public class ItemToolAxeMixin extends ToolItem {
             }
             entityplayer.swingItem();
         }
-        if (i1 == BonusBlocks.stairsCopperTarnished.id) {
-            Block copperBlock2 = BonusBlocks.stairsCopper;
+        if (i1 == BonusBlocks.STAIRS_COPPERTarnished.id) {
+            Block copperBlock2 = BonusBlocks.STAIRS_COPPER;
             world.playBlockSoundEffect(null, (float) blockX + 0.5f, (float) blockY + 0.5f, (float) blockZ + 0.5f, copperBlock2, EnumBlockSoundEffectType.MINE);
             if (!world.isClientSide) {
                 world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, copperBlock2.id, world.getBlockMetadata(blockX, blockY, blockZ));

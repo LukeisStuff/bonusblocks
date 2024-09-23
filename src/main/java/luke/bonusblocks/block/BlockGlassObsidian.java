@@ -1,20 +1,19 @@
 package luke.bonusblocks.block;
 
-import net.minecraft.core.block.BlockGlass;
+import net.minecraft.core.block.GlassBlock;
 import net.minecraft.core.block.entity.BlockEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.world.World;
 
-public class BlockGlassObsidian
-        extends BlockGlass {
-    public BlockGlassObsidian(String key, int id) {
+public class BlockGLASS_OBSIDIAN
+        extends GlassBlock {
+    public BlockGLASS_OBSIDIAN(String key, int id) {
         super(key, id, Material.glass);
     }
 
-    @Override
-    public int getRenderBlockPass() {
+    public int getRenderLayer() {
         return 1;
     }
 

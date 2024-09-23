@@ -1,10 +1,11 @@
 package luke.bonusblocks.block.copper;
 
 import luke.bonusblocks.block.BonusBlocks;
-import net.minecraft.core.block.BlockPressurePlate;
+import net.minecraft.core.block.PressurePlateBlock;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.EntityItem;
+import net.minecraft.core.entity.ItemEntity;
 import net.minecraft.core.sound.SoundCategory;
 import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
@@ -12,8 +13,8 @@ import net.minecraft.core.world.World;
 import java.util.List;
 import java.util.Random;
 
-public class BLOCK_COPPERPressurePlate extends BlockPressurePlate {
-    public BLOCK_COPPERPressurePlate(String key, int id, Material material) {
+public class CopperPressurePlateBlock extends PressurePlateBlock {
+    public CopperPressurePlateBlock(String key, int id, Material material) {
         super(key, id, null, material);
     }
 
@@ -46,7 +47,7 @@ public class BLOCK_COPPERPressurePlate extends BlockPressurePlate {
         boolean isPressed = world.getBlockMetadata(x, y, z) == 1;
         boolean isSteppedOn = false;
         float f = 0.125f;
-        List<Entity> list = world.getEntitiesWithinAABB(EntityItem.class, AABB.getPermanentBB((float)x + f, y, (float)z + f, (float)(x + 1) - f, (double)y + 0.25, (float)(z + 1) - f));
+        List<Entity> list = world.getEntitiesWithinAABB(ItemEntity.class, AABB.getPermanentBB((float)x + f, y, (float)z + f, (float)(x + 1) - f, (double)y + 0.25, (float)(z + 1) - f));
         if (list != null && !list.isEmpty()) {
             isSteppedOn = true;
         }
@@ -55,17 +56,17 @@ public class BLOCK_COPPERPressurePlate extends BlockPressurePlate {
             world.notifyBlocksOfNeighborChange(x, y, z, this.id);
             world.notifyBlocksOfNeighborChange(x, y - 1, z, this.id);
             world.markBlocksDirty(x, y, z, x, y, z);
-            world.playSoundEffect((Entity)null, SoundCategory.WORLD_SOUNDS, (double)x + 0.5, (double)y + 0.1, (double)z + 0.5, "random.click", 0.3f, 0.6f);
+            world.playSoundEffect(null, SoundCategory.WORLD_SOUNDS, (double)x + 0.5, (double)y + 0.1, (double)z + 0.5, "random.click", 0.3f, 0.6f);
         }
         if (!isSteppedOn && isPressed) {
             world.setBlockMetadataWithNotify(x, y, z, 0);
             world.notifyBlocksOfNeighborChange(x, y, z, this.id);
             world.notifyBlocksOfNeighborChange(x, y - 1, z, this.id);
             world.markBlocksDirty(x, y, z, x, y, z);
-            world.playSoundEffect((Entity)null, SoundCategory.WORLD_SOUNDS, (double)x + 0.5, (double)y + 0.1, (double)z + 0.5, "random.click", 0.3f, 0.5f);
+            world.playSoundEffect(null, SoundCategory.WORLD_SOUNDS, (double)x + 0.5, (double)y + 0.1, (double)z + 0.5, "random.click", 0.3f, 0.5f);
         }
         if (isSteppedOn) {
-            world.scheduleBlockUpdate(x, y, z, this.id, this.tickRate());
+            world.scheduleBlockUpdate(x, y, z, this.id, this.tickDelay());
         }
     }
 }

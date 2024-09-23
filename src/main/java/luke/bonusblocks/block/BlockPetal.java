@@ -6,8 +6,8 @@ import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.WorldSource;
 
 public class BlockPetal extends TransparentBlock {
-    public BlockPetal(String key, int id, Material material) {
-        super(key, id, material);
+    public BlockPetal(String key, String namespaceId, int id, Material material) {
+        super(key, namespaceId, id, material);
     }
 
     public AABB getCollisionBoundingBoxFromPool(WorldSource world, int x, int y, int z) {

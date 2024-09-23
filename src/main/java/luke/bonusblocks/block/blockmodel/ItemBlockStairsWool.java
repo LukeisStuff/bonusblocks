@@ -1,12 +1,11 @@
 package luke.bonusblocks.block.blockmodel;
 
 import net.minecraft.core.block.Block;
-import net.minecraft.core.block.BlockWool;
-import net.minecraft.core.item.ItemDye;
 import net.minecraft.core.item.ItemStack;
-import net.minecraft.core.item.block.ItemBlock;
+import net.minecraft.core.item.block.BlockItem;
+import net.minecraft.core.util.helper.DyeColor;
 
-public class ItemBlockStairsWool extends ItemBlock {
+public class ItemBlockStairsWool extends BlockItem {
     public ItemBlockStairsWool(Block block) {
         super(block);
         this.setMaxDamage(0);
@@ -18,6 +17,6 @@ public class ItemBlockStairsWool extends ItemBlock {
     }
 
     public String getLanguageKey(ItemStack itemstack) {
-        return super.getKey() + "." + ItemDye.dyeColors[BlockWool.func_21034_c((itemstack.getMetadata() & 240) >> 4)];
+        return this.upperMetadata ? super.getKey() + "." + DyeColor.colorFromBlockMeta((itemstack.getMetadata() & 240) >> 4).colorID : super.getKey() + "." + DyeColor.colorFromBlockMeta(itemstack.getMetadata() & 15).colorID;
     }
 }

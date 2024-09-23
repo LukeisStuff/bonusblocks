@@ -9,8 +9,8 @@ import net.minecraft.core.world.World;
 import net.minecraft.core.world.WorldSource;
 
 public class BlockCloth extends Block {
-    public BlockCloth(String key, int id, Material material) {
-        super(key, id, material);
+    public BlockCloth(String key, String namespaceId, int id, Material material) {
+        super(key, namespaceId, id, material);
     }
 
     @Override
@@ -19,7 +19,7 @@ public class BlockCloth extends Block {
             entity.yd = 0.0;
         }
         else if (entity.yd < 0.0D) {
-            world.playBlockSoundEffect(null, x, y, z, BonusBlocks.blockCloth, EnumBlockSoundEffectType.ENTITY_LAND);
+            world.playBlockSoundEffect(null, x, y, z, BonusBlocks.BLOCK_CLOTH, EnumBlockSoundEffectType.ENTITY_LAND);
             entity.yd = -entity.yd;
             entity.fallDistance = 0;
         }

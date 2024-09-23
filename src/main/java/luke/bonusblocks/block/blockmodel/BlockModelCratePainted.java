@@ -3,14 +3,16 @@ package luke.bonusblocks.block.blockmodel;
 import net.minecraft.client.render.block.model.StandardBlockModel;
 import net.minecraft.client.render.stitcher.IconCoordinate;
 import net.minecraft.client.render.stitcher.TextureRegistry;
+import net.minecraft.client.render.texture.stitcher.IconCoordinate;
+import net.minecraft.client.render.texture.stitcher.TextureRegistry;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.item.ItemDye;
 import net.minecraft.core.util.helper.Side;
 
-public class BlockModelCratePainted<T extends Block> extends StandardBlockModel<T> {
+public class BlockModelCRATE_PAINTED<T extends Block> extends StandardBlockModel<T> {
     public static final IconCoordinate[] texCoords = new IconCoordinate[16];
 
-    public BlockModelCratePainted(Block block) {
+    public BlockModelCRATE_PAINTED(Block block) {
         super(block);
     }
 

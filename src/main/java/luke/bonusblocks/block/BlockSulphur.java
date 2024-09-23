@@ -1,25 +1,24 @@
 package luke.bonusblocks.block;
 
 import net.minecraft.core.block.Block;
-import net.minecraft.core.block.BlockSand;
+import net.minecraft.core.block.SandBlock;
 import net.minecraft.core.block.entity.BlockEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
-import net.minecraft.core.entity.Entity;
-import net.minecraft.core.entity.EntityFallingSand;
-import net.minecraft.core.entity.player.EntityPlayer;
+import net.minecraft.core.entity.FallingBlockEntity;
+import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.enums.EnumDropCause;
-import net.minecraft.core.item.ItemFirestriker;
+import net.minecraft.core.item.FireStrikerItem;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.sound.SoundCategory;
-import net.minecraft.core.world.World;
 import net.minecraft.core.util.helper.Side;
+import net.minecraft.core.world.World;
 
 import java.util.Random;
 
-public class BlockSulphur extends BlockSand {
-    public BlockSulphur(String key, int id, Material material) {
-        super(key, id);
+public class BlockSulphur extends SandBlock {
+    public BlockSulphur(String key, String namespaceId, int id, Material material) {
+        super(key, namespaceId, id);
     }
 
     public void onBlockAdded(World world, int i, int j, int k) {
@@ -37,7 +36,7 @@ public class BlockSulphur extends BlockSand {
         world.entityJoinedWorld(entity);
     }
 
-    public void ignite(World world, int x, int y, int z, EntityPlayer player, boolean sound) {
+    public void ignite(World world, int x, int y, int z, Player player, boolean sound) {
         if (world.isClientSide) {
             world.playSoundEffect(null, SoundCategory.WORLD_SOUNDS, (float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F, "random.fuse", 1.0F, 1.0F);
 
@@ -48,14 +47,14 @@ public class BlockSulphur extends BlockSand {
             world.playSoundAtEntity(e , e, "random.fuse", 1.0F, 1.0F);
 
         }
-        if (player != null && player.inventory.getCurrentItem() != null && player.inventory.getCurrentItem().getItem() instanceof ItemFirestriker) {
+        if (player != null && player.inventory.getCurrentItem() != null && player.inventory.getCurrentItem().getItem() instanceof FireStrikerItem) {
             player.inventory.getCurrentItem().damageItem(1, player);
         }
     }
 
     @Override
-    public void onBlockLeftClicked(World world, int x, int y, int z, EntityPlayer player, Side side, double xHit, double yHit) {
-        if (player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() instanceof ItemFirestriker) {
+    public void onBlockLeftClicked(World world, int x, int y, int z, Player player, Side side, double xHit, double yHit) {
+        if (player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() instanceof FireStrikerItem) {
             world.setBlockMetadata(x, y, z, 1);
         }
 
@@ -63,8 +62,8 @@ public class BlockSulphur extends BlockSand {
     }
 
     @Override
-    public boolean onBlockRightClicked(World world, int x, int y, int z, EntityPlayer player, Side side, double xHit, double yHit) {
-        if (player.inventory.getCurrentItem() != null && player.inventory.getCurrentItem().getItem() instanceof ItemFirestriker) {
+    public boolean onBlockRightClicked(World world, int x, int y, int z, Player player, Side side, double xHit, double yHit) {
+        if (player.inventory.getCurrentItem() != null && player.inventory.getCurrentItem().getItem() instanceof FireStrikerItem) {
             this.ignite(world, x, y, z, player, true);
             return true;
         } else {
@@ -81,7 +80,7 @@ public class BlockSulphur extends BlockSand {
         if (canFallBelow(world, i, j - 1, k) && j >= 0) {
             byte byte0 = 32;
             if (!fallInstantly && world.areBlocksLoaded(i - byte0, j - byte0, k - byte0, i + byte0, j + byte0, k + byte0)) {
-                EntityFallingSand entityfallingsand = new EntityFallingSand(world, (float)i + 0.5F, (float)j + 0.5F, (float)k + 0.5F, this.id);
+                FallingBlockEntity entityfallingsand = new FallingBlockEntity(world, (float)i + 0.5F, (float)j + 0.5F, (float)k + 0.5F, this.id);
                 world.entityJoinedWorld(entityfallingsand);
             } else {
                 world.setBlockWithNotify(i, j, k, 0);

@@ -9,8 +9,8 @@ import net.minecraft.core.world.World;
 import net.minecraft.core.world.WorldSource;
 
 public class BlockSlime extends TransparentBlock {
-    public BlockSlime(String key, int id){
-        super(key, id, Material.leaves);
+    public BlockSlime(String key, String namespaceId, int id, Material material) {
+        super(key, namespaceId, id, material);
         setTicking(true);
     }
 
@@ -22,7 +22,7 @@ public class BlockSlime extends TransparentBlock {
         return super.shouldSideBeRendered(blockAccess, x, y, z, 1 - side);
     }
 
-    public int getRenderBlockPass() {
+    public int getRenderLayer() {
         return 1;
     }
 
@@ -37,7 +37,7 @@ public class BlockSlime extends TransparentBlock {
         entity.zd *= 0.4;
         if (entity.fallDistance > 1.5F) {
             entity.fallDistance = 0.0F;
-            world.playBlockSoundEffect((Entity)null, x, y, z, BonusBlocks.blockSlime, EnumBlockSoundEffectType.ENTITY_LAND);
+            world.playBlockSoundEffect((Entity)null, x, y, z, BonusBlocks.BLOCK_SLIME, EnumBlockSoundEffectType.ENTITY_LAND);
         }
     }
 }

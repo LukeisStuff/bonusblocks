@@ -8,8 +8,8 @@ import net.minecraft.core.util.helper.Direction;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.WorldSource;
 
-public class BlockFenceSteel extends BlockFenceThin {
-    public BlockFenceSteel(String key, int id, Material material) {
+public class BlockFENCE_STEEL extends BlockFenceThin {
+    public BlockFENCE_STEEL(String key, int id, Material material) {
         super(key, id, material);
     }
 

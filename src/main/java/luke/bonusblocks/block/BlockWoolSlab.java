@@ -4,6 +4,7 @@ import net.minecraft.core.Global;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockSlab;
 import net.minecraft.core.block.BlockSlabPainted;
+import net.minecraft.core.block.SlabBlock;
 import net.minecraft.core.block.entity.BlockEntity;
 import net.minecraft.core.entity.EntityLiving;
 import net.minecraft.core.enums.EnumDropCause;
@@ -13,7 +14,7 @@ import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.WorldSource;
 
-public class BlockWoolSlab extends BlockSlab {
+public class BlockWoolSlab extends SlabBlock {
     public static final int[] texCoords = new int[16];
 
     public BlockWoolSlab(Block block, int id) {
