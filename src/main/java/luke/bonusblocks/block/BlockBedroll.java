@@ -2,7 +2,7 @@ package luke.bonusblocks.block;
 
 import luke.bonusblocks.item.BonusItems;
 import net.minecraft.core.block.BlockBed;
-import net.minecraft.core.block.entity.TileEntity;
+import net.minecraft.core.block.entity.BlockEntity;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.enums.EnumSleepStatus;
@@ -125,7 +125,7 @@ public class BlockBedroll extends BlockBed {
     }
 
     @Override
-    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, BlockEntity BlockEntity) {
         return new ItemStack[]{new ItemStack(BonusItems.bedroll)};
     }
 

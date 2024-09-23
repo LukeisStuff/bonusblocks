@@ -1,6 +1,6 @@
 package luke.bonusblocks.block.blockmodel;
 
-import net.minecraft.client.render.block.model.BlockModelStandard;
+import net.minecraft.client.render.block.model.StandardBlockModel;
 import net.minecraft.client.render.stitcher.IconCoordinate;
 import net.minecraft.client.render.stitcher.TextureRegistry;
 import net.minecraft.client.render.tessellator.Tessellator;
@@ -10,7 +10,7 @@ import net.minecraft.core.block.logic.BedDirections;
 import net.minecraft.core.util.helper.Side;
 
 public class BlockModelBedroll<T extends Block>
-        extends BlockModelStandard<T> {
+        extends StandardBlockModel<T> {
     public IconCoordinate underTexture = TextureRegistry.getTexture("bonusblocks:block/bedroll_foot_top");
 
     public BlockModelBedroll(Block block) {

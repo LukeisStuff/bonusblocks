@@ -10,8 +10,8 @@ import net.minecraft.core.world.WorldSource;
 
 import java.util.Random;
 
-public class BlockCopperPipe extends BlockAxisAligned {
-    public BlockCopperPipe(String key, int id, Material material) {
+public class BLOCK_COPPERPipe extends BlockAxisAligned {
+    public BLOCK_COPPERPipe(String key, int id, Material material) {
         super(key, id, material);
         this.setTicking(true);
     }
@@ -28,7 +28,7 @@ public class BlockCopperPipe extends BlockAxisAligned {
     public void updateTick(World world, int x, int y, int z, Random rand) {
         if (rand.nextInt(200) == 0) {
             if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
-                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.pipeCopperTarnished.id, world.getBlockMetadata(x, y, z));
+                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.PIPE_COPPER_TARNISHED.id, world.getBlockMetadata(x, y, z));
             }
         }
     }

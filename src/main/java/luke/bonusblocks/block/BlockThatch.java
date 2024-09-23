@@ -32,6 +32,6 @@ public class BlockThatch extends Block {
     }
 
     public AABB getCollisionBoundingBoxFromPool(WorldSource world,int x, int y, int z){
-        return AABB.getBoundingBoxFromPool(x, y, z, (x + 1), y+.9f, (z + 1));
+        return AABB.getPermanentBB(x, y, z, (x + 1), y+.9f, (z + 1));
     }
 }

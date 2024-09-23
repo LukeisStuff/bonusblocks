@@ -13,7 +13,7 @@ public class BlockSaplingJacaranda extends BlockSaplingBase {
     }
 
     public void growTree(World world, int i, int j, int k, Random random) {
-        WorldFeature treeBig = new WorldFeatureTreeFancy(BonusBlocks.leavesJacaranda.id, BonusBlocks.logJacaranda.id, 10000);
+        WorldFeature treeBig = new WorldFeatureTreeFancy(BonusBlocks.LEAVES_JACARANDA.id, BonusBlocks.LOG_JACARANDA.id, 10000);
         world.setBlock(i, j, k, 0);
         if (!treeBig.generate(world, random, i, j, k)) {
             world.setBlock(i, j, k, this.id);

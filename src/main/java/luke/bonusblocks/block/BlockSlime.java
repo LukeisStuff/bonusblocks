@@ -1,6 +1,6 @@
 package luke.bonusblocks.block;
 
-import net.minecraft.core.block.BlockTransparent;
+import net.minecraft.core.block.TransparentBlock;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.enums.EnumBlockSoundEffectType;
@@ -8,7 +8,7 @@ import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.WorldSource;
 
-public class BlockSlime extends BlockTransparent {
+public class BlockSlime extends TransparentBlock {
     public BlockSlime(String key, int id){
         super(key, id, Material.leaves);
         setTicking(true);
@@ -28,7 +28,7 @@ public class BlockSlime extends BlockTransparent {
 
     public AABB getCollisionBoundingBoxFromPool(WorldSource world, int x, int y, int z) {
         float f = 0.125F;
-        return AABB.getBoundingBoxFromPool(x + f, y + f, z + f, (float)(x + 1) - f, (float)(y + 1) - f, (float)(z + 1) - f);
+        return AABB.getPermanentBB(x + f, y + f, z + f, (float)(x + 1) - f, (float)(y + 1) - f, (float)(z + 1) - f);
     }
 
     public void onEntityCollidedWithBlock(World world, int x, int y, int z, Entity entity) {

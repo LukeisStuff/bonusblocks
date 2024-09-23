@@ -14,7 +14,7 @@ public class BlockSaplingMossyOak extends BlockSaplingBase {
     }
 
     public void growTree(World world, int i, int j, int k, Random random) {
-        WorldFeature treeBig = new WorldFeatureTreeShapeSwamp(BonusBlocks.leavesOakMossy.id, Block.logOakMossy.id, 6);
+        WorldFeature treeBig = new WorldFeatureTreeShapeSwamp(BonusBlocks.LEAVES_OAK_MOSSY.id, Block.logOakMossy.id, 6);
         world.setBlock(i, j, k, 0);
         if (!treeBig.generate(world, random, i, j, k)) {
             world.setBlock(i, j, k, this.id);

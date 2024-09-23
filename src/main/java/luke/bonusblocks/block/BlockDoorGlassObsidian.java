@@ -2,7 +2,7 @@ package luke.bonusblocks.block;
 
 import luke.bonusblocks.item.BonusItems;
 import net.minecraft.core.block.BlockDoor;
-import net.minecraft.core.block.entity.TileEntity;
+import net.minecraft.core.block.entity.BlockEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.ItemStack;
@@ -18,7 +18,7 @@ public class BlockDoorGlassObsidian extends BlockDoor {
         return 1;
     }
 
-    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, BlockEntity BlockEntity) {
         return new ItemStack[]{new ItemStack(BonusItems.doorGlassObsidian)};
     }
 }

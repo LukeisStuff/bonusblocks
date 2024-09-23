@@ -2,7 +2,9 @@ package luke.bonusblocks.block;
 
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockCandle;
-import net.minecraft.core.block.entity.TileEntity;
+import net.minecraft.core.block.Blocks;
+import net.minecraft.core.block.CandleBlock;
+import net.minecraft.core.block.entity.BlockEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.ItemStack;
@@ -10,7 +12,7 @@ import net.minecraft.core.world.World;
 
 import java.util.Random;
 
-public class BlockSoulCandle extends BlockCandle {
+public class BlockSoulCandle extends CandleBlock {
     public BlockSoulCandle(String key, int id) {
         super(key, id, Material.decoration);
         this.setTicking(true);
@@ -19,7 +21,7 @@ public class BlockSoulCandle extends BlockCandle {
 
     private boolean canPlaceOnTop(World world, int i, int j, int k) {
         int id = world.getBlockId(i, j, k);
-        return world.isBlockNormalCube(i, j, k) || id == Block.fencePlanksOak.id || id == Block.fencePlanksOakPainted.id;
+        return world.isBlockNormalCube(i, j, k) || id == Blocks.fencePlanksOak.id || id == Blocks.fencePlanksOakPainted.id;
     }
 
     public void updateTick(World world, int x, int y, int z, Random rand) {
@@ -54,7 +56,7 @@ public class BlockSoulCandle extends BlockCandle {
         }
     }
 
-    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-        return new ItemStack[]{new ItemStack(BonusBlocks.candleSoulwax)};
+    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, BlockEntity BlockEntity) {
+        return new ItemStack[]{new ItemStack(BonusBlocks.CANDLE_SOULWAX)};
     }
 }

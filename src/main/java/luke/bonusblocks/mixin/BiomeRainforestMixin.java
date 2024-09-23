@@ -37,7 +37,7 @@ public class BiomeRainforestMixin {
             cir.setReturnValue(new WorldFeatureTreeShrub(Block.leavesShrub.id, BonusBlocks.logShrub.id));
         }
         if (random.nextInt(10) == 0) {
-            cir.setReturnValue(new WorldFeatureTree(Block.leavesCacao.id, BonusBlocks.logCacao.id, 4));
+            cir.setReturnValue(new WorldFeatureTree(Block.leavesCacao.id, BonusBlocks.LOG_CACAO.id, 4));
         }
         cir.setReturnValue(new WorldFeatureTree(Block.leavesOak.id, Block.logOak.id, 6));
     }

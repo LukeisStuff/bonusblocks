@@ -2,7 +2,7 @@ package luke.bonusblocks.block;
 
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockSand;
-import net.minecraft.core.block.entity.TileEntity;
+import net.minecraft.core.block.entity.BlockEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.entity.Entity;
@@ -27,7 +27,7 @@ public class BlockSulphur extends BlockSand {
         world.scheduleBlockUpdate(i, j, k, this.id, this.tickRate());
     }
 
-    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, BlockEntity BlockEntity) {
         return dropCause == EnumDropCause.EXPLOSION ? null : new ItemStack[]{new ItemStack(this)};
     }
 

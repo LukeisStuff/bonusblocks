@@ -1,12 +1,12 @@
 package luke.bonusblocks.block.blockmodel;
 
-import net.minecraft.client.render.block.model.BlockModelStandard;
+import net.minecraft.client.render.block.model.StandardBlockModel;
 import net.minecraft.client.render.stitcher.IconCoordinate;
 import net.minecraft.client.render.tessellator.Tessellator;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.util.helper.Side;
 
-public class BlockModelSoulwaxCandle<T extends Block> extends BlockModelStandard<T> {
+public class BlockModelSoulwaxCandle<T extends Block> extends StandardBlockModel<T> {
     public BlockModelSoulwaxCandle(Block block) {
         super(block);
     }

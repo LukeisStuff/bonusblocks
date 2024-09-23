@@ -19,8 +19,8 @@ public class ItemToolShovelMixin {
     public void addNewPathBlock(ItemStack itemstack, Player entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced, CallbackInfoReturnable<Boolean> cir){
         int i1 = world.getBlockId(blockX,blockY,blockZ);
         int j1 = world.getBlockId(blockX,blockY + 1,blockZ);
-        if (side != Side.BOTTOM && j1 == 0 && (i1 == BonusBlocks.overgrownGrass.id || i1 == BonusBlocks.overgrownGrassRetro.id)) {
-            Block pathBlock = BonusBlocks.overgrownPath;
+        if (side != Side.BOTTOM && j1 == 0 && (i1 == BonusBlocks.GRASS_OVERGROWN.id || i1 == BonusBlocks.GRASS_RETRO_OVERGROWN.id)) {
+            Block pathBlock = BonusBlocks.PATH_DIRT_OVERGROWN;
             world.playBlockSoundEffect(null, (float)blockX + 0.5f, (float)blockY + 0.5f, (float)blockZ + 0.5f, pathBlock, EnumBlockSoundEffectType.PLACE);
             if (!world.isClientSide) {
                 world.setBlockWithNotify(blockX, blockY, blockZ, pathBlock.id);

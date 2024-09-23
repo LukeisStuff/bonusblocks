@@ -22,7 +22,7 @@ public class BlockFenceCopperCorroded extends BlockFenceThin {
         boolean connectXNeg = this.canConnectTo(world, x - 1, y, z);
         boolean connectZPos = this.canConnectTo(world, x, y, z + 1);
         boolean connectZNeg = this.canConnectTo(world, x, y, z - 1);
-        return AABB.getBoundingBoxFromPool((double)((float)x + (connectXNeg ? 0.0F : 0.375F)), (double)y, (double)((float)z + (connectZNeg ? 0.0F : 0.375F)), (double)((float)(x + 1) - (connectXPos ? 0.0F : 0.375F)), (double)((float)y + 1.0F), (double)((float)(z + 1) - (connectZPos ? 0.0F : 0.375F)));
+        return AABB.getPermanentBB((double)((float)x + (connectXNeg ? 0.0F : 0.375F)), (double)y, (double)((float)z + (connectZNeg ? 0.0F : 0.375F)), (double)((float)(x + 1) - (connectXPos ? 0.0F : 0.375F)), (double)((float)y + 1.0F), (double)((float)(z + 1) - (connectZPos ? 0.0F : 0.375F)));
     }
 
     public AABB getSelectedBoundingBoxFromPool(WorldSource world, int x, int y, int z) {

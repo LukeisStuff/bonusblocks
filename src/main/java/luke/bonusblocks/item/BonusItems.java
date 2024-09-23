@@ -2,6 +2,7 @@ package luke.bonusblocks.item;
 
 import luke.bonusblocks.BonusBlocksConfig;
 import luke.bonusblocks.block.BonusBlocks;
+import net.minecraft.core.item.DoorItem;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemDoor;
 import net.minecraft.core.item.ItemPlaceable;
@@ -15,42 +16,39 @@ public class BonusItems {
         return BonusBlocksConfig.cfg.getInt("Item IDs." + blockName);
     }
 
-    public static Item candleSoulwax;
-    public static Item soulwax;
-    public static Item oreRawCopper;
-    public static Item ingotCopper;
-    public static Item oreRawSilver;
-    public static Item ingotSilver;
-    public static Item doorCopper;
-    public static Item doorCopperTarnished;
-    public static Item doorCopperCorroded;
-    public static Item doorSteel;
-    public static Item doorSilver;
-    public static Item bedSilver;
-    public static Item seatSilver;
-    public static Item foodPie;
-    public static Item mossball;
-    public static Item doorGlassObsidian;
+    public static Item SOULWAX;
+    public static Item ORE_RAW_COPPER;
+    public static Item INGOT_COPPER;
+    public static Item ORE_RAW_SILVER;
+    public static Item INGOT_SILVER;
+    public static Item DOOR_COPPER;
+    public static Item DOOR_COPPER_TARNISHED;
+    public static Item DOOR_COPPER_CORRODED;
+    public static Item DOOR_SILVER;
+    public static Item BED_SILVER;
+    public static Item SEAT_SILVER;
+    public static Item MOSSBALL;
+    public static Item DOOR_GLASS_OBSIDIAN;
 
-    public static Item doorStone;
-    public static Item doorBasalt;
-    public static Item doorLimestone;
-    public static Item doorGranite;
-    public static Item doorMarble;
-    public static Item doorSlate;
-    public static Item doorPermafrost;
-    public static Item doorNetherrack;
-    public static Item doorLazurite;
-    public static Item doorPeridot;
+    public static Item DOOR_STONE;
+    public static Item DOOR_BASALT;
+    public static Item DOOR_LIMESTONE;
+    public static Item DOOR_GRANITE;
+    public static Item DOOR_MARBLE;
+    public static Item DOOR_SLATE;
+    public static Item DOOR_PERMAFROST;
+    public static Item DOOR_NETHERRACK;
+    public static Item DOOR_LAZURITE;
+    public static Item DOOR_PERIDOT;
 
-    public static Item bedroll;
+    public static Item BEDROLL;
 
     public void initilizeItems() {
         // Items
 
         soulwax = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/soulwax")
-                .build(new Item("soulwax", itemID("soulwax")));
+                .build(new Item("soulwax", "bonusblocks:item/soulwax", itemID("soulwax")));
 
         oreRawCopper = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/ore_raw_copper")
@@ -58,31 +56,27 @@ public class BonusItems {
 
         ingotCopper = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/ingot_copper")
-                .build(new Item("ingot.copper", itemID("ingotCopper")));
+                .build(new Item("ingot.copper", "bonusblocks:item/ingot_copper", itemID("ingotCopper")));
 
         oreRawSilver = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/ore_raw_silver")
-                .build(new ItemRawSilver("ore.raw.silver", itemID("oreRawSilver")));
+                .build(new ItemRawSilver("ore.raw.silver", "bonusblocks:item/"ore_raw_silver, itemID("oreRawSilver")));
 
         ingotSilver = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/ingot_silver")
-                .build(new Item("ingot.silver", itemID("ingotSilver")));
+                .build(new Item("ingot.silver", "bonusblocks:item/ingot_silver", itemID("ingotSilver")));
 
         doorCopper = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/door_copper")
-                .build(new ItemDoor("door.copper", itemID("doorCopper"), BonusBlocks.doorCopperBottom, BonusBlocks.doorCopperTop));
+                .build(new DoorItem("door.copper", "bonusblocks:item/door_copper", itemID("doorCopper"), BonusBlocks.doorCopperBottom, BonusBlocks.doorCopperTop));
 
         doorCopperTarnished = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/door_copper_tarnished")
-                .build(new ItemDoor("door.copper.tarnished", itemID("doorCopperTarnished"), BonusBlocks.doorCopperTarnishedBottom, BonusBlocks.doorCopperTarnishedTop));
+                .build(new ItemDoor("door.copper.tarnished", "bonusblocks:item/door_copper_tarnished", itemID("doorCopperTarnished"), BonusBlocks.doorCopperTarnishedBottom, BonusBlocks.doorCopperTarnishedTop));
 
         doorCopperCorroded = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/door_copper_corroded")
                 .build(new ItemDoor("door.copper.corroded", itemID("doorCopperCorroded"), BonusBlocks.doorCopperCorrodedBottom, BonusBlocks.doorCopperCorrodedTop));
-
-        doorSteel = new ItemBuilder(MOD_ID)
-                .setIcon("bonusblocks:item/door_steel")
-                .build(new ItemDoor("door.steel", itemID("doorSteel"), BonusBlocks.doorSteelBottom, BonusBlocks.doorSteelTop));
 
         doorSilver = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/door_silver")
@@ -140,9 +134,9 @@ public class BonusItems {
                 .setIcon("bonusblocks:item/door_lazurite")
                 .build(new ItemDoor("door.lazurite", itemID("doorLazurite"), BonusBlocks.doorLazuriteBottom, BonusBlocks.doorLazuriteTop));
 
-        doorPeridot = new ItemBuilder(MOD_ID)
-                .setIcon("bonusblocks:item/door_peridot")
-                .build(new ItemDoor("door.peridot", itemID("doorPeridot"), BonusBlocks.doorPeridotBottom, BonusBlocks.doorPeridotTop));
+        doorPERIDOT = new ItemBuilder(MOD_ID)
+                .setIcon("bonusblocks:item/door_PERIDOT")
+                .build(new ItemDoor("door.PERIDOT", itemID("doorPERIDOT"), BonusBlocks.doorPERIDOTBottom, BonusBlocks.doorPERIDOTTop));
 
 
         bedroll = new ItemBuilder(MOD_ID)
@@ -154,8 +148,6 @@ public class BonusItems {
 
 
 //        CreativeHelper.setParent(BonusItems.candleSoulwax, Block.torchCoal);
-//
-//        CreativeHelper.setParent(BonusItems.foodPie, Item.foodCake);
 //
 //        CreativeHelper.setParent(BonusItems.ingotCopper, Item.ingotGold);
 //        CreativeHelper.setParent(BonusItems.ingotSilver, Item.ingotGold);

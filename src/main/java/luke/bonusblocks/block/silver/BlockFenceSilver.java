@@ -22,7 +22,7 @@ public class BlockFenceSilver extends BlockFenceThin {
         boolean connectXNeg = this.canConnectTo(world, x - 1, y, z);
         boolean connectZPos = this.canConnectTo(world, x, y, z + 1);
         boolean connectZNeg = this.canConnectTo(world, x, y, z - 1);
-        return AABB.getBoundingBoxFromPool((float)x + (connectXNeg ? 0.0F : 0.375F), y, (float)z + (connectZNeg ? 0.0F : 0.375F), (float)(x + 1) - (connectXPos ? 0.0F : 0.375F), (float)y + 1.0F, (float)(z + 1) - (connectZPos ? 0.0F : 0.375F));
+        return AABB.getPermanentBB((float)x + (connectXNeg ? 0.0F : 0.375F), y, (float)z + (connectZNeg ? 0.0F : 0.375F), (float)(x + 1) - (connectXPos ? 0.0F : 0.375F), (float)y + 1.0F, (float)(z + 1) - (connectZPos ? 0.0F : 0.375F));
     }
 
     public AABB getSelectedBoundingBoxFromPool(WorldSource world, int x, int y, int z) {

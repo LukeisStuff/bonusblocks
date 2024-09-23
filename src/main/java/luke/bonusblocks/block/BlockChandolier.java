@@ -1,7 +1,7 @@
 package luke.bonusblocks.block;
 
 import net.minecraft.core.block.Block;
-import net.minecraft.core.block.entity.TileEntity;
+import net.minecraft.core.block.entity.BlockEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.enums.EnumDropCause;

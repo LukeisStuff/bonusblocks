@@ -1,7 +1,7 @@
 package luke.bonusblocks.block.blockmodel;
 
 import net.minecraft.client.render.LightmapHelper;
-import net.minecraft.client.render.block.model.BlockModelStandard;
+import net.minecraft.client.render.block.model.StandardBlockModel;
 import net.minecraft.client.render.stitcher.IconCoordinate;
 import net.minecraft.client.render.stitcher.TextureRegistry;
 import net.minecraft.client.render.tessellator.Tessellator;
@@ -9,7 +9,7 @@ import net.minecraft.core.block.Block;
 import net.minecraft.core.util.helper.MathHelper;
 import net.minecraft.core.util.helper.Side;
 
-public class BlockModelNuggetsIron<T extends Block> extends BlockModelStandard<T> {
+public class BlockModelNuggetsIron<T extends Block> extends StandardBlockModel<T> {
     protected IconCoordinate[] pebbles = new IconCoordinate[]{TextureRegistry.getTexture("bonusblocks:block/pebbles_iron1"), TextureRegistry.getTexture("bonusblocks:block/pebbles_iron2"), TextureRegistry.getTexture("bonusblocks:block/pebbles_iron3")};
 
     public BlockModelNuggetsIron(Block block) {

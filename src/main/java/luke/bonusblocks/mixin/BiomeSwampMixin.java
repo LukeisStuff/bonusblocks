@@ -17,7 +17,7 @@ public class BiomeSwampMixin {
     @Inject(method = "getRandomWorldGenForTrees", at = @At(value = "HEAD", target = "Lnet/minecraft/core/world/biome/BiomeRainforest;getRandomWorldGenForTrees(Ljava/util/Random;)Lnet/minecraft/core/world/generate/feature/WorldFeature;"), cancellable = true)
     public void getRandomWorldGenForTrees(Random random, CallbackInfoReturnable<WorldFeature> cir) {
         {
-            cir.setReturnValue(new WorldFeatureTreeShapeSwamp(BonusBlocks.leavesOakMossy.id, Block.logOakMossy.id, 6));
+            cir.setReturnValue(new WorldFeatureTreeShapeSwamp(BonusBlocks.LEAVES_OAK_MOSSY.id, Block.logOakMossy.id, 6));
         }
         cir.cancel();
     }

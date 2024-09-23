@@ -11,8 +11,8 @@ import net.minecraft.core.world.World;
 import java.util.List;
 import java.util.Random;
 
-public class BlockCopperCorrodedPressurePlate extends BlockPressurePlate {
-    public BlockCopperCorrodedPressurePlate(String key, int id, Material material) {
+public class BLOCK_COPPERCorrodedPressurePlate extends BlockPressurePlate {
+    public BLOCK_COPPERCorrodedPressurePlate(String key, int id, Material material) {
         super(key, id, null, material);
     }
     @Override
@@ -39,7 +39,7 @@ public class BlockCopperCorrodedPressurePlate extends BlockPressurePlate {
         boolean isPressed = world.getBlockMetadata(x, y, z) == 1;
         boolean isSteppedOn = false;
         float f = 0.125f;
-        List<Entity> list = world.getEntitiesWithinAABB(EntityItem.class, AABB.getBoundingBoxFromPool((float)x + f, y, (float)z + f, (float)(x + 1) - f, (double)y + 0.25, (float)(z + 1) - f));
+        List<Entity> list = world.getEntitiesWithinAABB(EntityItem.class, AABB.getPermanentBB((float)x + f, y, (float)z + f, (float)(x + 1) - f, (double)y + 0.25, (float)(z + 1) - f));
         if (list != null && !list.isEmpty()) {
             isSteppedOn = true;
         }

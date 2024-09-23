@@ -2,10 +2,8 @@ package luke.bonusblocks;
 
 import luke.bonusblocks.block.BonusBlocks;
 import luke.bonusblocks.item.BonusItems;
-import net.minecraft.core.block.Block;
 import net.minecraft.core.block.Blocks;
 import net.minecraft.core.data.registry.Registries;
-import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.Items;
 import turniplabs.halplibe.helper.RecipeBuilder;
@@ -18,10 +16,10 @@ public class BonusRecipes implements RecipeEntrypoint {
 
     public void initializeRecipes() {
         RecipeBuilderShaped templateLogtoPlank = new RecipeBuilderShaped(MOD_ID, "X");
-        templateLogtoPlank.addInput('X', BonusBlocks.LOG_JACARANDA).create("logJacarandatoPlanks", new ItemStack(Blocks.PLANKS_OAK_PAINTED, 4, 10));
-        templateLogtoPlank.addInput('X', BonusBlocks.LOG_SCORCHED).create("logScorchedtoPlanks", new ItemStack(Blocks.PLANKS_OAK_PAINTED, 4, 15));
-        templateLogtoPlank.addInput('X', BonusBlocks.LOG_SHRUB).create("logShrubtoPlanks", new ItemStack(Blocks.PLANKS_OAK_PAINTED, 4, 8));
-        templateLogtoPlank.addInput('X', BonusBlocks.LOG_CACAO).create("logCacaotoPlanks", new ItemStack(Blocks.PLANKS_OAK_PAINTED, 4, 5));
+        templateLogtoPlank.addInput('X', BonusBlocks.LOG_JACARANDA).create("log_jacaranda_to_planks", new ItemStack(Blocks.PLANKS_OAK_PAINTED, 4, 10));
+        templateLogtoPlank.addInput('X', BonusBlocks.LOG_SCORCHED).create("log_scorched_to_planks", new ItemStack(Blocks.PLANKS_OAK_PAINTED, 4, 15));
+        templateLogtoPlank.addInput('X', BonusBlocks.LOG_SHRUB).create("log_shrub_to_planks", new ItemStack(Blocks.PLANKS_OAK_PAINTED, 4, 8));
+        templateLogtoPlank.addInput('X', BonusBlocks.LOG_CACAO).create("log_cacao_to_planks", new ItemStack(Blocks.PLANKS_OAK_PAINTED, 4, 5));
 
         RecipeBuilderShaped templateItemtoBlock = new RecipeBuilderShaped(MOD_ID, "XXX", "XXX", "XXX");
         templateItemtoBlock.addInput('X', Items.BONE).create("block_of_bone", new ItemStack(BonusBlocks.BLOCK_BONE, 1));
@@ -214,15 +212,15 @@ public class BonusRecipes implements RecipeEntrypoint {
         templatePebbles.addInput('X', Items.OLIVINE).addInput('P', Items.AMMO_PEBBLE).create("pebbles_to_peridot", new ItemStack(BonusBlocks.cobblePeridot, 2));
         templatePebbles.addInput('X', Items.DYE, 4).addInput('P', Items.AMMO_PEBBLE).create("pebbles_to_lazurite", new ItemStack(BonusBlocks.cobbleLazurite, 2));
 
-        templatePebbles.addInput('X', Blocks.STONE).addInput('P', BonusItems.mossball).create("stone_to_moss_stone", new ItemStack(Blocks.MOSS_STONE, 2));
-        templatePebbles.addInput('X', Blocks.COBBLE_STONE).addInput('P', BonusItems.mossball).create("cobble_stone_to_moss_stone", new ItemStack(Blocks.COBBLE_STONE_MOSSY, 2));
-        templatePebbles.addInput('X', Blocks.BRICK_STONE_POLISHED).addInput('P', BonusItems.mossball).create("polished_stone_brick_to_mossy_polished_stone_brick", new ItemStack(Blocks.BRICK_STONE_POLISHED_MOSSY, 2));
-        templatePebbles.addInput('X', Blocks.BASALT).addInput('P', BonusItems.mossball).create("basalt_to_moss_stone", new ItemStack(Blocks.MOSS_BASALT, 2));
-        templatePebbles.addInput('X', Blocks.LIMESTONE).addInput('P', BonusItems.mossball).create("limestone_to_moss_stone", new ItemStack(Blocks.MOSS_LIMESTONE, 2));
-        templatePebbles.addInput('X', Blocks.GRANITE).addInput('P', BonusItems.mossball).create("granite_to_moss_stone", new ItemStack(Blocks.MOSS_GRANITE, 2));
-        templatePebbles.addInput('X', Blocks.LOG_OAK).addInput('P', BonusItems.mossball).create("oak_log_to_moss_oak_log", new ItemStack(Blocks.LOG_OAK_MOSSY, 2));
+        templatePebbles.addInput('X', Blocks.STONE).addInput('P', BonusItems.MOSSBALL).create("stone_to_moss_stone", new ItemStack(Blocks.MOSS_STONE, 2));
+        templatePebbles.addInput('X', Blocks.COBBLE_STONE).addInput('P', BonusItems.MOSSBALL).create("cobble_stone_to_moss_stone", new ItemStack(Blocks.COBBLE_STONE_MOSSY, 2));
+        templatePebbles.addInput('X', Blocks.BRICK_STONE_POLISHED).addInput('P', BonusItems.MOSSBALL).create("polished_stone_brick_to_mossy_polished_stone_brick", new ItemStack(Blocks.BRICK_STONE_POLISHED_MOSSY, 2));
+        templatePebbles.addInput('X', Blocks.BASALT).addInput('P', BonusItems.MOSSBALL).create("basalt_to_moss_stone", new ItemStack(Blocks.MOSS_BASALT, 2));
+        templatePebbles.addInput('X', Blocks.LIMESTONE).addInput('P', BonusItems.MOSSBALL).create("limestone_to_moss_stone", new ItemStack(Blocks.MOSS_LIMESTONE, 2));
+        templatePebbles.addInput('X', Blocks.GRANITE).addInput('P', BonusItems.MOSSBALL).create("granite_to_moss_stone", new ItemStack(Blocks.MOSS_GRANITE, 2));
+        templatePebbles.addInput('X', Blocks.LOG_OAK).addInput('P', BonusItems.MOSSBALL).create("oak_log_to_moss_oak_log", new ItemStack(Blocks.LOG_OAK_MOSSY, 2));
 
-        templatePebbles.addInput('X', BonusItems.mossball).addInput('P', BonusItems.mossball).create("moss_balls_to_moss", new ItemStack(BonusBlocks.MOSS, 1));
+        templatePebbles.addInput('X', BonusItems.MOSSBALL).addInput('P', BonusItems.MOSSBALL).create("moss_balls_to_moss", new ItemStack(BonusBlocks.MOSS, 1));
 
         templatePebbles.addInput('X', Blocks.DIRT).addInput('P', Blocks.MUD_BAKED).create("rough_dirt", new ItemStack(BonusBlocks.DIRT_ROUGH, 4));
 
@@ -243,11 +241,11 @@ public class BonusRecipes implements RecipeEntrypoint {
 
         RecipeBuilder.Shaped(MOD_ID, "PPP", "PPP", "PPP")
                 .addInput('P', Blocks.PLANKS_OAK)
-                .create("box", new ItemStack(BonusBlocks.box, 9));
+                .create("box", new ItemStack(BonusBlocks.BOX, 9));
 
         RecipeBuilder.Shaped(MOD_ID, "CC", "CC")
                 .addInput('C', Blocks.CHEST_PLANKS_OAK)
-                .create("crate", new ItemStack(BonusBlocks.crate, 8));
+                .create("crate", new ItemStack(BonusBlocks.CRATE, 8));
 
         RecipeBuilder.Shaped(MOD_ID, "S", "C")
                 .addInput('S', BonusBlocks.skullCarved)
@@ -292,7 +290,7 @@ public class BonusRecipes implements RecipeEntrypoint {
 
         RecipeBuilder.Shaped(MOD_ID, "PP", "PP")
                 .addInput('P', (Items.STICK))
-                .create("branches", new ItemStack(BonusBlocks.branch, 2));
+                .create("branches", new ItemStack(BonusBlocks.BRANCH, 2));
 
 
         RecipeBuilderShaped templatePolished = new RecipeBuilderShaped(MOD_ID, "X", "X");
@@ -311,12 +309,12 @@ public class BonusRecipes implements RecipeEntrypoint {
         templateCarvedSlab.addInput('X', BonusBlocks.slabPeridotPolished).create("peridot_carved", new ItemStack(BonusBlocks.peridotCarved, 1));
 
         RecipeBuilder.Shaped(MOD_ID, "S", "W")
-                .addInput('S', (Items.string))
+                .addInput('S', (Items.STRING))
                 .addInput('W', (BonusItems.soulwax))
                 .create("soulwax_candle", new ItemStack(BonusBlocks.candleSoulwax, 2));
 
         RecipeBuilder.Shaped(MOD_ID, " B ", "B B", " B ")
-                .addInput('B', (Items.brickClay))
+                .addInput('B', (Items.BRICK_CLAY))
                 .create("clay_pot", new ItemStack(BonusBlocks.pot, 2));
 
         RecipeBuilderShaped templateSlab = new RecipeBuilderShaped(MOD_ID, "XXX");
@@ -327,7 +325,6 @@ public class BonusRecipes implements RecipeEntrypoint {
         templateSlab.addInput('X', Blocks.brickLapis).create("lapis_brick_slab", new ItemStack(BonusBlocks.slabBrickLapis, 6));
         templateSlab.addInput('X', BonusBlocks.brickMud).create("mud_brick_slab", new ItemStack(BonusBlocks.slabBrickMud, 6));
         templateSlab.addInput('X', BonusBlocks.brickNetherrack).create("netherrack_brick_slab", new ItemStack(BonusBlocks.slabBrickNetherrack, 6));
-//        templateSlab.addInput('X', Blocks.brickSandstone).create("sandstone_brick_slab", new ItemStack(BonusBlocks.slabBrickSandstone, 6));
         templateSlab.addInput('X', Blocks.brickStonePolishedMossy).create("stone_polished_mossy_brick_slab", new ItemStack(BonusBlocks.slabBrickStonePolishedMossy, 6));
         templateSlab.addInput('X', BonusBlocks.brickScorchedstone).create("scorchedstone_brick_slab", new ItemStack(BonusBlocks.slabBrickScorchedstone, 6));
         templateSlab.addInput('X', BonusBlocks.brickSteel).create("steel_brick_slab", new ItemStack(BonusBlocks.slabBrickSteel, 6));
@@ -449,7 +446,7 @@ public class BonusRecipes implements RecipeEntrypoint {
 
         RecipeBuilder.Shaped(MOD_ID, "PPP", "PPP")
                 .addInput('P', BonusItems.ingotCopper)
-                .create("trapdoor_copper", new ItemStack(BonusBlocks.trapdoorCopper, 6));
+                .create("trapdoor_copper", new ItemStack(BonusBlocks.TRAPDOOR_COPPER, 6));
 
         RecipeBuilder.Shaped(MOD_ID, "PPP", "PPP")
                 .addInput('P', BonusItems.ingotSilver)
@@ -614,13 +611,13 @@ public class BonusRecipes implements RecipeEntrypoint {
 
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.logScorched.getDefaultStack());
         Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.logShrub.getDefaultStack());
-        Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.logJacaranda.getDefaultStack());
-        Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.logCacao.getDefaultStack());
+        Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.LOG_JACARANDA.getDefaultStack());
+        Registries.ITEM_GROUPS.getItem("minecraft:logs").add(BonusBlocks.LOG_CACAO.getDefaultStack());
 
         Registries.ITEM_GROUPS.getItem("minecraft:moss_stones").add(BonusBlocks.moss.getDefaultStack());
 
-        Registries.ITEM_GROUPS.getItem("minecraft:leaves").add(BonusBlocks.leavesOakMossy.getDefaultStack());
-        Registries.ITEM_GROUPS.getItem("minecraft:leaves").add(BonusBlocks.leavesJacaranda.getDefaultStack());
+        Registries.ITEM_GROUPS.getItem("minecraft:leaves").add(BonusBlocks.LEAVES_OAK_MOSSY.getDefaultStack());
+        Registries.ITEM_GROUPS.getItem("minecraft:leaves").add(BonusBlocks.LEAVES_JACARANDA.getDefaultStack());
 
         Registries.ITEM_GROUPS.getItem("minecraft:stones").add(Blocks.permafrost.getDefaultStack());
         Registries.ITEM_GROUPS.getItem("minecraft:stones").add(BonusBlocks.netherrack.getDefaultStack());

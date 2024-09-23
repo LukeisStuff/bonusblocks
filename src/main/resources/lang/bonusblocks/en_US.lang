@@ -66,18 +66,12 @@ tile.bonusblocks.dirt.rough.desc=Dirt hardened with mud to prevent grass growing
 tile.bonusblocks.branch.name=Branches
 tile.bonusblocks.branch.desc=Woody structure connecting leaves.
 
-tile.bonusblocks.leaves.maple.name=Ironwood Leaves
-tile.bonusblocks.leaves.maple.desc=Leaves from a ironwood tree.
 tile.bonusblocks.leaves.oak.mossy.name=Mossy Oak Leaves
 tile.bonusblocks.leaves.oak.mossy.desc=Leaves from a mossy oak tree.
 
-tile.bonusblocks.sapling.maple.name=Ironwood Sapling
-tile.bonusblocks.sapling.maple.desc=A plant to grow a ironwood tree.
 tile.bonusblocks.sapling.oak.mossy.name=Mossy Oak Sapling
 tile.bonusblocks.sapling.oak.mossy.desc=A plant to grow an oak tree covered in moss.
 
-tile.bonusblocks.log.maple.name=Ironwood Log
-tile.bonusblocks.log.maple.desc=A log from a ironwood tree.
 tile.bonusblocks.log.shrub.name=Shrub Log
 tile.bonusblocks.log.shrub.desc=A log from a shrub tree.
 tile.bonusblocks.log.jacaranda.name=Jacaranda Log
@@ -87,8 +81,6 @@ tile.bonusblocks.log.scorched.desc=A log from a burnt down tree.
 tile.bonusblocks.log.cacao.name=Cacao Log
 tile.bonusblocks.log.cacao.desc=A log from a cacao tree.
 
-tile.bonusblocks.brick.netherrack.name=Netherrack Brick
-tile.bonusblocks.brick.netherrack.desc=Stacked bricks of netherrack.
 tile.bonusblocks.scorchedstone.name=Scorchedstone
 tile.bonusblocks.scorchedstone.desc=Compacted scorched dirt.
 tile.bonusblocks.brick.scorchedstone.name=Scorchedstone Bricks
@@ -104,11 +96,6 @@ tile.bonusblocks.brick.olivine.desc=Stacked bricks of olivine.
 tile.bonusblocks.brick.clay.baked.name=Baked Clay Bricks
 tile.bonusblocks.brick.clay.baked.desc=Stacked bricks of baked clay.
 
-tile.bonusblocks.soulslate.name=Soul Slate
-tile.bonusblocks.soulslate.desc=Highly compacted soul sand. Listen and you can almost hear it whisper.
-tile.bonusblocks.brimstone.name=Brimstone
-tile.bonusblocks.brimstone.desc=Incredibly tough blackened rock from the depths of hell.
-
 tile.bonusblocks.clay.baked.name=Baked Clay
 tile.bonusblocks.clay.baked.desc=A scorched block of solid clay.
 
@@ -123,11 +110,6 @@ tile.bonusblocks.trapdoor.glass.tinted.desc=Slightly less useless at its job.
 
 tile.mesh.name=Iron Mesh Block
 tile.workbench.name=Crafting Table
-
-tile.bonusblocks.pumice.dry.name=Pumice
-tile.bonusblocks.pumice.dry.desc=Dried pumice, good for absorbing up lava.
-tile.bonusblocks.pumice.wet.name=Molten Pumice
-tile.bonusblocks.pumice.wet.desc=Pumice full of lava.
 
 tile.bonusblocks.block.raw.iron.name=Block of Raw Iron
 tile.bonusblocks.block.raw.iron.desc=A solid block of raw iron. Heavy!
@@ -169,13 +151,6 @@ tile.bonusblocks.pipe.copper.tarnished.name=Tarnished Copper Pipe
 tile.bonusblocks.pipe.copper.tarnished.desc=A long tube of tarnished copper, purely for decoration.
 tile.bonusblocks.pipe.copper.corroded.name=Corroded Copper Pipe
 tile.bonusblocks.pipe.copper.corroded.desc=A long tube of corroded copper, purely for decoration.
-
-tile.netherrack.name=Mossy Cobbled Netherrack
-tile.netherrack.desc=Cobbled Netherrack with added red greenery.
-tile.bonusblocks.netherrack.name=Netherrack
-tile.bonusblocks.netherrack.desc=A block of solid netherrack.
-tile.bonusblocks.cobble.netherrack.name=Cobbled Netherrack
-tile.bonusblocks.cobble.netherrack.desc=Netherrack, smashed apart and reconstituted.
 
 tile.bonusblocks.trapdoor.copper.name=Copper Trapdoor
 tile.bonusblocks.trapdoor.copper.desc=Like a door but flat and made of copper.
@@ -423,16 +398,12 @@ tile.bonusblocks.slab.brick.lapis.name=Lapis Brick Slab
 tile.bonusblocks.slab.brick.lapis.desc=A slab of lapis bricks.
 tile.bonusblocks.slab.brick.iron.name=Iron Brick Slab
 tile.bonusblocks.slab.brick.iron.desc=A slab of iron bricks.
-tile.bonusblocks.slab.brick.netherrack.name=Netherrack Brick Slab
-tile.bonusblocks.slab.brick.netherrack.desc=A slab of netherrack bricks.
 tile.bonusblocks.slab.brick.scorchedstone.name=Scorchedstone Brick Slab
 tile.bonusblocks.slab.brick.scorchedstone.desc=A slab of scorchedstone bricks.
 tile.bonusblocks.slab.brick.mud.name=Mud Brick Slab
 tile.bonusblocks.slab.brick.mud.desc=A slab of mud bricks.
 tile.bonusblocks.slab.cobble.stone.mossy.name=Mossy Cobblestone Slab
 tile.bonusblocks.slab.cobble.stone.mossy.desc=A slab of mossy cobblestone.
-tile.bonusblocks.slab.cobble.netherrack.name=Cobbled Netherrack Slab
-tile.bonusblocks.slab.cobble.netherrack.desc=A slab of cobbled netherrack
 tile.bonusblocks.slab.netherrack.name=Mossy Cobbled Netherrack Slab
 tile.bonusblocks.slab.netherrack.desc=A slab of mossy cobbled netherrack
 tile.bonusblocks.slab.block.copper.name=Copper Slab
@@ -462,8 +433,6 @@ tile.bonusblocks.stairs.brick.lapis.name=Lapis Brick Stairs
 tile.bonusblocks.stairs.brick.lapis.desc=Lapis brick block used for rapid vertical movement.
 tile.bonusblocks.stairs.brick.iron.name=Iron Brick Stairs
 tile.bonusblocks.stairs.brick.iron.desc=Iron brick block used for rapid vertical movement.
-tile.bonusblocks.stairs.brick.netherrack.name=Netherrack Brick Stairs
-tile.bonusblocks.stairs.brick.netherrack.desc=Netherrack brick block used for rapid vertical movement.
 tile.bonusblocks.stairs.brick.scorchedstone.name=Scorchedstone Brick Stairs
 tile.bonusblocks.stairs.brick.scorchedstone.desc=Scorchedstone brick block used for rapid vertical movement.
 tile.bonusblocks.stairs.scorchedstone.name=Scorchedstone Stairs
@@ -476,8 +445,6 @@ tile.bonusblocks.stairs.brick.quartz.name=Quartz Brick Stairs
 tile.bonusblocks.stairs.brick.quartz.desc=Quartz brick block used for rapid vertical movement.
 tile.bonusblocks.stairs.brick.olivine.name=Olivine Brick Stairs
 tile.bonusblocks.stairs.brick.olivine.desc=Olivine brick block used for rapid vertical movement.
-tile.bonusblocks.stairs.cobble.netherrack.name=Cobbled Netherrack Stairs
-tile.bonusblocks.stairs.cobble.netherrack.desc=Cobbled netherrack block used for rapid vertical movement.
 tile.bonusblocks.stairs.netherrack.name=Mossy Cobbled Netherrack Stairs
 tile.bonusblocks.stairs.netherrack.desc=Mossy cobbled netherrack block used for rapid vertical movement.
 tile.bonusblocks.stairs.block.copper.name=Copper Stairs
@@ -656,7 +623,6 @@ biome.bonusblocks.overgrown.meadow=Meadow
 biome.bonusblocks.outback.mesa=Mesa Outback
 biome.bonusblocks.dryland=Dryland
 biome.bonusblocks.wetland=Wetland
-biome.bonusblocks.maple=Ironwood Forest
 
 biome.bonusblocks.soul.desert=Soul Desert
 biome.bonusblocks.soul.wasteland=Wasteland

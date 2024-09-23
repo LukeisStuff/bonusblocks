@@ -2,29 +2,29 @@ package luke.bonusblocks.mixin;
 
 import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.core.block.Block;
-import net.minecraft.core.data.tag.Tag;
-import net.minecraft.core.entity.player.EntityPlayer;
+import net.minecraft.core.block.tag.BlockTags;
+import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.enums.EnumBlockSoundEffectType;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.material.ToolMaterial;
-import net.minecraft.core.item.tool.ItemTool;
-import net.minecraft.core.item.tool.ItemToolAxe;
+import net.minecraft.core.item.tool.AxeToolItem;
+import net.minecraft.core.item.tool.ToolItem;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 
-@Mixin(value = ItemToolAxe.class, remap = false)
-public class ItemToolAxeMixin extends ItemTool {
+@Mixin(value = AxeToolItem.class, remap = false)
+public class ItemToolAxeMixin extends ToolItem {
 
-    public ItemToolAxeMixin(String name, int id, int damageDealt, ToolMaterial toolMaterial, Tag<Block> tagEffectiveAgainst) {
-        super(name, id, damageDealt, toolMaterial, tagEffectiveAgainst);
+    public ItemToolAxeMixin(String name, String namespaceId, int id, ToolMaterial enumtoolmaterial) {
+        super(name, namespaceId, id, 3, enumtoolmaterial, BlockTags.MINEABLE_BY_AXE);
     }
 
     @Override
-    public boolean onUseItemOnBlock(ItemStack itemstack, EntityPlayer entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
+    public boolean onUseItemOnBlock(ItemStack itemstack, Player entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
         int i1 = world.getBlockId(blockX, blockY, blockZ);
-        if (i1 == BonusBlocks.blockCopperCorroded.id) {
-            Block copperBlock = BonusBlocks.blockCopperTarnished;
+        if (i1 == BonusBlocks.BLOCK_COPPERCorroded.id) {
+            Block copperBlock = BonusBlocks.BLOCK_COPPERTarnished;
             world.playBlockSoundEffect(null, (float) blockX + 0.5f, (float) blockY + 0.5f, (float) blockZ + 0.5f, copperBlock, EnumBlockSoundEffectType.MINE);
             if (!world.isClientSide) {
                 world.setBlockWithNotify(blockX, blockY, blockZ, copperBlock.id);
@@ -33,8 +33,8 @@ public class ItemToolAxeMixin extends ItemTool {
             }
             entityplayer.swingItem();
         }
-        if (i1 == BonusBlocks.blockCopperTarnished.id) {
-            Block copperBlock = BonusBlocks.blockCopper;
+        if (i1 == BonusBlocks.BLOCK_COPPERTarnished.id) {
+            Block copperBlock = BonusBlocks.BLOCK_COPPER;
             world.playBlockSoundEffect(null, (float) blockX + 0.5f, (float) blockY + 0.5f, (float) blockZ + 0.5f, copperBlock, EnumBlockSoundEffectType.MINE);
             if (!world.isClientSide) {
                 world.setBlockWithNotify(blockX, blockY, blockZ, copperBlock.id);
@@ -63,8 +63,8 @@ public class ItemToolAxeMixin extends ItemTool {
             }
             entityplayer.swingItem();
         }
-        if (i1 == BonusBlocks.blockRawCopperCorroded.id) {
-            Block copperBlock2 = BonusBlocks.blockRawCopperTarnished;
+        if (i1 == BonusBlocks.BLOCK_RAW_COPPERCorroded.id) {
+            Block copperBlock2 = BonusBlocks.BLOCK_RAW_COPPERTarnished;
             world.playBlockSoundEffect(null, (float) blockX + 0.5f, (float) blockY + 0.5f, (float) blockZ + 0.5f, copperBlock2, EnumBlockSoundEffectType.MINE);
             if (!world.isClientSide) {
                 world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, copperBlock2.id, world.getBlockMetadata(blockX, blockY, blockZ));
@@ -73,8 +73,8 @@ public class ItemToolAxeMixin extends ItemTool {
             }
             entityplayer.swingItem();
         }
-        if (i1 == BonusBlocks.blockRawCopperTarnished.id) {
-            Block copperBlock2 = BonusBlocks.blockRawCopper;
+        if (i1 == BonusBlocks.BLOCK_RAW_COPPERTarnished.id) {
+            Block copperBlock2 = BonusBlocks.BLOCK_RAW_COPPER;
             world.playBlockSoundEffect(null, (float) blockX + 0.5f, (float) blockY + 0.5f, (float) blockZ + 0.5f, copperBlock2, EnumBlockSoundEffectType.MINE);
             if (!world.isClientSide) {
                 world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, copperBlock2.id, world.getBlockMetadata(blockX, blockY, blockZ));
@@ -143,8 +143,8 @@ public class ItemToolAxeMixin extends ItemTool {
             }
             entityplayer.swingItem();
         }
-        if (i1 == BonusBlocks.pipeCopperCorroded.id) {
-            Block copperBlock = BonusBlocks.pipeCopperTarnished;
+        if (i1 == BonusBlocks.PIPE_COPPER_CORRODED.id) {
+            Block copperBlock = BonusBlocks.PIPE_COPPER_TARNISHED;
             world.playBlockSoundEffect(null, (float) blockX + 0.5f, (float) blockY + 0.5f, (float) blockZ + 0.5f, copperBlock, EnumBlockSoundEffectType.MINE);
             if (!world.isClientSide) {
                 world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, copperBlock.id, world.getBlockMetadata(blockX, blockY, blockZ));
@@ -153,8 +153,8 @@ public class ItemToolAxeMixin extends ItemTool {
             }
             entityplayer.swingItem();
         }
-        if (i1 == BonusBlocks.pipeCopperTarnished.id) {
-            Block copperBlock = BonusBlocks.pipeCopper;
+        if (i1 == BonusBlocks.PIPE_COPPER_TARNISHED.id) {
+            Block copperBlock = BonusBlocks.PIPE_COPPER;
             world.playBlockSoundEffect(null, (float) blockX + 0.5f, (float) blockY + 0.5f, (float) blockZ + 0.5f, copperBlock, EnumBlockSoundEffectType.MINE);
             if (!world.isClientSide) {
                 world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, copperBlock.id, world.getBlockMetadata(blockX, blockY, blockZ));
@@ -163,8 +163,8 @@ public class ItemToolAxeMixin extends ItemTool {
             }
             entityplayer.swingItem();
         }
-        if (i1 == BonusBlocks.trapdoorCopperCorroded.id) {
-            Block copperBlock = BonusBlocks.trapdoorCopperTarnished;
+        if (i1 == BonusBlocks.TRAPDOOR_COPPERCorroded.id) {
+            Block copperBlock = BonusBlocks.TRAPDOOR_COPPERTarnished;
             world.playBlockSoundEffect(null, (float) blockX + 0.5f, (float) blockY + 0.5f, (float) blockZ + 0.5f, copperBlock, EnumBlockSoundEffectType.MINE);
             if (!world.isClientSide) {
                 world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, copperBlock.id, world.getBlockMetadata(blockX, blockY, blockZ));
@@ -173,8 +173,8 @@ public class ItemToolAxeMixin extends ItemTool {
             }
             entityplayer.swingItem();
         }
-        if (i1 == BonusBlocks.trapdoorCopperTarnished.id) {
-            Block copperBlock = BonusBlocks.trapdoorCopper;
+        if (i1 == BonusBlocks.TRAPDOOR_COPPERTarnished.id) {
+            Block copperBlock = BonusBlocks.TRAPDOOR_COPPER;
             world.playBlockSoundEffect(null, (float) blockX + 0.5f, (float) blockY + 0.5f, (float) blockZ + 0.5f, copperBlock, EnumBlockSoundEffectType.MINE);
             if (!world.isClientSide) {
                 world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, copperBlock.id, world.getBlockMetadata(blockX, blockY, blockZ));

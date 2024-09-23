@@ -53,7 +53,7 @@ public class ItemRawGold extends Item {
         }
         if (id == BonusBlocks.overlayRawGold.id) {
             newMeta = meta + 1;
-            AABB bbBox = AABB.getBoundingBoxFromPool(blockX, blockY, blockZ, (float)blockX + 1.0f, (float)blockY + (float)(2 * (newMeta + 1)) / 16.0f, (float)blockZ + 1.0f);
+            AABB bbBox = AABB.getPermanentBB(blockX, blockY, blockZ, (float)blockX + 1.0f, (float)blockY + (float)(2 * (newMeta + 1)) / 16.0f, (float)blockZ + 1.0f);
             if (!world.checkIfAABBIsClear(bbBox) || !world.isBlockOpaqueCube(blockX, blockY - 1, blockZ)) {
                 return false;
             }
