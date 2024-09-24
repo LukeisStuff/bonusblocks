@@ -11,12 +11,7 @@ public class WorldFeatureSkull extends WorldFeature {
     public WorldFeatureSkull() {
     }
 
-    @Override
-    public boolean place(World world, Random random, int i, int j, int k) {
-        return true;
-    }
-
-    public boolean generate(World world, Random random, int x, int y, int z) {
+    public boolean place(World world, Random random, int x, int y, int z) {
         for(int l = 0; l < 64; ++l) {
             int i1 = x + random.nextInt(8) - random.nextInt(8);
             int j1 = y + random.nextInt(4) - random.nextInt(4);

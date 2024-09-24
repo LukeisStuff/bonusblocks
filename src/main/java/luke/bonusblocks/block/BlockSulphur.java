@@ -1,12 +1,14 @@
 package luke.bonusblocks.block;
 
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.Blocks;
 import net.minecraft.core.block.SandBlock;
 import net.minecraft.core.block.entity.BlockEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.entity.FallingBlockEntity;
 import net.minecraft.core.entity.Mob;
+import net.minecraft.core.entity.TNTPrimedEntity;
 import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.FireStrikerItem;
@@ -32,7 +34,7 @@ public class BlockSulphur extends SandBlock {
     }
 
     public void onBlockDestroyedByExplosion(World world, int x, int y, int z) {
-        EntitySulphur entity = new EntitySulphur(world, (float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F);
+        TNTPrimedEntity entity = new TNTPrimedEntity(world, (float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F);
         entity.fuse = world.rand.nextInt(entity.fuse / 2) + entity.fuse / 4;
         world.entityJoinedWorld(entity);
     }
@@ -43,7 +45,7 @@ public class BlockSulphur extends SandBlock {
 
         } else {
             world.setBlockWithNotify(x, y, z, 0);
-            EntitySulphur e = new EntitySulphur(world, (float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F);
+            TNTPrimedEntity e = new TNTPrimedEntity(world, (float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F);
             world.entityJoinedWorld(e);
             world.playSoundAtEntity(e , e, "random.fuse", 1.0F, 1.0F);
 
@@ -106,7 +108,7 @@ public class BlockSulphur extends SandBlock {
         int blockId = world.getBlockId(i, j, k);
         if (blockId == 0) {
             return true;
-        } else if (blockId == Block.fire.id) {
+        } else if (blockId == Blocks.FIRE.id) {
             return true;
         } else {
             return Block.hasTag(blockId, BlockTags.IS_WATER) || Block.hasTag(blockId, BlockTags.IS_LAVA);

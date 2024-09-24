@@ -8,8 +8,8 @@ import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 
-public class BlockChandolier extends Block {
-    public BlockChandolier(String key, String namespaceId, int id) {
+public class BlockChandelier extends Block {
+    public BlockChandelier(String key, String namespaceId, int id) {
         super(key, namespaceId, id, Material.metal);
         this.setTicking(true);
         this.setBlockBounds(0.0625f, 0.0F, 0.0625f, 0.9375f, 1.0f, 0.9375f);

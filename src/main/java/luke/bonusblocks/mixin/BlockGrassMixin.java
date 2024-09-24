@@ -1,9 +1,8 @@
 package luke.bonusblocks.mixin;
 
-import luke.bonusblocks.BonusBlocksMod;
 import luke.bonusblocks.block.BonusBlocks;
-import net.minecraft.core.block.Block;
-import net.minecraft.core.block.BlockGrass;
+import net.minecraft.core.block.Blocks;
+import net.minecraft.core.block.GrassBlock;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.Biomes;
@@ -13,11 +12,11 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
 import java.util.Random;
 
-@Mixin(value= BlockGrass.class,remap=false)
+@Mixin(value= GrassBlock.class,remap=false)
 public class BlockGrassMixin {
     @ModifyVariable(method="updateTick",at=@At(value="LOAD"),name="idToSpawn")
     private int updateId(int id, World world, int x, int y, int z, Random rand) {
-        if (!(id == Block.flowerRed.id && rand.nextInt(2) == 0)) return id;
+        if (!(id == Blocks.FLOWER_RED.id && rand.nextInt(2) == 0)) return id;
         Biome biome = world.getBlockBiome(x,y,z);
         if (biome == Biomes.OVERWORLD_TAIGA ||
                 biome == Biomes.OVERWORLD_TUNDRA ||

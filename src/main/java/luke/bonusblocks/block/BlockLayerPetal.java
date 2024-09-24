@@ -1,7 +1,6 @@
 package luke.bonusblocks.block;
 
 import net.minecraft.core.block.Block;
-import net.minecraft.core.block.BlockLayerBase;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.util.phys.AABB;
@@ -9,18 +8,14 @@ import net.minecraft.core.world.World;
 import net.minecraft.core.world.WorldSource;
 
 public class BlockLayerPetal extends Block {
-    public BlockLayerPetal(String key, int id, Material material) {
-        super(key, id, material);
+    public BlockLayerPetal(String key, String namespaceId, int id, Material material) {
+        super(key, namespaceId, id, material);
         this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.125F, 1.0F);
         this.setTicking(true);
     }
 
     public AABB getCollisionBoundingBoxFromPool(WorldSource world, int x, int y, int z) {
         return null;
-    }
-
-    public void setBlockBoundsForItemRender() {
-        this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.125F, 1.0F);
     }
 
     public boolean isSolidRender() {
@@ -47,7 +42,7 @@ public class BlockLayerPetal extends Block {
 
     private void func_314_h(World world, int i, int j, int k) {
         if (!this.canPlaceBlockAt(world, i, j, k)) {
-            this.dropBlockWithCause(world, EnumDropCause.WORLD, i, j, k, world.getBlockMetadata(i, j, k), null);
+            this.dropBlockWithCause(world, EnumDropCause.WORLD, i, j, k, world.getBlockMetadata(i, j, k), null, null);
             world.setBlockWithNotify(i, j, k, 0);
         }
     }

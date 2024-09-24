@@ -12,7 +12,6 @@ import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
 
 public class ItemRawGold extends Item {
-
     public ItemRawGold(String name, String namespaceId, int id) {
         super(name, namespaceId, id);
         this.maxStackSize = 64;

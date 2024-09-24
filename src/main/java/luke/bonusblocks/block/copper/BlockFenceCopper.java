@@ -2,60 +2,25 @@ package luke.bonusblocks.block.copper;
 
 import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.core.block.Block;
-import net.minecraft.core.block.BlockFenceThin;
+import net.minecraft.core.block.ThinFenceBlock;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.util.helper.Direction;
-import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.WorldSource;
 
 import java.util.Random;
 
-public class BlockFenceCopper extends BlockFenceThin {
-    public BlockFenceCopper(String key, int id, Material material) {
-        super(key, id, material);
+public class BlockFenceCopper extends ThinFenceBlock {
+    public BlockFenceCopper(String key, String namespaceId, int id, Material material) {
+        super(key, namespaceId, id, material);
         this.setTicking(true);
-    }
-
-    public boolean canPlaceOnSurface() {
-        return true;
-    }
-
-    public AABB getCollisionBoundingBoxFromPool(WorldSource world, int x, int y, int z) {
-        boolean connectXPos = this.canConnectTo(world, x + 1, y, z);
-        boolean connectXNeg = this.canConnectTo(world, x - 1, y, z);
-        boolean connectZPos = this.canConnectTo(world, x, y, z + 1);
-        boolean connectZNeg = this.canConnectTo(world, x, y, z - 1);
-        return AABB.getPermanentBB((float)x + (connectXNeg ? 0.0F : 0.375F), y, (float)z + (connectZNeg ? 0.0F : 0.375F), (float)(x + 1) - (connectXPos ? 0.0F : 0.375F), (float)y + 1.0F, (float)(z + 1) - (connectZPos ? 0.0F : 0.375F));
-    }
-
-    public AABB getSelectedBoundingBoxFromPool(WorldSource world, int x, int y, int z) {
-        return this.getCollisionBoundingBoxFromPool(world, x, y, z);
-    }
-
-    public void setBlockBoundsBasedOnState(WorldSource world, int x, int y, int z) {
-        AABB aabb = this.getCollisionBoundingBoxFromPool(world, x, y, z);
-        this.minX = aabb.minX - (double)x;
-        this.minY = aabb.minY - (double)y;
-        this.minZ = aabb.minZ - (double)z;
-        this.maxX = aabb.maxX - (double)x;
-        this.maxY = aabb.maxY - (double)y;
-        this.maxZ = aabb.maxZ - (double)z;
-    }
-
-    public boolean isSolidRender() {
-        return false;
-    }
-
-    public boolean renderAsNormalBlock() {
-        return false;
     }
 
     public void updateTick(World world, int x, int y, int z, Random rand) {
         if (rand.nextInt(200) == 0) {
             if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
-                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.fenceCopperTarnished.id, world.getBlockMetadata(x, y, z));
+                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.FENCE_COPPER.id, world.getBlockMetadata(x, y, z));
             }
         }
     }
@@ -65,13 +30,41 @@ public class BlockFenceCopper extends BlockFenceThin {
         return Block.hasTag(l, BlockTags.CHAINLINK_FENCES_CONNECT) || Block.blocksList[l] != null && (Block.blocksList[l].blockMaterial == Material.stone || Block.blocksList[l].blockMaterial == Material.metal);
     }
 
-    public boolean shouldDrawColumn(WorldSource worldSource, int x, int y, int z) {
-        boolean connectNorth = this.canConnectTo(worldSource, x + Direction.NORTH.getOffsetX(), y + Direction.NORTH.getOffsetY(), z + Direction.NORTH.getOffsetZ());
-        boolean connectSouth = this.canConnectTo(worldSource, x + Direction.SOUTH.getOffsetX(), y + Direction.SOUTH.getOffsetY(), z + Direction.SOUTH.getOffsetZ());
-        boolean connectEast = this.canConnectTo(worldSource, x + Direction.EAST.getOffsetX(), y + Direction.EAST.getOffsetY(), z + Direction.EAST.getOffsetZ());
-        boolean connectWest = this.canConnectTo(worldSource, x + Direction.WEST.getOffsetX(), y + Direction.WEST.getOffsetY(), z + Direction.WEST.getOffsetZ());
+    public boolean isClimbable(World world, int x, int y, int z) {
+        return true;
+    }
+
+    public boolean shouldDrawColumn(WorldSource world, int x, int y, int z) {
+        boolean drawColumn = this.shouldDrawColumn_do(world, x, y, z);
+        if (drawColumn) {
+            return true;
+        } else {
+            int oy;
+            for(oy = 1; world.getBlockId(x, y + oy, z) == this.id; ++oy) {
+            }
+
+            --oy;
+
+            boolean drawColumnFromOther;
+            for(drawColumnFromOther = false; world.getBlockId(x, y + oy, z) == this.id; --oy) {
+                if (this.shouldDrawColumn_do(world, x, y + oy, z)) {
+                    drawColumnFromOther = true;
+                    break;
+                }
+            }
+
+            return drawColumnFromOther;
+        }
+    }
+
+    private boolean shouldDrawColumn_do(WorldSource world, int x, int y, int z) {
+        boolean connectNorth = this.canConnectTo(world, x + Direction.NORTH.getOffsetX(), y + Direction.NORTH.getOffsetY(), z + Direction.NORTH.getOffsetZ());
+        boolean connectSouth = this.canConnectTo(world, x + Direction.SOUTH.getOffsetX(), y + Direction.SOUTH.getOffsetY(), z + Direction.SOUTH.getOffsetZ());
+        boolean connectEast = this.canConnectTo(world, x + Direction.EAST.getOffsetX(), y + Direction.EAST.getOffsetY(), z + Direction.EAST.getOffsetZ());
+        boolean connectWest = this.canConnectTo(world, x + Direction.WEST.getOffsetX(), y + Direction.WEST.getOffsetY(), z + Direction.WEST.getOffsetZ());
         boolean lineNorthSouth = connectNorth && connectSouth;
         boolean lineEastWest = connectEast && connectWest;
         return !lineNorthSouth && !lineEastWest || lineNorthSouth && lineEastWest || lineNorthSouth && (connectEast || connectWest) || lineEastWest && (connectNorth || connectSouth);
     }
+
 }

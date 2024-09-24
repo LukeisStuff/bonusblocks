@@ -1,6 +1,6 @@
 package luke.bonusblocks.biomes;
 
-import net.minecraft.core.block.Block;
+import net.minecraft.core.block.Blocks;
 import net.minecraft.core.world.biome.BiomeNether;
 
 public class BiomeSoulDesert extends BiomeNether {
@@ -10,7 +10,7 @@ public class BiomeSoulDesert extends BiomeNether {
         this.spawnableMonsterList.clear();
         this.spawnableCreatureList.clear();
         this.spawnableWaterCreatureList.clear();
-        this.topBlock = (short) Block.soulsand.id;
-        this.fillerBlock = (short) Block.soulsand.id;
+        this.topBlock = (short) Blocks.SOULSAND.id;
+        this.fillerBlock = (short) Blocks.SOULSAND.id;
     }
 }

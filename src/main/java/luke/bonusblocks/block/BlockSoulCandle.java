@@ -1,7 +1,5 @@
 package luke.bonusblocks.block;
 
-import net.minecraft.core.block.Block;
-import net.minecraft.core.block.BlockCandle;
 import net.minecraft.core.block.Blocks;
 import net.minecraft.core.block.CandleBlock;
 import net.minecraft.core.block.entity.BlockEntity;
@@ -13,15 +11,15 @@ import net.minecraft.core.world.World;
 import java.util.Random;
 
 public class BlockSoulCandle extends CandleBlock {
-    public BlockSoulCandle(String key, int id) {
-        super(key, id, Material.decoration);
+    public BlockSoulCandle(String key, String namespaceId, int id) {
+        super(key, namespaceId, id, Material.decoration);
         this.setTicking(true);
         this.setBlockBounds(0.40625F, 0.0F, 0.40625F, 0.59375F, 0.5F, 0.59375F);
     }
 
-    private boolean canPlaceOnTop(World world, int i, int j, int k) {
+    public boolean canPlaceOnTop(World world, int i, int j, int k) {
         int id = world.getBlockId(i, j, k);
-        return world.isBlockNormalCube(i, j, k) || id == Blocks.fencePlanksOak.id || id == Blocks.fencePlanksOakPainted.id;
+        return world.isBlockNormalCube(i, j, k) || id == Blocks.FENCE_PLANKS_OAK.id || id == Blocks.FENCE_GATE_PLANKS_OAK_PAINTED.id;
     }
 
     public void updateTick(World world, int x, int y, int z, Random rand) {
@@ -49,9 +47,9 @@ public class BlockSoulCandle extends CandleBlock {
     }
 
 
-    private void dropCandleIfCantStay(World world, int i, int j, int k) {
+    public void dropCandleIfCantStay(World world, int i, int j, int k) {
         if (!this.canPlaceBlockAt(world, i, j, k)) {
-            this.dropBlockWithCause(world, EnumDropCause.WORLD, i, j, k, world.getBlockMetadata(i, j, k), null);
+            this.dropBlockWithCause(world, EnumDropCause.WORLD, i, j, k, world.getBlockMetadata(i, j, k), null, null);
             world.setBlockWithNotify(i, j, k, 0);
         }
     }

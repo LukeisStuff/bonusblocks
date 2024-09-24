@@ -2,7 +2,7 @@ package luke.bonusblocks.item;
 
 import luke.bonusblocks.block.BlockBedroll;
 import luke.bonusblocks.block.BonusBlocks;
-import net.minecraft.core.entity.player.EntityPlayer;
+import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.enums.EnumBlockSoundEffectType;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
@@ -10,19 +10,19 @@ import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 
 public class ItemBedroll extends Item {
-    public ItemBedroll(String name, int id) {
-        super(name, id);
+    public ItemBedroll(String name, String namespaceId, int id) {
+        super(name, namespaceId, id);
     }
 
     @Override
-    public boolean onUseItemOnBlock(ItemStack itemstack, EntityPlayer entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
+    public boolean onUseItemOnBlock(ItemStack itemstack, Player entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
         if (!world.canPlaceInsideBlock(blockX, blockY, blockZ)) {
             blockX += side.getOffsetX();
             blockY += side.getOffsetY();
             blockZ += side.getOffsetZ();
         }
 
-        BlockBedroll blockbedroll = (BlockBedroll) BonusBlocks.bedroll;
+        BlockBedroll blockbedroll = (BlockBedroll) BonusBlocks.BEDROLL;
         int i1 = entityplayer.getHorizontalPlacementDirection(null).getOpposite().getHorizontalIndex();
         byte byte0 = 0;
         byte byte1 = 0;
