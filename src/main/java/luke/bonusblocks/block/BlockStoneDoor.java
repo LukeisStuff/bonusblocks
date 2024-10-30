@@ -43,7 +43,7 @@ public class BlockStoneDoor extends DoorBlock {
 
                 world.setBlockMetadataWithNotify(x, y, z, l ^ 4);
                 world.markBlocksDirty(x, y - 1, z, x, y, z);
-                world.playSoundEffect(null, 1003, x, y, z, 0);
+                world.playBlockEvent(null, 1003, x, y, z, 0);
             }
         }
     }

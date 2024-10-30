@@ -18,7 +18,7 @@ public class ItemRawGold extends Item {
     }
 
     @Override
-    public boolean onUseItemOnBlock(ItemStack itemstack, Player entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
+    public boolean onUseItemOnBlock(ItemStack itemstack, Player player, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
         int id = world.getBlockId(blockX, blockY, blockZ);
         int meta = world.getBlockMetadata(blockX, blockY, blockZ);
         if (id != BonusBlocks.OVERLAY_RAW_GOLD.id && Block.blocksList[id] != null && Block.blocksList[id].hasTag(BlockTags.PLACE_OVERWRITES)) {
@@ -40,8 +40,8 @@ public class ItemRawGold extends Item {
 
                 if (newMeta < 3) {
                     world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, BonusBlocks.OVERLAY_RAW_GOLD.id, newMeta);
-                    world.playBlockSoundEffect(entityplayer, (float)blockX + 0.5F, (float)blockY + 0.5F, (float)blockZ + 0.5F, BonusBlocks.OVERLAY_RAW_GOLD, EnumBlockSoundEffectType.PLACE);
-                    itemstack.consumeItem(entityplayer);
+                    world.playBlockSoundEffect(player, (float)blockX + 0.5F, (float)blockY + 0.5F, (float)blockZ + 0.5F, BonusBlocks.OVERLAY_RAW_GOLD, EnumBlockSoundEffectType.PLACE);
+                    itemstack.consumeItem(player);
                     return true;
                 }
             }
@@ -63,16 +63,16 @@ public class ItemRawGold extends Item {
 
                 if (newMeta < 3) {
                     world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, BonusBlocks.OVERLAY_RAW_GOLD.id, newMeta);
-                    world.playBlockSoundEffect(entityplayer, (float)blockX + 0.5F, (float)blockY + 0.5F, (float)blockZ + 0.5F, BonusBlocks.OVERLAY_RAW_GOLD, EnumBlockSoundEffectType.PLACE);
-                    itemstack.consumeItem(entityplayer);
+                    world.playBlockSoundEffect(player, (float)blockX + 0.5F, (float)blockY + 0.5F, (float)blockZ + 0.5F, BonusBlocks.OVERLAY_RAW_GOLD, EnumBlockSoundEffectType.PLACE);
+                    itemstack.consumeItem(player);
                     return true;
                 }
             }
 
             if (world.canBlockBePlacedAt(BonusBlocks.OVERLAY_RAW_GOLD.id, blockX, blockY, blockZ, false, side) && world.isBlockOpaqueCube(blockX, blockY - 1, blockZ) && world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, BonusBlocks.OVERLAY_RAW_GOLD.id, 0)) {
-                BonusBlocks.OVERLAY_RAW_GOLD.onBlockPlacedByMob(world, blockX, blockY, blockZ, side, entityplayer, yPlaced);
-                world.playBlockSoundEffect(entityplayer, (float)blockX + 0.5F, (float)blockY + 0.5F, (float)blockZ + 0.5F, BonusBlocks.OVERLAY_RAW_GOLD, EnumBlockSoundEffectType.PLACE);
-                itemstack.consumeItem(entityplayer);
+                BonusBlocks.OVERLAY_RAW_GOLD.onBlockPlacedByMob(world, blockX, blockY, blockZ, side, player, xPlaced, yPlaced);
+                world.playBlockSoundEffect(player, (float)blockX + 0.5F, (float)blockY + 0.5F, (float)blockZ + 0.5F, BonusBlocks.OVERLAY_RAW_GOLD, EnumBlockSoundEffectType.PLACE);
+                itemstack.consumeItem(player);
                 return true;
             } else {
                 return false;

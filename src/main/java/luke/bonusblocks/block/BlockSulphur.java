@@ -16,6 +16,7 @@ import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.sound.SoundCategory;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
 
@@ -24,8 +25,8 @@ public class BlockSulphur extends SandBlock {
         super(key, namespaceId, id);
     }
 
-    public void onBlockPlacedByMob(World world, int x, int y, int z, Side side, Mob mob, double sideHeight) {
-        super.onBlockPlacedByMob(world, x, y, z, side, mob, sideHeight);
+    public void onBlockPlacedByMob(World world, int x, int y, int z, @NotNull Side side, Mob mob, double xPlaced, double yPlaced) {
+        this.onBlockPlacedOnSide(world, x, y, z, side, xPlaced, yPlaced);
         world.scheduleBlockUpdate(x, y, z, this.id, this.tickRate());
     }
 
@@ -79,21 +80,21 @@ public class BlockSulphur extends SandBlock {
         this.tryToFall(world, x, y, z);
     }
 
-    private void tryToFall(World world, int i, int j, int k) {
-        if (canFallBelow(world, i, j - 1, k) && j >= 0) {
+    private void tryToFall(World world, int x, int y, int z) {
+        if (canFallBelow(world, x, y - 1, z) && y >= 0) {
             byte byte0 = 32;
-            if (!fallInstantly && world.areBlocksLoaded(i - byte0, j - byte0, k - byte0, i + byte0, j + byte0, k + byte0)) {
-                FallingBlockEntity entityfallingsand = new FallingBlockEntity(world, (float)i + 0.5F, (float)j + 0.5F, (float)k + 0.5F, this.id);
-                world.entityJoinedWorld(entityfallingsand);
+            if (!fallInstantly && world.areBlocksLoaded(x - byte0, y - byte0, z - byte0, x + byte0, y + byte0, z + byte0)) {
+                FallingBlockEntity fallingBlockEntity = new FallingBlockEntity(world, (double)x + 0.5, (double)y + 0.5, (double)z + 0.5, this.id, 0, (BlockEntity)null);
+                world.entityJoinedWorld(fallingBlockEntity);
             } else {
-                world.setBlockWithNotify(i, j, k, 0);
+                world.setBlockWithNotify(x, y, z, 0);
 
-                while(canFallBelow(world, i, j - 1, k) && j > 0) {
-                    --j;
+                while(canFallBelow(world, x, y - 1, z) && y > 0) {
+                    --y;
                 }
 
-                if (j > 0) {
-                    world.setBlockWithNotify(i, j, k, this.id);
+                if (y > 0) {
+                    world.setBlockWithNotify(x, y, z, this.id);
                 }
             }
         }
