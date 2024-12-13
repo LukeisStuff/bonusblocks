@@ -1,15 +1,16 @@
 package luke.bonusblocks.block;
 
-import net.minecraft.core.block.SaplingBaseBlock;
+import net.minecraft.core.block.Block;
+import net.minecraft.core.block.BlockLogicSaplingBase;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.generate.feature.WorldFeature;
 import net.minecraft.core.world.generate.feature.tree.WorldFeatureTreeFancy;
 
 import java.util.Random;
 
-public class BlockSaplingJacaranda extends SaplingBaseBlock {
-    public BlockSaplingJacaranda(String key, String namespaceId, int id) {
-        super(key, namespaceId, id);
+public class BlockSaplingJacaranda extends BlockLogicSaplingBase {
+    public BlockSaplingJacaranda(Block<?> block) {
+        super(block);
     }
 
     public void growTree(World world, int i, int j, int k, Random random) {

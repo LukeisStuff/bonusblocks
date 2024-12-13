@@ -5,21 +5,16 @@ import luke.bonusblocks.block.blockmodel.*;
 import luke.bonusblocks.block.copper.*;
 import luke.bonusblocks.block.silver.BlockSilverSeat;
 import luke.bonusblocks.item.BonusItems;
-import net.minecraft.client.render.block.color.LeavesOakBlockColor;
-import net.minecraft.client.render.block.color.TallGrassBlockColor;
+import net.minecraft.client.render.block.color.BlockColorLeavesOak;
 import net.minecraft.client.render.block.model.*;
 import net.minecraft.client.render.colorizer.Colorizers;
 import net.minecraft.client.render.texture.stitcher.TextureRegistry;
 import net.minecraft.core.block.*;
 import net.minecraft.core.block.material.Material;
-import net.minecraft.core.block.material.MaterialColor;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.crafting.LookupFuelFurnace;
-import net.minecraft.core.data.tag.Tag;
-import net.minecraft.core.entity.ItemEntity;
 import net.minecraft.core.item.block.ItemBlockPainted;
 import net.minecraft.core.sound.BlockSound;
-import net.minecraft.core.sound.BlockSounds;
 import net.minecraft.core.world.World;
 import turniplabs.halplibe.helper.BlockBuilder;
 import turniplabs.halplibe.helper.CreativeHelper;
@@ -29,15 +24,14 @@ import java.util.Random;
 import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
 import static net.minecraft.core.block.BlockLogicMoss.stoneToMossMap;
 import static net.minecraft.core.block.Blocks.*;
-import static net.minecraft.core.block.MossBlock.stoneToMossMap;
 import static net.minecraft.core.item.tool.ItemToolPickaxe.miningLevels;
-import static net.minecraft.core.item.tool.PickaxeToolItem.miningLevels;
 
 public class BonusBlocks {
 
-    public int blockID(String key) {
-        return BonusBlocksConfig.cfg.getInt("Block IDs." + key);
-    }
+    int blockID = 5;
+    int stairBlockID = 5;
+    int slabBlockID = 5;
+
 
     public static Block BOX;
 
@@ -768,19 +762,19 @@ public class BonusBlocks {
         // Box
         BOX = boxes
                 .setTextures("bonusblocks:block/box")
-                .build("box", "bonusblocks:block/box", blockID("box"), b -> new BlockLogic(b, Material.wood));
+                .build("box", "bonusblocks:block/box", blockID++, b -> new BlockLogic(b, Material.wood));
 
 
         // Crates
         CRATE = crates
                 .setTextures("bonusblocks:block/crate")
-                .build("crate", "bonusblocks:block/crate", blockID("crate"), b -> new BlockLogic(b, Material.wood));
+                .build("crate", "bonusblocks:block/crate", blockID++, b -> new BlockLogic(b, Material.wood));
 
         CRATE_PAINTED = crates
                 .setBlockItem(block -> new ItemBlockPainted<>(block, false))
                 .setBlockModel(PaintedCrateBlockModel::new)
                 .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT, BlockTags.NOT_IN_CREATIVE_MENU)
-                .build("crate.painted", "bonusblocks:block/crate_painted", blockID("crate.painted"), b -> new BlockPaintedCrate(b));
+                .build("crate.painted", "bonusblocks:block/crate_painted", blockID++, b -> new BlockPaintedCrate(b));
 
 
         // Bookshelf
@@ -791,58 +785,54 @@ public class BonusBlocks {
                 .setHardness(1.5f)
                 .setResistance(1.0f)
                 .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
-                .build(new Block("bookshelf.empty.planks.oak", "bonusblocks:block/bookshelf_empty_planks_oak", blockID("bookshelf.empty.planks.oak"), Material.wood));
+                .setFlammability(1, 1)
+                .build("bookshelf.empty.planks.oak", "bonusblocks:block/bookshelf_empty_planks_oak", blockID++, b -> new BlockLogic(b, Material.wood));
 
         // Leaves and Branch
         BRANCH = leaves
-                .setBlockModel(block -> new StandardBlockModel<>(block).withTextures("bonusblocks:block/branch"))
+                .setTextures("bonusblocks:block/branch")
                 .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 0.5f))
                 .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
-                .build(new BlockBranch("branch", "bonusblocks:block/branch", blockID("branch"), Material.leaves));
+                .build("branch", "bonusblocks:block/branch", blockID++, b -> new BlockBranch(b, Material.leaves));
 
         LEAVES_OAK_MOSSY = leaves
-                .setBlockModel(block -> new LeavesBlockModel<>(block, "bonusblocks:block/leaves_oak_mossy"))
-                .setBlockColor(block -> (new LeavesOakBlockColor(Colorizers.oak)))
-                .build(new BaseLeavesBlock("leaves.oak.mossy", "bonusblocks:block/leaves_oak_mossy", blockID("leaves.oak.mossy"), Material.leaves) {
-                    @Override
-                    public Block getSapling() {
-                        return BonusBlocks.SAPLING_OAK_MOSSY;
-                    }
-                });
+                .setBlockModel(block -> new BlockModelLeaves<>(block, "bonusblocks:block/leaves_oak_mossy"))
+                .setBlockColor(block -> (new BlockColorLeavesOak(Colorizers.oak)))
+                .build("leaves.oak.mossy", "bonusblocks:block/leaves_oak_mossy", blockID++, b -> new BlockLogicLeavesBase(b, Material.leaves, SAPLING_OAK_MOSSY));
+
         LEAVES_JACARANDA = leaves
-                .setBlockModel(block -> new LeavesBlockModel<>(block, "bonusblocks:block/leaves_jacaranda"))
-                .build(new BaseLeavesBlock("leaves.jacaranda", "bonusblocks:block/leaves_jacaranda", blockID("LEAVES_JACARANDA"), Material.leaves) {
-                    @Override
-                    public Block getSapling() {
-                        return BonusBlocks.SAPLING_JACARANDA;
-                    }
-                });
+                .setBlockModel(block -> new BlockModelLeaves<>(block, "bonusblocks:block/leaves_jacaranda"))
+                .build("leaves.jacaranda", "bonusblocks:block/leaves_jacaranda", blockID++, b -> new BlockLogicLeavesBase(b, Material.leaves, SAPLING_JACARANDA));
 
 
         // Saplings
         SAPLING_JACARANDA = sapling
-                .setBlockModel(block -> new CrossedSquaresBlockModel<>(block).withTextures("bonusblocks:block/sapling_jacaranda"))
-                .build(new BlockSaplingJacaranda("sapling.jacaranda", "bonusblocks:block/sapling_jacaranda", blockID("saplingJacaranda")));
+                .setTextures("bonusblocks:block/sapling_jacaranda")
+                .build("sapling.jacaranda", "bonusblocks:block/sapling_jacaranda", blockID++, BlockSaplingJacaranda::new);
         SAPLING_OAK_MOSSY = sapling
-                .setBlockModel(block -> new CrossedSquaresBlockModel<>(block).withTextures("bonusblocks:block/sapling_oak_mossy"))
-                .build(new BlockSaplingMossyOak("sapling.oak.mossy", "bonusblocks:block/sapling_oak_mossy", blockID("saplingOakMossy")));
+                .setTextures("bonusblocks:block/sapling_oak_mossy")
+                .build("sapling.oak.mossy", "bonusblocks:block/sapling_oak_mossy", blockID++, BlockSaplingMossyOak::new);
 
 
         // Logs
         LOG_SHRUB = log
-                .setBlockModel(block -> new AxisAlignedBlockModel<>(block).withTextures("bonusblocks:block/log_shrub_top", "bonusblocks:block/log_shrub_side"))
-                .build(new LogBlock("log.shrub", "bonusblocks:block/log_shrub", blockID("logShrub")));
+                .setSideTextures("bonusblocks:block/log_shrub_side")
+                .setTopBottomTextures("bonusblocks:block/log_shrub_top")
+                .build("log.shrub", "bonusblocks:block/log_shrub", blockID++, BlockLogicLog::new);
         LOG_CACAO = log
-                .setBlockModel(block -> new AxisAlignedBlockModel<>(block).withTextures("bonusblocks:block/log_cacao_top", "bonusblocks:block/log_cacao_side"))
-                .build(new LogBlock("log.cacao", "bonusblocks:block/log_cacao", blockID("LOG_CACAO")));
+                .setSideTextures("bonusblocks:block/log_cacao_side")
+                .setTopBottomTextures("bonusblocks:block/log_cacao_top")
+                .build("log.cacao", "bonusblocks:block/log_cacao", blockID++, BlockLogicLog::new);
         LOG_JACARANDA = log
-                .setBlockModel(block -> new AxisAlignedBlockModel<>(block).withTextures("bonusblocks:block/log_jacaranda_top", "bonusblocks:block/log_jacaranda_side"))
-                .build(new LogBlock("log.jacaranda", "bonusblocks:block/log_jacaranda", blockID("LOG_JACARANDA")));
+                .setSideTextures("bonusblocks:block/log_jacaranda_side")
+                .setTopBottomTextures("bonusblocks:block/log_jacaranda_top")
+                .build("log.jacaranda", "bonusblocks:block/log_jacaranda", blockID++, BlockLogicLog::new);
         LOG_SCORCHED = log
-                .setBlockModel(block -> new AxisAlignedBlockModel<>(block).withTextures("bonusblocks:block/log_scorched_top", "bonusblocks:block/log_scorched_side"))
+                .setSideTextures("bonusblocks:block/log_scorched_side")
+                .setTopBottomTextures("bonusblocks:block/log_scorched_top")
                 .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.2f))
                 .setHardness(1.8f)
-                .build(new LogBlock("log.scorched", "bonusblocks:block/log_scorched", blockID("logScorched")));
+                .build("log.scorched", "bonusblocks:block/log_scorched", blockID++, BlockLogicLog::new);
 
 
         // Moss
@@ -1749,6 +1739,7 @@ public class BonusBlocks {
                 .setVisualUpdateOnMetadata()
                 .build(new BlockStoneDoor("door.stone.top", "bonusblocks:block/door_stone_top", blockID("door_stone_top"), true, () -> BonusItems.DOOR_STONE));
 
+
         DOOR_BASALT_BOTTOM = stone
                 .setBlockModel(block -> new DoorBlockModel<>(block).withTextures("bonusblocks:block/door_basalt_bottom"))
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
@@ -1759,6 +1750,7 @@ public class BonusBlocks {
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
                 .setVisualUpdateOnMetadata()
                 .build(new BlockStoneDoor("door.basalt.top", "bonusblocks:block/door_basalt_top", blockID("door_basalt_top"), true, () -> BonusItems.DOOR_BASALT));
+
 
         DOOR_LIMESTONE_BOTTOM = stone
                 .setBlockModel(block -> new DoorBlockModel<>(block).withTextures("bonusblocks:block/door_limestone_bottom"))
@@ -1771,6 +1763,7 @@ public class BonusBlocks {
                 .setVisualUpdateOnMetadata()
                 .build(new BlockStoneDoor("door.limestone.top", "bonusblocks:block/door_limestone_top", blockID("door_limestone_top"), true, () -> BonusItems.DOOR_LIMESTONE));
 
+
         DOOR_GRANITE_BOTTOM = stone
                 .setBlockModel(block -> new DoorBlockModel<>(block).withTextures("bonusblocks:block/door_granite_bottom"))
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
@@ -1781,6 +1774,7 @@ public class BonusBlocks {
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
                 .setVisualUpdateOnMetadata()
                 .build(new BlockStoneDoor("door.granite.top", "bonusblocks:block/door_granite_top", blockID("door_granite_top"), true, () -> BonusItems.DOOR_GRANITE));
+
 
         DOOR_MARBLE_BOTTOM = stone
                 .setBlockModel(block -> new DoorBlockModel<>(block).withTextures("bonusblocks:block/door_marble_bottom"))
@@ -1795,6 +1789,7 @@ public class BonusBlocks {
                 .setHardness(1.0f)
                 .build(new BlockStoneDoor("door.marble.top", "bonusblocks:block/door_marble_top", blockID("door_marble_top"), true, () -> BonusItems.DOOR_MARBLE));
 
+
         DOOR_SLATE_BOTTOM = stone
                 .setBlockModel(block -> new DoorBlockModel<>(block).withTextures("bonusblocks:block/door_slate_bottom"))
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
@@ -1805,6 +1800,7 @@ public class BonusBlocks {
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
                 .setVisualUpdateOnMetadata()
                 .build(new BlockStoneDoor("door.slate.top", "bonusblocks:block/door_slate_top", blockID("door_slate_top"), true, () -> BonusItems.DOOR_SLATE));
+
 
         DOOR_PERMAFROST_BOTTOM = stone
                 .setBlockModel(block -> new DoorBlockModel<>(block).withTextures("bonusblocks:block/door_permafrost_bottom"))
@@ -1817,6 +1813,7 @@ public class BonusBlocks {
                 .setVisualUpdateOnMetadata()
                 .build(new BlockStoneDoor("door.permafrost.top", "bonusblocks:block/door_permafrost_top", blockID("door_permafrost_top"), true, () -> BonusItems.DOOR_PERMAFROST));
 
+
         DOOR_NETHERRACK_BOTTOM = stone
                 .setBlockModel(block -> new DoorBlockModel<>(block).withTextures("bonusblocks:block/door_netherrack_bottom"))
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
@@ -1827,6 +1824,7 @@ public class BonusBlocks {
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
                 .setVisualUpdateOnMetadata()
                 .build(new BlockStoneDoor("door.netherrack.top", "bonusblocks:block/door_netherrack_top", blockID("door_netherrack_top"), true, () -> BonusItems.DOOR_NETHERRACK));
+
 
         DOOR_LAZURITE_BOTTOM = stone
                 .setBlockModel(block -> new DoorBlockModel<>(block).withTextures("bonusblocks:block/door_lazurite_bottom"))
