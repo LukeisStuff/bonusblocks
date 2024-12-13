@@ -7,14 +7,14 @@ import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.enums.EnumBlockSoundEffectType;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.material.ToolMaterial;
-import net.minecraft.core.item.tool.AxeToolItem;
-import net.minecraft.core.item.tool.ToolItem;
+import net.minecraft.core.item.tool.ItemTool;
+import net.minecraft.core.item.tool.ItemToolAxe;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 
-@Mixin(value = AxeToolItem.class, remap = false)
-public class ItemToolAxeMixin extends ToolItem {
+@Mixin(value = ItemToolAxe.class, remap = false)
+public class ItemToolAxeMixin extends ItemTool {
 
     public ItemToolAxeMixin(String name, String namespaceId, int id, ToolMaterial enumtoolmaterial) {
         super(name, namespaceId, id, 3, enumtoolmaterial, BlockTags.MINEABLE_BY_AXE);

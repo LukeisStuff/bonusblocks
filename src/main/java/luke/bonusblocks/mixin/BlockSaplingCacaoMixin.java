@@ -1,8 +1,8 @@
 package luke.bonusblocks.mixin;
 
 import luke.bonusblocks.block.BonusBlocks;
+import net.minecraft.core.block.BlockLogicSaplingCacao;
 import net.minecraft.core.block.Blocks;
-import net.minecraft.core.block.SaplingCacaoBlock;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.generate.feature.WorldFeature;
 import net.minecraft.core.world.generate.feature.tree.WorldFeatureTree;
@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Random;
 
-@Mixin(value= SaplingCacaoBlock.class,remap=false)
+@Mixin(value= BlockLogicSaplingCacao.class,remap=false)
 public class BlockSaplingCacaoMixin {
 
     @Inject(method = "growTree", at = @At(value = "HEAD", target = "Lnet/minecraft/core/block/BlockSaplingCacao;<init>(Ljava/lang/String;I)V"), cancellable = true)

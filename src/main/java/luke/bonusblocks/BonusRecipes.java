@@ -89,12 +89,6 @@ public class BonusRecipes implements RecipeEntrypoint {
                 .addInput('S', BonusItems.INGOT_SILVER)
                 .create("silver_seat", new ItemStack(BonusItems.SEAT_SILVER, 1));
 
-
-        RecipeBuilder.Shaped(MOD_ID, "WS", "SW")
-                .addInput('W', Items.WHEAT)
-                .addInput('S', Items.STICK)
-                .create("block_of_thatch", new ItemStack(BonusBlocks.THATCH, 4));
-
         RecipeBuilder.Shaped(MOD_ID, "CCC", "C C", "CCC")
                 .addInput('C', BonusItems.INGOT_COPPER)
                 .create("copper_mesh", new ItemStack(BonusBlocks.MESH_COPPER, 8));

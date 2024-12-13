@@ -1,6 +1,7 @@
 package luke.bonusblocks.block;
 
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.BlockLogic;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.enums.EnumBlockSoundEffectType;
@@ -8,9 +9,9 @@ import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.WorldSource;
 
-public class BlockCloth extends Block {
-    public BlockCloth(String key, String namespaceId, int id, Material material) {
-        super(key, namespaceId, id, material);
+public class BlockCloth extends BlockLogic {
+    public BlockCloth(Block<?> block) {
+        super(block, Material.cloth);
     }
 
     @Override

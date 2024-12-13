@@ -3,7 +3,7 @@ package luke.bonusblocks.mixin;
 import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
-import net.minecraft.client.gui.hud.IngameHud;
+import net.minecraft.client.gui.hud.HudIngame;
 import net.minecraft.client.render.tessellator.Tessellator;
 import net.minecraft.core.item.ItemStack;
 import org.lwjgl.opengl.GL11;
@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(value = IngameHud.class, remap = false)
+@Mixin(value = HudIngame.class, remap = false)
 public abstract class GuiIngameMixin extends Gui {
 
     @Unique

@@ -1,8 +1,8 @@
 package luke.bonusblocks.mixin;
 
 import luke.bonusblocks.block.BonusBlocks;
+import net.minecraft.core.block.BlockLogicSaplingShrub;
 import net.minecraft.core.block.Blocks;
-import net.minecraft.core.block.SaplingShrubBlock;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.generate.feature.WorldFeature;
 import net.minecraft.core.world.generate.feature.tree.WorldFeatureTreeShrub;
@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Random;
 
-@Mixin(value= SaplingShrubBlock.class,remap=false)
+@Mixin(value= BlockLogicSaplingShrub.class,remap=false)
 public class BlockSaplingShrubMixin {
 
     @Inject(method = "growTree", at = @At(value = "TAIL", target = "growTree(Lnet/minecraft/core/world/World;IIILjava/util/Random;)V"), cancellable = true)
@@ -25,5 +25,6 @@ public class BlockSaplingShrubMixin {
         if (!obj.place(world, random, i, j, k)) {
             world.setBlock(i, j, k, Blocks.SAPLING_SHRUB.id());
         }
+        ci.cancel();
     }
 }

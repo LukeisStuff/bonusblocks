@@ -5,7 +5,7 @@ import net.minecraft.core.block.Block;
 import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.enums.EnumBlockSoundEffectType;
 import net.minecraft.core.item.ItemStack;
-import net.minecraft.core.item.tool.ShovelToolItem;
+import net.minecraft.core.item.tool.ItemToolShovel;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(value = ShovelToolItem.class, remap = false)
+@Mixin(value = ItemToolShovel.class, remap = false)
 public class ItemToolShovelMixin {
     @Inject(method = "onUseItemOnBlock", at = @At(value = "HEAD"), cancellable = true)
     public void addNewPathBlock(ItemStack itemstack, Player entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced, CallbackInfoReturnable<Boolean> cir){

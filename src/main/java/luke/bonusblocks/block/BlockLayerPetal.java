@@ -1,17 +1,17 @@
 package luke.bonusblocks.block;
 
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.BlockLogic;
+import net.minecraft.core.block.Blocks;
 import net.minecraft.core.block.material.Material;
-import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.WorldSource;
 
-public class BlockLayerPetal extends Block {
-    public BlockLayerPetal(String key, String namespaceId, int id, Material material) {
-        super(key, namespaceId, id, material);
+public class BlockLayerPetal extends BlockLogic {
+    public BlockLayerPetal(Block<?> block) {
+        super(block, Material.grass);
         this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.125F, 1.0F);
-        this.setTicking(true);
     }
 
     public AABB getCollisionBoundingBoxFromPool(WorldSource world, int x, int y, int z) {
@@ -28,7 +28,7 @@ public class BlockLayerPetal extends Block {
 
     public boolean canPlaceBlockAt(World world, int x, int y, int z) {
         int l = world.getBlockId(x, y - 1, z);
-        if (l != 0 && (Block.blocksList[l].isSolidRender() || Block.blocksList[l] instanceof BlockPetal)) {
+        if (l != 0 && (Blocks.blocksList[l].isSolidRender() || Blocks.blocksList[l].getLogic() instanceof BlockPetal)) {
             Material material = world.getBlockMaterial(x, y - 1, z);
             return material.blocksMotion();
         } else {
@@ -36,14 +36,4 @@ public class BlockLayerPetal extends Block {
         }
     }
 
-    public void onNeighborBlockChange(World world, int x, int y, int z, int blockId) {
-        this.func_314_h(world, x, y, z);
-    }
-
-    private void func_314_h(World world, int i, int j, int k) {
-        if (!this.canPlaceBlockAt(world, i, j, k)) {
-            this.dropBlockWithCause(world, EnumDropCause.WORLD, i, j, k, world.getBlockMetadata(i, j, k), null, null);
-            world.setBlockWithNotify(i, j, k, 0);
-        }
-    }
 }

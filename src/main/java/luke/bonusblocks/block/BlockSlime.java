@@ -1,6 +1,7 @@
 package luke.bonusblocks.block;
 
-import net.minecraft.core.block.TransparentBlock;
+import net.minecraft.core.block.Block;
+import net.minecraft.core.block.BlockLogicTransparent;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.enums.EnumBlockSoundEffectType;
@@ -8,10 +9,10 @@ import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.WorldSource;
 
-public class BlockSlime extends TransparentBlock {
-    public BlockSlime(String key, String namespaceId, int id, Material material) {
-        super(key, namespaceId, id, material);
-        setTicking(true);
+public class BlockSlime extends BlockLogicTransparent {
+    public BlockSlime(Block<?> block) {
+        super(block, Material.leaves);
+        block.setTicking(true);
     }
 
     public boolean isSolidRender() {
