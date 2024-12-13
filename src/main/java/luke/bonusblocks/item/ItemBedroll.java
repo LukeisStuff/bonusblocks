@@ -1,6 +1,5 @@
 package luke.bonusblocks.item;
 
-import luke.bonusblocks.block.BlockBedroll;
 import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.enums.EnumBlockSoundEffectType;
@@ -22,7 +21,6 @@ public class ItemBedroll extends Item {
             blockZ += side.getOffsetZ();
         }
 
-        BlockBedroll blockbedroll = (BlockBedroll) BonusBlocks.BEDROLL;
         int i1 = entityplayer.getHorizontalPlacementDirection(null).getOpposite().getHorizontalIndex();
         byte byte0 = 0;
         byte byte1 = 0;
@@ -42,10 +40,10 @@ public class ItemBedroll extends Item {
             byte0 = 1;
         }
 
-        if (world.isAirBlock(blockX, blockY, blockZ) && world.isAirBlock(blockX + byte0, blockY, blockZ + byte1) && world.canPlaceOnSurfaceOfBlock(blockX, blockY - 1, blockZ) && world.canPlaceOnSurfaceOfBlock(blockX + byte0, blockY - 1, blockZ + byte1) && itemstack.consumeItem(entityplayer)) {
-            world.playBlockSoundEffect(null, (float)blockX + 0.5F, (float)blockY + 0.5F, (float)blockZ + 0.5F, blockbedroll, EnumBlockSoundEffectType.PLACE);
-            world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, blockbedroll.id(), i1);
-            world.setBlockAndMetadataWithNotify(blockX + byte0, blockY, blockZ + byte1, blockbedroll.id(), i1 + 8);
+        if (world.isAirBlock(blockX, blockY, blockZ) && world.isAirBlock(blockX + byte0, blockY, blockZ + byte1) && world.canPlaceOnSurfaceOfBlock(blockX, blockY - 1, blockZ) && world.canPlaceOnSurfaceOfBlock(blockX + byte0, blockY - 1, blockZ + byte1) && world.canBlockBePlacedAt(BonusBlocks.BEDROLL.id(), blockX, blockY, blockZ, false, side) && itemstack.consumeItem(entityplayer)) {
+            world.playBlockSoundEffect(entityplayer, (float)blockX + 0.5F, (float)blockY + 0.5F, (float)blockZ + 0.5F, BonusBlocks.BEDROLL, EnumBlockSoundEffectType.PLACE);
+            world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, BonusBlocks.BEDROLL.id(), i1);
+            world.setBlockAndMetadataWithNotify(blockX + byte0, blockY, blockZ + byte1, BonusBlocks.BEDROLL.id(), i1 + 8);
             return true;
         } else {
             return false;

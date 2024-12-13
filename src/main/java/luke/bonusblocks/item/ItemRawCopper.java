@@ -1,7 +1,7 @@
 package luke.bonusblocks.item;
 
 import luke.bonusblocks.block.BonusBlocks;
-import net.minecraft.core.block.Block;
+import net.minecraft.core.block.Blocks;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.enums.EnumBlockSoundEffectType;
@@ -18,18 +18,17 @@ public class ItemRawCopper extends Item {
         this.maxStackSize = 64;
     }
 
-    @Override
     public boolean onUseItemOnBlock(ItemStack itemstack, Player player, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
         int id = world.getBlockId(blockX, blockY, blockZ);
         int meta = world.getBlockMetadata(blockX, blockY, blockZ);
-        if (id != BonusBlocks.OVERLAY_RAW_COPPER.id() && Block.blocksList[id] != null && Block.blocksList[id].hasTag(BlockTags.PLACE_OVERWRITES)) {
+        if (id != BonusBlocks.OVERLAY_RAW_COPPER.id() && Blocks.blocksList[id] != null && Blocks.blocksList[id].hasTag(BlockTags.PLACE_OVERWRITES)) {
             id = 0;
             meta = 0;
         }
 
         if (itemstack.stackSize <= 0) {
             return false;
-        } else if (blockY == world.getHeightBlocks() - 1 && BonusBlocks.OVERLAY_RAW_COPPER.blockMaterial.isSolid()) {
+        } else if (blockY == world.getHeightBlocks() - 1 && BonusBlocks.OVERLAY_RAW_COPPER.getMaterial().isSolid()) {
             return false;
         } else {
             int newMeta;
@@ -80,4 +79,5 @@ public class ItemRawCopper extends Item {
             }
         }
     }
+
 }
