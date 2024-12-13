@@ -27,7 +27,7 @@ public class BlockSulphur extends SandBlock {
 
     public void onBlockPlacedByMob(World world, int x, int y, int z, @NotNull Side side, Mob mob, double xPlaced, double yPlaced) {
         this.onBlockPlacedOnSide(world, x, y, z, side, xPlaced, yPlaced);
-        world.scheduleBlockUpdate(x, y, z, this.id, this.tickRate());
+        world.scheduleBlockUpdate(x, y, z, this.id(), this.tickRate());
     }
 
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, BlockEntity BlockEntity) {
@@ -84,7 +84,7 @@ public class BlockSulphur extends SandBlock {
         if (canFallBelow(world, x, y - 1, z) && y >= 0) {
             byte byte0 = 32;
             if (!fallInstantly && world.areBlocksLoaded(x - byte0, y - byte0, z - byte0, x + byte0, y + byte0, z + byte0)) {
-                FallingBlockEntity fallingBlockEntity = new FallingBlockEntity(world, (double)x + 0.5, (double)y + 0.5, (double)z + 0.5, this.id, 0, (BlockEntity)null);
+                FallingBlockEntity fallingBlockEntity = new FallingBlockEntity(world, (double)x + 0.5, (double)y + 0.5, (double)z + 0.5, this.id(), 0, (BlockEntity)null);
                 world.entityJoinedWorld(fallingBlockEntity);
             } else {
                 world.setBlockWithNotify(x, y, z, 0);
@@ -94,7 +94,7 @@ public class BlockSulphur extends SandBlock {
                 }
 
                 if (y > 0) {
-                    world.setBlockWithNotify(x, y, z, this.id);
+                    world.setBlockWithNotify(x, y, z, this.id());
                 }
             }
         }
@@ -109,7 +109,7 @@ public class BlockSulphur extends SandBlock {
         int blockId = world.getBlockId(i, j, k);
         if (blockId == 0) {
             return true;
-        } else if (blockId == Blocks.FIRE.id) {
+        } else if (blockId == Blocks.FIRE.id()) {
             return true;
         } else {
             return Block.hasTag(blockId, BlockTags.IS_WATER) || Block.hasTag(blockId, BlockTags.IS_LAVA);

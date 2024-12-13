@@ -90,36 +90,36 @@ public class TerrainApiPlugin implements TerrainAPI {
         ChunkDecoratorNetherAPI.randomFeatures.addFeature(new WorldFeatureSkull(), 3, 1f, 1,
                 new Biome[]{Biomes.NETHER_NETHER});
 
-        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(Blocks.SPINIFEX.id), 4, -1f, 1,
+        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(Blocks.SPINIFEX.id()), 4, -1f, 1,
                 new Biome[]{BonusBiomes.OVERWORLD_OUTBACK_MESA});
 
-        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureTreeShrub(Blocks.COBBLE_GRANITE.id, Blocks.DIRT_SCORCHED_RICH.id), 4, -1f, 1,
+        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureTreeShrub(Blocks.COBBLE_GRANITE.id(), Blocks.DIRT_SCORCHED_RICH.id()), 4, -1f, 1,
                 new Biome[]{BonusBiomes.OVERWORLD_OUTBACK_MESA});
 
-        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(Blocks.DEADBUSH.id), 4, -1f, 1,
+        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(Blocks.DEADBUSH.id()), 4, -1f, 1,
                 new Biome[]{BonusBiomes.OVERWORLD_OUTBACK_MESA});
 
-        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(Blocks.FLOWER_RED.id), 4, -1f, 1,
+        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(Blocks.FLOWER_RED.id()), 4, -1f, 1,
                 new Biome[]{Biomes.OVERWORLD_FOREST, Biomes.OVERWORLD_TUNDRA, BonusBiomes.OVERWORLD_OVERGROWN_MEADOW});
 
-        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(Blocks.FLOWER_YELLOW.id), 4, -1f, 1,
+        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(Blocks.FLOWER_YELLOW.id()), 4, -1f, 1,
                 new Biome[]{Biomes.OVERWORLD_BIRCH_FOREST, Biomes.OVERWORLD_PLAINS, BonusBiomes.OVERWORLD_OVERGROWN_MEADOW});
 
-        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.FLOWER_SILVER.id), 4, -1f, 1,
+        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.FLOWER_SILVER.id()), 4, -1f, 1,
                 new Biome[]{Biomes.OVERWORLD_BOREAL_FOREST, Biomes.OVERWORLD_GLACIER, BonusBiomes.OVERWORLD_OVERGROWN_MEADOW});
 
-        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.FLOWER_MAGENTA.id), 4, -1f, 1,
+        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.FLOWER_MAGENTA.id()), 4, -1f, 1,
                 new Biome[]{Biomes.OVERWORLD_TAIGA, BonusBiomes.OVERWORLD_OVERGROWN_MEADOW});
 
-        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.FLOWER_CYAN.id), 4, -1f, 1,
+        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.FLOWER_CYAN.id()), 4, -1f, 1,
                 new Biome[]{Biomes.OVERWORLD_RAINFOREST, BonusBiomes.OVERWORLD_DRYLAND, BonusBiomes.OVERWORLD_OVERGROWN_MEADOW});
 
-        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeaturePebbles(Blocks.OVERLAY_PEBBLES.id), 4, -1f, 1,
+        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeaturePebbles(Blocks.OVERLAY_PEBBLES.id()), 4, -1f, 1,
                 new Biome[]{Biomes.OVERWORLD_RAINFOREST, BonusBiomes.OVERWORLD_DRYLAND, BonusBiomes.OVERWORLD_OVERGROWN_MEADOW, Biomes.OVERWORLD_FOREST, Biomes.OVERWORLD_BOREAL_FOREST, Biomes.OVERWORLD_BIRCH_FOREST, Biomes.OVERWORLD_SHRUBLAND,
                         Biomes.OVERWORLD_OUTBACK_GRASSY, Biomes.OVERWORLD_OUTBACK, Biomes.OVERWORLD_SEASONAL_FOREST, Biomes.OVERWORLD_GRASSLANDS, Biomes.OVERWORLD_MEADOW});
 
-        ChunkDecoratorOverworldAPI.randomFeatures.addFeatureSurface(new WorldFeatureFlowers(BonusBlocks.FLOWER_LIME.id), 4);
+        ChunkDecoratorOverworldAPI.randomFeatures.addFeatureSurface(new WorldFeatureFlowers(BonusBlocks.FLOWER_LIME.id()), 4);
 
-        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.MUSHROOM_GRAY.id), 6, 1.0f);
+        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BonusBlocks.MUSHROOM_GRAY.id()), 6, 1.0f);
     }
 }

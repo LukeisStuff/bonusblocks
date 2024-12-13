@@ -28,7 +28,7 @@ public class CopperPipeBlock extends AxisAlignedBlock {
     public void updateTick(World world, int x, int y, int z, Random rand) {
         if (rand.nextInt(200) == 0) {
             if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
-                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.PIPE_COPPER.id, world.getBlockMetadata(x, y, z));
+                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.PIPE_COPPER.id(), world.getBlockMetadata(x, y, z));
             }
         }
     }

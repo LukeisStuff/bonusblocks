@@ -41,10 +41,10 @@ public class SilverBedItem extends Item {
             byte0 = 1;
         }
 
-        if (world.isAirBlock(blockX, blockY, blockZ) && world.isAirBlock(blockX + byte0, blockY, blockZ + byte1) && world.canPlaceOnSurfaceOfBlock(blockX, blockY - 1, blockZ) && world.canPlaceOnSurfaceOfBlock(blockX + byte0, blockY - 1, blockZ + byte1) && world.canBlockBePlacedAt(blockbed.id, blockX, blockY, blockZ, false, side) && itemstack.consumeItem(entityplayer)) {
+        if (world.isAirBlock(blockX, blockY, blockZ) && world.isAirBlock(blockX + byte0, blockY, blockZ + byte1) && world.canPlaceOnSurfaceOfBlock(blockX, blockY - 1, blockZ) && world.canPlaceOnSurfaceOfBlock(blockX + byte0, blockY - 1, blockZ + byte1) && world.canBlockBePlacedAt(blockbed.id(), blockX, blockY, blockZ, false, side) && itemstack.consumeItem(entityplayer)) {
             world.playBlockSoundEffect(entityplayer, (double)((float)blockX + 0.5F), (double)((float)blockY + 0.5F), (double)((float)blockZ + 0.5F), blockbed, EnumBlockSoundEffectType.PLACE);
-            world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, blockbed.id, i1);
-            world.setBlockAndMetadataWithNotify(blockX + byte0, blockY, blockZ + byte1, blockbed.id, i1 + 8);
+            world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, blockbed.id(), i1);
+            world.setBlockAndMetadataWithNotify(blockX + byte0, blockY, blockZ + byte1, blockbed.id(), i1 + 8);
             return true;
         } else {
             return false;

@@ -1,18 +1,19 @@
 package luke.bonusblocks.block.blockmodel;
 
-import net.minecraft.client.render.block.model.StandardBlockModel;
+import net.minecraft.client.render.block.model.BlockModelStandard;
 import net.minecraft.client.render.texture.stitcher.IconCoordinate;
 import net.minecraft.client.render.texture.stitcher.TextureRegistry;
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.BlockLogic;
 import net.minecraft.core.util.helper.DyeColor;
 import net.minecraft.core.util.helper.Side;
 
 import java.util.Iterator;
 
-public class PaintedCrateBlockModel<T extends Block> extends StandardBlockModel<T> {
+public class PaintedCrateBlockModel<T extends BlockLogic> extends BlockModelStandard<T> {
     public static final IconCoordinate[] texCoords = new IconCoordinate[16];
 
-    public PaintedCrateBlockModel(Block block) {
+    public PaintedCrateBlockModel(Block<T> block) {
         super(block);
     }
 

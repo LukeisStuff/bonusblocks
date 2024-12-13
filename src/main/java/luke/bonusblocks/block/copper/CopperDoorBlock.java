@@ -32,8 +32,8 @@ public class CopperDoorBlock extends DoorBlock {
             if (rand.nextInt(200) == 0) {
                 if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
                     if (isTop) {
-                        world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.DOOR_COPPER_TOP.id, world.getBlockMetadata(x, y, z));
-                        world.setBlockAndMetadataWithNotify(x, y - 1, z, BonusBlocks.DOOR_COPPER_BOTTOM.id, world.getBlockMetadata(x, y - 1, z));
+                        world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.DOOR_COPPER_TOP.id(), world.getBlockMetadata(x, y, z));
+                        world.setBlockAndMetadataWithNotify(x, y - 1, z, BonusBlocks.DOOR_COPPER_BOTTOM.id(), world.getBlockMetadata(x, y - 1, z));
                     }
                 }
             }

@@ -22,7 +22,7 @@ public class CopperPressurePlateBlock extends PressurePlateBlock {
     public void updateTick(World world, int x, int y, int z, Random rand) {
             if (rand.nextInt(200) == 0) {
                 if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
-                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.PRESSURE_PLATE_COPPER.id, world.getBlockMetadata(x, y, z));
+                    world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.PRESSURE_PLATE_COPPER.id(), world.getBlockMetadata(x, y, z));
                 }
             }
         if (!world.isClientSide) {
@@ -58,22 +58,22 @@ public class CopperPressurePlateBlock extends PressurePlateBlock {
 
         if (isSteppedOn && !isPressed) {
             world.setBlockMetadataWithNotify(x, y, z, meta | 1);
-            world.notifyBlocksOfNeighborChange(x, y, z, this.id);
-            world.notifyBlocksOfNeighborChange(x, y + (isCeiling ? 1 : -1), z, this.id);
+            world.notifyBlocksOfNeighborChange(x, y, z, this.id());
+            world.notifyBlocksOfNeighborChange(x, y + (isCeiling ? 1 : -1), z, this.id());
             world.markBlocksDirty(x, y, z, x, y, z);
             world.playSoundEffect(null, SoundCategory.WORLD_SOUNDS, (double)x + 0.5, (double)y + 0.1, (double)z + 0.5, "random.click", 0.3F, 0.6F);
         }
 
         if (!isSteppedOn && isPressed) {
             world.setBlockMetadataWithNotify(x, y, z, meta & 2);
-            world.notifyBlocksOfNeighborChange(x, y, z, this.id);
-            world.notifyBlocksOfNeighborChange(x, y + (isCeiling ? 1 : -1), z, this.id);
+            world.notifyBlocksOfNeighborChange(x, y, z, this.id());
+            world.notifyBlocksOfNeighborChange(x, y + (isCeiling ? 1 : -1), z, this.id());
             world.markBlocksDirty(x, y, z, x, y, z);
             world.playSoundEffect(null, SoundCategory.WORLD_SOUNDS, (double)x + 0.5, (double)y + 0.1, (double)z + 0.5, "random.click", 0.3F, 0.5F);
         }
 
         if (isSteppedOn) {
-            world.scheduleBlockUpdate(x, y, z, this.id, this.tickDelay());
+            world.scheduleBlockUpdate(x, y, z, this.id(), this.tickDelay());
         }
 
     }

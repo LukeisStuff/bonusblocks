@@ -16,9 +16,9 @@ public class BlockSaplingMossyOak extends SaplingBaseBlock {
     public void growTree(World world, int i, int j, int k, Random random) {
         WorldFeature obj;
         world.setBlock(i, j, k, 0);
-        obj = new WorldFeatureTreeShapeSwamp(BonusBlocks.LEAVES_OAK_MOSSY.id, Blocks.LOG_OAK_MOSSY.id, 6);
+        obj = new WorldFeatureTreeShapeSwamp(BonusBlocks.LEAVES_OAK_MOSSY.id(), Blocks.LOG_OAK_MOSSY.id(), 6);
         if (!obj.place(world, random, i, j, k)) {
-            world.setBlock(i, j, k, this.id);
+            world.setBlock(i, j, k, this.id());
         }
 
     }

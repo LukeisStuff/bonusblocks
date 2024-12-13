@@ -28,13 +28,13 @@ public class BlockFenceNoClimb extends ThinFenceBlock {
             return true;
         } else {
             int oy;
-            for(oy = 1; world.getBlockId(x, y + oy, z) == this.id; ++oy) {
+            for(oy = 1; world.getBlockId(x, y + oy, z) == this.id(); ++oy) {
             }
 
             --oy;
 
             boolean drawColumnFromOther;
-            for(drawColumnFromOther = false; world.getBlockId(x, y + oy, z) == this.id; --oy) {
+            for(drawColumnFromOther = false; world.getBlockId(x, y + oy, z) == this.id(); --oy) {
                 if (this.shouldDrawColumn_do(world, x, y + oy, z)) {
                     drawColumnFromOther = true;
                     break;

@@ -11,7 +11,7 @@ import net.minecraft.core.world.World;
 public class BlockMossy extends MossBlock {
 
     public BlockMossy(String key, String namespaceId, int id, Material material) {
-        super(key, namespaceId, id, BonusBlocks.MOSS.id);
+        super(key, namespaceId, id, BonusBlocks.MOSS.id());
         this.setTicking(true);
     }
 

@@ -30,7 +30,7 @@ public abstract class GuiIngameMixin extends Gui {
     private void renderGameOverlay(float partialTicks, boolean flag, int mouseX, int mouseY, CallbackInfo ci) {
 
         ItemStack headSlotItem = this.mc.thePlayer.inventory.armorItemInSlot(3);
-        if (this.mc.gameSettings.thirdPersonView.value == 0 && headSlotItem != null && headSlotItem.itemID == BonusBlocks.SKULL_CARVED_IDLE.id) {
+        if (this.mc.gameSettings.thirdPersonView.value == 0 && headSlotItem != null && headSlotItem.itemID == BonusBlocks.SKULL_CARVED_IDLE.id()) {
             this.renderSkullBlur(width, height);
         }
     }

@@ -32,21 +32,21 @@ public class CopperSlabBlock extends SlabBlock {
         if (world.getBlockMetadata(x, y, z) == 0) {
             if (rand.nextInt(200) == 0) {
                 if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
-                    world.setBlockAndMetadataWithNotify(x, y, z, this.id, meta + 16);
+                    world.setBlockAndMetadataWithNotify(x, y, z, this.id(), meta + 16);
                 }
             }
         }
         if (world.getBlockMetadata(x, y, z) == 16) {
             if (rand.nextInt(200) == 0) {
                 if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
-                    world.setBlockAndMetadataWithNotify(x, y, z, this.id, meta + 16);
+                    world.setBlockAndMetadataWithNotify(x, y, z, this.id(), meta + 16);
                 }
             }
         }
         if (world.getBlockMetadata(x, y, z) == 32) {
             if (rand.nextInt(200) == 0) {
                 if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
-                    world.setBlockAndMetadataWithNotify(x, y, z, this.id, meta + 16);
+                    world.setBlockAndMetadataWithNotify(x, y, z, this.id(), meta + 16);
                 }
             }
         }
@@ -55,21 +55,21 @@ public class CopperSlabBlock extends SlabBlock {
         if (world.getBlockMetadata(x, y, z) == 1) {
             if (rand.nextInt(200) == 0) {
                 if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
-                    world.setBlockAndMetadataWithNotify(x, y, z, this.id, meta + 16);
+                    world.setBlockAndMetadataWithNotify(x, y, z, this.id(), meta + 16);
                 }
             }
         }
         if (world.getBlockMetadata(x, y, z) == 17) {
             if (rand.nextInt(200) == 0) {
                 if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
-                    world.setBlockAndMetadataWithNotify(x, y, z, this.id, meta + 16);
+                    world.setBlockAndMetadataWithNotify(x, y, z, this.id(), meta + 16);
                 }
             }
         }
         if (world.getBlockMetadata(x, y, z) == 33) {
             if (rand.nextInt(200) == 0) {
                 if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
-                    world.setBlockAndMetadataWithNotify(x, y, z, this.id, meta + 16);
+                    world.setBlockAndMetadataWithNotify(x, y, z, this.id(), meta + 16);
                 }
             }
         }
@@ -78,21 +78,21 @@ public class CopperSlabBlock extends SlabBlock {
         if (world.getBlockMetadata(x, y, z) == 2) {
             if (rand.nextInt(200) == 0) {
                 if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
-                    world.setBlockAndMetadataWithNotify(x, y, z, this.id, meta + 16);
+                    world.setBlockAndMetadataWithNotify(x, y, z, this.id(), meta + 16);
                 }
             }
         }
         if (world.getBlockMetadata(x, y, z) == 18) {
             if (rand.nextInt(200) == 0) {
                 if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
-                    world.setBlockAndMetadataWithNotify(x, y, z, this.id, meta + 16);
+                    world.setBlockAndMetadataWithNotify(x, y, z, this.id(), meta + 16);
                 }
             }
         }
         if (world.getBlockMetadata(x, y, z) == 34) {
             if (rand.nextInt(200) == 0) {
                 if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
-                    world.setBlockAndMetadataWithNotify(x, y, z, this.id, meta + 16);
+                    world.setBlockAndMetadataWithNotify(x, y, z, this.id(), meta + 16);
                 }
             }
         }

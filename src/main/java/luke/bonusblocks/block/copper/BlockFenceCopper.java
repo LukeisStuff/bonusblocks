@@ -20,7 +20,7 @@ public class BlockFenceCopper extends ThinFenceBlock {
     public void updateTick(World world, int x, int y, int z, Random rand) {
         if (rand.nextInt(200) == 0) {
             if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water || (world.canBlockBeRainedOn(x, y + 1, z) && world.getCurrentWeather().isPrecipitation)) {
-                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.FENCE_COPPER.id, world.getBlockMetadata(x, y, z));
+                world.setBlockAndMetadataWithNotify(x, y, z, BonusBlocks.FENCE_COPPER.id(), world.getBlockMetadata(x, y, z));
             }
         }
     }
@@ -40,13 +40,13 @@ public class BlockFenceCopper extends ThinFenceBlock {
             return true;
         } else {
             int oy;
-            for(oy = 1; world.getBlockId(x, y + oy, z) == this.id; ++oy) {
+            for(oy = 1; world.getBlockId(x, y + oy, z) == this.id(); ++oy) {
             }
 
             --oy;
 
             boolean drawColumnFromOther;
-            for(drawColumnFromOther = false; world.getBlockId(x, y + oy, z) == this.id; --oy) {
+            for(drawColumnFromOther = false; world.getBlockId(x, y + oy, z) == this.id(); --oy) {
                 if (this.shouldDrawColumn_do(world, x, y + oy, z)) {
                     drawColumnFromOther = true;
                     break;

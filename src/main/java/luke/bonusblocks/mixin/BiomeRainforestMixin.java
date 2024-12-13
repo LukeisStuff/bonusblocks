@@ -22,23 +22,23 @@ public class BiomeRainforestMixin {
     public void getRandomWorldGenForTrees(Random random, CallbackInfoReturnable<WorldFeature> cir) {
         if (random.nextInt(1000) == 0) {
             int treeHeight = 30 + random.nextInt(30);
-            cir.setReturnValue(new WorldFeatureSpoonerTreeRound(treeHeight, Blocks.LOG_OAK.id, 0, Blocks.LEAVES_OAK.id, 0));
+            cir.setReturnValue(new WorldFeatureSpoonerTreeRound(treeHeight, Blocks.LOG_OAK.id(), 0, Blocks.LEAVES_OAK.id(), 0));
         }
         if (random.nextInt(10) == 0) {
             cir.setReturnValue(new WorldFeatureTreePalm(Blocks.LOG_PALM, Blocks.LEAVES_PALM, true, false, true));
         }
         if (random.nextInt(3) == 0) {
             if (random.nextInt(10) == 0) {
-                cir.setReturnValue(new WorldFeatureTreeFancyRainforest(BonusBlocks.LEAVES_OAK_MOSSY.id, Blocks.LOG_OAK_MOSSY.id, 0));
+                cir.setReturnValue(new WorldFeatureTreeFancyRainforest(BonusBlocks.LEAVES_OAK_MOSSY.id(), Blocks.LOG_OAK_MOSSY.id(), 0));
             }
-            cir.setReturnValue(new WorldFeatureTreeFancyRainforest(Blocks.LEAVES_OAK.id, Blocks.LOG_OAK.id, 0));
+            cir.setReturnValue(new WorldFeatureTreeFancyRainforest(Blocks.LEAVES_OAK.id(), Blocks.LOG_OAK.id(), 0));
         }
         if (random.nextInt(5) == 0) {
-            cir.setReturnValue(new WorldFeatureTreeShrub(Blocks.LEAVES_SHRUB.id, BonusBlocks.LOG_SHRUB.id));
+            cir.setReturnValue(new WorldFeatureTreeShrub(Blocks.LEAVES_SHRUB.id(), BonusBlocks.LOG_SHRUB.id()));
         }
         if (random.nextInt(10) == 0) {
-            cir.setReturnValue(new WorldFeatureTree(Blocks.LEAVES_CACAO.id, BonusBlocks.LOG_CACAO.id, 4));
+            cir.setReturnValue(new WorldFeatureTree(Blocks.LEAVES_CACAO.id(), BonusBlocks.LOG_CACAO.id(), 4));
         }
-        cir.setReturnValue(new WorldFeatureTree(Blocks.LEAVES_OAK.id, Blocks.LOG_OAK.id, 6));
+        cir.setReturnValue(new WorldFeatureTree(Blocks.LEAVES_OAK.id(), Blocks.LOG_OAK.id(), 6));
     }
 }

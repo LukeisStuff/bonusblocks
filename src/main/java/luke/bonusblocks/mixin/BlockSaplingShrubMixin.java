@@ -21,9 +21,9 @@ public class BlockSaplingShrubMixin {
     public void growTree(World world, int i, int j, int k, Random random, CallbackInfo ci) {
         WorldFeature obj;
         world.setBlock(i, j, k, 0);
-        obj = new WorldFeatureTreeShrub(Blocks.LEAVES_SHRUB.id, BonusBlocks.LOG_SHRUB.id);
+        obj = new WorldFeatureTreeShrub(Blocks.LEAVES_SHRUB.id(), BonusBlocks.LOG_SHRUB.id());
         if (!obj.place(world, random, i, j, k)) {
-            world.setBlock(i, j, k, Blocks.SAPLING_SHRUB.id);
+            world.setBlock(i, j, k, Blocks.SAPLING_SHRUB.id());
         }
     }
 }

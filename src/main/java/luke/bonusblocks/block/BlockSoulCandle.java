@@ -19,7 +19,7 @@ public class BlockSoulCandle extends CandleBlock {
 
     public boolean canPlaceOnTop(World world, int i, int j, int k) {
         int id = world.getBlockId(i, j, k);
-        return world.isBlockNormalCube(i, j, k) || id == Blocks.FENCE_PLANKS_OAK.id || id == Blocks.FENCE_GATE_PLANKS_OAK_PAINTED.id;
+        return world.isBlockNormalCube(i, j, k) || id == Blocks.FENCE_PLANKS_OAK.id() || id == Blocks.FENCE_GATE_PLANKS_OAK_PAINTED.id();
     }
 
     public void updateTick(World world, int x, int y, int z, Random rand) {

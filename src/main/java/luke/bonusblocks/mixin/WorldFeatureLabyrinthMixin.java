@@ -34,11 +34,11 @@ public abstract class WorldFeatureLabyrinthMixin {
     public void generate(World world, Random random, int blockX, int blockY, int blockZ, boolean doSpawner, CallbackInfo ci) {
         Biome biome = world.getBlockBiome(blockX, blockY, blockZ);
         if (biome == BonusBiomes.OVERWORLD_OUTBACK_MESA) {
-            this.wallBlockA = Blocks.SANDSTONE.id;
-            this.wallBlockB = Blocks.SANDSTONE.id;
-            this.brickBlockA = Blocks.BRICK_SANDSTONE.id;
-            this.brickBlockB = Blocks.BRICK_SANDSTONE.id;
-            this.slabBlock = Blocks.SLAB_SANDSTONE.id;
+            this.wallBlockA = Blocks.SANDSTONE.id();
+            this.wallBlockB = Blocks.SANDSTONE.id();
+            this.brickBlockA = Blocks.BRICK_SANDSTONE.id();
+            this.brickBlockB = Blocks.BRICK_SANDSTONE.id();
+            this.slabBlock = Blocks.SLAB_SANDSTONE.id();
         }
     }
 }

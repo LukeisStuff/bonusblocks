@@ -28,7 +28,7 @@ public class BlockBedroll extends BedBlock {
         int meta = world.getBlockMetadata(x, y, z);
         if (!BlockBedroll.isBlockFootOfBed(meta)) {
             int dir = BlockBedroll.getDirectionFromMetadata(meta);
-            if (world.getBlockId(x += headBlockToFootBlockMap[dir][0], y, z += headBlockToFootBlockMap[dir][1]) != this.id) {
+            if (world.getBlockId(x += headBlockToFootBlockMap[dir][0], y, z += headBlockToFootBlockMap[dir][1]) != this.id()) {
                 return true;
             }
             meta = world.getBlockMetadata(x, y, z);
@@ -39,7 +39,7 @@ public class BlockBedroll extends BedBlock {
             double d2 = (double)z + 0.5;
             world.setBlockWithNotify(x, y, z, 0);
             int dir = BlockBedroll.getDirectionFromMetadata(meta);
-            if (world.getBlockId(x += headBlockToFootBlockMap[dir][0], y, z += headBlockToFootBlockMap[dir][1]) == this.id) {
+            if (world.getBlockId(x += headBlockToFootBlockMap[dir][0], y, z += headBlockToFootBlockMap[dir][1]) == this.id()) {
                 world.setBlockWithNotify(x, y, z, 0);
                 d = (d + (double)x + 0.5) / 2.0;
                 d1 = (d1 + (double)y + 0.5) / 2.0;
@@ -66,7 +66,7 @@ public class BlockBedroll extends BedBlock {
                 BlockBedroll.setBedOccupied(world, x, y, z, true);
                 world.setBlockWithNotify(x, y, z, 0);
                 int dir = BlockBedroll.getDirectionFromMetadata(meta);
-                if (world.getBlockId(x += headBlockToFootBlockMap[dir][0], y, z += headBlockToFootBlockMap[dir][1]) == this.id) {
+                if (world.getBlockId(x += headBlockToFootBlockMap[dir][0], y, z += headBlockToFootBlockMap[dir][1]) == this.id()) {
                     world.setBlockWithNotify(x, y, z, 0);
                 }
                 return false;
@@ -85,10 +85,10 @@ public class BlockBedroll extends BedBlock {
         int i1 = world.getBlockMetadata(x, y, z);
         int j1 = BlockBedroll.getDirectionFromMetadata(i1);
         if (BlockBedroll.isBlockFootOfBed(i1)) {
-            if (world.getBlockId(x - headBlockToFootBlockMap[j1][0], y, z - headBlockToFootBlockMap[j1][1]) != this.id) {
+            if (world.getBlockId(x - headBlockToFootBlockMap[j1][0], y, z - headBlockToFootBlockMap[j1][1]) != this.id()) {
                 world.setBlockWithNotify(x, y, z, 0);
             }
-        } else if (world.getBlockId(x + headBlockToFootBlockMap[j1][0], y, z + headBlockToFootBlockMap[j1][1]) != this.id) {
+        } else if (world.getBlockId(x + headBlockToFootBlockMap[j1][0], y, z + headBlockToFootBlockMap[j1][1]) != this.id()) {
             world.setBlockWithNotify(x, y, z, 0);
         }
     }
