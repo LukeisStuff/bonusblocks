@@ -3,7 +3,7 @@ package luke.bonusblocks.biomes;
 import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.core.block.Blocks;
 import net.minecraft.core.entity.SpawnListEntry;
-import net.minecraft.core.entity.monster.SpiderMob;
+import net.minecraft.core.entity.monster.MobSpider;
 import net.minecraft.core.world.biome.BiomeOutback;
 import net.minecraft.core.world.generate.feature.WorldFeature;
 import net.minecraft.core.world.generate.feature.tree.WorldFeatureTreeEucalyptus;
@@ -18,7 +18,7 @@ public class BiomeMesa extends BiomeOutback {
         this.spawnableMonsterList.clear();
         this.spawnableCreatureList.clear();
         this.spawnableWaterCreatureList.clear();
-        this.spawnableMonsterList.add(new SpawnListEntry(SpiderMob.class, 20));
+        this.spawnableMonsterList.add(new SpawnListEntry(MobSpider.class, 20));
         this.setBlockedWeathers(Weathers.OVERWORLD_SNOW, Weathers.OVERWORLD_RAIN, Weathers.OVERWORLD_STORM);
         this.topBlock = (short) BonusBlocks.SCORCHEDSTONE.id();
         this.fillerBlock = (short) BonusBlocks.SCORCHEDSTONE.id();

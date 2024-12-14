@@ -2,6 +2,7 @@ package luke.bonusblocks.block.copper;
 
 import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.core.block.AxisAlignedBlock;
+import net.minecraft.core.block.BlockLogicAxisAligned;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.util.phys.AABB;
@@ -10,7 +11,7 @@ import net.minecraft.core.world.WorldSource;
 
 import java.util.Random;
 
-public class CopperPipeBlock extends AxisAlignedBlock {
+public class CopperPipeBlock extends BlockLogicAxisAligned {
     public CopperPipeBlock(String key, String namespaceId, int id) {
         super(key, namespaceId, id, Material.metal);
         this.setTicking(true);

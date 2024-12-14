@@ -20,11 +20,11 @@ public class BiomeDryland extends Biome {
 
     public WorldFeature getRandomWorldGenForTrees(Random random) {
         if (random.nextInt(8) == 0) {
-            return new WorldFeatureTreeShrub(Blocks.LEAVES_SHRUB, BonusBlocks.LOG_SHRUB.id());
+            return new WorldFeatureTreeShrub(Blocks.LEAVES_SHRUB.id(), BonusBlocks.LOG_SHRUB.id());
         } else if (random.nextInt(8) == 0) {
-            return new WorldFeatureTreeFancy(Blocks.LEAVES_SHRUB, BonusBlocks.LOG_SHRUB.id());
+            return new WorldFeatureTreeFancy(Blocks.LEAVES_SHRUB.id(), BonusBlocks.LOG_SHRUB.id());
         }
-        return new WorldFeatureTreeShrub(Blocks.LEAVES_SHRUB, BonusBlocks.LOG_SHRUB.id());
+        return new WorldFeatureTreeShrub(Blocks.LEAVES_SHRUB.id(), BonusBlocks.LOG_SHRUB.id());
     }
 
 }

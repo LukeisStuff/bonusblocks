@@ -1,33 +1,30 @@
 package luke.bonusblocks.block.blockmodel;
 
-import net.minecraft.client.render.block.model.StandardBlockModel;
+import net.minecraft.client.render.block.model.BlockModelStandard;
 import net.minecraft.client.render.tessellator.Tessellator;
 import net.minecraft.client.render.texture.stitcher.IconCoordinate;
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.BlockLogic;
 import net.minecraft.core.util.helper.Side;
 
-public class BlockModelSoulwaxCandle<T extends Block> extends StandardBlockModel<T> {
-    public BlockModelSoulwaxCandle(Block block) {
+public class BlockModelSoulwaxCandle<T extends BlockLogic> extends BlockModelStandard<T> {
+    public BlockModelSoulwaxCandle(Block<T> block) {
         super(block);
     }
 
     @Override
     public boolean render(Tessellator tessellator, int x, int y, int z) {
-        block.setBlockBoundsBasedOnState(renderBlocks.blockAccess, x, y, z);
-        boolean isLit = (renderBlocks.blockAccess.getBlockMetadata(x, y, z) & 0b00000001) == 0;
-        float brightness = isLit ? 1.0f : getBlockBrightness(renderBlocks.blockAccess, x, y, z);
-
-        float minX = x + 0.5f - (1.5f / 16f);
-        float minY = y + 0f;
-        float minZ = z + 0.5f - (1.5f / 16f);
-        float maxX = x + 0.5f + (1.5f / 16f);
-        float maxY = y + 0.5f;
-        float maxZ = z + 0.5f + (1.5f / 16f);
-        float wickMaxY = maxY + (6f / 16f);
-
-        IconCoordinate texIndex = getParticleTexture(Side.TOP, 0);
-        if(renderBlocks.overrideBlockTexture != null)
-        {
+        boolean isLit = (renderBlocks.blockAccess.getBlockMetadata(x, y, z) & 1) == 0;
+        float brightness = isLit ? 1.0F : this.getBlockBrightness(renderBlocks.blockAccess, x, y, z);
+        float minX = (float)x + 0.5F - 0.09375F;
+        float minY = (float)y + 0.0F;
+        float minZ = (float)z + 0.5F - 0.09375F;
+        float maxX = (float)x + 0.5F + 0.09375F;
+        float maxY = (float)y + 0.5F;
+        float maxZ = (float)z + 0.5F + 0.09375F;
+        float wickMaxY = maxY + 0.375F;
+        IconCoordinate texIndex = this.getParticleTexture(Side.TOP, 0);
+        if (renderBlocks.overrideBlockTexture != null) {
             texIndex = renderBlocks.overrideBlockTexture;
         }
         double texV = texIndex.getIconVMin();
