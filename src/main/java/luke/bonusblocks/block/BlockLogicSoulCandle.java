@@ -1,8 +1,9 @@
 package luke.bonusblocks.block;
 
+import net.minecraft.core.block.Block;
+import net.minecraft.core.block.BlockLogicCandle;
 import net.minecraft.core.block.Blocks;
-import net.minecraft.core.block.CandleBlock;
-import net.minecraft.core.block.entity.BlockEntity;
+import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.ItemStack;
@@ -10,10 +11,10 @@ import net.minecraft.core.world.World;
 
 import java.util.Random;
 
-public class BlockSoulCandle extends CandleBlock {
-    public BlockSoulCandle(String key, String namespaceId, int id) {
-        super(key, namespaceId, id, Material.decoration);
-        this.setTicking(true);
+public class BlockLogicSoulCandle extends BlockLogicCandle {
+    public BlockLogicSoulCandle(Block<?> block) {
+        super(block, Material.decoration);
+        block.setTicking(true);
         this.setBlockBounds(0.40625F, 0.0F, 0.40625F, 0.59375F, 0.5F, 0.59375F);
     }
 
@@ -54,7 +55,7 @@ public class BlockSoulCandle extends CandleBlock {
         }
     }
 
-    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, BlockEntity BlockEntity) {
+    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity BlockEntity) {
         return new ItemStack[]{new ItemStack(BonusBlocks.CANDLE_SOULWAX)};
     }
 }

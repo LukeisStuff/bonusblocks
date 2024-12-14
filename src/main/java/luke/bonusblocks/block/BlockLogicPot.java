@@ -1,13 +1,14 @@
 package luke.bonusblocks.block;
 
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.BlockLogic;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.world.World;
 
-public class BlockPot extends Block {
+public class BlockLogicPot extends BlockLogic {
 
-    public BlockPot(String key, String namespaceId, int id, Material material) {
-        super(key, namespaceId, id, material);
+    public BlockLogicPot(Block<?> block) {
+        super(block, Material.stone);
         float f = 0.0625f;
         this.setBlockBounds(0.0625f + f, 0.0F, 0.0625f + f, 0.9375f - f, 1.0f, 0.9375f - f);
     }
@@ -16,7 +17,7 @@ public class BlockPot extends Block {
         return false;
     }
 
-    public boolean renderAsNormalBlock() {
+    public boolean isCubeShaped() {
         return false;
     }
 

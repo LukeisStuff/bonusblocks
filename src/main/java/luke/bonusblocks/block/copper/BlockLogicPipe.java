@@ -12,8 +12,8 @@ import net.minecraft.core.world.WorldSource;
 import java.util.Random;
 
 public class BlockLogicPipe extends BlockLogicAxisAligned {
-    public BlockLogicPipe(Block<?> block, Material material) {
-        super(block, material);
+    public BlockLogicPipe(Block<?> block) {
+        super(block, Material.metal);
         block.setTicking(true);
     }
 

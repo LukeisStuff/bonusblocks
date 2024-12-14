@@ -33,7 +33,7 @@ import static net.minecraft.core.item.tool.ItemToolPickaxe.miningLevels;
 
 public class BonusBlocks {
 
-    int blockID = 5;
+    int blockID = 1600;
     int stairBlockID = 5;
     int slabBlockID = 5;
 
@@ -1159,7 +1159,7 @@ public class BonusBlocks {
         PIPE_COPPER = raw
                 .setIcon("bonusblocks:block/pipe_copper")
                 .setBlockModel(block -> new DFBlockModelBuilder(MOD_ID).setBlockModel("block/pipe.json").setBlockState(MOD_ID, "pipe_states.json").setMetaStateInterpreter(new PipeMetaStateInterpreter()).setRender3D(false).build(PIPE_COPPER))
-                .build("pipe.copper", "bonusblocks:block/pipe_copper", blockID++, b -> new BlockLogicPipe(b, Material.metal));
+                .build("pipe.copper", "bonusblocks:block/pipe_copper", blockID++, BlockLogicPipe::new);
 
 
         // Copper Trapdoor
@@ -1415,7 +1415,7 @@ public class BonusBlocks {
                 .setTextures("bonusblocks:block/candle_soulwax")
                 .setVisualUpdateOnMetadata()
                 .setTags(BlockTags.MINEABLE_BY_SWORD, BlockTags.BROKEN_BY_FLUIDS)
-                .build(new BlockSoulCandle("candle.soulwax", "bonusblocks:block/candle_soulwax", blockID("candleSoulwax")));
+                .build("candle.soulwax", "bonusblocks:block/candle_soulwax", blockID++, BlockLogicSoulCandle::new);
 
 
         //Slabs
@@ -1425,60 +1425,60 @@ public class BonusBlocks {
                 .setResistance(0.8F)
                 .setFlammability(30, 60)
                 .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.NOT_IN_CREATIVE_MENU)
-//                .setItemBlock(SlabPaintedBlockModel::new)
-                .setBlockModel(BlockModelSlabWool::new)
-                .build(new SlabBlock(Blocks.WOOL, "bonusblocks:block/slab_wool", blockID("SLAB_WOOL")));
+                .setBlockItem(ItemBlockSlabWool::new)
+                .setBlockModel(b -> new BlockModelSlabWool(WOOL))
+                .build("bonusblocks:block/slab_wool", blockID++, b -> new BlockLogicSlab(b, WOOL));
 
         SLAB_COBBLESTONE_MOSSY = slab
                 .setHardness(2.0F)
-                .build(new SlabBlock(COBBLE_STONE_MOSSY, "bonusblocks:block/slab_cobble_stone_mossy", blockID("slabCobbleStoneMossy")));
+                .build("bonusblocks:block/slab_cobble_stone_mossy", blockID++, b -> new BlockLogicSlab(b, COBBLE_STONE_MOSSY));
         SLAB_SLATE_POLISHED = slab
-                .build(new SlabBlock(SLATE_CARVED, "bonusblocks:block/slab_slate_polished", blockID("slabSlatePolished")));
+                .build("bonusblocks:block/slab_slate_polished", blockID++, b -> new BlockLogicSlab(b, SLATE_CARVED));
         SLAB_MARBLE_POLISHED = slab
-                .build(new SlabBlock(MARBLE_CARVED, "bonusblocks:block/slab_marble_polished", blockID("slabMarblePolished")));
+                .build("bonusblocks:block/slab_marble_polished", blockID++, b -> new BlockLogicSlab(b, MARBLE_CARVED));
         SLAB_BRICK_STONE_POLISHED_MOSSY = slab
                 .setHardness(2.0F)
-                .build(new SlabBlock(BRICK_STONE_POLISHED_MOSSY, "bonusblocks:block/slab_brick_stone_polished_mossy", blockID("slabBrickStonePolishedMossy")));
+                .build("bonusblocks:block/slab_brick_stone_polished_mossy", blockID++, b -> new BlockLogicSlab(b, BRICK_STONE_POLISHED_MOSSY));
         SLAB_BRICK_GOLD = slab
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
                 .setHardness(3.0F)
-                .build(new SlabBlock(BRICK_GOLD, "bonusblocks:block/slab_brick_gold", blockID("slabBrickGold")));
+                .build("bonusblocks:block/slab_brick_gold", blockID++, b -> new BlockLogicSlab(b, BRICK_GOLD));
         SLAB_BRICK_LAPIS = slab
                 .setHardness(3.0F)
-                .build(new SlabBlock(BRICK_LAPIS, "bonusblocks:block/slab_brick_lapis", blockID("slabBrickLapis")));
+                .build("bonusblocks:block/slab_brick_lapis", blockID++, b -> new BlockLogicSlab(b, BRICK_LAPIS));
         SLAB_BRICK_IRON = slab
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
                 .setHardness(5.0F)
-                .build(new SlabBlock(BRICK_IRON, "bonusblocks:block/slab_brick_iron", blockID("slabBrickIron")));
+                .build("bonusblocks:block/slab_brick_iron", blockID++, b -> new BlockLogicSlab(b, BRICK_IRON));
         SLAB_BRICK_SCORCHEDSTONE = slab
                 .setHardness(0.8f)
-                .build(new SlabBlock(BRICK_SCORCHEDSTONE, "bonusblocks:block/slab_brick_scorchedstone", blockID("slabBRICK_SCORCHEDSTONE")));
+                .build("bonusblocks:block/slab_brick_scorchedstone", blockID++, b -> new BlockLogicSlab(b, BRICK_SCORCHEDSTONE));
         SLAB_BRICK_MUD = slab
-                .build(new SlabBlock(BRICK_MUD, "bonusblocks:block/slab_brick_mud", blockID("slabBRICK_MUD")));
+                .build("bonusblocks:block/slab_brick_mud", blockID++, b -> new BlockLogicSlab(b, BRICK_MUD));
         SLAB_SCORCHEDSTONE = slab
                 .setHardness(0.8F)
-                .build(new SlabBlock(SCORCHEDSTONE, "bonusblocks:block/slab_scorchedstone", blockID("slabScorchedstone")));
+                .build("bonusblocks:block/slab_scorchedstone", blockID++, b -> new BlockLogicSlab(b, SCORCHEDSTONE));
         SLAB_BRICK_STEEL = slab
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
                 .setHardness(5.0f)
                 .setResistance(4000.0f)
-                .build(new SlabBlock(BRICK_STEEL, "bonusblocks:block/slab_brick_steel", blockID("slabBRICK_STEEL")));
+                .build("bonusblocks:block/slab_brick_steel", blockID++, b -> new BlockLogicSlab(b, BRICK_STEEL));
         SLAB_BRICK_QUARTZ = slab
                 .setHardness(3.0f)
-                .build(new SlabBlock(BRICK_QUARTZ, "bonusblocks:block/slab_brick_quartz", blockID("slabBRICK_QUARTZ")));
+                .build("bonusblocks:block/slab_brick_quartz", blockID++, b -> new BlockLogicSlab(b, BRICK_QUARTZ));
         SLAB_BRICK_OLIVINE = slab
                 .setHardness(3.0f)
-                .build(new SlabBlock(BRICK_OLIVINE, "bonusblocks:block/slab_brick_olivine", blockID("slabBRICK_OLIVINE")));
+                .build("bonusblocks:block/slab_brick_olivine", blockID++, b -> new BlockLogicSlab(b, BRICK_OLIVINE));
         SLAB_BRICK_SILVER = slab
                 .setHardness(0.8f)
                 .setResistance(2.0f)
-                .build(new SlabBlock(BRICK_SILVER, "bonusblocks:block/slab_brick_silver", blockID("slabBrickSilver")));
+                .build("bonusblocks:block/slab_brick_silver", blockID++, b -> new BlockLogicSlab(b, BRICK_SILVER));
         SLAB_COPPER = slab
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
                 .setHardness(5.0f)
                 .setResistance(10.0f)
                 .setTicking(true)
-                .build(new CopperSlabBlock(BLOCK_COPPER, "bonusblocks:block/slab_copper", blockID++));
+                .build("bonusblocks:block/slab_copper", blockID++, b -> new BlockLogicSlab(b, BLOCK_COPPER));
 
 
         // Stairs
@@ -1551,10 +1551,10 @@ public class BonusBlocks {
                 .build("brick.clay.baked", "bonusblocks:block/brick_clay_baked", blockID++, block -> new BlockLogic(block, Material.stone));
 
         SLAB_BRICK_CLAY_BAKED = slab
-                .build(new SlabBlock(BRICK_CLAY_BAKED, "bonusblocks:block/slab_brick_clay_baked", blockID("slabBrickBLOCK_CLAY_BAKED")));
+                .build("bonusblocks:block/slab_brick_clay_baked", blockID++, b -> new BlockLogicSlab(b, BRICK_CLAY_BAKED));
 
         STAIRS_BRICK_CLAY_BAKED = stairs
-                .build(new StairsBlock(BRICK_CLAY_BAKED, "bonusblocks:block/stairs_brick_clay_baked", blockID("stairsBrickBLOCK_CLAY_BAKED")));
+                .build("bonusblocks:block/stairs_brick_clay_baked", blockID++, b -> new BlockLogicStairs(b, BRICK_CLAY_BAKED));
 
         // Rough Dirt
         DIRT_ROUGH = new BlockBuilder(MOD_ID)
@@ -1618,10 +1618,10 @@ public class BonusBlocks {
                 .build("cobble.lazurite", "bonusblocks:block/cobble_lazurite", blockID++, block -> new BlockLogic(block, Material.stone));
         SLAB_COBBLE_LAZURITE = slab
                 .setHardness(2.0F)
-                .build(new SlabBlock(COBBLE_LAZURITE, "bonusblocks:block/slab_cobble_lazurite", blockID("SLAB_COBBLE_LAZURITE")));
+                .build("bonusblocks:block/slab_cobble_lazurite", blockID++, b -> new BlockLogicSlab(b, COBBLE_LAZURITE));
         STAIRS_COBBLE_LAZURITE = stairs
                 .setHardness(2.0F)
-                .build(new StairsBlock(COBBLE_LAZURITE, "bonusblocks:block/stairs_cobble_lazurite", blockID("STAIRS_COBBLE_LAZURITE")));
+                .build("bonusblocks:block/stairs_cobble_lazurite", blockID++, b -> new BlockLogicStairs(b, COBBLE_LAZURITE));
 
         BRICK_LAZURITE = brick
                 .setHardness(1.5f)
@@ -1629,10 +1629,10 @@ public class BonusBlocks {
                 .build("brick.lazurite", "bonusblocks:block/brick_lazurite", blockID++, block -> new BlockLogic(block, Material.stone));
         SLAB_BRICK_LAZURITE = slab
                 .setHardness(1.5f)
-                .build(new SlabBlock(BRICK_LAZURITE, "bonusblocks:block/slab_brick_lazurite", blockID("SLAB_BRICK_LAZURITE")));
+                .build("bonusblocks:block/slab_brick_lazurite", blockID++, b -> new BlockLogicSlab(b, BRICK_LAZURITE));
         STAIRS_BRICK_LAZURITE = stairs
                 .setHardness(1.5f)
-                .build(new StairsBlock(BRICK_LAZURITE, "bonusblocks:block/stairs_brick_lazurite", blockID("STAIRS_BRICK_LAZURITE")));
+                .build("bonusblocks:block/stairs_brick_lazurite", blockID++, b -> new BlockLogicStairs(b, BRICK_LAZURITE));
 
         LAZURITE_POLISHED = stone
                 .setTextures("bonusblocks:block/polished_lazurite_top")
@@ -1643,45 +1643,47 @@ public class BonusBlocks {
                 .setSideTextures("bonusblocks:block/carved_lazurite")
                 .build("lazurite.carved", "bonusblocks:block/lazurite_carved", blockID++, block -> new BlockLogic(block, Material.stone));
         SLAB_LAZURITE_POLISHED = slab
-                .build(new SlabBlock(LAZURITE_CARVED, "bonusblocks:block/slab_lazurite_polished", blockID("SLAB_LAZURITE_POLISHED")));
+                .build("bonusblocks:block/slab_lazurite_polished", blockID++, b -> new BlockLogicSlab(b, LAZURITE_CARVED));
 
 
-        // PERIDOT
+        // Peridot
 
         PERIDOT = stone
                 .setTextures("bonusblocks:block/peridot")
-                .build(new StoneBlock("peridot", "bonusblocks:block/peridot", blockID("peridot"), () -> COBBLE_PERIDOT, Material.stone));
+                .build("peridot", "bonusblocks:block/peridot", blockID++, block -> new BlockLogicStone(block, COBBLE_PERIDOT, Material.stone));
 
         COBBLE_PERIDOT = stone
                 .setHardness(2.0f)
                 .setTextures("bonusblocks:block/cobbled_peridot")
-                .build(new Block("cobble.peridot", "bonusblocks:block/cobble_peridot", blockID("COBBLE_PERIDOT"), Material.stone));
+                .build("cobble.peridot", "bonusblocks:block/cobble_peridot", blockID++, block -> new BlockLogic(block, Material.stone));
         SLAB_COBBLE_PERIDOT = slab
                 .setHardness(2.0F)
-                .build(new SlabBlock(COBBLE_PERIDOT, "bonusblocks:block/slab_cobble_peridot", blockID("SLAB_COBBLE_PERIDOT")));
+                .build("bonusblocks:block/slab_cobble_peridot", blockID++, b -> new BlockLogicSlab(b, COBBLE_PERIDOT));
         STAIRS_COBBLE_PERIDOT = stairs
                 .setHardness(2.0F)
-                .build(new StairsBlock(COBBLE_PERIDOT, "bonusblocks:block/stairs_cobble_peridot", blockID("STAIRS_COBBLE_PERIDOT")));
+                .build("bonusblocks:block/stairs_cobble_peridot", blockID++, b -> new BlockLogicStairs(b, COBBLE_PERIDOT));
 
         BRICK_PERIDOT = brick
                 .setHardness(1.5f)
                 .setTextures("bonusblocks:block/brick_peridot")
-                .build(new Block("brick.peridot", "bonusblocks:block/brick_peridot", blockID("BRICK_PERIDOT"), Material.stone));
+                .build("brick.peridot", "bonusblocks:block/brick_peridot", blockID++, block -> new BlockLogic(block, Material.stone));
         SLAB_BRICK_PERIDOT = slab
                 .setHardness(1.5f)
-                .build(new SlabBlock(BRICK_PERIDOT, "bonusblocks:block/slab_brick_peridot", blockID("SLAB_BRICK_PERIDOT")));
+                .build("bonusblocks:block/slab_brick_peridot", blockID++, b -> new BlockLogicSlab(b, BRICK_PERIDOT));
         STAIRS_BRICK_PERIDOT = stairs
                 .setHardness(1.5f)
-                .build(new StairsBlock(BRICK_PERIDOT, "bonusblocks:block/stairs_brick_peridot", blockID("STAIRS_BRICK_PERIDOT")));
+                .build("bonusblocks:block/stairs_brick_peridot", blockID++, b -> new BlockLogicStairs(b, BRICK_PERIDOT));
 
         PERIDOT_POLISHED = stone
-                .setTextures("bonusblocks:block/polished_peridot_top", "bonusblocks:block/polished_peridot_side"))
-                .build(new Block("peridot.polished", "bonusblocks:block/peridot_polished", blockID("PERIDOT_POLISHED"), Material.stone));
+                .setTextures("bonusblocks:block/polished_peridot_top")
+                .setSideTextures("bonusblocks:block/polished_peridot_side")
+                .build("peridot.polished", "bonusblocks:block/peridot_polished", blockID++, block -> new BlockLogic(block, Material.stone));
         PERIDOT_CARVED = stone
-                .setTextures("bonusblocks:block/polished_peridot_top", "bonusblocks:block/carved_peridot"))
-                .build(new Block("peridot.carved", "bonusblocks:block/peridot_carved", blockID("PERIDOT_CARVED"), Material.stone));
+                .setTextures("bonusblocks:block/polished_peridot_top")
+                .setSideTextures("bonusblocks:block/carved_peridot")
+                .build("peridot.carved", "bonusblocks:block/peridot_carved", blockID++, block -> new BlockLogic(block, Material.stone));
         SLAB_PERIDOT_POLISHED = slab
-                .build(new SlabBlock(PERIDOT_CARVED, "bonusblocks:block/slab_peridot_polished", blockID("SLAB_PERIDOT_POLISHED")));
+                .build("bonusblocks:block/slab_peridot_polished", blockID++, b -> new BlockLogicSlab(b, PERIDOT_CARVED));
 
         // Pot
 
@@ -1690,8 +1692,8 @@ public class BonusBlocks {
                 .setResistance(1.0f)
                 .setIcon("bonusblocks:item/pot")
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-//                .setBlockModel(block -> new DFBlockModelBuilder(MOD_ID).setBlockModel("block/pot.json").setRender3D(false).build(POT))
-                .build(new BlockPot("pot", "bonusblocks:block/pot", blockID("pot"), Material.stone));
+                .setBlockModel(block -> new DFBlockModelBuilder(MOD_ID).setBlockModel("block/pot.json").setRender3D(false).build(POT))
+                .build("pot", "bonusblocks:block/pot", blockID++, BlockLogicPot::new);
 
 
         //2.4 New Stuff
@@ -1699,14 +1701,14 @@ public class BonusBlocks {
         GIRDER_IRON = raw
                 .setVisualUpdateOnMetadata()
                 .setIcon("bonusblocks:block/girder_iron")
-//                .setBlockModel(block -> new DFBlockModelBuilder(MOD_ID).setBlockModel("block/girder.json").setBlockState(MOD_ID, "girder_states.json").setMetaStateInterpreter(new PipeMetaStateInterpreter()).setRender3D(false).build(GIRDER_IRON))
-                .build(new BlockGirder("girder.iron", "bonusblocks:block/girder_iron", blockID("GIRDER_IRON"), Material.metal));
+                .setBlockModel(block -> new DFBlockModelBuilder(MOD_ID).setBlockModel("block/girder.json").setBlockState(MOD_ID, "girder_states.json").setMetaStateInterpreter(new PipeMetaStateInterpreter()).setRender3D(false).build(GIRDER_IRON))
+                .build("girder.iron", "bonusblocks:block/girder_iron", blockID++, BlockLogicPipe::new);
 
         FENCE_GOLD = raw
-                .setBlockModel(block -> new FenceThinBlockModel<>(block, TextureRegistry.getTexture("bonusblocks:block/fence_gold_center"), null, TextureRegistry.getTexture("bonusblocks:block/fence_gold_top"), TextureRegistry.getTexture("bonusblocks:block/fence_gold_column")).withTextures("bonusblocks:block/fence_gold_center"))
+                .setBlockModel(block -> new BlockModelFenceThin<>(FENCE_GOLD, TextureRegistry.getTexture("bonusblocks:block/fence_gold_center"), null, TextureRegistry.getTexture("bonusblocks:block/fence_gold_top"), TextureRegistry.getTexture("bonusblocks:block/fence_gold_column")).withTextures("bonusblocks:block/fence_gold_center"))
                 .setVisualUpdateOnMetadata()
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.CAN_HANG_OFF)
-                .build(new BlockFenceNoClimb("fence.gold", "bonusblocks:block/fence_gold", blockID("FENCE_GOLD"), Material.metal));
+                .build("fence.gold", "bonusblocks:block/fence_gold", blockID++, BlockFenceNoClimb::new);
 
 
 
@@ -1717,19 +1719,21 @@ public class BonusBlocks {
 
         STAIRS_SCORCHEDSTONE = stairs
                 .setHardness(0.8F)
-                .build(new StairsBlock(SCORCHEDSTONE, "bonusblocks:block/stairs_scorchedstone", blockID("STAIRS_SCORCHEDSTONE")));
+                .build("bonusblocks:block/stairs_scorchedstone", blockID++, b -> new BlockLogicStairs(b, SCORCHEDSTONE));
 
 
         DOOR_GLASS_OBSIDIAN_BOTTOM = obsidian
-                .setBlockModel(block -> new GlassDoorBlockModel<>(block).withTextures("bonusblocks:block/door_glass_obsidian_bottom"))
+                .setBlockModel(block -> new BlockModelDoorGlass<>(GLASS_OBSIDIAN))
+                .setTextures("bonusblocks:block/door_glass_obsidian_bottom")
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
                 .setVisualUpdateOnMetadata()
-                .build(new ObsidianGlassDoorBlock("door.glass.obsidian.bottom", "bonusblocks:block/door_glass_obsidian_bottom", blockID("DOOR_GLASS_OBSIDIAN_BOTTOM"), true, () -> BonusItems.DOOR_GLASS_OBSIDIAN));
+                .build("door.glass.obsidian.bottom", "bonusblocks:block/door_glass_obsidian_bottom", blockID++, block -> new BlockLogicDoor(block, Material.glass, false, false, () -> BonusItems.DOOR_GLASS_OBSIDIAN));
         DOOR_GLASS_OBSIDIAN_TOP = obsidian
-                .setBlockModel(block -> new GlassDoorBlockModel<>(block).withTextures("bonusblocks:block/door_glass_obsidian_top"))
+                .setBlockModel(block -> new BlockModelDoorGlass<>(GLASS_OBSIDIAN))
+                .setTextures("bonusblocks:block/door_glass_obsidian_top")
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
                 .setVisualUpdateOnMetadata()
-                .build(new ObsidianGlassDoorBlock("door.glass.obsidian.top", "bonusblocks:block/door_glass_obsidian_top", blockID("DOOR_GLASS_OBSIDIAN_TOP"), true, () -> BonusItems.DOOR_GLASS_OBSIDIAN));
+                .build("door.glass.obsidian.top", "bonusblocks:block/door_glass_obsidian_top", blockID++, block -> new BlockLogicDoor(block, Material.glass, true, false, () -> BonusItems.DOOR_GLASS_OBSIDIAN));
 
 
         TATAMI = new BlockBuilder(MOD_ID)
@@ -1745,12 +1749,12 @@ public class BonusBlocks {
 
         //3.1 NEW STUFF
         FENCE_STEEL = raw
-                .setBlockModel(block -> new FenceThinBlockModel<>(block, TextureRegistry.getTexture("bonusblocks:block/fence_steel_center"), null, TextureRegistry.getTexture("bonusblocks:block/fence_steel_top"), TextureRegistry.getTexture("bonusblocks:block/fence_steel_column")).withTextures("bonusblocks:block/fence_steel_center"))
+                .setBlockModel(block -> new BlockModelFenceThin<>(FENCE_STEEL, TextureRegistry.getTexture("bonusblocks:block/fence_steel_center"), null, TextureRegistry.getTexture("bonusblocks:block/fence_steel_top"), TextureRegistry.getTexture("bonusblocks:block/fence_steel_column")).withTextures("bonusblocks:block/fence_steel_center"))
                 .setVisualUpdateOnMetadata()
                 .setHardness(5.0f)
                 .setResistance(4000.0f)
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.CAN_HANG_OFF)
-                .build(new BlockFenceNoClimb("fence.steel", "bonusblocks:block/fence_steel", blockID("FENCE_STEEL"), Material.metal));
+                .build("fence.steel", "bonusblocks:block/fence_steel", blockID++, BlockFenceNoClimb::new);
 
 
 
@@ -1969,14 +1973,14 @@ public class BonusBlocks {
                 .build("trapdoor.peridot", "bonusblocks:block/trapdoor_peridot", blockID++, b -> new BlockLogicTrapDoorStone(b));
 
 
-        BEDROLL = new BlockBuilder(MOD_ID)
-                .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
-                .setBlockModel(BlockModelBedroll::new)
-                .setHardness(0.2f)
-                .setResistance(0.2f)
-                .setVisualUpdateOnMetadata()
-                .setTags(BlockTags.NOT_IN_CREATIVE_MENU, BlockTags.MINEABLE_BY_AXE)
-                .build(new BlockBedroll("bedroll", "bonusblocks:block/bedroll", blockID("bedroll"), Material.cloth));
+//        BEDROLL = new BlockBuilder(MOD_ID)
+//                .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
+//                .setBlockModel(BlockModelBedroll::new)
+//                .setHardness(0.2f)
+//                .setResistance(0.2f)
+//                .setVisualUpdateOnMetadata()
+//                .setTags(BlockTags.NOT_IN_CREATIVE_MENU, BlockTags.MINEABLE_BY_AXE)
+//                .build(new BlockBedroll("bedroll", "bonusblocks:block/bedroll", blockID++, Material.cloth));
 
     }
 }
