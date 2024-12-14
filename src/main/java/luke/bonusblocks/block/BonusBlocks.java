@@ -38,12 +38,12 @@ public class BonusBlocks {
     int slabBlockID = 5;
 
 
-    public static Block BOX;
+    public static Block<BlockLogic> BOX;
 
     public static Block CRATE;
     public static Block CRATE_PAINTED;
 
-    public static Block BOOKSHELF_EMPTY_PLANKS_OAK;
+    public static Block<BlockLogic> BOOKSHELF_EMPTY_PLANKS_OAK;
 
     public static Block BRANCH;
     public static Block<BlockLogicLeavesOakMossy> LEAVES_OAK_MOSSY;
@@ -59,10 +59,10 @@ public class BonusBlocks {
 
     public static Block<BlockMossy> MOSS;
 
-    public static Block GRASS_OVERGROWN;
-    public static Block GRASS_RETRO_OVERGROWN;
-    public static Block GRASS_SCORCHED_OVERGROWN;
-    public static Block PATH_DIRT_OVERGROWN;
+    public static Block<BlockLogic> GRASS_OVERGROWN;
+    public static Block<BlockLogic> GRASS_RETRO_OVERGROWN;
+    public static Block<BlockLogic> GRASS_SCORCHED_OVERGROWN;
+    public static Block<BlockLogic> PATH_DIRT_OVERGROWN;
 
     public static Block<BlockLogicFlower> FLOWER_SILVER;
     public static Block<BlockLogicFlower> FLOWER_CYAN;
@@ -93,43 +93,43 @@ public class BonusBlocks {
 
     public static Block MUSHROOM_GRAY;
 
-    public static Block FUNGI_RED;
-    public static Block FUNGI_BROWN;
-    public static Block FUNGI_GRAY;
+    public static Block<BlockLogic> FUNGI_RED;
+    public static Block<BlockLogic> FUNGI_BROWN;
+    public static Block<BlockLogic> FUNGI_GRAY;
 
     public static Block BLOCK_BONE;
     public static Block BLOCK_CLOTH;
     public static Block BLOCK_SLIME;
     public static Block BLOCK_SULPHUR;
     public static Block BLOCK_SUGAR;
-    public static Block BLOCK_LEATHER;
-    public static Block BLOCK_WICKER;
-    public static Block BLOCK_FLINT;
-    public static Block BLOCK_CRUDE_STEEL;
-    public static Block BLOCK_COPPER;
-    public static Block BLOCK_SILVER;
+    public static Block<BlockLogic> BLOCK_LEATHER;
+    public static Block<BlockLogic> BLOCK_WICKER;
+    public static Block<BlockLogic> BLOCK_FLINT;
+    public static Block<BlockLogic> BLOCK_CRUDE_STEEL;
+    public static Block<BlockLogic> BLOCK_COPPER;
+    public static Block<BlockLogic> BLOCK_SILVER;
 
-    public static Block BLOCK_RAW_GOLD;
-    public static Block BLOCK_RAW_IRON;
-    public static Block BLOCK_RAW_COPPER;
-    public static Block BLOCK_RAW_SILVER;
+    public static Block<BlockLogic> BLOCK_RAW_GOLD;
+    public static Block<BlockLogic> BLOCK_RAW_IRON;
+    public static Block<BlockLogic> BLOCK_RAW_COPPER;
+    public static Block<BlockLogic> BLOCK_RAW_SILVER;
 
     public static Block OVERLAY_RAW_GOLD;
     public static Block OVERLAY_RAW_IRON;
     public static Block OVERLAY_RAW_COPPER;
     public static Block OVERLAY_RAW_SILVER;
 
-    public static Block ORE_COPPER_STONE;
-    public static Block ORE_COPPER_BASALT;
-    public static Block ORE_COPPER_LIMESTONE;
-    public static Block ORE_COPPER_GRANITE;
-    public static Block ORE_COPPER_PERMAFROST;
+    public static Block<BlockLogicOreCopper> ORE_COPPER_STONE;
+    public static Block<BlockLogicOreCopper> ORE_COPPER_BASALT;
+    public static Block<BlockLogicOreCopper> ORE_COPPER_LIMESTONE;
+    public static Block<BlockLogicOreCopper> ORE_COPPER_GRANITE;
+    public static Block<BlockLogicOreCopper> ORE_COPPER_PERMAFROST;
 
-    public static Block ORE_SILVER_STONE;
-    public static Block ORE_SILVER_BASALT;
-    public static Block ORE_SILVER_LIMESTONE;
-    public static Block ORE_SILVER_GRANITE;
-    public static Block ORE_SILVER_PERMAFROST;
+    public static Block<BlockLogicOreSilver> ORE_SILVER_STONE;
+    public static Block<BlockLogicOreSilver> ORE_SILVER_BASALT;
+    public static Block<BlockLogicOreSilver> ORE_SILVER_LIMESTONE;
+    public static Block<BlockLogicOreSilver> ORE_SILVER_GRANITE;
+    public static Block<BlockLogicOreSilver> ORE_SILVER_PERMAFROST;
 
     public static Block MESH_COPPER;
 
@@ -266,26 +266,26 @@ public class BonusBlocks {
 
     public static Block FENCE_STEEL;
 
-    public static Block DOOR_STONE_BOTTOM;
-    public static Block DOOR_STONE_TOP;
-    public static Block DOOR_BASALT_BOTTOM;
-    public static Block DOOR_BASALT_TOP;
-    public static Block DOOR_LIMESTONE_BOTTOM;
-    public static Block DOOR_LIMESTONE_TOP;
-    public static Block DOOR_GRANITE_BOTTOM;
-    public static Block DOOR_GRANITE_TOP;
-    public static Block DOOR_MARBLE_BOTTOM;
-    public static Block DOOR_MARBLE_TOP;
-    public static Block DOOR_SLATE_BOTTOM;
-    public static Block DOOR_SLATE_TOP;
-    public static Block DOOR_PERMAFROST_BOTTOM;
-    public static Block DOOR_PERMAFROST_TOP;
-    public static Block DOOR_NETHERRACK_BOTTOM;
-    public static Block DOOR_NETHERRACK_TOP;
-    public static Block DOOR_LAZURITE_BOTTOM;
-    public static Block DOOR_LAZURITE_TOP;
-    public static Block DOOR_PERIDOT_BOTTOM;
-    public static Block DOOR_PERIDOT_TOP;
+    public static Block<BlockLogicDoor> DOOR_STONE_BOTTOM;
+    public static Block<BlockLogicDoor> DOOR_STONE_TOP;
+    public static Block<BlockLogicDoor> DOOR_BASALT_BOTTOM;
+    public static Block<BlockLogicDoor> DOOR_BASALT_TOP;
+    public static Block<BlockLogicDoor> DOOR_LIMESTONE_BOTTOM;
+    public static Block<BlockLogicDoor> DOOR_LIMESTONE_TOP;
+    public static Block<BlockLogicDoor> DOOR_GRANITE_BOTTOM;
+    public static Block<BlockLogicDoor> DOOR_GRANITE_TOP;
+    public static Block<BlockLogicDoor> DOOR_MARBLE_BOTTOM;
+    public static Block<BlockLogicDoor> DOOR_MARBLE_TOP;
+    public static Block<BlockLogicDoor> DOOR_SLATE_BOTTOM;
+    public static Block<BlockLogicDoor> DOOR_SLATE_TOP;
+    public static Block<BlockLogicDoor> DOOR_PERMAFROST_BOTTOM;
+    public static Block<BlockLogicDoor> DOOR_PERMAFROST_TOP;
+    public static Block<BlockLogicDoor> DOOR_NETHERRACK_BOTTOM;
+    public static Block<BlockLogicDoor> DOOR_NETHERRACK_TOP;
+    public static Block<BlockLogicDoor> DOOR_LAZURITE_BOTTOM;
+    public static Block<BlockLogicDoor> DOOR_LAZURITE_TOP;
+    public static Block<BlockLogicDoor> DOOR_PERIDOT_BOTTOM;
+    public static Block<BlockLogicDoor> DOOR_PERIDOT_TOP;
 
     public static Block TRAPDOOR_STONE;
     public static Block TRAPDOOR_BASALT;
@@ -801,7 +801,7 @@ public class BonusBlocks {
         LEAVES_OAK_MOSSY = leaves
                 .setBlockModel(block -> new BlockModelLeaves<>(block, "bonusblocks:block/leaves_oak_mossy"))
                 .setBlockColor(block -> (new BlockColorLeavesOak(Colorizers.oak)))
-                .build("leaves.oak.mossy", "bonusblocks:block/leaves_oak_mossy", blockID++, b -> new BlockLogicLeavesBase(b, Material.leaves, SAPLING_OAK_MOSSY));
+                .build("leaves.oak.mossy", "bonusblocks:block/leaves_oak_mossy", blockID++, BlockLogicLeavesOakMossy::new);
 
         LEAVES_JACARANDA = leaves
                 .setBlockModel(block -> new BlockModelLeaves<>(block, "bonusblocks:block/leaves_jacaranda"))
@@ -1182,13 +1182,13 @@ public class BonusBlocks {
 
         // Copper Doors
         DOOR_COPPER_BOTTOM = raw
-                .setBlockModel(block -> new BlockModelDoor<>(block))
+                .setBlockModel(block -> new BlockModelDoor<>(DOOR_COPPER_BOTTOM))
                 .setTextures("bonusblocks:block/door_copper_bottom")
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
                 .setVisualUpdateOnMetadata()
                 .build(new CopperDoorBlock("door.copper.bottom", "bonusblocks:block/door_copper_bottom", blockID++, Material.metal, false, () -> BonusItems.DOOR_COPPER));
         DOOR_COPPER_TOP = raw
-                .setBlockModel(block -> new BlockModelDoor<>(block))
+                .setBlockModel(block -> new BlockModelDoor<>(DOOR_COPPER_TOP))
                 .setTextures("bonusblocks:block/door_copper_top")
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
                 .setVisualUpdateOnMetadata()
@@ -1197,7 +1197,7 @@ public class BonusBlocks {
 
         // Copper Fence
         FENCE_COPPER = raw
-                .setBlockModel(block -> new BlockModelFenceThin<>(block, TextureRegistry.getTexture("bonusblocks:block/fence_copper_center"), null, TextureRegistry.getTexture("bonusblocks:block/fence_copper_top"), TextureRegistry.getTexture("bonusblocks:block/fence_copper_column")).withTextures("bonusblocks:block/fence_copper_center"))
+                .setBlockModel(block -> new BlockModelFenceThin<>(FENCE_COPPER, TextureRegistry.getTexture("bonusblocks:block/fence_copper_center"), null, TextureRegistry.getTexture("bonusblocks:block/fence_copper_top"), TextureRegistry.getTexture("bonusblocks:block/fence_copper_column")).withTextures("bonusblocks:block/fence_copper_center"))
                 .setVisualUpdateOnMetadata()
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.CAN_HANG_OFF)
                 .build("fence.copper", "bonusblocks:block/fence_copper", blockID++, BlockLogicFenceCopper::new);
@@ -1244,10 +1244,10 @@ public class BonusBlocks {
 
         // Silver Fence
         FENCE_SILVER = silver
-                .setBlockModel(block -> new FenceThinBlockModel<>(block, TextureRegistry.getTexture("bonusblocks:block/fence_silver_center"), null, null, TextureRegistry.getTexture("bonusblocks:block/fence_silver_column")).withTextures("bonusblocks:block/fence_silver_center"))
+                .setBlockModel(block -> new BlockModelFenceThin<>(FENCE_COPPER, TextureRegistry.getTexture("bonusblocks:block/fence_silver_center"), null, null, TextureRegistry.getTexture("bonusblocks:block/fence_silver_column")).withTextures("bonusblocks:block/fence_silver_center"))
                 .setVisualUpdateOnMetadata()
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.CAN_HANG_OFF)
-                .build(new BlockFenceNoClimb("fence.silver", "bonusblocks:block/fence_silver", blockID++, Material.metal));
+                .build("fence.silver", "bonusblocks:block/fence_silver", blockID++, BlockFenceNoClimb::new);
 
         // Silver Chandelier
         CHANDELIER_SILVER = silver
@@ -1256,7 +1256,7 @@ public class BonusBlocks {
                 .setVisualUpdateOnMetadata()
                 .setLuminance(15)
                 .setUseInternalLight()
-                .build(new BlockChandelier("chandelier.silver", "bonusblocks:block/chandelier_silver", blockID++, ));
+                .build("chandelier.silver", "bonusblocks:block/chandelier_silver", blockID++, BlockChandelier::new);
 
         // Silver Candelabra
         CANDELABRA_SILVER = silver
@@ -1265,7 +1265,7 @@ public class BonusBlocks {
                 .setVisualUpdateOnMetadata()
                 .setLuminance(15)
                 .setUseInternalLight()
-                .build(new BlockVase("candelabra.silver", "bonusblocks:block/candelabra_silver", blockID++));
+                .build(new BlockVase("candelabra.silver", "bonusblocks:block/candelabra_silver", blockID++, BlockVase::new));
 
         // Silver Lantern
         LANTERN_SILVER = silver
