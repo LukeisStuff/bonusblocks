@@ -1,6 +1,5 @@
 package luke.bonusblocks.item;
 
-import luke.bonusblocks.BonusBlocksConfig;
 import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemDoor;
@@ -11,9 +10,7 @@ import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
 
 public class BonusItems {
 
-    private int itemID(String itemName) {
-        return BonusBlocksConfig.cfg.getInt("Item IDs." + itemName);
-    }
+    int itemID = 16550;
 
     public static Item SOULWAX;
     public static Item ORE_RAW_COPPER;
@@ -47,27 +44,27 @@ public class BonusItems {
 
         SOULWAX = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/soulwax")
-                .build(new Item("soulwax", "bonusblocks:item/soulwax", itemID("soulwax")));
+                .build(new Item("soulwax", "bonusblocks:item/soulwax", itemID++));
 
         ORE_RAW_COPPER = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/ore_raw_copper")
-                .build(new ItemRawCopper("ore.raw.copper","bonusblocks:item/ore_raw_copper", itemID("oreRawCopper")));
+                .build(new ItemRawCopper("ore.raw.copper","bonusblocks:item/ore_raw_copper", itemID++));
 
         INGOT_COPPER = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/ingot_copper")
-                .build(new Item("ingot.copper", "bonusblocks:item/ingot_copper", itemID("INGOT_COPPER")));
+                .build(new Item("ingot.copper", "bonusblocks:item/ingot_copper", itemID++));
 
         ORE_RAW_SILVER = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/ore_raw_silver")
-                .build(new ItemRawSilver("ore.raw.silver", "bonusblocks:item/ore_raw_silver", itemID("oreRawSilver")));
+                .build(new ItemRawSilver("ore.raw.silver", "bonusblocks:item/ore_raw_silver", itemID++));
 
         INGOT_SILVER = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/ingot_silver")
-                .build(new Item("ingot.silver", "bonusblocks:item/ingot_silver", itemID("INGOT_SILVER")));
+                .build(new Item("ingot.silver", "bonusblocks:item/ingot_silver", itemID++));
 
         DOOR_COPPER = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/door_copper")
-                .build(new ItemDoor("door.copper", "bonusblocks:item/door_copper", itemID("doorCopper"), BonusBlocks.DOOR_COPPER_BOTTOM, BonusBlocks.DOOR_COPPER_TOP));
+                .build(new ItemDoor("door.copper", "bonusblocks:item/door_copper", itemID++, BonusBlocks.DOOR_COPPER_BOTTOM, BonusBlocks.DOOR_COPPER_TOP));
 
 //        DOOR_COPPER_TARNISHED = new ItemBuilder(MOD_ID)
 //                .setIcon("bonusblocks:item/door_copper_tarnished")
@@ -79,68 +76,68 @@ public class BonusItems {
 
         DOOR_SILVER = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/door_silver")
-                .build(new ItemDoor("door.silver", "bonusblocks:item/door_silver", itemID("doorSilver"), BonusBlocks.DOOR_SILVER_BOTTOM, BonusBlocks.DOOR_SILVER_TOP));
+                .build(new ItemDoor("door.silver", "bonusblocks:item/door_silver", itemID++, BonusBlocks.DOOR_SILVER_BOTTOM, BonusBlocks.DOOR_SILVER_TOP));
 
         BED_SILVER = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/bed_silver")
-                .build(new SilverBedItem("bed.silver", "bonusblocks:item/bed_silver", itemID("bedSilver")));
+                .build(new SilverBedItem("bed.silver", "bonusblocks:item/bed_silver", itemID++));
 
         SEAT_SILVER = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/seat_silver")
-                .build( new ItemPlaceable("seat.silver", "bonusblocks:item/seat_silver", itemID("seatSilver"), BonusBlocks.SEAT_SILVER));
+                .build( new ItemPlaceable("seat.silver", "bonusblocks:item/seat_silver", itemID++, BonusBlocks.SEAT_SILVER));
 
         MOSSBALL = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/moss")
-                .build(new Item("mossball", "bonusblocks:item/mossball", itemID("mossball")));
+                .build(new Item("mossball", "bonusblocks:item/mossball", itemID++));
 
         DOOR_GLASS_OBSIDIAN = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/door_glass_obsidian")
-                .build(new ItemDoor("door.glass.obsidian", "bonusblocks:item/door_glass_obsidian", itemID("DOOR_GLASS_OBSIDIAN"), BonusBlocks.DOOR_GLASS_OBSIDIAN_BOTTOM, BonusBlocks.DOOR_GLASS_OBSIDIAN_TOP));
+                .build(new ItemDoor("door.glass.obsidian", "bonusblocks:item/door_glass_obsidian", itemID++, BonusBlocks.DOOR_GLASS_OBSIDIAN_BOTTOM, BonusBlocks.DOOR_GLASS_OBSIDIAN_TOP));
 
         DOOR_STONE = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/door_stone")
-                .build(new ItemDoor("door.stone", "bonusblocks:item/door_stone", itemID("DOOR_STONE"), BonusBlocks.DOOR_STONE_BOTTOM, BonusBlocks.DOOR_STONE_TOP));
+                .build(new ItemDoor("door.stone", "bonusblocks:item/door_stone", itemID++, BonusBlocks.DOOR_STONE_BOTTOM, BonusBlocks.DOOR_STONE_TOP));
 
         DOOR_BASALT = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/door_basalt")
-                .build(new ItemDoor("door.basalt", "bonusblocks:item/door_basalt", itemID("DOOR_BASALT"), BonusBlocks.DOOR_BASALT_BOTTOM, BonusBlocks.DOOR_BASALT_TOP));
+                .build(new ItemDoor("door.basalt", "bonusblocks:item/door_basalt", itemID++, BonusBlocks.DOOR_BASALT_BOTTOM, BonusBlocks.DOOR_BASALT_TOP));
 
         DOOR_LIMESTONE = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/door_limestone")
-                .build(new ItemDoor("door.limestone", "bonusblocks:item/door_limestone", itemID("DOOR_LIMESTONE"), BonusBlocks.DOOR_LIMESTONE_BOTTOM, BonusBlocks.DOOR_LIMESTONE_TOP));
+                .build(new ItemDoor("door.limestone", "bonusblocks:item/door_limestone", itemID++, BonusBlocks.DOOR_LIMESTONE_BOTTOM, BonusBlocks.DOOR_LIMESTONE_TOP));
 
         DOOR_GRANITE = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/door_granite")
-                .build(new ItemDoor("door.granite", "bonusblocks:item/door_granite", itemID("DOOR_GRANITE"), BonusBlocks.DOOR_GRANITE_BOTTOM, BonusBlocks.DOOR_GRANITE_TOP));
+                .build(new ItemDoor("door.granite", "bonusblocks:item/door_granite", itemID++, BonusBlocks.DOOR_GRANITE_BOTTOM, BonusBlocks.DOOR_GRANITE_TOP));
 
         DOOR_MARBLE = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/door_marble")
-                .build(new ItemDoor("door.marble", "bonusblocks:item/door_marble", itemID("DOOR_MARBLE"), BonusBlocks.DOOR_MARBLE_BOTTOM, BonusBlocks.DOOR_MARBLE_TOP));
+                .build(new ItemDoor("door.marble", "bonusblocks:item/door_marble", itemID++, BonusBlocks.DOOR_MARBLE_BOTTOM, BonusBlocks.DOOR_MARBLE_TOP));
 
         DOOR_SLATE = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/door_slate")
-                .build(new ItemDoor("door.slate", "bonusblocks:item/door_slate", itemID("DOOR_SLATE"), BonusBlocks.DOOR_SLATE_BOTTOM, BonusBlocks.DOOR_SLATE_TOP));
+                .build(new ItemDoor("door.slate", "bonusblocks:item/door_slate", itemID++, BonusBlocks.DOOR_SLATE_BOTTOM, BonusBlocks.DOOR_SLATE_TOP));
 
         DOOR_PERMAFROST = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/door_permafrost")
-                .build(new ItemDoor("door.permafrost", "bonusblocks:item/door_permafrost", itemID("DOOR_PERMAFROST"), BonusBlocks.DOOR_PERMAFROST_BOTTOM, BonusBlocks.DOOR_PERMAFROST_TOP));
+                .build(new ItemDoor("door.permafrost", "bonusblocks:item/door_permafrost", itemID++, BonusBlocks.DOOR_PERMAFROST_BOTTOM, BonusBlocks.DOOR_PERMAFROST_TOP));
 
         DOOR_NETHERRACK = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/door_netherrack")
-                .build(new ItemDoor("door.netherrack", "bonusblocks:item/door_netherrack", itemID("DOOR_NETHERRACK"), BonusBlocks.DOOR_NETHERRACK_BOTTOM, BonusBlocks.DOOR_NETHERRACK_TOP));
+                .build(new ItemDoor("door.netherrack", "bonusblocks:item/door_netherrack", itemID++, BonusBlocks.DOOR_NETHERRACK_BOTTOM, BonusBlocks.DOOR_NETHERRACK_TOP));
 
         DOOR_LAZURITE = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/door_lazurite")
-                .build(new ItemDoor("door.lazurite", "bonusblocks:item/door_lazurite", itemID("DOOR_LAZURITE"), BonusBlocks.DOOR_LAZURITE_BOTTOM, BonusBlocks.DOOR_LAZURITE_TOP));
+                .build(new ItemDoor("door.lazurite", "bonusblocks:item/door_lazurite", itemID++, BonusBlocks.DOOR_LAZURITE_BOTTOM, BonusBlocks.DOOR_LAZURITE_TOP));
 
         DOOR_PERIDOT = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/door_peridot")
-                .build(new ItemDoor("door.peridot", "bonusblocks:item/door_peridot", itemID("DOOR_PERIDOT"), BonusBlocks.DOOR_PERIDOT_BOTTOM, BonusBlocks.DOOR_PERIDOT_TOP));
+                .build(new ItemDoor("door.peridot", "bonusblocks:item/door_peridot", itemID++, BonusBlocks.DOOR_PERIDOT_BOTTOM, BonusBlocks.DOOR_PERIDOT_TOP));
 
 
         BEDROLL = new ItemBuilder(MOD_ID)
                 .setIcon("bonusblocks:item/bedroll")
-                .build(new ItemBedroll("bedroll", "bonusblocks:item/bedroll", itemID("bedroll"))).setMaxStackSize(1);
+                .build(new ItemBedroll("bedroll", "bonusblocks:item/bedroll", itemID++)).setMaxStackSize(1);
 
 
 

@@ -19,14 +19,6 @@ public class BlockSlime extends BlockLogicTransparent {
         return false;
     }
 
-    public boolean shouldSideBeRendered(WorldSource blockAccess, int x, int y, int z, int side) {
-        return super.shouldSideBeRendered(blockAccess, x, y, z, 1 - side);
-    }
-
-    public int getRenderLayer() {
-        return 1;
-    }
-
     public AABB getCollisionBoundingBoxFromPool(WorldSource world, int x, int y, int z) {
         float f = 0.125F;
         return AABB.getPermanentBB(x + f, y + f, z + f, (float)(x + 1) - f, (float)(y + 1) - f, (float)(z + 1) - f);
@@ -38,7 +30,7 @@ public class BlockSlime extends BlockLogicTransparent {
         entity.zd *= 0.4;
         if (entity.fallDistance > 1.5F) {
             entity.fallDistance = 0.0F;
-            world.playBlockSoundEffect((Entity)null, x, y, z, BonusBlocks.BLOCK_SLIME, EnumBlockSoundEffectType.ENTITY_LAND);
+            world.playBlockSoundEffect(null, x, y, z, BonusBlocks.BLOCK_SLIME, EnumBlockSoundEffectType.ENTITY_LAND);
         }
     }
 }

@@ -33,7 +33,7 @@ import static net.minecraft.core.item.tool.ItemToolPickaxe.miningLevels;
 
 public class BonusBlocks {
 
-    int blockID = 1600;
+    int blockID = 1500;
     int stairBlockID = 5;
     int slabBlockID = 5;
 
