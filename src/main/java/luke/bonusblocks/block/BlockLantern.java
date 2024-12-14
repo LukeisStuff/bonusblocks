@@ -1,17 +1,20 @@
 package luke.bonusblocks.block;
 
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.BlockLogic;
+import net.minecraft.core.block.Blocks;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.entity.Mob;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
+import org.jetbrains.annotations.NotNull;
 
-public class BlockLantern extends Block {
-    public BlockLantern(String key, String namespaceId, int id) {
-        super(key, namespaceId, id, Material.metal);
-        this.setTicking(true);
+public class BlockLantern extends BlockLogic {
+    public BlockLantern(Block<?> block) {
+        super(block, Material.metal);
+        block.setTicking(true);
         this.setBlockBounds(0.1875f, 0.0F, 0.1875f, 0.8125f, 1.0f, 0.8125f);
     }
 
@@ -19,12 +22,12 @@ public class BlockLantern extends Block {
         return false;
     }
 
-    public boolean renderAsNormalBlock() {
+    public boolean isCubeShaped() {
         return false;
     }
 
-    public void onBlockPlacedByMob(World world, int x, int y, int z, Side side, Mob mob, double sideHeight) {
-        if (!world.isBlockNormalCube(x, y + 1, z) && !Block.hasTag(world.getBlockId(x, y + 1, z), BlockTags.CAN_HANG_OFF)) {
+    public void onBlockPlacedByMob(World world, int x, int y, int z, @NotNull Side side, Mob mob, double xPlaced, double yPlaced) {
+        if (!world.isBlockNormalCube(x, y + 1, z) && !Blocks.hasTag(world.getBlockId(x, y + 1, z), BlockTags.CAN_HANG_OFF)) {
             world.setBlockMetadataWithNotify(x, y, z, 0);
         } else {
             world.setBlockMetadataWithNotify(x, y, z, 1);
@@ -32,7 +35,7 @@ public class BlockLantern extends Block {
     }
 
     public boolean canPlaceBlockAt(World world, int x, int y, int z) {
-        return world.isBlockNormalCube(x, y + 1, z) || Block.hasTag(world.getBlockId(x, y + 1, z), BlockTags.CAN_HANG_OFF) || world.canPlaceOnSurfaceOfBlock(x, y - 1, z);
+        return world.isBlockNormalCube(x, y + 1, z) || Blocks.hasTag(world.getBlockId(x, y + 1, z), BlockTags.CAN_HANG_OFF) || world.canPlaceOnSurfaceOfBlock(x, y - 1, z);
     }
 
     public void onNeighborBlockChange(World world, int x, int y, int z, int blockId) {
@@ -47,7 +50,7 @@ public class BlockLantern extends Block {
         if (meta != 1) {
             return world.canPlaceOnSurfaceOfBlock(x, y - 1, z);
         } else {
-            return world.isBlockNormalCube(x, y + 1, z) || Block.hasTag(world.getBlockId(x, y + 1, z), BlockTags.CAN_HANG_OFF);
+            return world.isBlockNormalCube(x, y + 1, z) || Blocks.hasTag(world.getBlockId(x, y + 1, z), BlockTags.CAN_HANG_OFF);
         }
     }
 }

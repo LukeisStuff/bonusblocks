@@ -1,26 +1,26 @@
 package luke.bonusblocks.block;
 
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.BlockLogic;
+import net.minecraft.core.block.Blocks;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
-import net.minecraft.core.entity.Mob;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.sound.SoundCategory;
-import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.WorldSource;
 
 import java.util.Random;
 
-public class BlockChimes extends Block {
-    public BlockChimes(String key, String namespaceId, int id) {
-        super(key, namespaceId, id, Material.metal);
-        this.setTicking(true);
+public class BlockChimes extends BlockLogic {
+    public BlockChimes(Block<?> block) {
+        super(block, Material.metal);
+        block.setTicking(true);
         this.setBlockBounds(0.1875f, 0.0F, 0.1875f, 0.8125f, 1.0f, 0.8125f);
     }
 
-    public void randomDisplayTick(World world, int x, int y, int z, Random rand) {
+    public void animationTick(World world, int x, int y, int z, Random rand) {
         if (rand.nextInt(150) == 0) {
             world.playSoundEffect(null, SoundCategory.WORLD_SOUNDS, x, y, z, "bonusblocks.chimes", 0.3F, rand.nextFloat() * 0.4F + 0.8F);
         }
@@ -34,19 +34,12 @@ public class BlockChimes extends Block {
         return false;
     }
 
-    public boolean renderAsNormalBlock() {
+    public boolean isCubeShaped() {
         return false;
     }
 
-    public void onBlockPlacedByMob(World world, int x, int y, int z, Side side, Mob mob, double sideHeight) {
-        if (!world.isBlockNormalCube(x, y + 1, z)) {
-            Block.hasTag(world.getBlockId(x, y + 1, z), BlockTags.CAN_HANG_OFF);
-        }
-
-    }
-
     public boolean canPlaceBlockAt(World world, int x, int y, int z) {
-        return world.isBlockNormalCube(x, y + 1, z) || Block.hasTag(world.getBlockId(x, y + 1, z), BlockTags.CAN_HANG_OFF) || world.canPlaceOnSurfaceOfBlock(x, y + 1, z);
+        return world.isBlockNormalCube(x, y + 1, z) || Blocks.hasTag(world.getBlockId(x, y + 1, z), BlockTags.CAN_HANG_OFF) || world.canPlaceOnSurfaceOfBlock(x, y + 1, z);
     }
 
     public void onNeighborBlockChange(World world, int x, int y, int z, int blockId) {
@@ -62,7 +55,7 @@ public class BlockChimes extends Block {
         if (meta != 1) {
             return world.canPlaceOnSurfaceOfBlock(x, y + 1, z);
         } else {
-            return world.isBlockNormalCube(x, y + 1, z) || Block.hasTag(world.getBlockId(x, y + 1, z), BlockTags.CAN_HANG_OFF);
+            return world.isBlockNormalCube(x, y + 1, z) || Blocks.hasTag(world.getBlockId(x, y + 1, z), BlockTags.CAN_HANG_OFF);
         }
     }
 }

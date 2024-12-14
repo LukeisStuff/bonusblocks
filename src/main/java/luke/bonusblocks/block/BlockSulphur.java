@@ -1,17 +1,16 @@
 package luke.bonusblocks.block;
 
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.BlockLogicSand;
 import net.minecraft.core.block.Blocks;
-import net.minecraft.core.block.SandBlock;
-import net.minecraft.core.block.entity.BlockEntity;
-import net.minecraft.core.block.material.Material;
+import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.tag.BlockTags;
-import net.minecraft.core.entity.FallingBlockEntity;
+import net.minecraft.core.entity.EntityFallingBlock;
+import net.minecraft.core.entity.EntityPrimedTNT;
 import net.minecraft.core.entity.Mob;
-import net.minecraft.core.entity.TNTPrimedEntity;
 import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.enums.EnumDropCause;
-import net.minecraft.core.item.FireStrikerItem;
+import net.minecraft.core.item.ItemFireStriker;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.sound.SoundCategory;
 import net.minecraft.core.util.helper.Side;
@@ -20,9 +19,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
 
-public class BlockSulphur extends SandBlock {
-    public BlockSulphur(String key, String namespaceId, int id, Material material) {
-        super(key, namespaceId, id);
+public class BlockLogicSulphur extends BlockLogicSand {
+    public BlockLogicSulphur(Block<?> block) {
+        super(block);
     }
 
     public void onBlockPlacedByMob(World world, int x, int y, int z, @NotNull Side side, Mob mob, double xPlaced, double yPlaced) {
@@ -30,12 +29,12 @@ public class BlockSulphur extends SandBlock {
         world.scheduleBlockUpdate(x, y, z, this.id(), this.tickRate());
     }
 
-    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, BlockEntity BlockEntity) {
+    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity BlockEntity) {
         return dropCause == EnumDropCause.EXPLOSION ? null : new ItemStack[]{new ItemStack(this)};
     }
 
     public void onBlockDestroyedByExplosion(World world, int x, int y, int z) {
-        TNTPrimedEntity entity = new TNTPrimedEntity(world, (float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F);
+        EntityPrimedTNT entity = new EntityPrimedTNT(world, (float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F);
         entity.fuse = world.rand.nextInt(entity.fuse / 2) + entity.fuse / 4;
         world.entityJoinedWorld(entity);
     }
@@ -46,19 +45,19 @@ public class BlockSulphur extends SandBlock {
 
         } else {
             world.setBlockWithNotify(x, y, z, 0);
-            TNTPrimedEntity e = new TNTPrimedEntity(world, (float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F);
+            EntityPrimedTNT e = new EntityPrimedTNT(world, (float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F);
             world.entityJoinedWorld(e);
             world.playSoundAtEntity(e , e, "random.fuse", 1.0F, 1.0F);
 
         }
-        if (player != null && player.inventory.getCurrentItem() != null && player.inventory.getCurrentItem().getItem() instanceof FireStrikerItem) {
+        if (player != null && player.inventory.getCurrentItem() != null && player.inventory.getCurrentItem().getItem() instanceof ItemFireStriker) {
             player.inventory.getCurrentItem().damageItem(1, player);
         }
     }
 
     @Override
     public void onBlockLeftClicked(World world, int x, int y, int z, Player player, Side side, double xHit, double yHit) {
-        if (player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() instanceof FireStrikerItem) {
+        if (player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() instanceof ItemFireStriker) {
             world.setBlockMetadata(x, y, z, 1);
         }
 
@@ -67,7 +66,7 @@ public class BlockSulphur extends SandBlock {
 
     @Override
     public boolean onBlockRightClicked(World world, int x, int y, int z, Player player, Side side, double xHit, double yHit) {
-        if (player.inventory.getCurrentItem() != null && player.inventory.getCurrentItem().getItem() instanceof FireStrikerItem) {
+        if (player.inventory.getCurrentItem() != null && player.inventory.getCurrentItem().getItem() instanceof ItemFireStriker) {
             this.ignite(world, x, y, z, player, true);
             return true;
         } else {
@@ -84,7 +83,7 @@ public class BlockSulphur extends SandBlock {
         if (canFallBelow(world, x, y - 1, z) && y >= 0) {
             byte byte0 = 32;
             if (!fallInstantly && world.areBlocksLoaded(x - byte0, y - byte0, z - byte0, x + byte0, y + byte0, z + byte0)) {
-                FallingBlockEntity fallingBlockEntity = new FallingBlockEntity(world, (double)x + 0.5, (double)y + 0.5, (double)z + 0.5, this.id(), 0, (BlockEntity)null);
+                EntityFallingBlock fallingBlockEntity = new EntityFallingBlock(world, (double)x + 0.5, (double)y + 0.5, (double)z + 0.5, this.id(), 0, null);
                 world.entityJoinedWorld(fallingBlockEntity);
             } else {
                 world.setBlockWithNotify(x, y, z, 0);
@@ -112,7 +111,7 @@ public class BlockSulphur extends SandBlock {
         } else if (blockId == Blocks.FIRE.id()) {
             return true;
         } else {
-            return Block.hasTag(blockId, BlockTags.IS_WATER) || Block.hasTag(blockId, BlockTags.IS_LAVA);
+            return Blocks.hasTag(blockId, BlockTags.IS_WATER) || Blocks.hasTag(blockId, BlockTags.IS_LAVA);
         }
     }
 }

@@ -1,16 +1,18 @@
 package luke.bonusblocks.block;
 
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.BlockLogic;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.Mob;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
+import org.jetbrains.annotations.NotNull;
 
-public class BlockVase extends Block {
-    public BlockVase(String key, String namespaceId, int id) {
-        super(key, namespaceId, id, Material.metal);
-        this.setTicking(true);
+public class BlockVase extends BlockLogic {
+    public BlockVase(Block<?> block) {
+        super(block, Material.metal);
+        block.setTicking(true);
         this.setBlockBounds(0.1875f, 0.0F, 0.1875f, 0.8125f, 1.0f, 0.8125f);
     }
 
@@ -18,16 +20,16 @@ public class BlockVase extends Block {
         return false;
     }
 
-    public boolean renderAsNormalBlock() {
+    public boolean isCubeShaped() {
         return false;
-    }
-
-    public void onBlockPlacedByMob(World world, int x, int y, int z, Side side, Mob mob, double sideHeight) {
-        world.isBlockNormalCube(x, y - 1, z);
     }
 
     public boolean canPlaceBlockAt(World world, int x, int y, int z) {
         return world.isBlockNormalCube(x, y - 1, z) || world.canPlaceOnSurfaceOfBlock(x, y - 1, z);
+    }
+
+    public void onBlockPlacedByMob(World world, int x, int y, int z, @NotNull Side side, Mob mob, double xPlaced, double yPlaced) {
+        world.isBlockNormalCube(x, y - 1, z);
     }
 
     public void onNeighborBlockChange(World world, int x, int y, int z, int blockId) {

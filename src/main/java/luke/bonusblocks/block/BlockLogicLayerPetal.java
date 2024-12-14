@@ -8,8 +8,8 @@ import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.WorldSource;
 
-public class BlockLayerPetal extends BlockLogic {
-    public BlockLayerPetal(Block<?> block) {
+public class BlockLogicLayerPetal extends BlockLogic {
+    public BlockLogicLayerPetal(Block<?> block) {
         super(block, Material.grass);
         this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.125F, 1.0F);
     }
@@ -22,13 +22,13 @@ public class BlockLayerPetal extends BlockLogic {
         return false;
     }
 
-    public boolean renderAsNormalBlock() {
+    public boolean isCubeShaped() {
         return false;
     }
 
     public boolean canPlaceBlockAt(World world, int x, int y, int z) {
         int l = world.getBlockId(x, y - 1, z);
-        if (l != 0 && (Blocks.blocksList[l].isSolidRender() || Blocks.blocksList[l].getLogic() instanceof BlockPetal)) {
+        if (l != 0 && (Blocks.blocksList[l].isSolidRender() || Blocks.blocksList[l].getLogic() instanceof BlockLogicPetal)) {
             Material material = world.getBlockMaterial(x, y - 1, z);
             return material.blocksMotion();
         } else {

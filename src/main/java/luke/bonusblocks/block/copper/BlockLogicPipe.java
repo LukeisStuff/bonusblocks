@@ -1,7 +1,7 @@
 package luke.bonusblocks.block.copper;
 
 import luke.bonusblocks.block.BonusBlocks;
-import net.minecraft.core.block.AxisAlignedBlock;
+import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLogicAxisAligned;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.util.helper.Side;
@@ -11,17 +11,17 @@ import net.minecraft.core.world.WorldSource;
 
 import java.util.Random;
 
-public class CopperPipeBlock extends BlockLogicAxisAligned {
-    public CopperPipeBlock(String key, String namespaceId, int id) {
-        super(key, namespaceId, id, Material.metal);
-        this.setTicking(true);
+public class BlockLogicPipe extends BlockLogicAxisAligned {
+    public BlockLogicPipe(Block<?> block, Material material) {
+        super(block, material);
+        block.setTicking(true);
     }
 
     public boolean isSolidRender() {
         return false;
     }
 
-    public boolean renderAsNormalBlock() {
+    public boolean isCubeShaped() {
         return false;
     }
 
