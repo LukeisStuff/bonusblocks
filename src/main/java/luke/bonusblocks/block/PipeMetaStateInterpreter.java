@@ -3,7 +3,7 @@ package luke.bonusblocks.block;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLogicAxisAligned;
 import net.minecraft.core.world.WorldSource;
-import org.useless.dragonfly.model.blockstates.processed.MetaStateInterpreter;
+import org.useless.dragonfly.data.block.mojang.state.MetaStateInterpreter;
 
 import java.util.HashMap;
 

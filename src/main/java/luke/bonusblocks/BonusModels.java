@@ -2,6 +2,7 @@ package luke.bonusblocks;
 
 import luke.bonusblocks.block.BonusBlocks;
 import luke.bonusblocks.block.blockmodel.*;
+import luke.bonusblocks.item.BonusItems;
 import net.minecraft.client.render.EntityRenderDispatcher;
 import net.minecraft.client.render.TileEntityRenderDispatcher;
 import net.minecraft.client.render.block.color.BlockColorDispatcher;
@@ -10,6 +11,7 @@ import net.minecraft.client.render.block.color.BlockColorTallGrass;
 import net.minecraft.client.render.block.model.*;
 import net.minecraft.client.render.colorizer.Colorizers;
 import net.minecraft.client.render.item.model.ItemModelDispatcher;
+import net.minecraft.client.render.item.model.ItemModelStandard;
 import net.minecraft.client.render.texture.stitcher.TextureRegistry;
 import net.minecraft.core.util.helper.Side;
 import turniplabs.halplibe.helper.ModelHelper;
@@ -180,6 +182,9 @@ public class BonusModels implements ModelEntrypoint {
         ModelHelper.setBlockModel(BonusBlocks.DIRT_BAKED, () -> new BlockModelStandard<>(BonusBlocks.DIRT_BAKED)
                 .setAllTextures(0, "bonusblocks:block/dirt_baked"));
 
+        ModelHelper.setBlockModel(BonusBlocks.CANDLE_SOULWAX, () -> new BlockModelSoulwaxCandle<>(BonusBlocks.CANDLE_SOULWAX)
+                .setAllTextures(0, "bonusblocks:block/candle_soulwax"));
+
         ModelHelper.setBlockModel(BonusBlocks.SKULL, () -> new BlockModelHorizontalRotation<>(BonusBlocks.SKULL)
                 .setTex(0, "bonusblocks:block/skull/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST)
                 .setTex(0, "bonusblocks:block/skull/top", Side.TOP)
@@ -213,61 +218,102 @@ public class BonusModels implements ModelEntrypoint {
                 TextureRegistry.getTexture("bonusblocks:block/fence_gold/column"))
                 .setAllTextures(0, "bonusblocks:block/fence_gold/center"));
 
-        ModelHelper.setBlockModel(BonusBlocks.DOOR_STONE_BOTTOM, () -> new BlockModelStandard<>(BonusBlocks.DOOR_STONE_BOTTOM)
+        ModelHelper.setBlockModel(BonusBlocks.DOOR_STONE_BOTTOM, () -> new BlockModelDoor<>(BonusBlocks.DOOR_STONE_BOTTOM)
                 .setTex(0, "bonusblocks:block/door/stone/frame", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/door/stone/bottom", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
-        ModelHelper.setBlockModel(BonusBlocks.DOOR_STONE_TOP, () -> new BlockModelStandard<>(BonusBlocks.DOOR_STONE_TOP)
+        ModelHelper.setBlockModel(BonusBlocks.DOOR_STONE_TOP, () -> new BlockModelDoor<>(BonusBlocks.DOOR_STONE_TOP)
                 .setTex(0, "bonusblocks:block/door/stone/frame", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/door/stone/top", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
 
-        ModelHelper.setBlockModel(BonusBlocks.DOOR_BASALT_BOTTOM, () -> new BlockModelStandard<>(BonusBlocks.DOOR_BASALT_BOTTOM)
+        ModelHelper.setBlockModel(BonusBlocks.DOOR_BASALT_BOTTOM, () -> new BlockModelDoor<>(BonusBlocks.DOOR_BASALT_BOTTOM)
                 .setTex(0, "bonusblocks:block/door/basalt/frame", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/door/basalt/bottom", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
-        ModelHelper.setBlockModel(BonusBlocks.DOOR_BASALT_TOP, () -> new BlockModelStandard<>(BonusBlocks.DOOR_BASALT_TOP)
+        ModelHelper.setBlockModel(BonusBlocks.DOOR_BASALT_TOP, () -> new BlockModelDoor<>(BonusBlocks.DOOR_BASALT_TOP)
                 .setTex(0, "bonusblocks:block/door/basalt/frame", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/door/basalt/top", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
 
-        ModelHelper.setBlockModel(BonusBlocks.DOOR_LIMESTONE_BOTTOM, () -> new BlockModelStandard<>(BonusBlocks.DOOR_LIMESTONE_BOTTOM)
+        ModelHelper.setBlockModel(BonusBlocks.DOOR_LIMESTONE_BOTTOM, () -> new BlockModelDoor<>(BonusBlocks.DOOR_LIMESTONE_BOTTOM)
                 .setTex(0, "bonusblocks:block/door/limestone/frame", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/door/limestone/bottom", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
-        ModelHelper.setBlockModel(BonusBlocks.DOOR_LIMESTONE_TOP, () -> new BlockModelStandard<>(BonusBlocks.DOOR_LIMESTONE_TOP)
+        ModelHelper.setBlockModel(BonusBlocks.DOOR_LIMESTONE_TOP, () -> new BlockModelDoor<>(BonusBlocks.DOOR_LIMESTONE_TOP)
                 .setTex(0, "bonusblocks:block/door/limestone/frame", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/door/limestone/top", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
 
-        ModelHelper.setBlockModel(BonusBlocks.DOOR_GRANITE_BOTTOM, () -> new BlockModelStandard<>(BonusBlocks.DOOR_GRANITE_BOTTOM)
+        ModelHelper.setBlockModel(BonusBlocks.DOOR_GRANITE_BOTTOM, () -> new BlockModelDoor<>(BonusBlocks.DOOR_GRANITE_BOTTOM)
                 .setTex(0, "bonusblocks:block/door/granite/frame", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/door/granite/bottom", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
-        ModelHelper.setBlockModel(BonusBlocks.DOOR_GRANITE_TOP, () -> new BlockModelStandard<>(BonusBlocks.DOOR_GRANITE_TOP)
+        ModelHelper.setBlockModel(BonusBlocks.DOOR_GRANITE_TOP, () -> new BlockModelDoor<>(BonusBlocks.DOOR_GRANITE_TOP)
                 .setTex(0, "bonusblocks:block/door/granite/frame", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/door/granite/top", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
 
-        ModelHelper.setBlockModel(BonusBlocks.DOOR_PERMAFROST_BOTTOM, () -> new BlockModelStandard<>(BonusBlocks.DOOR_PERMAFROST_BOTTOM)
+        ModelHelper.setBlockModel(BonusBlocks.DOOR_PERMAFROST_BOTTOM, () -> new BlockModelDoor<>(BonusBlocks.DOOR_PERMAFROST_BOTTOM)
                 .setTex(0, "bonusblocks:block/door/permafrost/frame", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/door/permafrost/bottom", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
-        ModelHelper.setBlockModel(BonusBlocks.DOOR_PERMAFROST_TOP, () -> new BlockModelStandard<>(BonusBlocks.DOOR_PERMAFROST_TOP)
+        ModelHelper.setBlockModel(BonusBlocks.DOOR_PERMAFROST_TOP, () -> new BlockModelDoor<>(BonusBlocks.DOOR_PERMAFROST_TOP)
                 .setTex(0, "bonusblocks:block/door/permafrost/frame", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/door/permafrost/top", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
 
-        ModelHelper.setBlockModel(BonusBlocks.DOOR_NETHERRACK_BOTTOM, () -> new BlockModelStandard<>(BonusBlocks.DOOR_NETHERRACK_BOTTOM)
+        ModelHelper.setBlockModel(BonusBlocks.DOOR_NETHERRACK_BOTTOM, () -> new BlockModelDoor<>(BonusBlocks.DOOR_NETHERRACK_BOTTOM)
                 .setTex(0, "bonusblocks:block/door/netherrack/frame", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/door/netherrack/bottom", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
-        ModelHelper.setBlockModel(BonusBlocks.DOOR_NETHERRACK_TOP, () -> new BlockModelStandard<>(BonusBlocks.DOOR_NETHERRACK_TOP)
+        ModelHelper.setBlockModel(BonusBlocks.DOOR_NETHERRACK_TOP, () -> new BlockModelDoor<>(BonusBlocks.DOOR_NETHERRACK_TOP)
                 .setTex(0, "bonusblocks:block/door/netherrack/frame", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/door/netherrack/top", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
 
-        ModelHelper.setBlockModel(BonusBlocks.DOOR_MARBLE_BOTTOM, () -> new BlockModelStandard<>(BonusBlocks.DOOR_MARBLE_BOTTOM)
+        ModelHelper.setBlockModel(BonusBlocks.DOOR_MARBLE_BOTTOM, () -> new BlockModelDoor<>(BonusBlocks.DOOR_MARBLE_BOTTOM)
                 .setTex(0, "bonusblocks:block/door/marble/frame", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/door/marble/bottom", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
-        ModelHelper.setBlockModel(BonusBlocks.DOOR_MARBLE_TOP, () -> new BlockModelStandard<>(BonusBlocks.DOOR_MARBLE_TOP)
+        ModelHelper.setBlockModel(BonusBlocks.DOOR_MARBLE_TOP, () -> new BlockModelDoor<>(BonusBlocks.DOOR_MARBLE_TOP)
                 .setTex(0, "bonusblocks:block/door/marble/frame", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/door/marble/top", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
 
-        ModelHelper.setBlockModel(BonusBlocks.DOOR_SLATE_BOTTOM, () -> new BlockModelStandard<>(BonusBlocks.DOOR_SLATE_BOTTOM)
+        ModelHelper.setBlockModel(BonusBlocks.DOOR_SLATE_BOTTOM, () -> new BlockModelDoor<>(BonusBlocks.DOOR_SLATE_BOTTOM)
                 .setTex(0, "bonusblocks:block/door/slate/frame", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/door/slate/bottom", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
-        ModelHelper.setBlockModel(BonusBlocks.DOOR_SLATE_TOP, () -> new BlockModelStandard<>(BonusBlocks.DOOR_SLATE_TOP)
+        ModelHelper.setBlockModel(BonusBlocks.DOOR_SLATE_TOP, () -> new BlockModelDoor<>(BonusBlocks.DOOR_SLATE_TOP)
                 .setTex(0, "bonusblocks:block/door/slate/frame", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/door/slate/top", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+
+
+        ModelHelper.setBlockModel(BonusBlocks.TRAPDOOR_STONE, () -> new BlockModelTrapDoor<>(BonusBlocks.TRAPDOOR_STONE)
+                .setTex(0, "bonusblocks:block/trapdoor/stone/top", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/trapdoor/stone/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+        ModelHelper.setBlockModel(BonusBlocks.TRAPDOOR_BASALT, () -> new BlockModelTrapDoor<>(BonusBlocks.TRAPDOOR_BASALT)
+                .setTex(0, "bonusblocks:block/trapdoor/basalt/top", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/trapdoor/basalt/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+        ModelHelper.setBlockModel(BonusBlocks.TRAPDOOR_LIMESTONE, () -> new BlockModelTrapDoor<>(BonusBlocks.TRAPDOOR_LIMESTONE)
+                .setTex(0, "bonusblocks:block/trapdoor/limestone/top", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/trapdoor/limestone/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+        ModelHelper.setBlockModel(BonusBlocks.TRAPDOOR_GRANITE, () -> new BlockModelTrapDoor<>(BonusBlocks.TRAPDOOR_GRANITE)
+                .setTex(0, "bonusblocks:block/trapdoor/granite/top", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/trapdoor/granite/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+        ModelHelper.setBlockModel(BonusBlocks.TRAPDOOR_PERMAFROST, () -> new BlockModelTrapDoor<>(BonusBlocks.TRAPDOOR_PERMAFROST)
+                .setTex(0, "bonusblocks:block/trapdoor/permafrost/top", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/trapdoor/permafrost/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+        ModelHelper.setBlockModel(BonusBlocks.TRAPDOOR_NETHERRACK, () -> new BlockModelTrapDoor<>(BonusBlocks.TRAPDOOR_NETHERRACK)
+                .setTex(0, "bonusblocks:block/trapdoor/netherrack/top", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/trapdoor/netherrack/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+        ModelHelper.setBlockModel(BonusBlocks.TRAPDOOR_MARBLE, () -> new BlockModelTrapDoor<>(BonusBlocks.TRAPDOOR_MARBLE)
+                .setTex(0, "bonusblocks:block/trapdoor/marble/top", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/trapdoor/marble/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+        ModelHelper.setBlockModel(BonusBlocks.TRAPDOOR_SLATE, () -> new BlockModelTrapDoor<>(BonusBlocks.TRAPDOOR_SLATE)
+                .setTex(0, "bonusblocks:block/trapdoor/slate/top", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/trapdoor/slate/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+
+
+
+
+        ModelHelper.setBlockModel(BonusBlocks.DOOR_GLASS_OBSIDIAN_BOTTOM, () -> new BlockModelDoorGlass<>(BonusBlocks.DOOR_GLASS_OBSIDIAN_BOTTOM)
+                .setTex(0, "bonusblocks:block/door/glass/frame", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/door/glass/bottom", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+        ModelHelper.setBlockModel(BonusBlocks.DOOR_GLASS_OBSIDIAN_TOP, () -> new BlockModelDoorGlass<>(BonusBlocks.DOOR_GLASS_OBSIDIAN_TOP)
+                .setTex(0, "bonusblocks:block/door/glass/frame", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/door/glass/top", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+
+        ModelHelper.setBlockModel(BonusBlocks.TRAPDOOR_GLASS_OBSIDIAN, () -> new BlockModelTrapDoor<>(BonusBlocks.TRAPDOOR_GLASS_OBSIDIAN)
+                .setTex(0, "bonusblocks:block/trapdoor/glass/top", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/trapdoor/glass/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+
 
 
 
@@ -281,8 +327,6 @@ public class BonusModels implements ModelEntrypoint {
         ModelHelper.setBlockModel(BonusBlocks.STAIRS_BRICK_MUD, () -> new BlockModelStairs<>(BonusBlocks.STAIRS_BRICK_MUD));
         ModelHelper.setBlockModel(BonusBlocks.STAIRS_BRICK_QUARTZ, () -> new BlockModelStairs<>(BonusBlocks.STAIRS_BRICK_QUARTZ));
         ModelHelper.setBlockModel(BonusBlocks.STAIRS_BRICK_OLIVINE, () -> new BlockModelStairs<>(BonusBlocks.STAIRS_BRICK_OLIVINE));
-        ModelHelper.setBlockModel(BonusBlocks.STAIRS_BRICK_SILVER, () -> new BlockModelStairs<>(BonusBlocks.STAIRS_BRICK_SILVER));
-        ModelHelper.setBlockModel(BonusBlocks.STAIRS_COPPER, () -> new BlockModelStairs<>(BonusBlocks.STAIRS_COPPER));
         ModelHelper.setBlockModel(BonusBlocks.STAIRS_BRICK_CLAY_BAKED, () -> new BlockModelStairs<>(BonusBlocks.STAIRS_BRICK_CLAY_BAKED));
         ModelHelper.setBlockModel(BonusBlocks.STAIRS_COBBLE_LAZURITE, () -> new BlockModelStairs<>(BonusBlocks.STAIRS_COBBLE_LAZURITE));
         ModelHelper.setBlockModel(BonusBlocks.STAIRS_BRICK_LAZURITE, () -> new BlockModelStairs<>(BonusBlocks.STAIRS_BRICK_LAZURITE));
@@ -296,8 +340,6 @@ public class BonusModels implements ModelEntrypoint {
         ModelHelper.setBlockModel(BonusBlocks.SLAB_BRICK_MUD, () -> new BlockModelSlab<>(BonusBlocks.SLAB_BRICK_MUD));
         ModelHelper.setBlockModel(BonusBlocks.SLAB_BRICK_QUARTZ, () -> new BlockModelSlab<>(BonusBlocks.SLAB_BRICK_QUARTZ));
         ModelHelper.setBlockModel(BonusBlocks.SLAB_BRICK_OLIVINE, () -> new BlockModelSlab<>(BonusBlocks.SLAB_BRICK_OLIVINE));
-        ModelHelper.setBlockModel(BonusBlocks.SLAB_BRICK_SILVER, () -> new BlockModelSlab<>(BonusBlocks.SLAB_BRICK_SILVER));
-        ModelHelper.setBlockModel(BonusBlocks.SLAB_COPPER, () -> new BlockModelSlab<>(BonusBlocks.SLAB_COPPER));
         ModelHelper.setBlockModel(BonusBlocks.SLAB_BRICK_CLAY_BAKED, () -> new BlockModelSlab<>(BonusBlocks.SLAB_BRICK_CLAY_BAKED));
         ModelHelper.setBlockModel(BonusBlocks.SLAB_COBBLE_LAZURITE, () -> new BlockModelSlab<>(BonusBlocks.SLAB_COBBLE_LAZURITE));
         ModelHelper.setBlockModel(BonusBlocks.SLAB_BRICK_LAZURITE, () -> new BlockModelSlab<>(BonusBlocks.SLAB_BRICK_LAZURITE));
@@ -312,6 +354,20 @@ public class BonusModels implements ModelEntrypoint {
 
     @Override
     public void initItemModels(ItemModelDispatcher dispatcher) {
+        ModelHelper.setItemModel(BonusItems.SOULWAX, () -> new ItemModelStandard(BonusItems.SOULWAX, "bonusblocks:item/soulwax"));
+
+        ModelHelper.setItemModel(BonusItems.MOSSBALL, () -> new ItemModelStandard(BonusItems.MOSSBALL, "bonusblocks"));
+
+        ModelHelper.setItemModel(BonusItems.DOOR_STONE, () -> new ItemModelStandard(BonusItems.DOOR_STONE, "bonusblocks"));
+        ModelHelper.setItemModel(BonusItems.DOOR_BASALT, () -> new ItemModelStandard(BonusItems.DOOR_BASALT, "bonusblocks"));
+        ModelHelper.setItemModel(BonusItems.DOOR_GRANITE, () -> new ItemModelStandard(BonusItems.DOOR_GRANITE, "bonusblocks"));
+        ModelHelper.setItemModel(BonusItems.DOOR_LIMESTONE, () -> new ItemModelStandard(BonusItems.DOOR_LIMESTONE, "bonusblocks"));
+        ModelHelper.setItemModel(BonusItems.DOOR_MARBLE, () -> new ItemModelStandard(BonusItems.DOOR_MARBLE, "bonusblocks"));
+        ModelHelper.setItemModel(BonusItems.DOOR_SLATE, () -> new ItemModelStandard(BonusItems.DOOR_SLATE, "bonusblocks"));
+        ModelHelper.setItemModel(BonusItems.DOOR_PERMAFROST, () -> new ItemModelStandard(BonusItems.DOOR_PERMAFROST, "bonusblocks"));
+        ModelHelper.setItemModel(BonusItems.DOOR_NETHERRACK, () -> new ItemModelStandard(BonusItems.DOOR_NETHERRACK, "bonusblocks"));
+        ModelHelper.setItemModel(BonusItems.DOOR_PERIDOT, () -> new ItemModelStandard(BonusItems.DOOR_PERIDOT, "bonusblocks"));
+        ModelHelper.setItemModel(BonusItems.DOOR_LAZURITE, () -> new ItemModelStandard(BonusItems.DOOR_LAZURITE, "bonusblocks"));
 
     }
 

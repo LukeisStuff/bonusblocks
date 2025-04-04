@@ -4,6 +4,7 @@ import luke.bonusblocks.block.BonusBlocks;
 import net.minecraft.core.block.Blocks;
 import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.generate.feature.WorldFeature;
+import net.minecraft.core.world.generate.feature.tree.WorldFeatureTreeEucalyptus;
 import net.minecraft.core.world.generate.feature.tree.WorldFeatureTreeFancy;
 import net.minecraft.core.world.generate.feature.tree.WorldFeatureTreeShrub;
 import net.minecraft.core.world.weather.Weathers;
@@ -19,12 +20,11 @@ public class BiomeDryland extends Biome {
     }
 
     public WorldFeature getRandomWorldGenForTrees(Random random) {
-        if (random.nextInt(8) == 0) {
-            return new WorldFeatureTreeShrub(Blocks.LEAVES_SHRUB.id(), BonusBlocks.LOG_SHRUB.id());
-        } else if (random.nextInt(8) == 0) {
-            return new WorldFeatureTreeFancy(Blocks.LEAVES_SHRUB.id(), BonusBlocks.LOG_SHRUB.id());
+        if (random.nextInt(10) == 0) {
+            return new WorldFeatureTreeEucalyptus(0, BonusBlocks.LOG_SCORCHED.id());
+        } else {
+            return new WorldFeatureTreeShrub(Blocks.COBBLE_GRANITE.id(), Blocks.COBBLE_GRANITE.id());
         }
-        return new WorldFeatureTreeShrub(Blocks.LEAVES_SHRUB.id(), BonusBlocks.LOG_SHRUB.id());
     }
 
 }

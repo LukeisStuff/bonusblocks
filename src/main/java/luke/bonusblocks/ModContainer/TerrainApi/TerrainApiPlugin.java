@@ -8,7 +8,6 @@ import net.minecraft.core.block.Blocks;
 import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.Biomes;
 import net.minecraft.core.world.generate.feature.WorldFeatureFlowers;
-import net.minecraft.core.world.generate.feature.tree.WorldFeatureTreeShrub;
 import useless.terrainapi.api.TerrainAPI;
 import useless.terrainapi.generation.nether.api.ChunkDecoratorNetherAPI;
 import useless.terrainapi.generation.overworld.OverworldConfig;
@@ -26,9 +25,6 @@ public class TerrainApiPlugin implements TerrainAPI {
     public void onInitialize() {
         
         overworldConfig.setOreValues(getModID(), Blocks.MOSS_STONE, 0, 0, 0);
-
-        ChunkDecoratorOverworldAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.ORE_COPPER_STONE, 12, 24, 0.0f, 1.0f, true);
-        ChunkDecoratorOverworldAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.ORE_SILVER_STONE, 6, 12, 0.0f, 0.5f, true);
 
         ChunkDecoratorOverworldAPI.oreFeatures.addManagedOreFeature(getModID(), BonusBlocks.MOSS, 32, 1, 0.5F, false);
 
@@ -79,22 +75,12 @@ public class TerrainApiPlugin implements TerrainAPI {
 
         overworldConfig.addRandomGrassBlock(BonusBiomes.OVERWORLD_OVERGROWN_MEADOW, Blocks.TALLGRASS_FERN);
         overworldConfig.addRandomGrassBlock(BonusBiomes.OVERWORLD_DRYLAND, Blocks.TALLGRASS_FERN);
-        overworldConfig.addRandomGrassBlock(BonusBiomes.OVERWORLD_OUTBACK_MESA, Blocks.DEADBUSH);
 
         ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), Blocks.NETHERRACK, 48, 6, 0.0f, 1.0f, false);
         ChunkDecoratorNetherAPI.oreFeatures.addManagedOreFeature(getModID(), Blocks.SLATE, 32, 4, 0.75f, 1.0f, false);
 
         ChunkDecoratorNetherAPI.randomFeatures.addFeature(new WorldFeatureSkull(), 3, 1f, 1,
                 new Biome[]{Biomes.NETHER_NETHER});
-
-        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(Blocks.SPINIFEX.id(), 1, false), 4, -1f, 1,
-                new Biome[]{BonusBiomes.OVERWORLD_OUTBACK_MESA});
-
-        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureTreeShrub(Blocks.COBBLE_GRANITE.id(), Blocks.DIRT_SCORCHED_RICH.id()), 4, -1f, 1,
-                new Biome[]{BonusBiomes.OVERWORLD_OUTBACK_MESA});
-
-        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(Blocks.DEADBUSH.id(), 1, false), 4, -1f, 1,
-                new Biome[]{BonusBiomes.OVERWORLD_OUTBACK_MESA});
 
         ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(Blocks.FLOWER_RED.id(), 4, true), 4, -1f, 1,
                 new Biome[]{Biomes.OVERWORLD_FOREST, Biomes.OVERWORLD_TUNDRA, BonusBiomes.OVERWORLD_OVERGROWN_MEADOW});

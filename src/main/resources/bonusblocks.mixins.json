@@ -15,10 +15,7 @@
     "BlockSaplingShrubMixin",
     "EntityMixin",
     "GuiIngameMixin",
-    "ItemToolAxeMixin",
-    "ItemToolShovelMixin",
-    "SurfaceGeneratorOverworldMixin",
-    "WorldFeatureLabyrinthMixin"
+    "ItemToolShovelMixin"
   ],
   "client": [
   ],
