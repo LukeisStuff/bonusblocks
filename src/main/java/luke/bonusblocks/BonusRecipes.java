@@ -169,7 +169,6 @@ public class BonusRecipes implements RecipeEntrypoint {
         templateBricks.addInput('X', BonusBlocks.BLOCK_CLAY_BAKED).create("clay_bricks", new ItemStack(BonusBlocks.BRICK_CLAY_BAKED, 4));
         templateBricks.addInput('X', BonusBlocks.SCORCHEDSTONE).create("scorched_bricks", new ItemStack(BonusBlocks.BRICK_SCORCHEDSTONE, 4));
         templateBricks.addInput('X', Blocks.MUD_BAKED).create("mud_bricks", new ItemStack(BonusBlocks.BRICK_MUD, 4));
-        templateBricks.addInput('X', Items.INGOT_STEEL).create("steel_bricks", new ItemStack(BonusBlocks.BRICK_STEEL, 4));
         templateBricks.addInput('X', Items.QUARTZ).create("quartz_bricks", new ItemStack(BonusBlocks.BRICK_QUARTZ, 4));
         templateBricks.addInput('X', Items.OLIVINE).create("olivine_bricks", new ItemStack(BonusBlocks.BRICK_OLIVINE, 4));
         templateBricks.addInput('X', BonusBlocks.LAZURITE).create("lazurite_bricks", new ItemStack(BonusBlocks.BRICK_LAZURITE, 4));
@@ -315,13 +314,9 @@ public class BonusRecipes implements RecipeEntrypoint {
         RecipeBuilderShaped templateSlab = new RecipeBuilderShaped(MOD_ID, "XXX");
         templateSlab.addInput('X', Blocks.SLATE_POLISHED).create("slate_polished_slab", new ItemStack(BonusBlocks.SLAB_SLATE_POLISHED, 6));
         templateSlab.addInput('X', BonusBlocks.MARBLE_POLISHED).create("marble_polished_slab", new ItemStack(BonusBlocks.SLAB_MARBLE_POLISHED, 6));
-        templateSlab.addInput('X', Blocks.BRICK_GOLD).create("gold_brick_slab", new ItemStack(BonusBlocks.SLAB_BRICK_GOLD, 6));
-        templateSlab.addInput('X', Blocks.BRICK_IRON).create("iron_brick_slab", new ItemStack(BonusBlocks.SLAB_BRICK_IRON, 6));
-        templateSlab.addInput('X', Blocks.BRICK_LAPIS).create("lapis_brick_slab", new ItemStack(BonusBlocks.SLAB_BRICK_LAPIS, 6));
         templateSlab.addInput('X', BonusBlocks.BRICK_MUD).create("mud_brick_slab", new ItemStack(BonusBlocks.SLAB_BRICK_MUD, 6));
         templateSlab.addInput('X', Blocks.BRICK_STONE_POLISHED_MOSSY).create("stone_polished_mossy_brick_slab", new ItemStack(BonusBlocks.SLAB_BRICK_STONE_POLISHED_MOSSY, 6));
         templateSlab.addInput('X', BonusBlocks.BRICK_SCORCHEDSTONE).create("scorchedstone_brick_slab", new ItemStack(BonusBlocks.SLAB_BRICK_SCORCHEDSTONE, 6));
-        templateSlab.addInput('X', BonusBlocks.BRICK_STEEL).create("steel_brick_slab", new ItemStack(BonusBlocks.SLAB_BRICK_STEEL, 6));
         templateSlab.addInput('X', BonusBlocks.BRICK_QUARTZ).create("quartz_brick_slab", new ItemStack(BonusBlocks.SLAB_BRICK_QUARTZ, 6));
         templateSlab.addInput('X', BonusBlocks.BRICK_OLIVINE).create("olivine_brick_slab", new ItemStack(BonusBlocks.SLAB_BRICK_OLIVINE, 6));
         templateSlab.addInput('X', BonusBlocks.SCORCHEDSTONE).create("scorchedstone_slab", new ItemStack(BonusBlocks.SLAB_SCORCHEDSTONE, 6));
@@ -337,14 +332,10 @@ public class BonusRecipes implements RecipeEntrypoint {
         templateSlab.addInput('X', BonusBlocks.PERIDOT_POLISHED).create("peridot_polished_slab", new ItemStack(BonusBlocks.SLAB_PERIDOT_POLISHED, 6));
 
         RecipeBuilderShaped templateStairs = new RecipeBuilderShaped(MOD_ID, "X ", "XX ", "XXX");
-        templateStairs.addInput('X', Blocks.BRICK_GOLD).create("gold_brick_stairs", new ItemStack(BonusBlocks.STAIRS_BRICK_GOLD, 6));
-        templateStairs.addInput('X', Blocks.BRICK_IRON).create("iron_brick_stairs", new ItemStack(BonusBlocks.STAIRS_BRICK_IRON, 6));
-        templateStairs.addInput('X', Blocks.BRICK_LAPIS).create("lapis_brick_stairs", new ItemStack(BonusBlocks.STAIRS_BRICK_LAPIS, 6));
         templateStairs.addInput('X', BonusBlocks.BRICK_MUD).create("mud_brick_stairs", new ItemStack(BonusBlocks.STAIRS_BRICK_MUD, 6));
         templateStairs.addInput('X', BonusBlocks.SCORCHEDSTONE).create("scorchedstone_stairs", new ItemStack(BonusBlocks.STAIRS_SCORCHEDSTONE, 6));
         templateStairs.addInput('X', Blocks.BRICK_STONE_POLISHED_MOSSY).create("stone_polished_mossy_brick_stairs", new ItemStack(BonusBlocks.STAIRS_BRICK_STONE_POLISHED_MOSSY, 6));
         templateStairs.addInput('X', BonusBlocks.BRICK_SCORCHEDSTONE).create("scorchedstone_brick_stairs", new ItemStack(BonusBlocks.STAIRS_BRICK_SCORCHEDSTONE, 6));
-        templateStairs.addInput('X', BonusBlocks.BRICK_STEEL).create("steel_brick_stairs", new ItemStack(BonusBlocks.STAIRS_BRICK_STEEL, 6));
         templateStairs.addInput('X', BonusBlocks.BRICK_QUARTZ).create("quartz_brick_stairs", new ItemStack(BonusBlocks.STAIRS_BRICK_QUARTZ, 6));
         templateStairs.addInput('X', BonusBlocks.BRICK_OLIVINE).create("olivine_brick_stairs", new ItemStack(BonusBlocks.STAIRS_BRICK_OLIVINE, 6));
         templateStairs.addInput('X', Blocks.COBBLE_STONE_MOSSY).create("cobblestone_mossy_stairs", new ItemStack(BonusBlocks.STAIRS_COBBLESTONE_MOSSY, 6));

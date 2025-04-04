@@ -23,7 +23,7 @@ public class PaintedCrateBlockModel<T extends BlockLogic> extends BlockModelStan
 
     static {
         DyeColor c;
-        for(Iterator<DyeColor> var0 = DyeColor.blockOrderedColors().iterator(); var0.hasNext(); texCoords[c.blockMeta] = TextureRegistry.getTexture("bonusblocks:block/crate_" + c.colorID)) {
+        for(Iterator<DyeColor> var0 = DyeColor.blockOrderedColors().iterator(); var0.hasNext(); texCoords[c.blockMeta] = TextureRegistry.getTexture("bonusblocks:block/crate/crate_" + c.colorID)) {
             c = var0.next();
         }
 

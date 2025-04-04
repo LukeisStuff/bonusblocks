@@ -33,6 +33,9 @@
     "afterGameStart" : [
       "luke.bonusblocks.BonusBlocksMod"
     ],
+    "initModels": [
+      "luke.bonusblocks.BonusModels"
+    ],
     "terrain-api": [
       "luke.bonusblocks.ModContainer.TerrainApi.TerrainApiPlugin"
     ]
@@ -42,7 +45,6 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.13.3"
   },
   "suggests": {
   }
