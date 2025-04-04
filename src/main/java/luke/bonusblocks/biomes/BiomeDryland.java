@@ -14,8 +14,8 @@ public class BiomeDryland extends Biome {
     public BiomeDryland(String key) {
         super(key);
         this.setBlockedWeathers(Weathers.OVERWORLD_SNOW, Weathers.OVERWORLD_STORM);
-        this.topBlock = (short) BonusBlocks.DIRT_ROUGH.id();
-        this.fillerBlock = (short) BonusBlocks.DIRT_ROUGH.id();
+        this.topBlock = (short) BonusBlocks.DIRT_BAKED.id();
+        this.fillerBlock = (short) BonusBlocks.DIRT_BAKED.id();
     }
 
     public WorldFeature getRandomWorldGenForTrees(Random random) {
