@@ -17,7 +17,6 @@ import turniplabs.halplibe.util.GameStartEntrypoint;
 public class BonusBlocksMod implements ModInitializer, ClientStartEntrypoint, GameStartEntrypoint {
     public static final String MOD_ID = "bonusblocks";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-    public static final int entityID = 300;
 
     @Override
     public void onInitialize() {
@@ -38,13 +37,12 @@ public class BonusBlocksMod implements ModInitializer, ClientStartEntrypoint, Ga
         new BonusBlocks().initializeBlocks();
         new BonusItems().initilizeItems();
         new BonusBiomes().initializeBiomes();
-        Items.ORE_RAW_GOLD = new ItemRawGold("ore.raw.gold", "minecraft:item/ore_raw_gold", 16510);
-        Items.ORE_RAW_IRON = new ItemRawIron("ore.raw.iron", "minecraft:item/ore_raw_iron", 16511);
-//        EntityHelper.createEntity(EntitySulphur.class, entityID++, "FallingSulphur", FallingBlockRenderer::new);
     }
 
     @Override
     public void afterGameStart() {
         new BonusBlocks().initializeBlockDetails();
+        Items.ORE_RAW_GOLD = new ItemRawGold("ore.raw.gold", "minecraft:item/ore_raw_gold", 16510);
+        Items.ORE_RAW_IRON = new ItemRawIron("ore.raw.iron", "minecraft:item/ore_raw_iron", 16511);
     }
 }

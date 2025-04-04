@@ -9,7 +9,7 @@ import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
 
 public class BonusItems {
 
-    int itemID = 16550;
+    int itemID = 16650;
 
     public static Item SOULWAX;
     public static Item MOSSBALL;
@@ -23,10 +23,6 @@ public class BonusItems {
     public static Item DOOR_SLATE;
     public static Item DOOR_PERMAFROST;
     public static Item DOOR_NETHERRACK;
-    public static Item DOOR_LAZURITE;
-    public static Item DOOR_PERIDOT;
-
-    public static Item BEDROLL;
 
     public void initilizeItems() {
         // Items
@@ -63,11 +59,5 @@ public class BonusItems {
 
         DOOR_NETHERRACK = new ItemBuilder(MOD_ID)
                 .build(new ItemDoor("door.netherrack", "bonusblocks:item/door_netherrack", itemID++, BonusBlocks.DOOR_NETHERRACK_BOTTOM, BonusBlocks.DOOR_NETHERRACK_TOP));
-
-        DOOR_LAZURITE = new ItemBuilder(MOD_ID)
-                .build(new ItemDoor("door.lazurite", "bonusblocks:item/door_lazurite", itemID++, BonusBlocks.DOOR_LAZURITE_BOTTOM, BonusBlocks.DOOR_LAZURITE_TOP));
-
-        DOOR_PERIDOT = new ItemBuilder(MOD_ID)
-                .build(new ItemDoor("door.peridot", "bonusblocks:item/door_peridot", itemID++, BonusBlocks.DOOR_PERIDOT_BOTTOM, BonusBlocks.DOOR_PERIDOT_TOP));
     }
 }

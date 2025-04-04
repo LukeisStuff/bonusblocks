@@ -35,9 +35,6 @@
     ],
     "initModels": [
       "luke.bonusblocks.BonusModels"
-    ],
-    "terrain-api": [
-      "luke.bonusblocks.ModContainer.TerrainApi.TerrainApiPlugin"
     ]
   },
   "mixins": [

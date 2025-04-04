@@ -24,7 +24,7 @@ version = project.mod_version
 
 loom {
 	noIntermediateMappings()
-	customMinecraftMetadata.set("https://github.com/Turnip-Labs/bta-manifest-repo/releases/download/v${project.bta_version}/${project.bta_version}.json")
+	customMinecraftMetadata.set("https://downloads.betterthanadventure.net/bta-client/${project.bta_channel}/v${project.bta_version}/manifest.json")
 }
 
 repositories {
@@ -39,11 +39,11 @@ repositories {
 		url = 'https://maven.fabricmc.net/'
 	}
 	maven {
-		name = 'signalumMaven'
+		name = 'SignalumMavenInfrastructure'
 		url = 'https://maven.thesignalumproject.net/infrastructure'
 	}
 	maven {
-		name = 'signalumMaven'
+		name = 'SignalumMavenReleases'
 		url = 'https://maven.thesignalumproject.net/releases'
 	}
 	ivy {
@@ -105,7 +105,7 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
 	modImplementation "com.github.Turnip-Labs:bta-halplibe:${project.halplibe_version}"
-	modImplementation "TerrainAPI:terrainapi:${project.terrain_api_version}"
+//	modImplementation "TerrainAPI:terrainapi:${project.terrain_api_version}"
 	modImplementation "DragonFly:dragonfly:${project.dragonfly_version}"
 	modImplementation("turniplabs:modmenu-bta:${project.mod_menu_version}")
 

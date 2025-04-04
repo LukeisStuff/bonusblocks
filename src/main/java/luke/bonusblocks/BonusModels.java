@@ -34,8 +34,8 @@ public class BonusModels implements ModelEntrypoint {
         ModelHelper.setBlockModel(BonusBlocks.BRANCH, () -> new BlockModelStandard<>(BonusBlocks.BRANCH)
                 .setAllTextures(0, "bonusblocks:block/branch"));
 
-        ModelHelper.setBlockModel(BonusBlocks.LEAVES_OAK_MOSSY, () -> new BlockModelLeaves<>(BonusBlocks.LEAVES_OAK_MOSSY,"bonusblocks:block/leaves_oak_mossy", false));
-        ModelHelper.setBlockModel(BonusBlocks.LEAVES_JACARANDA, () -> new BlockModelLeaves<>(BonusBlocks.LEAVES_JACARANDA,"bonusblocks:block/leaves_jacaranda", false));
+        ModelHelper.setBlockModel(BonusBlocks.LEAVES_OAK_MOSSY, () -> new BlockModelLeaves<>(BonusBlocks.LEAVES_OAK_MOSSY,"bonusblocks:block/leaves/leaves_oak_mossy", false));
+        ModelHelper.setBlockModel(BonusBlocks.LEAVES_JACARANDA, () -> new BlockModelLeaves<>(BonusBlocks.LEAVES_JACARANDA,"bonusblocks:block/leaves/leaves_jacaranda", false));
 
         ModelHelper.setBlockModel(BonusBlocks.SAPLING_OAK_MOSSY, () -> new BlockModelCrossedSquares<>(BonusBlocks.SAPLING_OAK_MOSSY)
                 .setAllTextures(0, "bonusblocks:block/sapling/sapling_oak_mossy"));
@@ -58,12 +58,12 @@ public class BonusModels implements ModelEntrypoint {
         ModelHelper.setBlockModel(BonusBlocks.MOSS, () -> new BlockModelStandard<>(BonusBlocks.MOSS)
                 .setAllTextures(0, "bonusblocks:block/moss"));
 
-        ModelHelper.setBlockModel(BonusBlocks.GRASS_OVERGROWN, () -> new BlockModelStandard<>(BonusBlocks.MOSS)
+        ModelHelper.setBlockModel(BonusBlocks.GRASS_OVERGROWN, () -> new BlockModelGrass<>(BonusBlocks.GRASS_OVERGROWN)
                 .setTex(0, "minecraft:block/grass/top")
                 .setTex(2, "minecraft:block/grass_retro/top"));
-        ModelHelper.setBlockModel(BonusBlocks.GRASS_SCORCHED_OVERGROWN, () -> new BlockModelStandard<>(BonusBlocks.MOSS)
+        ModelHelper.setBlockModel(BonusBlocks.GRASS_SCORCHED_OVERGROWN, () -> new BlockModelStandard<>(BonusBlocks.GRASS_SCORCHED_OVERGROWN)
                 .setAllTextures(0, "minecraft:block/grass_scorched/top"));
-        ModelHelper.setBlockModel(BonusBlocks.PATH_DIRT_OVERGROWN, () -> new BlockModelStandard<>(BonusBlocks.MOSS)
+        ModelHelper.setBlockModel(BonusBlocks.PATH_DIRT_OVERGROWN, () -> new BlockModelStandard<>(BonusBlocks.PATH_DIRT_OVERGROWN)
                 .setAllTextures(0, "minecraft:block/grass_path/top"));
 
         ModelHelper.setBlockModel(BonusBlocks.FLOWER_CYAN, () -> new BlockModelFlowerStackable<>(BonusBlocks.FLOWER_CYAN, "bonusblocks:block/flower_cyan/"));
@@ -158,11 +158,11 @@ public class BonusModels implements ModelEntrypoint {
                 .setTex(0, "bonusblocks:block/polished_marble_top", Side.TOP, Side.BOTTOM));
 
         ModelHelper.setBlockModel(BonusBlocks.MARBLE_CARVED, () -> new BlockModelStandard<>(BonusBlocks.MARBLE_CARVED)
-                .setTex(0, "bonusblocks:block/carved_marble_side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST)
-                .setTex(0, "bonusblocks:block/carved_marble_top", Side.TOP, Side.BOTTOM));
+                .setTex(0, "bonusblocks:block/carved_marble", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST)
+                .setTex(0, "bonusblocks:block/polished_marble_top", Side.TOP, Side.BOTTOM));
         ModelHelper.setBlockModel(BonusBlocks.SLATE_CARVED, () -> new BlockModelStandard<>(BonusBlocks.SLATE_CARVED)
-                .setTex(0, "bonusblocks:block/carved_slate_side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST)
-                .setTex(0, "bonusblocks:block/carved_slate_top", Side.TOP, Side.BOTTOM));
+                .setTex(0, "minecraft:block/carved_slate", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST)
+                .setTex(0, "minecraft:block/polished_slate_top", Side.TOP, Side.BOTTOM));
 
         ModelHelper.setBlockModel(BonusBlocks.BLOCK_CLAY_BAKED, () -> new BlockModelStandard<>(BonusBlocks.BLOCK_CLAY_BAKED)
                 .setAllTextures(0, "bonusblocks:block/block_clay_baked"));
@@ -170,14 +170,16 @@ public class BonusModels implements ModelEntrypoint {
         ModelHelper.setBlockModel(BonusBlocks.GLASS_OBSIDIAN, () -> new BlockModelTransparent<>(BonusBlocks.GLASS_OBSIDIAN, false).onRenderLayer(1)
                 .setAllTextures(0, "bonusblocks:block/glass_obsidian"));
         ModelHelper.setBlockModel(BonusBlocks.GLASS_QUARTZ, () -> new BlockModelTransparent<>(BonusBlocks.GLASS_QUARTZ, false)
-                .setAllTextures(0, "bonusblocks:block/glass_obsidian"));
+                .setAllTextures(0, "bonusblocks:block/glass_quartz"));
 
         ModelHelper.setBlockModel(BonusBlocks.BRICK_MUD, () -> new BlockModelStandard<>(BonusBlocks.BRICK_MUD)
-                .setAllTextures(0, "bonusblocks:block/brick_mud"));
+                .setAllTextures(0, "bonusblocks:block/brick_mud_baked"));
         ModelHelper.setBlockModel(BonusBlocks.BRICK_QUARTZ, () -> new BlockModelStandard<>(BonusBlocks.BRICK_QUARTZ)
                 .setAllTextures(0, "bonusblocks:block/brick_quartz"));
         ModelHelper.setBlockModel(BonusBlocks.BRICK_OLIVINE, () -> new BlockModelStandard<>(BonusBlocks.BRICK_OLIVINE)
                 .setAllTextures(0, "bonusblocks:block/brick_olivine"));
+        ModelHelper.setBlockModel(BonusBlocks.BRICK_CLAY_BAKED, () -> new BlockModelStandard<>(BonusBlocks.BRICK_CLAY_BAKED)
+                .setAllTextures(0, "bonusblocks:block/brick_clay_baked"));
 
         ModelHelper.setBlockModel(BonusBlocks.DIRT_BAKED, () -> new BlockModelStandard<>(BonusBlocks.DIRT_BAKED)
                 .setAllTextures(0, "bonusblocks:block/dirt_baked"));
@@ -207,7 +209,7 @@ public class BonusModels implements ModelEntrypoint {
                 .setTex(0, "bonusblocks:block/skull/side", Side.SOUTH, Side.EAST, Side.WEST)
                 .setTex(0, "bonusblocks:block/skull/top", Side.TOP)
                 .setTex(0, "bonusblocks:block/skull/bottom", Side.BOTTOM)
-                .setTex(0, "bonusblocks:block/skull/front_overlay", Side.NORTH));
+                .setTex(1, "bonusblocks:block/skull/front_overlay", Side.NORTH));
 
         ModelHelper.setBlockModel(BonusBlocks.TATAMI, () -> new BlockModelStandard<>(BonusBlocks.TATAMI)
                 .setAllTextures(0, "bonusblocks:block/tatami"));
@@ -304,15 +306,15 @@ public class BonusModels implements ModelEntrypoint {
 
 
         ModelHelper.setBlockModel(BonusBlocks.DOOR_GLASS_OBSIDIAN_BOTTOM, () -> new BlockModelDoorGlass<>(BonusBlocks.DOOR_GLASS_OBSIDIAN_BOTTOM)
-                .setTex(0, "bonusblocks:block/door/glass/frame", Side.TOP, Side.BOTTOM)
-                .setTex(0, "bonusblocks:block/door/glass/bottom", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+                .setTex(0, "bonusblocks:block/door/glass_obsidian/frame", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/door/glass_obsidian/bottom", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
         ModelHelper.setBlockModel(BonusBlocks.DOOR_GLASS_OBSIDIAN_TOP, () -> new BlockModelDoorGlass<>(BonusBlocks.DOOR_GLASS_OBSIDIAN_TOP)
-                .setTex(0, "bonusblocks:block/door/glass/frame", Side.TOP, Side.BOTTOM)
-                .setTex(0, "bonusblocks:block/door/glass/top", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+                .setTex(0, "bonusblocks:block/door/glass_obsidian/frame", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/door/glass_obsidian/top", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
 
         ModelHelper.setBlockModel(BonusBlocks.TRAPDOOR_GLASS_OBSIDIAN, () -> new BlockModelTrapDoor<>(BonusBlocks.TRAPDOOR_GLASS_OBSIDIAN)
-                .setTex(0, "bonusblocks:block/trapdoor/glass/top", Side.TOP, Side.BOTTOM)
-                .setTex(0, "bonusblocks:block/trapdoor/glass/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+                .setTex(0, "bonusblocks:block/trapdoor/glass_obsidian/top", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/trapdoor/glass_obsidian/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
 
 
 
@@ -328,10 +330,6 @@ public class BonusModels implements ModelEntrypoint {
         ModelHelper.setBlockModel(BonusBlocks.STAIRS_BRICK_QUARTZ, () -> new BlockModelStairs<>(BonusBlocks.STAIRS_BRICK_QUARTZ));
         ModelHelper.setBlockModel(BonusBlocks.STAIRS_BRICK_OLIVINE, () -> new BlockModelStairs<>(BonusBlocks.STAIRS_BRICK_OLIVINE));
         ModelHelper.setBlockModel(BonusBlocks.STAIRS_BRICK_CLAY_BAKED, () -> new BlockModelStairs<>(BonusBlocks.STAIRS_BRICK_CLAY_BAKED));
-        ModelHelper.setBlockModel(BonusBlocks.STAIRS_COBBLE_LAZURITE, () -> new BlockModelStairs<>(BonusBlocks.STAIRS_COBBLE_LAZURITE));
-        ModelHelper.setBlockModel(BonusBlocks.STAIRS_BRICK_LAZURITE, () -> new BlockModelStairs<>(BonusBlocks.STAIRS_BRICK_LAZURITE));
-        ModelHelper.setBlockModel(BonusBlocks.STAIRS_COBBLE_PERIDOT, () -> new BlockModelStairs<>(BonusBlocks.STAIRS_COBBLE_PERIDOT));
-        ModelHelper.setBlockModel(BonusBlocks.STAIRS_BRICK_PERIDOT, () -> new BlockModelStairs<>(BonusBlocks.STAIRS_BRICK_PERIDOT));
 
         //SLABS
         ModelHelper.setBlockModel(BonusBlocks.SLAB_WOOL, () -> new BlockModelSlabWool<>(BonusBlocks.SLAB_WOOL));
@@ -341,20 +339,14 @@ public class BonusModels implements ModelEntrypoint {
         ModelHelper.setBlockModel(BonusBlocks.SLAB_BRICK_QUARTZ, () -> new BlockModelSlab<>(BonusBlocks.SLAB_BRICK_QUARTZ));
         ModelHelper.setBlockModel(BonusBlocks.SLAB_BRICK_OLIVINE, () -> new BlockModelSlab<>(BonusBlocks.SLAB_BRICK_OLIVINE));
         ModelHelper.setBlockModel(BonusBlocks.SLAB_BRICK_CLAY_BAKED, () -> new BlockModelSlab<>(BonusBlocks.SLAB_BRICK_CLAY_BAKED));
-        ModelHelper.setBlockModel(BonusBlocks.SLAB_COBBLE_LAZURITE, () -> new BlockModelSlab<>(BonusBlocks.SLAB_COBBLE_LAZURITE));
-        ModelHelper.setBlockModel(BonusBlocks.SLAB_BRICK_LAZURITE, () -> new BlockModelSlab<>(BonusBlocks.SLAB_BRICK_LAZURITE));
-        ModelHelper.setBlockModel(BonusBlocks.SLAB_COBBLE_PERIDOT, () -> new BlockModelSlab<>(BonusBlocks.SLAB_COBBLE_PERIDOT));
-        ModelHelper.setBlockModel(BonusBlocks.SLAB_BRICK_PERIDOT, () -> new BlockModelSlab<>(BonusBlocks.SLAB_BRICK_PERIDOT));
         ModelHelper.setBlockModel(BonusBlocks.SLAB_SLATE_POLISHED, () -> new BlockModelSlab<>(BonusBlocks.SLAB_SLATE_POLISHED));
         ModelHelper.setBlockModel(BonusBlocks.SLAB_MARBLE_POLISHED, () -> new BlockModelSlab<>(BonusBlocks.SLAB_MARBLE_POLISHED));
-        ModelHelper.setBlockModel(BonusBlocks.SLAB_PERIDOT_POLISHED, () -> new BlockModelSlab<>(BonusBlocks.SLAB_PERIDOT_POLISHED));
-        ModelHelper.setBlockModel(BonusBlocks.SLAB_LAZURITE_POLISHED, () -> new BlockModelSlab<>(BonusBlocks.SLAB_LAZURITE_POLISHED));
 
     }
 
     @Override
     public void initItemModels(ItemModelDispatcher dispatcher) {
-        ModelHelper.setItemModel(BonusItems.SOULWAX, () -> new ItemModelStandard(BonusItems.SOULWAX, "bonusblocks:item/soulwax"));
+        ModelHelper.setItemModel(BonusItems.SOULWAX, () -> new ItemModelStandard(BonusItems.SOULWAX, "bonusblocks"));
 
         ModelHelper.setItemModel(BonusItems.MOSSBALL, () -> new ItemModelStandard(BonusItems.MOSSBALL, "bonusblocks"));
 
@@ -366,8 +358,6 @@ public class BonusModels implements ModelEntrypoint {
         ModelHelper.setItemModel(BonusItems.DOOR_SLATE, () -> new ItemModelStandard(BonusItems.DOOR_SLATE, "bonusblocks"));
         ModelHelper.setItemModel(BonusItems.DOOR_PERMAFROST, () -> new ItemModelStandard(BonusItems.DOOR_PERMAFROST, "bonusblocks"));
         ModelHelper.setItemModel(BonusItems.DOOR_NETHERRACK, () -> new ItemModelStandard(BonusItems.DOOR_NETHERRACK, "bonusblocks"));
-        ModelHelper.setItemModel(BonusItems.DOOR_PERIDOT, () -> new ItemModelStandard(BonusItems.DOOR_PERIDOT, "bonusblocks"));
-        ModelHelper.setItemModel(BonusItems.DOOR_LAZURITE, () -> new ItemModelStandard(BonusItems.DOOR_LAZURITE, "bonusblocks"));
 
     }
 
