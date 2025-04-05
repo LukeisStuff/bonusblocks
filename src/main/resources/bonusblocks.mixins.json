@@ -13,6 +13,7 @@
     "BlockGrassMixin",
     "BlockSaplingCacaoMixin",
     "BlockSaplingShrubMixin",
+    "ChunkDecoratorOverworldMixin",
     "EntityMixin",
     "ItemMixin",
     "ItemToolShovelMixin"
