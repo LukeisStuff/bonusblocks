@@ -26,7 +26,6 @@ public class BonusRecipes implements RecipeEntrypoint {
         templateItemtoBlock.addInput('X', Items.SULPHUR).create("block_of_sulphur", new ItemStack(BonusBlocks.BLOCK_GUNPOWDER, 1));
         templateItemtoBlock.addInput('X', Items.DUST_SUGAR).create("block_of_sugar", new ItemStack(BonusBlocks.BLOCK_SUGAR, 1));
         templateItemtoBlock.addInput('X', Items.CLOTH).create("block_of_cloth", new ItemStack(BonusBlocks.BLOCK_CLOTH, 1));
-        templateItemtoBlock.addInput('X', Items.INGOT_STEEL_CRUDE).create("block_of_crude_steel", new ItemStack(BonusBlocks.BLOCK_CRUDE_STEEL, 1));
         templateItemtoBlock.addInput('X', Items.FLINT).create("block_of_flint", new ItemStack(BonusBlocks.BLOCK_FLINT, 1));
         templateItemtoBlock.addInput('X', Items.ORE_RAW_GOLD).create("block_of_raw_gold", new ItemStack(BonusBlocks.BLOCK_RAW_GOLD, 1));
         templateItemtoBlock.addInput('X', Items.ORE_RAW_IRON).create("block_of_raw_iron", new ItemStack(BonusBlocks.BLOCK_RAW_IRON, 1));
@@ -38,7 +37,6 @@ public class BonusRecipes implements RecipeEntrypoint {
         templateBlocktoItem.addInput('X', BonusBlocks.BLOCK_GUNPOWDER).create("block_of_sulphur_to_sulphur", new ItemStack(Items.SULPHUR, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.BLOCK_SUGAR).create("block_of_sugar_to_sugar", new ItemStack(Items.DUST_SUGAR, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.BLOCK_CLOTH).create("block_of_cloth_to_cloth", new ItemStack(Items.CLOTH, 9));
-        templateBlocktoItem.addInput('X', BonusBlocks.BLOCK_CRUDE_STEEL).create("block_of_crude_steel_to_crude_steel", new ItemStack(Items.INGOT_STEEL_CRUDE, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.BLOCK_FLINT).create("block_of_flint_to_flint", new ItemStack(Items.FLINT, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.BLOCK_RAW_GOLD).create("block_of_raw_gold_to_raw_gold", new ItemStack(Items.ORE_RAW_GOLD, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.BLOCK_RAW_IRON).create("block_of_raw_iron_to_raw_iron", new ItemStack(Items.ORE_RAW_IRON, 9));
@@ -51,12 +49,25 @@ public class BonusRecipes implements RecipeEntrypoint {
 
         RecipeBuilder.Shaped(MOD_ID, "GGG", "GGG")
                 .addInput('G', BonusBlocks.GLASS_OBSIDIAN)
-                .create("glass_obsidian_trapdoor", new ItemStack(BonusBlocks.TRAPDOOR_GLASS_OBSIDIAN, 8));
+                .create("glass_obsidian_trapdoor", new ItemStack(BonusBlocks.TRAPDOOR_GLASS_OBSIDIAN, 6));
+
+        RecipeBuilder.Shaped(MOD_ID, "GGG", "GGG")
+                .addInput('G', BonusBlocks.GLASS_QUARTZ)
+                .create("glass_quartz_trapdoor", new ItemStack(BonusBlocks.TRAPDOOR_GLASS_QUARTZ, 6));
+
+        RecipeBuilder.Shaped(MOD_ID, "GGG", "GGG")
+                .addInput('G', Blocks.GLASS_STEEL)
+                .create("glass_steel_trapdoor", new ItemStack(BonusBlocks.TRAPDOOR_GLASS_STEEL, 6));
 
         RecipeBuilder.Shaped(MOD_ID, "GQ", "QG")
                 .addInput('G', Blocks.GLASS)
                 .addInput('Q', Items.QUARTZ)
                 .create("glass_quartz", new ItemStack(BonusBlocks.GLASS_QUARTZ, 4));
+
+        RecipeBuilder.Shaped(MOD_ID, "OOO", "OBO", "OOO")
+                .addInput('O', Blocks.OBSIDIAN)
+                .addInput('B', Items.BONE)
+                .create("boneshale", new ItemStack(Blocks.BONESHALE, 4));
 
         RecipeBuilderShaped templateFlowertoDye = new RecipeBuilderShaped(MOD_ID, "X");
         templateFlowertoDye.addInput('X', BonusBlocks.FLOWER_SILVER).create("flower_silver_to_dye", new ItemStack(Items.DYE, 2, 7));
@@ -99,6 +110,8 @@ public class BonusRecipes implements RecipeEntrypoint {
         templateBricks.addInput('X', Blocks.MUD_BAKED).create("mud_bricks", new ItemStack(BonusBlocks.BRICK_MUD, 4));
         templateBricks.addInput('X', Items.QUARTZ).create("quartz_bricks", new ItemStack(BonusBlocks.BRICK_QUARTZ, 4));
         templateBricks.addInput('X', Items.OLIVINE).create("olivine_bricks", new ItemStack(BonusBlocks.BRICK_OLIVINE, 4));
+        templateBricks.addInput('X', Blocks.SOULSAND).create("soulschist", new ItemStack(Blocks.SOULSCHIST, 4));
+
 
         templateBricks.addInput('X', Blocks.CACTUS).create("tatami", new ItemStack(BonusBlocks.TATAMI, 4));
 
@@ -110,7 +123,6 @@ public class BonusRecipes implements RecipeEntrypoint {
 
         RecipeBuilder.ModifyWorkbench("minecraft").removeRecipe("marble_pillar");
         RecipeBuilder.ModifyWorkbench("minecraft").removeRecipe("green_dye_white_dye_to_lime_dye");
-        RecipeBuilder.ModifyWorkbench("minecraft").removeRecipe("pebbles_to_granite");
 
         RecipeBuilder.ModifyBlastFurnace("minecraft").removeRecipe("cobble_basalt_to_olivine");
         RecipeBuilder.ModifyBlastFurnace("minecraft").removeRecipe("cobble_stone_to_slate");
@@ -123,8 +135,6 @@ public class BonusRecipes implements RecipeEntrypoint {
                 .create("green_dye_white_dye_to_lime_dye", new ItemStack(Items.DYE, 2, 10));
 
         RecipeBuilderShaped templatePebbles = new RecipeBuilderShaped(MOD_ID, "PX", "XP");
-        templatePebbles.addInput('X', Items.QUARTZ).addInput('P', Items.AMMO_PEBBLE).create("pebbles_to_granite", new ItemStack(Blocks.COBBLE_GRANITE, 2));
-
         templatePebbles.addInput('X', Blocks.STONE).addInput('P', BonusItems.MOSSBALL).create("stone_to_moss_stone", new ItemStack(Blocks.MOSS_STONE, 2));
         templatePebbles.addInput('X', Blocks.COBBLE_STONE).addInput('P', BonusItems.MOSSBALL).create("cobble_stone_to_moss_stone", new ItemStack(Blocks.COBBLE_STONE_MOSSY, 2));
         templatePebbles.addInput('X', Blocks.BRICK_STONE_POLISHED).addInput('P', BonusItems.MOSSBALL).create("polished_stone_brick_to_mossy_polished_stone_brick", new ItemStack(Blocks.BRICK_STONE_POLISHED_MOSSY, 2));
@@ -146,6 +156,11 @@ public class BonusRecipes implements RecipeEntrypoint {
                 .addInput('S', BonusBlocks.SKULL_CARVED_IDLE)
                 .addInput('C', BonusBlocks.CANDLE_SOULWAX)
                 .create("skull_lantern", new ItemStack(BonusBlocks.SKULL_CARVED_ACTIVE, 1));
+
+        RecipeBuilder.Shaped(MOD_ID, "S", "C")
+                .addInput('S', BonusBlocks.SKULL_CARVED_IDLE)
+                .addInput('C', Blocks.TORCH_REDSTONE_ACTIVE)
+                .create("redstone_skull", new ItemStack(BonusBlocks.SKULL_REDSTONE, 1));
 
         for (int color = 0; color < 16; color++) {
             RecipeBuilder.Shapeless(MOD_ID)
@@ -220,6 +235,14 @@ public class BonusRecipes implements RecipeEntrypoint {
         RecipeBuilder.Shaped(MOD_ID, "PP", "PP", "PP")
                 .addInput('P', BonusBlocks.GLASS_OBSIDIAN)
                 .create("door_glass_obsdian", new ItemStack(BonusItems.DOOR_GLASS_OBSIDIAN, 2));
+
+        RecipeBuilder.Shaped(MOD_ID, "PP", "PP", "PP")
+                .addInput('P', BonusBlocks.GLASS_QUARTZ)
+                .create("door_glass_quartz", new ItemStack(BonusItems.DOOR_GLASS_QUARTZ, 2));
+
+        RecipeBuilder.Shaped(MOD_ID, "PP", "PP", "PP")
+                .addInput('P', Blocks.GLASS_STEEL)
+                .create("door_glass_steel", new ItemStack(BonusItems.DOOR_GLASS_STEEL, 2));
 
         RecipeBuilder.Shaped(MOD_ID, "PP", "PP", "PP")
                 .addInput('P', Blocks.STONE)

@@ -17,8 +17,8 @@ public class BlockLogicDoorStone extends BlockLogicDoor {
     public final boolean isTop;
     public final boolean requireTool;
     public final @Nullable Supplier<Item> droppedItem;
-    public BlockLogicDoorStone(Block<?> block, boolean isTop, @Nullable Supplier<Item> droppedItem) {
-        super(block, Material.stone, isTop, true, droppedItem);
+    public BlockLogicDoorStone(Block<?> block, boolean isTop, @Nullable Supplier<Item> droppedItem, Material material) {
+        super(block, material, isTop, true, droppedItem);
         this.isTop = isTop;
         this.requireTool = true;
         this.droppedItem = droppedItem;

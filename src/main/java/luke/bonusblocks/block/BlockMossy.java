@@ -20,6 +20,7 @@ public class BlockMossy extends BlockLogicMoss {
         switch (dropCause) {
             case SILK_TOUCH:
             case PICK_BLOCK:
+            case PISTON_CRUSH:
                 return new ItemStack[]{new ItemStack(this)};
             default:
                 return new ItemStack[]{new ItemStack(BonusItems.MOSSBALL, 4)};

@@ -6,6 +6,7 @@ import net.minecraft.core.block.*;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.crafting.LookupFuelFurnace;
+import net.minecraft.core.crafting.LookupFuelFurnaceBlast;
 import net.minecraft.core.sound.BlockSound;
 import turniplabs.halplibe.helper.BlockBuilder;
 import turniplabs.halplibe.helper.CreativeHelper;
@@ -85,7 +86,6 @@ public class BonusBlocks {
     public static Block<BlockLogic> BLOCK_LEATHER;
     public static Block<BlockLogic> BLOCK_WICKER;
     public static Block<BlockLogic> BLOCK_FLINT;
-    public static Block<BlockLogic> BLOCK_CRUDE_STEEL;
     public static Block<BlockLogic> BLOCK_RAW_GOLD;
     public static Block<BlockLogic> BLOCK_RAW_IRON;
 
@@ -132,9 +132,9 @@ public class BonusBlocks {
     public static Block<BlockLogicTrapDoorStone> TRAPDOOR_SLATE;
     public static Block<BlockLogicTrapDoorStone> TRAPDOOR_PERMAFROST;
     public static Block<BlockLogicTrapDoorStone> TRAPDOOR_NETHERRACK;
-    public static Block<BlockLogicTrapDoor>  TRAPDOOR_GLASS_OBSIDIAN;
-    public static Block<BlockLogicTrapDoor>  TRAPDOOR_GLASS_QUARTZ;
-    public static Block<BlockLogicTrapDoor>  TRAPDOOR_GLASS_STEEL;
+    public static Block<BlockLogicTrapDoor> TRAPDOOR_GLASS_OBSIDIAN;
+    public static Block<BlockLogicTrapDoor> TRAPDOOR_GLASS_QUARTZ;
+    public static Block<BlockLogicTrapDoor> TRAPDOOR_GLASS_STEEL;
 
 
     //DOORS
@@ -205,13 +205,14 @@ public class BonusBlocks {
         miningLevels.put(BLOCK_RAW_GOLD, 2);
         miningLevels.put(FENCE_GOLD, 2);
         miningLevels.put(BRICK_STEEL, 2);
-        miningLevels.put(BLOCK_CRUDE_STEEL, 2);
+
 
         stoneToMossMap.put(SAPLING_OAK, BonusBlocks.SAPLING_OAK_MOSSY);
         stoneToMossMap.put(MOSS_STONE, BonusBlocks.MOSS);
         stoneToMossMap.put(MOSS_BASALT, BonusBlocks.MOSS);
         stoneToMossMap.put(MOSS_LIMESTONE, BonusBlocks.MOSS);
         stoneToMossMap.put(MOSS_GRANITE, BonusBlocks.MOSS);
+
 
         LookupFuelFurnace.instance.addFuelEntry(LOG_JACARANDA.id(), 300);
         LookupFuelFurnace.instance.addFuelEntry(LOG_SCORCHED.id(), 300);
@@ -222,6 +223,11 @@ public class BonusBlocks {
         LookupFuelFurnace.instance.addFuelEntry(BRANCH.id(), 300);
         LookupFuelFurnace.instance.addFuelEntry(SAPLING_JACARANDA.id(), 100);
         LookupFuelFurnace.instance.addFuelEntry(SAPLING_OAK_MOSSY.id(), 100);
+
+        LookupFuelFurnaceBlast.instance.addFuelEntry(BRICK_OLIVINE.id(), 200);
+        LookupFuelFurnaceBlast.instance.addFuelEntry(STAIRS_BRICK_OLIVINE.id(), 200);
+        LookupFuelFurnaceBlast.instance.addFuelEntry(SLAB_BRICK_OLIVINE.id(), 100);
+
 
         CreativeHelper.setParent(PILLAR_SLATE, PILLAR_MARBLE);
 
@@ -323,7 +329,6 @@ public class BonusBlocks {
         CreativeHelper.setParent(BLOCK_RAW_GOLD, BLOCK_CHARCOAL);
         CreativeHelper.setParent(BLOCK_RAW_IRON, BLOCK_CHARCOAL);
         CreativeHelper.setParent(BLOCK_FLINT, BLOCK_CHARCOAL);
-        CreativeHelper.setParent(BLOCK_CRUDE_STEEL, BLOCK_CHARCOAL);
 
         CreativeHelper.setParent(SLAB_COBBLESTONE_MOSSY, SLAB_BASALT_POLISHED);
         CreativeHelper.setParent(SLAB_SLATE_POLISHED, SLAB_BASALT_POLISHED);
@@ -495,6 +500,15 @@ public class BonusBlocks {
                 .build("log.scorched", "log_scorched", blockID++, BlockLogicLog::new);
 
 
+        // Baked Dirt
+        DIRT_BAKED = new BlockBuilder(MOD_ID)
+                .setBlockSound(new BlockSound("step.gravel", "step.gravel", 1.0f, 0.9f))
+                .setHardness(0.8f)
+                .setResistance(0.8f)
+                .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.MINEABLE_BY_PICKAXE, BlockTags.GROWS_FLOWERS, BlockTags.GROWS_SUGAR_CANE, BlockTags.GROWS_TREES, BlockTags.CAVES_CUT_THROUGH)
+                .build("dirt.rough", "dirt_baked", blockID++, block -> new BlockLogic(block, Material.dirt));
+
+
         // Moss
         MOSS = grass
                 .setFlammability(100, 30)
@@ -512,7 +526,6 @@ public class BonusBlocks {
                 .build("path.overgrown", "dirt_path_overgrown", blockID++, BlockLogicPathDirt::new);
 
         // Flowers
-
         FLOWER_SILVER = flower
                 .build("flower.silver", "flower_silver", blockID++, BlockLogicFlowerStackable::new);
 
@@ -568,11 +581,11 @@ public class BonusBlocks {
         PETAL_LAYER_LIME = petalLayer
                 .build("layer.petal.lime", "petal_layer_lime", blockID++, BlockLogicLayerPetal::new);
 
-        // Mushroom
+        // Mushrooms
         MUSHROOM_GRAY = flower
                 .build("mushroom.gray", "mushroom_gray", blockID++, BlockLogicMushroom::new);
 
-        // Mushroom Blocks
+        // Fungi Blocks
         FUNGI_BROWN = grass
                 .setLuminance(2)
                 .setFlammability(30, 60)
@@ -592,7 +605,7 @@ public class BonusBlocks {
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.8f))
                 .setHardness(0.8f)
                 .setResistance(5.0f)
-                .build("block.bone","block_bone", blockID++, b -> new BlockLogicAxisAligned(b, Material.dirt));
+                .build("block.bone","block_bone", blockID++, b -> new BlockLogicAxisAligned(b, Material.stone));
 
         // Cloth Block
         BLOCK_CLOTH = new BlockBuilder(MOD_ID)
@@ -651,20 +664,13 @@ public class BonusBlocks {
                 .setInfiniburn()
                 .build("block.flint","block_flint", blockID++, b -> new BlockLogic(b, Material.stone));
 
-        // Crude Steel Block
-        BLOCK_CRUDE_STEEL = raw
-                .setHardness(4.0f)
-                .setResistance(1000.0f)
-                .build("block.steel.crude", "block_steel_crude", blockID++, b -> new BlockLogic(b, Material.metal));
-
         // Raw Blocks
         BLOCK_RAW_IRON = raw
                 .build("block.raw.iron", "block_raw_iron", blockID++, b -> new BlockLogic(b, Material.metal));
         BLOCK_RAW_GOLD = raw
                 .build("block.raw.gold", "block_raw_gold", blockID++, b -> new BlockLogic(b, Material.metal));
-        // Nuggets
 
-        // Make Custom BlockMODEL for these fuckers
+        // Nuggets
         OVERLAY_RAW_IRON = pebble
                 .build("overlay.iron", "overlay_raw_iron", blockID++, BlockLogicOverlayNuggetsIron::new);
         OVERLAY_RAW_GOLD = pebble
@@ -675,20 +681,20 @@ public class BonusBlocks {
 
         // Slate Pillar
         PILLAR_SLATE = stone
-                .build("pillar.slate", "pillar_slate", blockID++, b -> new BlockLogic(b, Material.stone));
+                .build("pillar.slate", "pillar_slate", blockID++, b -> new BlockLogic(b, Material.slate));
 
 
         // Polished Stones
         MARBLE_POLISHED = stone
                 .setHardness(1.0f)
-                .build("marble.polished", "marble_polished", blockID++, b -> new BlockLogic(b, Material.stone));
+                .build("marble.polished", "marble_polished", blockID++, b -> new BlockLogic(b, Material.marble));
 
 
         // Carved Stones
         SLATE_CARVED = stone
-                .build("slate.carved", "slate_carved", blockID++, b -> new BlockLogic(b, Material.stone));
+                .build("slate.carved", "slate_carved", blockID++, b -> new BlockLogic(b, Material.slate));
         MARBLE_CARVED = stone
-                .build("marble.carved", "marble_carved", blockID++, b -> new BlockLogic(b, Material.stone));
+                .build("marble.carved", "marble_carved", blockID++, b -> new BlockLogic(b, Material.marble));
 
 
         // Baked Clay
@@ -697,15 +703,10 @@ public class BonusBlocks {
                 .build("block.clay.baked", "block_clay_baked", blockID++, b -> new BlockLogic(b, Material.stone));
 
 
-        // Obsidian Glass
+        // Glass
         GLASS_OBSIDIAN = obsidian
                 .build("glass.obsidian", "glass_obsidian", blockID++, BlockLogicGlassObsidian::new);
 
-        TRAPDOOR_GLASS_OBSIDIAN = obsidian
-                .setVisualUpdateOnMetadata()
-                .build("trapdoor.glass.obsidian", "trapdoor_glass_obsidian", blockID++, b -> new BlockTrapDoorObsidian(b, Material.glass));
-
-        // Quartz Glass
         GLASS_QUARTZ = new BlockBuilder(MOD_ID)
                 .setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
                 .setHardness(0.3F)
@@ -715,36 +716,19 @@ public class BonusBlocks {
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE)
                 .build("glass.quartz", "glass_quartz", blockID++, BlockLogicGlassQuartz::new);
 
-        TRAPDOOR_GLASS_QUARTZ = new BlockBuilder(MOD_ID)
-                .setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
-                .setHardness(0.3F)
-                .setResistance(0.3F)
-                .setVisualUpdateOnMetadata()
-                .setUseInternalLight()
-                .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-                .build("trapdoor.glass.quartz", "trapdoor_glass_quartz", blockID++, b -> new BlockLogicTrapDoor(b, Material.glass));
 
-
-        TRAPDOOR_GLASS_STEEL = raw
-                .setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
-                .setHardness(0.3f)
-                .setResistance(2000.0F)
-                .setVisualUpdateOnMetadata()
-                .setUseInternalLight()
-                .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-                .build("trapdoor.glass.steel", "trapdoor_glass_steel", blockID++, b -> new BlockLogicTrapDoor(b, Material.steel));
-
-
+        // Bricks
         BRICK_MUD = brick
                 .setHardness(1.5f)
                 .build("brick.mud", "brick_mud", blockID++, b -> new BlockLogic(b, Material.stone));
-
         BRICK_QUARTZ = brick
                 .setHardness(3.0f)
                 .build("brick.quartz", "brick_quartz", blockID++, b -> new BlockLogic(b, Material.stone));
         BRICK_OLIVINE = brick
                 .setHardness(3.0f)
                 .build("brick.olivine", "brick_olivine", blockID++, b -> new BlockLogic(b, Material.stone));
+        BRICK_CLAY_BAKED = stone
+                .build("brick.clay.baked", "brick_clay_baked", blockID++, block -> new BlockLogic(block, Material.stone));
 
 
         // Soul Candle
@@ -758,84 +742,7 @@ public class BonusBlocks {
                 .setTags(BlockTags.MINEABLE_BY_SWORD, BlockTags.BROKEN_BY_FLUIDS)
                 .build("candle.soulwax", "candle_soulwax", blockID++, BlockLogicSoulCandle::new);
 
-
-        //Slabs
-        SLAB_WOOL = slab
-                .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
-                .setHardness(0.8F)
-                .setResistance(0.8F)
-                .setFlammability(30, 60)
-                .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.NOT_IN_CREATIVE_MENU)
-                .setBlockItem(ItemBlockSlabWool::new)
-                .build("slab_wool", blockID++, b -> new BlockLogicSlabWoolPainted(b, WOOL));
-
-        SLAB_COBBLESTONE_MOSSY = slab
-                .setHardness(2.0F)
-                .build("slab_cobble_stone_mossy", blockID++, b -> new BlockLogicSlab(b, COBBLE_STONE_MOSSY));
-        SLAB_SLATE_POLISHED = slab
-                .build("slab_slate_polished", blockID++, b -> new BlockLogicSlab(b, SLATE_CARVED));
-        SLAB_MARBLE_POLISHED = slab
-                .build("slab_marble_polished", blockID++, b -> new BlockLogicSlab(b, MARBLE_CARVED));
-        SLAB_BRICK_STONE_POLISHED_MOSSY = slab
-                .setHardness(2.0F)
-                .build("slab_brick_stone_polished_mossy", blockID++, b -> new BlockLogicSlab(b, BRICK_STONE_POLISHED_MOSSY));
-        SLAB_BRICK_MUD = slab
-                .build("slab_brick_mud", blockID++, b -> new BlockLogicSlab(b, BRICK_MUD));
-        SLAB_BRICK_QUARTZ = slab
-                .setHardness(3.0f)
-                .build("slab_brick_quartz", blockID++, b -> new BlockLogicSlab(b, BRICK_QUARTZ));
-        SLAB_BRICK_OLIVINE = slab
-                .setHardness(3.0f)
-                .build("slab_brick_olivine", blockID++, b -> new BlockLogicSlab(b, BRICK_OLIVINE));
-
-
-        // Stairs
-        STAIRS_WOOL = stairs
-                .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
-                .setHardness(0.8F)
-                .setResistance(0.8F)
-                .setFlammability(30, 60)
-                .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.NOT_IN_CREATIVE_MENU)
-                .build("stairs_wool", blockID++, b -> new BlockLogicStairsWoolPainted(b, WOOL));
-        STAIRS_COBBLESTONE_MOSSY = stairs
-                .setHardness(2.0F)
-                .build("stairs_cobble_stone_mossy", blockID++, b -> new BlockLogicStairs(b, COBBLE_STONE_MOSSY));
-        STAIRS_BRICK_STONE_POLISHED_MOSSY = stairs
-                .setHardness(2.0F)
-                .build("stairs_brick_stone_polished_mossy", blockID++, b -> new BlockLogicStairs(b, BRICK_STONE_POLISHED_MOSSY));
-        STAIRS_BRICK_MUD = stairs
-                .setHardness(1.5f)
-                .build("stairs_brick_mud", blockID++, b -> new BlockLogicStairs(b, BRICK_MUD));
-        STAIRS_BRICK_QUARTZ = stairs
-                .setHardness(3.0f)
-                .build("stairs_brick_quartz", blockID++, b -> new BlockLogicStairs(b, BRICK_QUARTZ));
-        STAIRS_BRICK_OLIVINE = stairs
-                .setHardness(3.0f)
-                .build("stairs_brick_olivine", blockID++, b -> new BlockLogicStairs(b, BRICK_OLIVINE));
-
-
-
-        //2.2 New Stuff
-
-        // Baked Clay Bricks
-        BRICK_CLAY_BAKED = stone
-                .build("brick.clay.baked", "brick_clay_baked", blockID++, block -> new BlockLogic(block, Material.stone));
-
-        SLAB_BRICK_CLAY_BAKED = slab
-                .build("slab_brick_clay_baked", blockID++, b -> new BlockLogicSlab(b, BRICK_CLAY_BAKED));
-
-        STAIRS_BRICK_CLAY_BAKED = stairs
-                .build("stairs_brick_clay_baked", blockID++, b -> new BlockLogicStairs(b, BRICK_CLAY_BAKED));
-
-        // Rough Dirt
-        DIRT_BAKED = new BlockBuilder(MOD_ID)
-                .setBlockSound(new BlockSound("step.gravel", "step.gravel", 1.0f, 0.9f))
-                .setHardness(0.8f)
-                .setResistance(0.8f)
-                .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.MINEABLE_BY_PICKAXE, BlockTags.GROWS_FLOWERS, BlockTags.GROWS_SUGAR_CANE, BlockTags.GROWS_TREES, BlockTags.CAVES_CUT_THROUGH)
-                .build("dirt.rough", "dirt_baked", blockID++, block -> new BlockLogic(block, Material.dirt));
-
-        // Skull
+        // Skulls
         SKULL_CARVED_IDLE = new BlockBuilder(MOD_ID)
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.8f))
                 .setHardness(0.8f)
@@ -864,7 +771,8 @@ public class BonusBlocks {
                 .setResistance(5.0f)
                 .setVisualUpdateOnMetadata()
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-                .build("skull.redstone", "skull_redstone", blockID++, BlockLogicSkullRedstone::new);
+                .build("skull.redstone", "skull_redstone", blockID++, BlockLogicPumpkinRedstone::new);
+
 
         FENCE_GOLD = raw
                 .setVisualUpdateOnMetadata()
@@ -872,10 +780,153 @@ public class BonusBlocks {
                 .build("fence.gold", "fence_gold", blockID++, BlockFenceNoClimb::new);
 
 
+        TATAMI = new BlockBuilder(MOD_ID)
+                .setBlockSound(new BlockSound("step.cloth", "step.cloth", 0.8f, 1.2f))
+                .setHardness(0.6f)
+                .setResistance(0.6f)
+                .setFlammability(20, 40)
+                .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS)
+                .build("tatami", "tatami", blockID++, b -> new BlockLogic(b, Material.cactus));
 
 
+        //Slabs
+        SLAB_WOOL = slab
+                .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
+                .setHardness(0.8F)
+                .setResistance(0.8F)
+                .setFlammability(30, 60)
+                .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.NOT_IN_CREATIVE_MENU)
+                .setBlockItem(ItemBlockSlabWool::new)
+                .build("slab_wool", blockID++, b -> new BlockLogicSlabWoolPainted(b, WOOL));
+        SLAB_COBBLESTONE_MOSSY = slab
+                .setHardness(2.0F)
+                .build("slab_cobble_stone_mossy", blockID++, b -> new BlockLogicSlab(b, COBBLE_STONE_MOSSY));
+        SLAB_SLATE_POLISHED = slab
+                .build("slab_slate_polished", blockID++, b -> new BlockLogicSlab(b, SLATE_CARVED));
+        SLAB_MARBLE_POLISHED = slab
+                .build("slab_marble_polished", blockID++, b -> new BlockLogicSlab(b, MARBLE_CARVED));
+        SLAB_BRICK_STONE_POLISHED_MOSSY = slab
+                .setHardness(2.0F)
+                .build("slab_brick_stone_polished_mossy", blockID++, b -> new BlockLogicSlab(b, BRICK_STONE_POLISHED_MOSSY));
+        SLAB_BRICK_MUD = slab
+                .build("slab_brick_mud", blockID++, b -> new BlockLogicSlab(b, BRICK_MUD));
+        SLAB_BRICK_QUARTZ = slab
+                .setHardness(3.0f)
+                .build("slab_brick_quartz", blockID++, b -> new BlockLogicSlab(b, BRICK_QUARTZ));
+        SLAB_BRICK_OLIVINE = slab
+                .setHardness(3.0f)
+                .build("slab_brick_olivine", blockID++, b -> new BlockLogicSlab(b, BRICK_OLIVINE));
+        SLAB_BRICK_CLAY_BAKED = slab
+                .build("slab_brick_clay_baked", blockID++, b -> new BlockLogicSlab(b, BRICK_CLAY_BAKED));
 
-        //3.0 New Stuff
+
+        // Stairs
+        STAIRS_WOOL = stairs
+                .setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
+                .setHardness(0.8F)
+                .setResistance(0.8F)
+                .setFlammability(30, 60)
+                .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.NOT_IN_CREATIVE_MENU)
+                .build("stairs_wool", blockID++, b -> new BlockLogicStairsWoolPainted(b, WOOL));
+        STAIRS_COBBLESTONE_MOSSY = stairs
+                .setHardness(2.0F)
+                .build("stairs_cobble_stone_mossy", blockID++, b -> new BlockLogicStairs(b, COBBLE_STONE_MOSSY));
+        STAIRS_BRICK_STONE_POLISHED_MOSSY = stairs
+                .setHardness(2.0F)
+                .build("stairs_brick_stone_polished_mossy", blockID++, b -> new BlockLogicStairs(b, BRICK_STONE_POLISHED_MOSSY));
+        STAIRS_BRICK_MUD = stairs
+                .setHardness(1.5f)
+                .build("stairs_brick_mud", blockID++, b -> new BlockLogicStairs(b, BRICK_MUD));
+        STAIRS_BRICK_QUARTZ = stairs
+                .setHardness(3.0f)
+                .build("stairs_brick_quartz", blockID++, b -> new BlockLogicStairs(b, BRICK_QUARTZ));
+        STAIRS_BRICK_OLIVINE = stairs
+                .setHardness(3.0f)
+                .build("stairs_brick_olivine", blockID++, b -> new BlockLogicStairs(b, BRICK_OLIVINE));
+        STAIRS_BRICK_CLAY_BAKED = stairs
+                .build("stairs_brick_clay_baked", blockID++, b -> new BlockLogicStairs(b, BRICK_CLAY_BAKED));
+
+
+        // Doors
+        DOOR_STONE_BOTTOM = stone
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+                .setVisualUpdateOnMetadata()
+                .build("door.stone.bottom", "door_stone_bottom", blockID++, b -> new BlockLogicDoorStone(b, false, () -> BonusItems.DOOR_STONE, Material.stone));
+        DOOR_STONE_TOP = stone
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+                .setVisualUpdateOnMetadata()
+                .build("door.stone.top", "door_stone_top", blockID++, b -> new BlockLogicDoorStone(b, true, () -> BonusItems.DOOR_STONE, Material.stone));
+
+
+        DOOR_BASALT_BOTTOM = stone
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+                .setVisualUpdateOnMetadata()
+                .build("door.basalt.bottom", "door_basalt_bottom", blockID++, b -> new BlockLogicDoorStone(b, false, () -> BonusItems.DOOR_BASALT, Material.basalt));
+        DOOR_BASALT_TOP = stone
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+                .setVisualUpdateOnMetadata()
+                .build("door.basalt.top", "door_basalt_top", blockID++, b -> new BlockLogicDoorStone(b, true, () -> BonusItems.DOOR_BASALT, Material.basalt));
+
+
+        DOOR_LIMESTONE_BOTTOM = stone
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+                .setVisualUpdateOnMetadata()
+                .build("door.limestone.bottom", "door_limestone_bottom", blockID++, b -> new BlockLogicDoorStone(b, false, () -> BonusItems.DOOR_LIMESTONE, Material.limestone));
+        DOOR_LIMESTONE_TOP = stone
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+                .setVisualUpdateOnMetadata()
+                .build("door.limestone.top", "door_limestone_top", blockID++, b -> new BlockLogicDoorStone(b, true, () -> BonusItems.DOOR_LIMESTONE, Material.limestone));
+
+
+        DOOR_GRANITE_BOTTOM = stone
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+                .setVisualUpdateOnMetadata()
+                .build("door.granite.bottom", "door_granite_bottom", blockID++, b -> new BlockLogicDoorStone(b, false, () -> BonusItems.DOOR_GRANITE, Material.granite));
+        DOOR_GRANITE_TOP = stone
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+                .setVisualUpdateOnMetadata()
+                .build("door.granite.top", "door_granite_top", blockID++, b -> new BlockLogicDoorStone(b, true, () -> BonusItems.DOOR_GRANITE, Material.granite));
+
+
+        DOOR_MARBLE_BOTTOM = stone
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+                .setVisualUpdateOnMetadata()
+                .build("door.marble.bottom", "door_marble_bottom", blockID++, b -> new BlockLogicDoorStone(b, false, () -> BonusItems.DOOR_MARBLE, Material.marble));
+        DOOR_MARBLE_TOP = stone
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+                .setVisualUpdateOnMetadata()
+                .build("door.marble.top", "door_marble_top", blockID++, b -> new BlockLogicDoorStone(b, true, () -> BonusItems.DOOR_MARBLE, Material.marble));
+
+
+        DOOR_SLATE_BOTTOM = stone
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+                .setVisualUpdateOnMetadata()
+                .build("door.slate.bottom", "door_slate_bottom", blockID++, b -> new BlockLogicDoorStone(b, false, () -> BonusItems.DOOR_SLATE, Material.slate));
+        DOOR_SLATE_TOP = stone
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+                .setVisualUpdateOnMetadata()
+                .build("door.slate.top", "door_slate_top", blockID++, b -> new BlockLogicDoorStone(b, true, () -> BonusItems.DOOR_SLATE, Material.slate));
+
+
+        DOOR_PERMAFROST_BOTTOM = stone
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+                .setVisualUpdateOnMetadata()
+                .build("door.permafrost.bottom", "door_permafrost_bottom", blockID++, b -> new BlockLogicDoorStone(b, false, () -> BonusItems.DOOR_PERMAFROST, Material.permafrost));
+        DOOR_PERMAFROST_TOP = stone
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+                .setVisualUpdateOnMetadata()
+                .build("door.permafrost.top", "door_permafrost_top", blockID++, b -> new BlockLogicDoorStone(b, true, () -> BonusItems.DOOR_PERMAFROST, Material.permafrost));
+
+
+        DOOR_NETHERRACK_BOTTOM = stone
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+                .setVisualUpdateOnMetadata()
+                .build("door.netherrack.bottom", "door_netherrack_bottom", blockID++, b -> new BlockLogicDoorStone(b, false, () -> BonusItems.DOOR_NETHERRACK, Material.netherrack));
+        DOOR_NETHERRACK_TOP = stone
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+                .setVisualUpdateOnMetadata()
+                .build("door.netherrack.top", "door_netherrack_top", blockID++, b -> new BlockLogicDoorStone(b, true, () -> BonusItems.DOOR_NETHERRACK, Material.netherrack));
+
 
         DOOR_GLASS_OBSIDIAN_BOTTOM = obsidian
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
@@ -915,127 +966,60 @@ public class BonusBlocks {
                 .build("door.glass.steel.top", "door_glass_steel_top", blockID++, block -> new BlockLogicDoor(block, Material.steel, true, false, () -> BonusItems.DOOR_GLASS_STEEL));
 
 
-        TATAMI = new BlockBuilder(MOD_ID)
-                .setBlockSound(new BlockSound("step.cloth", "step.cloth", 0.8f, 1.2f))
-                .setHardness(0.6f)
-                .setResistance(0.6f)
-                .setFlammability(20, 40)
-                .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS)
-                .build("tatami", "tatami", blockID++, b -> new BlockLogic(b, Material.grass));
-
-        //3.2 NEW STUFF
-
-        DOOR_STONE_BOTTOM = stone
-                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-                .setVisualUpdateOnMetadata()
-                .build("door.stone.bottom", "door_stone_bottom", blockID++, b -> new BlockLogicDoorStone(b, false, () -> BonusItems.DOOR_STONE));
-        DOOR_STONE_TOP = stone
-                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-                .setVisualUpdateOnMetadata()
-                .build("door.stone.top", "door_stone_top", blockID++, b -> new BlockLogicDoorStone(b, true, () -> BonusItems.DOOR_STONE));
-
-
-        DOOR_BASALT_BOTTOM = stone
-                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-                .setVisualUpdateOnMetadata()
-                .build("door.basalt.bottom", "door_basalt_bottom", blockID++, b -> new BlockLogicDoorStone(b, false, () -> BonusItems.DOOR_BASALT));
-        DOOR_BASALT_TOP = stone
-                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-                .setVisualUpdateOnMetadata()
-                .build("door.basalt.top", "door_basalt_top", blockID++, b -> new BlockLogicDoorStone(b, true, () -> BonusItems.DOOR_BASALT));
-
-
-        DOOR_LIMESTONE_BOTTOM = stone
-                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-                .setVisualUpdateOnMetadata()
-                .build("door.limestone.bottom", "door_limestone_bottom", blockID++, b -> new BlockLogicDoorStone(b, false, () -> BonusItems.DOOR_LIMESTONE));
-        DOOR_LIMESTONE_TOP = stone
-                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-                .setVisualUpdateOnMetadata()
-                .build("door.limestone.top", "door_limestone_top", blockID++, b -> new BlockLogicDoorStone(b, true, () -> BonusItems.DOOR_LIMESTONE));
-
-
-        DOOR_GRANITE_BOTTOM = stone
-                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-                .setVisualUpdateOnMetadata()
-                .build("door.granite.bottom", "door_granite_bottom", blockID++, b -> new BlockLogicDoorStone(b, false, () -> BonusItems.DOOR_GRANITE));
-        DOOR_GRANITE_TOP = stone
-                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-                .setVisualUpdateOnMetadata()
-                .build("door.granite.top", "door_granite_top", blockID++, b -> new BlockLogicDoorStone(b, true, () -> BonusItems.DOOR_GRANITE));
-
-
-        DOOR_MARBLE_BOTTOM = stone
-                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-                .setVisualUpdateOnMetadata()
-                .build("door.marble.bottom", "door_marble_bottom", blockID++, b -> new BlockLogicDoorStone(b, false, () -> BonusItems.DOOR_MARBLE));
-        DOOR_MARBLE_TOP = stone
-                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-                .setVisualUpdateOnMetadata()
-                .build("door.marble.top", "door_marble_top", blockID++, b -> new BlockLogicDoorStone(b, true, () -> BonusItems.DOOR_MARBLE));
-
-
-        DOOR_SLATE_BOTTOM = stone
-                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-                .setVisualUpdateOnMetadata()
-                .build("door.slate.bottom", "door_slate_bottom", blockID++, b -> new BlockLogicDoorStone(b, false, () -> BonusItems.DOOR_SLATE));
-        DOOR_SLATE_TOP = stone
-                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-                .setVisualUpdateOnMetadata()
-                .build("door.slate.top", "door_slate_top", blockID++, b -> new BlockLogicDoorStone(b, true, () -> BonusItems.DOOR_SLATE));
-
-
-        DOOR_PERMAFROST_BOTTOM = stone
-                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-                .setVisualUpdateOnMetadata()
-                .build("door.permafrost.bottom", "door_permafrost_bottom", blockID++, b -> new BlockLogicDoorStone(b, false, () -> BonusItems.DOOR_PERMAFROST));
-        DOOR_PERMAFROST_TOP = stone
-                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-                .setVisualUpdateOnMetadata()
-                .build("door.permafrost.top", "door_permafrost_top", blockID++, b -> new BlockLogicDoorStone(b, true, () -> BonusItems.DOOR_PERMAFROST));
-
-
-        DOOR_NETHERRACK_BOTTOM = stone
-                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-                .setVisualUpdateOnMetadata()
-                .build("door.netherrack.bottom", "door_netherrack_bottom", blockID++, b -> new BlockLogicDoorStone(b, false, () -> BonusItems.DOOR_NETHERRACK));
-        DOOR_NETHERRACK_TOP = stone
-                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-                .setVisualUpdateOnMetadata()
-                .build("door.netherrack.top", "door_netherrack_top", blockID++, b -> new BlockLogicDoorStone(b, true, () -> BonusItems.DOOR_NETHERRACK));
-
-
+        // Trapdoors
         TRAPDOOR_STONE = stone
                 .setVisualUpdateOnMetadata()
-                .build("trapdoor.stone", "trapdoor_stone", blockID++, BlockLogicTrapDoorStone::new);
+                .build("trapdoor.stone", "trapdoor_stone", blockID++, b -> new BlockLogicTrapDoorStone(b, Material.stone));
 
         TRAPDOOR_BASALT = stone
                 .setVisualUpdateOnMetadata()
-                .build("trapdoor.basalt", "trapdoor_basalt", blockID++, BlockLogicTrapDoorStone::new);
+                .build("trapdoor.basalt", "trapdoor_basalt", blockID++, b -> new BlockLogicTrapDoorStone(b, Material.basalt));
 
         TRAPDOOR_LIMESTONE = stone
                 .setVisualUpdateOnMetadata()
-                .build("trapdoor.limestone", "trapdoor_limestone", blockID++, BlockLogicTrapDoorStone::new);
+                .build("trapdoor.limestone", "trapdoor_limestone", blockID++, b -> new BlockLogicTrapDoorStone(b, Material.limestone));
 
         TRAPDOOR_GRANITE = stone
                 .setVisualUpdateOnMetadata()
-                .build("trapdoor.granite", "trapdoor_granite", blockID++, BlockLogicTrapDoorStone::new);
+                .build("trapdoor.granite", "trapdoor_granite", blockID++, b -> new BlockLogicTrapDoorStone(b, Material.granite));
 
         TRAPDOOR_PERMAFROST = stone
                 .setVisualUpdateOnMetadata()
-                .build("trapdoor.permafrost", "trapdoor_permafrost", blockID++, BlockLogicTrapDoorStone::new);
+                .build("trapdoor.permafrost", "trapdoor_permafrost", blockID++, b -> new BlockLogicTrapDoorStone(b, Material.permafrost));
 
         TRAPDOOR_MARBLE = stone
                 .setVisualUpdateOnMetadata()
-                .build("trapdoor.marble", "trapdoor_marble", blockID++, BlockLogicTrapDoorStone::new);
+                .build("trapdoor.marble", "trapdoor_marble", blockID++, b -> new BlockLogicTrapDoorStone(b, Material.marble));
 
         TRAPDOOR_SLATE = stone
                 .setVisualUpdateOnMetadata()
-                .build("trapdoor.slate", "trapdoor_slate", blockID++, BlockLogicTrapDoorStone::new);
+                .build("trapdoor.slate", "trapdoor_slate", blockID++, b -> new BlockLogicTrapDoorStone(b, Material.slate));
 
         TRAPDOOR_NETHERRACK = stone
                 .setVisualUpdateOnMetadata()
-                .build("trapdoor.netherrack", "trapdoor_netherrack", blockID++, BlockLogicTrapDoorStone::new);
+                .build("trapdoor.netherrack", "trapdoor_netherrack", blockID++, b -> new BlockLogicTrapDoorStone(b, Material.netherrack));
+
+        TRAPDOOR_GLASS_OBSIDIAN = obsidian
+                .setVisualUpdateOnMetadata()
+                .build("trapdoor.glass.obsidian", "trapdoor_glass_obsidian", blockID++, b -> new BlockTrapDoorObsidian(b, Material.glass));
+
+        TRAPDOOR_GLASS_QUARTZ = new BlockBuilder(MOD_ID)
+                .setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
+                .setHardness(0.3F)
+                .setResistance(0.3F)
+                .setVisualUpdateOnMetadata()
+                .setUseInternalLight()
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+                .build("trapdoor.glass.quartz", "trapdoor_glass_quartz", blockID++, b -> new BlockLogicTrapDoor(b, Material.glass));
+
+        TRAPDOOR_GLASS_STEEL = raw
+                .setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
+                .setHardness(0.3f)
+                .setResistance(2000.0F)
+                .setVisualUpdateOnMetadata()
+                .setUseInternalLight()
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+                .build("trapdoor.glass.steel", "trapdoor_glass_steel", blockID++, b -> new BlockLogicTrapDoor(b, Material.steel));
 
     }
 }
