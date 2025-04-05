@@ -97,6 +97,10 @@ tile.bonusblocks.trapdoor.glass.obsidian.name=Obsidian Glass Trapdoor
 tile.bonusblocks.trapdoor.glass.obsidian.desc=Still useless at its job.
 tile.bonusblocks.glass.quartz.name=Quartz Glass
 tile.bonusblocks.glass.quartz.desc=Brightened glass that is more clear.
+tile.bonusblocks.trapdoor.glass.quartz.name=Quartz Glass Trapdoor
+tile.bonusblocks.trapdoor.glass.quartz.desc=Clearly useless at its job.
+tile.bonusblocks.trapdoor.glass.steel.name=Reinforced Glass Trapdoor
+tile.bonusblocks.trapdoor.glass.steel.desc=Not useless at its job!
 
 tile.mesh.name=Iron Mesh Block
 tile.workbench.name=Crafting Table
@@ -354,6 +358,8 @@ tile.stairs.planks.oak.painted.silver.desc=Wooden steps, stained silver.
 tile.chest.planks.oak.painted.silver.name=Silver Wooden Chest
 tile.lamp.idle.silver.name=Silver Lamp
 tile.lamp.idle.silver.desc=A redstone lamp that can emit light. Tinted silver.
+tile.lamp.inverted.active.silver.name=Inverted Silver Lamp
+tile.lamp.inverted.active.silver.desc=A redstone lamp that emits light. Tinted silver.
 
 tile.trapdoor.planks.oak.painted.silver.name=Silver Wooden Trapdoor
 tile.trapdoor.planks.oak.painted.silver.desc=Like a door, but flat and painted silver.
@@ -376,6 +382,8 @@ tile.stairs.planks.oak.painted.lightblue.desc=Wooden steps, stained cerulean.
 tile.chest.planks.oak.painted.lightblue.name=Cerulean Wooden Chest
 tile.lamp.idle.lightblue.name=Cerulean Lamp
 tile.lamp.idle.lightblue.desc=A redstone lamp that can emit light. Tinted cerulean.
+tile.lamp.inverted.active.lightblue.name=Inverted Cerulean Lamp
+tile.lamp.inverted.active.lightblue.desc=A redstone lamp that emits light. Tinted cerulean.
 
 tile.trapdoor.planks.oak.painted.lightblue.name=Cerulean Wooden Trapdoor
 tile.trapdoor.planks.oak.painted.lightblue.desc=Like a door, but flat and painted cerulean.
@@ -424,7 +432,6 @@ biome.bonusblocks.dryland=Dryland
 tile.bonusblocks.fence.gold.name=Gold Fence
 tile.bonusblocks.fence.gold.desc=A fancy fence made of gold bars.
 
-
 tile.bonusblocks.tatami.name=Tatami
 tile.bonusblocks.tatami.desc=A flooring made from the flesh of cactus.
 
@@ -432,11 +439,29 @@ tile.bonusblocks.tatami.desc=A flooring made from the flesh of cactus.
 item.bonusblocks.door.glass.obsidian.name=Obsidian Glass Door
 item.bonusblocks.door.glass.obsidian.desc=Great for aesthetics, great for privacy!
 
-tile.bonusblocks.door.glass.obsidian.bottom.name=Obsidian Glass Bottom Door
+item.bonusblocks.door.glass.quartz.name=Quartz Glass Door
+item.bonusblocks.door.glass.quartz.desc=Great for aesthetics, awful for privacy!
+
+item.bonusblocks.door.glass.steel.name=Reinforced Glass Door
+item.bonusblocks.door.glass.steel.desc=Great for aesthetics, alright for privacy!
+
+tile.bonusblocks.door.glass.obsidian.bottom.name=Bottom Obsidian Glass Door
 tile.bonusblocks.door.glass.obsidian.bottom.desc=You really shouldn't be seeing this.
 
-tile.bonusblocks.door.glass.obsidian.top.name=Obsidian Glass Top Door
+tile.bonusblocks.door.glass.obsidian.top.name=Top Obsidian Glass Door
 tile.bonusblocks.door.glass.obsidian.top.desc=How did you get this?
+
+tile.bonusblocks.door.glass.quartz.bottom.name=Bottom Quartz Glass Door
+tile.bonusblocks.door.glass.quartz.bottom.desc=You really shouldn't be seeing this.
+
+tile.bonusblocks.door.glass.quartz.top.name=Top Quartz Glass Door
+tile.bonusblocks.door.glass.quartz.top.desc=How did you get this?
+
+tile.bonusblocks.door.glass.steel.bottom.name=Bottom Reinforced Glass Door
+tile.bonusblocks.door.glass.steel.bottom.desc=You really shouldn't be seeing this.
+
+tile.bonusblocks.door.glass.steel.top.name=Top Reinforced Glass Door
+tile.bonusblocks.door.glass.steel.top.desc=How did you get this?
 
 
 tile.bonusblocks.door.stone.top.name=Top Stone Door
