@@ -1,11 +1,10 @@
 package luke.bonusblocks.biomes;
 
-import luke.bonusblocks.block.BonusBlocks;
+import luke.bonusblocks.BonusBlocks;
 import net.minecraft.core.block.Blocks;
 import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.generate.feature.WorldFeature;
 import net.minecraft.core.world.generate.feature.tree.WorldFeatureTreeEucalyptus;
-import net.minecraft.core.world.generate.feature.tree.WorldFeatureTreeFancy;
 import net.minecraft.core.world.generate.feature.tree.WorldFeatureTreeShrub;
 import net.minecraft.core.world.weather.Weathers;
 

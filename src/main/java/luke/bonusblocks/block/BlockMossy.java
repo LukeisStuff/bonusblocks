@@ -1,6 +1,6 @@
 package luke.bonusblocks.block;
 
-import luke.bonusblocks.item.BonusItems;
+import luke.bonusblocks.BonusItems;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLogicMoss;
 import net.minecraft.core.block.entity.TileEntity;

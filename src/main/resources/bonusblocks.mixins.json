@@ -18,6 +18,7 @@
     "ItemToolShovelMixin"
   ],
   "client": [
+    "HudIngameMixin"
   ],
   "injectors": {
     "defaultRequire": 1

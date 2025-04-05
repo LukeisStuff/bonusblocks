@@ -1,6 +1,6 @@
 package luke.bonusblocks.mixin;
 
-import luke.bonusblocks.biomes.BonusBiomes;
+import luke.bonusblocks.BonusBiomes;
 import net.minecraft.core.world.biome.data.BiomeRange;
 import net.minecraft.core.world.biome.data.BiomeRangeMap;
 import net.minecraft.core.world.biome.provider.BiomeProviderOverworld;

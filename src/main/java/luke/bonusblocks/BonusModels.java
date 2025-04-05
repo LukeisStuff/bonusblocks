@@ -1,8 +1,6 @@
 package luke.bonusblocks;
 
-import luke.bonusblocks.block.BonusBlocks;
 import luke.bonusblocks.block.blockmodel.*;
-import luke.bonusblocks.item.BonusItems;
 import net.minecraft.client.render.EntityRenderDispatcher;
 import net.minecraft.client.render.TileEntityRenderDispatcher;
 import net.minecraft.client.render.block.color.BlockColorCustom;
@@ -13,9 +11,12 @@ import net.minecraft.client.render.colorizer.Colorizers;
 import net.minecraft.client.render.item.model.ItemModelDispatcher;
 import net.minecraft.client.render.item.model.ItemModelStandard;
 import net.minecraft.client.render.texture.stitcher.TextureRegistry;
+import net.minecraft.core.util.collection.NamespaceID;
 import net.minecraft.core.util.helper.Side;
 import turniplabs.halplibe.helper.ModelHelper;
 import turniplabs.halplibe.util.ModelEntrypoint;
+
+import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
 
 public class BonusModels implements ModelEntrypoint {
     @Override
@@ -359,21 +360,73 @@ public class BonusModels implements ModelEntrypoint {
 
     @Override
     public void initItemModels(ItemModelDispatcher dispatcher) {
-        ModelHelper.setItemModel(BonusItems.SOULWAX, () -> new ItemModelStandard(BonusItems.SOULWAX, "bonusblocks"));
 
-        ModelHelper.setItemModel(BonusItems.MOSSBALL, () -> new ItemModelStandard(BonusItems.MOSSBALL, "bonusblocks"));
+        ModelHelper.setItemModel(BonusItems.SOULWAX, () -> {
+            ItemModelStandard itemModelStandard = new ItemModelStandard(BonusItems.SOULWAX, MOD_ID);
+            itemModelStandard.icon = TextureRegistry.getTexture(NamespaceID.getPermanent(MOD_ID, "item/soulwax"));
+            return itemModelStandard;
+        });
+        ModelHelper.setItemModel(BonusItems.MOSSBALL, () -> {
+            ItemModelStandard itemModelStandard = new ItemModelStandard(BonusItems.MOSSBALL, MOD_ID);
+            itemModelStandard.icon = TextureRegistry.getTexture(NamespaceID.getPermanent(MOD_ID, "item/moss"));
+            return itemModelStandard;
+        });
 
-        ModelHelper.setItemModel(BonusItems.DOOR_STONE, () -> new ItemModelStandard(BonusItems.DOOR_STONE, "bonusblocks"));
-        ModelHelper.setItemModel(BonusItems.DOOR_BASALT, () -> new ItemModelStandard(BonusItems.DOOR_BASALT, "bonusblocks"));
-        ModelHelper.setItemModel(BonusItems.DOOR_GRANITE, () -> new ItemModelStandard(BonusItems.DOOR_GRANITE, "bonusblocks"));
-        ModelHelper.setItemModel(BonusItems.DOOR_LIMESTONE, () -> new ItemModelStandard(BonusItems.DOOR_LIMESTONE, "bonusblocks"));
-        ModelHelper.setItemModel(BonusItems.DOOR_MARBLE, () -> new ItemModelStandard(BonusItems.DOOR_MARBLE, "bonusblocks"));
-        ModelHelper.setItemModel(BonusItems.DOOR_SLATE, () -> new ItemModelStandard(BonusItems.DOOR_SLATE, "bonusblocks"));
-        ModelHelper.setItemModel(BonusItems.DOOR_PERMAFROST, () -> new ItemModelStandard(BonusItems.DOOR_PERMAFROST, "bonusblocks"));
-        ModelHelper.setItemModel(BonusItems.DOOR_NETHERRACK, () -> new ItemModelStandard(BonusItems.DOOR_NETHERRACK, "bonusblocks"));
-        ModelHelper.setItemModel(BonusItems.DOOR_GLASS_OBSIDIAN, () -> new ItemModelStandard(BonusItems.DOOR_GLASS_OBSIDIAN, "bonusblocks"));
-        ModelHelper.setItemModel(BonusItems.DOOR_GLASS_QUARTZ, () -> new ItemModelStandard(BonusItems.DOOR_GLASS_QUARTZ, "bonusblocks"));
-        ModelHelper.setItemModel(BonusItems.DOOR_GLASS_STEEL, () -> new ItemModelStandard(BonusItems.DOOR_GLASS_STEEL, "bonusblocks"));
+        ModelHelper.setItemModel(BonusItems.DOOR_STONE, () -> {
+            ItemModelStandard itemModelStandard = new ItemModelStandard(BonusItems.DOOR_STONE, MOD_ID);
+            itemModelStandard.icon = TextureRegistry.getTexture(NamespaceID.getPermanent(MOD_ID, "item/door_stone"));
+            return itemModelStandard;
+        });
+        ModelHelper.setItemModel(BonusItems.DOOR_BASALT, () -> {
+            ItemModelStandard itemModelStandard = new ItemModelStandard(BonusItems.DOOR_BASALT, MOD_ID);
+            itemModelStandard.icon = TextureRegistry.getTexture(NamespaceID.getPermanent(MOD_ID, "item/door_basalt"));
+            return itemModelStandard;
+        });
+        ModelHelper.setItemModel(BonusItems.DOOR_GRANITE, () -> {
+            ItemModelStandard itemModelStandard = new ItemModelStandard(BonusItems.DOOR_GRANITE, MOD_ID);
+            itemModelStandard.icon = TextureRegistry.getTexture(NamespaceID.getPermanent(MOD_ID, "item/door_granite"));
+            return itemModelStandard;
+        });
+        ModelHelper.setItemModel(BonusItems.DOOR_LIMESTONE, () -> {
+            ItemModelStandard itemModelStandard = new ItemModelStandard(BonusItems.DOOR_LIMESTONE, MOD_ID);
+            itemModelStandard.icon = TextureRegistry.getTexture(NamespaceID.getPermanent(MOD_ID, "item/door_limestone"));
+            return itemModelStandard;
+        });
+        ModelHelper.setItemModel(BonusItems.DOOR_MARBLE, () -> {
+            ItemModelStandard itemModelStandard = new ItemModelStandard(BonusItems.DOOR_MARBLE, MOD_ID);
+            itemModelStandard.icon = TextureRegistry.getTexture(NamespaceID.getPermanent(MOD_ID, "item/door_marble"));
+            return itemModelStandard;
+        });
+        ModelHelper.setItemModel(BonusItems.DOOR_SLATE, () -> {
+            ItemModelStandard itemModelStandard = new ItemModelStandard(BonusItems.DOOR_SLATE, MOD_ID);
+            itemModelStandard.icon = TextureRegistry.getTexture(NamespaceID.getPermanent(MOD_ID, "item/door_slate"));
+            return itemModelStandard;
+        });
+        ModelHelper.setItemModel(BonusItems.DOOR_PERMAFROST, () -> {
+            ItemModelStandard itemModelStandard = new ItemModelStandard(BonusItems.DOOR_PERMAFROST, MOD_ID);
+            itemModelStandard.icon = TextureRegistry.getTexture(NamespaceID.getPermanent(MOD_ID, "item/door_permafrost"));
+            return itemModelStandard;
+        });
+        ModelHelper.setItemModel(BonusItems.DOOR_NETHERRACK, () -> {
+            ItemModelStandard itemModelStandard = new ItemModelStandard(BonusItems.DOOR_NETHERRACK, MOD_ID);
+            itemModelStandard.icon = TextureRegistry.getTexture(NamespaceID.getPermanent(MOD_ID, "item/door_netherrack"));
+            return itemModelStandard;
+        });
+        ModelHelper.setItemModel(BonusItems.DOOR_GLASS_OBSIDIAN, () -> {
+            ItemModelStandard itemModelStandard = new ItemModelStandard(BonusItems.DOOR_GLASS_OBSIDIAN, MOD_ID);
+            itemModelStandard.icon = TextureRegistry.getTexture(NamespaceID.getPermanent(MOD_ID, "item/door_glass_obsidian"));
+            return itemModelStandard;
+        });
+        ModelHelper.setItemModel(BonusItems.DOOR_GLASS_QUARTZ, () -> {
+            ItemModelStandard itemModelStandard = new ItemModelStandard(BonusItems.DOOR_GLASS_QUARTZ, MOD_ID);
+            itemModelStandard.icon = TextureRegistry.getTexture(NamespaceID.getPermanent(MOD_ID, "item/door_glass_quartz"));
+            return itemModelStandard;
+        });
+        ModelHelper.setItemModel(BonusItems.DOOR_GLASS_STEEL, () -> {
+            ItemModelStandard itemModelStandard = new ItemModelStandard(BonusItems.DOOR_GLASS_STEEL, MOD_ID);
+            itemModelStandard.icon = TextureRegistry.getTexture(NamespaceID.getPermanent(MOD_ID, "item/door_glass_steel"));
+            return itemModelStandard;
+        });
     }
 
     @Override
@@ -389,7 +442,6 @@ public class BonusModels implements ModelEntrypoint {
     @Override
     public void initBlockColors(BlockColorDispatcher dispatcher) {
         ModelHelper.setBlockColor(BonusBlocks.LEAVES_OAK_MOSSY, () -> new BlockColorLeavesOak(Colorizers.oak));
-
         ModelHelper.setBlockColor(BonusBlocks.GRASS_OVERGROWN, () -> new BlockColorCustom(Colorizers.grass));
 
     }

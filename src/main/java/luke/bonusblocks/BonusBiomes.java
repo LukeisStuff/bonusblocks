@@ -1,6 +1,8 @@
-package luke.bonusblocks.biomes;
+package luke.bonusblocks;
 
 import luke.bonusblocks.BonusBlocksMod;
+import luke.bonusblocks.biomes.BiomeDryland;
+import luke.bonusblocks.biomes.BiomeOvergrown;
 import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.Biomes;
 

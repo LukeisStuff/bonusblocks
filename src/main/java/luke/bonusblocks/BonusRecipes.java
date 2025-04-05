@@ -1,7 +1,5 @@
 package luke.bonusblocks;
 
-import luke.bonusblocks.block.BonusBlocks;
-import luke.bonusblocks.item.BonusItems;
 import net.minecraft.core.block.Blocks;
 import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.item.ItemStack;

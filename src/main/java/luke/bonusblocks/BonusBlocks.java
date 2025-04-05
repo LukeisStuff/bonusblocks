@@ -1,7 +1,7 @@
-package luke.bonusblocks.block;
+package luke.bonusblocks;
 
+import luke.bonusblocks.block.*;
 import luke.bonusblocks.block.blockmodel.ItemBlockSlabWool;
-import luke.bonusblocks.item.BonusItems;
 import net.minecraft.core.block.*;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
@@ -464,7 +464,7 @@ public class BonusBlocks {
 
         // Leaves and Branch
         BRANCH = leaves
-                .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 0.5f))
+                .setBlockSound(new BlockSound("step.grass", "step.grass", 0.8f, 0.8f))
                 .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
                 .build("branch", "branch", blockID++, b -> new BlockBranch(b, Material.leaves));
 

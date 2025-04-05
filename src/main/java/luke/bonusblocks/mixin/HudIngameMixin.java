@@ -1,6 +1,6 @@
 package luke.bonusblocks.mixin;
 
-import luke.bonusblocks.block.BonusBlocks;
+import luke.bonusblocks.BonusBlocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.hud.HudIngame;
@@ -15,27 +15,27 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(value = HudIngame.class, remap = false)
-public abstract class GuiIngameMixin extends Gui {
+public abstract class HudIngameMixin extends Gui {
 
-    @Unique
-    int width = this.mc.resolution.getScaledWidthScreenCoords();
-    @Unique
-    int height = this.mc.resolution.getScaledHeightScreenCoords();
-
-    @Shadow
-    protected Minecraft mc;
+    @Shadow protected Minecraft mc;
 
     @Inject(method = "renderGameOverlay(FZII)V",
-            at = @At(value = "TAIL"))
-    private void renderGameOverlay(float partialTicks, boolean flag, int mouseX, int mouseY, CallbackInfo ci) {
+            at = @At(value = "TAIL"), cancellable = true)
+    public void renderGameOverlay(float partialTicks, boolean flag, int mouseX, int mouseY, CallbackInfo ci) {
+        int width = this.mc.resolution.getScaledWidthScreenCoords();
+        int height = this.mc.resolution.getScaledHeightScreenCoords();
+        this.mc.worldRenderer.setupScaledResolution();
+        GL11.glEnable(3042);
+        GL11.glBlendFunc(770, 771);
 
         ItemStack headSlotItem = this.mc.thePlayer.inventory.armorItemInSlot(3);
         if (this.mc.gameSettings.thirdPersonView.value == 0 && headSlotItem != null && headSlotItem.itemID == BonusBlocks.SKULL_CARVED_IDLE.id()) {
             this.renderSkullBlur(width, height);
         }
+        ci.cancel();
     }
     @Unique
-    protected void renderSkullBlur(int xSize, int ySize) {
+    public void renderSkullBlur(int xSize, int ySize) {
         GL11.glDisable(2929);
         GL11.glDepthMask(false);
         GL11.glBlendFunc(770, 771);
@@ -44,9 +44,9 @@ public abstract class GuiIngameMixin extends Gui {
         this.mc.textureManager.loadTexture("/assets/bonusblocks/skullblur.png").bind();
         Tessellator tessellator = Tessellator.instance;
         tessellator.startDrawingQuads();
-        tessellator.addVertexWithUV(0.0, (double)ySize, -90.0, 0.0, 1.0);
-        tessellator.addVertexWithUV((double)xSize, (double)ySize, -90.0, 1.0, 1.0);
-        tessellator.addVertexWithUV((double)xSize, 0.0, -90.0, 1.0, 0.0);
+        tessellator.addVertexWithUV(0.0, ySize, -90.0, 0.0, 1.0);
+        tessellator.addVertexWithUV(xSize, ySize, -90.0, 1.0, 1.0);
+        tessellator.addVertexWithUV(xSize, 0.0, -90.0, 1.0, 0.0);
         tessellator.addVertexWithUV(0.0, 0.0, -90.0, 0.0, 0.0);
         tessellator.draw();
         GL11.glDepthMask(true);

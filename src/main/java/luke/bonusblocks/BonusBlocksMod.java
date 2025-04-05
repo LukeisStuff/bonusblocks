@@ -1,8 +1,5 @@
 package luke.bonusblocks;
 
-import luke.bonusblocks.biomes.BonusBiomes;
-import luke.bonusblocks.block.BonusBlocks;
-import luke.bonusblocks.item.BonusItems;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,5 +1,6 @@
 package luke.bonusblocks.mixin;
 
+import luke.bonusblocks.BonusBlocks;
 import net.minecraft.core.block.Blocks;
 import net.minecraft.core.world.biome.BiomeForest;
 import net.minecraft.core.world.generate.feature.WorldFeature;
@@ -23,7 +24,7 @@ public class BiomeForestMixin {
             cir.setReturnValue(new WorldFeatureTreeFancy(Blocks.LEAVES_OAK.id(), Blocks.LOG_OAK.id()));
         }
         if (random.nextInt(25) == 0) {
-            cir.setReturnValue(new WorldFeatureTree(Blocks.LEAVES_OAK.id(), Blocks.LOG_OAK_MOSSY.id(), 4));
+            cir.setReturnValue(new WorldFeatureTree(BonusBlocks.LEAVES_OAK_MOSSY.id(), Blocks.LOG_OAK_MOSSY.id(), 4));
         }
         cir.setReturnValue(new WorldFeatureTree(Blocks.LEAVES_OAK.id(), Blocks.LOG_OAK.id(), 4));
         cir.cancel();
