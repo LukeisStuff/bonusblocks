@@ -33,8 +33,7 @@ public class BonusItems {
                 .build(new Item("soulwax", "bonusblocks:item/soulwax", itemID++));
 
         MOSSBALL = new ItemBuilder(MOD_ID)
-                .build(new Item("mossball", "bonusblocks:item/mossball", itemID++));
-
+                .build(new Item("mossball", ":item/mossball", itemID++));
 
         DOOR_STONE = new ItemBuilder(MOD_ID)
                 .build(new ItemDoor("door.stone", "bonusblocks:item/door_stone", itemID++, BonusBlocks.DOOR_STONE_BOTTOM, BonusBlocks.DOOR_STONE_TOP));

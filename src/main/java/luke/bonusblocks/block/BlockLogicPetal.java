@@ -12,14 +12,14 @@ public class BlockLogicPetal extends BlockLogicTransparent {
     }
 
     public AABB getCollisionBoundingBoxFromPool(WorldSource world, int x, int y, int z) {
-        return AABB.getPermanentBB(x, y, z, x + 1, y, z + 1);
+        return AABB.getTemporaryBB(x, y, z, x + 1, y, z + 1);
     }
 
     public boolean isSolidRender() {
         return false;
     }
 
-    public boolean renderAsNormalBlock() {
+    public boolean renderAsNormalBlockOnCondition(WorldSource world, int x, int y, int z) {
         return false;
     }
 

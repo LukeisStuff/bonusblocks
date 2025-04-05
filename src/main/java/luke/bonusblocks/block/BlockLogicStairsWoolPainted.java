@@ -31,4 +31,8 @@ public class BlockLogicStairsWoolPainted extends BlockLogicStairs implements IPa
     public void setColor(World world, int x, int y, int z, DyeColor color) {
         IPainted.super.setColor(world, x, y, z, color);
     }
+
+    public String getLanguageKey(int meta) {
+        return super.getLanguageKey(meta) + "." + this.fromMetadata(meta).colorID;
+    }
 }

@@ -1,5 +1,6 @@
 package luke.bonusblocks.block.blockmodel;
 
+import net.minecraft.client.render.LightmapHelper;
 import net.minecraft.client.render.block.model.BlockModelStandard;
 import net.minecraft.client.render.tessellator.Tessellator;
 import net.minecraft.client.render.texture.stitcher.IconCoordinate;
@@ -15,7 +16,15 @@ public class BlockModelSoulwaxCandle<T extends BlockLogic> extends BlockModelSta
     @Override
     public boolean render(Tessellator tessellator, int x, int y, int z) {
         boolean isLit = (renderBlocks.blockAccess.getBlockMetadata(x, y, z) & 1) == 0;
-        float brightness = isLit ? 1.0F : this.getBlockBrightness(renderBlocks.blockAccess, x, y, z);
+        float brightness = 1.0F;
+        if (LightmapHelper.isLightmapEnabled()) {
+            tessellator.setLightmapCoord(this.block.getLightmapCoord(renderBlocks.blockAccess, x, y, z));
+        } else {
+            brightness = this.getBlockBrightness(renderBlocks.blockAccess, x, y, z);
+            if (this.block.emission > 0) {
+                brightness = 1.0F;
+            }
+        }
         float minX = (float)x + 0.5F - 0.09375F;
         float minY = (float)y + 0.0F;
         float minZ = (float)z + 0.5F - 0.09375F;

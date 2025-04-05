@@ -374,8 +374,6 @@ public class BonusModels implements ModelEntrypoint {
         ModelHelper.setItemModel(BonusItems.DOOR_GLASS_OBSIDIAN, () -> new ItemModelStandard(BonusItems.DOOR_GLASS_OBSIDIAN, "bonusblocks"));
         ModelHelper.setItemModel(BonusItems.DOOR_GLASS_QUARTZ, () -> new ItemModelStandard(BonusItems.DOOR_GLASS_QUARTZ, "bonusblocks"));
         ModelHelper.setItemModel(BonusItems.DOOR_GLASS_STEEL, () -> new ItemModelStandard(BonusItems.DOOR_GLASS_STEEL, "bonusblocks"));
-
-
     }
 
     @Override

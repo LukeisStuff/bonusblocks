@@ -392,8 +392,8 @@ public class BonusBlocks {
 
         BlockBuilder petal = new BlockBuilder(MOD_ID)
                 .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
-                .setHardness(0.6f)
-                .setResistance(0.6f)
+                .setHardness(0.3f)
+                .setResistance(0.3f)
                 .setFlammability(30, 60)
                 .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.GROWS_FLOWERS, BlockTags.MINEABLE_BY_AXE);
 
@@ -732,7 +732,7 @@ public class BonusBlocks {
                 .setVisualUpdateOnMetadata()
                 .setUseInternalLight()
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-                .build("trapdoor.glass.stee", "trapdoor_glass_steel", blockID++, b -> new BlockLogicTrapDoor(b, Material.steel));
+                .build("trapdoor.glass.steel", "trapdoor_glass_steel", blockID++, b -> new BlockLogicTrapDoor(b, Material.steel));
 
 
         BRICK_MUD = brick
@@ -753,6 +753,7 @@ public class BonusBlocks {
                 .setHardness(0.0f)
                 .setResistance(0.0f)
                 .setLuminance(10)
+                .setUseInternalLight()
                 .setVisualUpdateOnMetadata()
                 .setTags(BlockTags.MINEABLE_BY_SWORD, BlockTags.BROKEN_BY_FLUIDS)
                 .build("candle.soulwax", "candle_soulwax", blockID++, BlockLogicSoulCandle::new);
@@ -766,7 +767,7 @@ public class BonusBlocks {
                 .setFlammability(30, 60)
                 .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.NOT_IN_CREATIVE_MENU)
                 .setBlockItem(ItemBlockSlabWool::new)
-                .build("slab_wool", blockID++, b -> new BlockLogicSlab(b, WOOL));
+                .build("slab_wool", blockID++, b -> new BlockLogicSlabWoolPainted(b, WOOL));
 
         SLAB_COBBLESTONE_MOSSY = slab
                 .setHardness(2.0F)
@@ -828,10 +829,10 @@ public class BonusBlocks {
 
         // Rough Dirt
         DIRT_BAKED = new BlockBuilder(MOD_ID)
-                .setBlockSound(new BlockSound("step.gravel", "step.gravel", 1.0f, 0.8f))
-                .setHardness(0.6f)
-                .setResistance(0.6f)
-                .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.GROWS_FLOWERS, BlockTags.GROWS_SUGAR_CANE, BlockTags.GROWS_TREES, BlockTags.CAVES_CUT_THROUGH)
+                .setBlockSound(new BlockSound("step.gravel", "step.gravel", 1.0f, 0.9f))
+                .setHardness(0.8f)
+                .setResistance(0.8f)
+                .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.MINEABLE_BY_PICKAXE, BlockTags.GROWS_FLOWERS, BlockTags.GROWS_SUGAR_CANE, BlockTags.GROWS_TREES, BlockTags.CAVES_CUT_THROUGH)
                 .build("dirt.rough", "dirt_baked", blockID++, block -> new BlockLogic(block, Material.dirt));
 
         // Skull
