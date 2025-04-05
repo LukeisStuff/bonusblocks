@@ -60,15 +60,6 @@ public class BonusRecipes implements RecipeEntrypoint {
                 .addInput('Q', Items.QUARTZ)
                 .create("glass_quartz", new ItemStack(BonusBlocks.GLASS_QUARTZ, 4));
 
-//        RecipeBuilder.Shaped(MOD_ID, "CIC")
-//                .addInput('C', Blocks.BLOCK_IRON)
-//                .addInput('I', Items.INGOT_IRON)
-//                .create("iron_girder", new ItemStack(BonusBlocks.GIRDER_IRON, 8));
-//        RecipeBuilder.Shaped(MOD_ID, "C", "I", "C")
-//                .addInput('C', Blocks.BLOCK_IRON)
-//                .addInput('I', Items.INGOT_IRON)
-//                .create("iron_girder", new ItemStack(BonusBlocks.GIRDER_IRON, 8));
-
         RecipeBuilderShaped templateFlowertoDye = new RecipeBuilderShaped(MOD_ID, "X");
         templateFlowertoDye.addInput('X', BonusBlocks.FLOWER_SILVER).create("flower_silver_to_dye", new ItemStack(Items.DYE, 2, 7));
         templateFlowertoDye.addInput('X', BonusBlocks.FLOWER_CYAN).create("flower_cyan_to_dye", new ItemStack(Items.DYE, 2, 6));
@@ -122,7 +113,6 @@ public class BonusRecipes implements RecipeEntrypoint {
         RecipeBuilder.ModifyWorkbench("minecraft").removeRecipe("marble_pillar");
         RecipeBuilder.ModifyWorkbench("minecraft").removeRecipe("green_dye_white_dye_to_lime_dye");
         RecipeBuilder.ModifyWorkbench("minecraft").removeRecipe("pebbles_to_granite");
-        RecipeBuilder.ModifyWorkbench("minecraft").removeRecipe("bed");
 
         RecipeBuilder.ModifyBlastFurnace("minecraft").removeRecipe("cobble_basalt_to_olivine");
         RecipeBuilder.ModifyBlastFurnace("minecraft").removeRecipe("cobble_stone_to_slate");
@@ -135,8 +125,7 @@ public class BonusRecipes implements RecipeEntrypoint {
                 .create("green_dye_white_dye_to_lime_dye", new ItemStack(Items.DYE, 2, 10));
 
         RecipeBuilderShaped templatePebbles = new RecipeBuilderShaped(MOD_ID, "PX", "XP");
-        templatePebbles.addInput('X', Items.QUARTZ).addInput('P', Items.AMMO_PEBBLE).create("pebbles_to_granite", new ItemStack(Blocks.GRANITE, 2));
-        templatePebbles.addInput('X', Blocks.ICE).addInput('P', Items.AMMO_PEBBLE).create("pebbles_to_permafrost", new ItemStack(Blocks.COBBLE_PERMAFROST, 2));
+        templatePebbles.addInput('X', Items.QUARTZ).addInput('P', Items.AMMO_PEBBLE).create("pebbles_to_granite", new ItemStack(Blocks.COBBLE_GRANITE, 2));
 
         templatePebbles.addInput('X', Blocks.STONE).addInput('P', BonusItems.MOSSBALL).create("stone_to_moss_stone", new ItemStack(Blocks.MOSS_STONE, 2));
         templatePebbles.addInput('X', Blocks.COBBLE_STONE).addInput('P', BonusItems.MOSSBALL).create("cobble_stone_to_moss_stone", new ItemStack(Blocks.COBBLE_STONE_MOSSY, 2));
@@ -151,43 +140,14 @@ public class BonusRecipes implements RecipeEntrypoint {
         templatePebbles.addInput('X', Blocks.DIRT).addInput('P', Blocks.MUD_BAKED).create("rough_dirt", new ItemStack(BonusBlocks.DIRT_BAKED, 4));
 
 
-        RecipeBuilder.Shaped(MOD_ID, "WWW", "PPP")
-                .addInput('P',("minecraft:planks"))
-                .addInput('W', ("minecraft:wools"))
-                .create("bed", new ItemStack(Items.BED, 1));
-
-//        RecipeBuilder.Shaped(MOD_ID, "WWW")
-//                .addInput('W', (Items.cloth))
-//                .create("sleepingbag", new ItemStack(BonusBlocks.bedrollItem, 1));
-
         RecipeBuilderShaped templatePillar = new RecipeBuilderShaped(MOD_ID, "X", "X", "X");
         templatePillar.addInput('X', Blocks.MARBLE).create("marble_pillar", new ItemStack(Blocks.PILLAR_MARBLE, 3));
         templatePillar.addInput('X', Blocks.SLATE).create("slate_pillar", new ItemStack(BonusBlocks.PILLAR_SLATE, 3));
-
-
-        RecipeBuilder.Shaped(MOD_ID, "PPP", "PPP", "PPP")
-                .addInput('P', Blocks.PLANKS_OAK)
-                .create("box", new ItemStack(BonusBlocks.BOX, 9));
-
-        RecipeBuilder.Shaped(MOD_ID, "CC", "CC")
-                .addInput('C', Blocks.CHEST_PLANKS_OAK)
-                .create("crate", new ItemStack(BonusBlocks.CRATE, 8));
 
         RecipeBuilder.Shaped(MOD_ID, "S", "C")
                 .addInput('S', BonusBlocks.SKULL_CARVED_IDLE)
                 .addInput('C', BonusBlocks.CANDLE_SOULWAX)
                 .create("skull_lantern", new ItemStack(BonusBlocks.SKULL_CARVED_ACTIVE, 1));
-
-        for (int color = 0; color < 16; color++) {
-            RecipeBuilder.Shapeless(MOD_ID)
-                    .addInput("bonusblocks:block/crates")
-                    .addInput(new ItemStack(Items.DYE, 1, 15 - color))
-                    .create("painted_crate_dye", new ItemStack(BonusBlocks.CRATE_PAINTED, 1, color));
-
-            RecipeBuilder.Shaped(MOD_ID, "CC", "CC")
-                    .addInput('C', new ItemStack(Blocks.CHEST_PLANKS_OAK_PAINTED, 1, color << 4))
-                    .create("painted_crate", new ItemStack(BonusBlocks.CRATE_PAINTED, 8, color));
-        }
 
         for (int color = 0; color < 16; color++) {
             RecipeBuilder.Shapeless(MOD_ID)
@@ -419,23 +379,6 @@ public class BonusRecipes implements RecipeEntrypoint {
         Registries.ITEM_GROUPS.getItem("minecraft:grasses").add(Blocks.GRASS_SCORCHED.getDefaultStack());
 
         Registries.ITEM_GROUPS.getItem("minecraft:dirt").add(BonusBlocks.DIRT_BAKED.getDefaultStack());
-
-        Registries.ITEM_GROUPS.register("bonusblocks:block/crates", Registries.stackListOf(BonusBlocks.CRATE, new ItemStack(BonusBlocks.CRATE_PAINTED, 1, 0),
-                new ItemStack(BonusBlocks.CRATE_PAINTED, 1, 1),
-                new ItemStack(BonusBlocks.CRATE_PAINTED, 1, 2),
-                new ItemStack(BonusBlocks.CRATE_PAINTED, 1, 3),
-                new ItemStack(BonusBlocks.CRATE_PAINTED, 1, 4),
-                new ItemStack(BonusBlocks.CRATE_PAINTED, 1, 5),
-                new ItemStack(BonusBlocks.CRATE_PAINTED, 1, 6),
-                new ItemStack(BonusBlocks.CRATE_PAINTED, 1, 7),
-                new ItemStack(BonusBlocks.CRATE_PAINTED, 1, 8),
-                new ItemStack(BonusBlocks.CRATE_PAINTED, 1, 9),
-                new ItemStack(BonusBlocks.CRATE_PAINTED, 1, 10),
-                new ItemStack(BonusBlocks.CRATE_PAINTED, 1, 11),
-                new ItemStack(BonusBlocks.CRATE_PAINTED, 1, 12),
-                new ItemStack(BonusBlocks.CRATE_PAINTED, 1, 13),
-                new ItemStack(BonusBlocks.CRATE_PAINTED, 1, 14),
-                new ItemStack(BonusBlocks.CRATE_PAINTED, 1, 15)));
 
         Registries.ITEM_GROUPS.register("bonusblocks:block/wool_slab", Registries.stackListOf(new ItemStack(BonusBlocks.SLAB_WOOL, 1, 0),
                 new ItemStack(BonusBlocks.SLAB_WOOL, 1, 16),

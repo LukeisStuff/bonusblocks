@@ -14,6 +14,7 @@ public class BlockModelStairsWool<T extends BlockLogicStairs> extends BlockModel
     }
 
     public IconCoordinate getBlockTextureFromSideAndMetadata(Side side, int meta) {
+        meta >>= 4;
         return BlockModelWool.texCoords[meta & 15];
     }
 

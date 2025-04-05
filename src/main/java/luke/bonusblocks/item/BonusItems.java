@@ -13,7 +13,6 @@ public class BonusItems {
 
     public static Item SOULWAX;
     public static Item MOSSBALL;
-    public static Item DOOR_GLASS_OBSIDIAN;
 
     public static Item DOOR_STONE;
     public static Item DOOR_BASALT;
@@ -23,6 +22,9 @@ public class BonusItems {
     public static Item DOOR_SLATE;
     public static Item DOOR_PERMAFROST;
     public static Item DOOR_NETHERRACK;
+    public static Item DOOR_GLASS_OBSIDIAN;
+    public static Item DOOR_GLASS_QUARTZ;
+    public static Item DOOR_GLASS_STEEL;
 
     public void initilizeItems() {
         // Items
@@ -33,8 +35,6 @@ public class BonusItems {
         MOSSBALL = new ItemBuilder(MOD_ID)
                 .build(new Item("mossball", "bonusblocks:item/mossball", itemID++));
 
-        DOOR_GLASS_OBSIDIAN = new ItemBuilder(MOD_ID)
-                .build(new ItemDoor("door.glass.obsidian", "bonusblocks:item/door_glass_obsidian", itemID++, BonusBlocks.DOOR_GLASS_OBSIDIAN_BOTTOM, BonusBlocks.DOOR_GLASS_OBSIDIAN_TOP));
 
         DOOR_STONE = new ItemBuilder(MOD_ID)
                 .build(new ItemDoor("door.stone", "bonusblocks:item/door_stone", itemID++, BonusBlocks.DOOR_STONE_BOTTOM, BonusBlocks.DOOR_STONE_TOP));
@@ -59,5 +59,12 @@ public class BonusItems {
 
         DOOR_NETHERRACK = new ItemBuilder(MOD_ID)
                 .build(new ItemDoor("door.netherrack", "bonusblocks:item/door_netherrack", itemID++, BonusBlocks.DOOR_NETHERRACK_BOTTOM, BonusBlocks.DOOR_NETHERRACK_TOP));
+
+        DOOR_GLASS_OBSIDIAN = new ItemBuilder(MOD_ID)
+                .build(new ItemDoor("door.glass.obsidian", "bonusblocks:item/door_glass_obsidian", itemID++, BonusBlocks.DOOR_GLASS_OBSIDIAN_BOTTOM, BonusBlocks.DOOR_GLASS_OBSIDIAN_TOP));
+        DOOR_GLASS_QUARTZ = new ItemBuilder(MOD_ID)
+                .build(new ItemDoor("door.glass.quartz", "bonusblocks:item/door_glass_quartz", itemID++, BonusBlocks.DOOR_GLASS_QUARTZ_BOTTOM, BonusBlocks.DOOR_GLASS_QUARTZ_TOP));
+        DOOR_GLASS_STEEL = new ItemBuilder(MOD_ID)
+                .build(new ItemDoor("door.glass.steel", "bonusblocks:item/door_glass_steel", itemID++, BonusBlocks.DOOR_GLASS_STEEL_BOTTOM, BonusBlocks.DOOR_GLASS_STEEL_TOP));
     }
 }

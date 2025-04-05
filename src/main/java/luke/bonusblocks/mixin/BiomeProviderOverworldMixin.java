@@ -16,7 +16,7 @@ public abstract class BiomeProviderOverworldMixin {
     @Shadow @Final private static BiomeRangeMap brm;
     @Inject(method="init",at=@At(value = "INVOKE",ordinal=0,target = "Lnet/minecraft/core/world/biome/data/BiomeRangeMap;lock()V"))
     private static void injectAfterRainforest(CallbackInfo ci) {
-        brm.addRange(BonusBiomes.OVERWORLD_OVERGROWN_MEADOW, new BiomeRange(0.29, 0.51, 0.0, 0.08, 0.0, 1.0, 0.0, 1.0));
-        brm.addRange(BonusBiomes.OVERWORLD_DRYLAND, new BiomeRange(0.76,0.95,0.10,0.24,0.00,1.00,0.00,1.0));
+        brm.addRange(BonusBiomes.OVERWORLD_OVERGROWN_MEADOW, new BiomeRange(0.28, 0.50, 0.0, 0.08, 0.0, 1.0, 0.0, 1.0));
+        brm.addRange(BonusBiomes.OVERWORLD_DRYLAND, new BiomeRange(0.76,0.96,0.09,0.25,0.00,1.00,0.00,1.0));
     }
 }

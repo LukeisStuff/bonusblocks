@@ -3,10 +3,7 @@ package luke.bonusblocks;
 import luke.bonusblocks.biomes.BonusBiomes;
 import luke.bonusblocks.block.BonusBlocks;
 import luke.bonusblocks.item.BonusItems;
-import luke.bonusblocks.item.ItemRawGold;
-import luke.bonusblocks.item.ItemRawIron;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.core.item.Items;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.SoundHelper;
@@ -42,7 +39,5 @@ public class BonusBlocksMod implements ModInitializer, ClientStartEntrypoint, Ga
     @Override
     public void afterGameStart() {
         new BonusBlocks().initializeBlockDetails();
-        Items.ORE_RAW_GOLD = new ItemRawGold("ore.raw.gold", "minecraft:item/ore_raw_gold", 16510);
-        Items.ORE_RAW_IRON = new ItemRawIron("ore.raw.iron", "minecraft:item/ore_raw_iron", 16511);
     }
 }

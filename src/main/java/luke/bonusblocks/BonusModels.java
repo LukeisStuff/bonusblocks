@@ -5,9 +5,9 @@ import luke.bonusblocks.block.blockmodel.*;
 import luke.bonusblocks.item.BonusItems;
 import net.minecraft.client.render.EntityRenderDispatcher;
 import net.minecraft.client.render.TileEntityRenderDispatcher;
+import net.minecraft.client.render.block.color.BlockColorCustom;
 import net.minecraft.client.render.block.color.BlockColorDispatcher;
 import net.minecraft.client.render.block.color.BlockColorLeavesOak;
-import net.minecraft.client.render.block.color.BlockColorTallGrass;
 import net.minecraft.client.render.block.model.*;
 import net.minecraft.client.render.colorizer.Colorizers;
 import net.minecraft.client.render.item.model.ItemModelDispatcher;
@@ -20,12 +20,6 @@ import turniplabs.halplibe.util.ModelEntrypoint;
 public class BonusModels implements ModelEntrypoint {
     @Override
     public void initBlockModels(BlockModelDispatcher dispatcher) {
-        ModelHelper.setBlockModel(BonusBlocks.BOX, () -> new BlockModelStandard<>(BonusBlocks.BOX)
-                .setAllTextures(0, "bonusblocks:block/box"));
-
-        ModelHelper.setBlockModel(BonusBlocks.CRATE, () -> new BlockModelStandard<>(BonusBlocks.CRATE)
-                .setAllTextures(0, "bonusblocks:block/crate/crate"));
-        ModelHelper.setBlockModel(BonusBlocks.CRATE_PAINTED, () -> new PaintedCrateBlockModel<>(BonusBlocks.CRATE_PAINTED));
 
         ModelHelper.setBlockModel(BonusBlocks.BOOKSHELF_EMPTY_PLANKS_OAK, () -> new BlockModelStandard<>(BonusBlocks.BOOKSHELF_EMPTY_PLANKS_OAK)
                 .setTex(0, "bonusblocks:block/bookshelf_empty_side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST)
@@ -58,9 +52,9 @@ public class BonusModels implements ModelEntrypoint {
         ModelHelper.setBlockModel(BonusBlocks.MOSS, () -> new BlockModelStandard<>(BonusBlocks.MOSS)
                 .setAllTextures(0, "bonusblocks:block/moss"));
 
-        ModelHelper.setBlockModel(BonusBlocks.GRASS_OVERGROWN, () -> new BlockModelGrass<>(BonusBlocks.GRASS_OVERGROWN)
-                .setTex(0, "minecraft:block/grass/top")
-                .setTex(2, "minecraft:block/grass_retro/top"));
+        ModelHelper.setBlockModel(BonusBlocks.GRASS_OVERGROWN, () -> new BlockModelStandard<>(BonusBlocks.GRASS_OVERGROWN)
+                .setAllTextures(0, "minecraft:block/grass/top")
+                .setAllTextures(2, "minecraft:block/grass_retro/top"));
         ModelHelper.setBlockModel(BonusBlocks.GRASS_SCORCHED_OVERGROWN, () -> new BlockModelStandard<>(BonusBlocks.GRASS_SCORCHED_OVERGROWN)
                 .setAllTextures(0, "minecraft:block/grass_scorched/top"));
         ModelHelper.setBlockModel(BonusBlocks.PATH_DIRT_OVERGROWN, () -> new BlockModelStandard<>(BonusBlocks.PATH_DIRT_OVERGROWN)
@@ -148,6 +142,7 @@ public class BonusModels implements ModelEntrypoint {
 
         ModelHelper.setBlockModel(BonusBlocks.OVERLAY_RAW_IRON, () -> new BlockModelNuggetsIron<>(BonusBlocks.OVERLAY_RAW_IRON));
         ModelHelper.setBlockModel(BonusBlocks.OVERLAY_RAW_GOLD, () -> new BlockModelNuggetsGold<>(BonusBlocks.OVERLAY_RAW_IRON));
+        ModelHelper.setBlockModel(BonusBlocks.OVERLAY_FLINT, () -> new BlockModelNuggetsFlint<>(BonusBlocks.OVERLAY_FLINT));
 
         ModelHelper.setBlockModel(BonusBlocks.PILLAR_SLATE, () -> new BlockModelAxisAligned<>(BonusBlocks.PILLAR_SLATE)
                 .setTex(0, "bonusblocks:block/pillar_slate/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST)
@@ -305,16 +300,34 @@ public class BonusModels implements ModelEntrypoint {
 
 
 
-        ModelHelper.setBlockModel(BonusBlocks.DOOR_GLASS_OBSIDIAN_BOTTOM, () -> new BlockModelDoorGlass<>(BonusBlocks.DOOR_GLASS_OBSIDIAN_BOTTOM)
+        ModelHelper.setBlockModel(BonusBlocks.DOOR_GLASS_OBSIDIAN_BOTTOM, () -> new BlockModelDoorGlass<>(BonusBlocks.DOOR_GLASS_OBSIDIAN_BOTTOM).onRenderLayer(1)
                 .setTex(0, "bonusblocks:block/door/glass_obsidian/frame", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/door/glass_obsidian/bottom", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
-        ModelHelper.setBlockModel(BonusBlocks.DOOR_GLASS_OBSIDIAN_TOP, () -> new BlockModelDoorGlass<>(BonusBlocks.DOOR_GLASS_OBSIDIAN_TOP)
+        ModelHelper.setBlockModel(BonusBlocks.DOOR_GLASS_OBSIDIAN_TOP, () -> new BlockModelDoorGlass<>(BonusBlocks.DOOR_GLASS_OBSIDIAN_TOP).onRenderLayer(1)
                 .setTex(0, "bonusblocks:block/door/glass_obsidian/frame", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/door/glass_obsidian/top", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+        ModelHelper.setBlockModel(BonusBlocks.DOOR_GLASS_QUARTZ_BOTTOM, () -> new BlockModelDoorGlass<>(BonusBlocks.DOOR_GLASS_QUARTZ_BOTTOM)
+                .setTex(0, "bonusblocks:block/door/glass_quartz/frame", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/door/glass_quartz/bottom", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+        ModelHelper.setBlockModel(BonusBlocks.DOOR_GLASS_QUARTZ_TOP, () -> new BlockModelDoorGlass<>(BonusBlocks.DOOR_GLASS_QUARTZ_TOP)
+                .setTex(0, "bonusblocks:block/door/glass_quartz/frame", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/door/glass_quartz/top", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+        ModelHelper.setBlockModel(BonusBlocks.DOOR_GLASS_STEEL_BOTTOM, () -> new BlockModelDoorGlass<>(BonusBlocks.DOOR_GLASS_STEEL_BOTTOM)
+                .setTex(0, "bonusblocks:block/door/glass_steel/frame", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/door/glass_steel/bottom", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+        ModelHelper.setBlockModel(BonusBlocks.DOOR_GLASS_STEEL_TOP, () -> new BlockModelDoorGlass<>(BonusBlocks.DOOR_GLASS_STEEL_TOP)
+                .setTex(0, "bonusblocks:block/door/glass_steel/frame", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/door/glass_steel/top", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
 
-        ModelHelper.setBlockModel(BonusBlocks.TRAPDOOR_GLASS_OBSIDIAN, () -> new BlockModelTrapDoor<>(BonusBlocks.TRAPDOOR_GLASS_OBSIDIAN)
+        ModelHelper.setBlockModel(BonusBlocks.TRAPDOOR_GLASS_OBSIDIAN, () -> new BlockModelTrapDoor<>(BonusBlocks.TRAPDOOR_GLASS_OBSIDIAN).onRenderLayer(1)
                 .setTex(0, "bonusblocks:block/trapdoor/glass_obsidian/top", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/trapdoor/glass_obsidian/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+        ModelHelper.setBlockModel(BonusBlocks.TRAPDOOR_GLASS_QUARTZ, () -> new BlockModelTrapDoor<>(BonusBlocks.TRAPDOOR_GLASS_QUARTZ)
+                .setTex(0, "bonusblocks:block/trapdoor/glass_quartz/top", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/trapdoor/glass_quartz/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+        ModelHelper.setBlockModel(BonusBlocks.TRAPDOOR_GLASS_STEEL, () -> new BlockModelTrapDoor<>(BonusBlocks.TRAPDOOR_GLASS_STEEL)
+                .setTex(0, "bonusblocks:block/trapdoor/glass_steel/top", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/trapdoor/glass_steel/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
 
 
 
@@ -358,6 +371,10 @@ public class BonusModels implements ModelEntrypoint {
         ModelHelper.setItemModel(BonusItems.DOOR_SLATE, () -> new ItemModelStandard(BonusItems.DOOR_SLATE, "bonusblocks"));
         ModelHelper.setItemModel(BonusItems.DOOR_PERMAFROST, () -> new ItemModelStandard(BonusItems.DOOR_PERMAFROST, "bonusblocks"));
         ModelHelper.setItemModel(BonusItems.DOOR_NETHERRACK, () -> new ItemModelStandard(BonusItems.DOOR_NETHERRACK, "bonusblocks"));
+        ModelHelper.setItemModel(BonusItems.DOOR_GLASS_OBSIDIAN, () -> new ItemModelStandard(BonusItems.DOOR_GLASS_OBSIDIAN, "bonusblocks"));
+        ModelHelper.setItemModel(BonusItems.DOOR_GLASS_QUARTZ, () -> new ItemModelStandard(BonusItems.DOOR_GLASS_QUARTZ, "bonusblocks"));
+        ModelHelper.setItemModel(BonusItems.DOOR_GLASS_STEEL, () -> new ItemModelStandard(BonusItems.DOOR_GLASS_STEEL, "bonusblocks"));
+
 
     }
 
@@ -375,7 +392,7 @@ public class BonusModels implements ModelEntrypoint {
     public void initBlockColors(BlockColorDispatcher dispatcher) {
         ModelHelper.setBlockColor(BonusBlocks.LEAVES_OAK_MOSSY, () -> new BlockColorLeavesOak(Colorizers.oak));
 
-        ModelHelper.setBlockColor(BonusBlocks.GRASS_OVERGROWN, () -> new BlockColorTallGrass(Colorizers.grass));
+        ModelHelper.setBlockColor(BonusBlocks.GRASS_OVERGROWN, () -> new BlockColorCustom(Colorizers.grass));
 
     }
 }

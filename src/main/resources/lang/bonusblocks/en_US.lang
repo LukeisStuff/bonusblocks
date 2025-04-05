@@ -96,7 +96,7 @@ tile.bonusblocks.glass.obsidian.desc=Obsidian heated until it became translucent
 tile.bonusblocks.trapdoor.glass.obsidian.name=Obsidian Glass Trapdoor
 tile.bonusblocks.trapdoor.glass.obsidian.desc=Still useless at its job.
 tile.bonusblocks.glass.quartz.name=Quartz Glass
-tile.bonusblocks.glass.quartz.desc=Brightened glass that reflects light.
+tile.bonusblocks.glass.quartz.desc=Brightened glass that is more clear.
 
 tile.mesh.name=Iron Mesh Block
 tile.workbench.name=Crafting Table
@@ -423,10 +423,6 @@ biome.bonusblocks.dryland=Dryland
 
 tile.bonusblocks.fence.gold.name=Gold Fence
 tile.bonusblocks.fence.gold.desc=A fancy fence made of gold bars.
-
-
-tile.bonusblocks.girder.iron.name=Iron Girder
-tile.bonusblocks.girder.iron.desc=A long beam of iron, purely for decoration.
 
 
 tile.bonusblocks.tatami.name=Tatami
