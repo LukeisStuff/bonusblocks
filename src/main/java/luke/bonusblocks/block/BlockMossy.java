@@ -23,7 +23,7 @@ public class BlockMossy extends BlockLogicMoss {
             case PISTON_CRUSH:
                 return new ItemStack[]{new ItemStack(this)};
             default:
-                return new ItemStack[]{new ItemStack(BonusItems.MOSSBALL, 4)};
+                return new ItemStack[]{new ItemStack(BonusItems.MOSS, 4)};
         }
     }
 

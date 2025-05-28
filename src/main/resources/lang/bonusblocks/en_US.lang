@@ -110,8 +110,8 @@ tile.bonusblocks.block.raw.iron.desc=A solid block of raw iron. Heavy!
 tile.bonusblocks.block.raw.gold.name=Block of Raw Gold
 tile.bonusblocks.block.raw.gold.desc=A solid block of raw gold, for flaunting your bling.
 
-item.bonusblocks.mossball.name=Moss Clump
-item.bonusblocks.mossball.desc=Slick and fuzzy, can be applied onto blocks.
+item.bonusblocks.moss.name=Moss Clump
+item.bonusblocks.moss.desc=Slick and fuzzy, can be applied onto blocks.
 
 tile.bonusblocks.overlay.gold.name=Gold Nuggets
 tile.bonusblocks.overlay.gold.desc=A cluster of raw gold.

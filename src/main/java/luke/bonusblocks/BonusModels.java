@@ -183,29 +183,25 @@ public class BonusModels implements ModelEntrypoint {
         ModelHelper.setBlockModel(BonusBlocks.CANDLE_SOULWAX, () -> new BlockModelSoulwaxCandle<>(BonusBlocks.CANDLE_SOULWAX)
                 .setAllTextures(0, "bonusblocks:block/candle_soulwax"));
 
-        ModelHelper.setBlockModel(BonusBlocks.SKULL, () -> new BlockModelHorizontalRotation<>(BonusBlocks.SKULL)
+        ModelHelper.setBlockModel(BonusBlocks.SKULL, () -> new BlockModelStandard<>(BonusBlocks.SKULL)
                 .setTex(0, "bonusblocks:block/skull/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST)
-                .setTex(0, "bonusblocks:block/skull/top", Side.TOP)
-                        .setTex(0, "bonusblocks:block/skull/bottom", Side.BOTTOM));
+                        .setTex(0, "bonusblocks:block/skull/top", Side.TOP, Side.BOTTOM));
 
-        ModelHelper.setBlockModel(BonusBlocks.SKULL_CARVED_IDLE, () -> new BlockModelHorizontalRotation<>(BonusBlocks.SKULL_CARVED_IDLE)
-                .setTex(0, "bonusblocks:block/skull/front_idle", Side.NORTH)
-                .setTex(0, "bonusblocks:block/skull/side", Side.SOUTH, Side.EAST, Side.WEST)
-                .setTex(0, "bonusblocks:block/skull/top", Side.TOP)
-                .setTex(0, "bonusblocks:block/skull/bottom", Side.BOTTOM));
+        ModelHelper.setBlockModel(BonusBlocks.SKULL_CARVED_IDLE, () -> new BlockModelVeryRotatable<>(BonusBlocks.SKULL_CARVED_IDLE)
+                .setTex(0, "bonusblocks:block/skull/top", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/skull/front_idle", Side.SOUTH)
+                .setTex(0, "bonusblocks:block/skull/side", Side.WEST, Side.EAST, Side.NORTH));
 
-        ModelHelper.setBlockModel(BonusBlocks.SKULL_CARVED_ACTIVE, () -> new BlockModelHorizontalRotation<>(BonusBlocks.SKULL_CARVED_ACTIVE)
-                .setTex(0, "bonusblocks:block/skull/front_active", Side.NORTH)
-                .setTex(0, "bonusblocks:block/skull/side", Side.SOUTH, Side.EAST, Side.WEST)
-                .setTex(0, "bonusblocks:block/skull/top", Side.TOP)
-                .setTex(0, "bonusblocks:block/skull/bottom", Side.BOTTOM));
+        ModelHelper.setBlockModel(BonusBlocks.SKULL_CARVED_ACTIVE, () -> new BlockModelVeryRotatable<>(BonusBlocks.SKULL_CARVED_ACTIVE)
+                .setTex(0, "bonusblocks:block/skull/top", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/skull/front_active", Side.SOUTH)
+                .setTex(0, "bonusblocks:block/skull/side", Side.WEST, Side.EAST, Side.NORTH));
 
-        ModelHelper.setBlockModel(BonusBlocks.SKULL_REDSTONE, () -> new BlockModelHorizontalRotation<>(BonusBlocks.SKULL_REDSTONE)
-                .setTex(0, "bonusblocks:block/skull/front_redstone", Side.NORTH)
-                .setTex(0, "bonusblocks:block/skull/side", Side.SOUTH, Side.EAST, Side.WEST)
-                .setTex(0, "bonusblocks:block/skull/top", Side.TOP)
-                .setTex(0, "bonusblocks:block/skull/bottom", Side.BOTTOM)
-                .setTex(1, "bonusblocks:block/skull/front_overlay", Side.NORTH));
+        ModelHelper.setBlockModel(BonusBlocks.SKULL_REDSTONE, () -> new BlockModelVeryRotatable<>(BonusBlocks.SKULL_REDSTONE)
+                .setTex(0, "bonusblocks:block/skull/top", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/skull/front_redstone", Side.SOUTH)
+                .setTex(0, "bonusblocks:block/skull/side", Side.WEST, Side.EAST, Side.NORTH)
+                .setTex(1, "bonusblocks:block/skull/front_overlay", Side.SOUTH));
 
         ModelHelper.setBlockModel(BonusBlocks.TATAMI, () -> new BlockModelStandard<>(BonusBlocks.TATAMI)
                 .setAllTextures(0, "bonusblocks:block/tatami"));
@@ -366,8 +362,8 @@ public class BonusModels implements ModelEntrypoint {
             itemModelStandard.icon = TextureRegistry.getTexture(NamespaceID.getPermanent(MOD_ID, "item/soulwax"));
             return itemModelStandard;
         });
-        ModelHelper.setItemModel(BonusItems.MOSSBALL, () -> {
-            ItemModelStandard itemModelStandard = new ItemModelStandard(BonusItems.MOSSBALL, MOD_ID);
+        ModelHelper.setItemModel(BonusItems.MOSS, () -> {
+            ItemModelStandard itemModelStandard = new ItemModelStandard(BonusItems.MOSS, MOD_ID);
             itemModelStandard.icon = TextureRegistry.getTexture(NamespaceID.getPermanent(MOD_ID, "item/moss"));
             return itemModelStandard;
         });

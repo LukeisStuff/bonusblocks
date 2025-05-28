@@ -2,7 +2,7 @@ package luke.bonusblocks.block;
 
 import luke.bonusblocks.BonusBlocks;
 import net.minecraft.core.block.Block;
-import net.minecraft.core.block.BlockLogicRotatable;
+import net.minecraft.core.block.BlockLogicVeryRotatable;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.material.MaterialColor;
 import net.minecraft.core.entity.player.Player;
@@ -12,7 +12,7 @@ import net.minecraft.core.util.helper.Direction;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 
-public class BlockLogicSkull extends BlockLogicRotatable {
+public class BlockLogicSkull extends BlockLogicVeryRotatable {
     private final boolean isCarvable;
 
     public BlockLogicSkull(Block<?> block, boolean isCarvable) {

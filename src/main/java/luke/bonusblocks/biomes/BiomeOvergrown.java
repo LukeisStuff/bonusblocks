@@ -13,7 +13,7 @@ public class BiomeOvergrown extends Biome {
     public BiomeOvergrown(String key) {
         super(key);
         this.topBlock = (short) BonusBlocks.GRASS_OVERGROWN.id();
-        this.fillerBlock = (short) Blocks.STONE.id();
+        this.fillerBlock = (short) Blocks.LIMESTONE.id();
     }
 
     public WorldFeature getRandomWorldGenForTrees(Random random) {

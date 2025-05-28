@@ -748,7 +748,7 @@ public class BonusBlocks {
                 .setHardness(0.8f)
                 .setResistance(5.0f)
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-                .build("skull.carved.idle", "skull_carved_idle", blockID++, b -> new BlockLogicSkull(b, true));
+                .build("skull.carved.idle", "skull_carved_idle", blockID++, b -> new BlockLogicSkull(b, false));
 
         SKULL_CARVED_ACTIVE = new BlockBuilder(MOD_ID)
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.8f))
@@ -763,16 +763,17 @@ public class BonusBlocks {
                 .setHardness(0.8f)
                 .setResistance(5.0f)
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-                .build("skull", "skull", blockID++, b -> new BlockLogicSkull(b, false));
+                .build("skull", "skull", blockID++, b -> new BlockLogicSkull(b, true));
 
         SKULL_REDSTONE = new BlockBuilder(MOD_ID)
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.8f))
                 .setHardness(0.8f)
                 .setResistance(5.0f)
                 .setVisualUpdateOnMetadata()
+                .setTicking(true)
+                .setTickOnLoad()
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE)
                 .build("skull.redstone", "skull_redstone", blockID++, BlockLogicPumpkinRedstone::new);
-
 
         FENCE_GOLD = raw
                 .setVisualUpdateOnMetadata()

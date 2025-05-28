@@ -11,7 +11,7 @@ public class BonusItems {
     int itemID = 16650;
 
     public static Item SOULWAX;
-    public static Item MOSSBALL;
+    public static Item MOSS;
 
     public static Item DOOR_STONE;
     public static Item DOOR_BASALT;
@@ -31,8 +31,8 @@ public class BonusItems {
         SOULWAX = new ItemBuilder(MOD_ID)
                 .build(new Item("soulwax", "bonusblocks:item/soulwax", itemID++));
 
-        MOSSBALL = new ItemBuilder(MOD_ID)
-                .build(new Item("mossball", "bonusblocks:item/mossball", itemID++));
+        MOSS = new ItemBuilder(MOD_ID)
+                .build(new Item("moss", "bonusblocks:item/moss", itemID++));
 
         DOOR_STONE = new ItemBuilder(MOD_ID)
                 .build(new ItemDoor("door.stone", "bonusblocks:item/door_stone", itemID++, BonusBlocks.DOOR_STONE_BOTTOM, BonusBlocks.DOOR_STONE_TOP));
