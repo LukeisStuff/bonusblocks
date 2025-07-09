@@ -122,4 +122,8 @@ public class BlockModelSoulwaxCandle<T extends BlockLogic> extends BlockModelSta
     public boolean shouldItemRender3d() {
         return false;
     }
+
+    public float getItemRenderScale() {
+        return 0.5F;
+    }
 }

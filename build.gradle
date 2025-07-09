@@ -105,8 +105,6 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
 	modImplementation "com.github.Turnip-Labs:bta-halplibe:${project.halplibe_version}"
-//	modImplementation "TerrainAPI:terrainapi:${project.terrain_api_version}"
-	modImplementation "DragonFly:dragonfly:${project.dragonfly_version}"
 	modImplementation("turniplabs:modmenu-bta:${project.mod_menu_version}")
 
 	implementation "org.slf4j:slf4j-api:1.8.0-beta4"

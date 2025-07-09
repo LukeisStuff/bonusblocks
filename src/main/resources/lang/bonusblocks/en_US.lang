@@ -270,6 +270,9 @@ tile.bonusblocks.skull.redstone.desc=A spooky skull found in the nether, lit by 
 tile.bonusblocks.candle.soulwax.name=Soul Wax Candle
 tile.bonusblocks.candle.soulwax.desc=A waxy brown candle that glows with an unnatural light.
 
+item.bonusblocks.candle.soulwax.name=Soul Wax Candle
+item.bonusblocks.candle.soulwax.desc=A waxy brown candle that glows with an unnatural light.
+
 item.bonusblocks.soulwax.name=Soul Wax
 item.bonusblocks.soulwax.desc=A sticky substance secreted from squishy brown sand.
 
@@ -360,12 +363,13 @@ tile.lamp.idle.silver.name=Silver Lamp
 tile.lamp.idle.silver.desc=A redstone lamp that can emit light. Tinted silver.
 tile.lamp.inverted.active.silver.name=Inverted Silver Lamp
 tile.lamp.inverted.active.silver.desc=A redstone lamp that emits light. Tinted silver.
-
 tile.trapdoor.planks.oak.painted.silver.name=Silver Wooden Trapdoor
 tile.trapdoor.planks.oak.painted.silver.desc=Like a door, but flat and painted silver.
-
 item.door.oak.painted.silver.name=Silver Wooden Door
 
+tile.button.planks.painted.silver.name=Silver Wooden Button
+tile.pressureplate.planks.oak.painted.silver.name=Silver Wooden Pressure Plate
+item.sign.painted.silver.name=Silver Sign
 
 tile.planks.oak.painted.lightblue.name=Cerulean Wooden Planks
 tile.planks.oak.painted.lightblue.desc=Wooden planks, stained cerulean.
@@ -384,11 +388,13 @@ tile.lamp.idle.lightblue.name=Cerulean Lamp
 tile.lamp.idle.lightblue.desc=A redstone lamp that can emit light. Tinted cerulean.
 tile.lamp.inverted.active.lightblue.name=Inverted Cerulean Lamp
 tile.lamp.inverted.active.lightblue.desc=A redstone lamp that emits light. Tinted cerulean.
-
 tile.trapdoor.planks.oak.painted.lightblue.name=Cerulean Wooden Trapdoor
 tile.trapdoor.planks.oak.painted.lightblue.desc=Like a door, but flat and painted cerulean.
-
 item.door.oak.painted.lightblue.name=Cerulean Wooden Door
+
+tile.button.planks.painted.lightblue.name=Cerulean Wooden Button
+tile.pressureplate.planks.oak.painted.lightblue.name=Cerulean Wooden Pressure Plate
+item.sign.painted.lightblue.name=Cerulean Sign
 
 item.dye.silver.name=Silver Dye
 item.dye.silver.desc=Can be used to color certain blocks silver.

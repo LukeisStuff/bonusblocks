@@ -2,6 +2,7 @@ package luke.bonusblocks;
 
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemDoor;
+import net.minecraft.core.item.ItemPlaceable;
 import turniplabs.halplibe.helper.ItemBuilder;
 
 import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
@@ -24,6 +25,8 @@ public class BonusItems {
     public static Item DOOR_GLASS_OBSIDIAN;
     public static Item DOOR_GLASS_QUARTZ;
     public static Item DOOR_GLASS_STEEL;
+
+    public static Item CANDLE_SOULWAX;
 
     public void initilizeItems() {
         // Items
@@ -64,5 +67,8 @@ public class BonusItems {
                 .build(new ItemDoor("door.glass.quartz", "bonusblocks:item/door_glass_quartz", itemID++, BonusBlocks.DOOR_GLASS_QUARTZ_BOTTOM, BonusBlocks.DOOR_GLASS_QUARTZ_TOP));
         DOOR_GLASS_STEEL = new ItemBuilder(MOD_ID)
                 .build(new ItemDoor("door.glass.steel", "bonusblocks:item/door_glass_steel", itemID++, BonusBlocks.DOOR_GLASS_STEEL_BOTTOM, BonusBlocks.DOOR_GLASS_STEEL_TOP));
+
+        CANDLE_SOULWAX = new ItemBuilder(MOD_ID)
+                .build(new ItemPlaceable("candle.soulwax", "bonusblocks:item/candle_soulwax", itemID++, BonusBlocks.CANDLE_SOULWAX));
     }
 }

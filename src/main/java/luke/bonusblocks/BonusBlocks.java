@@ -9,7 +9,6 @@ import net.minecraft.core.crafting.LookupFuelFurnace;
 import net.minecraft.core.crafting.LookupFuelFurnaceBlast;
 import net.minecraft.core.sound.BlockSound;
 import turniplabs.halplibe.helper.BlockBuilder;
-import turniplabs.halplibe.helper.CreativeHelper;
 
 import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
 import static net.minecraft.core.block.BlockLogicMoss.stoneToMossMap;
@@ -227,133 +226,6 @@ public class BonusBlocks {
         LookupFuelFurnaceBlast.instance.addFuelEntry(BRICK_OLIVINE.id(), 200);
         LookupFuelFurnaceBlast.instance.addFuelEntry(STAIRS_BRICK_OLIVINE.id(), 200);
         LookupFuelFurnaceBlast.instance.addFuelEntry(SLAB_BRICK_OLIVINE.id(), 100);
-
-
-        CreativeHelper.setParent(PILLAR_SLATE, PILLAR_MARBLE);
-
-        CreativeHelper.setParent(BOOKSHELF_EMPTY_PLANKS_OAK, BOOKSHELF_PLANKS_OAK);
-
-        CreativeHelper.setParent(CANDLE_SOULWAX, TORCH_COAL);
-
-        CreativeHelper.setParent(MOSS, MOSS_GRANITE);
-
-        CreativeHelper.setParent(STONE_CARVED, PILLAR_MARBLE);
-        CreativeHelper.setParent(BASALT_CARVED, PILLAR_MARBLE);
-        CreativeHelper.setParent(LIMESTONE_CARVED, PILLAR_MARBLE);
-        CreativeHelper.setParent(GRANITE_CARVED, PILLAR_MARBLE);
-        CreativeHelper.setParent(CAPSTONE_MARBLE, PILLAR_MARBLE);
-        CreativeHelper.setParent(MARBLE_CARVED, PILLAR_MARBLE);
-        CreativeHelper.setParent(SLATE_CARVED, PILLAR_MARBLE);
-        CreativeHelper.setParent(PERMAFROST_CARVED, PILLAR_MARBLE);
-
-        CreativeHelper.setParent(GRASS_OVERGROWN, GRASS_SCORCHED);
-        CreativeHelper.setParent(GRASS_SCORCHED_OVERGROWN, GRASS_SCORCHED);
-        CreativeHelper.setParent(PATH_DIRT_OVERGROWN, PATH_DIRT);
-
-        CreativeHelper.setParent(DIRT_BAKED, DIRT);
-
-        CreativeHelper.setParent(SKULL, PUMPKIN_CARVED_ACTIVE);
-        CreativeHelper.setParent(SKULL_CARVED_IDLE, PUMPKIN_CARVED_ACTIVE);
-        CreativeHelper.setParent(SKULL_CARVED_ACTIVE, PUMPKIN_CARVED_ACTIVE);
-
-        CreativeHelper.setParent(GLASS_OBSIDIAN, GLASS);
-        CreativeHelper.setParent(GLASS_QUARTZ, GLASS_TINTED);
-
-        CreativeHelper.setParent(TRAPDOOR_GLASS_OBSIDIAN, TRAPDOOR_GLASS);
-
-        CreativeHelper.setParent(FLOWER_SILVER, FLOWER_RED);
-        CreativeHelper.setParent(FLOWER_CYAN, FLOWER_RED);
-        CreativeHelper.setParent(FLOWER_MAGENTA, FLOWER_RED);
-        CreativeHelper.setParent(FLOWER_LIME, FLOWER_RED);
-
-        CreativeHelper.setParent(PETAL_YELLOW, FLOWER_RED);
-        CreativeHelper.setParent(PETAL_RED, FLOWER_RED);
-        CreativeHelper.setParent(PETAL_CYAN, FLOWER_RED);
-        CreativeHelper.setParent(PETAL_PURPLE, FLOWER_RED);
-        CreativeHelper.setParent(PETAL_PINK, FLOWER_RED);
-        CreativeHelper.setParent(PETAL_SILVER, FLOWER_RED);
-        CreativeHelper.setParent(PETAL_ORANGE, FLOWER_RED);
-        CreativeHelper.setParent(PETAL_LIGHT_BLUE, FLOWER_RED);
-        CreativeHelper.setParent(PETAL_MAGENTA, FLOWER_RED);
-        CreativeHelper.setParent(PETAL_LIME, FLOWER_RED);
-
-        CreativeHelper.setParent(PETAL_LAYER_YELLOW, FLOWER_RED);
-        CreativeHelper.setParent(PETAL_LAYER_RED, FLOWER_RED);
-        CreativeHelper.setParent(PETAL_LAYER_CYAN, FLOWER_RED);
-        CreativeHelper.setParent(PETAL_LAYER_PURPLE, FLOWER_RED);
-        CreativeHelper.setParent(PETAL_LAYER_PINK, FLOWER_RED);
-        CreativeHelper.setParent(PETAL_LAYER_SILVER, FLOWER_RED);
-        CreativeHelper.setParent(PETAL_LAYER_ORANGE, FLOWER_RED);
-        CreativeHelper.setParent(PETAL_LAYER_LIGHT_BLUE, FLOWER_RED);
-        CreativeHelper.setParent(PETAL_LAYER_MAGENTA, FLOWER_RED);
-        CreativeHelper.setParent(PETAL_LAYER_LIME, FLOWER_RED);
-
-        CreativeHelper.setParent(MUSHROOM_GRAY, MUSHROOM_RED);
-
-        CreativeHelper.setParent(FUNGI_BROWN, MUSHROOM_RED);
-        CreativeHelper.setParent(FUNGI_RED, MUSHROOM_RED);
-        CreativeHelper.setParent(FUNGI_GRAY, MUSHROOM_RED);
-
-        CreativeHelper.setParent(LOG_SHRUB, LOG_OAK_MOSSY);
-        CreativeHelper.setParent(LOG_CACAO, LOG_OAK_MOSSY);
-        CreativeHelper.setParent(LOG_JACARANDA, LOG_OAK_MOSSY);
-        CreativeHelper.setParent(LOG_SCORCHED, LOG_OAK_MOSSY);
-
-        CreativeHelper.setParent(LEAVES_OAK_MOSSY, LEAVES_CACAO);
-        CreativeHelper.setParent(LEAVES_JACARANDA, LEAVES_CACAO);
-        CreativeHelper.setParent(BRANCH, LEAVES_CACAO);
-
-        CreativeHelper.setParent(SAPLING_OAK_MOSSY, SAPLING_CACAO);
-        CreativeHelper.setParent(SAPLING_JACARANDA, SAPLING_CACAO);
-
-        CreativeHelper.setParent(BLOCK_CLAY_BAKED, BLOCK_CLAY);
-
-        CreativeHelper.setParent(BLOCK_GUNPOWDER, GRAVEL);
-        CreativeHelper.setParent(BLOCK_SUGAR, GRAVEL);
-
-        CreativeHelper.setParent(BRICK_MUD, BRICK_IRON);
-        CreativeHelper.setParent(BRICK_STEEL, BRICK_IRON);
-        CreativeHelper.setParent(BRICK_QUARTZ, BRICK_IRON);
-        CreativeHelper.setParent(BRICK_OLIVINE, BRICK_IRON);
-        CreativeHelper.setParent(BRICK_CLAY_BAKED, BRICK_IRON);
-        CreativeHelper.setParent(FENCE_GOLD, FENCE_CHAINLINK);
-
-
-        CreativeHelper.setParent(MARBLE_POLISHED, SLATE_POLISHED);
-
-        CreativeHelper.setParent(BLOCK_BONE, BLOCK_CHARCOAL);
-        CreativeHelper.setParent(BLOCK_CLOTH, BLOCK_CHARCOAL);
-        CreativeHelper.setParent(BLOCK_SLIME, BLOCK_CHARCOAL);
-        CreativeHelper.setParent(BLOCK_LEATHER, BLOCK_CHARCOAL);
-        CreativeHelper.setParent(BLOCK_WICKER, BLOCK_CHARCOAL);
-        CreativeHelper.setParent(BLOCK_RAW_GOLD, BLOCK_CHARCOAL);
-        CreativeHelper.setParent(BLOCK_RAW_IRON, BLOCK_CHARCOAL);
-        CreativeHelper.setParent(BLOCK_FLINT, BLOCK_CHARCOAL);
-
-        CreativeHelper.setParent(SLAB_COBBLESTONE_MOSSY, SLAB_BASALT_POLISHED);
-        CreativeHelper.setParent(SLAB_SLATE_POLISHED, SLAB_BASALT_POLISHED);
-        CreativeHelper.setParent(SLAB_MARBLE_POLISHED, SLAB_BASALT_POLISHED);
-        CreativeHelper.setParent(SLAB_BRICK_STONE_POLISHED_MOSSY, SLAB_BASALT_POLISHED);
-        CreativeHelper.setParent(SLAB_BRICK_MUD, SLAB_BASALT_POLISHED);
-        CreativeHelper.setParent(SLAB_BRICK_QUARTZ, SLAB_BASALT_POLISHED);
-        CreativeHelper.setParent(SLAB_BRICK_OLIVINE, SLAB_BASALT_POLISHED);
-        CreativeHelper.setParent(SLAB_BRICK_CLAY_BAKED, SLAB_BASALT_POLISHED);
-
-
-        for (int color = 0; color < 16; color++) {
-            CreativeHelper.setParent(SLAB_WOOL, color << 4, SLAB_BASALT_POLISHED, 0);
-        }
-
-        CreativeHelper.setParent(STAIRS_COBBLESTONE_MOSSY, STAIRS_BRICK_STONE);
-        CreativeHelper.setParent(STAIRS_BRICK_STONE_POLISHED_MOSSY, STAIRS_BRICK_STONE);
-        CreativeHelper.setParent(STAIRS_BRICK_MUD, STAIRS_BRICK_STONE);
-        CreativeHelper.setParent(STAIRS_BRICK_QUARTZ, STAIRS_BRICK_STONE);
-        CreativeHelper.setParent(STAIRS_BRICK_OLIVINE, STAIRS_BRICK_STONE);
-        CreativeHelper.setParent(STAIRS_BRICK_CLAY_BAKED, STAIRS_BRICK_STONE);
-
-        for (int color = 0; color < 16; color++) {
-            CreativeHelper.setParent(STAIRS_WOOL, color << 4, STAIRS_BRICK_STONE, 0);
-        }
 
     }
 
@@ -739,6 +611,7 @@ public class BonusBlocks {
                 .setLuminance(10)
                 .setUseInternalLight()
                 .setVisualUpdateOnMetadata()
+                .setTags(BlockTags.NOT_IN_CREATIVE_MENU)
                 .setTags(BlockTags.MINEABLE_BY_SWORD, BlockTags.BROKEN_BY_FLUIDS)
                 .build("candle.soulwax", "candle_soulwax", blockID++, BlockLogicSoulCandle::new);
 
