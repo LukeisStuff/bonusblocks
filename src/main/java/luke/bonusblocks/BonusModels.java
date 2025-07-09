@@ -344,21 +344,21 @@ public class BonusModels implements ModelEntrypoint {
     @Override
     public void initItemModels(ItemModelDispatcher dispatcher) {
 
-        dispatcher.addDispatch(new ItemModelStandard(BonusItems.SOULWAX, null).setIcon("bonus:item/soulwax"));
-        dispatcher.addDispatch(new ItemModelStandard(BonusItems.MOSS, null).setIcon("bonus:item/moss"));
-        dispatcher.addDispatch(new ItemModelStandard(BonusItems.CANDLE_SOULWAX, null).setIcon("bonus:item/candle_soulwax"));
+        dispatcher.addDispatch(new ItemModelStandard(BonusItems.SOULWAX, null).setIcon("bonusblocks:item/soulwax"));
+        dispatcher.addDispatch(new ItemModelStandard(BonusItems.MOSS, null).setIcon("bonusblocks:item/moss"));
+        dispatcher.addDispatch(new ItemModelStandard(BonusItems.CANDLE_SOULWAX, null).setIcon("bonusblocks:item/candle_soulwax"));
 
-        dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_STONE, null).setIcon("bonus:item/door_stone"));
-        dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_BASALT, null).setIcon("bonus:item/door_basalt"));
-        dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_GRANITE, null).setIcon("bonus:item/door_granite"));
-        dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_LIMESTONE, null).setIcon("bonus:item/door_limestone"));
-        dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_MARBLE, null).setIcon("bonus:item/door_marble"));
-        dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_SLATE, null).setIcon("bonus:item/door_permafrost"));
-        dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_PERMAFROST, null).setIcon("bonus:item/door_netherrack"));
-        dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_NETHERRACK, null).setIcon("bonus:item/soulwax"));
-        dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_GLASS_OBSIDIAN, null).setIcon("bonus:item/door_glass_obsidian"));
-        dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_GLASS_QUARTZ, null).setIcon("bonus:item/door_glass_quartz"));
-        dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_GLASS_STEEL, null).setIcon("bonus:item/door_glass_steel"));
+        dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_STONE, null).setIcon("bonusblocks:item/door_stone"));
+        dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_BASALT, null).setIcon("bonusblocks:item/door_basalt"));
+        dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_GRANITE, null).setIcon("bonusblocks:item/door_granite"));
+        dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_LIMESTONE, null).setIcon("bonusblocks:item/door_limestone"));
+        dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_MARBLE, null).setIcon("bonusblocks:item/door_marble"));
+        dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_SLATE, null).setIcon("bonusblocks:item/door_slate"));
+        dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_PERMAFROST, null).setIcon("bonusblocks:item/door_permafrost"));
+        dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_NETHERRACK, null).setIcon("bonusblocks:item/door_netherrack"));
+        dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_GLASS_OBSIDIAN, null).setIcon("bonusblocks:item/door_glass_obsidian"));
+        dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_GLASS_QUARTZ, null).setIcon("bonusblocks:item/door_glass_quartz"));
+        dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_GLASS_STEEL, null).setIcon("bonusblocks:item/door_glass_steel"));
 
     }
 

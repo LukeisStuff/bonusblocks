@@ -611,8 +611,7 @@ public class BonusBlocks {
                 .setLuminance(10)
                 .setUseInternalLight()
                 .setVisualUpdateOnMetadata()
-                .setTags(BlockTags.NOT_IN_CREATIVE_MENU)
-                .setTags(BlockTags.MINEABLE_BY_SWORD, BlockTags.BROKEN_BY_FLUIDS)
+                .setTags(BlockTags.MINEABLE_BY_SWORD, BlockTags.BROKEN_BY_FLUIDS, BlockTags.NOT_IN_CREATIVE_MENU)
                 .build("candle.soulwax", "candle_soulwax", blockID++, BlockLogicSoulCandle::new);
 
         // Skulls
