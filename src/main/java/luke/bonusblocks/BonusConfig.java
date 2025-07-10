@@ -2,6 +2,8 @@ package luke.bonusblocks;
 
 import net.minecraft.core.block.Block;
 import net.minecraft.core.item.Item;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.util.TomlConfigHandler;
 import turniplabs.halplibe.util.toml.Toml;
 
@@ -12,7 +14,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
-import static org.apache.log4j.builders.appender.SocketAppenderBuilder.LOGGER;
 
 //Config code from Quite Better Than Adventure
 public class BonusConfig {
@@ -25,6 +26,8 @@ public class BonusConfig {
 
     public static String BlockIDs = "Block IDs";
     public static String ItemIDs = "Item IDs";
+    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+
 
     static void Setup() {
         LOGGER.info("Initializing config..");
