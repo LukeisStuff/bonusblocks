@@ -127,14 +127,12 @@ public class BonusModels implements ModelEntrypoint {
                 .setAllTextures(0, "bonusblocks:block/block_iron_raw"));
         dispatcher.addDispatch(BonusBlocks.BLOCK_RAW_GOLD, new BlockModelStandard<>(BonusBlocks.BLOCK_RAW_GOLD)
                 .setAllTextures(0, "bonusblocks:block/block_gold_raw"));
+        dispatcher.addDispatch(BonusBlocks.BLOCK_STEEL, new BlockModelStandard<>(BonusBlocks.BLOCK_STEEL)
+                .setAllTextures(0, "bonusblocks:block/block_steel"));
 
         dispatcher.addDispatch(BonusBlocks.OVERLAY_RAW_IRON, new BlockModelNuggetsIron<>(BonusBlocks.OVERLAY_RAW_IRON));
         dispatcher.addDispatch(BonusBlocks.OVERLAY_RAW_GOLD, new BlockModelNuggetsGold<>(BonusBlocks.OVERLAY_RAW_IRON));
         dispatcher.addDispatch(BonusBlocks.OVERLAY_FLINT, new BlockModelNuggetsFlint<>(BonusBlocks.OVERLAY_FLINT));
-
-        dispatcher.addDispatch(BonusBlocks.PILLAR_SLATE, new BlockModelAxisAligned<>(BonusBlocks.PILLAR_SLATE)
-                .setTex(0, "bonusblocks:block/pillar_slate/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST)
-                .setTex(0, "bonusblocks:block/pillar_slate/top", Side.TOP, Side.BOTTOM));
 
         dispatcher.addDispatch(BonusBlocks.MARBLE_POLISHED, new BlockModelStandard<>(BonusBlocks.MARBLE_POLISHED)
                 .setTex(0, "bonusblocks:block/polished_marble_side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST)
@@ -163,6 +161,8 @@ public class BonusModels implements ModelEntrypoint {
                 .setAllTextures(0, "bonusblocks:block/brick_olivine"));
         dispatcher.addDispatch(BonusBlocks.BRICK_CLAY_BAKED, new BlockModelStandard<>(BonusBlocks.BRICK_CLAY_BAKED)
                 .setAllTextures(0, "bonusblocks:block/brick_clay_baked"));
+        dispatcher.addDispatch(BonusBlocks.BRICK_STEEL, new BlockModelStandard<>(BonusBlocks.BRICK_STEEL)
+                .setAllTextures(0, "bonusblocks:block/brick_steel"));
 
         dispatcher.addDispatch(BonusBlocks.DIRT_BAKED, new BlockModelStandard<>(BonusBlocks.DIRT_BAKED)
                 .setAllTextures(0, "bonusblocks:block/dirt_baked"));
@@ -303,6 +303,13 @@ public class BonusModels implements ModelEntrypoint {
                 .setTex(0, "bonusblocks:block/door/glass_steel/frame", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/door/glass_steel/top", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
 
+        dispatcher.addDispatch(BonusBlocks.DOOR_STEEL_BOTTOM, new BlockModelDoorGlass<>(BonusBlocks.DOOR_STEEL_BOTTOM)
+                .setTex(0, "bonusblocks:block/door/steel/frame", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/door/steel/bottom", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+        dispatcher.addDispatch(BonusBlocks.DOOR_STEEL_TOP, new BlockModelDoorGlass<>(BonusBlocks.DOOR_STEEL_TOP)
+                .setTex(0, "bonusblocks:block/door/steel/frame", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/door/steel/top", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+
         dispatcher.addDispatch(BonusBlocks.TRAPDOOR_GLASS_OBSIDIAN, new BlockModelTrapDoor<>(BonusBlocks.TRAPDOOR_GLASS_OBSIDIAN).onRenderLayer(1)
                 .setTex(0, "bonusblocks:block/trapdoor/glass_obsidian/top", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/trapdoor/glass_obsidian/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
@@ -312,6 +319,10 @@ public class BonusModels implements ModelEntrypoint {
         dispatcher.addDispatch(BonusBlocks.TRAPDOOR_GLASS_STEEL, new BlockModelTrapDoor<>(BonusBlocks.TRAPDOOR_GLASS_STEEL)
                 .setTex(0, "bonusblocks:block/trapdoor/glass_steel/top", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/trapdoor/glass_steel/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+
+        dispatcher.addDispatch(BonusBlocks.TRAPDOOR_STEEL, new BlockModelTrapDoor<>(BonusBlocks.TRAPDOOR_STEEL)
+                .setTex(0, "bonusblocks:block/trapdoor/steel/top", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/trapdoor/steel/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
 
 
 
@@ -327,6 +338,7 @@ public class BonusModels implements ModelEntrypoint {
         dispatcher.addDispatch(BonusBlocks.STAIRS_BRICK_QUARTZ, new BlockModelStairs<>(BonusBlocks.STAIRS_BRICK_QUARTZ));
         dispatcher.addDispatch(BonusBlocks.STAIRS_BRICK_OLIVINE, new BlockModelStairs<>(BonusBlocks.STAIRS_BRICK_OLIVINE));
         dispatcher.addDispatch(BonusBlocks.STAIRS_BRICK_CLAY_BAKED, new BlockModelStairs<>(BonusBlocks.STAIRS_BRICK_CLAY_BAKED));
+        dispatcher.addDispatch(BonusBlocks.STAIRS_BRICK_STEEL, new BlockModelStairs<>(BonusBlocks.STAIRS_BRICK_STEEL));
 
         //SLABS
         dispatcher.addDispatch(BonusBlocks.SLAB_WOOL, new BlockModelSlabWool<>(BonusBlocks.SLAB_WOOL));
@@ -338,6 +350,7 @@ public class BonusModels implements ModelEntrypoint {
         dispatcher.addDispatch(BonusBlocks.SLAB_BRICK_CLAY_BAKED, new BlockModelSlab<>(BonusBlocks.SLAB_BRICK_CLAY_BAKED));
         dispatcher.addDispatch(BonusBlocks.SLAB_SLATE_POLISHED, new BlockModelSlab<>(BonusBlocks.SLAB_SLATE_POLISHED));
         dispatcher.addDispatch(BonusBlocks.SLAB_MARBLE_POLISHED, new BlockModelSlab<>(BonusBlocks.SLAB_MARBLE_POLISHED));
+        dispatcher.addDispatch(BonusBlocks.SLAB_BRICK_STEEL, new BlockModelSlab<>(BonusBlocks.SLAB_BRICK_STEEL));
 
     }
 
@@ -359,6 +372,7 @@ public class BonusModels implements ModelEntrypoint {
         dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_GLASS_OBSIDIAN, null).setIcon("bonusblocks:item/door_glass_obsidian"));
         dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_GLASS_QUARTZ, null).setIcon("bonusblocks:item/door_glass_quartz"));
         dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_GLASS_STEEL, null).setIcon("bonusblocks:item/door_glass_steel"));
+        dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_STEEL, null).setIcon("bonusblocks:item/door_steel"));
 
     }
 

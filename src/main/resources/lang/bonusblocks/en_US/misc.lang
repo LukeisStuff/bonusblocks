@@ -1,0 +1,47 @@
+tile.jar.glass.name=Glass Jar
+tile.jar.glass.desc=A small cup to hold your flowers and foliage.
+
+biome.bonusblocks.overgrown.meadow=Meadow
+biome.bonusblocks.dryland=Dryland
+
+tile.mesh.name=Iron Mesh Block
+tile.workbench.name=Crafting Table
+
+tile.block.steel.name=Block of Crude Steel
+tile.block.steel.desc=A solid block of crude steel.
+
+tile.brick.steel.name=Crude Steel Bricks
+tile.brick.steel.desc=Stacked bricks of crude steel.
+
+tile.slab.brick.steel.name=Crude Steel Brick Stairs
+tile.slab.brick.steel.desc=A slab of crude steel brick.
+
+tile.stairs.brick.steel.name=Crude Steel Brick Slab
+tile.stairs.brick.steel.desc=Crude steel brick block used for rapid vertical movement.
+
+tile.trapdoor.steel.name=Crude Steel Trapdoor
+tile.trapdoor.steel.desc=Like a door, but flat and made of rusty steel.
+
+item.door.steel.name=Crude Steel Door
+item.door.steel.desc=Hardened and rusty.
+
+tile.door.steel.top.name=Top Crude Steel Door
+tile.door.steel.bottom.name=Bottom Crude Steel Door
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
