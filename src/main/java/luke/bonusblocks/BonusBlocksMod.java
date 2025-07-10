@@ -28,8 +28,9 @@ public class BonusBlocksMod implements ModInitializer, ClientStartEntrypoint, Ga
 
     @Override
     public void beforeGameStart() {
+        BonusConfig.Setup();
         new BonusBlocks().initializeBlocks();
-        new BonusItems().initilizeItems();
+        new BonusItems().initializeItems();
         new BonusBiomes().initializeBiomes();
     }
 
