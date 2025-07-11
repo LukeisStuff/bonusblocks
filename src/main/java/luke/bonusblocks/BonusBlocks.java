@@ -407,7 +407,7 @@ public class BonusBlocks {
         MOSS = grass
                 .setFlammability(100, 30)
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SHOVEL, BlockTags.GROWS_FLOWERS, BlockTags.GROWS_SUGAR_CANE, BlockTags.GROWS_TREES, BlockTags.CAVE_GEN_REPLACES_SURFACE, BlockTags.CAVES_CUT_THROUGH)
-                .build("moss", "moss", blockID("MOSS"), b -> new BlockMossy(b, Material.moss));
+                .build("moss", "moss", blockID("MOSS"), BlockMossy::new);
 
 
         // Overgrown Grass

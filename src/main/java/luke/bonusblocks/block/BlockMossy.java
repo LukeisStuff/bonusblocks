@@ -4,14 +4,13 @@ import luke.bonusblocks.BonusItems;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLogicMoss;
 import net.minecraft.core.block.entity.TileEntity;
-import net.minecraft.core.block.material.Material;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.world.World;
 
 public class BlockMossy extends BlockLogicMoss {
 
-    public BlockMossy(Block<?> block, Material material) {
+    public BlockMossy(Block<?> block) {
         super(block, block);
         block.setTicking(true);
     }
