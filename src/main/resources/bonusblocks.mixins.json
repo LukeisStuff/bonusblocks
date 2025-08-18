@@ -18,7 +18,8 @@
     "ChunkDecoratorOverworldMixin",
     "EntityMixin",
     "ItemMixin",
-    "ItemToolShovelMixin"
+    "ItemToolShovelMixin",
+    "WorldSkullRedstoneMixin"
   ],
   "client": [
     "HudIngameMixin"
