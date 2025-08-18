@@ -7,6 +7,7 @@ import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.crafting.LookupFuelFurnace;
 import net.minecraft.core.crafting.LookupFuelFurnaceBlast;
+import net.minecraft.core.item.block.ItemBlockStairsPainted;
 import net.minecraft.core.sound.BlockSound;
 import turniplabs.halplibe.helper.BlockBuilder;
 
@@ -110,7 +111,7 @@ public class BonusBlocks {
 
 
     //STAIRS
-    public static Block<BlockLogicStairs> STAIRS_WOOL;
+    public static Block<BlockLogicStairsWoolPainted> STAIRS_WOOL;
     public static Block<BlockLogicStairs> STAIRS_COBBLESTONE_MOSSY;
     public static Block<BlockLogicStairs> STAIRS_BRICK_STONE_POLISHED_MOSSY;
     public static Block<BlockLogicStairs> STAIRS_BRICK_MUD;
@@ -121,7 +122,7 @@ public class BonusBlocks {
 
 
     //SLABS
-    public static Block<BlockLogicSlab> SLAB_WOOL;
+    public static Block<BlockLogicSlabWoolPainted> SLAB_WOOL;
     public static Block<BlockLogicSlab> SLAB_COBBLESTONE_MOSSY;
     public static Block<BlockLogicSlab> SLAB_SLATE_POLISHED;
     public static Block<BlockLogicSlab> SLAB_MARBLE_POLISHED;
@@ -692,7 +693,7 @@ public class BonusBlocks {
                 .setHardness(0.8F)
                 .setResistance(0.8F)
                 .setFlammability(30, 60)
-                .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.NOT_IN_CREATIVE_MENU)
+                .setTags(BlockTags.MINEABLE_BY_SHEARS)
                 .setBlockItem(ItemBlockSlabWool::new)
                 .build("slab_wool", blockID("SLAB_WOOL"), b -> new BlockLogicSlabWoolPainted(b, WOOL));
         SLAB_COBBLESTONE_MOSSY = slab
@@ -727,7 +728,8 @@ public class BonusBlocks {
                 .setHardness(0.8F)
                 .setResistance(0.8F)
                 .setFlammability(30, 60)
-                .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.NOT_IN_CREATIVE_MENU)
+                .setTags(BlockTags.MINEABLE_BY_SHEARS)
+                .setBlockItem(ItemBlockStairsPainted::new)
                 .build("stairs_wool", blockID("STAIRS_WOOL"), b -> new BlockLogicStairsWoolPainted(b, WOOL));
         STAIRS_COBBLESTONE_MOSSY = stairs
                 .setHardness(2.0F)
