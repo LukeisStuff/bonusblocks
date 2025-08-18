@@ -170,7 +170,7 @@ public class BonusRecipes implements RecipeEntrypoint {
 
         RecipeBuilder.Shaped(MOD_ID, "S", "C")
                 .addInput('S', BonusBlocks.SKULL_CARVED_IDLE)
-                .addInput('C', BonusItems.CANDLE_SOULWAX)
+                .addInput('C', BonusBlocks.CANDLE_SOULWAX)
                 .create("skull_lantern", new ItemStack(BonusBlocks.SKULL_CARVED_ACTIVE, 1));
 
         RecipeBuilder.Shaped(MOD_ID, "S", "C")
@@ -227,7 +227,7 @@ public class BonusRecipes implements RecipeEntrypoint {
         RecipeBuilder.Shaped(MOD_ID, "S", "W")
                 .addInput('S', (Items.STRING))
                 .addInput('W', (BonusItems.SOULWAX))
-                .create("soulwax_candle", new ItemStack(BonusItems.CANDLE_SOULWAX, 2));
+                .create("soulwax_candle", new ItemStack(BonusBlocks.CANDLE_SOULWAX, 2));
 
         RecipeBuilderShaped templateSlab = new RecipeBuilderShaped(MOD_ID, "XXX");
         templateSlab.addInput('X', Blocks.SLATE_POLISHED).create("slate_polished_slab", new ItemStack(BonusBlocks.SLAB_SLATE_POLISHED, 6));

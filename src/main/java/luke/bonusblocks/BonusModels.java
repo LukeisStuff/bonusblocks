@@ -11,6 +11,7 @@ import net.minecraft.client.render.colorizer.Colorizers;
 import net.minecraft.client.render.item.model.ItemModelDispatcher;
 import net.minecraft.client.render.item.model.ItemModelStandard;
 import net.minecraft.client.render.texture.stitcher.TextureRegistry;
+import net.minecraft.core.block.Blocks;
 import net.minecraft.core.util.helper.Side;
 import turniplabs.halplibe.helper.ModelHelper;
 import turniplabs.halplibe.util.ModelEntrypoint;
@@ -359,7 +360,6 @@ public class BonusModels implements ModelEntrypoint {
 
         dispatcher.addDispatch(new ItemModelStandard(BonusItems.SOULWAX, null).setIcon("bonusblocks:item/soulwax"));
         dispatcher.addDispatch(new ItemModelStandard(BonusItems.MOSS, null).setIcon("bonusblocks:item/moss"));
-        dispatcher.addDispatch(new ItemModelStandard(BonusItems.CANDLE_SOULWAX, null).setIcon("bonusblocks:item/candle_soulwax"));
 
         dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_STONE, null).setIcon("bonusblocks:item/door_stone"));
         dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_BASALT, null).setIcon("bonusblocks:item/door_basalt"));
@@ -373,6 +373,11 @@ public class BonusModels implements ModelEntrypoint {
         dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_GLASS_QUARTZ, null).setIcon("bonusblocks:item/door_glass_quartz"));
         dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_GLASS_STEEL, null).setIcon("bonusblocks:item/door_glass_steel"));
         dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_STEEL, null).setIcon("bonusblocks:item/door_steel"));
+
+        dispatcher.addDispatch(new ItemModelStandard(BonusBlocks.CANDLE_SOULWAX.asItem(), null).setIcon("bonusblocks:item/candle_soulwax").setFullBright());
+
+        dispatcher.addDispatch(new ItemModelStandard(Blocks.PUMPKIN.asItem(), null).setIcon("bonusblocks:item/candle_soulwax").setFullBright());
+
 
     }
 

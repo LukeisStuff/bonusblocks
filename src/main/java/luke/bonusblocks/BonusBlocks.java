@@ -196,14 +196,14 @@ public class BonusBlocks {
 
     public static Block<BlockLogic> DIRT_BAKED;
 
-    public static Block<?>  CANDLE_SOULWAX;
+    public static Block<?> CANDLE_SOULWAX;
 
-    public static Block<?>  SKULL;
-    public static Block<?>  SKULL_CARVED_IDLE;
-    public static Block<?>  SKULL_CARVED_ACTIVE;
-    public static Block<?>  SKULL_REDSTONE;
+    public static Block<?> SKULL;
+    public static Block<?> SKULL_CARVED_IDLE;
+    public static Block<?> SKULL_CARVED_ACTIVE;
+    public static Block<BlockLogicPumpkinRedstone> SKULL_REDSTONE;
 
-    public static Block<BlockLogicFenceThin>  FENCE_GOLD;
+    public static Block<BlockLogicFenceThin> FENCE_GOLD;
 
     public static Block<BlockLogic> TATAMI;
 
@@ -635,7 +635,7 @@ public class BonusBlocks {
                 .setLuminance(10)
                 .setUseInternalLight()
                 .setVisualUpdateOnMetadata()
-                .setTags(BlockTags.MINEABLE_BY_SWORD, BlockTags.BROKEN_BY_FLUIDS, BlockTags.NOT_IN_CREATIVE_MENU)
+                .setTags(BlockTags.MINEABLE_BY_SWORD, BlockTags.BROKEN_BY_FLUIDS)
                 .build("candle.soulwax", "candle_soulwax", blockID("CANDLE_SOULWAX"), BlockLogicSoulCandle::new);
 
         // Skulls
