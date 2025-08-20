@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Random;
 
-@Mixin(value= BiomeSwamp.class,remap=false)
+@Mixin(value = BiomeSwamp.class, remap = false)
 public class BiomeSwampMixin {
     @Inject(method = "getRandomWorldGenForTrees", at = @At(value = "HEAD", target = "Lnet/minecraft/core/world/biome/BiomeRainforest;getRandomWorldGenForTrees(Ljava/util/Random;)Lnet/minecraft/core/world/generate/feature/WorldFeature;"), cancellable = true)
     public void getRandomWorldGenForTrees(Random random, CallbackInfoReturnable<WorldFeature> cir) {

@@ -12,6 +12,7 @@ public class BlockLogicGlassQuartz extends BlockLogicTransparent {
     public BlockLogicGlassQuartz(Block<?> block) {
         super(block, Material.glass);
     }
+
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity BlockEntity) {
         switch (dropCause) {
             case SILK_TOUCH:

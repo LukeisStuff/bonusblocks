@@ -17,7 +17,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(value = HudIngame.class, remap = false)
 public abstract class HudIngameMixin extends Gui {
 
-    @Shadow protected Minecraft mc;
+    @Shadow
+    protected Minecraft mc;
 
     @Inject(method = "renderGameOverlay(FZII)V",
             at = @At(value = "TAIL"), cancellable = true)
@@ -34,6 +35,7 @@ public abstract class HudIngameMixin extends Gui {
         }
         ci.cancel();
     }
+
     @Unique
     public void renderSkullBlur(int xSize, int ySize) {
         GL11.glDisable(2929);

@@ -25,12 +25,12 @@ public class BlockModelSoulwaxCandle<T extends BlockLogic> extends BlockModelSta
                 brightness = 1.0F;
             }
         }
-        float minX = (float)x + 0.5F - 0.09375F;
-        float minY = (float)y + 0.0F;
-        float minZ = (float)z + 0.5F - 0.09375F;
-        float maxX = (float)x + 0.5F + 0.09375F;
-        float maxY = (float)y + 0.5F;
-        float maxZ = (float)z + 0.5F + 0.09375F;
+        float minX = (float) x + 0.5F - 0.09375F;
+        float minY = (float) y + 0.0F;
+        float minZ = (float) z + 0.5F - 0.09375F;
+        float maxX = (float) x + 0.5F + 0.09375F;
+        float maxY = (float) y + 0.5F;
+        float maxZ = (float) z + 0.5F + 0.09375F;
         float wickMaxY = maxY + 0.375F;
         IconCoordinate texIndex = this.getParticleTexture(Side.TOP, 0);
         if (renderBlocks.overrideBlockTexture != null) {
@@ -118,6 +118,7 @@ public class BlockModelSoulwaxCandle<T extends BlockLogic> extends BlockModelSta
 
         return true;
     }
+
     @Override
     public boolean shouldItemRender3d() {
         return false;

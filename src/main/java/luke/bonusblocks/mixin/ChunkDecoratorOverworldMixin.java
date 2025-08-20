@@ -129,7 +129,6 @@ public class ChunkDecoratorOverworldMixin {
         }
 
 
-
         if ((rand.nextInt(8) == 0)) {
             int xf = x + rand.nextInt(16) + 8;
             int zf = z + rand.nextInt(16) + 8;

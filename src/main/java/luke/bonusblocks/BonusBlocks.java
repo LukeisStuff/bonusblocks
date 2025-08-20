@@ -18,21 +18,20 @@ import static net.minecraft.core.item.tool.ItemToolPickaxe.miningLevels;
 
 public class BonusBlocks {
 
-    public static int blockID =  BonusConfig.blockIDs;
+    public static int blockID = BonusConfig.blockIDs;
 
     public static int blockID(String blockName) {
         try {
-            return BonusConfig.cfg.getInt(BonusConfig.BlockIDs+"."+ blockName);
-        }catch (NullPointerException e) {
-            BonusConfig.properties.addEntry(BonusConfig.BlockIDs+"."+ blockName, blockID);
+            return BonusConfig.cfg.getInt(BonusConfig.BlockIDs + "." + blockName);
+        } catch (NullPointerException e) {
+            BonusConfig.properties.addEntry(BonusConfig.BlockIDs + "." + blockName, blockID);
             return blockID++;
         }
     }
 
 
-
     //LOGS, LEAVES, SAPLINGS
-    public static Block<?>  BRANCH;
+    public static Block<?> BRANCH;
     public static Block<BlockLogicLeavesOakMossy> LEAVES_OAK_MOSSY;
     public static Block<BlockLogicLeavesBase> LEAVES_JACARANDA;
 
@@ -53,7 +52,7 @@ public class BonusBlocks {
 
 
     //MUSHROOMS
-    public static Block<?>  MUSHROOM_GRAY;
+    public static Block<?> MUSHROOM_GRAY;
 
     public static Block<BlockLogic> FUNGI_RED;
     public static Block<BlockLogic> FUNGI_BROWN;
@@ -85,11 +84,11 @@ public class BonusBlocks {
 
 
     //COMPACT BLOCKS
-    public static Block<?>  BLOCK_BONE;
-    public static Block<?>  BLOCK_CLOTH;
-    public static Block<?>  BLOCK_SLIME;
-    public static Block<?>  BLOCK_GUNPOWDER;
-    public static Block<?>  BLOCK_SUGAR;
+    public static Block<?> BLOCK_BONE;
+    public static Block<?> BLOCK_CLOTH;
+    public static Block<?> BLOCK_SLIME;
+    public static Block<?> BLOCK_GUNPOWDER;
+    public static Block<?> BLOCK_SUGAR;
     public static Block<BlockLogic> BLOCK_LEATHER;
     public static Block<BlockLogic> BLOCK_WICKER;
     public static Block<BlockLogic> BLOCK_FLINT;
@@ -99,8 +98,8 @@ public class BonusBlocks {
 
 
     //GLASS
-    public static Block<?>  GLASS_OBSIDIAN;
-    public static Block<?>  GLASS_QUARTZ;
+    public static Block<?> GLASS_OBSIDIAN;
+    public static Block<?> GLASS_QUARTZ;
 
     //BRICKS
     public static Block<BlockLogic> BRICK_MUD;
@@ -184,9 +183,9 @@ public class BonusBlocks {
     public static Block<BlockLogic> PATH_DIRT_OVERGROWN;
 
 
-    public static Block<?>  OVERLAY_RAW_GOLD;
-    public static Block<?>  OVERLAY_RAW_IRON;
-    public static Block<?>  OVERLAY_FLINT;
+    public static Block<?> OVERLAY_RAW_GOLD;
+    public static Block<?> OVERLAY_RAW_IRON;
+    public static Block<?> OVERLAY_FLINT;
 
     public static Block<BlockLogic> MARBLE_POLISHED;
 
@@ -224,7 +223,6 @@ public class BonusBlocks {
         miningLevels.put(SLAB_BRICK_STEEL, 2);
 
 
-
         stoneToMossMap.put(SAPLING_OAK, BonusBlocks.SAPLING_OAK_MOSSY);
         stoneToMossMap.put(MOSS_STONE, BonusBlocks.MOSS);
         stoneToMossMap.put(MOSS_BASALT, BonusBlocks.MOSS);
@@ -247,7 +245,6 @@ public class BonusBlocks {
         LookupFuelFurnaceBlast.instance.addFuelEntry(SLAB_BRICK_OLIVINE.id(), 100);
 
     }
-
 
 
     public void initializeBlocks() {
@@ -348,7 +345,6 @@ public class BonusBlocks {
                 .setUseInternalLight()
                 .setVisualUpdateOnMetadata()
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE);
-
 
 
         /// Blocks
@@ -498,7 +494,7 @@ public class BonusBlocks {
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.8f))
                 .setHardness(0.8f)
                 .setResistance(5.0f)
-                .build("block.bone","block_bone", blockID("BLOCK_BONE"), b -> new BlockLogicAxisAligned(b, Material.stone));
+                .build("block.bone", "block_bone", blockID("BLOCK_BONE"), b -> new BlockLogicAxisAligned(b, Material.stone));
 
         // Cloth Block
         BLOCK_CLOTH = new BlockBuilder(MOD_ID)
@@ -507,7 +503,7 @@ public class BonusBlocks {
                 .setResistance(0.8f)
                 .setFlammability(30, 60)
                 .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.MINEABLE_BY_AXE)
-                .build("block.cloth","block_cloth", blockID("BLOCK_CLOTH"), BlockCloth::new);
+                .build("block.cloth", "block_cloth", blockID("BLOCK_CLOTH"), BlockCloth::new);
 
         // Slime Block
         BLOCK_SLIME = new BlockBuilder(MOD_ID)
@@ -516,7 +512,7 @@ public class BonusBlocks {
                 .setResistance(0.2f)
                 .setLightOpacity(6)
                 .setTags(BlockTags.MINEABLE_BY_AXE)
-                .build("block.slime","block_slime", blockID("BLOCK_SLIME"), BlockSlime::new);
+                .build("block.slime", "block_slime", blockID("BLOCK_SLIME"), BlockSlime::new);
 
         // Sulphur Block
         BLOCK_GUNPOWDER = new BlockBuilder(MOD_ID)
@@ -532,7 +528,7 @@ public class BonusBlocks {
                 .setHardness(0.3f)
                 .setResistance(0.3f)
                 .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.BROKEN_BY_FLUIDS)
-                .build("block.sugar","block_sugar", blockID("BLOCK_SUGAR"), BlockLogicSand::new);
+                .build("block.sugar", "block_sugar", blockID("BLOCK_SUGAR"), BlockLogicSand::new);
 
         // Leather Block
         BLOCK_LEATHER = new BlockBuilder(MOD_ID)
@@ -541,7 +537,7 @@ public class BonusBlocks {
                 .setResistance(0.8f)
                 .setFlammability(5, 10)
                 .setTags(BlockTags.MINEABLE_BY_AXE)
-                .build("block.leather","block_leather", blockID("BLOCK_LEATHER"), b -> new BlockLogic(b, Material.cloth));
+                .build("block.leather", "block_leather", blockID("BLOCK_LEATHER"), b -> new BlockLogic(b, Material.cloth));
 
         // Wicker Block
         BLOCK_WICKER = new BlockBuilder(MOD_ID)
@@ -550,12 +546,12 @@ public class BonusBlocks {
                 .setResistance(0.5f)
                 .setFlammability(60, 120)
                 .setTags(BlockTags.MINEABLE_BY_AXE)
-                .build("block.wicker","wicker", blockID("BLOCK_WICKER"), b -> new BlockLogic(b, Material.cloth));
+                .build("block.wicker", "wicker", blockID("BLOCK_WICKER"), b -> new BlockLogic(b, Material.cloth));
 
         // Flint Block
         BLOCK_FLINT = raw
                 .setInfiniburn()
-                .build("block.flint","block_flint", blockID("BLOCK_FLINT"), b -> new BlockLogic(b, Material.stone));
+                .build("block.flint", "block_flint", blockID("BLOCK_FLINT"), b -> new BlockLogic(b, Material.stone));
 
         // Raw Blocks
         BLOCK_RAW_IRON = raw
@@ -574,7 +570,6 @@ public class BonusBlocks {
                 .build("overlay.gold", "overlay_raw_gold", blockID("OVERLAY_RAW_GOLD"), BlockLogicOverlayNuggetsGold::new);
         OVERLAY_FLINT = pebble
                 .build("overlay.flint", "overlay_flint", blockID("OVERLAY_FLINT"), BlockLogicOverlayNuggetsFlint::new);
-
 
 
         // Polished Stones

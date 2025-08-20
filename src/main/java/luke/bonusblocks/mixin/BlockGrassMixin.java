@@ -12,12 +12,12 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
 import java.util.Random;
 
-@Mixin(value= BlockLogicGrass.class,remap=false)
+@Mixin(value = BlockLogicGrass.class, remap = false)
 public class BlockGrassMixin {
-    @ModifyVariable(method="updateTick",at=@At(value="LOAD"),name="idToSpawn")
+    @ModifyVariable(method = "updateTick", at = @At(value = "LOAD"), name = "idToSpawn")
     private int updateId(int id, World world, int x, int y, int z, Random rand) {
         if (!(id == Blocks.FLOWER_RED.id() && rand.nextInt(2) == 0)) return id;
-        Biome biome = world.getBlockBiome(x,y,z);
+        Biome biome = world.getBlockBiome(x, y, z);
         if (biome == Biomes.OVERWORLD_TAIGA ||
                 biome == Biomes.OVERWORLD_TUNDRA ||
                 biome == Biomes.OVERWORLD_GLACIER ||

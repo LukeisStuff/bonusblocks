@@ -27,8 +27,8 @@ public class BonusModels implements ModelEntrypoint {
         dispatcher.addDispatch(BonusBlocks.BRANCH, new BlockModelStandard<>(BonusBlocks.BRANCH)
                 .setAllTextures(0, "bonusblocks:block/branch"));
 
-        dispatcher.addDispatch(BonusBlocks.LEAVES_OAK_MOSSY, new BlockModelLeaves<>(BonusBlocks.LEAVES_OAK_MOSSY,"bonusblocks:block/leaves/leaves_oak_mossy", false));
-        dispatcher.addDispatch(BonusBlocks.LEAVES_JACARANDA, new BlockModelLeaves<>(BonusBlocks.LEAVES_JACARANDA,"bonusblocks:block/leaves/leaves_jacaranda", false));
+        dispatcher.addDispatch(BonusBlocks.LEAVES_OAK_MOSSY, new BlockModelLeaves<>(BonusBlocks.LEAVES_OAK_MOSSY, "bonusblocks:block/leaves/leaves_oak_mossy", false));
+        dispatcher.addDispatch(BonusBlocks.LEAVES_JACARANDA, new BlockModelLeaves<>(BonusBlocks.LEAVES_JACARANDA, "bonusblocks:block/leaves/leaves_jacaranda", false));
 
         dispatcher.addDispatch(BonusBlocks.SAPLING_OAK_MOSSY, new BlockModelCrossedSquares<>(BonusBlocks.SAPLING_OAK_MOSSY)
                 .setAllTextures(0, "bonusblocks:block/sapling/sapling_oak_mossy"));
@@ -283,8 +283,6 @@ public class BonusModels implements ModelEntrypoint {
                 .setTex(0, "bonusblocks:block/trapdoor/slate/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
 
 
-
-
         dispatcher.addDispatch(BonusBlocks.DOOR_GLASS_OBSIDIAN_BOTTOM, new BlockModelDoorGlass<>(BonusBlocks.DOOR_GLASS_OBSIDIAN_BOTTOM).onRenderLayer(1)
                 .setTex(0, "bonusblocks:block/door/glass_obsidian/frame", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/door/glass_obsidian/bottom", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
@@ -324,11 +322,6 @@ public class BonusModels implements ModelEntrypoint {
         dispatcher.addDispatch(BonusBlocks.TRAPDOOR_STEEL, new BlockModelTrapDoor<>(BonusBlocks.TRAPDOOR_STEEL)
                 .setTex(0, "bonusblocks:block/trapdoor/steel/top", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/trapdoor/steel/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
-
-
-
-
-
 
 
         //STAIRS

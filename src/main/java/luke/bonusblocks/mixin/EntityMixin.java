@@ -18,14 +18,15 @@ public class EntityMixin {
     public double prevY = y;
     @Unique
     public double deltaY;
-    @Inject(method = "baseTick()V", at = @At(value ="HEAD"))
-    public void tick(CallbackInfo ci){
+
+    @Inject(method = "baseTick()V", at = @At(value = "HEAD"))
+    public void tick(CallbackInfo ci) {
         deltaY = y - prevY;
         prevY = y;
     }
 
     @Redirect(method = "move(DDD)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/util/helper/MathHelper;floor(D)I", ordinal = 5))
-    public int extendBlockRange(double d){
-        return MathHelper.floor(((Entity)(Object)this).bb.minY + 0.001 + deltaY);
+    public int extendBlockRange(double d) {
+        return MathHelper.floor(((Entity) (Object) this).bb.minY + 0.001 + deltaY);
     }
 }

@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(value= BlockLogicDeadBush.class,remap=false)
+@Mixin(value = BlockLogicDeadBush.class, remap = false)
 public class BlockDeadBushMixin {
 
     @Inject(method = "mayPlaceOn", at = @At(value = "TAIL", target = "Lnet/minecraft/core/block/BlockDeadBush;canThisPlantGrowOnThisBlockID(I)Z"), cancellable = true)

@@ -37,17 +37,17 @@ public class BonusConfig {
 
         //BLOCK ID
         properties.addCategory(BlockIDs);
-        properties.addEntry(BlockIDs+".startingFrom", blockIDs);
-        List<Field> blockFields = Arrays.stream(BonusBlocks.class.getDeclaredFields()).filter((F)-> Block.class.isAssignableFrom(F.getType())).collect(Collectors.toList());
+        properties.addEntry(BlockIDs + ".startingFrom", blockIDs);
+        List<Field> blockFields = Arrays.stream(BonusBlocks.class.getDeclaredFields()).filter((F) -> Block.class.isAssignableFrom(F.getType())).collect(Collectors.toList());
         for (Field blockField : blockFields) {
             properties.addEntry(BlockIDs + "." + blockField.getName(), blockIDs++);
         }
         //ITEM ID
         properties.addCategory(ItemIDs);
-        properties.addEntry(ItemIDs+".startingFrom", itemIDs);
-        List<Field> itemFields = Arrays.stream(BonusItems.class.getDeclaredFields()).filter((F)-> Item.class.isAssignableFrom(F.getType())).collect(Collectors.toList());
+        properties.addEntry(ItemIDs + ".startingFrom", itemIDs);
+        List<Field> itemFields = Arrays.stream(BonusItems.class.getDeclaredFields()).filter((F) -> Item.class.isAssignableFrom(F.getType())).collect(Collectors.toList());
         for (Field itemField : itemFields) {
-            properties.addEntry(ItemIDs+ "." + itemField.getName(), itemIDs++);
+            properties.addEntry(ItemIDs + "." + itemField.getName(), itemIDs++);
         }
 
         cfg = new TomlConfigHandler(MOD_ID, properties);
@@ -55,7 +55,11 @@ public class BonusConfig {
         if (cfg.getConfigFile().exists()) {
             cfg.loadConfig();
         } else {
-            try {cfg.getConfigFile().createNewFile();} catch (IOException e) {throw new RuntimeException(e);}
+            try {
+                cfg.getConfigFile().createNewFile();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
             cfg.writeConfig();
         }
     }

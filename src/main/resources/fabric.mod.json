@@ -2,7 +2,6 @@
   "schemaVersion": 1,
   "id": "bonusblocks",
   "version": "${version}",
-
   "name": "Bonus Blocks",
   "description": "Adds in a plethora of new and useful blocks.",
   "authors": [
@@ -13,24 +12,22 @@
     "homepage": "",
     "sources": ""
   },
-
   "license": "CC0-1.0",
-
   "environment": "*",
   "entrypoints": {
     "main": [
       "luke.bonusblocks.BonusBlocksMod"
     ],
-    "beforeGameStart" : [
+    "beforeGameStart": [
       "luke.bonusblocks.BonusBlocksMod"
     ],
-    "beforeClientStart" : [
+    "beforeClientStart": [
       "luke.bonusblocks.BonusBlocksMod"
     ],
     "recipesReady": [
       "luke.bonusblocks.BonusRecipes"
     ],
-    "afterGameStart" : [
+    "afterGameStart": [
       "luke.bonusblocks.BonusBlocksMod"
     ],
     "initModels": [
@@ -40,7 +37,6 @@
   "mixins": [
     "bonusblocks.mixins.json"
   ],
-
   "depends": {
   },
   "suggests": {

@@ -34,7 +34,6 @@ public class BonusRecipes implements RecipeEntrypoint {
         templateItemtoBlock.addInput('X', Items.INGOT_STEEL_CRUDE).create("block_of_crude_steel", new ItemStack(Blocks.BLOCK_STEEL, 1));
 
 
-
         RecipeBuilderShaped templateBlocktoItem = new RecipeBuilderShaped(MOD_ID, "X");
         templateBlocktoItem.addInput('X', BonusBlocks.BLOCK_BONE).create("block_of_bone_to_bone", new ItemStack(Items.BONE, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.BLOCK_SLIME).create("block_of_slime_to_slime", new ItemStack(Items.SLIMEBALL, 9));
@@ -47,7 +46,6 @@ public class BonusRecipes implements RecipeEntrypoint {
         templateBlocktoItem.addInput('X', BonusBlocks.BLOCK_LEATHER).create("block_of_leather_to_leather", new ItemStack(Items.LEATHER, 9));
         templateBlocktoItem.addInput('X', BonusBlocks.BLOCK_STEEL).create("block_of_steel_to_steel", new ItemStack(Items.INGOT_STEEL, 9));
         templateBlocktoItem.addInput('X', Blocks.BLOCK_STEEL).create("block_of_crude_steel_to_crude_steel", new ItemStack(Items.INGOT_STEEL_CRUDE, 9));
-
 
 
         RecipeBuilder.Shaped(MOD_ID, "WS", "SW")
@@ -124,7 +122,6 @@ public class BonusRecipes implements RecipeEntrypoint {
         templateBricks.addInput('X', Items.OLIVINE).create("olivine_bricks", new ItemStack(BonusBlocks.BRICK_OLIVINE, 4));
         templateBricks.addInput('X', Blocks.SOULSAND).create("soulschist", new ItemStack(Blocks.SOULSCHIST, 4));
         templateBricks.addInput('X', Items.INGOT_STEEL).create("steel_bricks", new ItemStack(BonusBlocks.BRICK_STEEL, 4));
-
 
 
         templateBricks.addInput('X', Blocks.CACTUS).create("tatami", new ItemStack(BonusBlocks.TATAMI, 4));

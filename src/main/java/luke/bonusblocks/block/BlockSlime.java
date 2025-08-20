@@ -22,7 +22,7 @@ public class BlockSlime extends BlockLogicTransparent {
 
     public AABB getCollisionBoundingBoxFromPool(WorldSource world, int x, int y, int z) {
         float f = 0.125F;
-        return AABB.getPermanentBB(x + f, y + f, z + f, (float)(x + 1) - f, (float)(y + 1) - f, (float)(z + 1) - f);
+        return AABB.getPermanentBB(x + f, y + f, z + f, (float) (x + 1) - f, (float) (y + 1) - f, (float) (z + 1) - f);
     }
 
     public void onEntityCollidedWithBlock(World world, int x, int y, int z, Entity entity) {

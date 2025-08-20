@@ -1,6 +1,5 @@
 package luke.bonusblocks;
 
-import luke.bonusblocks.BonusBlocksMod;
 import luke.bonusblocks.biomes.BiomeDryland;
 import luke.bonusblocks.biomes.BiomeOvergrown;
 import net.minecraft.core.world.biome.Biome;
@@ -12,7 +11,7 @@ public class BonusBiomes {
 
 
     public void initializeBiomes() {
-        Biomes.register(BonusBlocksMod.MOD_ID+":overworld.overgrown.meadow", OVERWORLD_OVERGROWN_MEADOW);
-        Biomes.register(BonusBlocksMod.MOD_ID+":overworld.dryland", OVERWORLD_DRYLAND);
+        Biomes.register(BonusBlocksMod.MOD_ID + ":overworld.overgrown.meadow", OVERWORLD_OVERGROWN_MEADOW);
+        Biomes.register(BonusBlocksMod.MOD_ID + ":overworld.dryland", OVERWORLD_DRYLAND);
     }
 }

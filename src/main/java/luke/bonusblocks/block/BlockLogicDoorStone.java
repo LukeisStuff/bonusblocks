@@ -17,6 +17,7 @@ public class BlockLogicDoorStone extends BlockLogicDoor {
     public final boolean isTop;
     public final boolean requireTool;
     public final @Nullable Supplier<Item> droppedItem;
+
     public BlockLogicDoorStone(Block<?> block, boolean isTop, @Nullable Supplier<Item> droppedItem, Material material) {
         super(block, material, isTop, true, droppedItem);
         this.isTop = isTop;
@@ -39,7 +40,7 @@ public class BlockLogicDoorStone extends BlockLogicDoor {
         if (this.isTop) {
             Block<?> b;
             if ((b = Blocks.blocksList[world.getBlockId(x, y - 1, z)]) != null && b.getLogic() instanceof BlockLogicDoor) {
-                ((BlockLogicDoor)b.getLogic()).onPoweredBlockChange(world, x, y - 1, z, isPowered);
+                ((BlockLogicDoor) b.getLogic()).onPoweredBlockChange(world, x, y - 1, z, isPowered);
             }
 
         } else {
@@ -76,7 +77,7 @@ public class BlockLogicDoorStone extends BlockLogicDoor {
             }
 
             if (!world.canPlaceOnSurfaceOfBlock(x, y - 1, z)) {
-                this.dropBlockWithCause(world, EnumDropCause.WORLD, x, y, z, world.getBlockMetadata(x, y, z), (TileEntity)null, (Player)null);
+                this.dropBlockWithCause(world, EnumDropCause.WORLD, x, y, z, world.getBlockMetadata(x, y, z), (TileEntity) null, (Player) null);
                 world.setBlockWithNotify(x, y, z, 0);
                 flag = true;
                 if (otherBlock != null && otherBlock.getLogic() instanceof BlockLogicDoor) {

@@ -8,13 +8,13 @@ import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
 
 public class BonusItems {
 
-    public static int itemID =  BonusConfig.blockIDs;
+    public static int itemID = BonusConfig.blockIDs;
 
     public static int itemID(String itemName) {
         try {
-            return BonusConfig.cfg.getInt(BonusConfig.ItemIDs+"."+ itemName);
-        }catch (NullPointerException e) {
-            BonusConfig.properties.addEntry(BonusConfig.ItemIDs+"."+ itemName, itemID);
+            return BonusConfig.cfg.getInt(BonusConfig.ItemIDs + "." + itemName);
+        } catch (NullPointerException e) {
+            BonusConfig.properties.addEntry(BonusConfig.ItemIDs + "." + itemName, itemID);
             return itemID++;
         }
     }

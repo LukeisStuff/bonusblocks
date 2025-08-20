@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(value= BlockLogicWireRedstone.class,remap=false)
+@Mixin(value = BlockLogicWireRedstone.class, remap = false)
 public class BlockLogicWireRedstoneMixin {
     @Inject(method = "shouldConnectTo", at = @At(value = "TAIL", target = "Lnet/minecraft/core/block/BlockLogicWireRedstone;shouldConnectTo(Lnet/minecraft/core/world/WorldSource;IIII)Z"), cancellable = true)
     private static void shouldConnectTo(WorldSource worldSource, int x, int y, int z, int data, CallbackInfoReturnable<Boolean> cir) {

@@ -19,15 +19,14 @@ public class BlockCloth extends BlockLogic {
     public void onEntityCollidedWithBlock(World world, int x, int y, int z, Entity entity) {
         if (entity.isSneaking() && entity.yd < 0.0) {
             entity.yd = 0.0;
-        }
-        else if (entity.yd < 0.0D) {
+        } else if (entity.yd < 0.0D) {
             world.playBlockSoundEffect(null, x, y, z, BonusBlocks.BLOCK_CLOTH, EnumBlockSoundEffectType.ENTITY_LAND);
             entity.yd = -entity.yd;
             entity.fallDistance = 0;
         }
     }
 
-    public AABB getCollisionBoundingBoxFromPool(WorldSource world, int x, int y, int z){
-        return AABB.getPermanentBB(x, y, z, (x + 1), y+.9f, (z + 1));
+    public AABB getCollisionBoundingBoxFromPool(WorldSource world, int x, int y, int z) {
+        return AABB.getPermanentBB(x, y, z, (x + 1), y + .9f, (z + 1));
     }
 }
