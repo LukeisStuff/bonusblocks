@@ -37,9 +37,9 @@ public class BlockLogicSulphur extends BlockLogicSand {
     }
 
     public void ignite(World world, int x, int y, int z, Player player) {
-            world.setBlockWithNotify(x, y, z, 0);
-            world.createExplosion(null, x, y, z, 3.0f, true, false);
-            world.playSoundEffect(null, SoundCategory.WORLD_SOUNDS, x, y, z, "random.fuse", 1.0F, 1.0F);
+        world.setBlockWithNotify(x, y, z, 0);
+        world.createExplosion(null, x, y, z, 3.0f, true, false);
+        world.playSoundEffect(null, SoundCategory.WORLD_SOUNDS, x, y, z, "random.fuse", 1.0F, 1.0F);
 
         if (player != null && player.inventory.getCurrentItem() != null && player.inventory.getCurrentItem().getItem() instanceof ItemFireStriker) {
             player.inventory.getCurrentItem().damageItem(1, player);

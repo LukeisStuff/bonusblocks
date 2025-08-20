@@ -593,7 +593,7 @@ public class BonusBlocks {
 
         // Glass
         GLASS_OBSIDIAN = obsidian
-                .build("glass.obsidian", "glass_obsidian", blockID("GLASS_OBSIDIAN"), BlockLogicGlassObsidian::new);
+                .build("glass.obsidian", "glass_obsidian", blockID("GLASS_OBSIDIAN"), b -> new BlockLogicGlass(b, Material.glass));
 
         GLASS_QUARTZ = new BlockBuilder(MOD_ID)
                 .setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
@@ -602,7 +602,7 @@ public class BonusBlocks {
                 .setVisualUpdateOnMetadata()
                 .setUseInternalLight()
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-                .build("glass.quartz", "glass_quartz", blockID("GLASS_QUARTZ"), BlockLogicGlassQuartz::new);
+                .build("glass.quartz", "glass_quartz", blockID("GLASS_QUARTZ"), b -> new BlockLogicGlass(b, Material.glass));
 
 
         // Bricks
