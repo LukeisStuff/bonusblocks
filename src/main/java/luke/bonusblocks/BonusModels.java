@@ -294,17 +294,17 @@ public class BonusModels implements ModelEntrypoint {
         dispatcher.addDispatch(BonusBlocks.DOOR_GLASS_QUARTZ_TOP, new BlockModelDoorGlass<>(BonusBlocks.DOOR_GLASS_QUARTZ_TOP)
                 .setTex(0, "bonusblocks:block/door/glass_quartz/frame", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/door/glass_quartz/top", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
-        dispatcher.addDispatch(BonusBlocks.DOOR_GLASS_STEEL_BOTTOM, new BlockModelDoorGlass<>(BonusBlocks.DOOR_GLASS_STEEL_BOTTOM)
+        dispatcher.addDispatch(BonusBlocks.DOOR_GLASS_STEEL_BOTTOM, new BlockModelDoor<>(BonusBlocks.DOOR_GLASS_STEEL_BOTTOM)
                 .setTex(0, "bonusblocks:block/door/glass_steel/frame", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/door/glass_steel/bottom", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
-        dispatcher.addDispatch(BonusBlocks.DOOR_GLASS_STEEL_TOP, new BlockModelDoorGlass<>(BonusBlocks.DOOR_GLASS_STEEL_TOP)
+        dispatcher.addDispatch(BonusBlocks.DOOR_GLASS_STEEL_TOP, new BlockModelDoor<>(BonusBlocks.DOOR_GLASS_STEEL_TOP)
                 .setTex(0, "bonusblocks:block/door/glass_steel/frame", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/door/glass_steel/top", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
 
-        dispatcher.addDispatch(BonusBlocks.DOOR_STEEL_BOTTOM, new BlockModelDoorGlass<>(BonusBlocks.DOOR_STEEL_BOTTOM)
+        dispatcher.addDispatch(BonusBlocks.DOOR_STEEL_BOTTOM, new BlockModelDoor<>(BonusBlocks.DOOR_STEEL_BOTTOM)
                 .setTex(0, "bonusblocks:block/door/steel/frame", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/door/steel/bottom", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
-        dispatcher.addDispatch(BonusBlocks.DOOR_STEEL_TOP, new BlockModelDoorGlass<>(BonusBlocks.DOOR_STEEL_TOP)
+        dispatcher.addDispatch(BonusBlocks.DOOR_STEEL_TOP, new BlockModelDoor<>(BonusBlocks.DOOR_STEEL_TOP)
                 .setTex(0, "bonusblocks:block/door/steel/frame", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/door/steel/top", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
 
