@@ -211,6 +211,7 @@ public class BonusBlocks {
                 .setHardness(0.2F)
                 .setResistance(0.2F)
                 .setFlammability(30, 60)
+                .setLightOpacity(1)
                 .setTickOnLoad()
                 .setVisualUpdateOnMetadata()
                 .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_HOE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS, BlockTags.SHEARS_DO_SILK_TOUCH);
