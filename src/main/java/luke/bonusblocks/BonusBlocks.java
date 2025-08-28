@@ -418,13 +418,13 @@ public class BonusBlocks {
 
         // Flowers
         FLOWER_SILVER = flower
-                .build("flower.silver", "flower_silver", blockID("FLOWER_SILVER"), BlockLogicFlowerStackable::new);
+                .build("flower.silver", "flower_silver", blockID("FLOWER_SILVER"), b -> (BlockLogicFlowerStackable) new BlockLogicFlowerStackable(b).setBonemealable().setKilledByWeather());
         FLOWER_CYAN = flower
-                .build("flower.cyan", "flower_cyan", blockID("FLOWER_CYAN"), BlockLogicFlowerStackable::new);
+                .build("flower.cyan", "flower_cyan", blockID("FLOWER_CYAN"), b -> (BlockLogicFlowerStackable) new BlockLogicFlowerStackable(b).setBonemealable().setKilledByWeather());
         FLOWER_MAGENTA = flower
-                .build("flower.magenta", "flower_magenta", blockID("FLOWER_MAGENTA"), BlockLogicFlowerStackable::new);
+                .build("flower.magenta", "flower_magenta", blockID("FLOWER_MAGENTA"), b -> (BlockLogicFlowerStackable) new BlockLogicFlowerStackable(b).setBonemealable().setKilledByWeather());
         FLOWER_LIME = flower
-                .build("flower.lime", "flower_lime", blockID("FLOWER_LIME"), BlockLogicFlowerStackable::new);
+                .build("flower.lime", "flower_lime", blockID("FLOWER_LIME"), b -> (BlockLogicFlowerStackable) new BlockLogicFlowerStackable(b).setBonemealable().setKilledByWeather());
 
         // Petals
         PETAL_YELLOW = petal
