@@ -11,7 +11,6 @@ import net.minecraft.client.render.colorizer.Colorizers;
 import net.minecraft.client.render.item.model.ItemModelDispatcher;
 import net.minecraft.client.render.item.model.ItemModelStandard;
 import net.minecraft.client.render.texture.stitcher.TextureRegistry;
-import net.minecraft.core.block.Blocks;
 import net.minecraft.core.util.helper.Side;
 import turniplabs.halplibe.helper.ModelHelper;
 import turniplabs.halplibe.util.ModelEntrypoint;
@@ -368,9 +367,6 @@ public class BonusModels implements ModelEntrypoint {
         dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_STEEL, null).setIcon("bonusblocks:item/door_steel"));
 
         dispatcher.addDispatch(new ItemModelStandard(BonusBlocks.CANDLE_SOULWAX.asItem(), null).setIcon("bonusblocks:item/candle_soulwax").setFullBright());
-
-        dispatcher.addDispatch(new ItemModelStandard(Blocks.PUMPKIN.asItem(), null).setIcon("bonusblocks:item/candle_soulwax").setFullBright());
-
 
     }
 
