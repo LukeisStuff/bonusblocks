@@ -33,15 +33,7 @@ public class BlockLogicSoulCandle extends BlockLogicCandle {
     }
 
     public void onBlockAdded(World world, int i, int j, int k) {
-        if (world.isBlockNormalCube(i - 1, j, k)) {
-            world.setBlockMetadataWithNotify(i, j, k, 0);
-        } else if (world.isBlockNormalCube(i + 1, j, k)) {
-            world.setBlockMetadataWithNotify(i, j, k, 0);
-        } else if (world.isBlockNormalCube(i, j, k - 1)) {
-            world.setBlockMetadataWithNotify(i, j, k, 0);
-        } else if (world.isBlockNormalCube(i, j, k + 1)) {
-            world.setBlockMetadataWithNotify(i, j, k, 0);
-        } else if (this.canPlaceOnTop(world, i, j - 1, k)) {
+        if (this.canPlaceOnTop(world, i, j - 1, k)) {
             world.setBlockMetadataWithNotify(i, j, k, 0);
         }
 

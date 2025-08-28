@@ -3,9 +3,7 @@ package luke.bonusblocks.block;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLogicDoor;
 import net.minecraft.core.block.Blocks;
-import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
-import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.world.World;
@@ -77,7 +75,7 @@ public class BlockLogicDoorStone extends BlockLogicDoor {
             }
 
             if (!world.canPlaceOnSurfaceOfBlock(x, y - 1, z)) {
-                this.dropBlockWithCause(world, EnumDropCause.WORLD, x, y, z, world.getBlockMetadata(x, y, z), (TileEntity) null, (Player) null);
+                this.dropBlockWithCause(world, EnumDropCause.WORLD, x, y, z, world.getBlockMetadata(x, y, z), null, null);
                 world.setBlockWithNotify(x, y, z, 0);
                 flag = true;
                 if (otherBlock != null && otherBlock.getLogic() instanceof BlockLogicDoor) {
