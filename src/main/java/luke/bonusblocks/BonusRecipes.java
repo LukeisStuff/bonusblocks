@@ -13,39 +13,43 @@ import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
 public class BonusRecipes implements RecipeEntrypoint {
 
     public void initializeRecipes() {
-        RecipeBuilderShaped templateLogtoPlank = new RecipeBuilderShaped(MOD_ID, "X");
-        templateLogtoPlank.addInput('X', BonusBlocks.LOG_JACARANDA).create("log_jacaranda_to_planks", new ItemStack(Blocks.PLANKS_OAK_PAINTED, 4, 10));
-        templateLogtoPlank.addInput('X', BonusBlocks.LOG_SCORCHED).create("log_scorched_to_planks", new ItemStack(Blocks.PLANKS_OAK_PAINTED, 4, 15));
-        templateLogtoPlank.addInput('X', BonusBlocks.LOG_SHRUB).create("log_shrub_to_planks", new ItemStack(Blocks.PLANKS_OAK_PAINTED, 4, 8));
-        templateLogtoPlank.addInput('X', BonusBlocks.LOG_CACAO).create("log_cacao_to_planks", new ItemStack(Blocks.PLANKS_OAK_PAINTED, 4, 5));
+        RecipeBuilderShaped logToPlanks = new RecipeBuilderShaped(MOD_ID, "X");
+        logToPlanks.addInput('X', BonusBlocks.LOG_JACARANDA).create("log_jacaranda_to_planks", new ItemStack(Blocks.PLANKS_OAK_PAINTED, 4, 10));
+        logToPlanks.addInput('X', BonusBlocks.LOG_SCORCHED).create("log_scorched_to_planks", new ItemStack(Blocks.PLANKS_OAK_PAINTED, 4, 15));
+        logToPlanks.addInput('X', BonusBlocks.LOG_SHRUB).create("log_shrub_to_planks", new ItemStack(Blocks.PLANKS_OAK_PAINTED, 4, 8));
+        logToPlanks.addInput('X', BonusBlocks.LOG_CACAO).create("log_cacao_to_planks", new ItemStack(Blocks.PLANKS_OAK_PAINTED, 4, 5));
 
-        RecipeBuilderShaped templateItemtoBlock = new RecipeBuilderShaped(MOD_ID, "XXX", "XXX", "XXX");
-        templateItemtoBlock.addInput('X', Items.BONE).create("block_of_bone", new ItemStack(BonusBlocks.BLOCK_BONE, 1));
-        templateItemtoBlock.addInput('X', new ItemStack(Items.DYE, 1, 15)).create("skull", new ItemStack(BonusBlocks.SKULL, 1));
-        templateItemtoBlock.addInput('X', Items.SLIMEBALL).create("block_of_slime", new ItemStack(BonusBlocks.BLOCK_SLIME, 1));
-        templateItemtoBlock.addInput('X', Items.SULPHUR).create("block_of_sulphur", new ItemStack(BonusBlocks.BLOCK_GUNPOWDER, 1));
-        templateItemtoBlock.addInput('X', Items.DUST_SUGAR).create("block_of_sugar", new ItemStack(BonusBlocks.BLOCK_SUGAR, 1));
-        templateItemtoBlock.addInput('X', Items.CLOTH).create("block_of_cloth", new ItemStack(BonusBlocks.BLOCK_CLOTH, 1));
-        templateItemtoBlock.addInput('X', Items.FLINT).create("block_of_flint", new ItemStack(BonusBlocks.BLOCK_FLINT, 1));
-        templateItemtoBlock.addInput('X', Items.ORE_RAW_GOLD).create("block_of_raw_gold", new ItemStack(BonusBlocks.BLOCK_RAW_GOLD, 1));
-        templateItemtoBlock.addInput('X', Items.ORE_RAW_IRON).create("block_of_raw_iron", new ItemStack(BonusBlocks.BLOCK_RAW_IRON, 1));
-        templateItemtoBlock.addInput('X', Items.LEATHER).create("block_of_leather", new ItemStack(BonusBlocks.BLOCK_LEATHER, 1));
-        templateItemtoBlock.addInput('X', Items.INGOT_STEEL).create("block_of_steel", new ItemStack(BonusBlocks.BLOCK_STEEL, 1));
-        templateItemtoBlock.addInput('X', Items.INGOT_STEEL_CRUDE).create("block_of_crude_steel", new ItemStack(Blocks.BLOCK_STEEL, 1));
+        RecipeBuilderShaped itemToBlock = new RecipeBuilderShaped(MOD_ID, "XXX", "XXX", "XXX");
+        itemToBlock.addInput('X', Items.BONE).create("block_of_bone", new ItemStack(BonusBlocks.BLOCK_BONE, 1));
+        itemToBlock.addInput('X', new ItemStack(Items.DYE, 1, 15)).create("skull", new ItemStack(BonusBlocks.SKULL, 1));
+        itemToBlock.addInput('X', Items.SLIMEBALL).create("block_of_slime", new ItemStack(BonusBlocks.BLOCK_SLIME, 1));
+        itemToBlock.addInput('X', Items.SULPHUR).create("block_of_sulphur", new ItemStack(BonusBlocks.BLOCK_GUNPOWDER, 1));
+        itemToBlock.addInput('X', Items.DUST_SUGAR).create("block_of_sugar", new ItemStack(BonusBlocks.BLOCK_SUGAR, 1));
+        itemToBlock.addInput('X', Items.CLOTH).create("block_of_cloth", new ItemStack(BonusBlocks.BLOCK_CLOTH, 1));
+        itemToBlock.addInput('X', Items.FLINT).create("block_of_flint", new ItemStack(BonusBlocks.BLOCK_FLINT, 1));
+        itemToBlock.addInput('X', Items.ORE_RAW_GOLD).create("block_of_raw_gold", new ItemStack(BonusBlocks.BLOCK_RAW_GOLD, 1));
+        itemToBlock.addInput('X', Items.ORE_RAW_IRON).create("block_of_raw_iron", new ItemStack(BonusBlocks.BLOCK_RAW_IRON, 1));
+        itemToBlock.addInput('X', Items.LEATHER).create("block_of_leather", new ItemStack(BonusBlocks.BLOCK_LEATHER, 1));
+        itemToBlock.addInput('X', Items.INGOT_STEEL).create("block_of_steel", new ItemStack(BonusBlocks.BLOCK_STEEL, 1));
+        itemToBlock.addInput('X', Items.INGOT_STEEL_CRUDE).create("block_of_crude_steel", new ItemStack(Blocks.BLOCK_STEEL, 1));
 
 
-        RecipeBuilderShaped templateBlocktoItem = new RecipeBuilderShaped(MOD_ID, "X");
-        templateBlocktoItem.addInput('X', BonusBlocks.BLOCK_BONE).create("block_of_bone_to_bone", new ItemStack(Items.BONE, 9));
-        templateBlocktoItem.addInput('X', BonusBlocks.BLOCK_SLIME).create("block_of_slime_to_slime", new ItemStack(Items.SLIMEBALL, 9));
-        templateBlocktoItem.addInput('X', BonusBlocks.BLOCK_GUNPOWDER).create("block_of_sulphur_to_sulphur", new ItemStack(Items.SULPHUR, 9));
-        templateBlocktoItem.addInput('X', BonusBlocks.BLOCK_SUGAR).create("block_of_sugar_to_sugar", new ItemStack(Items.DUST_SUGAR, 9));
-        templateBlocktoItem.addInput('X', BonusBlocks.BLOCK_CLOTH).create("block_of_cloth_to_cloth", new ItemStack(Items.CLOTH, 9));
-        templateBlocktoItem.addInput('X', BonusBlocks.BLOCK_FLINT).create("block_of_flint_to_flint", new ItemStack(Items.FLINT, 9));
-        templateBlocktoItem.addInput('X', BonusBlocks.BLOCK_RAW_GOLD).create("block_of_raw_gold_to_raw_gold", new ItemStack(Items.ORE_RAW_GOLD, 9));
-        templateBlocktoItem.addInput('X', BonusBlocks.BLOCK_RAW_IRON).create("block_of_raw_iron_to_raw_iron", new ItemStack(Items.ORE_RAW_IRON, 9));
-        templateBlocktoItem.addInput('X', BonusBlocks.BLOCK_LEATHER).create("block_of_leather_to_leather", new ItemStack(Items.LEATHER, 9));
-        templateBlocktoItem.addInput('X', BonusBlocks.BLOCK_STEEL).create("block_of_steel_to_steel", new ItemStack(Items.INGOT_STEEL, 9));
-        templateBlocktoItem.addInput('X', Blocks.BLOCK_STEEL).create("block_of_crude_steel_to_crude_steel", new ItemStack(Items.INGOT_STEEL_CRUDE, 9));
+        RecipeBuilderShaped blockToItem = new RecipeBuilderShaped(MOD_ID, "X");
+        blockToItem.addInput('X', BonusBlocks.BLOCK_BONE).create("block_of_bone_to_bone", new ItemStack(Items.BONE, 9));
+        blockToItem.addInput('X', BonusBlocks.BLOCK_SLIME).create("block_of_slime_to_slime", new ItemStack(Items.SLIMEBALL, 9));
+        blockToItem.addInput('X', BonusBlocks.BLOCK_GUNPOWDER).create("block_of_sulphur_to_sulphur", new ItemStack(Items.SULPHUR, 9));
+        blockToItem.addInput('X', BonusBlocks.BLOCK_SUGAR).create("block_of_sugar_to_sugar", new ItemStack(Items.DUST_SUGAR, 9));
+        blockToItem.addInput('X', BonusBlocks.BLOCK_CLOTH).create("block_of_cloth_to_cloth", new ItemStack(Items.CLOTH, 9));
+        blockToItem.addInput('X', BonusBlocks.BLOCK_FLINT).create("block_of_flint_to_flint", new ItemStack(Items.FLINT, 9));
+        blockToItem.addInput('X', BonusBlocks.BLOCK_RAW_GOLD).create("block_of_raw_gold_to_raw_gold", new ItemStack(Items.ORE_RAW_GOLD, 9));
+        blockToItem.addInput('X', BonusBlocks.BLOCK_RAW_IRON).create("block_of_raw_iron_to_raw_iron", new ItemStack(Items.ORE_RAW_IRON, 9));
+        blockToItem.addInput('X', BonusBlocks.BLOCK_LEATHER).create("block_of_leather_to_leather", new ItemStack(Items.LEATHER, 9));
+        blockToItem.addInput('X', BonusBlocks.BLOCK_STEEL).create("block_of_steel_to_steel", new ItemStack(Items.INGOT_STEEL, 9));
+        blockToItem.addInput('X', Blocks.BLOCK_STEEL).create("block_of_crude_steel_to_crude_steel", new ItemStack(Items.INGOT_STEEL_CRUDE, 9));
+
+        RecipeBuilder.Shaped(MOD_ID, "S", "S")
+                .addInput('S', BonusBlocks.LOG_SCORCHED)
+                .create("scorched_log_to_charcoal", new ItemStack(Items.COAL, 2, 1));
 
 
         RecipeBuilder.Shaped(MOD_ID, "WS", "SW")
@@ -139,6 +143,8 @@ public class BonusRecipes implements RecipeEntrypoint {
         RecipeBuilder.ModifyBlastFurnace("minecraft").removeRecipe("cobble_stone_to_slate");
         RecipeBuilder.ModifyBlastFurnace("minecraft").removeRecipe("cobble_granite_to_quartz");
         RecipeBuilder.ModifyBlastFurnace("minecraft").removeRecipe("cobble_limestone_to_marble");
+
+        RecipeBuilder.ModifyBlastFurnace("minecraft").removeRecipe("logs_to_charcoal");
 
         RecipeBuilder.ModifyWorkbench("minecraft").removeRecipe("block_of_steel");
         RecipeBuilder.ModifyWorkbench("minecraft").removeRecipe("block_of_steel_to_steel_ingot");
@@ -382,6 +388,10 @@ public class BonusRecipes implements RecipeEntrypoint {
         RecipeBuilder.BlastFurnace(MOD_ID)
                 .setInput(Blocks.GRANITE)
                 .create("granite_to_quartz", Items.QUARTZ.getDefaultStack());
+
+        RecipeBuilder.BlastFurnace(MOD_ID)
+                .setInput("minecraft:logs")
+                .create("logs_to_scorched_logs", BonusBlocks.LOG_SCORCHED.getDefaultStack());
 
         RecipeBuilder.initNameSpace(MOD_ID);
 

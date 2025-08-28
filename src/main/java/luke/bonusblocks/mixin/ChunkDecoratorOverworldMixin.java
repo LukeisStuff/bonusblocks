@@ -43,7 +43,7 @@ public class ChunkDecoratorOverworldMixin {
             }
         }
         if (biome == Biomes.OVERWORLD_OUTBACK || biome == Biomes.OVERWORLD_OUTBACK_GRASSY || biome == Biomes.OVERWORLD_SWAMPLAND_MUDDY || biome == Biomes.OVERWORLD_SWAMPLAND ||
-                biome == Biomes.OVERWORLD_RAINFOREST || biome == Biomes.OVERWORLD_CAATINGA || biome == Biomes.OVERWORLD_CAATINGA_PLAINS || biome == BonusBiomes.OVERWORLD_DRYLAND || biome == BonusBiomes.OVERWORLD_OVERGROWN_MEADOW) {
+                biome == Biomes.OVERWORLD_RAINFOREST || biome == Biomes.OVERWORLD_CAATINGA || biome == Biomes.OVERWORLD_CAATINGA_PLAINS || biome == BonusBiomes.OVERWORLD_OVERGROWN_MEADOW) {
             if ((rand.nextInt(8) == 0)) {
                 int xf = x + rand.nextInt(16) + 8;
                 int zf = z + rand.nextInt(16) + 8;
@@ -61,7 +61,7 @@ public class ChunkDecoratorOverworldMixin {
         }
 
 
-        if (biome == BonusBiomes.OVERWORLD_DRYLAND || biome == BonusBiomes.OVERWORLD_OVERGROWN_MEADOW) {
+        if (biome == BonusBiomes.OVERWORLD_OVERGROWN_MEADOW) {
             if ((rand.nextInt(8) == 0)) {
                 int xf = x + rand.nextInt(16) + 8;
                 int zf = z + rand.nextInt(16) + 8;
@@ -69,7 +69,7 @@ public class ChunkDecoratorOverworldMixin {
                 new WorldFeatureTallGrass(Blocks.TALLGRASS.id()).place(world, rand, xf, yf, zf);
             }
         }
-        if (biome == BonusBiomes.OVERWORLD_DRYLAND || biome == BonusBiomes.OVERWORLD_OVERGROWN_MEADOW) {
+        if (biome == BonusBiomes.OVERWORLD_OVERGROWN_MEADOW) {
             if ((rand.nextInt(8) == 0)) {
                 int xf = x + rand.nextInt(16) + 8;
                 int zf = z + rand.nextInt(16) + 8;

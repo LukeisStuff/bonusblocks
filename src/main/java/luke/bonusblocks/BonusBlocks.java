@@ -231,7 +231,7 @@ public class BonusBlocks {
 
 
         LookupFuelFurnace.instance.addFuelEntry(LOG_JACARANDA.id(), 300);
-        LookupFuelFurnace.instance.addFuelEntry(LOG_SCORCHED.id(), 300);
+        LookupFuelFurnace.instance.addFuelEntry(LOG_SCORCHED.id(), 1600);
         LookupFuelFurnace.instance.addFuelEntry(LOG_CACAO.id(), 300);
         LookupFuelFurnace.instance.addFuelEntry(LOG_SHRUB.id(), 300);
 
