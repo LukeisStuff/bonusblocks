@@ -5,16 +5,12 @@ import luke.bonusblocks.block.blockmodel.ItemBlockSlabWool;
 import net.minecraft.core.block.*;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
-import net.minecraft.core.crafting.LookupFuelFurnace;
-import net.minecraft.core.crafting.LookupFuelFurnaceBlast;
 import net.minecraft.core.item.block.ItemBlockStairsPainted;
 import net.minecraft.core.sound.BlockSound;
 import turniplabs.halplibe.helper.BlockBuilder;
 
 import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
-import static net.minecraft.core.block.BlockLogicMoss.stoneToMossMap;
 import static net.minecraft.core.block.Blocks.*;
-import static net.minecraft.core.item.tool.ItemToolPickaxe.miningLevels;
 
 public class BonusBlocks {
 
@@ -206,45 +202,6 @@ public class BonusBlocks {
     public static Block<BlockLogicFenceThin> FENCE_GOLD;
 
     public static Block<BlockLogic> TATAMI;
-
-
-    public void initializeBlockDetails() {
-        miningLevels.put(BLOCK_RAW_IRON, 1);
-
-
-        miningLevels.put(BLOCK_RAW_GOLD, 2);
-        miningLevels.put(FENCE_GOLD, 2);
-        miningLevels.put(BLOCK_STEEL, 2);
-        miningLevels.put(BRICK_STEEL, 2);
-        miningLevels.put(TRAPDOOR_STEEL, 2);
-        miningLevels.put(DOOR_STEEL_BOTTOM, 2);
-        miningLevels.put(DOOR_STEEL_TOP, 2);
-        miningLevels.put(STAIRS_BRICK_STEEL, 2);
-        miningLevels.put(SLAB_BRICK_STEEL, 2);
-
-
-        stoneToMossMap.put(SAPLING_OAK, BonusBlocks.SAPLING_OAK_MOSSY);
-        stoneToMossMap.put(MOSS_STONE, BonusBlocks.MOSS);
-        stoneToMossMap.put(MOSS_BASALT, BonusBlocks.MOSS);
-        stoneToMossMap.put(MOSS_LIMESTONE, BonusBlocks.MOSS);
-        stoneToMossMap.put(MOSS_GRANITE, BonusBlocks.MOSS);
-
-
-        LookupFuelFurnace.instance.addFuelEntry(LOG_JACARANDA.id(), 300);
-        LookupFuelFurnace.instance.addFuelEntry(LOG_SCORCHED.id(), 1600);
-        LookupFuelFurnace.instance.addFuelEntry(LOG_CACAO.id(), 300);
-        LookupFuelFurnace.instance.addFuelEntry(LOG_SHRUB.id(), 300);
-
-        LookupFuelFurnace.instance.addFuelEntry(BOOKSHELF_EMPTY_PLANKS_OAK.id(), 300);
-        LookupFuelFurnace.instance.addFuelEntry(BRANCH.id(), 300);
-        LookupFuelFurnace.instance.addFuelEntry(SAPLING_JACARANDA.id(), 100);
-        LookupFuelFurnace.instance.addFuelEntry(SAPLING_OAK_MOSSY.id(), 100);
-
-        LookupFuelFurnaceBlast.instance.addFuelEntry(BRICK_OLIVINE.id(), 200);
-        LookupFuelFurnaceBlast.instance.addFuelEntry(STAIRS_BRICK_OLIVINE.id(), 200);
-        LookupFuelFurnaceBlast.instance.addFuelEntry(SLAB_BRICK_OLIVINE.id(), 100);
-
-    }
 
 
     public void initializeBlocks() {
@@ -906,6 +863,8 @@ public class BonusBlocks {
                 .setUseInternalLight()
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE)
                 .build("trapdoor.steel", "trapdoor_steel", blockID("TRAPDOOR_STEEL"), b -> new BlockLogicTrapDoor(b, Material.steel));
+
+        new BonusBlockDetails().initializeBlockDetails();
 
     }
 }
