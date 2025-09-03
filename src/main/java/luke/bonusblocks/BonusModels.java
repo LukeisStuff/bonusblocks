@@ -129,6 +129,10 @@ public class BonusModels implements ModelEntrypoint {
                 .setAllTextures(0, "bonusblocks:block/block_gold_raw"));
         dispatcher.addDispatch(BonusBlocks.BLOCK_STEEL, new BlockModelStandard<>(BonusBlocks.BLOCK_STEEL)
                 .setAllTextures(0, "bonusblocks:block/block_steel"));
+        dispatcher.addDispatch(BonusBlocks.BLOCK_VERDIGRIS, new BlockModelStandard<>(BonusBlocks.BLOCK_VERDIGRIS)
+                .setAllTextures(0, "bonusblocks:block/block_verdigris"));
+        dispatcher.addDispatch(BonusBlocks.BLOCK_VERDIGRIS_SHINE, new BlockModelStandard<>(BonusBlocks.BLOCK_VERDIGRIS_SHINE)
+                .setAllTextures(0, "bonusblocks:block/block_verdigris_shine"));
 
         dispatcher.addDispatch(BonusBlocks.OVERLAY_RAW_IRON, new BlockModelNuggetsIron<>(BonusBlocks.OVERLAY_RAW_IRON));
         dispatcher.addDispatch(BonusBlocks.OVERLAY_RAW_GOLD, new BlockModelNuggetsGold<>(BonusBlocks.OVERLAY_RAW_IRON));
@@ -163,6 +167,13 @@ public class BonusModels implements ModelEntrypoint {
                 .setAllTextures(0, "bonusblocks:block/brick_clay_baked"));
         dispatcher.addDispatch(BonusBlocks.BRICK_STEEL, new BlockModelStandard<>(BonusBlocks.BRICK_STEEL)
                 .setAllTextures(0, "bonusblocks:block/brick_steel"));
+        dispatcher.addDispatch(BonusBlocks.BRICK_VERDIGRIS, new BlockModelStandard<>(BonusBlocks.BRICK_VERDIGRIS)
+                .setAllTextures(0, "bonusblocks:block/brick_verdigris"));
+        dispatcher.addDispatch(BonusBlocks.BRICK_VERDIGRIS_SHINE, new BlockModelStandard<>(BonusBlocks.BRICK_VERDIGRIS_SHINE)
+                .setAllTextures(0, "bonusblocks:block/brick_verdigris_shine"));
+
+        dispatcher.addDispatch(BonusBlocks.ORE_VERDIGRIS_NETHERRACK, new BlockModelStandard<>(BonusBlocks.ORE_VERDIGRIS_NETHERRACK)
+                .setAllTextures(0, "bonusblocks:block/ore/verdigris/netherrack"));
 
         dispatcher.addDispatch(BonusBlocks.DIRT_BAKED, new BlockModelStandard<>(BonusBlocks.DIRT_BAKED)
                 .setAllTextures(0, "bonusblocks:block/dirt_baked"));
@@ -352,6 +363,9 @@ public class BonusModels implements ModelEntrypoint {
 
         dispatcher.addDispatch(new ItemModelStandard(BonusItems.SOULWAX, null).setIcon("bonusblocks:item/soulwax"));
         dispatcher.addDispatch(new ItemModelStandard(BonusItems.MOSS, null).setIcon("bonusblocks:item/moss"));
+
+        dispatcher.addDispatch(new ItemModelStandard(BonusItems.ORE_RAW_VERDIGRIS, null).setIcon("bonusblocks:item/ore_raw_verdigris"));
+        dispatcher.addDispatch(new ItemModelStandard(BonusItems.INGOT_VERDIGRIS, null).setIcon("bonusblocks:item/ingot_verdigris"));
 
         dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_STONE, null).setIcon("bonusblocks:item/door_stone"));
         dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_BASALT, null).setIcon("bonusblocks:item/door_basalt"));

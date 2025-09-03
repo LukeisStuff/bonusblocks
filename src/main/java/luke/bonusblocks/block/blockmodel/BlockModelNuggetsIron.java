@@ -11,7 +11,7 @@ import net.minecraft.core.util.helper.MathHelper;
 import net.minecraft.core.util.helper.Side;
 
 public class BlockModelNuggetsIron<T extends BlockLogic> extends BlockModelStandard<T> {
-    public IconCoordinate[] pebbles = new IconCoordinate[]{TextureRegistry.getTexture("bonusblocks:block/pebbles/pebbles_iron1"), TextureRegistry.getTexture("bonusblocks:block/pebbles/pebbles_iron2"), TextureRegistry.getTexture("bonusblocks:block/pebbles/pebbles_iron3")};
+    public IconCoordinate[] pebbles = new IconCoordinate[]{TextureRegistry.getTexture("bonusblocks:block/pebbles_iron/0"), TextureRegistry.getTexture("bonusblocks:block/pebbles_iron/1"), TextureRegistry.getTexture("bonusblocks:block/pebbles_iron/2")};
 
     public BlockModelNuggetsIron(Block<T> block) {
         super(block);

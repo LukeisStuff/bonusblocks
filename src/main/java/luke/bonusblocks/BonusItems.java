@@ -22,6 +22,9 @@ public class BonusItems {
     public static Item SOULWAX;
     public static Item MOSS;
 
+    public static Item ORE_RAW_VERDIGRIS;
+    public static Item INGOT_VERDIGRIS;
+
     public static Item DOOR_STONE;
     public static Item DOOR_BASALT;
     public static Item DOOR_LIMESTONE;
@@ -42,6 +45,11 @@ public class BonusItems {
 
         MOSS = new ItemBuilder(MOD_ID)
                 .build(new Item("moss", "bonusblocks:item/moss", itemID("MOSS")));
+
+        ORE_RAW_VERDIGRIS = new ItemBuilder(MOD_ID)
+                .build(new Item("ore.raw.verdigris", "bonusblocks:item/ore_raw_verdigris", itemID("ORE_RAW_VERDIGRIS")));
+        INGOT_VERDIGRIS = new ItemBuilder(MOD_ID)
+                .build(new Item("ingot.verdigris", "bonusblocks:item/ingot_verdigris", itemID("INGOT_VERDIGRIS")));
 
         DOOR_STONE = new ItemBuilder(MOD_ID)
                 .build(new ItemDoor("door.stone", "bonusblocks:item/door_stone", itemID("DOOR_STONE"), BonusBlocks.DOOR_STONE_BOTTOM, BonusBlocks.DOOR_STONE_TOP));

@@ -7,7 +7,7 @@ import net.minecraft.core.item.block.ItemBlockSlab;
 import net.minecraft.core.util.helper.DyeColor;
 
 public class ItemBlockSlabWool<T extends BlockLogic> extends ItemBlockSlab<T> {
-    private final boolean upperMetadata;
+    public final boolean upperMetadata;
 
     public ItemBlockSlabWool(Block<T> block) {
         super(block);

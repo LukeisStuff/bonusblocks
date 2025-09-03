@@ -13,7 +13,7 @@ import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 
 public class BlockLogicSkull extends BlockLogicVeryRotatable {
-    private final boolean isCarvable;
+    public final boolean isCarvable;
 
     public BlockLogicSkull(Block<?> block, boolean isCarvable) {
         super(block, Material.stone);

@@ -91,6 +91,8 @@ public class BonusBlocks {
     public static Block<BlockLogic> BLOCK_RAW_GOLD;
     public static Block<BlockLogic> BLOCK_RAW_IRON;
     public static Block<BlockLogic> BLOCK_STEEL;
+    public static Block<?> BLOCK_VERDIGRIS;
+    public static Block<?> BLOCK_VERDIGRIS_SHINE;
 
 
     //GLASS
@@ -103,6 +105,12 @@ public class BonusBlocks {
     public static Block<BlockLogic> BRICK_OLIVINE;
     public static Block<BlockLogic> BRICK_CLAY_BAKED;
     public static Block<BlockLogic> BRICK_STEEL;
+    public static Block<?> BRICK_VERDIGRIS;
+    public static Block<?> BRICK_VERDIGRIS_SHINE;
+
+
+    //ORES
+    public static Block<?> ORE_VERDIGRIS_NETHERRACK;
 
 
     //STAIRS
@@ -127,6 +135,8 @@ public class BonusBlocks {
     public static Block<BlockLogicSlab> SLAB_BRICK_OLIVINE;
     public static Block<BlockLogicSlab> SLAB_BRICK_CLAY_BAKED;
     public static Block<BlockLogicSlab> SLAB_BRICK_STEEL;
+    public static Block<BlockLogicSlab> SLAB_BRICK_VERDIGRIS;
+    public static Block<BlockLogicSlab> SLAB_BRICK_VERDIGRIS_SHINE;
 
 
     //TRAPDOORS
@@ -142,6 +152,8 @@ public class BonusBlocks {
     public static Block<BlockLogicTrapDoor> TRAPDOOR_GLASS_QUARTZ;
     public static Block<BlockLogicTrapDoor> TRAPDOOR_GLASS_STEEL;
     public static Block<BlockLogicTrapDoor> TRAPDOOR_STEEL;
+    public static Block<BlockLogicTrapDoor> TRAPDOOR_VERDIGRIS;
+    public static Block<BlockLogicTrapDoor> TRAPDOOR_VERDIGRIS_SHINE;
 
 
     //DOORS
@@ -169,6 +181,10 @@ public class BonusBlocks {
     public static Block<BlockLogicDoor> DOOR_GLASS_STEEL_TOP;
     public static Block<BlockLogicDoor> DOOR_STEEL_BOTTOM;
     public static Block<BlockLogicDoor> DOOR_STEEL_TOP;
+    public static Block<BlockLogicDoor> DOOR_VERDIGRIS_BOTTOM;
+    public static Block<BlockLogicDoor> DOOR_VERDIGRIS_TOP;
+    public static Block<BlockLogicDoor> DOOR_VERDIGRIS_SHINE_BOTTOM;
+    public static Block<BlockLogicDoor> DOOR_VERDIGRIS_SHINE_TOP;
 
     public static Block<BlockLogic> BOOKSHELF_EMPTY_PLANKS_OAK;
 
@@ -200,6 +216,8 @@ public class BonusBlocks {
     public static Block<BlockLogicPumpkinRedstone> SKULL_REDSTONE;
 
     public static Block<BlockLogicFenceThin> FENCE_GOLD;
+    public static Block<BlockLogicFenceThin> FENCE_VERDIGRIS;
+    public static Block<BlockLogicFenceThin> FENCE_VERDIGRIS_SHINE;
 
     public static Block<BlockLogic> TATAMI;
 
@@ -259,6 +277,11 @@ public class BonusBlocks {
                 .setHardness(5.0f)
                 .setResistance(10.0f)
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE);
+
+        BlockBuilder verdigris = raw
+                .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.7f))
+                .setHardness(2.5f)
+                .setResistance(5.0f);
 
         BlockBuilder pebble = new BlockBuilder(MOD_ID)
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
@@ -520,6 +543,17 @@ public class BonusBlocks {
                 .setHardness(5.0f)
                 .setResistance(2000.0F)
                 .build("block.steel", "block_steel", blockID("BLOCK_STEEL"), b -> new BlockLogic(b, Material.steel));
+        BLOCK_VERDIGRIS = verdigris
+                .setFlammability(50, 50)
+                .build("block.verdigris", "block_verdigris", blockID("BLOCK_VERDIGRIS"), b -> new BlockLogicVerdigris(b, BLOCK_VERDIGRIS_SHINE));
+        BLOCK_VERDIGRIS_SHINE = verdigris
+                .build("block.verdigris.shine", "block_verdigris_shine", blockID("BLOCK_VERDIGRIS_SHINE"), b -> new BlockLogic(b, Material.metal));
+
+        ORE_VERDIGRIS_NETHERRACK = stone
+                .setHardness(3.0F)
+                .setResistance(5.0f)
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NETHER_MOBS_SPAWN)
+                .build("ore.verdigris.netherrack", "ore_verdigris_netherrack", blockID("ORE_VERDIGRIS_NETHERRACK"), BlockLogicOreVerdigris::new);
 
         // Nuggets
         OVERLAY_RAW_IRON = pebble
@@ -579,6 +613,12 @@ public class BonusBlocks {
                 .setHardness(5.0f)
                 .setResistance(2000.0F)
                 .build("brick.steel", "brick_steel", blockID("BRICK_STEEL"), block -> new BlockLogic(block, Material.steel));
+
+        BRICK_VERDIGRIS = verdigris
+                .setFlammability(50, 50)
+                .build("brick.verdigris", "brick_verdigris", blockID("BRICK_VERDIGRIS"), block -> new BlockLogicVerdigris(block, BRICK_VERDIGRIS_SHINE));
+        BRICK_VERDIGRIS_SHINE = verdigris
+                .build("brick.verdigris.shine", "brick_verdigris_shine", blockID("BRICK_VERDIGRIS_SHINE"), block -> new BlockLogic(block, Material.metal));
 
 
         // Soul Candle

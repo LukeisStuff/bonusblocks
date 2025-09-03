@@ -14,6 +14,12 @@ public class BonusBlockDetails {
     public void initializeBlockDetails() {
         miningLevels.put(BonusBlocks.BLOCK_RAW_IRON, 1);
 
+        miningLevels.put(BonusBlocks.ORE_VERDIGRIS_NETHERRACK, 1);
+        miningLevels.put(BonusBlocks.BLOCK_VERDIGRIS, 1);
+        miningLevels.put(BonusBlocks.BLOCK_VERDIGRIS_SHINE, 1);
+        miningLevels.put(BonusBlocks.BRICK_VERDIGRIS, 1);
+        miningLevels.put(BonusBlocks.BRICK_VERDIGRIS_SHINE, 1);
+
         miningLevels.put(BonusBlocks.BLOCK_RAW_GOLD, 2);
         miningLevels.put(BonusBlocks.FENCE_GOLD, 2);
         miningLevels.put(BonusBlocks.BLOCK_STEEL, 2);
@@ -96,7 +102,7 @@ public class BonusBlockDetails {
 
     }
 
-    private static final MaterialColor[] DYE_COLORS = {
+    public static final MaterialColor[] DYE_COLORS = {
             MaterialColor.paintedWhite,
             MaterialColor.paintedOrange,
             MaterialColor.paintedMagenta,

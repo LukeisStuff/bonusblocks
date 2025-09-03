@@ -10,6 +10,7 @@
     "BiomeShrublandMixin",
     "BiomeSwampMixin",
     "BlockGrassMixin",
+    "BlockLogicFireMixin",
     "BlockLogicMossMixin",
     "BlockLogicWireRedstoneMixin",
     "BlockSaplingCacaoMixin",

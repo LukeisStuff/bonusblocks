@@ -70,7 +70,7 @@ public class BlockLogicSulphur extends BlockLogicSand {
         this.tryToFall(world, x, y, z);
     }
 
-    private void tryToFall(World world, int x, int y, int z) {
+    public void tryToFall(World world, int x, int y, int z) {
         if (canFallBelow(world, x, y - 1, z) && y >= 0) {
             byte byte0 = 32;
             if (!fallInstantly && world.areBlocksLoaded(x - byte0, y - byte0, z - byte0, x + byte0, y + byte0, z + byte0)) {
