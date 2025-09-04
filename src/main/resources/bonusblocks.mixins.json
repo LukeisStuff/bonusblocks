@@ -17,7 +17,7 @@
     "BlockSaplingShrubMixin",
     "ChunkDecoratorNetherMixin",
     "ChunkDecoratorOverworldMixin",
-    "EntityMixin",
+    "EntityClothBounceMixin",
     "ItemMixin",
     "ItemToolShovelMixin",
     "WorldSkullRedstoneMixin"

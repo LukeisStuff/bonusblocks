@@ -37,6 +37,8 @@ public class BonusItems {
     public static Item DOOR_GLASS_QUARTZ;
     public static Item DOOR_GLASS_STEEL;
     public static Item DOOR_STEEL;
+    public static Item DOOR_VERDIGRIS;
+    public static Item DOOR_VERDIGRIS_SHINE;
 
     public void initializeItems() {
 
@@ -75,5 +77,10 @@ public class BonusItems {
                 .build(new ItemDoor("door.glass.steel", "bonusblocks:item/door_glass_steel", itemID("DOOR_GLASS_STEEL"), BonusBlocks.DOOR_GLASS_STEEL_BOTTOM, BonusBlocks.DOOR_GLASS_STEEL_TOP));
         DOOR_STEEL = new ItemBuilder(MOD_ID)
                 .build(new ItemDoor("door.steel", "bonusblocks:item/door_steel", itemID("DOOR_STEEL"), BonusBlocks.DOOR_STEEL_BOTTOM, BonusBlocks.DOOR_STEEL_TOP));
+
+        DOOR_VERDIGRIS = new ItemBuilder(MOD_ID)
+                .build(new ItemDoor("door.verdigris", "bonusblocks:item/door_verdigris", itemID("DOOR_VERDIGRIS"), BonusBlocks.DOOR_VERDIGRIS_BOTTOM, BonusBlocks.DOOR_VERDIGRIS_TOP));
+        DOOR_VERDIGRIS_SHINE = new ItemBuilder(MOD_ID)
+                .build(new ItemDoor("door.verdigris_shine", "bonusblocks:item/door_verdigris_shine", itemID("DOOR_VERDIGRIS_SHINE"), BonusBlocks.DOOR_VERDIGRIS_SHINE_BOTTOM, BonusBlocks.DOOR_VERDIGRIS_SHINE_TOP));
     }
 }

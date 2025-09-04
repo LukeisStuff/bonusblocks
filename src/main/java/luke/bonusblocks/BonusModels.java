@@ -210,6 +210,18 @@ public class BonusModels implements ModelEntrypoint {
                 TextureRegistry.getTexture("bonusblocks:block/fence_gold/column"))
                 .setAllTextures(0, "bonusblocks:block/fence_gold/center"));
 
+        dispatcher.addDispatch(BonusBlocks.FENCE_VERDIGRIS, new BlockModelFenceThin<>(BonusBlocks.FENCE_VERDIGRIS,
+                TextureRegistry.getTexture("bonusblocks:block/fence_verdigris/center"),
+                null, TextureRegistry.getTexture("bonusblocks:block/fence_verdigris/top"),
+                TextureRegistry.getTexture("bonusblocks:block/fence_verdigris/column"))
+                .setAllTextures(0, "bonusblocks:block/fence_verdigris/center"));
+
+        dispatcher.addDispatch(BonusBlocks.FENCE_VERDIGRIS_SHINE, new BlockModelFenceThin<>(BonusBlocks.FENCE_VERDIGRIS_SHINE,
+                TextureRegistry.getTexture("bonusblocks:block/fence_verdigris_shine/center"),
+                null, TextureRegistry.getTexture("bonusblocks:block/fence_verdigris_shine/top"),
+                TextureRegistry.getTexture("bonusblocks:block/fence_verdigris_shine/column"))
+                .setAllTextures(0, "bonusblocks:block/fence_verdigris_shine/center"));
+
         dispatcher.addDispatch(BonusBlocks.DOOR_STONE_BOTTOM, new BlockModelDoor<>(BonusBlocks.DOOR_STONE_BOTTOM)
                 .setTex(0, "bonusblocks:block/door/stone/frame", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/door/stone/bottom", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
@@ -319,6 +331,19 @@ public class BonusModels implements ModelEntrypoint {
                 .setTex(0, "bonusblocks:block/door/steel/frame", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/door/steel/top", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
 
+        dispatcher.addDispatch(BonusBlocks.DOOR_VERDIGRIS_BOTTOM, new BlockModelDoor<>(BonusBlocks.DOOR_VERDIGRIS_BOTTOM)
+                .setTex(0, "bonusblocks:block/door/verdigris/frame", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/door/verdigris/bottom", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+        dispatcher.addDispatch(BonusBlocks.DOOR_VERDIGRIS_TOP, new BlockModelDoor<>(BonusBlocks.DOOR_VERDIGRIS_TOP)
+                .setTex(0, "bonusblocks:block/door/verdigris/frame", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/door/verdigris/top", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+        dispatcher.addDispatch(BonusBlocks.DOOR_VERDIGRIS_SHINE_BOTTOM, new BlockModelDoor<>(BonusBlocks.DOOR_VERDIGRIS_SHINE_BOTTOM)
+                .setTex(0, "bonusblocks:block/door/verdigris_shine/frame", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/door/verdigris_shine/bottom", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+        dispatcher.addDispatch(BonusBlocks.DOOR_VERDIGRIS_SHINE_TOP, new BlockModelDoor<>(BonusBlocks.DOOR_VERDIGRIS_SHINE_TOP)
+                .setTex(0, "bonusblocks:block/door/verdigris_shine/frame", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/door/verdigris_shine/top", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+
         dispatcher.addDispatch(BonusBlocks.TRAPDOOR_GLASS_OBSIDIAN, new BlockModelTrapDoor<>(BonusBlocks.TRAPDOOR_GLASS_OBSIDIAN).onRenderLayer(1)
                 .setTex(0, "bonusblocks:block/trapdoor/glass_obsidian/top", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/trapdoor/glass_obsidian/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
@@ -333,6 +358,13 @@ public class BonusModels implements ModelEntrypoint {
                 .setTex(0, "bonusblocks:block/trapdoor/steel/top", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/trapdoor/steel/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
 
+        dispatcher.addDispatch(BonusBlocks.TRAPDOOR_VERDIGRIS, new BlockModelTrapDoor<>(BonusBlocks.TRAPDOOR_VERDIGRIS)
+                .setTex(0, "bonusblocks:block/trapdoor/verdigris/top", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/trapdoor/verdigris/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+        dispatcher.addDispatch(BonusBlocks.TRAPDOOR_VERDIGRIS_SHINE, new BlockModelTrapDoor<>(BonusBlocks.TRAPDOOR_VERDIGRIS_SHINE)
+                .setTex(0, "bonusblocks:block/trapdoor/verdigris_shine/top", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/trapdoor/verdigris_shine/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+
 
         //STAIRS
         dispatcher.addDispatch(BonusBlocks.STAIRS_WOOL, new BlockModelStairsWool<>(BonusBlocks.STAIRS_WOOL));
@@ -343,6 +375,9 @@ public class BonusModels implements ModelEntrypoint {
         dispatcher.addDispatch(BonusBlocks.STAIRS_BRICK_OLIVINE, new BlockModelStairs<>(BonusBlocks.STAIRS_BRICK_OLIVINE));
         dispatcher.addDispatch(BonusBlocks.STAIRS_BRICK_CLAY_BAKED, new BlockModelStairs<>(BonusBlocks.STAIRS_BRICK_CLAY_BAKED));
         dispatcher.addDispatch(BonusBlocks.STAIRS_BRICK_STEEL, new BlockModelStairs<>(BonusBlocks.STAIRS_BRICK_STEEL));
+        dispatcher.addDispatch(BonusBlocks.STAIRS_BRICK_VERDIGRIS, new BlockModelStairs<>(BonusBlocks.STAIRS_BRICK_VERDIGRIS));
+        dispatcher.addDispatch(BonusBlocks.STAIRS_BRICK_VERDIGRIS_SHINE, new BlockModelStairs<>(BonusBlocks.STAIRS_BRICK_VERDIGRIS_SHINE));
+
 
         //SLABS
         dispatcher.addDispatch(BonusBlocks.SLAB_WOOL, new BlockModelSlabWool<>(BonusBlocks.SLAB_WOOL));
@@ -355,6 +390,8 @@ public class BonusModels implements ModelEntrypoint {
         dispatcher.addDispatch(BonusBlocks.SLAB_SLATE_POLISHED, new BlockModelSlab<>(BonusBlocks.SLAB_SLATE_POLISHED));
         dispatcher.addDispatch(BonusBlocks.SLAB_MARBLE_POLISHED, new BlockModelSlab<>(BonusBlocks.SLAB_MARBLE_POLISHED));
         dispatcher.addDispatch(BonusBlocks.SLAB_BRICK_STEEL, new BlockModelSlab<>(BonusBlocks.SLAB_BRICK_STEEL));
+        dispatcher.addDispatch(BonusBlocks.SLAB_BRICK_VERDIGRIS, new BlockModelSlab<>(BonusBlocks.SLAB_BRICK_VERDIGRIS));
+        dispatcher.addDispatch(BonusBlocks.SLAB_BRICK_VERDIGRIS_SHINE, new BlockModelSlab<>(BonusBlocks.SLAB_BRICK_VERDIGRIS_SHINE));
 
     }
 

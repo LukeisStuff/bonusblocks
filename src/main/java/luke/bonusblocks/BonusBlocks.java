@@ -122,7 +122,8 @@ public class BonusBlocks {
     public static Block<BlockLogicStairs> STAIRS_BRICK_OLIVINE;
     public static Block<BlockLogicStairs> STAIRS_BRICK_CLAY_BAKED;
     public static Block<BlockLogicStairs> STAIRS_BRICK_STEEL;
-
+    public static Block<BlockLogicStairs> STAIRS_BRICK_VERDIGRIS;
+    public static Block<BlockLogicStairs> STAIRS_BRICK_VERDIGRIS_SHINE;
 
     //SLABS
     public static Block<BlockLogicSlabWoolPainted> SLAB_WOOL;
@@ -296,7 +297,7 @@ public class BonusBlocks {
                 .setResistance(10.0f)
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE);
 
-        BlockBuilder stoneDoor = stone
+        BlockBuilder door = stone
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
                 .setVisualUpdateOnMetadata();
 
@@ -670,6 +671,16 @@ public class BonusBlocks {
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.CAN_HANG_OFF)
                 .build("fence.gold", "fence_gold", blockID("FENCE_GOLD"), BlockFenceNoClimb::new);
 
+        FENCE_VERDIGRIS = verdigris
+                .setVisualUpdateOnMetadata()
+                .setFlammability(50, 50)
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.CAN_HANG_OFF)
+                .build("fence.verdigris", "fence_verdigris", blockID("FENCE_VERDIGRIS"), BlockFenceNoClimb::new);
+        FENCE_VERDIGRIS_SHINE = verdigris
+                .setVisualUpdateOnMetadata()
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.CAN_HANG_OFF)
+                .build("fence.verdigris.shine", "fence_verdigris_shine", blockID("FENCE_VERDIGRIS_SHINE"), BlockFenceNoClimb::new);
+
 
         TATAMI = new BlockBuilder(MOD_ID)
                 .setBlockSound(new BlockSound("step.cloth", "step.cloth", 0.8f, 1.2f))
@@ -713,6 +724,17 @@ public class BonusBlocks {
                 .setHardness(5.0f)
                 .setResistance(2000.0F)
                 .build("slab_brick_steel", blockID("SLAB_BRICK_STEEL"), b -> new BlockLogicSlab(b, BRICK_STEEL));
+        SLAB_BRICK_VERDIGRIS = slab
+                .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.7f))
+                .setHardness(2.5f)
+                .setResistance(5.0f)
+                .setFlammability(50, 50)
+                .build("slab_brick_verdigris", blockID("SLAB_BRICK_VERDIGRIS"), b -> new BlockLogicSlab(b, BRICK_VERDIGRIS));
+        SLAB_BRICK_VERDIGRIS_SHINE = slab
+                .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.7f))
+                .setHardness(2.5f)
+                .setResistance(5.0f)
+                .build("slab_brick_verdigris_shine", blockID("SLAB_BRICK_VERDIGRIS_SHINE"), b -> new BlockLogicSlab(b, BRICK_VERDIGRIS_SHINE));
 
 
         // Stairs
@@ -745,54 +767,65 @@ public class BonusBlocks {
                 .setHardness(5.0f)
                 .setResistance(2000.0F)
                 .build("stairs_brick_steel", blockID("STAIRS_BRICK_STEEL"), b -> new BlockLogicStairs(b, BRICK_STEEL));
+        STAIRS_BRICK_VERDIGRIS = stairs
+                .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.7f))
+                .setHardness(2.5f)
+                .setResistance(5.0f)
+                .setFlammability(50, 50)
+                .build("stairs_brick_verdigris", blockID("STAIRS_BRICK_VERDIGRIS"), b -> new BlockLogicStairs(b, BRICK_VERDIGRIS));
+        STAIRS_BRICK_VERDIGRIS_SHINE = stairs
+                .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.7f))
+                .setHardness(2.5f)
+                .setResistance(5.0f)
+                .build("stairs_brick_verdigris_shine", blockID("STAIRS_BRICK_VERDIGRIS_SHINE"), b -> new BlockLogicStairs(b, BRICK_VERDIGRIS_SHINE));
 
 
         // Doors
-        DOOR_STONE_BOTTOM = stoneDoor
+        DOOR_STONE_BOTTOM = door
                 .build("door.stone.bottom", "door_stone_bottom", blockID("DOOR_STONE_BOTTOM"), b -> new BlockLogicDoorStone(b, false, () -> BonusItems.DOOR_STONE, Material.stone));
-        DOOR_STONE_TOP = stoneDoor
+        DOOR_STONE_TOP = door
                 .build("door.stone.top", "door_stone_top", blockID("DOOR_STONE_TOP"), b -> new BlockLogicDoorStone(b, true, () -> BonusItems.DOOR_STONE, Material.stone));
 
 
-        DOOR_BASALT_BOTTOM = stoneDoor
+        DOOR_BASALT_BOTTOM = door
                 .build("door.basalt.bottom", "door_basalt_bottom", blockID("DOOR_BASALT_BOTTOM"), b -> new BlockLogicDoorStone(b, false, () -> BonusItems.DOOR_BASALT, Material.basalt));
-        DOOR_BASALT_TOP = stoneDoor
+        DOOR_BASALT_TOP = door
                 .build("door.basalt.top", "door_basalt_top", blockID("DOOR_BASALT_TOP"), b -> new BlockLogicDoorStone(b, true, () -> BonusItems.DOOR_BASALT, Material.basalt));
 
 
-        DOOR_LIMESTONE_BOTTOM = stoneDoor
+        DOOR_LIMESTONE_BOTTOM = door
                 .build("door.limestone.bottom", "door_limestone_bottom", blockID("DOOR_LIMESTONE_BOTTOM"), b -> new BlockLogicDoorStone(b, false, () -> BonusItems.DOOR_LIMESTONE, Material.limestone));
-        DOOR_LIMESTONE_TOP = stoneDoor
+        DOOR_LIMESTONE_TOP = door
                 .build("door.limestone.top", "door_limestone_top", blockID("DOOR_LIMESTONE_TOP"), b -> new BlockLogicDoorStone(b, true, () -> BonusItems.DOOR_LIMESTONE, Material.limestone));
 
 
-        DOOR_GRANITE_BOTTOM = stoneDoor
+        DOOR_GRANITE_BOTTOM = door
                 .build("door.granite.bottom", "door_granite_bottom", blockID("DOOR_GRANITE_BOTTOM"), b -> new BlockLogicDoorStone(b, false, () -> BonusItems.DOOR_GRANITE, Material.granite));
-        DOOR_GRANITE_TOP = stoneDoor
+        DOOR_GRANITE_TOP = door
                 .build("door.granite.top", "door_granite_top", blockID("DOOR_GRANITE_TOP"), b -> new BlockLogicDoorStone(b, true, () -> BonusItems.DOOR_GRANITE, Material.granite));
 
 
-        DOOR_MARBLE_BOTTOM = stoneDoor
+        DOOR_MARBLE_BOTTOM = door
                 .build("door.marble.bottom", "door_marble_bottom", blockID("DOOR_MARBLE_BOTTOM"), b -> new BlockLogicDoorStone(b, false, () -> BonusItems.DOOR_MARBLE, Material.marble));
-        DOOR_MARBLE_TOP = stoneDoor
+        DOOR_MARBLE_TOP = door
                 .build("door.marble.top", "door_marble_top", blockID("DOOR_MARBLE_TOP"), b -> new BlockLogicDoorStone(b, true, () -> BonusItems.DOOR_MARBLE, Material.marble));
 
 
-        DOOR_SLATE_BOTTOM = stoneDoor
+        DOOR_SLATE_BOTTOM = door
                 .build("door.slate.bottom", "door_slate_bottom", blockID("DOOR_SLATE_BOTTOM"), b -> new BlockLogicDoorStone(b, false, () -> BonusItems.DOOR_SLATE, Material.slate));
-        DOOR_SLATE_TOP = stoneDoor
+        DOOR_SLATE_TOP = door
                 .build("door.slate.top", "door_slate_top", blockID("DOOR_SLATE_TOP"), b -> new BlockLogicDoorStone(b, true, () -> BonusItems.DOOR_SLATE, Material.slate));
 
 
-        DOOR_PERMAFROST_BOTTOM = stoneDoor
+        DOOR_PERMAFROST_BOTTOM = door
                 .build("door.permafrost.bottom", "door_permafrost_bottom", blockID("DOOR_PERMAFROST_BOTTOM"), b -> new BlockLogicDoorStone(b, false, () -> BonusItems.DOOR_PERMAFROST, Material.permafrost));
-        DOOR_PERMAFROST_TOP = stoneDoor
+        DOOR_PERMAFROST_TOP = door
                 .build("door.permafrost.top", "door_permafrost_top", blockID("DOOR_PERMAFROST_TOP"), b -> new BlockLogicDoorStone(b, true, () -> BonusItems.DOOR_PERMAFROST, Material.permafrost));
 
 
-        DOOR_NETHERRACK_BOTTOM = stoneDoor
+        DOOR_NETHERRACK_BOTTOM = door
                 .build("door.netherrack.bottom", "door_netherrack_bottom", blockID("DOOR_NETHERRACK_BOTTOM"), b -> new BlockLogicDoorStone(b, false, () -> BonusItems.DOOR_NETHERRACK, Material.netherrack));
-        DOOR_NETHERRACK_TOP = stoneDoor
+        DOOR_NETHERRACK_TOP = door
                 .build("door.netherrack.top", "door_netherrack_top", blockID("DOOR_NETHERRACK_TOP"), b -> new BlockLogicDoorStone(b, true, () -> BonusItems.DOOR_NETHERRACK, Material.netherrack));
 
 
@@ -818,27 +851,50 @@ public class BonusBlocks {
                 .setVisualUpdateOnMetadata()
                 .build("door.glass.quartz.top", "door_glass_quartz_top", blockID("DOOR_GLASS_QUARTZ_TOP"), block -> new BlockLogicDoor(block, Material.glass, true, false, () -> BonusItems.DOOR_GLASS_QUARTZ));
 
-        DOOR_GLASS_STEEL_BOTTOM = stoneDoor
+        DOOR_GLASS_STEEL_BOTTOM = door
                 .setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
                 .setHardness(0.3f)
                 .setResistance(2000.0F)
                 .build("door.glass.steel.bottom", "door_glass_steel_bottom", blockID("DOOR_GLASS_STEEL_BOTTOM"), block -> new BlockLogicDoor(block, Material.steel, false, false, () -> BonusItems.DOOR_GLASS_STEEL));
-        DOOR_GLASS_STEEL_TOP = stoneDoor
+        DOOR_GLASS_STEEL_TOP = door
                 .setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
                 .setHardness(0.3f)
                 .setResistance(2000.0F)
                 .build("door.glass.steel.top", "door_glass_steel_top", blockID("DOOR_GLASS_STEEL_TOP"), block -> new BlockLogicDoor(block, Material.steel, true, false, () -> BonusItems.DOOR_GLASS_STEEL));
 
-        DOOR_STEEL_BOTTOM = stoneDoor
+        DOOR_STEEL_BOTTOM = door
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
                 .setHardness(5.0f)
                 .setResistance(2000.0F)
                 .build("door.steel.bottom", "door_steel_bottom", blockID("DOOR_STEEL_BOTTOM"), block -> new BlockLogicDoor(block, Material.steel, false, true, () -> BonusItems.DOOR_STEEL));
-        DOOR_STEEL_TOP = stoneDoor
+        DOOR_STEEL_TOP = door
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
                 .setHardness(5.0f)
                 .setResistance(2000.0F)
                 .build("door.steel.top", "door_steel_top", blockID("DOOR_STEEL_TOP"), block -> new BlockLogicDoor(block, Material.steel, true, true, () -> BonusItems.DOOR_STEEL));
+
+        DOOR_VERDIGRIS_BOTTOM = door
+                .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.7f))
+                .setHardness(2.5f)
+                .setResistance(5.0f)
+                .setFlammability(50, 50)
+                .build("door.verdigris.bottom", "door_verdigris_bottom", blockID("DOOR_VERDIGRIS_BOTTOM"), block -> new BlockLogicDoor(block, Material.metal, false, true, () -> BonusItems.DOOR_VERDIGRIS));
+        DOOR_VERDIGRIS_TOP = door
+                .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.7f))
+                .setHardness(2.5f)
+                .setResistance(5.0f)
+                .setFlammability(50, 50)
+                .build("door.verdigris.top", "door_verdigris_top", blockID("DOOR_VERDIGRIS_TOP"), block -> new BlockLogicDoor(block, Material.metal, true, true, () -> BonusItems.DOOR_VERDIGRIS));
+        DOOR_VERDIGRIS_SHINE_BOTTOM = door
+                .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.7f))
+                .setHardness(2.5f)
+                .setResistance(5.0f)
+                .build("door.verdigris.shine.bottom", "door_verdigris_shine_bottom", blockID("DOOR_VERDIGRIS_SHINE_BOTTOM"), block -> new BlockLogicDoor(block, Material.metal, false, true, () -> BonusItems.DOOR_VERDIGRIS_SHINE));
+        DOOR_VERDIGRIS_SHINE_TOP = door
+                .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.7f))
+                .setHardness(2.5f)
+                .setResistance(5.0f)
+                .build("door.verdigris.shine.top", "door_verdigris_shine_top", blockID("DOOR_VERDIGRIS_SHINE_TOP"), block -> new BlockLogicDoor(block, Material.metal, true, true, () -> BonusItems.DOOR_VERDIGRIS_SHINE));
 
 
         // Trapdoors
@@ -893,7 +949,6 @@ public class BonusBlocks {
                 .setResistance(2000.0F)
                 .setVisualUpdateOnMetadata()
                 .setUseInternalLight()
-                .setTags(BlockTags.MINEABLE_BY_PICKAXE)
                 .build("trapdoor.glass.steel", "trapdoor_glass_steel", blockID("TRAPDOOR_GLASS_STEEL"), b -> new BlockLogicTrapDoor(b, Material.steel));
 
         TRAPDOOR_STEEL = raw
@@ -901,9 +956,15 @@ public class BonusBlocks {
                 .setHardness(5.0f)
                 .setResistance(2000.0F)
                 .setVisualUpdateOnMetadata()
-                .setUseInternalLight()
-                .setTags(BlockTags.MINEABLE_BY_PICKAXE)
                 .build("trapdoor.steel", "trapdoor_steel", blockID("TRAPDOOR_STEEL"), b -> new BlockLogicTrapDoor(b, Material.steel));
+
+        TRAPDOOR_VERDIGRIS = verdigris
+                .setVisualUpdateOnMetadata()
+                .setFlammability(50, 50)
+                .build("trapdoor.verdigris", "trapdoor_verdigris", blockID("TRAPDOOR_VERDIGRIS"), b -> new BlockLogicTrapDoor(b, Material.metal));
+        TRAPDOOR_VERDIGRIS_SHINE = verdigris
+                .setVisualUpdateOnMetadata()
+                .build("trapdoor.verdigris.shine", "trapdoor_verdigris_shine", blockID("TRAPDOOR_VERDIGRIS_SHINE"), b -> new BlockLogicTrapDoor(b, Material.metal));
 
         new BonusBlockDetails().initializeBlockDetails();
 

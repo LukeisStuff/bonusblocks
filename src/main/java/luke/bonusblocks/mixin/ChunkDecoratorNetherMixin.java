@@ -23,43 +23,36 @@ public class ChunkDecoratorNetherMixin {
     @Final
     private World world;
 
-    @Inject(method = "decorate", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 20))
+    @Inject(method = "decorate", at = @At("TAIL")) // Inject at the end of decorate
     public void decorate(Chunk chunk, CallbackInfo ci, @Local(name = "rand") Random rand, @Local(name = "x") int x, @Local(name = "z") int z) {
-
         int minY = this.world.getWorldType().getMinY();
         int maxY = this.world.getWorldType().getMaxY();
         int rangeY = maxY + 1 - minY;
-        int max;
-        int i;
-        int xf;
-        int yf;
-        int zf;
 
-        for(max = 0; max < 10; ++max) {
-            i = x + rand.nextInt(16);
-            xf = minY + rand.nextInt(rangeY - 8) + 4;
-            yf = z + rand.nextInt(16);
-            (new WorldFeatureOre(BonusBlocks.ORE_VERDIGRIS_NETHERRACK.id(), 12)).place(this.world, rand, i, xf, yf);
+        for (int i = 0; i < 10; ++i) {
+            int posX = x + rand.nextInt(16);
+            int posY = minY + rand.nextInt(rangeY - 8) + 4;
+            int posZ = z + rand.nextInt(16);
+            new WorldFeatureOre(BonusBlocks.ORE_VERDIGRIS_NETHERRACK.id(), 16).place(this.world, rand, posX, posY, posZ);
         }
 
-        if ((rand.nextInt(2) == 0)) {
-            xf = x + rand.nextInt(16 + 8);
-            zf = z + rand.nextInt(16 + 8);
-            yf = minY + rand.nextInt(rangeY - 8) + 4;
-            new WorldFeatureSkull().place(world, rand, xf, yf, zf);
+        if (rand.nextInt(2) == 0) {
+            int posX = x + rand.nextInt(16);
+            int posY = minY + rand.nextInt(rangeY - 8) + 4;
+            int posZ = z + rand.nextInt(16);
+            new WorldFeatureSkull().place(this.world, rand, posX, posY, posZ);
         }
-        if ((rand.nextInt(3) == 0)) {
-            xf = x + rand.nextInt(16 + 8);
-            zf = z + rand.nextInt(16 + 8);
-            yf = minY + rand.nextInt(rangeY - 8) + 4;
-            new WorldFeatureSkull().place(world, rand, xf, yf, zf);
+        if (rand.nextInt(3) == 0) {
+            int posX = x + rand.nextInt(16);
+            int posY = minY + rand.nextInt(rangeY - 8) + 4;
+            int posZ = z + rand.nextInt(16);
+            new WorldFeatureSkull().place(this.world, rand, posX, posY, posZ);
         }
-        if ((rand.nextInt(4) == 0)) {
-            xf = x + rand.nextInt(16 + 8);
-            zf = z + rand.nextInt(16 + 8);
-            yf = minY + rand.nextInt(rangeY - 8) + 4;
-            new WorldFeatureSkull().place(world, rand, xf, yf, zf);
+        if (rand.nextInt(4) == 0) {
+            int posX = x + rand.nextInt(16);
+            int posY = minY + rand.nextInt(rangeY - 8) + 4;
+            int posZ = z + rand.nextInt(16);
+            new WorldFeatureSkull().place(this.world, rand, posX, posY, posZ);
         }
-
     }
 }

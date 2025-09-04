@@ -11,22 +11,23 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(value = Entity.class, remap = false)
-public class EntityMixin {
+public class EntityClothBounceMixin {
     @Shadow
     public double y;
     @Unique
-    public double prevY = y;
+    public double prevYBB = y;
     @Unique
-    public double deltaY;
+    public double deltaYBB;
 
     @Inject(method = "baseTick()V", at = @At(value = "HEAD"))
-    public void tick(CallbackInfo ci) {
-        deltaY = y - prevY;
-        prevY = y;
+    public void tickBB(CallbackInfo ci) {
+        deltaYBB = y - prevYBB;
+        prevYBB = y;
     }
 
     @Redirect(method = "move(DDD)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/util/helper/MathHelper;floor(D)I", ordinal = 5))
-    public int extendBlockRange(double d) {
-        return MathHelper.floor(((Entity) (Object) this).bb.minY + 0.001 + deltaY);
+    public int extendBlockRangeBB(double xd, double yd, double zd) {
+        return MathHelper.floor(((Entity) (Object) this).bb.minY + 0.001 + deltaYBB);
     }
+
 }
