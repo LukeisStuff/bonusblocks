@@ -411,6 +411,11 @@ tile.bonusblocks.block.verdigris.desc=A solid block of verdigris. Rusty!
 tile.bonusblocks.block.verdigris.shine.name=Block of Burnished Verdigris
 tile.bonusblocks.block.verdigris.shine.desc=A solid block of verdigris. Shiny!
 
+tile.bonusblocks.mesh.verdigris.name=Verdigris Mesh
+tile.bonusblocks.mesh.verdigris.desc=Allows blank to pass through but nothing else.
+tile.bonusblocks.mesh.verdigris.shine.name=Burnished Verdigris Mesh
+tile.bonusblocks.mesh.verdigris.shine.desc=Allows blank to pass through but nothing else.
+
 tile.bonusblocks.brick.verdigris.name=Verdigris Bricks
 tile.bonusblocks.brick.verdigris.desc=Stacked bricks of raw verdigris.
 tile.bonusblocks.brick.verdigris.shine.name=Burnished Verdigris Bricks

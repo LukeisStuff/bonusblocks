@@ -130,6 +130,11 @@ public class BonusModels implements ModelEntrypoint {
         dispatcher.addDispatch(BonusBlocks.BLOCK_VERDIGRIS_SHINE, new BlockModelStandard<>(BonusBlocks.BLOCK_VERDIGRIS_SHINE)
                 .setAllTextures(0, "bonusblocks:block/block_verdigris_shine"));
 
+        dispatcher.addDispatch(BonusBlocks.MESH_VERDIGRIS, new BlockModelTransparent<>(BonusBlocks.MESH_VERDIGRIS, true)
+                .setAllTextures(0, "bonusblocks:block/mesh_verdigris"));
+        dispatcher.addDispatch(BonusBlocks.MESH_VERDIGRIS_SHINE, new BlockModelTransparent<>(BonusBlocks.MESH_VERDIGRIS_SHINE, true)
+                .setAllTextures(0, "bonusblocks:block/mesh_verdigris_shine"));
+
         dispatcher.addDispatch(BonusBlocks.OVERLAY_RAW_IRON, new BlockModelNuggets<>(BonusBlocks.OVERLAY_RAW_IRON, "iron", 3));
         dispatcher.addDispatch(BonusBlocks.OVERLAY_RAW_GOLD, new BlockModelNuggets<>(BonusBlocks.OVERLAY_RAW_GOLD, "gold", 3));
         dispatcher.addDispatch(BonusBlocks.OVERLAY_FLINT, new BlockModelNuggets<>(BonusBlocks.OVERLAY_FLINT, "flint", 3));

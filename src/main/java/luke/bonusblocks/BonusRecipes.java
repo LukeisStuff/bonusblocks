@@ -58,6 +58,9 @@ public class BonusRecipes implements RecipeEntrypoint {
         blockToItem.addInput('X', BonusBlocks.BLOCK_VERDIGRIS).create("block_of_verdigris_to_verdigris", new ItemStack(BonusItems.ORE_RAW_VERDIGRIS, 9));
         blockToItem.addInput('X', BonusBlocks.BLOCK_VERDIGRIS_SHINE).create("block_of_burnished_verdigris_to_verdigris", new ItemStack(BonusItems.INGOT_VERDIGRIS, 9));
 
+        RecipeBuilderShaped mesh = new RecipeBuilderShaped(MOD_ID, "XXX", "X X", "XXX");
+        mesh.addInput('X', BonusItems.ORE_RAW_VERDIGRIS).create("mesh_verdigris", new ItemStack(BonusBlocks.MESH_VERDIGRIS, 1));
+        mesh.addInput('X', BonusItems.INGOT_VERDIGRIS).create("mesh_verdigris_shine", new ItemStack(BonusBlocks.MESH_VERDIGRIS_SHINE, 1));
 
         RecipeBuilderShaped templateFlowertoDye = new RecipeBuilderShaped(MOD_ID, "X");
         templateFlowertoDye.addInput('X', BonusBlocks.FLOWER_SILVER).create("flower_silver_to_dye", new ItemStack(Items.DYE, 2, 7));
@@ -310,6 +313,10 @@ public class BonusRecipes implements RecipeEntrypoint {
         RecipeBuilder.Furnace(MOD_ID)
                 .setInput(BonusItems.ORE_RAW_VERDIGRIS)
                 .create("raw_verdigris_to_verdigris_ingot", BonusItems.INGOT_VERDIGRIS.getDefaultStack());
+
+        RecipeBuilder.Furnace(MOD_ID)
+                .setInput("bonusblocks:verdigris_ores")
+                .create("verdigris_ores_to_verdigris_ingot", BonusItems.INGOT_VERDIGRIS.getDefaultStack());
     }
 
     public static void blastFurnaceRecipes() {
@@ -365,6 +372,10 @@ public class BonusRecipes implements RecipeEntrypoint {
                 .setInput(BonusItems.ORE_RAW_VERDIGRIS)
                 .create("raw_verdigris_to_verdigris_ingot", BonusItems.INGOT_VERDIGRIS.getDefaultStack());
 
+        RecipeBuilder.BlastFurnace(MOD_ID)
+                .setInput("bonusblocks:verdigris_ores")
+                .create("verdigris_ores_to_verdigris_ingot", BonusItems.ORE_RAW_VERDIGRIS.getDefaultStack());
+
         RecipeBuilder.ModifyBlastFurnace("minecraft").removeRecipe("cobble_basalt_to_olivine");
         RecipeBuilder.ModifyBlastFurnace("minecraft").removeRecipe("cobble_stone_to_slate");
         RecipeBuilder.ModifyBlastFurnace("minecraft").removeRecipe("cobble_granite_to_quartz");
@@ -404,7 +415,10 @@ public class BonusRecipes implements RecipeEntrypoint {
 
         Registries.ITEM_GROUPS.getItem("minecraft:dirt").add(BonusBlocks.DIRT_BAKED.getDefaultStack());
 
-        Registries.ITEM_GROUPS.register("bonusblocks:block/wool_slab", Registries.stackListOf(new ItemStack(BonusBlocks.SLAB_WOOL, 1, 0),
+        Registries.ITEM_GROUPS.register("bonusblocks:verdigris_ores", Registries.stackListOf(new ItemStack(BonusBlocks.SLAB_WOOL, 1, 0)));
+
+        Registries.ITEM_GROUPS.register("bonusblocks:wool_slabs", Registries.stackListOf(
+                new ItemStack(BonusBlocks.SLAB_WOOL, 1, 0),
                 new ItemStack(BonusBlocks.SLAB_WOOL, 1, 16),
                 new ItemStack(BonusBlocks.SLAB_WOOL, 1, 32),
                 new ItemStack(BonusBlocks.SLAB_WOOL, 1, 48),
@@ -421,7 +435,8 @@ public class BonusRecipes implements RecipeEntrypoint {
                 new ItemStack(BonusBlocks.SLAB_WOOL, 1, 224),
                 new ItemStack(BonusBlocks.SLAB_WOOL, 1, 240)));
 
-        Registries.ITEM_GROUPS.register("bonusblocks:block/wool_stairs", Registries.stackListOf(new ItemStack(BonusBlocks.STAIRS_WOOL, 1, 0),
+        Registries.ITEM_GROUPS.register("bonusblocks:wool_stairs", Registries.stackListOf(
+                new ItemStack(BonusBlocks.STAIRS_WOOL, 1, 0),
                 new ItemStack(BonusBlocks.STAIRS_WOOL, 1, 16),
                 new ItemStack(BonusBlocks.STAIRS_WOOL, 1, 32),
                 new ItemStack(BonusBlocks.STAIRS_WOOL, 1, 48),

@@ -11,6 +11,7 @@ import net.minecraft.core.world.biome.Biomes;
 import net.minecraft.core.world.chunk.Chunk;
 import net.minecraft.core.world.generate.chunk.perlin.overworld.ChunkDecoratorOverworld;
 import net.minecraft.core.world.generate.feature.WorldFeatureFlowers;
+import net.minecraft.core.world.generate.feature.WorldFeatureOre;
 import net.minecraft.core.world.generate.feature.WorldFeatureTallGrass;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -32,6 +33,10 @@ public class ChunkDecoratorOverworldMixin {
     public void decorate(Chunk chunk, CallbackInfo ci, @Local(name = "rand") Random rand, @Local(name = "x") int x, @Local(name = "z") int z, @Local(name = "y") int y) {
 
         Biome biome = world.getBlockBiome(x + 16, y, z + 16);
+        int minY = this.world.getWorldType().getMinY();
+        int maxY = this.world.getWorldType().getMaxY();
+        int rangeY = maxY + 1 - minY;
+        float oreHeightModifier = (float)rangeY / 128.0F;
 
         if (biome == Biomes.OVERWORLD_FOREST || biome == Biomes.OVERWORLD_BIRCH_FOREST || biome == Biomes.OVERWORLD_SEASONAL_FOREST || biome == Biomes.OVERWORLD_PLAINS ||
                 biome == BonusBiomes.OVERWORLD_OVERGROWN_MEADOW || biome == Biomes.OVERWORLD_MEADOW || biome == Biomes.OVERWORLD_SHRUBLAND || biome == Biomes.OVERWORLD_GRASSLANDS) {
@@ -58,6 +63,20 @@ public class ChunkDecoratorOverworldMixin {
                 int yf = this.world.getHeightValue(x, z);
                 new WorldFeatureFlowers(BonusBlocks.FLOWER_SILVER.id(), 64, true).place(world, rand, xf, yf, zf);
             }
+        }
+
+        for (int j4 = 0; (float) j4 < oreHeightModifier; ++j4) {
+            int k7 = x + rand.nextInt(16);
+            int k4 = minY + rand.nextInt(rangeY / 2);
+            int treeDensity = z + rand.nextInt(16);
+            (new WorldFeatureOre(BonusBlocks.MOSS.id(), 32)).place(this.world, rand, k7, k4, treeDensity);
+        }
+
+        if (rand.nextInt(6) == 0) {
+            int k16 = x + rand.nextInt(16) + 8;
+            int oceanY = minY + rand.nextInt(rangeY);
+            int dx = z + rand.nextInt(16) + 8;
+            (new WorldFeatureFlowers(BonusBlocks.MUSHROOM_GRAY.id(), 64, false)).place(this.world, rand, k16, oceanY, dx);
         }
 
 

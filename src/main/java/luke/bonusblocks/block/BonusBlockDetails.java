@@ -18,9 +18,17 @@ public class BonusBlockDetails {
         miningLevels.put(BonusBlocks.BLOCK_VERDIGRIS_SHINE, 1);
         miningLevels.put(BonusBlocks.BRICK_VERDIGRIS, 1);
         miningLevels.put(BonusBlocks.BRICK_VERDIGRIS_SHINE, 1);
+        miningLevels.put(BonusBlocks.STAIRS_BRICK_VERDIGRIS, 1);
+        miningLevels.put(BonusBlocks.STAIRS_BRICK_VERDIGRIS_SHINE, 1);
+        miningLevels.put(BonusBlocks.SLAB_BRICK_VERDIGRIS, 1);
+        miningLevels.put(BonusBlocks.SLAB_BRICK_VERDIGRIS_SHINE, 1);
 
         miningLevels.put(BonusBlocks.FENCE_GOLD, 2);
         miningLevels.put(BonusBlocks.TRAPDOOR_GOLD, 2);
+        miningLevels.put(BonusBlocks.DOOR_GOLD_BOTTOM, 2);
+        miningLevels.put(BonusBlocks.DOOR_GOLD_TOP, 2);
+        miningLevels.put(BonusBlocks.BED_GOLD, 2);
+        miningLevels.put(BonusBlocks.SEAT_GOLD, 2);
         miningLevels.put(BonusBlocks.BLOCK_STEEL, 2);
         miningLevels.put(BonusBlocks.BRICK_STEEL, 2);
         miningLevels.put(BonusBlocks.TRAPDOOR_STEEL, 2);
@@ -35,6 +43,9 @@ public class BonusBlockDetails {
         stoneToMossMap.put(MOSS_BASALT, BonusBlocks.MOSS);
         stoneToMossMap.put(MOSS_LIMESTONE, BonusBlocks.MOSS);
         stoneToMossMap.put(MOSS_GRANITE, BonusBlocks.MOSS);
+
+        registerManualBlockColor(BonusBlocks.BLOCK_SUGAR, 0, paintedWhite);
+        registerManualBlockColor(BonusBlocks.BLOCK_GUNPOWDER, 0, MaterialColor.paintedGrey);
 
         registerManualBlockColor(BonusBlocks.BRANCH, 0, MaterialColor.wood);
 
@@ -55,7 +66,7 @@ public class BonusBlockDetails {
         registerManualBlockColor(BonusBlocks.BLOCK_SLIME, 0, MaterialColor.paintedLime);
         registerManualBlockColor(BonusBlocks.BLOCK_LEATHER, 0, MaterialColor.brick);
         registerManualBlockColor(BonusBlocks.BLOCK_WICKER, 0, MaterialColor.paintedYellow);
-        registerManualBlockColor(BonusBlocks.BLOCK_FLINT, 0, MaterialColor.paintedLime);
+        registerManualBlockColor(BonusBlocks.BLOCK_FLINT, 0, MaterialColor.paintedGrey);
         registerManualBlockColor(BonusBlocks.BLOCK_STEEL, 0, MaterialColor.steel);
 
         registerManualBlockColor(BonusBlocks.BRICK_MUD, 0, MaterialColor.dirt);
@@ -87,6 +98,15 @@ public class BonusBlockDetails {
         registerManualBlockColor(BonusBlocks.SLAB_BRICK_OLIVINE, 0, MaterialColor.olivine);
         registerManualBlockColor(BonusBlocks.SLAB_BRICK_QUARTZ, 0, MaterialColor.quartz);
         registerManualBlockColor(BonusBlocks.SLAB_BRICK_CLAY_BAKED, 0, MaterialColor.brick);
+
+        registerManualBlockColor(BonusBlocks.BLOCK_VERDIGRIS, 0, MaterialColor.paintedCyan);
+        registerManualBlockColor(BonusBlocks.BLOCK_VERDIGRIS_SHINE, 0, MaterialColor.diamond);
+        registerManualBlockColor(BonusBlocks.BRICK_VERDIGRIS, 0, MaterialColor.paintedCyan);
+        registerManualBlockColor(BonusBlocks.BRICK_VERDIGRIS_SHINE, 0, MaterialColor.diamond);
+        registerManualBlockColor(BonusBlocks.STAIRS_BRICK_VERDIGRIS, 0, MaterialColor.paintedCyan);
+        registerManualBlockColor(BonusBlocks.STAIRS_BRICK_VERDIGRIS_SHINE, 0, MaterialColor.diamond);
+        registerManualBlockColor(BonusBlocks.SLAB_BRICK_VERDIGRIS, 0, MaterialColor.paintedCyan);
+        registerManualBlockColor(BonusBlocks.SLAB_BRICK_VERDIGRIS_SHINE, 0, MaterialColor.diamond);
 
 
         for (int i = 0; i < 16; ++i) {

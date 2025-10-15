@@ -73,6 +73,8 @@ public abstract class BlockLogicFireMixin {
     private Block<?> getBurntBlock(int blockId) {
         if (blockId == BonusBlocks.BLOCK_VERDIGRIS.id() || blockId == BonusBlocks.BRICK_VERDIGRIS.id()) {
             return BlockLogicVerdigris.getBurntBlock(Blocks.blocksList[blockId]);
+        } else if (blockId == BonusBlocks.MESH_VERDIGRIS.id()) {
+            return BonusBlocks.MESH_VERDIGRIS_SHINE;
         } else if (blockId == BonusBlocks.STAIRS_BRICK_VERDIGRIS.id()) {
             return BonusBlocks.STAIRS_BRICK_VERDIGRIS_SHINE;
         } else if (blockId == BonusBlocks.SLAB_BRICK_VERDIGRIS.id()) {
