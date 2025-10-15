@@ -3,10 +3,14 @@ package luke.bonusblocks.mixin;
 import com.llamalad7.mixinextras.sugar.Local;
 import luke.bonusblocks.BonusBiomes;
 import luke.bonusblocks.BonusBlocks;
-import luke.bonusblocks.biomes.WorldFeaturePebbles;
+import luke.bonusblocks.world.WorldFeaturePebbles;
+import luke.bonusblocks.world.WorldFeatureRichDirt;
+import luke.bonusblocks.world.WorldFeatureRichGravel;
+import luke.bonusblocks.world.WorldFeatureRichSand;
 import net.minecraft.core.block.Blocks;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.biome.Biome;
+import net.minecraft.core.world.biome.BiomeDesert;
 import net.minecraft.core.world.biome.Biomes;
 import net.minecraft.core.world.chunk.Chunk;
 import net.minecraft.core.world.generate.chunk.perlin.overworld.ChunkDecoratorOverworld;
@@ -36,7 +40,7 @@ public class ChunkDecoratorOverworldMixin {
         int minY = this.world.getWorldType().getMinY();
         int maxY = this.world.getWorldType().getMaxY();
         int rangeY = maxY + 1 - minY;
-        float oreHeightModifier = (float)rangeY / 128.0F;
+        float oreHeightModifier = (float) rangeY / 128.0F;
 
         if (biome == Biomes.OVERWORLD_FOREST || biome == Biomes.OVERWORLD_BIRCH_FOREST || biome == Biomes.OVERWORLD_SEASONAL_FOREST || biome == Biomes.OVERWORLD_PLAINS ||
                 biome == BonusBiomes.OVERWORLD_OVERGROWN_MEADOW || biome == Biomes.OVERWORLD_MEADOW || biome == Biomes.OVERWORLD_SHRUBLAND || biome == Biomes.OVERWORLD_GRASSLANDS) {
@@ -78,6 +82,23 @@ public class ChunkDecoratorOverworldMixin {
             int dx = z + rand.nextInt(16) + 8;
             (new WorldFeatureFlowers(BonusBlocks.MUSHROOM_GRAY.id(), 64, false)).place(this.world, rand, k16, oceanY, dx);
         }
+
+        int j4 = x + rand.nextInt(16);
+        int k7 = z + rand.nextInt(16);
+        int k4 = this.world.getHeightValue(j4, k7);
+        (new WorldFeatureRichDirt(10)).place(this.world, rand, j4, k4, k7);
+
+        if (biome instanceof BiomeDesert || biome == Biomes.OVERWORLD_DESERT) {
+            j4 = x + rand.nextInt(16);
+            k7 = z + rand.nextInt(16);
+            k4 = this.world.getHeightValue(j4, k7);
+            (new WorldFeatureRichSand(10)).place(this.world, rand, j4, k4, k7);
+        }
+
+        j4 = x + rand.nextInt(16);
+        k7 = z + rand.nextInt(16);
+        k4 = this.world.getHeightValue(j4, k7);
+        (new WorldFeatureRichGravel(10)).place(this.world, rand, j4, k4, k7);
 
 
         if (biome == BonusBiomes.OVERWORLD_OVERGROWN_MEADOW) {

@@ -212,6 +212,10 @@ public class BonusBlocks {
 
     public static Block<BlockLogic> DIRT_BAKED;
 
+    public static Block<BlockLogic> DIRT_RICH;
+    public static Block<BlockLogic> GRAVEL_RICH;
+    public static Block<BlockLogic> SAND_RICH;
+
     public static Block<?> CANDLE_SOULWAX;
 
     public static Block<?> SKULL;
@@ -385,6 +389,23 @@ public class BonusBlocks {
                 .setResistance(0.8f)
                 .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.MINEABLE_BY_PICKAXE, BlockTags.GROWS_FLOWERS, BlockTags.GROWS_SUGAR_CANE, BlockTags.GROWS_TREES, BlockTags.CAVES_CUT_THROUGH)
                 .build("dirt.rough", "dirt_baked", blockID("DIRT_BAKED"), block -> new BlockLogic(block, Material.dirt));
+
+        // Rich Blocks
+        DIRT_RICH = new BlockBuilder(MOD_ID)
+                .setBlockSound(BlockSounds.GRAVEL)
+                .setHardness(0.5F)
+                .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.GROWS_FLOWERS, BlockTags.GROWS_SUGAR_CANE, BlockTags.GROWS_TREES, BlockTags.CAVES_CUT_THROUGH)
+                .build("dirt.rich", "dirt_rich", blockID("DIRT_RICH"), block -> new BlockLogic(block, Material.dirt));
+        GRAVEL_RICH = new BlockBuilder(MOD_ID)
+                .setBlockSound(BlockSounds.GRAVEL)
+                .setHardness(0.6F)
+                .setTags(BlockTags.MINEABLE_BY_SHOVEL)
+                .build("gravel.rich", "gravel_rich", blockID("GRAVEL_RICH"), BlockLogicGravel::new);
+        SAND_RICH = new BlockBuilder(MOD_ID)
+                .setBlockSound(BlockSounds.SAND)
+                .setHardness(0.5F)
+                .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.GROWS_SUGAR_CANE, BlockTags.GROWS_CACTI, BlockTags.CAVES_CUT_THROUGH, BlockTags.FIREFLIES_CAN_SPAWN)
+                .build("sand.rich", "sand_rich", blockID("SAND_RICH"), BlockLogicSand::new);
 
 
         // Moss

@@ -1,10 +1,8 @@
 package luke.bonusblocks;
 
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.client.sound.SoundRepository;
 import net.minecraft.core.crafting.LookupFuelFurnace;
 import net.minecraft.core.crafting.LookupFuelFurnaceBlast;
-import net.minecraft.core.sound.SoundTypes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.util.ClientStartEntrypoint;
@@ -21,7 +19,7 @@ public class BonusBlocksMod implements ModInitializer, ClientStartEntrypoint, Ga
 
     @Override
     public void beforeClientStart() {
-        SoundRepository.registerNamespace(MOD_ID);
+//        SoundRepository.registerNamespace(MOD_ID);
     }
 
     @Override
@@ -31,7 +29,7 @@ public class BonusBlocksMod implements ModInitializer, ClientStartEntrypoint, Ga
     @Override
     public void beforeGameStart() {
         BonusConfig.Setup();
-        SoundTypes.loadSoundsJson(MOD_ID);
+//        SoundTypes.loadSoundsJson(MOD_ID);
         BonusBlocks.init();
         new BonusItems().initializeItems();
         new BonusBiomes().initializeBiomes();

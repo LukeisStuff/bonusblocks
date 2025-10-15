@@ -180,6 +180,13 @@ public class BonusModels implements ModelEntrypoint {
         dispatcher.addDispatch(BonusBlocks.DIRT_BAKED, new BlockModelStandard<>(BonusBlocks.DIRT_BAKED)
                 .setAllTextures(0, "bonusblocks:block/dirt_baked"));
 
+        dispatcher.addDispatch(BonusBlocks.DIRT_RICH, new BlockModelStandard<>(BonusBlocks.DIRT_RICH)
+                .setAllTextures(0, "bonusblocks:block/dirt_rich"));
+        dispatcher.addDispatch(BonusBlocks.GRAVEL_RICH, new BlockModelStandard<>(BonusBlocks.GRAVEL_RICH)
+                .setAllTextures(0, "bonusblocks:block/gravel_rich"));
+        dispatcher.addDispatch(BonusBlocks.SAND_RICH, new BlockModelStandard<>(BonusBlocks.SAND_RICH)
+                .setAllTextures(0, "bonusblocks:block/sand_rich"));
+
         dispatcher.addDispatch(BonusBlocks.CANDLE_SOULWAX, new BlockModelSoulwaxCandle<>(BonusBlocks.CANDLE_SOULWAX)
                 .setAllTextures(0, "bonusblocks:block/candle_soulwax"));
 

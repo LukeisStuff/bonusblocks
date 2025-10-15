@@ -1,4 +1,4 @@
-package luke.bonusblocks.biomes;
+package luke.bonusblocks.world;
 
 import net.minecraft.core.block.Blocks;
 import net.minecraft.core.world.World;

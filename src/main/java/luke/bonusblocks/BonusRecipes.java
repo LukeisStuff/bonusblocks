@@ -1,12 +1,20 @@
 package luke.bonusblocks;
 
+import net.minecraft.core.WeightedRandomLootObject;
 import net.minecraft.core.block.Blocks;
 import net.minecraft.core.data.registry.Registries;
+import net.minecraft.core.data.registry.recipe.RecipeSymbol;
+import net.minecraft.core.data.registry.recipe.entry.RecipeEntryDyeing;
+import net.minecraft.core.data.registry.recipe.entry.RecipeEntryUndyeing;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.Items;
+import net.minecraft.core.util.helper.DyeColor;
 import turniplabs.halplibe.helper.RecipeBuilder;
 import turniplabs.halplibe.helper.recipeBuilders.RecipeBuilderShaped;
 import turniplabs.halplibe.util.RecipeEntrypoint;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
 
@@ -230,25 +238,47 @@ public class BonusRecipes implements RecipeEntrypoint {
                 .create("green_dye_white_dye_to_lime_dye", new ItemStack(Items.DYE, 2, 10));
 
         for (int color = 0; color < 16; color++) {
-            RecipeBuilder.Shapeless(MOD_ID)
-                    .addInput("bonusblocks:block/wool_slab")
-                    .addInput(new ItemStack(Items.DYE, 1, 15 - color))
-                    .create("wool_slab_dye", new ItemStack(BonusBlocks.SLAB_WOOL, 1, color << 4));
 
             RecipeBuilder.Shaped(MOD_ID, "CCC", "CCC")
                     .addInput('C', new ItemStack(Blocks.WOOL, 1, color))
-                    .create("wool_slab", new ItemStack(BonusBlocks.SLAB_WOOL, 6, color << 4));
-        }
-        for (int color = 0; color < 16; color++) {
-            RecipeBuilder.Shapeless(MOD_ID)
-                    .addInput("bonusblocks:block/wool_stairs")
-                    .addInput(new ItemStack(Items.DYE, 1, 15 - color))
-                    .create("wool_stairs_dye", new ItemStack(BonusBlocks.STAIRS_WOOL, 1, color << 4));
+                    .create("wool_slabs", new ItemStack(BonusBlocks.SLAB_WOOL, 6, color << 4));
 
             RecipeBuilder.Shaped(MOD_ID, "C  ", "CC ", "CCC")
                     .addInput('C', new ItemStack(Blocks.WOOL, 1, color))
                     .create("wool_stairs", new ItemStack(BonusBlocks.STAIRS_WOOL, 6, color << 4));
         }
+
+        Registries.RECIPES.addCustomRecipe(
+                "bonusblocks:workbench/wool_stairs_dying",
+                new RecipeEntryDyeing(
+                        new RecipeSymbol("bonusblocks:wool_stairs"),
+                        BonusBlocks.STAIRS_WOOL.getDefaultStack(), true, false
+                )
+        );
+
+        Registries.RECIPES.addCustomRecipe(
+                "bonusblocks:workbench/wool_stairs_undying",
+                new RecipeEntryUndyeing(
+                        new RecipeSymbol("bonusblocks:wool_stairs"),
+                        BonusBlocks.STAIRS_WOOL.getDefaultStack()
+                )
+        );
+
+        Registries.RECIPES.addCustomRecipe(
+                "bonusblocks:workbench/wool_slabs_dying",
+                new RecipeEntryDyeing(
+                        new RecipeSymbol("bonusblocks:wool_slabs"),
+                        BonusBlocks.SLAB_WOOL.getDefaultStack(), true, false
+                )
+        );
+
+        Registries.RECIPES.addCustomRecipe(
+                "bonusblocks:workbench/wool_slabs_undying",
+                new RecipeEntryUndyeing(
+                        new RecipeSymbol("bonusblocks:wool_slabs"),
+                        BonusBlocks.SLAB_WOOL.getDefaultStack()
+                )
+        );
 
 
         RecipeBuilder.ModifyWorkbench("minecraft").removeRecipe("marble_pillar");
@@ -385,7 +415,39 @@ public class BonusRecipes implements RecipeEntrypoint {
     }
 
     public static void trommelRecipes() {
+        RecipeBuilder.Trommel(MOD_ID)
+                .setInput(BonusBlocks.DIRT_RICH)
+                .addEntry(new WeightedRandomLootObject(Items.ORE_RAW_GOLD.getDefaultStack(), 1), 10.0)
+                .addEntry(new WeightedRandomLootObject(Items.ORE_RAW_IRON.getDefaultStack(), 1, 2), 15.0)
+                .addEntry(new WeightedRandomLootObject(Items.QUARTZ.getDefaultStack(), 1, 4), 25.0)
+                .addEntry(new WeightedRandomLootObject(Items.OLIVINE.getDefaultStack(), 1, 4), 25.0)
+                .addEntry(new WeightedRandomLootObject(new ItemStack(Items.DYE, 1, 4), 2, 4), 20.0)
+                .addEntry(new WeightedRandomLootObject(Items.CLAY.getDefaultStack(), 4, 8), 10.0)
+                .addEntry(new WeightedRandomLootObject(Items.AMMO_PEBBLE.getDefaultStack(), 1, 5), 5.0)
+                .create("trommel_dirt_rich");
 
+        RecipeBuilder.Trommel(MOD_ID)
+                .setInput(BonusBlocks.GRAVEL_RICH)
+                .addEntry(new WeightedRandomLootObject(Items.ORE_RAW_IRON.getDefaultStack(), 1, 2), 30.0)
+                .addEntry(new WeightedRandomLootObject(Items.OLIVINE.getDefaultStack(), 1, 3), 20.0)
+                .addEntry(new WeightedRandomLootObject(Items.QUARTZ.getDefaultStack(), 1), 0.5)
+                .addEntry(new WeightedRandomLootObject(new ItemStack(Items.DYE, 1, 4), 2, 6), 20.0)
+                .addEntry(new WeightedRandomLootObject(Items.SULPHUR.getDefaultStack(), 1, 3), 10.0)
+                .addEntry(new WeightedRandomLootObject(Items.FLINT.getDefaultStack(), 1, 2), 5.0)
+                .addEntry(new WeightedRandomLootObject(Items.AMMO_PEBBLE.getDefaultStack(), 1, 5), 5.0)
+                .create("trommel_gravel_rich");
+
+        RecipeBuilder.Trommel(MOD_ID)
+                .setInput(BonusBlocks.SAND_RICH)
+                .addEntry(new WeightedRandomLootObject(Items.ORE_RAW_GOLD.getDefaultStack(), 1, 2), 30.0)
+                .addEntry(new WeightedRandomLootObject(Items.QUARTZ.getDefaultStack(), 1, 3), 20.0)
+                .addEntry(new WeightedRandomLootObject(Items.CLAY.getDefaultStack(), 4, 8), 10.0)
+                .addEntry(new WeightedRandomLootObject(Items.OLIVINE.getDefaultStack(), 1), 10.0)
+                .addEntry(new WeightedRandomLootObject(Items.BONE.getDefaultStack(), 1, 3), 10.0)
+                .addEntry(new WeightedRandomLootObject(Items.SULPHUR.getDefaultStack(), 1), 5.0)
+                .addEntry(new WeightedRandomLootObject(Items.FLINT.getDefaultStack(), 1, 3), 5.0)
+                .addEntry(new WeightedRandomLootObject(Items.AMMO_PEBBLE.getDefaultStack(), 1, 4), 5.0)
+                .create("trommel_sand_rich");
     }
 
     @Override
@@ -415,42 +477,19 @@ public class BonusRecipes implements RecipeEntrypoint {
 
         Registries.ITEM_GROUPS.getItem("minecraft:dirt").add(BonusBlocks.DIRT_BAKED.getDefaultStack());
 
-        Registries.ITEM_GROUPS.register("bonusblocks:verdigris_ores", Registries.stackListOf(new ItemStack(BonusBlocks.SLAB_WOOL, 1, 0)));
+        Registries.ITEM_GROUPS.register("bonusblocks:verdigris_ores", Registries.stackListOf(new ItemStack(BonusBlocks.ORE_VERDIGRIS_NETHERRACK, 1)));
 
-        Registries.ITEM_GROUPS.register("bonusblocks:wool_slabs", Registries.stackListOf(
-                new ItemStack(BonusBlocks.SLAB_WOOL, 1, 0),
-                new ItemStack(BonusBlocks.SLAB_WOOL, 1, 16),
-                new ItemStack(BonusBlocks.SLAB_WOOL, 1, 32),
-                new ItemStack(BonusBlocks.SLAB_WOOL, 1, 48),
-                new ItemStack(BonusBlocks.SLAB_WOOL, 1, 64),
-                new ItemStack(BonusBlocks.SLAB_WOOL, 1, 80),
-                new ItemStack(BonusBlocks.SLAB_WOOL, 1, 96),
-                new ItemStack(BonusBlocks.SLAB_WOOL, 1, 112),
-                new ItemStack(BonusBlocks.SLAB_WOOL, 1, 128),
-                new ItemStack(BonusBlocks.SLAB_WOOL, 1, 144),
-                new ItemStack(BonusBlocks.SLAB_WOOL, 1, 160),
-                new ItemStack(BonusBlocks.SLAB_WOOL, 1, 176),
-                new ItemStack(BonusBlocks.SLAB_WOOL, 1, 192),
-                new ItemStack(BonusBlocks.SLAB_WOOL, 1, 208),
-                new ItemStack(BonusBlocks.SLAB_WOOL, 1, 224),
-                new ItemStack(BonusBlocks.SLAB_WOOL, 1, 240)));
+        DyeColor[] var17 = DyeColor.values();
+        List<ItemStack> stairsStackList = new ArrayList<>();
+        List<ItemStack> slabStackList = new ArrayList<>();
 
-        Registries.ITEM_GROUPS.register("bonusblocks:wool_stairs", Registries.stackListOf(
-                new ItemStack(BonusBlocks.STAIRS_WOOL, 1, 0),
-                new ItemStack(BonusBlocks.STAIRS_WOOL, 1, 16),
-                new ItemStack(BonusBlocks.STAIRS_WOOL, 1, 32),
-                new ItemStack(BonusBlocks.STAIRS_WOOL, 1, 48),
-                new ItemStack(BonusBlocks.STAIRS_WOOL, 1, 64),
-                new ItemStack(BonusBlocks.STAIRS_WOOL, 1, 80),
-                new ItemStack(BonusBlocks.STAIRS_WOOL, 1, 96),
-                new ItemStack(BonusBlocks.STAIRS_WOOL, 1, 112),
-                new ItemStack(BonusBlocks.STAIRS_WOOL, 1, 128),
-                new ItemStack(BonusBlocks.STAIRS_WOOL, 1, 144),
-                new ItemStack(BonusBlocks.STAIRS_WOOL, 1, 160),
-                new ItemStack(BonusBlocks.STAIRS_WOOL, 1, 176),
-                new ItemStack(BonusBlocks.STAIRS_WOOL, 1, 192),
-                new ItemStack(BonusBlocks.STAIRS_WOOL, 1, 208),
-                new ItemStack(BonusBlocks.STAIRS_WOOL, 1, 224),
-                new ItemStack(BonusBlocks.STAIRS_WOOL, 1, 240)));
+        for (DyeColor color : var17) {
+            stairsStackList.add(new ItemStack(BonusBlocks.STAIRS_WOOL, 1, color.blockMeta << 4));
+            slabStackList.add(new ItemStack(BonusBlocks.SLAB_WOOL, 1, color.blockMeta << 4));
+        }
+
+        Registries.ITEM_GROUPS.register("bonusblocks:wool_slabs", slabStackList);
+        Registries.ITEM_GROUPS.register("bonusblocks:wool_stairs", stairsStackList);
+
     }
 }

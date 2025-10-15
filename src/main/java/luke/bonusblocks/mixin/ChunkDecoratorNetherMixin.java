@@ -2,7 +2,7 @@ package luke.bonusblocks.mixin;
 
 import com.llamalad7.mixinextras.sugar.Local;
 import luke.bonusblocks.BonusBlocks;
-import luke.bonusblocks.biomes.WorldFeatureSkull;
+import luke.bonusblocks.world.WorldFeatureSkull;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.chunk.Chunk;
 import net.minecraft.core.world.generate.chunk.perlin.nether.ChunkDecoratorNether;

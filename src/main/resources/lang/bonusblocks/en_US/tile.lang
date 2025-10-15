@@ -20,6 +20,13 @@ tile.bonusblocks.moss.desc=Large lump of greenery.
 tile.bonusblocks.dirt.rough.name=Baked Dirt
 tile.bonusblocks.dirt.rough.desc=Dirt hardened with mud to prevent grass growing.
 
+tile.bonusblocks.dirt.rich.name=Rich Dirt
+tile.bonusblocks.dirt.rich.desc=Crumbly brown dirt, brimming with minerals.
+tile.bonusblocks.gravel.rich.name=Rich Gravel
+tile.bonusblocks.gravel.rich.desc=A loose collection of pebbles, overflowing with minerals.
+tile.bonusblocks.sand.rich.name=Rich Sand
+tile.bonusblocks.sand.rich.desc=Gets everywhere, loaded with minerals.
+
 tile.bonusblocks.branch.name=Branches
 tile.bonusblocks.branch.desc=Woody structure connecting leaves.
 
