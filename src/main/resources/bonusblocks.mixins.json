@@ -20,6 +20,7 @@
     "EntityClothBounceMixin",
     "ItemMixin",
     "ItemToolShovelMixin",
+    "MenuCreativeMixin",
     "WorldSkullRedstoneMixin"
   ],
   "client": [

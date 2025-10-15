@@ -55,6 +55,8 @@ public class BonusRecipes implements RecipeEntrypoint {
         blockToItem.addInput('X', BonusBlocks.BLOCK_LEATHER).create("block_of_leather_to_leather", new ItemStack(Items.LEATHER, 9));
         blockToItem.addInput('X', BonusBlocks.BLOCK_STEEL).create("block_of_steel_to_steel", new ItemStack(Items.INGOT_STEEL, 9));
         blockToItem.addInput('X', Blocks.BLOCK_STEEL).create("block_of_crude_steel_to_crude_steel", new ItemStack(Items.INGOT_STEEL_CRUDE, 9));
+        blockToItem.addInput('X', BonusBlocks.BLOCK_VERDIGRIS).create("block_of_verdigris_to_verdigris", new ItemStack(BonusItems.ORE_RAW_VERDIGRIS, 9));
+        blockToItem.addInput('X', BonusBlocks.BLOCK_VERDIGRIS_SHINE).create("block_of_burnished_verdigris_to_verdigris", new ItemStack(BonusItems.INGOT_VERDIGRIS, 9));
 
 
         RecipeBuilderShaped templateFlowertoDye = new RecipeBuilderShaped(MOD_ID, "X");
