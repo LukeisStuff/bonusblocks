@@ -51,11 +51,6 @@ public class BlockChimes extends BlockLogic {
     }
 
     public boolean canBlockStay(World world, int x, int y, int z) {
-        int meta = world.getBlockMetadata(x, y, z);
-        if (meta != 1) {
-            return world.canPlaceOnSurfaceOfBlock(x, y + 1, z);
-        } else {
-            return world.isBlockNormalCube(x, y + 1, z) || Blocks.hasTag(world.getBlockId(x, y + 1, z), BlockTags.CAN_HANG_OFF);
-        }
+        return world.isBlockNormalCube(x, y + 1, z) || Blocks.hasTag(world.getBlockId(x, y + 1, z), BlockTags.CAN_HANG_OFF);
     }
 }

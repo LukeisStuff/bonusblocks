@@ -123,10 +123,6 @@ public class BonusModels implements ModelEntrypoint {
                 .setAllTextures(0, "minecraft:block/basket/bottom"));
         dispatcher.addDispatch(BonusBlocks.BLOCK_FLINT, new BlockModelStandard<>(BonusBlocks.BLOCK_FLINT)
                 .setAllTextures(0, "bonusblocks:block/block_flint"));
-        dispatcher.addDispatch(BonusBlocks.BLOCK_RAW_IRON, new BlockModelStandard<>(BonusBlocks.BLOCK_RAW_IRON)
-                .setAllTextures(0, "bonusblocks:block/block_iron_raw"));
-        dispatcher.addDispatch(BonusBlocks.BLOCK_RAW_GOLD, new BlockModelStandard<>(BonusBlocks.BLOCK_RAW_GOLD)
-                .setAllTextures(0, "bonusblocks:block/block_gold_raw"));
         dispatcher.addDispatch(BonusBlocks.BLOCK_STEEL, new BlockModelStandard<>(BonusBlocks.BLOCK_STEEL)
                 .setAllTextures(0, "bonusblocks:block/block_steel"));
         dispatcher.addDispatch(BonusBlocks.BLOCK_VERDIGRIS, new BlockModelStandard<>(BonusBlocks.BLOCK_VERDIGRIS)
@@ -331,6 +327,20 @@ public class BonusModels implements ModelEntrypoint {
                 .setTex(0, "bonusblocks:block/door/steel/frame", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/door/steel/top", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
 
+        dispatcher.addDispatch(BonusBlocks.DOOR_GOLD_BOTTOM, new BlockModelDoor<>(BonusBlocks.DOOR_GOLD_BOTTOM)
+                .setTex(0, "bonusblocks:block/door/gold/frame", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/door/gold/bottom", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+        dispatcher.addDispatch(BonusBlocks.DOOR_GOLD_TOP, new BlockModelDoor<>(BonusBlocks.DOOR_GOLD_TOP)
+                .setTex(0, "bonusblocks:block/door/gold/frame", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/door/gold/top", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+
+        dispatcher.addDispatch(BonusBlocks.BED_GOLD, new BlockModelBedGold<>(BonusBlocks.BED_GOLD));
+        dispatcher.addDispatch((new BlockModelSeat<>(BonusBlocks.SEAT_GOLD))
+                .setTex(0, "bonusblocks:block/seat_gold/top", Side.TOP)
+                .setTex(0, "bonusblocks:block/seat_gold/bottom", Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/seat_gold/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+
+
         dispatcher.addDispatch(BonusBlocks.DOOR_VERDIGRIS_BOTTOM, new BlockModelDoor<>(BonusBlocks.DOOR_VERDIGRIS_BOTTOM)
                 .setTex(0, "bonusblocks:block/door/verdigris/frame", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/door/verdigris/bottom", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
@@ -357,6 +367,10 @@ public class BonusModels implements ModelEntrypoint {
         dispatcher.addDispatch(BonusBlocks.TRAPDOOR_STEEL, new BlockModelTrapDoor<>(BonusBlocks.TRAPDOOR_STEEL)
                 .setTex(0, "bonusblocks:block/trapdoor/steel/top", Side.TOP, Side.BOTTOM)
                 .setTex(0, "bonusblocks:block/trapdoor/steel/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
+
+        dispatcher.addDispatch(BonusBlocks.TRAPDOOR_GOLD, new BlockModelTrapDoor<>(BonusBlocks.TRAPDOOR_GOLD)
+                .setTex(0, "bonusblocks:block/trapdoor/gold/top", Side.TOP, Side.BOTTOM)
+                .setTex(0, "bonusblocks:block/trapdoor/gold/side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST));
 
         dispatcher.addDispatch(BonusBlocks.TRAPDOOR_VERDIGRIS, new BlockModelTrapDoor<>(BonusBlocks.TRAPDOOR_VERDIGRIS)
                 .setTex(0, "bonusblocks:block/trapdoor/verdigris/top", Side.TOP, Side.BOTTOM)
@@ -416,6 +430,12 @@ public class BonusModels implements ModelEntrypoint {
         dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_GLASS_QUARTZ, null).setIcon("bonusblocks:item/door_glass_quartz"));
         dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_GLASS_STEEL, null).setIcon("bonusblocks:item/door_glass_steel"));
         dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_STEEL, null).setIcon("bonusblocks:item/door_steel"));
+        dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_GOLD, null).setIcon("bonusblocks:item/door_gold"));
+        dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_VERDIGRIS, null).setIcon("bonusblocks:item/door_verdigris"));
+        dispatcher.addDispatch(new ItemModelStandard(BonusItems.DOOR_VERDIGRIS_SHINE, null).setIcon("bonusblocks:item/door_verdigris_shine"));
+
+        dispatcher.addDispatch(new ItemModelStandard(BonusItems.BED_GOLD, null).setIcon("bonusblocks:item/bed_gold"));
+        dispatcher.addDispatch(new ItemModelStandard(BonusItems.SEAT_GOLD, null).setIcon("bonusblocks:item/seat_gold"));
 
         dispatcher.addDispatch(new ItemModelStandard(BonusBlocks.CANDLE_SOULWAX.asItem(), null).setIcon("bonusblocks:item/candle_soulwax").setFullBright());
 

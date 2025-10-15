@@ -7,6 +7,7 @@ import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.item.block.ItemBlockStairsPainted;
 import net.minecraft.core.sound.BlockSound;
+import net.minecraft.core.sound.BlockSounds;
 import turniplabs.halplibe.helper.BlockBuilder;
 
 import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
@@ -88,8 +89,6 @@ public class BonusBlocks {
     public static Block<BlockLogic> BLOCK_LEATHER;
     public static Block<BlockLogic> BLOCK_WICKER;
     public static Block<BlockLogic> BLOCK_FLINT;
-    public static Block<BlockLogic> BLOCK_RAW_GOLD;
-    public static Block<BlockLogic> BLOCK_RAW_IRON;
     public static Block<BlockLogic> BLOCK_STEEL;
     public static Block<?> BLOCK_VERDIGRIS;
     public static Block<?> BLOCK_VERDIGRIS_SHINE;
@@ -153,6 +152,7 @@ public class BonusBlocks {
     public static Block<BlockLogicTrapDoor> TRAPDOOR_GLASS_QUARTZ;
     public static Block<BlockLogicTrapDoor> TRAPDOOR_GLASS_STEEL;
     public static Block<BlockLogicTrapDoor> TRAPDOOR_STEEL;
+    public static Block<BlockLogicTrapDoor> TRAPDOOR_GOLD;
     public static Block<BlockLogicTrapDoor> TRAPDOOR_VERDIGRIS;
     public static Block<BlockLogicTrapDoor> TRAPDOOR_VERDIGRIS_SHINE;
 
@@ -182,6 +182,8 @@ public class BonusBlocks {
     public static Block<BlockLogicDoor> DOOR_GLASS_STEEL_TOP;
     public static Block<BlockLogicDoor> DOOR_STEEL_BOTTOM;
     public static Block<BlockLogicDoor> DOOR_STEEL_TOP;
+    public static Block<BlockLogicDoor> DOOR_GOLD_BOTTOM;
+    public static Block<BlockLogicDoor> DOOR_GOLD_TOP;
     public static Block<BlockLogicDoor> DOOR_VERDIGRIS_BOTTOM;
     public static Block<BlockLogicDoor> DOOR_VERDIGRIS_TOP;
     public static Block<BlockLogicDoor> DOOR_VERDIGRIS_SHINE_BOTTOM;
@@ -221,6 +223,9 @@ public class BonusBlocks {
     public static Block<BlockLogicFenceThin> FENCE_VERDIGRIS_SHINE;
 
     public static Block<BlockLogic> TATAMI;
+
+    public static Block<BlockLogicBedGold> BED_GOLD;
+    public static Block<BlockLogicSeatGold> SEAT_GOLD;
 
 
     public void initializeBlocks() {
@@ -274,25 +279,25 @@ public class BonusBlocks {
                 .setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.BROKEN_BY_FLUIDS, BlockTags.MINEABLE_BY_AXE);
 
         BlockBuilder raw = new BlockBuilder(MOD_ID)
-                .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+                .setBlockSound(BlockSounds.METAL)
                 .setHardness(5.0f)
                 .setResistance(10.0f)
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE);
 
         BlockBuilder verdigris = raw
-                .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.7f))
+                .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 0.5f))
                 .setHardness(2.5f)
                 .setResistance(5.0f);
 
         BlockBuilder pebble = new BlockBuilder(MOD_ID)
-                .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+                .setBlockSound(BlockSounds.METAL)
                 .setHardness(0.0f)
                 .setResistance(0.0f)
                 .setVisualUpdateOnMetadata()
                 .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.NOT_IN_CREATIVE_MENU);
 
         BlockBuilder stone = new BlockBuilder(MOD_ID)
-                .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
+                .setBlockSound(BlockSounds.STONE)
                 .setHardness(1.5f)
                 .setResistance(10.0f)
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE);
@@ -302,31 +307,20 @@ public class BonusBlocks {
                 .setVisualUpdateOnMetadata();
 
         BlockBuilder obsidian = new BlockBuilder(MOD_ID)
-                .setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
+                .setBlockSound(BlockSounds.GLASS)
                 .setHardness(5.0f)
                 .setResistance(1000.0f)
                 .setTags(BlockTags.MINEABLE_BY_PICKAXE);
 
-        BlockBuilder brick = new BlockBuilder(MOD_ID)
-                .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
-                .setResistance(10.0f)
-                .setTags(BlockTags.MINEABLE_BY_PICKAXE);
-
-        BlockBuilder slab = new BlockBuilder(MOD_ID)
-                .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
+        BlockBuilder slab = stone
                 .setHardness(1.0f)
-                .setResistance(10.0f)
                 .setUseInternalLight()
-                .setVisualUpdateOnMetadata()
-                .setTags(BlockTags.MINEABLE_BY_PICKAXE);
+                .setVisualUpdateOnMetadata();
 
-        BlockBuilder stairs = new BlockBuilder(MOD_ID)
-                .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
+        BlockBuilder stairs = stone
                 .setHardness(1.0f)
-                .setResistance(10.0f)
                 .setUseInternalLight()
-                .setVisualUpdateOnMetadata()
-                .setTags(BlockTags.MINEABLE_BY_PICKAXE);
+                .setVisualUpdateOnMetadata();
 
 
         /// Blocks
@@ -536,10 +530,6 @@ public class BonusBlocks {
                 .build("block.flint", "block_flint", blockID("BLOCK_FLINT"), b -> new BlockLogic(b, Material.stone));
 
         // Raw Blocks
-        BLOCK_RAW_IRON = raw
-                .build("block.raw.iron", "block_raw_iron", blockID("BLOCK_RAW_IRON"), b -> new BlockLogic(b, Material.metal));
-        BLOCK_RAW_GOLD = raw
-                .build("block.raw.gold", "block_raw_gold", blockID("BLOCK_RAW_GOLD"), b -> new BlockLogic(b, Material.metal));
         BLOCK_STEEL = raw
                 .setHardness(5.0f)
                 .setResistance(2000.0F)
@@ -599,13 +589,13 @@ public class BonusBlocks {
 
 
         // Bricks
-        BRICK_MUD = brick
+        BRICK_MUD = stone
                 .setHardness(1.5f)
                 .build("brick.mud", "brick_mud", blockID("BRICK_MUD"), b -> new BlockLogic(b, Material.stone));
-        BRICK_QUARTZ = brick
+        BRICK_QUARTZ = stone
                 .setHardness(3.0f)
                 .build("brick.quartz", "brick_quartz", blockID("BRICK_QUARTZ"), b -> new BlockLogic(b, Material.stone));
-        BRICK_OLIVINE = brick
+        BRICK_OLIVINE = stone
                 .setHardness(3.0f)
                 .build("brick.olivine", "brick_olivine", blockID("BRICK_OLIVINE"), b -> new BlockLogic(b, Material.stone));
         BRICK_CLAY_BAKED = stone
@@ -873,6 +863,17 @@ public class BonusBlocks {
                 .setResistance(2000.0F)
                 .build("door.steel.top", "door_steel_top", blockID("DOOR_STEEL_TOP"), block -> new BlockLogicDoor(block, Material.steel, true, true, () -> BonusItems.DOOR_STEEL));
 
+        DOOR_GOLD_BOTTOM = door
+                .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+                .setHardness(3.0f)
+                .setResistance(10.0f)
+                .build("door.gold.bottom", "door_gold_bottom", blockID("DOOR_GOLD_BOTTOM"), block -> new BlockLogicDoor(block, Material.metal, false, true, () -> BonusItems.DOOR_GOLD));
+        DOOR_GOLD_TOP = door
+                .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+                .setHardness(3.0f)
+                .setResistance(10.0f)
+                .build("door.gold.top", "door_gold_top", blockID("DOOR_GOLD_TOP"), block -> new BlockLogicDoor(block, Material.metal, true, true, () -> BonusItems.DOOR_GOLD));
+
         DOOR_VERDIGRIS_BOTTOM = door
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.7f))
                 .setHardness(2.5f)
@@ -952,11 +953,15 @@ public class BonusBlocks {
                 .build("trapdoor.glass.steel", "trapdoor_glass_steel", blockID("TRAPDOOR_GLASS_STEEL"), b -> new BlockLogicTrapDoor(b, Material.steel));
 
         TRAPDOOR_STEEL = raw
-                .setBlockSound(new BlockSound("step.stone", "random.glass", 1.0f, 1.0f))
                 .setHardness(5.0f)
                 .setResistance(2000.0F)
                 .setVisualUpdateOnMetadata()
                 .build("trapdoor.steel", "trapdoor_steel", blockID("TRAPDOOR_STEEL"), b -> new BlockLogicTrapDoor(b, Material.steel));
+
+        TRAPDOOR_GOLD = raw
+                .setHardness(3.0f)
+                .setVisualUpdateOnMetadata()
+                .build("trapdoor.gold", "trapdoor_gold", blockID("TRAPDOOR_GOLD"), b -> new BlockLogicTrapDoor(b, Material.metal));
 
         TRAPDOOR_VERDIGRIS = verdigris
                 .setVisualUpdateOnMetadata()
@@ -965,6 +970,14 @@ public class BonusBlocks {
         TRAPDOOR_VERDIGRIS_SHINE = verdigris
                 .setVisualUpdateOnMetadata()
                 .build("trapdoor.verdigris.shine", "trapdoor_verdigris_shine", blockID("TRAPDOOR_VERDIGRIS_SHINE"), b -> new BlockLogicTrapDoor(b, Material.metal));
+
+        BED_GOLD = raw
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+                .build("bed.gold", "bed_gold", blockID("BED_GOLD"), b -> new BlockLogicBedGold(b, Material.metal));
+
+        SEAT_GOLD = raw
+                .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+                .build("seat.gold", "seat_gold", blockID("SEAT_GOLD"), b -> new BlockLogicSeatGold(b, Material.metal));
 
         new BonusBlockDetails().initializeBlockDetails();
 

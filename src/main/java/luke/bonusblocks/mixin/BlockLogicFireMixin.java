@@ -7,37 +7,85 @@ import net.minecraft.core.block.BlockLogicFire;
 import net.minecraft.core.block.Blocks;
 import net.minecraft.core.world.World;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value = BlockLogicFire.class, remap = false)
 public abstract class BlockLogicFireMixin {
-    @Inject(method = "getBurnResultId(Lnet/minecraft/core/world/World;III)I", at = @At("TAIL"), cancellable = true)
-    public void injectVerdigrisBurnResult(World world, int x, int y, int z, CallbackInfoReturnable<Integer> cir) {
+
+    @Inject(method = "setBurnResult(Lnet/minecraft/core/world/World;III)V",
+            at = @At("HEAD"),
+            cancellable = true)
+    public void injectVerdigrisBurnResult(World world, int x, int y, int z, CallbackInfo ci) {
         int blockId = world.getBlockId(x, y, z);
         int meta = world.getBlockMetadata(x, y, z);
-        Block<?> burntBlock = null;
+        Block<?> burntBlock = getBurntBlock(blockId);
 
-        if (blockId == BonusBlocks.BLOCK_VERDIGRIS.id() || blockId == BonusBlocks.BRICK_VERDIGRIS.id()) {
-            burntBlock = BlockLogicVerdigris.getBurntBlock(Blocks.blocksList[blockId]);
+        if (burntBlock != null) {
+            if (blockId == BonusBlocks.DOOR_VERDIGRIS_TOP.id() || blockId == BonusBlocks.DOOR_VERDIGRIS_BOTTOM.id()) {
+                int otherY = blockId == BonusBlocks.DOOR_VERDIGRIS_TOP.id() ? y - 1 : y + 1;
+                int otherBlockId = world.getBlockId(x, otherY, z);
+                Block<?> otherBurntBlock = null;
 
-        } else if (blockId == BonusBlocks.STAIRS_BRICK_VERDIGRIS.id()) {
-            burntBlock = BonusBlocks.STAIRS_BRICK_VERDIGRIS_SHINE;
+                if (blockId == BonusBlocks.DOOR_VERDIGRIS_TOP.id() && otherBlockId == BonusBlocks.DOOR_VERDIGRIS_BOTTOM.id()) {
+                    otherBurntBlock = BonusBlocks.DOOR_VERDIGRIS_SHINE_BOTTOM;
+                } else if (blockId == BonusBlocks.DOOR_VERDIGRIS_BOTTOM.id() && otherBlockId == BonusBlocks.DOOR_VERDIGRIS_TOP.id()) {
+                    otherBurntBlock = BonusBlocks.DOOR_VERDIGRIS_SHINE_TOP;
+                }
 
-        } else if (blockId == BonusBlocks.SLAB_BRICK_VERDIGRIS.id()) {
-            burntBlock = BonusBlocks.SLAB_BRICK_VERDIGRIS_SHINE;
+                if (otherBurntBlock != null) {
+                    world.setBlockRaw(x, otherY, z, otherBurntBlock.id());
+                    world.setBlockMetadata(x, otherY, z, meta);
+                }
 
-        } else if (blockId == BonusBlocks.FENCE_VERDIGRIS.id()) {
-            burntBlock = BonusBlocks.FENCE_VERDIGRIS_SHINE;
+                world.setBlockRaw(x, y, z, burntBlock.id());
+                world.setBlockMetadata(x, y, z, meta);
 
-        } else if (blockId == BonusBlocks.TRAPDOOR_VERDIGRIS.id()) {
-            burntBlock = BonusBlocks.TRAPDOOR_VERDIGRIS_SHINE;
+                if (otherBurntBlock != null) {
+                    world.notifyBlockChange(x, otherY, z, otherBurntBlock.id());
+                }
+                world.notifyBlockChange(x, y, z, burntBlock.id());
+
+                ci.cancel();
+            } else {
+                world.setBlockAndMetadataWithNotify(x, y, z, burntBlock.id(), meta);
+                ci.cancel();
+            }
         }
+    }
+
+    @Inject(method = "getBurnResultId(Lnet/minecraft/core/world/World;III)I",
+            at = @At("HEAD"),
+            cancellable = true)
+    public void injectVerdigrisBurnResultId(World world, int x, int y, int z, CallbackInfoReturnable<Integer> cir) {
+        int blockId = world.getBlockId(x, y, z);
+        Block<?> burntBlock = getBurntBlock(blockId);
 
         if (burntBlock != null) {
             cir.setReturnValue(burntBlock.id());
-            world.setBlockAndMetadataWithNotify(x, y, z, burntBlock.id(), meta);
         }
+    }
+
+    @Unique
+    private Block<?> getBurntBlock(int blockId) {
+        if (blockId == BonusBlocks.BLOCK_VERDIGRIS.id() || blockId == BonusBlocks.BRICK_VERDIGRIS.id()) {
+            return BlockLogicVerdigris.getBurntBlock(Blocks.blocksList[blockId]);
+        } else if (blockId == BonusBlocks.STAIRS_BRICK_VERDIGRIS.id()) {
+            return BonusBlocks.STAIRS_BRICK_VERDIGRIS_SHINE;
+        } else if (blockId == BonusBlocks.SLAB_BRICK_VERDIGRIS.id()) {
+            return BonusBlocks.SLAB_BRICK_VERDIGRIS_SHINE;
+        } else if (blockId == BonusBlocks.FENCE_VERDIGRIS.id()) {
+            return BonusBlocks.FENCE_VERDIGRIS_SHINE;
+        } else if (blockId == BonusBlocks.TRAPDOOR_VERDIGRIS.id()) {
+            return BonusBlocks.TRAPDOOR_VERDIGRIS_SHINE;
+        } else if (blockId == BonusBlocks.DOOR_VERDIGRIS_TOP.id()) {
+            return BonusBlocks.DOOR_VERDIGRIS_SHINE_TOP;
+        } else if (blockId == BonusBlocks.DOOR_VERDIGRIS_BOTTOM.id()) {
+            return BonusBlocks.DOOR_VERDIGRIS_SHINE_BOTTOM;
+        }
+        return null;
     }
 }

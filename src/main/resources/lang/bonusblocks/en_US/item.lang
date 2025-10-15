@@ -7,6 +7,11 @@ item.bonusblocks.candle.soulwax.desc=A waxy brown candle that glows with an unna
 item.bonusblocks.soulwax.name=Soul Wax
 item.bonusblocks.soulwax.desc=A sticky substance secreted from squishy brown sand.
 
+item.bonusblocks.ingot.verdigris.name=Verdigris Ingot
+item.bonusblocks.ingot.verdigris.desc=A metal bar of verdigris used to make blocks. Rusty or shiny.
+item.bonusblocks.ore.raw.verdigris.name=Raw Verdigris Ore
+item.bonusblocks.ore.raw.verdigris.desc=A chunk of unprocessed verdigris. Can be smelted into a verdigris ingot.
+
 item.bonusblocks.door.glass.obsidian.name=Obsidian Glass Door
 item.bonusblocks.door.glass.obsidian.desc=Great for aesthetics, great for privacy!
 
@@ -15,6 +20,22 @@ item.bonusblocks.door.glass.quartz.desc=Great for aesthetics, awful for privacy!
 
 item.bonusblocks.door.glass.steel.name=Reinforced Glass Door
 item.bonusblocks.door.glass.steel.desc=Great for aesthetics, alright for privacy!
+
+item.bonusblocks.door.steel.name=Steel Door
+item.bonusblocks.door.steel.desc=Hardened and durable.
+
+item.bonusblocks.door.gold.name=Gold Door
+item.bonusblocks.door.gold.desc=Every mansion needs one.
+
+item.bonusblocks.bed.gold.name=Gold Bed
+item.bonusblocks.bed.gold.desc=Take a deluxe rest overnight.
+item.bonusblocks.seat.gold.name=Gold Seat
+item.bonusblocks.seat.gold.desc=Sit down in luxury.
+
+item.bonusblocks.door.verdigris.name=Verdigris Door
+item.bonusblocks.door.verdigris.desc=Every factory needs one.
+item.bonusblocks.door.verdigris_shine.name=Burnished Verdigris Door
+item.bonusblocks.door.verdigris_shine.desc=Every factory needs one.
 
 item.bonusblocks.door.stone.name=Stone Door
 item.bonusblocks.door.stone.desc=Every bunker needs one.

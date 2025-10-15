@@ -1,7 +1,9 @@
 package luke.bonusblocks;
 
+import luke.bonusblocks.item.ItemBedGold;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemDoor;
+import net.minecraft.core.item.ItemPlaceable;
 import turniplabs.halplibe.helper.ItemBuilder;
 
 import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
@@ -37,8 +39,12 @@ public class BonusItems {
     public static Item DOOR_GLASS_QUARTZ;
     public static Item DOOR_GLASS_STEEL;
     public static Item DOOR_STEEL;
+    public static Item DOOR_GOLD;
     public static Item DOOR_VERDIGRIS;
     public static Item DOOR_VERDIGRIS_SHINE;
+
+    public static Item BED_GOLD;
+    public static Item SEAT_GOLD;
 
     public void initializeItems() {
 
@@ -77,10 +83,17 @@ public class BonusItems {
                 .build(new ItemDoor("door.glass.steel", "bonusblocks:item/door_glass_steel", itemID("DOOR_GLASS_STEEL"), BonusBlocks.DOOR_GLASS_STEEL_BOTTOM, BonusBlocks.DOOR_GLASS_STEEL_TOP));
         DOOR_STEEL = new ItemBuilder(MOD_ID)
                 .build(new ItemDoor("door.steel", "bonusblocks:item/door_steel", itemID("DOOR_STEEL"), BonusBlocks.DOOR_STEEL_BOTTOM, BonusBlocks.DOOR_STEEL_TOP));
+        DOOR_GOLD = new ItemBuilder(MOD_ID)
+                .build(new ItemDoor("door.gold", "bonusblocks:item/door_gold", itemID("DOOR_GOLD"), BonusBlocks.DOOR_GOLD_BOTTOM, BonusBlocks.DOOR_GOLD_TOP));
 
         DOOR_VERDIGRIS = new ItemBuilder(MOD_ID)
                 .build(new ItemDoor("door.verdigris", "bonusblocks:item/door_verdigris", itemID("DOOR_VERDIGRIS"), BonusBlocks.DOOR_VERDIGRIS_BOTTOM, BonusBlocks.DOOR_VERDIGRIS_TOP));
         DOOR_VERDIGRIS_SHINE = new ItemBuilder(MOD_ID)
                 .build(new ItemDoor("door.verdigris_shine", "bonusblocks:item/door_verdigris_shine", itemID("DOOR_VERDIGRIS_SHINE"), BonusBlocks.DOOR_VERDIGRIS_SHINE_BOTTOM, BonusBlocks.DOOR_VERDIGRIS_SHINE_TOP));
+
+        BED_GOLD = new ItemBuilder(MOD_ID)
+                .build(new ItemBedGold("bed.gold", "bonusblocks:item/bed_gold", itemID("BED_GOLD")));
+        SEAT_GOLD = new ItemBuilder(MOD_ID)
+                .build(new ItemPlaceable("seat.gold", "bonusblocks:item/seat_gold", itemID("SEAT_GOLD"), BonusBlocks.SEAT_GOLD));
     }
 }

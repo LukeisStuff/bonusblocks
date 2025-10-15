@@ -191,7 +191,7 @@ tile.bonusblocks.slab.brick.quartz.desc=A slab of quartz bricks.
 tile.bonusblocks.slab.brick.olivine.name=Olivine Brick Slab
 tile.bonusblocks.slab.brick.olivine.desc=A slab of olivine bricks.
 tile.bonusblocks.slab.brick.clay.baked.name=Baked Clay Brick Slab
-tile.bonusblocks.slab.brick.clay.baked.desc=A slab of baked Clay bricks.
+tile.bonusblocks.slab.brick.clay.baked.desc=A slab of baked clay bricks.
 
 tile.bonusblocks.stairs.cobble.stone.mossy.name=Mossy Cobblestone Stairs
 tile.bonusblocks.stairs.cobble.stone.mossy.desc=Mossy cobblestone block used for rapid vertical movement.
@@ -388,11 +388,64 @@ tile.bonusblocks.stairs.brick.steel.desc=Steel brick block used for rapid vertic
 tile.bonusblocks.trapdoor.steel.name=Steel Trapdoor
 tile.bonusblocks.trapdoor.steel.desc=Like a door, but flat and made of durable steel.
 
-item.bonusblocks.door.steel.name=Steel Door
-item.bonusblocks.door.steel.desc=Hardened and durable.
+tile.bonusblocks.trapdoor.gold.name=Gold Trapdoor
+tile.bonusblocks.trapdoor.gold.desc=Like a door, but flat and made of fancy gold.
 
 tile.bonusblocks.door.steel.top.name=Top Steel Door
 tile.bonusblocks.door.steel.top.desc=Don't take this without asking.
-
-tile.bonusblocks.door.steel.bottom.name=Bottom Crude Steel Door
+tile.bonusblocks.door.steel.bottom.name=Bottom Steel Door
 tile.bonusblocks.door.steel.bottom.desc=Steeler, no steeling!
+
+tile.bonusblocks.door.gold.bottom.name=Bottom Gold Door
+tile.bonusblocks.door.gold.bottom.desc=Cha-
+tile.bonusblocks.door.gold.top.name=Top Gold Door
+tile.bonusblocks.door.gold.top.desc=Ching!
+
+tile.bonusblocks.bed.gold.name=Gold Bed
+tile.bonusblocks.bed.gold.desc=Bed, but gold!
+tile.bonusblocks.seat.gold.name=Gold Seat
+tile.bonusblocks.seat.gold.desc=Seat, but gold!
+
+tile.bonusblocks.block.verdigris.name=Block of Verdigris
+tile.bonusblocks.block.verdigris.desc=A solid block of verdigris. Rusty!
+tile.bonusblocks.block.verdigris.shine.name=Block of Burnished Verdigris
+tile.bonusblocks.block.verdigris.shine.desc=A solid block of verdigris. Shiny!
+
+tile.bonusblocks.brick.verdigris.name=Verdigris Bricks
+tile.bonusblocks.brick.verdigris.desc=Stacked bricks of raw verdigris.
+tile.bonusblocks.brick.verdigris.shine.name=Burnished Verdigris Bricks
+tile.bonusblocks.brick.verdigris.shine.desc=Stacked bricks of verdigris.
+
+tile.bonusblocks.ore.verdigris.netherrack.name=Netherrack Verdigris Ore
+tile.bonusblocks.ore.verdigris.netherrack.desc=Chunks of verdigris embedded in netherrack.
+
+tile.bonusblocks.stairs.brick.verdigris.name=Verdigris Brick Stairs
+tile.bonusblocks.stairs.brick.verdigris.desc=Verdigris brick block used for rapid vertical movement.
+tile.bonusblocks.stairs.brick.verdigris.shine.name=Burnished Verdigris Brick Stairs
+tile.bonusblocks.stairs.brick.verdigris.shine.desc=Burnished verdigris brick block used for rapid vertical movement.
+
+tile.bonusblocks.slab.brick.verdigris.name=Verdigris Brick Slab
+tile.bonusblocks.slab.brick.verdigris.desc=A slab of verdigris bricks.
+tile.bonusblocks.slab.brick.verdigris.shine.name=Burnished Verdigris Brick Slab
+tile.bonusblocks.slab.brick.verdigris.shine.desc=A slab of burnished verdigris bricks.
+
+tile.bonusblocks.trapdoor.verdigris.name=Verdigris Trapdoor
+tile.bonusblocks.trapdoor.verdigris.desc=Like a door, but flat and made of rusty verdigris.
+tile.bonusblocks.trapdoor.verdigris.shine.name=Burnished Verdigris Trapdoor
+tile.bonusblocks.trapdoor.verdigris.shine.desc=Like a door, but flat and made of burnished verdigris.
+
+tile.bonusblocks.fence.verdigris.name=Verdigris Fence
+tile.bonusblocks.fence.verdigris.desc=A fence made of verdigris. Rusty!
+tile.bonusblocks.fence.verdigris.shine.name=Burnished Verdigris Fence
+tile.bonusblocks.fence.verdigris.shine.desc=A fence made of verdigris. Shiny!
+
+tile.bonusblocks.door.verdigris.bottom.name=Bottom Verdigris Door
+tile.bonusblocks.door.verdigris.bottom.desc=You shouldn't have this!
+tile.bonusblocks.door.verdigris.shine.bottom.name=Bottom Burnished Verdigris Door
+tile.bonusblocks.door.verdigris.shine.bottom.desc=You shouldn't have this!
+
+tile.bonusblocks.door.verdigris.top.name=Top Verdigris Door
+tile.bonusblocks.door.verdigris.top.desc=You still shouldn't have this!
+tile.bonusblocks.door.verdigris.shine.top.name=Top Burnished Verdigris Door
+tile.bonusblocks.door.verdigris.shine.top.desc=You still shouldn't have this!
+

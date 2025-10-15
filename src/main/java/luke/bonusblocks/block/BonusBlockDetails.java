@@ -12,7 +12,6 @@ import static net.minecraft.core.item.tool.ItemToolPickaxe.miningLevels;
 public class BonusBlockDetails {
 
     public void initializeBlockDetails() {
-        miningLevels.put(BonusBlocks.BLOCK_RAW_IRON, 1);
 
         miningLevels.put(BonusBlocks.ORE_VERDIGRIS_NETHERRACK, 1);
         miningLevels.put(BonusBlocks.BLOCK_VERDIGRIS, 1);
@@ -20,8 +19,8 @@ public class BonusBlockDetails {
         miningLevels.put(BonusBlocks.BRICK_VERDIGRIS, 1);
         miningLevels.put(BonusBlocks.BRICK_VERDIGRIS_SHINE, 1);
 
-        miningLevels.put(BonusBlocks.BLOCK_RAW_GOLD, 2);
         miningLevels.put(BonusBlocks.FENCE_GOLD, 2);
+        miningLevels.put(BonusBlocks.TRAPDOOR_GOLD, 2);
         miningLevels.put(BonusBlocks.BLOCK_STEEL, 2);
         miningLevels.put(BonusBlocks.BRICK_STEEL, 2);
         miningLevels.put(BonusBlocks.TRAPDOOR_STEEL, 2);
@@ -57,8 +56,6 @@ public class BonusBlockDetails {
         registerManualBlockColor(BonusBlocks.BLOCK_LEATHER, 0, MaterialColor.brick);
         registerManualBlockColor(BonusBlocks.BLOCK_WICKER, 0, MaterialColor.paintedYellow);
         registerManualBlockColor(BonusBlocks.BLOCK_FLINT, 0, MaterialColor.paintedLime);
-        registerManualBlockColor(BonusBlocks.BLOCK_RAW_IRON, 0, MaterialColor.dirt);
-        registerManualBlockColor(BonusBlocks.BLOCK_RAW_GOLD, 0, MaterialColor.gold);
         registerManualBlockColor(BonusBlocks.BLOCK_STEEL, 0, MaterialColor.steel);
 
         registerManualBlockColor(BonusBlocks.BRICK_MUD, 0, MaterialColor.dirt);
