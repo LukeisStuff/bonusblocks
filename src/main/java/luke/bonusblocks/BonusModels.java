@@ -130,9 +130,10 @@ public class BonusModels implements ModelEntrypoint {
         dispatcher.addDispatch(BonusBlocks.BLOCK_VERDIGRIS_SHINE, new BlockModelStandard<>(BonusBlocks.BLOCK_VERDIGRIS_SHINE)
                 .setAllTextures(0, "bonusblocks:block/block_verdigris_shine"));
 
-        dispatcher.addDispatch(BonusBlocks.OVERLAY_RAW_IRON, new BlockModelNuggetsIron<>(BonusBlocks.OVERLAY_RAW_IRON));
-        dispatcher.addDispatch(BonusBlocks.OVERLAY_RAW_GOLD, new BlockModelNuggetsGold<>(BonusBlocks.OVERLAY_RAW_IRON));
-        dispatcher.addDispatch(BonusBlocks.OVERLAY_FLINT, new BlockModelNuggetsFlint<>(BonusBlocks.OVERLAY_FLINT));
+        dispatcher.addDispatch(BonusBlocks.OVERLAY_RAW_IRON, new BlockModelNuggets<>(BonusBlocks.OVERLAY_RAW_IRON, "iron", 3));
+        dispatcher.addDispatch(BonusBlocks.OVERLAY_RAW_GOLD, new BlockModelNuggets<>(BonusBlocks.OVERLAY_RAW_GOLD, "gold", 3));
+        dispatcher.addDispatch(BonusBlocks.OVERLAY_FLINT, new BlockModelNuggets<>(BonusBlocks.OVERLAY_FLINT, "flint", 3));
+        dispatcher.addDispatch(BonusBlocks.OVERLAY_RAW_VERDIGRIS, new BlockModelNuggets<>(BonusBlocks.OVERLAY_RAW_VERDIGRIS, "verdigris", 3));
 
         dispatcher.addDispatch(BonusBlocks.MARBLE_POLISHED, new BlockModelStandard<>(BonusBlocks.MARBLE_POLISHED)
                 .setTex(0, "bonusblocks:block/polished_marble_side", Side.NORTH, Side.SOUTH, Side.EAST, Side.WEST)

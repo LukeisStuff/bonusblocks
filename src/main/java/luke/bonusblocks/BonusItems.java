@@ -1,6 +1,7 @@
 package luke.bonusblocks;
 
 import luke.bonusblocks.item.ItemBedGold;
+import luke.bonusblocks.item.ItemNugget;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemDoor;
 import net.minecraft.core.item.ItemPlaceable;
@@ -55,7 +56,7 @@ public class BonusItems {
                 .build(new Item("moss", "bonusblocks:item/moss", itemID("MOSS")));
 
         ORE_RAW_VERDIGRIS = new ItemBuilder(MOD_ID)
-                .build(new Item("ore.raw.verdigris", "bonusblocks:item/ore_raw_verdigris", itemID("ORE_RAW_VERDIGRIS")));
+                .build(new ItemNugget("ore.raw.verdigris", "bonusblocks:item/ore_raw_verdigris", itemID("ORE_RAW_VERDIGRIS")));
         INGOT_VERDIGRIS = new ItemBuilder(MOD_ID)
                 .build(new Item("ingot.verdigris", "bonusblocks:item/ingot_verdigris", itemID("INGOT_VERDIGRIS")));
 

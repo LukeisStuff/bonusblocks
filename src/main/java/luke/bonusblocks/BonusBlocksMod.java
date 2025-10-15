@@ -32,7 +32,7 @@ public class BonusBlocksMod implements ModInitializer, ClientStartEntrypoint, Ga
     public void beforeGameStart() {
         BonusConfig.Setup();
         SoundTypes.loadSoundsJson(MOD_ID);
-        new BonusBlocks().initializeBlocks();
+        BonusBlocks.init();
         new BonusItems().initializeItems();
         new BonusBiomes().initializeBiomes();
     }

@@ -201,6 +201,7 @@ public class BonusBlocks {
     public static Block<?> OVERLAY_RAW_GOLD;
     public static Block<?> OVERLAY_RAW_IRON;
     public static Block<?> OVERLAY_FLINT;
+    public static Block<?> OVERLAY_RAW_VERDIGRIS;
 
     public static Block<BlockLogic> MARBLE_POLISHED;
 
@@ -226,9 +227,16 @@ public class BonusBlocks {
 
     public static Block<BlockLogicBedGold> BED_GOLD;
     public static Block<BlockLogicSeatGold> SEAT_GOLD;
+    private static boolean hasInit = false;
 
+    public static void init() {
+        if (!hasInit) {
+            hasInit = true;
+            initializeBlocks();
+        }
+    }
 
-    public void initializeBlocks() {
+    public static void initializeBlocks() {
 
         BlockBuilder leaves = new BlockBuilder(MOD_ID)
                 .setBlockSound(new BlockSound("step.grass", "step.grass", 1.0f, 1.0f))
@@ -553,6 +561,8 @@ public class BonusBlocks {
                 .build("overlay.gold", "overlay_raw_gold", blockID("OVERLAY_RAW_GOLD"), BlockLogicOverlayNuggetsGold::new);
         OVERLAY_FLINT = pebble
                 .build("overlay.flint", "overlay_flint", blockID("OVERLAY_FLINT"), BlockLogicOverlayNuggetsFlint::new);
+        OVERLAY_RAW_VERDIGRIS = pebble
+                .build("overlay.verdigris", "overlay_verdigris", blockID("OVERLAY_RAW_VERDIGRIS"), BlockLogicOverlayNuggetsVerdigris::new);
 
 
         // Polished Stones
