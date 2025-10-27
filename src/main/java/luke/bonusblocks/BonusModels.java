@@ -135,6 +135,11 @@ public class BonusModels implements ModelEntrypoint {
         dispatcher.addDispatch(BonusBlocks.MESH_VERDIGRIS_SHINE, new BlockModelTransparent<>(BonusBlocks.MESH_VERDIGRIS_SHINE, true)
                 .setAllTextures(0, "bonusblocks:block/mesh_verdigris_shine"));
 
+        dispatcher.addDispatch(BonusBlocks.MESH_STEEL, new BlockModelTransparent<>(BonusBlocks.MESH_STEEL, true)
+                .setAllTextures(0, "bonusblocks:block/mesh_steel"));
+        dispatcher.addDispatch(BonusBlocks.MESH_STEEL_CRUDE, new BlockModelTransparent<>(BonusBlocks.MESH_STEEL_CRUDE, true)
+                .setAllTextures(0, "bonusblocks:block/mesh_steel_crude"));
+
         dispatcher.addDispatch(BonusBlocks.OVERLAY_RAW_IRON, new BlockModelNuggets<>(BonusBlocks.OVERLAY_RAW_IRON, "iron", 3));
         dispatcher.addDispatch(BonusBlocks.OVERLAY_RAW_GOLD, new BlockModelNuggets<>(BonusBlocks.OVERLAY_RAW_GOLD, "gold", 3));
         dispatcher.addDispatch(BonusBlocks.OVERLAY_FLINT, new BlockModelNuggets<>(BonusBlocks.OVERLAY_FLINT, "flint", 3));
@@ -395,7 +400,7 @@ public class BonusModels implements ModelEntrypoint {
 
         //STAIRS
         dispatcher.addDispatch(BonusBlocks.STAIRS_WOOL, new BlockModelStairsWool<>(BonusBlocks.STAIRS_WOOL));
-        dispatcher.addDispatch(BonusBlocks.STAIRS_COBBLESTONE_MOSSY, new BlockModelStairs<>(BonusBlocks.STAIRS_COBBLESTONE_MOSSY));
+        dispatcher.addDispatch(BonusBlocks.STAIRS_COBBLE_STONE_MOSSY, new BlockModelStairs<>(BonusBlocks.STAIRS_COBBLE_STONE_MOSSY));
         dispatcher.addDispatch(BonusBlocks.STAIRS_BRICK_STONE_POLISHED_MOSSY, new BlockModelStairs<>(BonusBlocks.STAIRS_BRICK_STONE_POLISHED_MOSSY));
         dispatcher.addDispatch(BonusBlocks.STAIRS_BRICK_MUD, new BlockModelStairs<>(BonusBlocks.STAIRS_BRICK_MUD));
         dispatcher.addDispatch(BonusBlocks.STAIRS_BRICK_QUARTZ, new BlockModelStairs<>(BonusBlocks.STAIRS_BRICK_QUARTZ));
@@ -408,7 +413,7 @@ public class BonusModels implements ModelEntrypoint {
 
         //SLABS
         dispatcher.addDispatch(BonusBlocks.SLAB_WOOL, new BlockModelSlabWool<>(BonusBlocks.SLAB_WOOL));
-        dispatcher.addDispatch(BonusBlocks.SLAB_COBBLESTONE_MOSSY, new BlockModelSlab<>(BonusBlocks.SLAB_COBBLESTONE_MOSSY));
+        dispatcher.addDispatch(BonusBlocks.SLAB_COBBLE_STONE_MOSSY, new BlockModelSlab<>(BonusBlocks.SLAB_COBBLE_STONE_MOSSY));
         dispatcher.addDispatch(BonusBlocks.SLAB_BRICK_STONE_POLISHED_MOSSY, new BlockModelSlab<>(BonusBlocks.SLAB_BRICK_STONE_POLISHED_MOSSY));
         dispatcher.addDispatch(BonusBlocks.SLAB_BRICK_MUD, new BlockModelSlab<>(BonusBlocks.SLAB_BRICK_MUD));
         dispatcher.addDispatch(BonusBlocks.SLAB_BRICK_QUARTZ, new BlockModelSlab<>(BonusBlocks.SLAB_BRICK_QUARTZ));

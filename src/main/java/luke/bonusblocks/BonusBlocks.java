@@ -114,7 +114,7 @@ public class BonusBlocks {
 
     //STAIRS
     public static Block<BlockLogicStairsWoolPainted> STAIRS_WOOL;
-    public static Block<BlockLogicStairs> STAIRS_COBBLESTONE_MOSSY;
+    public static Block<BlockLogicStairs> STAIRS_COBBLE_STONE_MOSSY;
     public static Block<BlockLogicStairs> STAIRS_BRICK_STONE_POLISHED_MOSSY;
     public static Block<BlockLogicStairs> STAIRS_BRICK_MUD;
     public static Block<BlockLogicStairs> STAIRS_BRICK_QUARTZ;
@@ -126,7 +126,7 @@ public class BonusBlocks {
 
     //SLABS
     public static Block<BlockLogicSlabWoolPainted> SLAB_WOOL;
-    public static Block<BlockLogicSlab> SLAB_COBBLESTONE_MOSSY;
+    public static Block<BlockLogicSlab> SLAB_COBBLE_STONE_MOSSY;
     public static Block<BlockLogicSlab> SLAB_SLATE_POLISHED;
     public static Block<BlockLogicSlab> SLAB_MARBLE_POLISHED;
     public static Block<BlockLogicSlab> SLAB_BRICK_STONE_POLISHED_MOSSY;
@@ -231,6 +231,9 @@ public class BonusBlocks {
 
     public static Block<?> MESH_VERDIGRIS;
     public static Block<?> MESH_VERDIGRIS_SHINE;
+
+    public static Block<?> MESH_STEEL;
+    public static Block<?> MESH_STEEL_CRUDE;
 
     public static Block<BlockLogicBedGold> BED_GOLD;
     public static Block<BlockLogicSeatGold> SEAT_GOLD;
@@ -578,6 +581,17 @@ public class BonusBlocks {
         MESH_VERDIGRIS_SHINE = verdigris
                 .build("mesh.verdigris.shine", "mesh_verdigris_shine", blockID("MESH_VERDIGRIS_SHINE"), BlockLogicMeshVerdigris::new);
 
+        MESH_STEEL = stone
+                .setHardness(5.0f)
+                .setResistance(2000.0F)
+                .setImmovable()
+                .build("mesh.steel", "mesh_crude", blockID("MESH_STEEL"), BlockLogicMesh::new);
+        MESH_STEEL_CRUDE = stone
+                .setHardness(5.0f)
+                .setResistance(2000.0F)
+                .setImmovable()
+                .build("mesh.steel.crude", "mesh_steel_crude", blockID("MESH_STEEL_CRUDE"), BlockLogicMesh::new);
+
         ORE_VERDIGRIS_NETHERRACK = stone
                 .setHardness(3.0F)
                 .setResistance(5.0f)
@@ -730,9 +744,9 @@ public class BonusBlocks {
                 .setTags(BlockTags.MINEABLE_BY_SHEARS)
                 .setBlockItem(ItemBlockSlabWool::new)
                 .build("slab.wool", "slab_wool", blockID("SLAB_WOOL"), b -> new BlockLogicSlabWoolPainted(b, WOOL));
-        SLAB_COBBLESTONE_MOSSY = slab
+        SLAB_COBBLE_STONE_MOSSY = slab
                 .setHardness(2.0F)
-                .build("slab.cobblestone.mossy", "slab_cobblestone_mossy", blockID("SLAB_COBBLESTONE_MOSSY"), b -> new BlockLogicSlab(b, COBBLE_STONE_MOSSY));
+                .build("slab.cobble.stone.mossy", "slab_cobble_stone_mossy", blockID("SLAB_COBBLE_STONE_MOSSY"), b -> new BlockLogicSlab(b, COBBLE_STONE_MOSSY));
         SLAB_SLATE_POLISHED = slab
                 .build("slab.slate.polished", "slab_slate_polished", blockID("SLAB_SLATE_POLISHED"), b -> new BlockLogicSlab(b, SLATE_CARVED));
         SLAB_MARBLE_POLISHED = slab
@@ -776,9 +790,9 @@ public class BonusBlocks {
                 .setTags(BlockTags.MINEABLE_BY_SHEARS)
                 .setBlockItem(ItemBlockStairsPainted::new)
                 .build("stairs.wool", "stairs_wool", blockID("STAIRS_WOOL"), b -> new BlockLogicStairsWoolPainted(b, WOOL));
-        STAIRS_COBBLESTONE_MOSSY = stairs
+        STAIRS_COBBLE_STONE_MOSSY = stairs
                 .setHardness(2.0F)
-                .build("stairs.cobblestone.mossy", "stairs_cobblestone_mossy", blockID("STAIRS_COBBLESTONE_MOSSY"), b -> new BlockLogicStairs(b, COBBLE_STONE_MOSSY));
+                .build("stairs.cobble.stone.mossy", "stairs_cobble_stone_mossy", blockID("STAIRS_COBBLE_STONE_MOSSY"), b -> new BlockLogicStairs(b, COBBLE_STONE_MOSSY));
         STAIRS_BRICK_STONE_POLISHED_MOSSY = stairs
                 .setHardness(2.0F)
                 .build("stairs.brick.stone.polished.mossy", "stairs_brick_stone_polished_mossy", blockID("STAIRS_BRICK_STONE_POLISHED_MOSSY"), b -> new BlockLogicStairs(b, BRICK_STONE_POLISHED_MOSSY));

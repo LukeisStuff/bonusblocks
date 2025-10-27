@@ -17,8 +17,8 @@ tile.bonusblocks.grass.scorched.overgrown.desc=Scorched dirt completely overgrow
 tile.bonusblocks.moss.name=Moss
 tile.bonusblocks.moss.desc=Large lump of greenery.
 
-tile.bonusblocks.dirt.rough.name=Baked Dirt
-tile.bonusblocks.dirt.rough.desc=Dirt hardened with mud to prevent grass growing.
+tile.bonusblocks.dirt.baked.name=Baked Dirt
+tile.bonusblocks.dirt.baked.desc=Dirt hardened with mud to prevent grass growing.
 
 tile.bonusblocks.dirt.rich.name=Rich Dirt
 tile.bonusblocks.dirt.rich.desc=Crumbly brown dirt, brimming with minerals.
@@ -426,6 +426,11 @@ tile.bonusblocks.mesh.verdigris.name=Verdigris Mesh
 tile.bonusblocks.mesh.verdigris.desc=Allows blank to pass through but nothing else.
 tile.bonusblocks.mesh.verdigris.shine.name=Burnished Verdigris Mesh
 tile.bonusblocks.mesh.verdigris.shine.desc=Allows blank to pass through but nothing else.
+
+tile.bonusblocks.mesh.steel.name=Steel Mesh
+tile.bonusblocks.mesh.steel.desc=Like a normal mesh but blast proof and immovable.
+tile.bonusblocks.mesh.steel.crude.name=Crude Steel Mesh
+tile.bonusblocks.mesh.steel.crude.desc=Like a steel mesh but crude.
 
 tile.bonusblocks.brick.verdigris.name=Verdigris Bricks
 tile.bonusblocks.brick.verdigris.desc=Stacked bricks of raw verdigris.

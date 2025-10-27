@@ -30,30 +30,6 @@ public class BlockLogicDoorStone extends BlockLogicDoor {
     }
 
     public void onPoweredBlockChange(World world, int x, int y, int z, boolean isPowered) {
-        int meta = world.getBlockMetadata(x, y, z);
-        if ((meta & 8) > 0) {
-            isPowered = !isPowered;
-        }
-
-        if (this.isTop) {
-            Block<?> b;
-            if ((b = Blocks.blocksList[world.getBlockId(x, y - 1, z)]) != null && b.getLogic() instanceof BlockLogicDoor) {
-                ((BlockLogicDoor) b.getLogic()).onPoweredBlockChange(world, x, y - 1, z, isPowered);
-            }
-
-        } else {
-            boolean isOpen = (world.getBlockMetadata(x, y, z) & 4) > 0;
-            if (isOpen != isPowered) {
-                Block<?> b;
-                if ((b = Blocks.blocksList[world.getBlockId(x, y + 1, z)]) != null && b.getLogic() instanceof BlockLogicDoor) {
-                    world.setBlockMetadataWithNotify(x, y + 1, z, meta ^ 4);
-                }
-
-                world.setBlockMetadataWithNotify(x, y, z, meta ^ 4);
-                world.markBlocksDirty(x, y - 1, z, x, y, z);
-                world.playBlockEvent(null, 1003, x, y, z, 0);
-            }
-        }
     }
 
     public void onNeighborBlockChange(World world, int x, int y, int z, int blockId) {
