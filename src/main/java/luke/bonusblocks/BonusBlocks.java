@@ -388,7 +388,7 @@ public class BonusBlocks {
                 .setHardness(0.8f)
                 .setResistance(0.8f)
                 .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.MINEABLE_BY_PICKAXE, BlockTags.GROWS_FLOWERS, BlockTags.GROWS_SUGAR_CANE, BlockTags.GROWS_TREES, BlockTags.CAVES_CUT_THROUGH)
-                .build("dirt.rough", "dirt_baked", blockID("DIRT_BAKED"), block -> new BlockLogic(block, Material.dirt));
+                .build("dirt.baked", "dirt_baked", blockID("DIRT_BAKED"), block -> new BlockLogic(block, Material.dirt));
 
         // Rich Blocks
         DIRT_RICH = new BlockBuilder(MOD_ID)
@@ -729,42 +729,42 @@ public class BonusBlocks {
                 .setFlammability(30, 60)
                 .setTags(BlockTags.MINEABLE_BY_SHEARS)
                 .setBlockItem(ItemBlockSlabWool::new)
-                .build("slab_wool", blockID("SLAB_WOOL"), b -> new BlockLogicSlabWoolPainted(b, WOOL));
+                .build("slab.wool", "slab_wool", blockID("SLAB_WOOL"), b -> new BlockLogicSlabWoolPainted(b, WOOL));
         SLAB_COBBLESTONE_MOSSY = slab
                 .setHardness(2.0F)
-                .build("slab_cobble_stone_mossy", blockID("SLAB_COBBLESTONE_MOSSY"), b -> new BlockLogicSlab(b, COBBLE_STONE_MOSSY));
+                .build("slab.cobblestone.mossy", "slab_cobblestone_mossy", blockID("SLAB_COBBLESTONE_MOSSY"), b -> new BlockLogicSlab(b, COBBLE_STONE_MOSSY));
         SLAB_SLATE_POLISHED = slab
-                .build("slab_slate_polished", blockID("SLAB_SLATE_POLISHED"), b -> new BlockLogicSlab(b, SLATE_CARVED));
+                .build("slab.slate.polished", "slab_slate_polished", blockID("SLAB_SLATE_POLISHED"), b -> new BlockLogicSlab(b, SLATE_CARVED));
         SLAB_MARBLE_POLISHED = slab
-                .build("slab_marble_polished", blockID("SLAB_MARBLE_POLISHED"), b -> new BlockLogicSlab(b, MARBLE_CARVED));
+                .build("slab.marble.polished", "slab_marble_polished", blockID("SLAB_MARBLE_POLISHED"), b -> new BlockLogicSlab(b, MARBLE_CARVED));
         SLAB_BRICK_STONE_POLISHED_MOSSY = slab
                 .setHardness(2.0F)
-                .build("slab_brick_stone_polished_mossy", blockID("SLAB_BRICK_STONE_POLISHED_MOSSY"), b -> new BlockLogicSlab(b, BRICK_STONE_POLISHED_MOSSY));
+                .build("slab.brick.stone.polished.mossy", "slab_brick_stone_polished_mossy", blockID("SLAB_BRICK_STONE_POLISHED_MOSSY"), b -> new BlockLogicSlab(b, BRICK_STONE_POLISHED_MOSSY));
         SLAB_BRICK_MUD = slab
-                .build("slab_brick_mud", blockID("SLAB_BRICK_MUD"), b -> new BlockLogicSlab(b, BRICK_MUD));
+                .build("slab.brick.mud", "slab_brick_mud", blockID("SLAB_BRICK_MUD"), b -> new BlockLogicSlab(b, BRICK_MUD));
         SLAB_BRICK_QUARTZ = slab
                 .setHardness(3.0f)
-                .build("slab_brick_quartz", blockID("SLAB_BRICK_QUARTZ"), b -> new BlockLogicSlab(b, BRICK_QUARTZ));
+                .build("slab.brick.quartz", "slab_brick_quartz", blockID("SLAB_BRICK_QUARTZ"), b -> new BlockLogicSlab(b, BRICK_QUARTZ));
         SLAB_BRICK_OLIVINE = slab
                 .setHardness(3.0f)
-                .build("slab_brick_olivine", blockID("SLAB_BRICK_OLIVINE"), b -> new BlockLogicSlab(b, BRICK_OLIVINE));
+                .build("slab.brick.olivine", "slab_brick_olivine", blockID("SLAB_BRICK_OLIVINE"), b -> new BlockLogicSlab(b, BRICK_OLIVINE));
         SLAB_BRICK_CLAY_BAKED = slab
-                .build("slab_brick_clay_baked", blockID("SLAB_BRICK_CLAY_BAKED"), b -> new BlockLogicSlab(b, BRICK_CLAY_BAKED));
+                .build("slab.brick.clay.baked", "slab_brick_clay_baked", blockID("SLAB_BRICK_CLAY_BAKED"), b -> new BlockLogicSlab(b, BRICK_CLAY_BAKED));
         SLAB_BRICK_STEEL = slab
                 .setHardness(5.0f)
                 .setResistance(2000.0F)
-                .build("slab_brick_steel", blockID("SLAB_BRICK_STEEL"), b -> new BlockLogicSlab(b, BRICK_STEEL));
+                .build("slab.brick.steel", "slab_brick_steel", blockID("SLAB_BRICK_STEEL"), b -> new BlockLogicSlab(b, BRICK_STEEL));
         SLAB_BRICK_VERDIGRIS = slab
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.7f))
                 .setHardness(2.5f)
                 .setResistance(5.0f)
                 .setFlammability(50, 50)
-                .build("slab_brick_verdigris", blockID("SLAB_BRICK_VERDIGRIS"), b -> new BlockLogicSlab(b, BRICK_VERDIGRIS));
+                .build("slab.brick.verdigris", "slab_brick_verdigris", blockID("SLAB_BRICK_VERDIGRIS"), b -> new BlockLogicSlab(b, BRICK_VERDIGRIS));
         SLAB_BRICK_VERDIGRIS_SHINE = slab
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.7f))
                 .setHardness(2.5f)
                 .setResistance(5.0f)
-                .build("slab_brick_verdigris_shine", blockID("SLAB_BRICK_VERDIGRIS_SHINE"), b -> new BlockLogicSlab(b, BRICK_VERDIGRIS_SHINE));
+                .build("slab.brick.verdigris.shine", "slab_brick_verdigris_shine", blockID("SLAB_BRICK_VERDIGRIS_SHINE"), b -> new BlockLogicSlab(b, BRICK_VERDIGRIS_SHINE));
 
 
         // Stairs
@@ -775,39 +775,39 @@ public class BonusBlocks {
                 .setFlammability(30, 60)
                 .setTags(BlockTags.MINEABLE_BY_SHEARS)
                 .setBlockItem(ItemBlockStairsPainted::new)
-                .build("stairs_wool", blockID("STAIRS_WOOL"), b -> new BlockLogicStairsWoolPainted(b, WOOL));
+                .build("stairs.wool", "stairs_wool", blockID("STAIRS_WOOL"), b -> new BlockLogicStairsWoolPainted(b, WOOL));
         STAIRS_COBBLESTONE_MOSSY = stairs
                 .setHardness(2.0F)
-                .build("stairs_cobble_stone_mossy", blockID("STAIRS_COBBLESTONE_MOSSY"), b -> new BlockLogicStairs(b, COBBLE_STONE_MOSSY));
+                .build("stairs.cobblestone.mossy", "stairs_cobblestone_mossy", blockID("STAIRS_COBBLESTONE_MOSSY"), b -> new BlockLogicStairs(b, COBBLE_STONE_MOSSY));
         STAIRS_BRICK_STONE_POLISHED_MOSSY = stairs
                 .setHardness(2.0F)
-                .build("stairs_brick_stone_polished_mossy", blockID("STAIRS_BRICK_STONE_POLISHED_MOSSY"), b -> new BlockLogicStairs(b, BRICK_STONE_POLISHED_MOSSY));
+                .build("stairs.brick.stone.polished.mossy", "stairs_brick_stone_polished_mossy", blockID("STAIRS_BRICK_STONE_POLISHED_MOSSY"), b -> new BlockLogicStairs(b, BRICK_STONE_POLISHED_MOSSY));
         STAIRS_BRICK_MUD = stairs
                 .setHardness(1.5f)
-                .build("stairs_brick_mud", blockID("STAIRS_BRICK_MUD"), b -> new BlockLogicStairs(b, BRICK_MUD));
+                .build("stairs.brick.mud", "stairs_brick_mud", blockID("STAIRS_BRICK_MUD"), b -> new BlockLogicStairs(b, BRICK_MUD));
         STAIRS_BRICK_QUARTZ = stairs
                 .setHardness(3.0f)
-                .build("stairs_brick_quartz", blockID("STAIRS_BRICK_QUARTZ"), b -> new BlockLogicStairs(b, BRICK_QUARTZ));
+                .build("stairs.brick.quartz", "stairs_brick_quartz", blockID("STAIRS_BRICK_QUARTZ"), b -> new BlockLogicStairs(b, BRICK_QUARTZ));
         STAIRS_BRICK_OLIVINE = stairs
                 .setHardness(3.0f)
-                .build("stairs_brick_olivine", blockID("STAIRS_BRICK_OLIVINE"), b -> new BlockLogicStairs(b, BRICK_OLIVINE));
+                .build("stairs.brick.olivine", "stairs_brick_olivine", blockID("STAIRS_BRICK_OLIVINE"), b -> new BlockLogicStairs(b, BRICK_OLIVINE));
         STAIRS_BRICK_CLAY_BAKED = stairs
-                .build("stairs_brick_clay_baked", blockID("STAIRS_BRICK_CLAY_BAKED"), b -> new BlockLogicStairs(b, BRICK_CLAY_BAKED));
+                .build("stairs.brick.clay.baked", "stairs_brick_clay_baked", blockID("STAIRS_BRICK_CLAY_BAKED"), b -> new BlockLogicStairs(b, BRICK_CLAY_BAKED));
         STAIRS_BRICK_STEEL = stairs
                 .setHardness(5.0f)
                 .setResistance(2000.0F)
-                .build("stairs_brick_steel", blockID("STAIRS_BRICK_STEEL"), b -> new BlockLogicStairs(b, BRICK_STEEL));
+                .build("stairs.brick.steel", "stairs_brick_steel", blockID("STAIRS_BRICK_STEEL"), b -> new BlockLogicStairs(b, BRICK_STEEL));
         STAIRS_BRICK_VERDIGRIS = stairs
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.7f))
                 .setHardness(2.5f)
                 .setResistance(5.0f)
                 .setFlammability(50, 50)
-                .build("stairs_brick_verdigris", blockID("STAIRS_BRICK_VERDIGRIS"), b -> new BlockLogicStairs(b, BRICK_VERDIGRIS));
+                .build("stairs.brick.verdigris", "stairs_brick_verdigris", blockID("STAIRS_BRICK_VERDIGRIS"), b -> new BlockLogicStairs(b, BRICK_VERDIGRIS));
         STAIRS_BRICK_VERDIGRIS_SHINE = stairs
                 .setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.7f))
                 .setHardness(2.5f)
                 .setResistance(5.0f)
-                .build("stairs_brick_verdigris_shine", blockID("STAIRS_BRICK_VERDIGRIS_SHINE"), b -> new BlockLogicStairs(b, BRICK_VERDIGRIS_SHINE));
+                .build("stairs.brick.verdigris.shine", "stairs_brick_verdigris_shine", blockID("STAIRS_BRICK_VERDIGRIS_SHINE"), b -> new BlockLogicStairs(b, BRICK_VERDIGRIS_SHINE));
 
 
         // Doors
