@@ -77,6 +77,10 @@ tile.bonusblocks.overlay.gold.name=Gold Nuggets
 tile.bonusblocks.overlay.gold.desc=A cluster of raw gold.
 tile.bonusblocks.overlay.iron.name=Iron Nuggets
 tile.bonusblocks.overlay.iron.desc=A cluster of raw iron.
+tile.bonusblocks.overlay.verdigris.name=Verdigris Nuggets
+tile.bonusblocks.overlay.verdigris.desc=A cluster of raw verdigris.
+tile.bonusblocks.overlay.flint.name=Flint Pebbles
+tile.bonusblocks.overlay.flint.desc=A cluster of flint.
 
 tile.bonusblocks.block.slime.name=Block of Slime
 tile.bonusblocks.block.slime.desc=Sticky and slimy mass of slime.
