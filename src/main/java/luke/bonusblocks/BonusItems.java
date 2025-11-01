@@ -8,19 +8,9 @@ import net.minecraft.core.item.ItemPlaceable;
 import turniplabs.halplibe.helper.ItemBuilder;
 
 import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
+import static luke.bonusblocks.BonusConfig.itemID;
 
 public class BonusItems {
-
-    public static int itemID = BonusConfig.blockIDs;
-
-    public static int itemID(String itemName) {
-        try {
-            return BonusConfig.cfg.getInt(BonusConfig.ItemIDs + "." + itemName);
-        } catch (NullPointerException e) {
-            BonusConfig.properties.addEntry(BonusConfig.ItemIDs + "." + itemName, itemID);
-            return itemID++;
-        }
-    }
 
     public static Item SOULWAX;
     public static Item MOSS;

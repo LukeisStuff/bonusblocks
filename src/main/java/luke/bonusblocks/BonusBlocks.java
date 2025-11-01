@@ -11,21 +11,10 @@ import net.minecraft.core.sound.BlockSounds;
 import turniplabs.halplibe.helper.BlockBuilder;
 
 import static luke.bonusblocks.BonusBlocksMod.MOD_ID;
+import static luke.bonusblocks.BonusConfig.blockID;
 import static net.minecraft.core.block.Blocks.*;
 
 public class BonusBlocks {
-
-    public static int blockID = BonusConfig.blockIDs;
-
-    public static int blockID(String blockName) {
-        try {
-            return BonusConfig.cfg.getInt(BonusConfig.BlockIDs + "." + blockName);
-        } catch (NullPointerException e) {
-            BonusConfig.properties.addEntry(BonusConfig.BlockIDs + "." + blockName, blockID);
-            return blockID++;
-        }
-    }
-
 
     //LOGS, LEAVES, SAPLINGS
     public static Block<?> BRANCH;
