@@ -1,10 +1,11 @@
 package luke.bonusblocks;
 
 import luke.bonusblocks.block.*;
-import luke.bonusblocks.block.blockmodel.ItemBlockSlabWool;
 import net.minecraft.core.block.*;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
+import net.minecraft.core.item.block.ItemBlockSlab;
+import net.minecraft.core.item.block.ItemBlockSlabPainted;
 import net.minecraft.core.item.block.ItemBlockStairsPainted;
 import net.minecraft.core.sound.BlockSound;
 import net.minecraft.core.sound.BlockSounds;
@@ -322,6 +323,7 @@ public class BonusBlocks {
         BlockBuilder slab = stone
                 .setHardness(1.0f)
                 .setUseInternalLight()
+                .setBlockItem(ItemBlockSlab::new)
                 .setVisualUpdateOnMetadata();
 
         BlockBuilder stairs = stone
@@ -731,7 +733,7 @@ public class BonusBlocks {
                 .setResistance(0.8F)
                 .setFlammability(30, 60)
                 .setTags(BlockTags.MINEABLE_BY_SHEARS)
-                .setBlockItem(ItemBlockSlabWool::new)
+                .setBlockItem(ItemBlockSlabPainted::new)
                 .build("slab.wool", "slab_wool", blockID("SLAB_WOOL"), b -> new BlockLogicSlabWoolPainted(b, WOOL));
         SLAB_COBBLE_STONE_MOSSY = slab
                 .setHardness(2.0F)

@@ -13,11 +13,11 @@ tile.block.steel.desc=A solid block of crude steel.
 tile.brick.steel.name=Crude Steel Bricks
 tile.brick.steel.desc=Stacked bricks of crude steel.
 
-tile.slab.brick.steel.name=Crude Steel Brick Stairs
-tile.slab.brick.steel.desc=A slab of crude steel brick.
+tile.stairs.brick.steel.name=Crude Steel Brick Stairs
+tile.stairs.brick.steel.desc=A slab of crude steel brick.
 
-tile.stairs.brick.steel.name=Crude Steel Brick Slab
-tile.stairs.brick.steel.desc=Crude steel brick block used for rapid vertical movement.
+tile.slab.brick.steel.name=Crude Steel Brick Slab
+tile.slab.brick.steel.desc=Crude steel brick block used for rapid vertical movement.
 
 tile.trapdoor.steel.name=Crude Steel Trapdoor
 tile.trapdoor.steel.desc=Like a door, but flat and made of rusty steel.

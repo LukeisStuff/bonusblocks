@@ -390,11 +390,11 @@ tile.bonusblocks.block.steel.desc=A solid block of steel.
 tile.bonusblocks.brick.steel.name=Steel Bricks
 tile.bonusblocks.brick.steel.desc=Stacked bricks of steel.
 
-tile.bonusblocks.slab.brick.steel.name=Steel Brick Stairs
-tile.bonusblocks.slab.brick.steel.desc=A slab of steel brick.
+tile.bonusblocks.stairs.brick.steel.name=Steel Brick Stairs
+tile.bonusblocks.stairs.brick.steel.desc=A slab of steel brick.
 
-tile.bonusblocks.stairs.brick.steel.name=Steel Brick Slab
-tile.bonusblocks.stairs.brick.steel.desc=Steel brick block used for rapid vertical movement.
+tile.bonusblocks.slab.brick.steel.name=Steel Brick Slab
+tile.bonusblocks.slab.brick.steel.desc=Steel brick block used for rapid vertical movement.
 
 tile.bonusblocks.trapdoor.steel.name=Steel Trapdoor
 tile.bonusblocks.trapdoor.steel.desc=Like a door, but flat and made of durable steel.
