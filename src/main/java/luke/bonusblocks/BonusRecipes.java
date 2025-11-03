@@ -141,7 +141,6 @@ public class BonusRecipes implements RecipeEntrypoint {
         templatePebbles.addInput('X', Blocks.GRANITE).addInput('P', BonusItems.MOSS).create("granite_to_moss_stone", new ItemStack(Blocks.MOSS_GRANITE, 2));
         templatePebbles.addInput('X', Blocks.LOG_OAK).addInput('P', BonusItems.MOSS).create("oak_log_to_moss_oak_log", new ItemStack(Blocks.LOG_OAK_MOSSY, 2));
         templatePebbles.addInput('X', BonusItems.MOSS).addInput('P', BonusItems.MOSS).create("moss_balls_to_moss", new ItemStack(BonusBlocks.MOSS, 1));
-        templatePebbles.addInput('X', Blocks.DIRT).addInput('P', Blocks.MUD_BAKED).create("rough_dirt", new ItemStack(BonusBlocks.DIRT_BAKED, 4));
 
 
         RecipeBuilderShaped templatePillar = new RecipeBuilderShaped(MOD_ID, "X", "X", "X");
@@ -350,6 +349,10 @@ public class BonusRecipes implements RecipeEntrypoint {
         RecipeBuilder.Furnace(MOD_ID)
                 .setInput("bonusblocks:verdigris_ores")
                 .create("verdigris_ores_to_verdigris_ingot", BonusItems.INGOT_VERDIGRIS.getDefaultStack());
+
+        RecipeBuilder.Furnace(MOD_ID)
+                .setInput(Blocks.DIRT)
+                .create("baked_dirt_furnace", BonusBlocks.DIRT_BAKED.getDefaultStack());
     }
 
     public static void blastFurnaceRecipes() {
@@ -408,6 +411,10 @@ public class BonusRecipes implements RecipeEntrypoint {
         RecipeBuilder.BlastFurnace(MOD_ID)
                 .setInput("bonusblocks:verdigris_ores")
                 .create("verdigris_ores_to_verdigris_ingot", BonusItems.ORE_RAW_VERDIGRIS.getDefaultStack());
+
+        RecipeBuilder.BlastFurnace(MOD_ID)
+                .setInput(Blocks.DIRT)
+                .create("baked_dirt_blast", BonusBlocks.DIRT_BAKED.getDefaultStack());
 
         RecipeBuilder.ModifyBlastFurnace("minecraft").removeRecipe("cobble_basalt_to_olivine");
         RecipeBuilder.ModifyBlastFurnace("minecraft").removeRecipe("cobble_stone_to_slate");

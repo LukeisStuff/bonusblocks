@@ -1,6 +1,7 @@
 package luke.bonusblocks.mixin;
 
 import luke.bonusblocks.BonusBlocks;
+import net.minecraft.core.block.Blocks;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.player.inventory.container.ContainerInventory;
 import net.minecraft.core.player.inventory.menu.MenuInventory;
@@ -34,7 +35,17 @@ public class MenuCreativeMixin extends MenuInventory {
                 for (DyeColor dyeColor : DyeColor.blockOrderedColors()) {
                     newCreativeItems.add(new ItemStack(item.itemID, 1, dyeColor.blockMeta << 4));
                 }
-            } else newCreativeItems.add(item);
+            } else {
+                newCreativeItems.add(item);
+                if (item.itemID == BonusBlocks.MARBLE_CARVED.id()) {
+                    newCreativeItems.add(new ItemStack(Blocks.STONE_CARVED));
+                    newCreativeItems.add(new ItemStack(Blocks.BASALT_CARVED));
+                    newCreativeItems.add(new ItemStack(Blocks.GRANITE_CARVED));
+                    newCreativeItems.add(new ItemStack(Blocks.LIMESTONE_CARVED));
+                    newCreativeItems.add(new ItemStack(Blocks.PERMAFROST_CARVED));
+                    newCreativeItems.add(new ItemStack(Blocks.NETHERRACK_CARVED));
+                }
+            }
         }
 
         creativeItems = newCreativeItems;
