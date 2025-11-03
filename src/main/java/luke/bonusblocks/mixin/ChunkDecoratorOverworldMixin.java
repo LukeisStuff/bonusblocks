@@ -109,47 +109,12 @@ public class ChunkDecoratorOverworldMixin {
                 int zf = z + rand.nextInt(16) + 8;
                 int yf = this.world.getHeightValue(x, z);
                 new WorldFeatureTallGrass(Blocks.TALLGRASS.id()).place(world, rand, xf, yf, zf);
-            }
-            if ((rand.nextInt(8) == 0)) {
-                int xf = x + rand.nextInt(16) + 8;
-                int zf = z + rand.nextInt(16) + 8;
-                int yf = this.world.getHeightValue(x, z);
                 new WorldFeatureTallGrass(Blocks.TALLGRASS_FERN.id()).place(world, rand, xf, yf, zf);
-            }
-            if ((rand.nextInt(8) == 0)) {
-                int xf = x + rand.nextInt(16) + 8;
-                int zf = z + rand.nextInt(16) + 8;
-                int yf = this.world.getHeightValue(x, z);
                 new WorldFeatureFlowers(Blocks.FLOWER_RED.id(), 64, true).place(world, rand, xf, yf, zf);
-            }
-            if ((rand.nextInt(8) == 0)) {
-                int xf = x + rand.nextInt(16) + 8;
-                int zf = z + rand.nextInt(16) + 8;
-                int yf = this.world.getHeightValue(x, z);
                 new WorldFeatureFlowers(Blocks.FLOWER_YELLOW.id(), 64, true).place(world, rand, xf, yf, zf);
-            }
-            if ((rand.nextInt(8) == 0)) {
-                int xf = x + rand.nextInt(16) + 8;
-                int zf = z + rand.nextInt(16) + 8;
-                int yf = this.world.getHeightValue(x, z);
                 new WorldFeatureFlowers(Blocks.FLOWER_ORANGE.id(), 64, true).place(world, rand, xf, yf, zf);
-            }
-            if ((rand.nextInt(8) == 0)) {
-                int xf = x + rand.nextInt(16) + 8;
-                int zf = z + rand.nextInt(16) + 8;
-                int yf = this.world.getHeightValue(x, z);
                 new WorldFeatureFlowers(Blocks.FLOWER_PINK.id(), 64, true).place(world, rand, xf, yf, zf);
-            }
-            if ((rand.nextInt(8) == 0)) {
-                int xf = x + rand.nextInt(16) + 8;
-                int zf = z + rand.nextInt(16) + 8;
-                int yf = this.world.getHeightValue(x, z);
                 new WorldFeatureFlowers(Blocks.FLOWER_PURPLE.id(), 64, true).place(world, rand, xf, yf, zf);
-            }
-            if ((rand.nextInt(8) == 0)) {
-                int xf = x + rand.nextInt(16) + 8;
-                int zf = z + rand.nextInt(16) + 8;
-                int yf = this.world.getHeightValue(x, z);
                 new WorldFeatureFlowers(Blocks.FLOWER_LIGHT_BLUE.id(), 64, true).place(world, rand, xf, yf, zf);
             }
         }
