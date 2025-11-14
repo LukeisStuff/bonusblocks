@@ -16,9 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(value = BlockLogicFire.class, remap = false)
 public abstract class BlockLogicFireMixin {
 
-	@Inject(method = "setBurnResult(Lnet/minecraft/core/world/World;III)V",
-		at = @At("HEAD"),
-		cancellable = true)
+	@Inject(method = "setBurnResult(Lnet/minecraft/core/world/World;III)V", at = @At("HEAD"), cancellable = true)
 	public void injectVerdigrisBurnResult(World world, int x, int y, int z, CallbackInfo ci) {
 		int blockId = world.getBlockId(x, y, z);
 		int meta = world.getBlockMetadata(x, y, z);
@@ -57,9 +55,7 @@ public abstract class BlockLogicFireMixin {
 		}
 	}
 
-	@Inject(method = "getBurnResultId(Lnet/minecraft/core/world/World;III)I",
-		at = @At("HEAD"),
-		cancellable = true)
+	@Inject(method = "getBurnResultId(Lnet/minecraft/core/world/World;III)I", at = @At("HEAD"), cancellable = true)
 	public void injectVerdigrisBurnResultId(World world, int x, int y, int z, CallbackInfoReturnable<Integer> cir) {
 		int blockId = world.getBlockId(x, y, z);
 		Block<?> burntBlock = getBurntBlock(blockId);

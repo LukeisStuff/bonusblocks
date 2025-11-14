@@ -1,5 +1,6 @@
 package luke.bonusblocks.mixin;
 
+import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import luke.bonusblocks.BonusBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLogicMoss;
@@ -8,16 +9,14 @@ import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
+import org.jspecify.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value = BlockLogicMoss.class, remap = false)
-public class BlockLogicMossMixin {
-
-	@Inject(method = "onBonemealUsed", at = @At(value = "TAIL"), cancellable = true)
-	public void addOnBonemealUsed(ItemStack itemstack, Player player, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced, CallbackInfoReturnable<Boolean> cir) {
+public abstract class BlockLogicMossMixin {
+	@ModifyReturnValue(method = "onBonemealUsed", at = @At(value = "TAIL"))
+	public boolean addOnBonemealUsed(boolean original, ItemStack itemstack, @Nullable Player player, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
 		if (!world.isClientSide) {
 			if (player == null || player.getGamemode().consumeBlocks()) {
 				--itemstack.stackSize;
@@ -40,14 +39,13 @@ public class BlockLogicMossMixin {
 					if (blockId == Blocks.MOSS_BASALT.id() || blockId == Blocks.MOSS_STONE.id() || blockId == Blocks.MOSS_GRANITE.id() || blockId == Blocks.MOSS_LIMESTONE.id()) {
 						if (world.rand.nextInt(3) == 0) {
 							world.setBlockWithNotify(k1, l1, i2, BonusBlocks.MOSS.id());
-						} else return;
+						}
 					} else if (blockId == Blocks.SAPLING_OAK.id()) {
 						world.setBlockWithNotify(k1, l1, i2, BonusBlocks.SAPLING_OAK_MOSSY.id());
 					}
 				}
 			}
 		}
-		cir.setReturnValue(true);
-		cir.cancel();
+		return true;
 	}
 }

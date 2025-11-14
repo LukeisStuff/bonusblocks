@@ -38,36 +38,33 @@ public class ChunkDecoratorOverworldMixin {
 		int minY = this.world.getWorldType().getMinY();
 		int maxY = this.world.getWorldType().getMaxY();
 		int rangeY = maxY + 1 - minY;
-		float oreHeightModifier = (float) rangeY / 128.0F;
+		float oreHeightModifier = rangeY / 128.0F;
 
-		if (biome == Biomes.OVERWORLD_FOREST || biome == Biomes.OVERWORLD_BIRCH_FOREST || biome == Biomes.OVERWORLD_SEASONAL_FOREST || biome == Biomes.OVERWORLD_PLAINS ||
-			biome == BonusBiomes.OVERWORLD_OVERGROWN_MEADOW || biome == Biomes.OVERWORLD_MEADOW || biome == Biomes.OVERWORLD_SHRUBLAND || biome == Biomes.OVERWORLD_GRASSLANDS) {
-			if ((rand.nextInt(8) == 0)) {
-				int xf = x + rand.nextInt(16) + 8;
-				int zf = z + rand.nextInt(16) + 8;
-				int yf = this.world.getHeightValue(x, z);
-				new WorldFeatureFlowers(BonusBlocks.FLOWER_CYAN.id(), 64, true).place(world, rand, xf, yf, zf);
-			}
-		}
-		if (biome == Biomes.OVERWORLD_OUTBACK || biome == Biomes.OVERWORLD_OUTBACK_GRASSY || biome == Biomes.OVERWORLD_SWAMPLAND_MUDDY || biome == Biomes.OVERWORLD_SWAMPLAND ||
-			biome == Biomes.OVERWORLD_RAINFOREST || biome == Biomes.OVERWORLD_CAATINGA || biome == Biomes.OVERWORLD_CAATINGA_PLAINS || biome == BonusBiomes.OVERWORLD_OVERGROWN_MEADOW) {
-			if ((rand.nextInt(8) == 0)) {
-				int xf = x + rand.nextInt(16) + 8;
-				int zf = z + rand.nextInt(16) + 8;
-				int yf = this.world.getHeightValue(x, z);
-				new WorldFeatureFlowers(BonusBlocks.FLOWER_MAGENTA.id(), 64, true).place(world, rand, xf, yf, zf);
-			}
-		}
-		if (biome == Biomes.OVERWORLD_TUNDRA || biome == Biomes.OVERWORLD_TAIGA || biome == Biomes.OVERWORLD_GLACIER || biome == Biomes.OVERWORLD_BOREAL_FOREST || biome == BonusBiomes.OVERWORLD_OVERGROWN_MEADOW) {
-			if ((rand.nextInt(8) == 0)) {
-				int xf = x + rand.nextInt(16) + 8;
-				int zf = z + rand.nextInt(16) + 8;
-				int yf = this.world.getHeightValue(x, z);
-				new WorldFeatureFlowers(BonusBlocks.FLOWER_SILVER.id(), 64, true).place(world, rand, xf, yf, zf);
-			}
+		if ((biome == Biomes.OVERWORLD_FOREST || biome == Biomes.OVERWORLD_BIRCH_FOREST || biome == Biomes.OVERWORLD_SEASONAL_FOREST || biome == Biomes.OVERWORLD_PLAINS ||
+			biome == BonusBiomes.OVERWORLD_OVERGROWN_MEADOW || biome == Biomes.OVERWORLD_MEADOW || biome == Biomes.OVERWORLD_SHRUBLAND || biome == Biomes.OVERWORLD_GRASSLANDS) && (rand.nextInt(8) == 0)) {
+			int xf = x + rand.nextInt(16) + 8;
+			int zf = z + rand.nextInt(16) + 8;
+			int yf = this.world.getHeightValue(x, z);
+			new WorldFeatureFlowers(BonusBlocks.FLOWER_CYAN.id(), 64, true).place(world, rand, xf, yf, zf);
 		}
 
-		for (int j4 = 0; (float) j4 < oreHeightModifier; ++j4) {
+		if ((biome == Biomes.OVERWORLD_OUTBACK || biome == Biomes.OVERWORLD_OUTBACK_GRASSY || biome == Biomes.OVERWORLD_SWAMPLAND_MUDDY || biome == Biomes.OVERWORLD_SWAMPLAND ||
+			biome == Biomes.OVERWORLD_RAINFOREST || biome == Biomes.OVERWORLD_CAATINGA || biome == Biomes.OVERWORLD_CAATINGA_PLAINS || biome == BonusBiomes.OVERWORLD_OVERGROWN_MEADOW) && (rand.nextInt(8) == 0)) {
+			int xf = x + rand.nextInt(16) + 8;
+			int zf = z + rand.nextInt(16) + 8;
+			int yf = this.world.getHeightValue(x, z);
+			new WorldFeatureFlowers(BonusBlocks.FLOWER_MAGENTA.id(), 64, true).place(world, rand, xf, yf, zf);
+		}
+
+		if ((biome == Biomes.OVERWORLD_TUNDRA || biome == Biomes.OVERWORLD_TAIGA || biome == Biomes.OVERWORLD_GLACIER || biome == Biomes.OVERWORLD_BOREAL_FOREST || biome == BonusBiomes.OVERWORLD_OVERGROWN_MEADOW) && (rand.nextInt(8) == 0)) {
+			int xf = x + rand.nextInt(16) + 8;
+			int zf = z + rand.nextInt(16) + 8;
+			int yf = this.world.getHeightValue(x, z);
+			new WorldFeatureFlowers(BonusBlocks.FLOWER_SILVER.id(), 64, true).place(world, rand, xf, yf, zf);
+		}
+
+
+		for (int j4 = 0; j4 < oreHeightModifier; ++j4) {
 			int k7 = x + rand.nextInt(16);
 			int k4 = minY + rand.nextInt(rangeY / 2);
 			int treeDensity = z + rand.nextInt(16);
@@ -103,20 +100,18 @@ public class ChunkDecoratorOverworldMixin {
 		}
 
 
-		if (biome == BonusBiomes.OVERWORLD_OVERGROWN_MEADOW) {
-			if ((rand.nextInt(8) == 0)) {
-				int xf = x + rand.nextInt(16) + 8;
-				int zf = z + rand.nextInt(16) + 8;
-				int yf = this.world.getHeightValue(x, z);
-				new WorldFeatureTallGrass(Blocks.TALLGRASS.id()).place(world, rand, xf, yf, zf);
-				new WorldFeatureTallGrass(Blocks.TALLGRASS_FERN.id()).place(world, rand, xf, yf, zf);
-				new WorldFeatureFlowers(Blocks.FLOWER_RED.id(), 64, true).place(world, rand, xf, yf, zf);
-				new WorldFeatureFlowers(Blocks.FLOWER_YELLOW.id(), 64, true).place(world, rand, xf, yf, zf);
-				new WorldFeatureFlowers(Blocks.FLOWER_ORANGE.id(), 64, true).place(world, rand, xf, yf, zf);
-				new WorldFeatureFlowers(Blocks.FLOWER_PINK.id(), 64, true).place(world, rand, xf, yf, zf);
-				new WorldFeatureFlowers(Blocks.FLOWER_PURPLE.id(), 64, true).place(world, rand, xf, yf, zf);
-				new WorldFeatureFlowers(Blocks.FLOWER_LIGHT_BLUE.id(), 64, true).place(world, rand, xf, yf, zf);
-			}
+		if (biome == BonusBiomes.OVERWORLD_OVERGROWN_MEADOW && (rand.nextInt(8) == 0)) {
+			int xf = x + rand.nextInt(16) + 8;
+			int zf = z + rand.nextInt(16) + 8;
+			int yf = this.world.getHeightValue(x, z);
+			new WorldFeatureTallGrass(Blocks.TALLGRASS.id()).place(world, rand, xf, yf, zf);
+			new WorldFeatureTallGrass(Blocks.TALLGRASS_FERN.id()).place(world, rand, xf, yf, zf);
+			new WorldFeatureFlowers(Blocks.FLOWER_RED.id(), 64, true).place(world, rand, xf, yf, zf);
+			new WorldFeatureFlowers(Blocks.FLOWER_YELLOW.id(), 64, true).place(world, rand, xf, yf, zf);
+			new WorldFeatureFlowers(Blocks.FLOWER_ORANGE.id(), 64, true).place(world, rand, xf, yf, zf);
+			new WorldFeatureFlowers(Blocks.FLOWER_PINK.id(), 64, true).place(world, rand, xf, yf, zf);
+			new WorldFeatureFlowers(Blocks.FLOWER_PURPLE.id(), 64, true).place(world, rand, xf, yf, zf);
+			new WorldFeatureFlowers(Blocks.FLOWER_LIGHT_BLUE.id(), 64, true).place(world, rand, xf, yf, zf);
 		}
 
 
