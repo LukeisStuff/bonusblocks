@@ -15,19 +15,19 @@ import java.util.Random;
 
 @Mixin(value = BiomeForest.class, remap = false)
 public class BiomeForestMixin {
-    @Inject(method = "getRandomWorldGenForTrees", at = @At(value = "HEAD", target = "Lnet/minecraft/core/world/biome/BiomeRainforest;getRandomWorldGenForTrees(Ljava/util/Random;)Lnet/minecraft/core/world/generate/feature/WorldFeature;"), cancellable = true)
-    public void getRandomWorldGenForTrees(Random random, CallbackInfoReturnable<WorldFeature> cir) {
-        if (random.nextInt(5) == 0) {
-            cir.setReturnValue(new WorldFeatureTree(Blocks.LEAVES_BIRCH.id(), Blocks.LOG_BIRCH.id(), 5));
-        }
-        if (random.nextInt(3) == 0) {
-            cir.setReturnValue(new WorldFeatureTreeFancy(Blocks.LEAVES_OAK.id(), Blocks.LOG_OAK.id()));
-        }
-        if (random.nextInt(25) == 0) {
-            cir.setReturnValue(new WorldFeatureTree(BonusBlocks.LEAVES_OAK_MOSSY.id(), Blocks.LOG_OAK_MOSSY.id(), 4));
-        }
-        cir.setReturnValue(new WorldFeatureTree(Blocks.LEAVES_OAK.id(), Blocks.LOG_OAK.id(), 4));
-        cir.cancel();
-    }
+	@Inject(method = "getRandomWorldGenForTrees", at = @At(value = "HEAD", target = "Lnet/minecraft/core/world/biome/BiomeRainforest;getRandomWorldGenForTrees(Ljava/util/Random;)Lnet/minecraft/core/world/generate/feature/WorldFeature;"), cancellable = true)
+	public void getRandomWorldGenForTrees(Random random, CallbackInfoReturnable<WorldFeature> cir) {
+		if (random.nextInt(5) == 0) {
+			cir.setReturnValue(new WorldFeatureTree(Blocks.LEAVES_BIRCH.id(), Blocks.LOG_BIRCH.id(), 5));
+		}
+		if (random.nextInt(3) == 0) {
+			cir.setReturnValue(new WorldFeatureTreeFancy(Blocks.LEAVES_OAK.id(), Blocks.LOG_OAK.id()));
+		}
+		if (random.nextInt(25) == 0) {
+			cir.setReturnValue(new WorldFeatureTree(BonusBlocks.LEAVES_OAK_MOSSY.id(), Blocks.LOG_OAK_MOSSY.id(), 4));
+		}
+		cir.setReturnValue(new WorldFeatureTree(Blocks.LEAVES_OAK.id(), Blocks.LOG_OAK.id(), 4));
+		cir.cancel();
+	}
 
 }

@@ -11,13 +11,13 @@ import net.minecraft.core.world.World;
 
 public class BlockLogicBedGold extends BlockLogicBed {
 
-    public BlockLogicBedGold(Block<?> block, Material material) {
-        super(block);
-        this.setBlockBounds(0.0, 0.0, 0.0, 1.0, 0.5625, 1.0);
-    }
+	public BlockLogicBedGold(Block<?> block, Material material) {
+		super(block);
+		this.setBlockBounds(0.0, 0.0, 0.0, 1.0, 0.5625, 1.0);
+	}
 
-    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int meta, TileEntity tileEntity) {
-        return new ItemStack[]{new ItemStack(BonusItems.BED_GOLD)};
-    }
+	public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int meta, TileEntity tileEntity) {
+		return new ItemStack[]{new ItemStack(BonusItems.BED_GOLD)};
+	}
 
 }

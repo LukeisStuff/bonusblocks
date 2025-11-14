@@ -14,43 +14,43 @@ import net.minecraft.core.world.WorldSource;
 import java.util.Random;
 
 public class BlockChimes extends BlockLogic {
-    public BlockChimes(Block<?> block) {
-        super(block, Material.metal);
-        block.setTicking(true);
-        this.setBlockBounds(0.1875f, 0.0F, 0.1875f, 0.8125f, 1.0f, 0.8125f);
-    }
+	public BlockChimes(Block<?> block) {
+		super(block, Material.metal);
+		block.setTicking(true);
+		this.setBlockBounds(0.1875f, 0.0F, 0.1875f, 0.8125f, 1.0f, 0.8125f);
+	}
 
-    public void animationTick(World world, int x, int y, int z, Random rand) {
-        if (rand.nextInt(150) == 0) {
-            world.playSoundEffect(null, SoundCategory.WORLD_SOUNDS, x, y, z, "bonusblocks.chimes", 0.3F, rand.nextFloat() * 0.4F + 0.8F);
-        }
-    }
+	public void animationTick(World world, int x, int y, int z, Random rand) {
+		if (rand.nextInt(150) == 0) {
+			world.playSoundEffect(null, SoundCategory.WORLD_SOUNDS, x, y, z, "bonusblocks.chimes", 0.3F, rand.nextFloat() * 0.4F + 0.8F);
+		}
+	}
 
-    public AABB getCollisionBoundingBoxFromPool(WorldSource world, int x, int y, int z) {
-        return null;
-    }
+	public AABB getCollisionBoundingBoxFromPool(WorldSource world, int x, int y, int z) {
+		return null;
+	}
 
-    public boolean isSolidRender() {
-        return false;
-    }
+	public boolean isSolidRender() {
+		return false;
+	}
 
-    public boolean isCubeShaped() {
-        return false;
-    }
+	public boolean isCubeShaped() {
+		return false;
+	}
 
-    public boolean canPlaceBlockAt(World world, int x, int y, int z) {
-        return world.isBlockNormalCube(x, y + 1, z) || Blocks.hasTag(world.getBlockId(x, y + 1, z), BlockTags.CAN_HANG_OFF) || world.canPlaceOnSurfaceOfBlock(x, y + 1, z);
-    }
+	public boolean canPlaceBlockAt(World world, int x, int y, int z) {
+		return world.isBlockNormalCube(x, y + 1, z) || Blocks.hasTag(world.getBlockId(x, y + 1, z), BlockTags.CAN_HANG_OFF) || world.canPlaceOnSurfaceOfBlock(x, y + 1, z);
+	}
 
-    public void onNeighborBlockChange(World world, int x, int y, int z, int blockId) {
-        if (!this.canBlockStay(world, x, y, z)) {
-            this.dropBlockWithCause(world, EnumDropCause.WORLD, x, y, z, world.getBlockMetadata(x, y, z), null, null);
-            world.setBlockWithNotify(x, y, z, 0);
-        }
+	public void onNeighborBlockChange(World world, int x, int y, int z, int blockId) {
+		if (!this.canBlockStay(world, x, y, z)) {
+			this.dropBlockWithCause(world, EnumDropCause.WORLD, x, y, z, world.getBlockMetadata(x, y, z), null, null);
+			world.setBlockWithNotify(x, y, z, 0);
+		}
 
-    }
+	}
 
-    public boolean canBlockStay(World world, int x, int y, int z) {
-        return world.isBlockNormalCube(x, y + 1, z) || Blocks.hasTag(world.getBlockId(x, y + 1, z), BlockTags.CAN_HANG_OFF);
-    }
+	public boolean canBlockStay(World world, int x, int y, int z) {
+		return world.isBlockNormalCube(x, y + 1, z) || Blocks.hasTag(world.getBlockId(x, y + 1, z), BlockTags.CAN_HANG_OFF);
+	}
 }

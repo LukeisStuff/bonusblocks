@@ -11,30 +11,30 @@ import net.minecraft.core.util.helper.MathHelper;
 import net.minecraft.core.util.helper.Side;
 
 public class BlockModelNuggetsFlint<T extends BlockLogic> extends BlockModelStandard<T> {
-    public IconCoordinate[] pebbles = new IconCoordinate[]{TextureRegistry.getTexture("bonusblocks:block/pebbles_flint/0"), TextureRegistry.getTexture("bonusblocks:block/pebbles_flint/1"), TextureRegistry.getTexture("bonusblocks:block/pebbles_flint/2")};
+	public IconCoordinate[] pebbles = new IconCoordinate[]{TextureRegistry.getTexture("bonusblocks:block/pebbles_flint/0"), TextureRegistry.getTexture("bonusblocks:block/pebbles_flint/1"), TextureRegistry.getTexture("bonusblocks:block/pebbles_flint/2")};
 
-    public BlockModelNuggetsFlint(Block<T> block) {
-        super(block);
-    }
+	public BlockModelNuggetsFlint(Block<T> block) {
+		super(block);
+	}
 
-    public boolean render(Tessellator tessellator, int x, int y, int z) {
-        float brightness = 1.0F;
-        if (LightmapHelper.isLightmapEnabled()) {
-            tessellator.setLightmapCoord(LightmapHelper.max(this.block.getLightmapCoord(renderBlocks.blockAccess, x, y, z), this.block.getLightmapCoord(renderBlocks.blockAccess, x, y - 1, z)));
-        } else {
-            brightness = Math.max(this.getBlockBrightness(renderBlocks.blockAccess, x, y, z), this.getBlockBrightness(renderBlocks.blockAccess, x, y - 1, z));
-        }
+	public boolean render(Tessellator tessellator, int x, int y, int z) {
+		float brightness = 1.0F;
+		if (LightmapHelper.isLightmapEnabled()) {
+			tessellator.setLightmapCoord(LightmapHelper.max(this.block.getLightmapCoord(renderBlocks.blockAccess, x, y, z), this.block.getLightmapCoord(renderBlocks.blockAccess, x, y - 1, z)));
+		} else {
+			brightness = Math.max(this.getBlockBrightness(renderBlocks.blockAccess, x, y, z), this.getBlockBrightness(renderBlocks.blockAccess, x, y - 1, z));
+		}
 
-        tessellator.setColorOpaque_F(brightness, brightness, brightness);
-        this.renderTopFace(tessellator, this.block.getBlockBoundsFromState(renderBlocks.blockAccess, x, y, z), x, y, z, this.getBlockTextureFromSideAndMetadata(Side.TOP, renderBlocks.blockAccess.getBlockMetadata(x, y, z)));
-        return true;
-    }
+		tessellator.setColorOpaque_F(brightness, brightness, brightness);
+		this.renderTopFace(tessellator, this.block.getBlockBoundsFromState(renderBlocks.blockAccess, x, y, z), x, y, z, this.getBlockTextureFromSideAndMetadata(Side.TOP, renderBlocks.blockAccess.getBlockMetadata(x, y, z)));
+		return true;
+	}
 
-    public boolean shouldItemRender3d() {
-        return false;
-    }
+	public boolean shouldItemRender3d() {
+		return false;
+	}
 
-    public IconCoordinate getBlockTextureFromSideAndMetadata(Side side, int data) {
-        return this.pebbles[MathHelper.clamp(data, 0, 2)];
-    }
+	public IconCoordinate getBlockTextureFromSideAndMetadata(Side side, int data) {
+		return this.pebbles[MathHelper.clamp(data, 0, 2)];
+	}
 }

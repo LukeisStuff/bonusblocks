@@ -10,18 +10,18 @@ import net.minecraft.core.world.generate.feature.tree.WorldFeatureTreeShrub;
 import java.util.Random;
 
 public class BiomeOvergrown extends Biome {
-    public BiomeOvergrown(String key) {
-        super(key);
-        this.topBlock = (short) BonusBlocks.GRASS_OVERGROWN.id();
-        this.fillerBlock = (short) Blocks.LIMESTONE.id();
-    }
+	public BiomeOvergrown(String key) {
+		super(key);
+		this.topBlock = (short) BonusBlocks.GRASS_OVERGROWN.id();
+		this.fillerBlock = (short) Blocks.LIMESTONE.id();
+	}
 
-    public WorldFeature getRandomWorldGenForTrees(Random random) {
-        if (random.nextInt(5) == 0) {
-            return new WorldFeatureTreeShrub(Blocks.LEAVES_SHRUB.id(), BonusBlocks.LOG_SHRUB.id());
-        } else if (random.nextInt(20) == 0) {
-            return new WorldFeatureTreeFancy(BonusBlocks.LEAVES_JACARANDA.id(), BonusBlocks.LOG_JACARANDA.id());
-        }
-        return new WorldFeatureTreeFancy(BonusBlocks.LEAVES_JACARANDA.id(), BonusBlocks.LOG_JACARANDA.id());
-    }
+	public WorldFeature getRandomWorldGenForTrees(Random random) {
+		if (random.nextInt(5) == 0) {
+			return new WorldFeatureTreeShrub(Blocks.LEAVES_SHRUB.id(), BonusBlocks.LOG_SHRUB.id());
+		} else if (random.nextInt(20) == 0) {
+			return new WorldFeatureTreeFancy(BonusBlocks.LEAVES_JACARANDA.id(), BonusBlocks.LOG_JACARANDA.id());
+		}
+		return new WorldFeatureTreeFancy(BonusBlocks.LEAVES_JACARANDA.id(), BonusBlocks.LOG_JACARANDA.id());
+	}
 }

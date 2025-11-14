@@ -9,25 +9,25 @@ import net.minecraft.core.world.World;
 import net.minecraft.core.world.WorldSource;
 
 public class BlockLogicPetal extends BlockLogicTransparent {
-    public BlockLogicPetal(Block<?> block) {
-        super(block, Material.grass);
-    }
+	public BlockLogicPetal(Block<?> block) {
+		super(block, Material.grass);
+	}
 
-    public AABB getCollisionBoundingBoxFromPool(WorldSource world, int x, int y, int z) {
-        return AABB.getTemporaryBB(x, y, z, x + 1, y + 0.001, z + 1);
-    }
+	public AABB getCollisionBoundingBoxFromPool(WorldSource world, int x, int y, int z) {
+		return AABB.getTemporaryBB(x, y, z, x + 1, y + 0.001, z + 1);
+	}
 
-    public boolean isSolidRender() {
-        return false;
-    }
+	public boolean isSolidRender() {
+		return false;
+	}
 
-    public void onEntityCollidedWithBlock(World world, int x, int y, int z, Entity entity) {
-        entity.xd *= 0.75;
-        entity.zd *= 0.75;
-    }
+	public void onEntityCollidedWithBlock(World world, int x, int y, int z, Entity entity) {
+		entity.xd *= 0.75;
+		entity.zd *= 0.75;
+	}
 
-    public boolean renderAsNormalBlockOnCondition(WorldSource world, int x, int y, int z) {
-        return false;
-    }
+	public boolean renderAsNormalBlockOnCondition(WorldSource world, int x, int y, int z) {
+		return false;
+	}
 
 }

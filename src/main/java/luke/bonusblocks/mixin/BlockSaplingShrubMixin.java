@@ -16,15 +16,15 @@ import java.util.Random;
 @Mixin(value = BlockLogicSaplingShrub.class, remap = false)
 public class BlockSaplingShrubMixin {
 
-    @Inject(method = "growTree", at = @At(value = "TAIL", target = "growTree(Lnet/minecraft/core/world/World;IIILjava/util/Random;)V"), cancellable = true)
+	@Inject(method = "growTree", at = @At(value = "TAIL", target = "growTree(Lnet/minecraft/core/world/World;IIILjava/util/Random;)V"), cancellable = true)
 
-    public void growTree(World world, int i, int j, int k, Random random, CallbackInfo ci) {
-        WorldFeature obj;
-        world.setBlock(i, j, k, 0);
-        obj = new WorldFeatureTreeShrub(Blocks.LEAVES_SHRUB.id(), BonusBlocks.LOG_SHRUB.id());
-        if (!obj.place(world, random, i, j, k)) {
-            world.setBlock(i, j, k, Blocks.SAPLING_SHRUB.id());
-        }
-        ci.cancel();
-    }
+	public void growTree(World world, int i, int j, int k, Random random, CallbackInfo ci) {
+		WorldFeature obj;
+		world.setBlock(i, j, k, 0);
+		obj = new WorldFeatureTreeShrub(Blocks.LEAVES_SHRUB.id(), BonusBlocks.LOG_SHRUB.id());
+		if (!obj.place(world, random, i, j, k)) {
+			world.setBlock(i, j, k, Blocks.SAPLING_SHRUB.id());
+		}
+		ci.cancel();
+	}
 }

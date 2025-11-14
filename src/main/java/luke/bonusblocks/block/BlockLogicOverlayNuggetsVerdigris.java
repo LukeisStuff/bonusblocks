@@ -11,12 +11,12 @@ import net.minecraft.core.world.World;
 
 public class BlockLogicOverlayNuggetsVerdigris extends BlockLogicOverlayPebbles {
 
-    public BlockLogicOverlayNuggetsVerdigris(Block<?> block) {
-        super(block, Material.metal);
-        this.setBlockBounds(0.0, 0.0, 0.0, 1.0, 0.0625, 1.0);
-    }
+	public BlockLogicOverlayNuggetsVerdigris(Block<?> block) {
+		super(block, Material.metal);
+		this.setBlockBounds(0.0, 0.0, 0.0, 1.0, 0.0625, 1.0);
+	}
 
-    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int meta, TileEntity tileEntity) {
-        return dropCause == EnumDropCause.PICK_BLOCK ? new ItemStack[]{new ItemStack(BonusItems.ORE_RAW_VERDIGRIS, 1)} : new ItemStack[]{new ItemStack(BonusItems.ORE_RAW_VERDIGRIS, meta + 1)};
-    }
+	public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int meta, TileEntity tileEntity) {
+		return dropCause == EnumDropCause.PICK_BLOCK ? new ItemStack[]{new ItemStack(BonusItems.ORE_RAW_VERDIGRIS, 1)} : new ItemStack[]{new ItemStack(BonusItems.ORE_RAW_VERDIGRIS, meta + 1)};
+	}
 }

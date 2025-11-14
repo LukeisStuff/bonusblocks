@@ -11,12 +11,12 @@ import net.minecraft.core.world.World;
 
 public class BlockLogicOverlayNuggetsIron extends BlockLogicOverlayPebbles {
 
-    public BlockLogicOverlayNuggetsIron(Block<?> block) {
-        super(block, Material.metal);
-        this.setBlockBounds(0.0, 0.0, 0.0, 1.0, 0.0625, 1.0);
-    }
+	public BlockLogicOverlayNuggetsIron(Block<?> block) {
+		super(block, Material.metal);
+		this.setBlockBounds(0.0, 0.0, 0.0, 1.0, 0.0625, 1.0);
+	}
 
-    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int meta, TileEntity tileEntity) {
-        return dropCause == EnumDropCause.PICK_BLOCK ? new ItemStack[]{new ItemStack(Items.ORE_RAW_IRON, 1)} : new ItemStack[]{new ItemStack(Items.ORE_RAW_IRON, meta + 1)};
-    }
+	public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int meta, TileEntity tileEntity) {
+		return dropCause == EnumDropCause.PICK_BLOCK ? new ItemStack[]{new ItemStack(Items.ORE_RAW_IRON, 1)} : new ItemStack[]{new ItemStack(Items.ORE_RAW_IRON, meta + 1)};
+	}
 }

@@ -21,38 +21,38 @@ import static net.minecraft.core.player.inventory.menu.MenuInventoryCreative.cre
 @Mixin(value = MenuInventoryCreative.class, remap = false)
 public class MenuCreativeMixin extends MenuInventory {
 
-    @Inject(method = "<clinit>", at = @At("TAIL"))
-    private static void injected(CallbackInfo ci) {
-        List<ItemStack> newCreativeItems = new ArrayList<>();
+	@Inject(method = "<clinit>", at = @At("TAIL"))
+	private static void injected(CallbackInfo ci) {
+		List<ItemStack> newCreativeItems = new ArrayList<>();
 
-        for (ItemStack item : creativeItems) {
+		for (ItemStack item : creativeItems) {
 
-            if (item.getMetadata() == 0
-                    && (item.itemID == BonusBlocks.SLAB_WOOL.id()
-                    || item.itemID == BonusBlocks.STAIRS_WOOL.id()
-            )
-            ) {
-                for (DyeColor dyeColor : DyeColor.blockOrderedColors()) {
-                    newCreativeItems.add(new ItemStack(item.itemID, 1, dyeColor.blockMeta << 4));
-                }
-            } else {
-                newCreativeItems.add(item);
-                if (item.itemID == BonusBlocks.MARBLE_CARVED.id()) {
-                    newCreativeItems.add(new ItemStack(Blocks.STONE_CARVED));
-                    newCreativeItems.add(new ItemStack(Blocks.BASALT_CARVED));
-                    newCreativeItems.add(new ItemStack(Blocks.GRANITE_CARVED));
-                    newCreativeItems.add(new ItemStack(Blocks.LIMESTONE_CARVED));
-                    newCreativeItems.add(new ItemStack(Blocks.PERMAFROST_CARVED));
-                    newCreativeItems.add(new ItemStack(Blocks.NETHERRACK_CARVED));
-                }
-            }
-        }
+			if (item.getMetadata() == 0
+				&& (item.itemID == BonusBlocks.SLAB_WOOL.id()
+				|| item.itemID == BonusBlocks.STAIRS_WOOL.id()
+			)
+			) {
+				for (DyeColor dyeColor : DyeColor.blockOrderedColors()) {
+					newCreativeItems.add(new ItemStack(item.itemID, 1, dyeColor.blockMeta << 4));
+				}
+			} else {
+				newCreativeItems.add(item);
+				if (item.itemID == BonusBlocks.MARBLE_CARVED.id()) {
+					newCreativeItems.add(new ItemStack(Blocks.STONE_CARVED));
+					newCreativeItems.add(new ItemStack(Blocks.BASALT_CARVED));
+					newCreativeItems.add(new ItemStack(Blocks.GRANITE_CARVED));
+					newCreativeItems.add(new ItemStack(Blocks.LIMESTONE_CARVED));
+					newCreativeItems.add(new ItemStack(Blocks.PERMAFROST_CARVED));
+					newCreativeItems.add(new ItemStack(Blocks.NETHERRACK_CARVED));
+				}
+			}
+		}
 
-        creativeItems = newCreativeItems;
-        creativeItemsCount = creativeItems.size();
-    }
+		creativeItems = newCreativeItems;
+		creativeItemsCount = creativeItems.size();
+	}
 
-    public MenuCreativeMixin(ContainerInventory inventory) {
-        super(inventory);
-    }
+	public MenuCreativeMixin(ContainerInventory inventory) {
+		super(inventory);
+	}
 }

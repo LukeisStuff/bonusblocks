@@ -14,11 +14,11 @@ import java.util.Random;
 
 @Mixin(value = BiomeSwamp.class, remap = false)
 public class BiomeSwampMixin {
-    @Inject(method = "getRandomWorldGenForTrees", at = @At(value = "HEAD", target = "Lnet/minecraft/core/world/biome/BiomeRainforest;getRandomWorldGenForTrees(Ljava/util/Random;)Lnet/minecraft/core/world/generate/feature/WorldFeature;"), cancellable = true)
-    public void getRandomWorldGenForTrees(Random random, CallbackInfoReturnable<WorldFeature> cir) {
-        {
-            cir.setReturnValue(new WorldFeatureTreeShapeSwamp(BonusBlocks.LEAVES_OAK_MOSSY.id(), Blocks.LOG_OAK_MOSSY.id(), 6));
-        }
-        cir.cancel();
-    }
+	@Inject(method = "getRandomWorldGenForTrees", at = @At(value = "HEAD", target = "Lnet/minecraft/core/world/biome/BiomeRainforest;getRandomWorldGenForTrees(Ljava/util/Random;)Lnet/minecraft/core/world/generate/feature/WorldFeature;"), cancellable = true)
+	public void getRandomWorldGenForTrees(Random random, CallbackInfoReturnable<WorldFeature> cir) {
+		{
+			cir.setReturnValue(new WorldFeatureTreeShapeSwamp(BonusBlocks.LEAVES_OAK_MOSSY.id(), Blocks.LOG_OAK_MOSSY.id(), 6));
+		}
+		cir.cancel();
+	}
 }

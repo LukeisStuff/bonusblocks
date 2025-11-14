@@ -8,16 +8,16 @@ import net.minecraft.core.world.World;
 import net.minecraft.core.world.WorldSource;
 
 public class BlockFenceNoClimb extends BlockLogicFenceThin {
-    public BlockFenceNoClimb(Block<?> block) {
-        super(block, Material.metal);
-    }
+	public BlockFenceNoClimb(Block<?> block) {
+		super(block, Material.metal);
+	}
 
-    public boolean canConnectTo(WorldSource world, int x, int y, int z) {
-        Block<?> b = world.getBlock(x, y, z);
-        return BlockTags.CHAINLINK_FENCES_CONNECT.appliesTo(b) || b != null && (b.getMaterial().isStone() || b.getMaterial().isMetal());
-    }
+	public boolean canConnectTo(WorldSource world, int x, int y, int z) {
+		Block<?> b = world.getBlock(x, y, z);
+		return BlockTags.CHAINLINK_FENCES_CONNECT.appliesTo(b) || b != null && (b.getMaterial().isStone() || b.getMaterial().isMetal());
+	}
 
-    public boolean isClimbable(World world, int x, int y, int z) {
-        return false;
-    }
+	public boolean isClimbable(World world, int x, int y, int z) {
+		return false;
+	}
 }

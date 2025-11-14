@@ -7,11 +7,11 @@ import net.minecraft.core.world.World;
 
 public class BlockLogicMeshVerdigris extends BlockLogicMesh {
 
-    public BlockLogicMeshVerdigris(Block<?> block) {
-        super(block);
-    }
+	public BlockLogicMeshVerdigris(Block<?> block) {
+		super(block);
+	}
 
-    public boolean collidesWithEntity(Entity entity, World world, int x, int y, int z) {
-        return true;
-    }
+	public boolean collidesWithEntity(Entity entity, World world, int x, int y, int z) {
+		return true;
+	}
 }
