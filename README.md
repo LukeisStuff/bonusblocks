@@ -3,11 +3,7 @@
 ### Additions
 
 ## Blocks
-* Box
-  + Crafted with 9 planks
-
-
-* Empty Bookshelf
+up* Empty Bookshelf
   + Crafted like a bookshelf but without the books
 
 
@@ -116,6 +112,9 @@
   + Crafted by smelting dirt
   + Doesn't turn into grass
 
+* Rich Dirt, Sand and Gravel
+    + Found all throughout the world
+    + Has good trommel rates like rich scorched dirt
 
 * Moss Block
   + Replaces mossy stones in generation
@@ -139,10 +138,8 @@
   + 10 blocks now have stairs to go along with them
 * More Doors
   + 15 blocks now have doors to go along with them
-
-
-* Steel Door and Steel Trapdoor
-  + Work like iron versions but with full blast resistance
+* More Trapdoors
+  + 15 blocks now have trapdoors to go along with them
 
 
 * Nuggets
