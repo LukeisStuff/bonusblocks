@@ -16,6 +16,7 @@ public class BiomeOvergrown extends Biome {
         this.fillerBlock = (short) Blocks.LIMESTONE.id();
     }
 
+    @Override
     public WorldFeature getRandomWorldGenForTrees(Random random) {
         if (random.nextInt(5) == 0) {
             return new WorldFeatureTreeShrub(Blocks.LEAVES_SHRUB.id(), BonusBlocks.LOG_SHRUB.id());
