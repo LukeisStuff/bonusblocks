@@ -1,6 +1,7 @@
 package luke.bonusblocks.mixin;
 
 import luke.bonusblocks.BonusBlocks;
+import net.minecraft.core.block.Block;
 import net.minecraft.core.block.Blocks;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.entity.player.Player;
@@ -12,212 +13,90 @@ import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value = Item.class, remap = false)
 public class ItemMixin {
-    @Inject(
-        method = "onUseItemOnBlock",
-        at = @At("HEAD"),
-        cancellable = true
-    )
-    private void dropStack(ItemStack itemstack, Player player, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced, CallbackInfoReturnable<Boolean> cir) {
-        if (itemstack.getItem().equals(Items.ORE_RAW_IRON)) {
 
-            int id = world.getBlockId(blockX, blockY, blockZ);
-            int meta = world.getBlockMetadata(blockX, blockY, blockZ);
-            if (id != BonusBlocks.OVERLAY_RAW_IRON.id() && Blocks.blocksList[id] != null && Blocks.blocksList[id].hasTag(BlockTags.PLACE_OVERWRITES)) {
-                id = 0;
-                meta = 0;
-            }
+    @Inject(method = "onUseItemOnBlock", at = @At("HEAD"), cancellable = true)
+    private void placeOverlay(ItemStack stack, Player player, World world, int x, int y, int z, Side side, double xPlaced, double yPlaced, CallbackInfoReturnable<Boolean> cir) {
+        Item item = stack.getItem();
+        Block<?> overlay = null;
 
-            if (itemstack.stackSize <= 0) {
-                cir.setReturnValue(false);
-            } else if (blockY == world.getHeightBlocks() - 1 && BonusBlocks.OVERLAY_RAW_IRON.getMaterial().isSolid()) {
-                cir.setReturnValue(false);
-            } else {
-                int newMeta;
-                if (id == BonusBlocks.OVERLAY_RAW_IRON.id() && side == Side.TOP) {
-                    newMeta = meta + 1;
-                    if (!world.isBlockOpaqueCube(blockX, blockY - 1, blockZ)) {
-                        cir.setReturnValue(false);
-                    }
-
-                    if (newMeta < 3) {
-                        world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, BonusBlocks.OVERLAY_RAW_IRON.id(), newMeta);
-                        world.playBlockSoundEffect(player, blockX + 0.5F, blockY + 0.5F, blockZ + 0.5F, BonusBlocks.OVERLAY_RAW_IRON, EnumBlockSoundEffectType.PLACE);
-                        itemstack.consumeItem(player);
-                        player.swingItem();
-                        cir.setReturnValue(true);
-                    }
-                }
-
-                if (id != 0) {
-                    blockX += side.getOffsetX();
-                    blockY += side.getOffsetY();
-                    blockZ += side.getOffsetZ();
-                    id = world.getBlockId(blockX, blockY, blockZ);
-                    meta = world.getBlockMetadata(blockX, blockY, blockZ);
-                }
-
-                if (id == BonusBlocks.OVERLAY_RAW_IRON.id()) {
-                    newMeta = meta + 1;
-                    AABB bbBox = AABB.getTemporaryBB(blockX, blockY, blockZ, blockX + 1.0F, blockY + (2 * (newMeta + 1)) / 16.0F, blockZ + 1.0F);
-                    if (!world.checkIfAABBIsClear(bbBox) || !world.isBlockOpaqueCube(blockX, blockY - 1, blockZ)) {
-                        cir.setReturnValue(false);
-                    }
-
-                    if (newMeta < 3) {
-                        world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, BonusBlocks.OVERLAY_RAW_IRON.id(), newMeta);
-                        world.playBlockSoundEffect(player, blockX + 0.5F, blockY + 0.5F, blockZ + 0.5F, BonusBlocks.OVERLAY_RAW_IRON, EnumBlockSoundEffectType.PLACE);
-                        itemstack.consumeItem(player);
-                        player.swingItem();
-                        cir.setReturnValue(true);
-                    }
-                }
-
-                if (world.canBlockBePlacedAt(BonusBlocks.OVERLAY_RAW_IRON.id(), blockX, blockY, blockZ, false, side) && world.isBlockOpaqueCube(blockX, blockY - 1, blockZ) && world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, BonusBlocks.OVERLAY_RAW_IRON.id(), 0)) {
-                    BonusBlocks.OVERLAY_RAW_IRON.onBlockPlacedByMob(world, blockX, blockY, blockZ, side, player, xPlaced, yPlaced);
-                    world.playBlockSoundEffect(player, blockX + 0.5F, blockY + 0.5F, blockZ + 0.5F, BonusBlocks.OVERLAY_RAW_IRON, EnumBlockSoundEffectType.PLACE);
-                    itemstack.consumeItem(player);
-                    player.swingItem();
-                    cir.setReturnValue(true);
-                } else {
-                    cir.setReturnValue(false);
-                }
-            }
+        if (item.equals(Items.ORE_RAW_IRON)) {
+            overlay = BonusBlocks.OVERLAY_RAW_IRON;
+        } else if (item.equals(Items.ORE_RAW_GOLD)) {
+            overlay = BonusBlocks.OVERLAY_RAW_GOLD;
+        } else if (item.equals(Items.FLINT)) {
+            overlay = BonusBlocks.OVERLAY_FLINT;
         }
-        if (itemstack.getItem().equals(Items.ORE_RAW_GOLD)) {
+        if (overlay == null) return;
 
-            int id = world.getBlockId(blockX, blockY, blockZ);
-            int meta = world.getBlockMetadata(blockX, blockY, blockZ);
-            if (id != BonusBlocks.OVERLAY_RAW_GOLD.id() && Blocks.blocksList[id] != null && Blocks.blocksList[id].hasTag(BlockTags.PLACE_OVERWRITES)) {
-                id = 0;
-                meta = 0;
-            }
+        cir.setReturnValue(tryPlaceOverlay(stack, player, world, x, y, z, side, xPlaced, yPlaced, overlay));
+    }
 
-            if (itemstack.stackSize <= 0) {
-                cir.setReturnValue(false);
-            } else if (blockY == world.getHeightBlocks() - 1 && BonusBlocks.OVERLAY_RAW_GOLD.getMaterial().isSolid()) {
-                cir.setReturnValue(false);
-            } else {
-                int newMeta;
-                if (id == BonusBlocks.OVERLAY_RAW_GOLD.id() && side == Side.TOP) {
-                    newMeta = meta + 1;
-                    if (!world.isBlockOpaqueCube(blockX, blockY - 1, blockZ)) {
-                        cir.setReturnValue(false);
-                    }
+    @Unique
+    private boolean tryPlaceOverlay(ItemStack stack, Player player, World world, int x, int y, int z, Side side, double xPlaced, double yPlaced, Block<?> overlay) {
+        if (stack.stackSize <= 0) return false;
+        if (y == world.getHeightBlocks() - 1 && overlay.getMaterial().isSolid()) return false;
 
-                    if (newMeta < 3) {
-                        world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, BonusBlocks.OVERLAY_RAW_GOLD.id(), newMeta);
-                        world.playBlockSoundEffect(player, blockX + 0.5F, blockY + 0.5F, blockZ + 0.5F, BonusBlocks.OVERLAY_RAW_GOLD, EnumBlockSoundEffectType.PLACE);
-                        itemstack.consumeItem(player);
-                        player.swingItem();
-                        cir.setReturnValue(true);
-                    }
-                }
+        int id = world.getBlockId(x, y, z);
+        int meta = world.getBlockMetadata(x, y, z);
+        int overlayId = overlay.id();
 
-                if (id != 0) {
-                    blockX += side.getOffsetX();
-                    blockY += side.getOffsetY();
-                    blockZ += side.getOffsetZ();
-                    id = world.getBlockId(blockX, blockY, blockZ);
-                    meta = world.getBlockMetadata(blockX, blockY, blockZ);
-                }
-
-                if (id == BonusBlocks.OVERLAY_RAW_GOLD.id()) {
-                    newMeta = meta + 1;
-                    AABB bbBox = AABB.getTemporaryBB(blockX, blockY, blockZ, blockX + 1.0F, blockY + (2 * (newMeta + 1)) / 16.0F, blockZ + 1.0F);
-                    if (!world.checkIfAABBIsClear(bbBox) || !world.isBlockOpaqueCube(blockX, blockY - 1, blockZ)) {
-                        cir.setReturnValue(false);
-                    }
-
-                    if (newMeta < 3) {
-                        world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, BonusBlocks.OVERLAY_RAW_GOLD.id(), newMeta);
-                        world.playBlockSoundEffect(player, blockX + 0.5F, blockY + 0.5F, blockZ + 0.5F, BonusBlocks.OVERLAY_RAW_GOLD, EnumBlockSoundEffectType.PLACE);
-                        itemstack.consumeItem(player);
-                        player.swingItem();
-                        cir.setReturnValue(true);
-                    }
-                }
-
-                if (world.canBlockBePlacedAt(BonusBlocks.OVERLAY_RAW_GOLD.id(), blockX, blockY, blockZ, false, side) && world.isBlockOpaqueCube(blockX, blockY - 1, blockZ) && world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, BonusBlocks.OVERLAY_RAW_GOLD.id(), 0)) {
-                    BonusBlocks.OVERLAY_RAW_GOLD.onBlockPlacedByMob(world, blockX, blockY, blockZ, side, player, xPlaced, yPlaced);
-                    world.playBlockSoundEffect(player, blockX + 0.5F, blockY + 0.5F, blockZ + 0.5F, BonusBlocks.OVERLAY_RAW_GOLD, EnumBlockSoundEffectType.PLACE);
-                    itemstack.consumeItem(player);
-                    player.swingItem();
-                    cir.setReturnValue(true);
-                } else {
-                    cir.setReturnValue(false);
-                }
-            }
+        if (id != overlayId && Blocks.blocksList[id] != null && Blocks.blocksList[id].hasTag(BlockTags.PLACE_OVERWRITES)) {
+            id = 0;
+            meta = 0;
         }
-        if (itemstack.getItem().equals(Items.FLINT)) {
 
-            int id = world.getBlockId(blockX, blockY, blockZ);
-            int meta = world.getBlockMetadata(blockX, blockY, blockZ);
-            if (id != BonusBlocks.OVERLAY_FLINT.id() && Blocks.blocksList[id] != null && Blocks.blocksList[id].hasTag(BlockTags.PLACE_OVERWRITES)) {
-                id = 0;
-                meta = 0;
-            }
-
-            if (itemstack.stackSize <= 0) {
-                cir.setReturnValue(false);
-            } else if (blockY == world.getHeightBlocks() - 1 && BonusBlocks.OVERLAY_FLINT.getMaterial().isSolid()) {
-                cir.setReturnValue(false);
-            } else {
-                int newMeta;
-                if (id == BonusBlocks.OVERLAY_FLINT.id() && side == Side.TOP) {
-                    newMeta = meta + 1;
-                    if (!world.isBlockOpaqueCube(blockX, blockY - 1, blockZ)) {
-                        cir.setReturnValue(false);
-                    }
-
-                    if (newMeta < 3) {
-                        world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, BonusBlocks.OVERLAY_FLINT.id(), newMeta);
-                        world.playBlockSoundEffect(player, blockX + 0.5F, blockY + 0.5F, blockZ + 0.5F, BonusBlocks.OVERLAY_FLINT, EnumBlockSoundEffectType.PLACE);
-                        itemstack.consumeItem(player);
-                        player.swingItem();
-                        cir.setReturnValue(true);
-                    }
-                }
-
-                if (id != 0) {
-                    blockX += side.getOffsetX();
-                    blockY += side.getOffsetY();
-                    blockZ += side.getOffsetZ();
-                    id = world.getBlockId(blockX, blockY, blockZ);
-                    meta = world.getBlockMetadata(blockX, blockY, blockZ);
-                }
-
-                if (id == BonusBlocks.OVERLAY_FLINT.id()) {
-                    newMeta = meta + 1;
-                    AABB bbBox = AABB.getTemporaryBB(blockX, blockY, blockZ, blockX + 1.0F, blockY + (2 * (newMeta + 1)) / 16.0F, blockZ + 1.0F);
-                    if (!world.checkIfAABBIsClear(bbBox) || !world.isBlockOpaqueCube(blockX, blockY - 1, blockZ)) {
-                        cir.setReturnValue(false);
-                    }
-
-                    if (newMeta < 3) {
-                        world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, BonusBlocks.OVERLAY_FLINT.id(), newMeta);
-                        world.playBlockSoundEffect(player, blockX + 0.5F, blockY + 0.5F, blockZ + 0.5F, BonusBlocks.OVERLAY_FLINT, EnumBlockSoundEffectType.PLACE);
-                        itemstack.consumeItem(player);
-                        player.swingItem();
-                        cir.setReturnValue(true);
-                    }
-                }
-
-                if (world.canBlockBePlacedAt(BonusBlocks.OVERLAY_FLINT.id(), blockX, blockY, blockZ, false, side) && world.isBlockOpaqueCube(blockX, blockY - 1, blockZ) && world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, BonusBlocks.OVERLAY_FLINT.id(), 0)) {
-                    BonusBlocks.OVERLAY_FLINT.onBlockPlacedByMob(world, blockX, blockY, blockZ, side, player, xPlaced, yPlaced);
-                    world.playBlockSoundEffect(player, blockX + 0.5F, blockY + 0.5F, blockZ + 0.5F, BonusBlocks.OVERLAY_FLINT, EnumBlockSoundEffectType.PLACE);
-                    itemstack.consumeItem(player);
-                    player.swingItem();
-                    cir.setReturnValue(true);
-                } else {
-                    cir.setReturnValue(false);
-                }
-            }
+        if (id == overlayId && side == Side.TOP) {
+            if (!world.isBlockOpaqueCube(x, y - 1, z)) return false;
+            return tryIncreaseLayer(world, x, y, z, meta, overlay, player, stack);
         }
+
+        if (id != 0) {
+            x += side.getOffsetX();
+            y += side.getOffsetY();
+            z += side.getOffsetZ();
+            id = world.getBlockId(x, y, z);
+            meta = world.getBlockMetadata(x, y, z);
+        }
+
+        if (id == overlayId) {
+            return tryIncreaseLayer(world, x, y, z, meta, overlay, player, stack);
+        }
+
+        if (!world.canBlockBePlacedAt(overlayId, x, y, z, false, side)) return false;
+        if (!world.isBlockOpaqueCube(x, y - 1, z)) return false;
+
+        if (world.setBlockAndMetadataWithNotify(x, y, z, overlayId, 0)) {
+            overlay.onBlockPlacedByMob(world, x, y, z, side, player, xPlaced, yPlaced);
+            world.playBlockSoundEffect(player, x + 0.5F, y + 0.5F, z + 0.5F, overlay, EnumBlockSoundEffectType.PLACE);
+            stack.consumeItem(player);
+            player.swingItem();
+            return true;
+        }
+
+        return false;
+    }
+
+    @Unique
+    private boolean tryIncreaseLayer(World world, int x, int y, int z, int meta, Block<?> overlay, Player player, ItemStack stack) {
+        int newMeta = meta + 1;
+        if (newMeta >= 3) return false;
+
+        AABB bb = AABB.getTemporaryBB(x, y, z, x + 1.0F, y + (2 * (newMeta + 1)) / 16.0F, z + 1.0F);
+
+        if (!world.checkIfAABBIsClear(bb)) return false;
+        if (!world.isBlockOpaqueCube(x, y - 1, z)) return false;
+
+        world.setBlockAndMetadataWithNotify(x, y, z, overlay.id(), newMeta);
+        world.playBlockSoundEffect(player, x + 0.5F, y + 0.5F, z + 0.5F, overlay, EnumBlockSoundEffectType.PLACE);
+        stack.consumeItem(player);
+        player.swingItem();
+        return true;
     }
 }

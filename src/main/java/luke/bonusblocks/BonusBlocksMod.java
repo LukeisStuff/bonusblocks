@@ -28,7 +28,7 @@ public class BonusBlocksMod implements ModInitializer, ClientStartEntrypoint, Ga
 
     @Override
     public void beforeGameStart() {
-        BonusConfig.Setup();
+        BonusConfig.setup();
 //        SoundTypes.loadSoundsJson(MOD_ID);
         BonusBlocks.init();
         new BonusItems().initializeItems();

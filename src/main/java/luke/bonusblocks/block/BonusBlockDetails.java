@@ -119,7 +119,7 @@ public class BonusBlockDetails {
 
     }
 
-    public static final MaterialColor[] DYE_COLORS = {
+    protected static final MaterialColor[] DYE_COLORS = {
         MaterialColor.paintedWhite,
         MaterialColor.paintedOrange,
         MaterialColor.paintedMagenta,

@@ -3,7 +3,7 @@
 ### Additions
 
 ## Blocks
-up* Empty Bookshelf
+* Empty Bookshelf
   + Crafted like a bookshelf but without the books
 
 

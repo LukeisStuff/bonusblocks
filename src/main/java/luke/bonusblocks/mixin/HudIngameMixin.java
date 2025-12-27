@@ -20,10 +20,7 @@ public abstract class HudIngameMixin extends Gui {
     @Shadow
     protected Minecraft mc;
 
-    @Inject(method = "renderGameOverlay(FZII)V",
-        at = @At(value = "INVOKE",
-            target = "Lnet/minecraft/client/render/WorldRenderer;setupScaledResolution()V",
-            shift = At.Shift.AFTER))
+    @Inject(method = "renderGameOverlay(FZII)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/WorldRenderer;setupScaledResolution()V", shift = At.Shift.AFTER))
     public void renderSkullBlurOverlay(float partialTicks, boolean flag, int mouseX, int mouseY, CallbackInfo ci) {
         int width = this.mc.resolution.getScaledWidthScreenCoords();
         int height = this.mc.resolution.getScaledHeightScreenCoords();

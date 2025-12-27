@@ -22,7 +22,7 @@ public class BonusConfig {
 
     public static int currentItemID;
 
-    static void Setup() {
+    static void setup() {
         LOGGER.info("Initializing config..");
 
         Toml props = new Toml("Bonus Blocks Configs.toml");

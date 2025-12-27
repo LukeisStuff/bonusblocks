@@ -15,6 +15,7 @@ import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(value = BlockLogicMoss.class, remap = false)
 public abstract class BlockLogicMossMixin {
+
     @ModifyReturnValue(method = "onBonemealUsed", at = @At(value = "TAIL"))
     public boolean addOnBonemealUsed(boolean original, ItemStack itemstack, @Nullable Player player, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
         if (!world.isClientSide) {
