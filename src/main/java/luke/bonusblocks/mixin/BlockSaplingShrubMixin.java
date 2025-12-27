@@ -11,8 +11,8 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(value = BlockLogicSaplingShrub.class, remap = false)
 public class BlockSaplingShrubMixin {
 
-	@WrapOperation(method = "growTree", at = @At(value = "NEW", target = "net/minecraft/core/world/generate/feature/tree/WorldFeatureTreeShrub"), remap = false)
-	private WorldFeatureTreeShrub redirectShrub(int leafId, int logId, Operation<WorldFeatureTreeShrub> original) {
-		return new WorldFeatureTreeShrub(leafId, BonusBlocks.LOG_SHRUB.id());
-	}
+    @WrapOperation(method = "growTree", at = @At(value = "NEW", target = "net/minecraft/core/world/generate/feature/tree/WorldFeatureTreeShrub"), remap = false)
+    private WorldFeatureTreeShrub redirectShrub(int leafId, int logId, Operation<WorldFeatureTreeShrub> original) {
+        return new WorldFeatureTreeShrub(leafId, BonusBlocks.LOG_SHRUB.id());
+    }
 }

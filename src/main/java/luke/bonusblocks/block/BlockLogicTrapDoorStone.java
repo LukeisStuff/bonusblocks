@@ -7,11 +7,12 @@ import net.minecraft.core.world.World;
 
 public class BlockLogicTrapDoorStone extends BlockLogicTrapDoor {
 
-	public BlockLogicTrapDoorStone(Block<?> block, Material material) {
-		super(block, material);
-	}
+    public BlockLogicTrapDoorStone(Block<?> block, Material material) {
+        super(block, material);
+    }
 
-	public void onNeighborBlockChange(World world, int x, int y, int z, int blockId) {
-	}
+    @Override
+    public void onNeighborBlockChange(World world, int x, int y, int z, int blockId) {
+    }
 
 }

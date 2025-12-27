@@ -11,15 +11,15 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value = BlockLogicWireRedstone.class, remap = false)
 public class BlockLogicWireRedstoneMixin {
-	@Inject(method = "shouldConnectTo", at = @At(value = "TAIL", target = "Lnet/minecraft/core/block/BlockLogicWireRedstone;shouldConnectTo(Lnet/minecraft/core/world/WorldSource;IIII)Z"), cancellable = true)
-	private static void shouldConnectTo(WorldSource worldSource, int x, int y, int z, int data, CallbackInfoReturnable<Boolean> cir) {
-		int blockId = worldSource.getBlockId(x, y, z);
-		if (blockId == BonusBlocks.SKULL_REDSTONE.id() && data >= 0 && data <= 3) {
-			Side[] lookup = new Side[]{Side.NORTH, Side.EAST, Side.SOUTH, Side.WEST};
-			Side side = Side.getSideById(worldSource.getBlockMetadata(x, y, z));
-			cir.setReturnValue(side == lookup[data]);
-		}
+    @Inject(method = "shouldConnectTo", at = @At(value = "TAIL", target = "Lnet/minecraft/core/block/BlockLogicWireRedstone;shouldConnectTo(Lnet/minecraft/core/world/WorldSource;IIII)Z"), cancellable = true)
+    private static void shouldConnectTo(WorldSource worldSource, int x, int y, int z, int data, CallbackInfoReturnable<Boolean> cir) {
+        int blockId = worldSource.getBlockId(x, y, z);
+        if (blockId == BonusBlocks.SKULL_REDSTONE.id() && data >= 0 && data <= 3) {
+            Side[] lookup = new Side[]{Side.NORTH, Side.EAST, Side.SOUTH, Side.WEST};
+            Side side = Side.getSideById(worldSource.getBlockMetadata(x, y, z));
+            cir.setReturnValue(side == lookup[data]);
+        }
 
-		cir.setReturnValue(false);
-	}
+        cir.setReturnValue(false);
+    }
 }

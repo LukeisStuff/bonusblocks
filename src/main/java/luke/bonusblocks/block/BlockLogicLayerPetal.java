@@ -9,31 +9,35 @@ import net.minecraft.core.world.World;
 import net.minecraft.core.world.WorldSource;
 
 public class BlockLogicLayerPetal extends BlockLogic {
-	public BlockLogicLayerPetal(Block<?> block) {
-		super(block, Material.grass);
-		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.125F, 1.0F);
-	}
+    public BlockLogicLayerPetal(Block<?> block) {
+        super(block, Material.grass);
+        this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.125F, 1.0F);
+    }
 
-	public AABB getCollisionBoundingBoxFromPool(WorldSource world, int x, int y, int z) {
-		return null;
-	}
+    @Override
+    public AABB getCollisionBoundingBoxFromPool(WorldSource world, int x, int y, int z) {
+        return null;
+    }
 
-	public boolean isSolidRender() {
-		return false;
-	}
+    @Override
+    public boolean isSolidRender() {
+        return false;
+    }
 
-	public boolean isCubeShaped() {
-		return false;
-	}
+    @Override
+    public boolean isCubeShaped() {
+        return false;
+    }
 
-	public boolean canPlaceBlockAt(World world, int x, int y, int z) {
-		int l = world.getBlockId(x, y - 1, z);
-		if (l != 0 && (Blocks.blocksList[l].isSolidRender() || Blocks.blocksList[l].getLogic() instanceof BlockLogicPetal)) {
-			Material material = world.getBlockMaterial(x, y - 1, z);
-			return material.blocksMotion();
-		} else {
-			return false;
-		}
-	}
+    @Override
+    public boolean canPlaceBlockAt(World world, int x, int y, int z) {
+        int l = world.getBlockId(x, y - 1, z);
+        if (l != 0 && (Blocks.blocksList[l].isSolidRender() || Blocks.blocksList[l].getLogic() instanceof BlockLogicPetal)) {
+            Material material = world.getBlockMaterial(x, y - 1, z);
+            return material.blocksMotion();
+        } else {
+            return false;
+        }
+    }
 
 }

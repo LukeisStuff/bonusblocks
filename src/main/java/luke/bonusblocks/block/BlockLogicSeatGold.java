@@ -11,13 +11,14 @@ import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.world.World;
 
 public class BlockLogicSeatGold extends BlockLogicSeat {
-	public BlockLogicSeatGold(Block<?> block, Material material) {
-		super(block);
-		this.setBlockBounds(0.0, 0.0, 0.0, 1.0, 0.5625, 1.0);
-		block.withEntity(() -> new TileEntitySeat(block));
-	}
+    public BlockLogicSeatGold(Block<?> block, Material material) {
+        super(block);
+        this.setBlockBounds(0.0, 0.0, 0.0, 1.0, 0.5625, 1.0);
+        block.withEntity(() -> new TileEntitySeat(block));
+    }
 
-	public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int meta, TileEntity tileEntity) {
-		return dropCause != EnumDropCause.IMPROPER_TOOL ? new ItemStack[]{new ItemStack(BonusItems.SEAT_GOLD)} : null;
-	}
+    @Override
+    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int meta, TileEntity tileEntity) {
+        return dropCause != EnumDropCause.IMPROPER_TOOL ? new ItemStack[]{new ItemStack(BonusItems.SEAT_GOLD)} : null;
+    }
 }

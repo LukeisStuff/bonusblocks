@@ -11,8 +11,8 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(value = BlockLogicSaplingCacao.class, remap = false)
 public class BlockSaplingCacaoMixin {
 
-	@WrapOperation(method = "growTree", at = @At(value = "NEW", target = "net/minecraft/core/world/generate/feature/tree/WorldFeatureTree"), remap = false)
-	private WorldFeatureTree redirectCacao(int leafId, int logId, int height, Operation<WorldFeatureTree> original) {
-		return new WorldFeatureTree(leafId, BonusBlocks.LOG_CACAO.id(), height);
-	}
+    @WrapOperation(method = "growTree", at = @At(value = "NEW", target = "net/minecraft/core/world/generate/feature/tree/WorldFeatureTree"), remap = false)
+    private WorldFeatureTree redirectCacao(int leafId, int logId, int height, Operation<WorldFeatureTree> original) {
+        return new WorldFeatureTree(leafId, BonusBlocks.LOG_CACAO.id(), height);
+    }
 }

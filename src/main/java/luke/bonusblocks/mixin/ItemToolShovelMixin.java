@@ -13,19 +13,19 @@ import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(value = ItemToolShovel.class, remap = false)
 public abstract class ItemToolShovelMixin {
-	@WrapOperation(method = "shovelBlock", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/block/Block;id()I", ordinal = 0))
-	private int addNewPathBlockOne(Block<?> instance, Operation<Integer> original, @Local(name = "blockId") int blockId, @Share("useAetherPath") LocalBooleanRef useAetherPath) {
-		if (blockId == BonusBlocks.GRASS_OVERGROWN.id()) {
-			useAetherPath.set(true);
-			return blockId;
-		}
-		useAetherPath.set(false);
-		return original.call(instance);
-	}
+    @WrapOperation(method = "shovelBlock", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/block/Block;id()I", ordinal = 0))
+    private int addNewPathBlockOne(Block<?> instance, Operation<Integer> original, @Local(name = "blockId") int blockId, @Share("useAetherPath") LocalBooleanRef useAetherPath) {
+        if (blockId == BonusBlocks.GRASS_OVERGROWN.id()) {
+            useAetherPath.set(true);
+            return blockId;
+        }
+        useAetherPath.set(false);
+        return original.call(instance);
+    }
 
-	@WrapOperation(method = "shovelBlock", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/block/Block;id()I", ordinal = 4))
-	private int addNewPathBlockTwo(Block<?> instance, Operation<Integer> original, @Local(name = "blockId") int blockId, @Share("useAetherPath") LocalBooleanRef useAetherPath) {
-		if (useAetherPath.get()) return original.call(BonusBlocks.PATH_DIRT_OVERGROWN);
-		return original.call(instance);
-	}
+    @WrapOperation(method = "shovelBlock", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/block/Block;id()I", ordinal = 4))
+    private int addNewPathBlockTwo(Block<?> instance, Operation<Integer> original, @Local(name = "blockId") int blockId, @Share("useAetherPath") LocalBooleanRef useAetherPath) {
+        if (useAetherPath.get()) return original.call(BonusBlocks.PATH_DIRT_OVERGROWN);
+        return original.call(instance);
+    }
 }

@@ -9,26 +9,26 @@ import net.minecraft.core.world.generate.feature.WorldFeature;
 import java.util.Random;
 
 public class WorldFeatureRichGravel extends WorldFeature {
-	private final int numberOfBlocks;
+    private final int numberOfBlocks;
 
-	@MethodParametersAnnotation(
-		names = {"numberOfBlocks"}
-	)
-	public WorldFeatureRichGravel(int numberOfBlocks) {
-		this.numberOfBlocks = numberOfBlocks;
-	}
+    @MethodParametersAnnotation(
+        names = {"numberOfBlocks"}
+    )
+    public WorldFeatureRichGravel(int numberOfBlocks) {
+        this.numberOfBlocks = numberOfBlocks;
+    }
 
-	public boolean place(World world, Random random, int x, int y, int z) {
-		for (int x1 = x - this.numberOfBlocks; x1 < x + this.numberOfBlocks; ++x1) {
-			for (int y1 = y - 2; y1 <= y + 2; ++y1) {
-				for (int z1 = z - this.numberOfBlocks; z1 < z + this.numberOfBlocks; ++z1) {
-					if (random.nextInt(8) == 0 && world.getBlockId(x1, y1, z1) == Blocks.GRAVEL.id()) {
-						world.setBlock(x1, y1, z1, BonusBlocks.GRAVEL_RICH.id());
-					}
-				}
-			}
-		}
+    public boolean place(World world, Random random, int x, int y, int z) {
+        for (int x1 = x - this.numberOfBlocks; x1 < x + this.numberOfBlocks; ++x1) {
+            for (int y1 = y - 2; y1 <= y + 2; ++y1) {
+                for (int z1 = z - this.numberOfBlocks; z1 < z + this.numberOfBlocks; ++z1) {
+                    if (random.nextInt(8) == 0 && world.getBlockId(x1, y1, z1) == Blocks.GRAVEL.id()) {
+                        world.setBlock(x1, y1, z1, BonusBlocks.GRAVEL_RICH.id());
+                    }
+                }
+            }
+        }
 
-		return true;
-	}
+        return true;
+    }
 }

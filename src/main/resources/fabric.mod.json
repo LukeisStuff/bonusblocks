@@ -2,41 +2,37 @@
 	"schemaVersion": 1,
 	"id": "bonusblocks",
 	"version": "${version}",
+
 	"name": "Bonus Blocks",
-	"description": "Adds in a plethora of new and useful blocks.",
+	"description": "Adds in a plethora of new useful and decorative blocks.",
 	"authors": [
 		"LukeisStuff"
 	],
+  "contributors": [
+
+  ],
+
 	"icon": "icon.png",
+
 	"contact": {
 		"homepage": "",
 		"sources": ""
 	},
+
 	"license": "CC0-1.0",
 	"environment": "*",
+
 	"entrypoints": {
-		"main": [
-			"luke.bonusblocks.BonusBlocksMod"
-		],
-		"beforeGameStart": [
-			"luke.bonusblocks.BonusBlocksMod"
-		],
-		"beforeClientStart": [
-			"luke.bonusblocks.BonusBlocksMod"
-		],
-		"recipesReady": [
-			"luke.bonusblocks.BonusRecipes"
-		],
-		"afterGameStart": [
-			"luke.bonusblocks.BonusBlocksMod"
-		],
-		"initModels": [
-			"luke.bonusblocks.BonusModels"
-		]
+		"main": ["luke.bonusblocks.BonusBlocksMod"],
+		"beforeGameStart": ["luke.bonusblocks.BonusBlocksMod"],
+		"beforeClientStart": ["luke.bonusblocks.BonusBlocksMod"],
+		"recipesReady": ["luke.bonusblocks.BonusRecipes"],
+		"afterGameStart": ["luke.bonusblocks.BonusBlocksMod"],
+		"initModels": ["luke.bonusblocks.BonusModels"]
 	},
-	"mixins": [
-		"bonusblocks.mixins.json"
-	],
+
+	"mixins": ["bonusblocks.mixins.json"],
+
 	"depends": {
 		"fabricloader": ">=${fabricloader}",
 		"halplibe": ">=${halplibe}",

@@ -9,21 +9,21 @@ import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.world.World;
 
 public class BlockMossy extends BlockLogicMoss {
+    public BlockMossy(Block<?> block) {
+        super(block, block);
+        block.setTicking(true);
+    }
 
-	public BlockMossy(Block<?> block) {
-		super(block, block);
-		block.setTicking(true);
-	}
-
-	public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-		switch (dropCause) {
-			case SILK_TOUCH:
-			case PICK_BLOCK:
-			case PISTON_CRUSH:
-				return new ItemStack[]{new ItemStack(this)};
-			default:
-				return new ItemStack[]{new ItemStack(BonusItems.MOSS, 4)};
-		}
-	}
+    @Override
+    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+        switch (dropCause) {
+            case SILK_TOUCH:
+            case PICK_BLOCK:
+            case PISTON_CRUSH:
+                return new ItemStack[]{new ItemStack(this)};
+            default:
+                return new ItemStack[]{new ItemStack(BonusItems.MOSS, 4)};
+        }
+    }
 
 }
